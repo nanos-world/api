@@ -1,0 +1,114 @@
+{
+	"name": "HTTP",
+	"description": "HTTP Requests Interface.",
+	"authority": "server",
+	"static_functions": [
+		{
+			"name": "Request",
+			"description": "Makes an asynchronous HTTP Request",
+			"description_long": "Makes an asynchronous HTTP Request.<br/><br/>The request will be made asynchronously and returned safetly in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload.",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "uri",
+					"description": "The main URI"
+				},
+				{
+					"type": "string",
+					"name": "endpoint",
+					"default": "/",
+					"description": "The endpoint"
+				},
+				{
+					"type": "string",
+					"name": "method",
+					"default": "GET",
+					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>HTTP Method</a> to be used"
+				},
+				{
+					"type": "string",
+					"name": "data",
+					"default": "",
+					"description": "Payload"
+				},
+				{
+					"type": "string",
+					"name": "content_type",
+					"default": "application/json",
+					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types'>Content Type</a> to be used"
+				},
+				{
+					"type": "boolean",
+					"name": "compress",
+					"default": "false",
+					"description": "Whether or not to compress the content with gzip"
+				},
+				{
+					"type": "table",
+					"name": "headers",
+					"default": "{}",
+					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'>Headers</a> to be used"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "The result will be called in the format `function(status, data)`"
+				}
+			]
+		},
+		{
+			"name": "RequestSync",
+			"return": {
+				"type": "table",
+				"description": "the data in the format { Status, Data }"
+			},
+			"description": "Makes a synchronous HTTP Request.<br/><br/>The request will be made synchronously and will freeze the server until it's done.",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "uri",
+					"description": "The main URI"
+				},
+				{
+					"type": "string",
+					"name": "endpoint",
+					"default": "/",
+					"description": "The endpoint"
+				},
+				{
+					"type": "string",
+					"name": "method",
+					"default": "GET",
+					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>HTTP Method</a> to be used"
+				},
+				{
+					"type": "string",
+					"name": "data",
+					"default": "",
+					"description": "Payload"
+				},
+				{
+					"type": "string",
+					"name": "content_type",
+					"default": "application/json",
+					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types'>Content Type</a> to be used"
+				},
+				{
+					"type": "boolean",
+					"name": "compress",
+					"default": "false",
+					"description": "Whether or not to compress the content with gzip"
+				},
+				{
+					"type": "table",
+					"name": "headers",
+					"default": "{}",
+					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'>Headers</a> to be used"
+				}
+			]
+		}
+	]
+}
