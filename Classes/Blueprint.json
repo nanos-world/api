@@ -19,7 +19,7 @@
 		},
 		{
 			"type": "BlueprintPath",
-			"name": "blueprint_path",
+			"name": "blueprint_asset",
 			"default": ""
 		}
 	],

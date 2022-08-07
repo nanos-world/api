@@ -1,0 +1,26 @@
+{
+	"name": "Billboard",
+	"description": "A Billboard is a 2D Material that will be rendered always facing the camera.",
+	"authority": "client",
+	"inheritance": [
+		"Actor",
+		"Paintable"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"type": "MaterialPath",
+			"name": "material_asset",
+			"default": ""
+		}
+	]
+}
