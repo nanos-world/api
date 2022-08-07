@@ -1,0 +1,123 @@
+{
+	"name": "Events",
+	"description": "Subscribe for user-defined Events.",
+	"authority": "both",
+	"static_functions": [
+		{
+			"authority": "both",
+			"name": "Call",
+			"description": "Calls an Event which will be triggered in all Local Packages",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "CallRemote",
+			"description": "Calls an Event if on Client which will be triggered in all Server Packages",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "CallRemote",
+			"description": "Calls an Event if on Server which will be triggered in all Client's Packages of a specific Player",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The remote player to send this event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "BroadcastRemote",
+			"description": "Calls an Event on Server which will be triggered in all Client's Packages of all Players",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"return": {
+				"type": "function",
+				"description": "the subscribed callback itself"
+			},
+			"name": "Subscribe",
+			"description": "Subscribes for an user-created event which will be triggered for both local or remote called events",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to subscribe"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The callback function to execute"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed events in this Package with that event name, optionally passing the function to unsubscribe only that callback",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to unsubscribe"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "The callback function to unsubscribe"
+				}
+			]
+		}
+	]
+}
