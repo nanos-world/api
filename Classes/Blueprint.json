@@ -8,17 +8,17 @@
 	],
 	"constructor": [
 		{
-            "type": "Vector",
+			"type": "Vector",
 			"name": "location",
 			"default": "Vector(0, 0, 0)"
 		},
 		{
-            "type": "Rotator",
+			"type": "Rotator",
 			"name": "rotation",
 			"default": "Rotator(0, 0, 0)"
 		},
 		{
-            "type": "BlueprintPath",
+			"type": "BlueprintPath",
 			"name": "blueprint_path",
 			"default": ""
 		}
@@ -37,7 +37,7 @@
 				{
 					"type": "any",
 					"name": "arguments...",
-                    "default": "nil",
+					"default": "nil",
 					"description": "Sequence of arguments to pass to the event"
 				}
 			]
