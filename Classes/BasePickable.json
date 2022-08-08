@@ -1,0 +1,11 @@
+{
+	"name": "Pickable",
+	"description": "Base class for all Pickable entities.",
+	"authority": "both",
+    "static_functions": [
+
+    ],
+    "events": [
+        
+    ]
+}

@@ -1,0 +1,11 @@
+{
+	"name": "WebUI",
+	"description": "Class for spawning a dynamic Web Browser",
+	"authority": "client",
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

@@ -1,0 +1,14 @@
+{
+	"name": "Particle",
+	"description": "Particle Entity.",
+	"authority": "both",
+	"inheritance": [
+		"Actor"
+	],
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

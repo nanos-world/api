@@ -1,0 +1,16 @@
+{
+	"name": "Weapon",
+	"description": "Weapons are fully customizable, all pieces of the weapon can be changed with immense possibility of creation",
+	"authority": "server",
+	"inheritance": [
+		"Actor",
+		"Paintable",
+		"Pickable"
+	],
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

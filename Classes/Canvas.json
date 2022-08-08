@@ -1,0 +1,11 @@
+{
+	"name": "Canvas",
+	"description": "Canvas is an entity which you can draw onto it.",
+	"authority": "client",
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

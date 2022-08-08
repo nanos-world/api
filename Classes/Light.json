@@ -1,0 +1,14 @@
+{
+	"name": "Light",
+	"description": "A Light represents a Lighting source.",
+	"authority": "both",
+	"inheritance": [
+		"Actor"
+	],
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

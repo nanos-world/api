@@ -1,0 +1,16 @@
+{
+	"name": "Grenade",
+	"description": "Chad Grenade",
+	"authority": "server",
+	"inheritance": [
+		"Actor",
+		"Paintable",
+		"Pickable"
+	],
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

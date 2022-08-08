@@ -1,0 +1,14 @@
+{
+	"name": "Sound",
+	"description": "Class for playing in-game 2D and 3D sounds",
+	"authority": "client",
+	"inheritance": [
+		"Actor"
+	],
+	"constructor": [
+
+	],
+    "functions": [
+ 
+    ]
+}

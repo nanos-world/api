@@ -1,0 +1,11 @@
+{
+	"name": "Actor",
+	"description": "Base class for all Actor entities.",
+	"authority": "both",
+    "static_functions": [
+
+    ],
+    "events": [
+        
+    ]
+}
