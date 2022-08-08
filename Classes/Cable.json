@@ -1,0 +1,255 @@
+{
+	"name": "Cable",
+	"description": "A Cable represents a Physics Constraint which joins two Actors with a rope-like visual representation between them.",
+	"authority": "server",
+	"inheritance": [
+		"Actor",
+		"Paintable"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "boolean",
+			"name": "enable_visuals",
+			"default": "true",
+            "description": "Toggles the cable visuals"
+		}
+	],
+    "functions": [
+        {
+            "authority": "server",
+            "name": "AttachStartTo",
+            "description": "Attached the beginning of this cable to another Actor at a specific bone or relative location",
+            "parameters": [
+                {
+                    "type": "Actor",
+                    "name": "other",
+                    "description": ""
+                },
+                {
+                    "type": "Vector",
+                    "name": "relative_location",
+                    "default": "Vector(0, 0, 0)",
+                    "description": ""
+                },
+                {
+                    "type": "string",
+                    "name": "bone_name",
+                    "default": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "authority": "server",
+            "name": "AttachEndTo",
+            "description": "Attached the end of this cable to another Actor at a specific bone or relative location",
+            "parameters": [
+                {
+                    "type": "Actor",
+                    "name": "other",
+                    "description": ""
+                },
+                {
+                    "type": "Vector",
+                    "name": "relative_location",
+                    "default": "Vector(0, 0, 0)",
+                    "description": ""
+                },
+                {
+                    "type": "string",
+                    "name": "bone_name",
+                    "default": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "authority": "server",
+            "name": "DetachEnd",
+            "description": "Detaches the End of this Cable"
+        },
+        {
+            "authority": "server",
+            "name": "DetachStart",
+            "description": "Detaches the Start of this Cable"
+        },
+        {
+            "authority": "both",
+            "name": "SetCableSettings",
+            "description": "Set the overall settings for this cable (visuals only)",
+            "parameters": [
+                {
+                    "type": "number",
+                    "name": "length",
+                    "description": "Rest length of the cable. Default is 100"
+                },
+                {
+                    "type": "number",
+                    "name": "num_segments",
+                    "description": "How many segments the cable has. Default is 10"
+                },
+                {
+                    "type": "number",
+                    "name": "solver_iterations",
+                    "description": "The number of solver iterations controls how 'stiff' the cable is. Default is 0"
+                }
+            ]
+        },
+        {
+            "authority": "both",
+            "name": "SetForces",
+            "description": "Set the forces the cable has applied (visuals only)",
+            "parameters": [
+                {
+                    "type": "Vector",
+                    "name": "force",
+                    "description": "Force vector (world space) applied to all particles in cable. Default is Vector(0, 0, 0)"
+                },
+                {
+                    "type": "number",
+                    "name": "gravity_scale",
+                    "default": "1",
+                    "description": "Scaling applied to world gravity affecting this cable. Default is 1"
+                }
+            ]
+        },
+        {
+            "authority": "server",
+            "name": "SetAngularLimits",
+            "description": "Sets the Physics Angular Limits of this cable",
+            "parameters": [
+                {
+                    "type": "ConstraintMotion",
+                    "name": "swing_1_motion",
+                    "description": "Indicates whether the Swing1 limit is used"
+                },
+                {
+                    "type": "ConstraintMotion",
+                    "name": "swing_2_motion",
+                    "description": "Indicates whether the Swing2 limit is used"
+                },
+                {
+                    "type": "ConstraintMotion",
+                    "name": "twist_motion",
+                    "description": "Indicates whether the Twist limit is used"
+                },
+                {
+                    "type": "number",
+                    "name": "swing_1_limit",
+                    "default": "0",
+                    "description": "Angle of movement along the XY plane. This defines the first symmetric angle of the cone"
+                },
+                {
+                    "type": "number",
+                    "name": "swing_2_limit",
+                    "default": "0",
+                    "description": "Angle of movement along the XZ plane. This defines the second symmetric angle of the cone"
+                },
+                {
+                    "type": "number",
+                    "name": "twist_limit",
+                    "default": "0",
+                    "description": "Symmetric angle of roll along the X-axis"
+                }
+            ]
+        },
+        {
+            "authority": "server",
+            "name": "SetLinearLimits",
+            "description": "Sets the Physics Linear Limits of this cable",
+            "description_long": "Sets the Physics Linear Limits of this cable. If use_soft_constraint is enabled, then stiffness and damping will be used, otherwise restitution will be used.",
+            "parameters": [
+                {
+                    "type": "ConstraintMotion",
+                    "name": "x_motion",
+                    "description": "Indicates the linear constraint applied along the X-axis. Free implies no constraint at all. Locked implies no movement along X is allowed. Limited implies the distance in the joint along all active axes must be less than the Distance provided"
+                },
+                {
+                    "type": "ConstraintMotion",
+                    "name": "y_motion",
+                    "description": "Indicates the linear constraint applied along the Y-axis. Free implies no constraint at all. Locked implies no movement along Y is allowed. Limited implies the distance in the joint along all active axes must be less than the Distance provided"
+                },
+                {
+                    "type": "ConstraintMotion",
+                    "name": "z_motion",
+                    "description": "Indicates the linear constraint applied along theZX-axis. Free implies no constraint at all. Locked implies no movement along Z is allowed. Limited implies the distance in the joint along all active axes must be less than the Distance provided"
+                },
+                {
+                    "type": "number",
+                    "name": "limit",
+                    "default": "0",
+                    "description": "The distance allowed between between the two joint reference frames. Distance applies on all axes enabled (one axis means line, two axes implies circle, three axes implies sphere)"
+                },
+                {
+                    "type": "number",
+                    "name": "restitution",
+                    "default": "0",
+                    "description": "Controls the amount of bounce when the constraint is violated. A restitution value of 1 will bounce back with the same velocity the limit was hit. A value of 0 will stop dead"
+                },
+                {
+                    "type": "boolean",
+                    "name": "use_soft_constraint",
+                    "default": "false",
+                    "description": "Whether we want to use a soft constraint (spring)"
+                },
+                {
+                    "type": "number",
+                    "name": "stiffness",
+                    "default": "0",
+                    "description": "Stiffness of the soft constraint. Only used when Soft Constraint is on"
+                },
+                {
+                    "type": "number",
+                    "name": "damping",
+                    "default": "0",
+                    "description": "Damping of the soft constraint. Only used when Soft Constraint is on"
+                }
+            ]
+        },
+        {
+            "authority": "both",
+            "name": "SetRenderingSettings",
+            "description": "Set the rendering settings of this cable (visuals only)",
+            "parameters": [
+                {
+                    "type": "number",
+                    "name": "width",
+                    "description": "How wide the cable geometry is. Default is 6"
+                },
+                {
+                    "type": "number",
+                    "name": "num_sides",
+                    "description": "Number of sides of the cable geometry. Default is 4"
+                },
+                {
+                    "type": "number",
+                    "name": "tile_material",
+                    "description": "How many times to repeat the material along the length of the cable. Default is 1"
+                }
+            ]
+        },
+        {
+            "authority": "both",
+            "name": "GetAttachedStartTo",
+            "description": "Gets the Actor attached to Start",
+            "return": {
+                "type": "Actor",
+                "description": "the Actor or nil"
+            }
+        },
+        {
+            "authority": "both",
+            "name": "GetAttachedEndTo",
+            "description": "Gets the Actor attached to End",
+            "return": {
+                "type": "Actor",
+                "description": "the Actor or nil"
+            }
+        }
+    ]
+}
