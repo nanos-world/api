@@ -1,0 +1,179 @@
+{
+	"name": "TextRender",
+	"description": "A Text Render class is useful for spawning Texts in 3D world, you can even attach it to other entities.",
+	"authority": "both",
+	"inheritance": [
+		"Actor",
+		"Paintable"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"type": "string",
+			"name": "text",
+			"default": ""
+		},
+		{
+			"type": "Vector",
+			"name": "scale",
+			"default": "Vector(1, 1, 1)"
+		},
+		{
+			"type": "Color",
+			"name": "color",
+			"default": "Color(1, 1, 1, 1)"
+		},
+		{
+			"type": "FontType",
+			"name": "font_type",
+			"default": "FontType.Roboto"
+		},
+		{
+			"type": "TextRenderAlignCamera",
+			"name": "align_camera",
+			"default": "TextRenderAlignCamera.Unaligned"
+		}
+	],
+	"functions": [
+		{
+			"name": "SetColor",
+			"authority": "both",
+			"description": "Sets the Color",
+			"description_long": "Sets the Color (Internally this will call the <code>SetMaterialColorParameter(\"Tint\", color)</code> method)",
+			"parameters": [
+				{
+					"name": "color",
+					"type": "Color"
+				}
+			]
+		},
+		{
+			"name": "SetFont",
+			"authority": "both",
+			"description": "Sets the Font",
+			"parameters": [
+				{
+					"name": "font_type",
+					"type": "FontType"
+				}
+			]
+		},
+		{
+			"name": "SetFreeze",
+			"authority": "both",
+			"description": "Freeze mesh rebuild, to avoid unnecessary mesh rebuilds when setting a few properties together",
+			"parameters": [
+				{
+					"name": "freeze",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "SetGlyphSettings",
+			"authority": "both",
+			"description": "Sets the Glyph representation settings to generate the 3D Mesh for this text render",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "extrude",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "level",
+					"default": "0"
+				},
+				{
+					"type": "TextRenderBevelType",
+					"name": "bevel_type",
+					"default": "TextRenderBevelType.Convex"
+				},
+				{
+					"type": "number",
+					"name": "bevel_segments",
+					"default": "8"
+				},
+				{
+					"type": "boolean",
+					"name": "outline",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SetMaxSize",
+			"authority": "both",
+			"description": "Sets the Max Size of the TextRender, optionally scaling it proportionally",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "max_width",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "max_height",
+					"default": "0"
+				},
+				{
+					"type": "boolean",
+					"name": "scale_proportionally",
+					"default": "true"
+				}
+			]
+		},
+		{
+			"name": "SetText",
+			"authority": "both",
+			"description": "Sets the Text",
+			"parameters": [
+				{
+					"name": "text",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "SetTextSettings",
+			"authority": "both",
+			"description": "Sets the Text & Font settings for this text render",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "kerning",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "line_spacing",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "word_spacing",
+					"default": "0"
+				},
+				{
+					"type": "TextRenderHorizontalAlignment",
+					"name": "horizontal_alignment",
+					"default": "TextRenderHorizontalAlignment.Center"
+				},
+				{
+					"type": "TextRenderVerticalAlignment",
+					"name": "vertical_alignment",
+					"default": "0TextRenderVerticalAlignment.Center"
+				}
+			]
+		}
+	]
+}
