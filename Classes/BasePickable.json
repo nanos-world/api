@@ -1,6 +1,6 @@
 {
 	"name": "Pickable",
-	"description": "Base class for all Pickable entities.",
+	"description": "Base class for all Pickable entities. It shares methods in common to all Pickable entities (Weapons, Grenades, Melee, etc).",
 	"authority": "both",
 	"static_functions": [
 

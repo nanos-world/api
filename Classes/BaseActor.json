@@ -1,6 +1,6 @@
 {
 	"name": "Actor",
-	"description": "Base class for all Actor entities.",
+	"description": "Base class for all Actor entities. An Actor is any object that can be placed into a level. Actors support 3D transformations such as translation, rotation, and scaling.",
 	"authority": "both",
 	"static_functions": [
 

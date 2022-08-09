@@ -1,6 +1,6 @@
 {
 	"name": "Paintable",
-	"description": "Base class for all Paintable entities.",
+	"description": "Base class for all Paintable entities. It shares methods for customizing it's materials.",
 	"authority": "both",
 	"static_functions": [
 

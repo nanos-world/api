@@ -97,23 +97,19 @@
 			"parameters": [
 				{
 					"type": "MaterialPath",
-					"name": "material_path",
-					"default": ""
+					"name": "material_path"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position",
-					"default": ""
+					"name": "screen_position"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size",
-					"default": ""
+					"name": "screen_size"
 				},
 				{
 					"type": "Vector2D",
-					"name": "coordinate_position",
-					"default": ""
+					"name": "coordinate_position"
 				},
 				{
 					"type": "Vector2D",
@@ -136,7 +132,7 @@
 			"authority": "client",
 			"name": "DrawText",
 			"description": "Draws a Text on the Canvas",
-			"description_long": "Draws a Text on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event",
+			"description_long": "Draws a Text on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event<br/><br/>Shadow and Outline won't work properly with Transparent <code>clear_color</code>",
 			"parameters": [
 				{
 					"type": "string",
