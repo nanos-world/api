@@ -6,6 +6,7 @@
 		{
 			"return": {
 				"type": "table",
+				"is_array": true,
 				"description": "in the format <code>[{Name, Path, Author, Version}, ...]</code>"
 			},
 			"name": "GetAssetPacks",
