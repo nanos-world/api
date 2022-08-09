@@ -497,7 +497,7 @@
 		},
 		{
 			"name": "GetValue",
-			"description": "Gets a value stored on this Actor at the given key. Please refer to <a href\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description": "Gets a value stored on this Actor at the given key. Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
 			"parameters": [
 				{
