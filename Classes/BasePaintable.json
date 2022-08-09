@@ -88,7 +88,7 @@
 		{
 			"name": "SetMaterialColorParameter",
 			"description": "Sets a Color parameter in this Actor's material",
-			"description_long": "Sets a Color parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"description_long": "Sets a Color parameter in this Actor's material<br><br>For setting a parameter in an <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/character#addskeletalmeshattached\">Attachable</a> mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
 			"parameters": [
 				{
 					"type": "string",
@@ -104,7 +104,7 @@
 		{
 			"name": "SetMaterialScalarParameter",
 			"description": "Sets a scalar parameter in this Actor's material",
-			"description_long": "Sets a scalar parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"description_long": "Sets a scalar parameter in this Actor's material<br><br>For setting a parameter in an <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/character#addskeletalmeshattached\">Attachable</a> mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
 			"parameters": [
 				{
 					"type": "string",
@@ -120,7 +120,7 @@
 		{
 			"name": "SetMaterialTextureParameter",
 			"description": "Sets a texture parameter in this Actor's material",
-			"description_long": "Sets a texture parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"description_long": "Sets a texture parameter in this Actor's material<br><br>For setting a parameter in an <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/character#addskeletalmeshattached\">Attachable</a> mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
 			"parameters": [
 				{
 					"type": "string",
@@ -137,7 +137,7 @@
 		{
 			"name": "SetMaterialVectorParameter",
 			"description": "Sets a Vector parameter in this Actor's material",
-			"description_long": "Sets a Vector parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"description_long": "Sets a Vector parameter in this Actor's material<br><br>For setting a parameter in an <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/character#addskeletalmeshattached\">Attachable</a> mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
 			"parameters": [
 				{
 					"type": "string",
