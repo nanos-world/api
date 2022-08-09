@@ -1,12 +1,12 @@
 {
 	"name": "Pickable",
-	"description": "Base class for all Pickable entities. It shares methods in common to all Pickable entities (Weapons, Grenades, Melee, etc).",
+	"description": "<b>Pickables</b> are special Actors which can be <b>grabbed</b>, <b>held</b> and <b>used</b> by Characters.",
 	"functions": [
 		{
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Attaches a Skeletal Mesh as master pose to this entity.<br/><br/>For customizing the Materials specific of a SkeletalMeshAttached, use the following syntax as the <code>parameter_name</code> in the <Classes.Paintable /> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing it later.<br><br>For customizing the Materials specific to a mesh attached with this function, use the following syntax as the <code>parameter_name</code> in the <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/base-classes/paintable\">Base Paintable</a> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where <code>[ATTACHABLE_ID]</code> is the ID of the Attachable, and <code>[PARAMETER_NAME]</code> is the name of the parameter you want to change.",
 			"parameters": [
 				{
 					"type": "string",
@@ -16,7 +16,7 @@
 				{
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_path",
-					"description": "SkeletalMesh asset to use"
+					"description": "Path to SkeletalMesh asset to attach"
 				}
 			]
 		},
@@ -24,7 +24,7 @@
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Attaches a Static Mesh to this entity<br/><br/>For customizing the Materials specific of a StaticMeshAttached, use the following syntax as the <code>parameter_name</code> in the <Classes.Paintable /> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing it later<br><br>For customizing the Materials specific to a mesh attached with this function, use the following syntax as the <code>parameter_name</code> in the <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/base-classes/paintable\">Base Paintable</a> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where <code>[ATTACHABLE_ID]</code> is the ID of the Attachable, and <code>[PARAMETER_NAME]</code> is the name of the parameter you want to change.",
 			"parameters": [
 				{
 					"type": "string",
@@ -34,7 +34,7 @@
 				{
 					"type": "StaticMeshPath",
 					"name": "static_mesh_path",
-					"description": "StaticMesh asset to use"
+					"description": "Path to StaticMesh asset to attach"
 				},
 				{
 					"type": "string",
@@ -106,19 +106,19 @@
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"description": "Relative location to the Socket"
+					"description": "Location relative to the Socket"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
 					"default": "Rotator(0, 0, 0)",
-					"description": "Relative rotation to the Socket"
+					"description": "Rotation relative to the Socket"
 				},
 				{
 					"type": "string",
 					"name": "socket",
 					"default": "hand_r_socket",
-					"description": "Character Socket to attach"
+					"description": "Character Socket to attach to when picked up"
 				}
 			]
 		},
@@ -137,12 +137,11 @@
 		{
 			"authority": "server",
 			"name": "SetPickable",
-			"description": "Sets if this Pickable can be grabbed from ground by the player",
+			"description": "Sets if this Pickable can be picked up from ground by the player",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_pickable",
-					"description": ""
+					"name": "is_pickable"
 				}
 			]
 		},
@@ -151,8 +150,7 @@
 			"name": "GetAssetName",
 			"description": "Gets the name of the asset this Pickable uses",
 			"return": {
-				"type": "SkeletalMeshPath",
-				"description": "the asset"
+				"type": "SkeletalMeshPath"
 			}
 		},
 		{
@@ -161,8 +159,7 @@
 			"description": "Gets the Character, if it exists, that's holding this Pickable",
 			"return": {
 				"type": "Character",
-				"nullable": true,
-				"description": "the holder"
+				"nullable": true
 			}
 		}
 	],
@@ -185,7 +182,7 @@
 				{
 					"type": "boolean",
 					"name": "was_triggered_by_player",
-					"description": "If the Player actively pressed 'G' to drop"
+					"description": "If the Player actively pressed the Drop binding to drop"
 				}
 			]
 		},
@@ -224,8 +221,8 @@
 		{
 			"authority": "server",
 			"name": "Interact",
-			"description": "When a Character interacts with this Pickable (i.e. tries to pick it up)",
-			"description_long": "When a Character interacts with this Pickable (i.e. tries to pick it up).<br/><br/>Return <code>false</code> to prevent the interaction",
+			"description": "Triggered when a Character interacts with this Pickable (i.e. tries to pick it up)",
+			"description_long": "Triggered when a Character interacts with this Pickable (i.e. tries to pick it up).<br/><br/>Return <code>false</code> to prevent the interaction",
 			"arguments": [
 				{
 					"type": "Pickable",
@@ -242,12 +239,12 @@
 		{
 			"authority": "both",
 			"name": "PickUp",
-			"description": "When a Character picks this up",
+			"description": "Triggered When a Character picks this up",
 			"arguments": [
 				{
 					"type": "Pickable",
 					"name": "self",
-					"description": "The Picable that just got picked up"
+					"description": "The Pickable that just got picked up"
 				},
 				{
 					"type": "Character",
@@ -259,7 +256,7 @@
 		{
 			"authority": "both",
 			"name": "PullUse",
-			"description": "When a Character presses the use button for this Pickable (i.e. clicks left mouse button with this equipped)",
+			"description": "Triggered when a Character presses the use button for this Pickable (i.e. clicks left mouse button with this equipped)",
 			"arguments": [
 				{
 					"type": "Pickable",
@@ -276,7 +273,7 @@
 		{
 			"authority": "both",
 			"name": "ReleaseUse",
-			"description": "When a Character releases the use button for this Pickable (i.e. releases left mouse button with this equipped)",
+			"description": "Triggered when a Character releases the use button for this Pickable (i.e. releases left mouse button with this equipped)",
 			"arguments": [
 				{
 					"type": "Pickable",
