@@ -222,7 +222,6 @@
 			"authority": "server",
 			"name": "Interact",
 			"description": "Triggered when a Character interacts with this Pickable (i.e. tries to pick it up)",
-			"description_long": "Triggered when a Character interacts with this Pickable (i.e. tries to pick it up).<br/><br/>Return <code>false</code> to prevent the interaction",
 			"arguments": [
 				{
 					"type": "Pickable",
@@ -234,7 +233,12 @@
 					"name": "character",
 					"description": "The Character that interacted with it"
 				}
-			]
+			],
+			"return": {
+				"type": "boolean",
+				"nullable": true,
+				"description": "<code>false</code> to prevent the interaction"
+			}
 		},
 		{
 			"authority": "both",

@@ -1558,7 +1558,7 @@
 		{
 			"authority": "server",
 			"name": "AttemptEnterVehicle",
-			"description": "Return false to prevent it",
+			"description": "Triggered when a Character attempts to enter a vehicle",
 			"arguments": [
 				{
 					"type": "Character",
@@ -1575,7 +1575,12 @@
 					"name": "seat_index",
 					"description": ""
 				}
-			]
+			],
+			"return": {
+				"type": "boolean",
+				"nullable": true,
+				"description": "<code>false</code> to prevent it"
+			}
 		},
 		{
 			"authority": "both",
@@ -1693,7 +1698,7 @@
 					"description": "Whether the object is being highlighted or not"
 				},
 				{
-					"type": "Prop or Pickable",
+					"type": "Prop|Pickable",
 					"name": "object",
 					"description": ""
 				}
@@ -1702,7 +1707,7 @@
 		{
 			"authority": "server",
 			"name": "Interact",
-			"description": "Return false to prevent it",
+			"description": "Triggered when a Character interacts with a Prop or Pickable",
 			"arguments": [
 				{
 					"type": "Character",
@@ -1710,11 +1715,16 @@
 					"description": ""
 				},
 				{
-					"type": "Pickable or Prop",
+					"type": "Prop|Pickable",
 					"name": "object",
 					"description": ""
 				}
-			]
+			],
+			"return": {
+				"type": "boolean",
+				"nullable": true,
+				"description": "<code>false</code> to prevent it"
+			}
 		},
 		{
 			"authority": "both",
@@ -1736,7 +1746,7 @@
 		{
 			"authority": "server",
 			"name": "AttemptLeaveVehicle",
-			"description": "Return false to prevent it",
+			"description": "Triggered when this Character attempts to leave a vehicle",
 			"arguments": [
 				{
 					"type": "Character",
@@ -1748,7 +1758,12 @@
 					"name": "vehicle",
 					"description": ""
 				}
-			]
+			],
+			"return": {
+				"type": "boolean",
+				"nullable": true,
+				"description": "<code>false</code> to prevent it"
+			}
 		},
 		{
 			"authority": "both",
@@ -1838,7 +1853,7 @@
 		{
 			"authority": "both",
 			"name": "AttemptReload",
-			"description": "Return false to prevent it",
+			"description": "Triggered when this Character attempts to reload",
 			"arguments": [
 				{
 					"type": "Character",
@@ -1850,7 +1865,12 @@
 					"name": "weapon",
 					"description": ""
 				}
-			]
+			],
+			"return": {
+				"type": "boolean",
+				"nullable": true,
+				"description": "<code>false</code> to prevent it"
+			}
 		},
 		{
 			"authority": "both",
@@ -1933,7 +1953,7 @@
 		{
 			"authority": "both",
 			"name": "TakeDamage",
-			"description": "Return false to cancel the damage (will still display animations, particles and apply impact forces)",
+			"description": "Triggered when this Character takes damage",
 			"arguments": [
 				{
 					"type": "Character",
@@ -1970,7 +1990,12 @@
 					"name": "causer",
 					"description": "The object which caused the damage"
 				}
-			]
+			],
+			"return": {
+				"type": "boolean",
+				"nullable": true,
+				"description": "<code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
+			}
 		},
 		{
 			"authority": "both",
