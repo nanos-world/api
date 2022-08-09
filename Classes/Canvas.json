@@ -39,7 +39,7 @@
 			"default": "0"
 		}
 	],
-    "functions": [
+	"functions": [
 		{
 			"authority": "client",
 			"name": "DrawBox",
@@ -347,11 +347,11 @@
 				}
 			]
 		}
-    ],
+	],
 	"events": [
 		{
 			"name": "Update",
-            "authority": "client",
+			"authority": "client",
 			"description": "Called when the Canvas needs to be painted<br/><br/>You can only call <code>:Draw...()</code> methods from inside this event",
 			"arguments": [
 				{

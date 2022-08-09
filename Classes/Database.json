@@ -2,7 +2,7 @@
 	"name": "Database",
 	"description": "The Database entity provides programmers a way to access SQL databases easily through scripting.",
 	"authority": "server",
-    "functions": [
+	"functions": [
  
-    ]
+	]
 }

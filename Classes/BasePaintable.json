@@ -2,10 +2,10 @@
 	"name": "Paintable",
 	"description": "Base class for all Paintable entities.",
 	"authority": "both",
-    "static_functions": [
+	"static_functions": [
 
-    ],
-    "events": [
-        
-    ]
+	],
+	"events": [
+		
+	]
 }

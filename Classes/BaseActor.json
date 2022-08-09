@@ -2,10 +2,10 @@
 	"name": "Actor",
 	"description": "Base class for all Actor entities.",
 	"authority": "both",
-    "static_functions": [
+	"static_functions": [
 
-    ],
-    "events": [
-        
-    ]
+	],
+	"events": [
+		
+	]
 }
