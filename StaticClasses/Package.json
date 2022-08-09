@@ -1,0 +1,278 @@
+{
+	"name": "Package",
+	"description": "Class which represents the current Package",
+	"authority": "both",
+	"static_functions": [
+		{
+			"name": "Log",
+			"description": "Logs and formats a message in the console, with formatted arguments",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		},
+		{
+			"name": "Warn",
+			"description": "Logs an orange warning in the console, with formatted arguments",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		},
+		{
+			"name": "Error",
+			"description": "Logs a red error in the console, with formatted arguments",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		},
+		{
+			"name": "Call",
+			"description": "Calls an exported function from another Package",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "Name of the package to call"
+				},
+				{
+					"type": "string",
+					"name": "function_name",
+					"description": "Name of the function to call from the package"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the function"
+				}
+			],
+			"return": {
+				"type": "any",
+				"description": "Any return values from the called function"
+			}
+		},
+		{
+			"name": "Export",
+			"description": "'Exports' a function to be called from any other Package",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "function_name",
+					"description": "Name of the function to export from the current package"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Function to be called by other packages"
+				}
+			]
+		},
+		{
+			"name": "Require",
+			"description": "Includes new .lua files",
+			"description_long": "Includes new .lua files<br/><br/>We currently support 5 searchers, which are looked in the following order:<br/><br/>Relative to current-file-path/<br/><br/>Relative to current-package/Client/ or current-package/Server/ (depending on your side)<br/><br/>Relative to current-package/Shared/<br/><br/>Relative to current-package/<br/><br/>Relative to Packages/",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "script_file",
+					"description": "Path to the script file to require"
+				}
+			]
+		},
+		{
+			"name": "RequirePackage",
+			"description": "Includes other Package in this Package",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "Package to require"
+				}
+			]
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes to an Event",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback to run on the event occuring"
+				}
+			],
+			"return": {
+				"type": "function",
+				"description": "The function callback"
+			}
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event to unsubscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "Optional callback to specifically unsubscribe to"
+				}
+			]
+		},
+		{
+			"name": "SetPersistentData",
+			"description": "Sets a Persistent Value which will be saved to disk",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "Key to index data into"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "Value to set at the key"
+				}
+			]
+		},
+		{
+			"name": "GetDirectories",
+			"description": "Gets a list of all directories in this package",
+			"description_long": "Gets a list of all files in this package, optionally with filters",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "path_filter",
+					"default": "",
+					"description": "Path filter"
+				}
+			],
+			"return": {
+				"type": "string",
+				"is_array": true,
+				"description": "List of directories"
+			}
+		},
+		{
+			"name": "GetFiles",
+			"description": "Gets a list of all files in this package",
+			"description_long": "Gets a list of all files in this package, optionally with filters",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "path_filter",
+					"default": "",
+					"description": "Path filter"
+				}
+			],
+			"return": {
+				"type": "string",
+				"is_array": true,
+				"description": "List of files"
+			}
+		},
+		{
+			"name": "GetName",
+			"description": "Gives the package name",
+			"authority": "both",
+			"parameters": [],
+			"return": {
+				"type": "string",
+				"description": "The package name"
+			}
+		},
+		{
+			"name": "GetPath",
+			"description": "Gives the package path",
+			"authority": "both",
+			"parameters": [],
+			"return": {
+				"type": "string",
+				"description": "The package path"
+			}
+		},
+		{
+			"name": "GetVersion",
+			"description": "Gives the package version",
+			"authority": "both",
+			"parameters": [],
+			"return": {
+				"type": "string",
+				"description": "The package version"
+			}
+		},
+		{
+			"name": "GetPersistentData",
+			"description": "Gets all Persistent Values from the disk",
+			"authority": "both",
+			"parameters": [],
+			"return": {
+				"type": "table",
+				"description": "Persistent values from disk"
+			}
+		}
+	],
+	"events": [
+		{
+			"name": "Load",
+			"authority": "both",
+			"description": "Called when this package is loaded",
+			"arguments": []
+		},
+		{
+			"name": "Unload",
+			"authority": "both",
+			"description": "Called when this package is unloaded",
+			"arguments": []
+		}
+	]
+}
