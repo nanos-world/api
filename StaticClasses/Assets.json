@@ -21,7 +21,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetAnimations",
@@ -37,7 +38,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetMaps",
@@ -53,7 +55,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetMaterials",
@@ -69,7 +72,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetParticles",
@@ -85,7 +89,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetSounds",
@@ -101,7 +106,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetSkeletalMeshes",
@@ -117,7 +123,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetStaticMeshes",
@@ -133,7 +140,8 @@
 		},
 		{
 			"return": {
-				"type": "table",
+				"type": "string",
+				"is_array": true,
 				"description": "array of strings"
 			},
 			"name": "GetOthers",

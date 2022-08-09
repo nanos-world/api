@@ -1,15 +1,15 @@
 {
 	"name": "Actor",
 	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>In nanos world, <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
-	"authority": "both",
 	"static_functions": [
 		{
 			"name": "GetAll",
 			"description": "Returns a table containing all Actors of the class this is called on",
 			"authority": "both",
 			"return": {
-				"type": "table",
-				"description": "Copy of table containing all actors"
+				"type": "Actor",
+				"is_array": true,
+				"description": "copy of table containing all actors"
 			}
 		},
 		{
@@ -20,7 +20,7 @@
 				{
 					"type": "number",
 					"name": "index",
-					"description": "The index of the Actor"
+					"description": "the index of the Actor"
 				}
 			],
 			"return": {
@@ -34,7 +34,7 @@
 			"authority": "both",
 			"return": {
 				"type": "number",
-				"description": "Number of Actors of this class"
+				"description": "number of Actors of this class"
 			}
 		},
 		{
@@ -400,7 +400,8 @@
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
 			"return": {
-				"type": "Actor[]"
+				"type": "Actor",
+				"is_array": true
 			}
 		},
 		{
@@ -408,7 +409,8 @@
 			"description": "Gets the Actor this Actor is attached to",
 			"authority": "both",
 			"return": {
-				"type": "Actor?"
+				"type": "Actor",
+				"nullable": true
 			}
 		},
 		{
@@ -417,7 +419,7 @@
 			"authority": "client",
 			"return": {
 				"type": "table",
-				"description": "Returns table in the format <code>{\"Origin\", \"BoxExtent\", \"SphereRadius\"}</code>"
+				"description": "in the format <code>{\"Origin\", \"BoxExtent\", \"SphereRadius\"}</code>"
 			}
 		},
 		{
