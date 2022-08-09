@@ -116,7 +116,6 @@
 		{
 			"name": "IsNearlyZero",
 			"description": "Checks whether vector is near to zero within a specified tolerance",
-			//"description_long": "",
 			"return": {
 				"type": "boolean",
 				"description": "If the bool is near to zero"
@@ -133,52 +132,42 @@
 		{
 			"name": "IsZero",
 			"description": "Checks whether all components of the vector are exactly zero",
-			//"description_long": "",
 			"return": {
 				"type": "boolean",
 				"description": "If all components of the vector are exactly zero"
-			},
-			"parameters": []
+			}
 		},
 		{
 			"name": "Normalize",
 			"description": "Normalize this vector in-place if it is larger than a given tolerance. Leaves it unchanged if not",
-			//"description_long": "",
 			"return": {
 				"type": "boolean",
 				"description": "If the vector has been modified"
-			},
-			"parameters": []
+			}
 		},
 		{
 			"name": "Size",
 			"description": "Get the length (magnitude) of this vector",
-			//"description_long": "",
 			"return": {
 				"type": "number",
 				"description": "The lenght of the vector"
-			},
-			"parameters": []
+			}
 		},
 		{
 			"name": "SizeSquared",
 			"description": "Get the squared length of this vector",
-			//"description_long": "",
 			"return": {
 				"type": "number",
 				"description": "The squared length of the vector"
-			},
-			"parameters": []
+			}
 		},
 		{
 			"name": "Rotation",
 			"description": "Returns the orientation corresponding to the direction in which the vector points",
-			//"description_long": "",
 			"return": {
 				"type": "Rotator",
 				"description": "The orientation of the vector"
-			},
-			"parameters": []
-		},
-	],
+			}
+		}
+	]
 }
