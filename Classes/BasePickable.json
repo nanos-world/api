@@ -235,8 +235,7 @@
 			],
 			"return": {
 				"type": "boolean",
-				"nullable": true,
-				"description": "<code>false</code> to prevent the interaction"
+				"description": "Return <code>false</code> to prevent the interaction"
 			}
 		},
 		{

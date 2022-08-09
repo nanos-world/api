@@ -1092,8 +1092,7 @@
 			"name": "IsInRagdollMode",
 			"description": "Gets if Character is in ragdoll mode",
 			"return": {
-				"type": "boolean",
-				"description": "if it's in ragdoll mode"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1101,8 +1100,7 @@
 			"name": "IsInvulnerable",
 			"description": "Gets if is invulnerable",
 			"return": {
-				"type": "boolean",
-				"description": "if is invulnerable"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1110,8 +1108,7 @@
 			"name": "IsMovementEnabled",
 			"description": "Gets if has movement enabled",
 			"return": {
-				"type": "boolean",
-				"description": "if has movement enabled"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1119,8 +1116,7 @@
 			"name": "GetCameraMode",
 			"description": "Gets the camera mode",
 			"return": {
-				"type": "CameraMode",
-				"description": "the camera mode"
+				"type": "CameraMode"
 			}
 		},
 		{
@@ -1128,8 +1124,7 @@
 			"name": "GetCanDrop",
 			"description": "Gets if can drop",
 			"return": {
-				"type": "boolean",
-				"description": "if can drop"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1137,8 +1132,7 @@
 			"name": "GetCanPunch",
 			"description": "Gets if can punch",
 			"return": {
-				"type": "boolean",
-				"description": "if can punch"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1146,8 +1140,7 @@
 			"name": "GetCanAim",
 			"description": "Gets if can aim",
 			"return": {
-				"type": "boolean",
-				"description": "if can aim"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1155,8 +1148,7 @@
 			"name": "GetCanCrouch",
 			"description": "Gets if can crouch",
 			"return": {
-				"type": "boolean",
-				"description": "if can crouch"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1164,8 +1156,7 @@
 			"name": "GetCanSprint",
 			"description": "Gets if can sprint",
 			"return": {
-				"type": "boolean",
-				"description": "if can sprint"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1173,8 +1164,7 @@
 			"name": "GetCanGrabProps",
 			"description": "Gets if can grab props",
 			"return": {
-				"type": "boolean",
-				"description": "if can grab props"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1182,8 +1172,7 @@
 			"name": "GetCanPickupPickables",
 			"description": "Gets if can pickup Pickables (Weapons, Melee, Grenade...)",
 			"return": {
-				"type": "boolean",
-				"description": "if can pickup Pickables"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1215,8 +1204,7 @@
 			"name": "GetControlRotation",
 			"description": "Gets the Control Rotation",
 			"return": {
-				"type": "Rotator",
-				"description": "the control rotation"
+				"type": "Rotator"
 			}
 		},
 		{
@@ -1239,8 +1227,7 @@
 			"name": "GetFallDamageTaken",
 			"description": "Gets the Fall Damage",
 			"return": {
-				"type": "number",
-				"description": "the fall damage"
+				"type": "number"
 			}
 		},
 		{
@@ -1248,17 +1235,15 @@
 			"name": "GetFallingMode",
 			"description": "Gets the FallingMode",
 			"return": {
-				"type": "FallingMode",
-				"description": "the FallingMode"
+				"type": "FallingMode"
 			}
 		},
 		{
 			"authority": "both",
 			"name": "GetFlyingMode",
-			"description": "Gets the FlyingMode",
+			"description": "Gets if it's in Flying mode",
 			"return": {
-				"type": "FlyingMode",
-				"description": "the FlyingMode"
+				"type": "boolean"
 			}
 		},
 		{
@@ -1266,8 +1251,7 @@
 			"name": "GetGaitMode",
 			"description": "Gets the GaitMode",
 			"return": {
-				"type": "GaitMode",
-				"description": "the GaitMode"
+				"type": "GaitMode"
 			}
 		},
 		{
@@ -1275,8 +1259,7 @@
 			"name": "GetGrabbedProp",
 			"description": "Gets the Grabbed Prop",
 			"return": {
-				"type": "Prop",
-				"description": "the grabbed Prop or nil"
+				"type": "Prop?"
 			}
 		},
 		{
@@ -1284,8 +1267,7 @@
 			"name": "GetGravityScale",
 			"description": "Gets the gravity scale",
 			"return": {
-				"type": "number",
-				"description": "the gravity scale"
+				"type": "number"
 			}
 		},
 		{
@@ -1293,8 +1275,7 @@
 			"name": "GetHealth",
 			"description": "Gets the current health",
 			"return": {
-				"type": "number",
-				"description": "the health"
+				"type": "number"
 			}
 		},
 		{
@@ -1302,8 +1283,7 @@
 			"name": "GetImpactDamageTaken",
 			"description": "Gets the impact damage taken",
 			"return": {
-				"type": "number",
-				"description": "the impact damage taken"
+				"type": "number"
 			}
 		},
 		{
@@ -1311,8 +1291,7 @@
 			"name": "GetJumpZVelocity",
 			"description": "Gets the Jump Z Velocity",
 			"return": {
-				"type": "number",
-				"description": "the Jump Z Velocity"
+				"type": "number"
 			}
 		},
 		{
@@ -1320,8 +1299,7 @@
 			"name": "GetMaxHealth",
 			"description": "Gets the Max Health",
 			"return": {
-				"type": "number",
-				"description": "the max health"
+				"type": "number"
 			}
 		},
 		{
@@ -1329,8 +1307,7 @@
 			"name": "GetMesh",
 			"description": "Gets the Skeletal Mesh Asset",
 			"return": {
-				"type": "SkeletalMeshPath",
-				"description": "the Skeletal Mesh Asset"
+				"type": "SkeletalMeshPath"
 			}
 		},
 		{
@@ -1347,8 +1324,7 @@
 			"name": "GetPicked",
 			"description": "Gets the Pickable if picking up",
 			"return": {
-				"type": "Pickable",
-				"description": "the Pickable entity or nil"
+				"type": "Pickable?"
 			}
 		},
 		{
@@ -1356,8 +1332,7 @@
 			"name": "GetPlayer",
 			"description": "Gets the possessing Player",
 			"return": {
-				"type": "Player",
-				"description": "the Player entity or nil"
+				"type": "Player?"
 			}
 		},
 		{
@@ -1365,8 +1340,7 @@
 			"name": "GetPunchDamage",
 			"description": "Gets the punch damage",
 			"return": {
-				"type": "number",
-				"description": "the punch damage"
+				"type": "number"
 			}
 		},
 		{
@@ -1374,8 +1348,7 @@
 			"name": "GetSpeedMultiplier",
 			"description": "Gets the speed multiplier",
 			"return": {
-				"type": "number",
-				"description": "the speed multiplier"
+				"type": "number"
 			}
 		},
 		{
@@ -1383,8 +1356,7 @@
 			"name": "GetStanceMode",
 			"description": "Gets the Stance Mode",
 			"return": {
-				"type": "StanceMode",
-				"description": "the StanceMode"
+				"type": "StanceMode"
 			}
 		},
 		{
@@ -1392,8 +1364,7 @@
 			"name": "GetSwimmingMode",
 			"description": "Gets the Swimming Mode",
 			"return": {
-				"type": "SwimmingMode",
-				"description": "the SwimmingMode"
+				"type": "SwimmingMode"
 			}
 		},
 		{
@@ -1401,8 +1372,7 @@
 			"name": "GetTeam",
 			"description": "Gets the Team",
 			"return": {
-				"type": "number",
-				"description": "the team"
+				"type": "number"
 			}
 		},
 		{
@@ -1410,8 +1380,7 @@
 			"name": "GetVehicle",
 			"description": "Gets the entered Vehicle",
 			"return": {
-				"type": "Vehicle",
-				"description": "the Vehicle entity or nil"
+				"type": "Vehicle?"
 			}
 		},
 		{
@@ -1419,8 +1388,7 @@
 			"name": "GetViewMode",
 			"description": "Gets the View Mode",
 			"return": {
-				"type": "ViewMode",
-				"description": "the ViewMode"
+				"type": "ViewMode"
 			}
 		},
 		{
@@ -1428,8 +1396,7 @@
 			"name": "GetWeaponAimMode",
 			"description": "Gets the Weapon Aim Mode",
 			"return": {
-				"type": "AimMode",
-				"description": "the AimMode"
+				"type": "AimMode"
 			}
 		}
 	],
@@ -1499,12 +1466,12 @@
 					"description": ""
 				},
 				{
-					"type": "Player",
+					"type": "Player?",
 					"name": "instigator",
 					"description": ""
 				},
 				{
-					"type": "any",
+					"type": "Actor?",
 					"name": "causer",
 					"description": "The object which caused the damage"
 				}
@@ -1577,8 +1544,7 @@
 			],
 			"return": {
 				"type": "boolean",
-				"nullable": true,
-				"description": "<code>false</code> to prevent it"
+				"description": "Return <code>false</code> to prevent it"
 			}
 		},
 		{
@@ -1721,8 +1687,7 @@
 			],
 			"return": {
 				"type": "boolean",
-				"nullable": true,
-				"description": "<code>false</code> to prevent it"
+				"description": "Return <code>false</code> to prevent it"
 			}
 		},
 		{
@@ -1760,8 +1725,7 @@
 			],
 			"return": {
 				"type": "boolean",
-				"nullable": true,
-				"description": "<code>false</code> to prevent it"
+				"description": "Return <code>false</code> to prevent it"
 			}
 		},
 		{
@@ -1867,8 +1831,7 @@
 			],
 			"return": {
 				"type": "boolean",
-				"nullable": true,
-				"description": "<code>false</code> to prevent it"
+				"description": "Return <code>false</code> to prevent it"
 			}
 		},
 		{
@@ -1992,8 +1955,7 @@
 			],
 			"return": {
 				"type": "boolean",
-				"nullable": true,
-				"description": "<code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
+				"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
 			}
 		},
 		{
