@@ -1,0 +1,60 @@
+{
+	"name": "Matrix",
+	"description": "A Matrix is an array of numbers this can be used for geometric and positional calculations",
+	"constructor": [
+		{
+			"name": "rotation",
+			"type": "Rotation",
+			"description": "The rotation of the matrix"
+		},
+		{
+			"name": "origin",
+			"type": "Vector",
+			"description": "The origin of the matrix"
+		}
+	],
+	"functions": [
+		{
+			"name": "TransformVector",
+			"description": "Transform the vector with the matrix",
+			//"description_long": "",
+			"return": {
+				"type": "Vector",
+				"description": "The new vector"
+			},
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "vector",
+					"description": "The vector who will be transformed"
+				},
+			]
+		},
+		{
+			"name": "TransformVector4",
+			"description": "Transform the vector with the matrix",
+			//"description_long": "",
+			"return": {
+				"type": "Vector4",
+				"description": "The new vector4"
+			},
+			"parameters": [
+				{
+					"type": "Vector4",
+					"name": "vector",
+					"description": "The vector4 who will be transformed"
+				},
+			]
+		},
+		{
+			"name": "GetTransposed",
+			"description": "Returns a new matrix transposed (https://en.wikipedia.org/wiki/Transpose)",
+			//"description_long": "",
+			"return": {
+				"type": "Matrix",
+				"description": "The matrix transpoosed"
+			},
+			"parameters": []
+		},
+	]
+}
