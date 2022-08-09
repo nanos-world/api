@@ -1,0 +1,242 @@
+{
+    "name": "Color",
+    "description": "A color composed of components (R, G, B, A) with floating point precision.",
+    "constructor": [
+        {
+            "name": "R",
+            "type": "number",
+            "default": "0",
+            "description": "Red color percentage (0-1)"
+        },
+        {
+            "name": "G",
+            "type": "number",
+            "default": "0",
+            "description": "Green color percentage (0-1)"
+        },
+        {
+            "name": "B",
+            "type": "number",
+            "default": "0",
+            "description": "Blue color percentage (0-1)"
+        },
+        {
+            "name": "A",
+            "type": "number",
+            "default": "0",
+            "description": "Alpha transparency percentage (0-1)"
+        }
+    ],
+    "properties": [
+        {
+            "name": "R",
+            "type": "number",
+            "description": "Red color percentage (0-1)"
+        },
+        {
+            "name": "G",
+            "type": "number",
+            "description": "Green color percentage (0-1)"
+        },
+        {
+            "name": "B",
+            "type": "number",
+            "description": "Blue color percentage (0-1)"
+        },
+        {
+            "name": "A",
+            "type": "number",
+            "description": "Alpha transparency percentage (0-1)"
+        }
+    ],
+    "functions": [
+        {
+            "name": "ToHex",
+            "description": "Gets the Hexadecimal representation of this Color",
+            "return":
+            {
+                "type": "string",
+                "description": "Hexadecimal representation of this Color"
+            }
+        }
+    ],
+    "static_functions": [
+        {
+            "name": "RandomPalette",
+            "description": "Returns a random color from Color Palette",
+            "parameters": [
+                {
+                    "name": "includes_black",
+                    "type": "boolean",
+                    "default": "true",
+                    "description": "Includes blacks in the scope"
+                }
+            ],
+            "return":
+            {
+                "type": "Color",
+                "description": "Random color from Color Palette"
+            }
+        },
+        {
+            "name": "Random",
+            "description": "Returns a random color from all color scope",
+            "return":
+            {
+                "type": "Color",
+                "description": "Random color from all color scope"
+            }
+        },
+        {
+            "name": "FromRGBA",
+            "description": "Returns the color from 0-255 range values",
+            "parameters": [
+                {
+                    "name": "r",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Red"
+                },
+                {
+                    "name": "g",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Green"
+                },
+                {
+                    "name": "b",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Blue"
+                },
+                {
+                    "name": "a",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Alpha"
+                }
+            ],
+            "return":
+            {
+                "type": "Color",
+                "description": "Final Color"
+            }
+        },
+        {
+            "name": "FromCYMK",
+            "description": "Returns a color from the CYMK format",
+            "parameters": [
+                {
+                    "name": "c",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Cyan"
+                },
+                {
+                    "name": "y",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Yellow"
+                },
+                {
+                    "name": "m",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Magenta"
+                },
+                {
+                    "name": "k",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Black"
+                },
+                {
+                    "name": "a",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Alpha"
+                }
+            ],
+            "return":
+            {
+                "type": "Color",
+                "description": "Final Color"
+            }
+        },
+        {
+            "name": "FromHSL",
+            "description": "Returns a color from the HSL format",
+            "parameters": [
+                {
+                    "name": "h",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Hue"
+                },
+                {
+                    "name": "s",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Saturation"
+                },
+                {
+                    "name": "l",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Lightness"
+                }
+            ],
+            "return":
+            {
+                "type": "Color",
+                "description": "Final Color"
+            }
+        },
+        {
+            "name": "FromHSV",
+            "description": "Returns a color from the HSV format",
+            "parameters": [
+                {
+                    "name": "h",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Hue"
+                },
+                {
+                    "name": "s",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Saturation"
+                },
+                {
+                    "name": "v",
+                    "type": "number",
+                    "default": "0",
+                    "description": "Value"
+                }
+            ],
+            "return":
+            {
+                "type": "Color",
+                "description": "Final Color"
+            }
+        },
+        {
+            "name": "FromHEX",
+            "description": "Returns a color from the Hexadecimal format",
+            "parameters": [
+                {
+                    "name": "hex",
+                    "type": "string",
+                    "default": "",
+                    "description": "Hexadecimal"
+                }
+            ],
+            "return":
+            {
+                "type": "Color",
+                "description": "Final Color"
+            }
+        }
+    ]
+}
