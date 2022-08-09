@@ -5,8 +5,7 @@
 	"static_functions": [
 		{
 			"return": {
-				"type": "table",
-				"is_array": true,
+				"type": "table[]",
 				"description": "in the format <code>[{Name, Path, Author, Version}, ...]</code>"
 			},
 			"name": "GetAssetPacks",
@@ -22,8 +21,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetAnimations",
@@ -39,8 +37,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetMaps",
@@ -56,8 +53,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetMaterials",
@@ -73,8 +69,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetParticles",
@@ -90,8 +85,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetSounds",
@@ -107,8 +101,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetSkeletalMeshes",
@@ -124,8 +117,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetStaticMeshes",
@@ -141,8 +133,7 @@
 		},
 		{
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "array of strings"
 			},
 			"name": "GetOthers",

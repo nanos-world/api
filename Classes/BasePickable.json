@@ -158,8 +158,7 @@
 			"name": "GetHandler",
 			"description": "Gets the Character, if it exists, that's holding this Pickable",
 			"return": {
-				"type": "Character",
-				"nullable": true
+				"type": "Character?"
 			}
 		}
 	],

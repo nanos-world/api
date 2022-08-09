@@ -1,10 +1,12 @@
 {
 	"name": "Package",
 	"description": "Class which represents the current Package",
+	"authority": "both",
 	"static_functions": [
 		{
 			"name": "Log",
 			"description": "Logs and formats a message in the console, with formatted arguments",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -22,6 +24,7 @@
 		{
 			"name": "Warn",
 			"description": "Logs an orange warning in the console, with formatted arguments",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -39,6 +42,7 @@
 		{
 			"name": "Error",
 			"description": "Logs a red error in the console, with formatted arguments",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -56,6 +60,7 @@
 		{
 			"name": "Call",
 			"description": "Calls an exported function from another Package",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -82,6 +87,7 @@
 		{
 			"name": "Export",
 			"description": "'Exports' a function to be called from any other Package",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -98,7 +104,8 @@
 		{
 			"name": "Require",
 			"description": "Includes new .lua files",
-			"description_long": "Includes new .lua files<br/><br/>We currently support 5 searchers, which are looked in the following order:<br/><br/>Relative to current-file-path/<br/><br/>Relative to current-package/Client/ or current-package/Server/ (depending on your side)<br/><br/>Relative to current-package/Shared/<br/><br/>Relative to current-package/<br/><br/>Relative to Packages/",
+			"description_long": "Includes new .lua files<br/><br/>We currently support 5 searchers, which are looked in the following order:<br/><ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code></li><li>Relative to <code>Packages/</code></li></ol>",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -110,6 +117,7 @@
 		{
 			"name": "RequirePackage",
 			"description": "Includes other Package in this Package",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -121,6 +129,7 @@
 		{
 			"name": "Subscribe",
 			"description": "Subscribes to an Event",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -141,6 +150,7 @@
 		{
 			"name": "Unsubscribe",
 			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -158,6 +168,7 @@
 		{
 			"name": "SetPersistentData",
 			"description": "Sets a Persistent Value which will be saved to disk",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -175,6 +186,7 @@
 			"name": "GetDirectories",
 			"description": "Gets a list of all directories in this package",
 			"description_long": "Gets a list of all files in this package, optionally with filters",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -193,9 +205,10 @@
 			"name": "GetFiles",
 			"description": "Gets a list of all files in this package",
 			"description_long": "Gets a list of all files in this package, optionally with filters",
+			"authority": "both",
 			"parameters": [
 				{
-					"type": "string",
+					"type": "string|table",
 					"name": "path_filter",
 					"default": "",
 					"description": "Path filter"
@@ -210,6 +223,7 @@
 		{
 			"name": "GetName",
 			"description": "Gives the package name",
+			"authority": "both",
 			"return": {
 				"type": "string",
 				"description": "The package name"
@@ -218,6 +232,7 @@
 		{
 			"name": "GetPath",
 			"description": "Gives the package path",
+			"authority": "both",
 			"return": {
 				"type": "string",
 				"description": "The package path"
@@ -226,6 +241,7 @@
 		{
 			"name": "GetVersion",
 			"description": "Gives the package version",
+			"authority": "both",
 			"return": {
 				"type": "string",
 				"description": "The package version"
@@ -234,6 +250,7 @@
 		{
 			"name": "GetPersistentData",
 			"description": "Gets all Persistent Values from the disk",
+			"authority": "both",
 			"return": {
 				"type": "table",
 				"description": "Persistent values from disk"
@@ -243,10 +260,13 @@
 	"events": [
 		{
 			"name": "Load",
-			"description": "Called when this package is loaded"
+			"authority": "both",
+			"description": "Called when this package is loaded",
+			"description_long": "Called when this package is loaded<br/><br/>This event is triggered differently depending on the situation:<br/><ul><li>When the <b>server starts</b> or you run <code>package reload all</code> the event triggers only after ALL packages are loaded.</li><li>In all other cases (<code>package load/reload</code> or <code>Package.Load/Reload</code>) the event is triggered immediately after the package is loaded/reloaded.</li></ul>"
 		},
 		{
 			"name": "Unload",
+			"authority": "both",
 			"description": "Called when this package is unloaded"
 		}
 	]

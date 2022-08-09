@@ -883,8 +883,7 @@
 			"name": "GetAllMorphTargetNames",
 			"description": "Returns a table with all morph targets available",
 			"return": {
-				"type": "string",
-				"is_array": true,
+				"type": "string[]",
 				"description": "table with all morph targets available"
 			}
 		},

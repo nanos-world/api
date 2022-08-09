@@ -7,8 +7,7 @@
 			"description": "Returns a table containing all Actors of the class this is called on",
 			"authority": "both",
 			"return": {
-				"type": "Actor",
-				"is_array": true,
+				"type": "Actor[]",
 				"description": "copy of table containing all actors"
 			}
 		},
@@ -400,8 +399,7 @@
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
 			"return": {
-				"type": "Actor",
-				"is_array": true
+				"type": "Actor[]"
 			}
 		},
 		{
@@ -409,8 +407,7 @@
 			"description": "Gets the Actor this Actor is attached to",
 			"authority": "both",
 			"return": {
-				"type": "Actor",
-				"nullable": true
+				"type": "Actor?"
 			}
 		},
 		{
