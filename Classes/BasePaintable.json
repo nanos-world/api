@@ -1,11 +1,165 @@
 {
 	"name": "Paintable",
-	"description": "Base class for all Paintable entities. It shares methods for customizing it's materials.",
-	"authority": "both",
-	"static_functions": [
-
-	],
-	"events": [
-		
+	"description_long": "A Paintable class is a base class in nanos world which provides customization for materials, exposing common functions to allow you to set custom material parameters, including loading textures from disk.",
+	"functions": [
+		{
+			"name": "SetMaterial",
+			"description": "Sets the material at the specified index of this Actor",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "material_path",
+					"description": "The new Material to apply"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply the material to - <code>-1</code> means all indices"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMaterialFromCanvas",
+			"description": "Sets the material at the specified index of this Actor to a Canvas object",
+			"parameters": [
+				{
+					"type": "Canvas",
+					"name": "canvas",
+					"description": "The Canvas object to use as a material"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply the material to - <code>-1</code> means all indices"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMaterialFromSceneCapture",
+			"description": "Sets the material at the specified index of this Actor to a SceneCapture object",
+			"parameters": [
+				{
+					"type": "SceneCapture",
+					"name": "scene_capture",
+					"description": "The SceneCapture object to use as a material"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply the material to - <code>-1</code> means all indices"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMaterialFromWebUI",
+			"description": "Sets the material at the specified index of this Actor to a WebUI object",
+			"parameters": [
+				{
+					"type": "WebUI",
+					"name": "webui",
+					"description": "The WebUI object to use as a material"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply the material to - <code>-1</code> means all indices"
+				}
+			]
+		},
+		{
+			"name": "ResetMaterial",
+			"description": "Resets the material from the specified index to the original one",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to reset the material of - <code>-1</code> means all indices"
+				}
+			]
+		},
+		{
+			"name": "SetMaterialColorParameter",
+			"description": "Sets a Color parameter in this Actor's material",
+			"description_long": "Sets a Color parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"name": "SetMaterialScalarParameter",
+			"description": "Sets a scalar parameter in this Actor's material",
+			"description_long": "Sets a scalar parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"name": "SetMaterialTextureParameter",
+			"description": "Sets a texture parameter in this Actor's material",
+			"description_long": "Sets a texture parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "ImagePath",
+					"name": "texture_path",
+					"description": "The path to the texture"
+				}
+			]
+		},
+		{
+			"name": "SetMaterialVectorParameter",
+			"description": "Sets a Vector parameter in this Actor's material",
+			"description_long": "Sets a Vector parameter in this Actor's material<br><br>For setting a parameter in an Attachable mesh, use the following <code>parameter_name</code> pattern: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "Vector",
+					"name": "vector"
+				}
+			]
+		},
+		{
+			"name": "SetPhysicalMaterial",
+			"description": "Overrides this Actor's Physical Material with a new one",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "physical_material_path",
+					"description": "The path to a Physical Material to override with"
+				}
+			]
+		}
 	]
 }
