@@ -6,7 +6,7 @@
 		{
 			"authority": "client",
 			"name": "Bind",
-			"description": "Binds a function to an Input defined using `Register` or from Game",
+			"description": "Binds a function to an Input defined using `Register` or from the game",
 			"parameters": [
 				{
 					"type": "string",
@@ -63,7 +63,7 @@
 		{
 			"authority": "client",
 			"name": "Unregister",
-			"description": "Unregisters a BindingName",
+			"description": "Unregisters a keybinding",
 			"parameters": [
 				{
 					"type": "string",
@@ -102,7 +102,7 @@
 		{
 			"authority": "client",
 			"name": "GetMappedKey",
-			"description": "Returns the Key given a BindingName",
+			"description": "Returns the key bound to a keybinding",
 			"parameters": [
 				{
 					"type": "string",
@@ -117,7 +117,7 @@
 		{
 			"authority": "client",
 			"name": "ResetBindings",
-			"description": "Resets all Bound functions by this Package"
+			"description": "Resets all bound functions by this Package"
 		},
 		{
 			"authority": "client",
