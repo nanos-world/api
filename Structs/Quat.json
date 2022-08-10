@@ -57,20 +57,22 @@
 		{
 			"name": "Rotator",
 			"description": "Get the Rotator representation of this Quaternion",
-			"return":
-			{
-				"type": "Rotator",
-				"description": "Rotator representation of this Quaternion"
-			}
+			"return": [
+				{
+					"type": "Rotator",
+					"description": "Rotator representation of this Quaternion"
+				}
+			]
 		},
 		{
 			"name": "Inverse",
 			"description": "Returns the inverse of this Quaternion",
-			"return":
-			{
-				"type": "Quat",
-				"description": "Inverse of this Quaternion"
-			}
+			"return": [
+				{
+					"type": "Quat",
+					"description": "Inverse of this Quaternion"
+				}
+			]
 		}
 	]
 }
