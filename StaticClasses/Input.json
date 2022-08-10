@@ -1,0 +1,131 @@
+{
+	"name": "Input",
+	"description": "Create custom keybindings and retrieve input information.",
+	"authority": "client",
+	"static_functions": [
+		{
+			"authority": "client",
+			"name": "Bind",
+			"description": "Binds a function to an Input defined using `Register` or from Game",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				},
+				{
+					"type": "InputEvent",
+					"name": "input_event",
+					"description": "Which event to register (Released/Pressed)"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The function to trigger"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "Unbind",
+			"description": "Unbinds an Input function",
+			"description_long": "Unbinds all Input functions related to the given binding_name and input_event",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				},
+				{
+					"type": "InputEvent",
+					"name": "input_event",
+					"description": "Which event to register (Released/Pressed)"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "Register",
+			"description": "Registers a keybinding to a default key",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				},
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "Unregister",
+			"description": "Unregisters a BindingName",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				},
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetKeyIcon",
+			"description": "Gets the icon path of a key",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"default": "",
+					"description": ""
+				},
+				{
+					"type": "boolean",
+					"name": "dark_mode",
+					"default": "false",
+					"description": ""
+				}
+			],
+			"return": {
+				"type": "string"
+			}
+		},
+		{
+			"authority": "client",
+			"name": "GetMappedKey",
+			"description": "Returns the Key given a BindingName",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				}
+			],
+			"return": {
+				"type": "string"
+			}
+		},
+		{
+			"authority": "client",
+			"name": "ResetBindings",
+			"description": "Resets all Bound functions by this Package"
+		},
+		{
+			"authority": "client",
+			"name": "GetScriptingKeyBindings",
+			"description": "Returns a table with all Scripting KeyBindings",
+			"return": {
+				"type": "table"
+			}
+		}
+	]
+}
