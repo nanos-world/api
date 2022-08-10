@@ -1,21 +1,20 @@
 {
 	"name": "NanosMath",
-	"description": "A table containing useful and aux Math functions",
-	"authority": "both",
+	"description": "A table containing useful and aux Math functions.",
 	"static_functions": [
 		{
 			"name": "Round",
 			"description": "Rounds a number",
 			"return": {
 				"type": "number",
-				"description": "The rounded number"
+				"description": "the rounded number"
 			},
 			"parameters": [
 				{
 					"type": "number",
 					"name": "value",
-					"description": "The number who will be rounded"
-				},
+					"description": "The number to be rounded"
+				}
 			]
 		},
 		{
@@ -23,13 +22,13 @@
 			"description": "Clamps a number",
 			"return": {
 				"type": "number",
-				"description": "The number clamped"
+				"description": "the number clamped"
 			},
 			"parameters": [
 				{
 					"type": "number",
 					"name": "value",
-					"description": "The number who will be clamped"
+					"description": "The number to be clamped"
 				},
 				{
 					"type": "number",
@@ -40,7 +39,7 @@
 					"type": "number",
 					"name": "max",
 					"description": "The max value"
-				},
+				}
 			]
 		},
 		{
@@ -48,14 +47,14 @@
 			"description": "Clamps an angle to the range of [0, 360]",
 			"return": {
 				"type": "number",
-				"description": "The number clamped"
+				"description": "the number clamped"
 			},
 			"parameters": [
 				{
 					"type": "number",
 					"name": "value",
-					"description": "The number who will be clamped"
-				},
+					"description": "The number to be clamped"
+				}
 			]
 		},
 		{
@@ -63,14 +62,14 @@
 			"description": "Clamps an angle to the range of [-180, 180]",
 			"return": {
 				"type": "number",
-				"description": "The number clamped"
+				"description": "the number clamped"
 			},
 			"parameters": [
 				{
 					"type": "number",
 					"name": "value",
-					"description": "The number who will be clamped"
-				},
+					"description": "The number to be clamped"
+				}
 			]
 		},
 		{
@@ -78,13 +77,13 @@
 			"description": "Calculates the location and rotation relative to an actor",
 			"return": {
 				"type": "Vector,Rotator",
-				"description": "The localisation and rotation relative to the actor"
+				"description": "the location and rotation relative to the actor"
 			},
 			"parameters": [
 				{
 					"type": "Vector",
 					"name": "location",
-					"description": "The localisation of the new system"
+					"description": "The location of the new system"
 				},
 				{
 					"type": "Rotation",
@@ -94,8 +93,8 @@
 				{
 					"type": "Base Actor",
 					"name": "actor",
-					"description": "The actor who will be translated to the new system"
-				},
+					"description": "The actor to be translated to the new system"
+				}
 			]
 		},
 		{
@@ -125,7 +124,7 @@
 					"type": "number",
 					"name": "interp_speed",
 					"description": ""
-				},
+				}
 			]
 		},
 		{
@@ -155,7 +154,7 @@
 					"type": "number",
 					"name": "interp_speed",
 					"description": ""
-				},
+				}
 			]
 		},
 		{
@@ -185,7 +184,7 @@
 					"type": "number",
 					"name": "interp_speed",
 					"description": ""
-				},
+				}
 			]
 		},
 		{
@@ -215,7 +214,7 @@
 					"type": "number",
 					"name": "interp_speed",
 					"description": ""
-				},
+				}
 			]
 		},
 		{
@@ -245,7 +244,7 @@
 					"type": "number",
 					"name": "interp_speed",
 					"description": ""
-				},
+				}
 			]
 		}
 	]

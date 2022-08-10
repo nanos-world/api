@@ -6,7 +6,7 @@
 		{
 			"authority": "client",
 			"name": "Bind",
-			"description": "Binds a function to an Input defined using `Register` or from the game",
+			"description": "Binds a function to an Input defined using <code>Register</code> or from the game",
 			"parameters": [
 				{
 					"type": "string",
@@ -111,7 +111,7 @@
 				}
 			],
 			"return": {
-				"type": "string"
+				"type": "string,number"
 			}
 		},
 		{
