@@ -4,10 +4,12 @@
 	"authority": "both",
 	"static_functions": [
 		{
-			"return": {
-				"type": "table[]",
-				"description": "in the format <code>[{Name, Path, Author, Version}, ...]</code>"
-			},
+			"return": [
+				{
+					"type": "table[]",
+					"description": "in the format <code>[{Name, Path, Author, Version}, ...]</code>"
+				}
+			],
 			"name": "GetAssetPacks",
 			"description": "Gets a list containing information about all loaded Asset Packs",
 			"authority": "both",
@@ -20,10 +22,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetAnimations",
 			"description": "Gets a list containing all Animation Assets Keys from an AssetPack",
 			"authority": "both",
@@ -36,10 +40,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetMaps",
 			"description": "Gets a list containing all Map Asset Keys from an AssetPack",
 			"authority": "both",
@@ -52,10 +58,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetMaterials",
 			"description": "Gets a list containing all Materials Asset Keys from an AssetPack",
 			"authority": "both",
@@ -68,10 +76,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetParticles",
 			"description": "Gets a list containing all Particle Assets Keys from an AssetPack",
 			"authority": "both",
@@ -84,10 +94,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetSounds",
 			"description": "Gets a list containing all Sound Assets Keys from an AssetPack",
 			"authority": "both",
@@ -100,10 +112,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetSkeletalMeshes",
 			"description": "Gets a list containing all Skeletal Mesh Asset Keys from an AssetPack",
 			"authority": "both",
@@ -116,10 +130,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetStaticMeshes",
 			"description": "Gets a list containing all Static Mesh Assets Keys from an AssetPack",
 			"authority": "both",
@@ -132,10 +148,12 @@
 			]
 		},
 		{
-			"return": {
-				"type": "string[]",
-				"description": "array of strings"
-			},
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetOthers",
 			"description": "Gets a list containing all Other Assets Keys from an AssetPack",
 			"authority": "both",

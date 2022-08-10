@@ -32,19 +32,23 @@
 		{
 			"name": "GetMesh",
 			"description": "Gets the Asset path mesh used",
-			"return": {
-				"type": "StaticMeshPath",
-				"description": "asset path"
-			},
+			"return": [
+				{
+					"type": "StaticMeshPath",
+					"description": "asset path"
+				}
+			],
 			"authority": "both"
 		},
 		{
 			"name": "IsFromLevel",
 			"description": "Gets if this StaticMesh is from the Level",
-			"return": {
-				"type": "boolean",
-				"description": "if this StaticMesh is from the level"
-			},
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if this StaticMesh is from the level"
+				}
+			],
 			"authority": "client"
 		}
 	],

@@ -149,17 +149,21 @@
 			"authority": "both",
 			"name": "GetAssetName",
 			"description": "Gets the name of the asset this Pickable uses",
-			"return": {
-				"type": "SkeletalMeshPath"
-			}
+			"return": [
+				{
+					"type": "SkeletalMeshPath"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetHandler",
 			"description": "Gets the Character, if it exists, that's holding this Pickable",
-			"return": {
-				"type": "Character?"
-			}
+			"return": [
+				{
+					"type": "Character?"
+				}
+			]
 		}
 	],
 	"events": [
@@ -233,10 +237,12 @@
 					"description": "The Character that interacted with it"
 				}
 			],
-			"return": {
-				"type": "boolean",
-				"description": "Return <code>false</code> to prevent the interaction"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to prevent the interaction"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -265,7 +271,7 @@
 					"name": "self",
 					"description": "The Pickable which has just been used"
 				},
-							{
+				{
 					"type": "Character",
 					"name": "character",
 					"description": "The Character that used it"
@@ -282,7 +288,7 @@
 					"name": "self",
 					"description": "The Pickable which has just stopped being used"
 				},
-							{
+				{
 					"type": "Character",
 					"name": "character",
 					"description": "The Character that stopped using it"

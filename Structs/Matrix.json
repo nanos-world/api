@@ -17,10 +17,12 @@
 		{
 			"name": "TransformVector",
 			"description": "Transform the vector with the matrix",
-			"return": {
-				"type": "Vector",
-				"description": "The new vector"
-			},
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The new vector"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
@@ -32,10 +34,12 @@
 		{
 			"name": "TransformVector4",
 			"description": "Transform the vector with the matrix",
-			"return": {
-				"type": "Vector4",
-				"description": "The new vector4"
-			},
+			"return": [
+				{
+					"type": "Vector4",
+					"description": "The new vector4"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector4",
@@ -47,10 +51,12 @@
 		{
 			"name": "GetTransposed",
 			"description": "Returns a new matrix transposed (https://en.wikipedia.org/wiki/Transpose)",
-			"return": {
-				"type": "Matrix",
-				"description": "The matrix transpoosed"
-			}
+			"return": [
+				{
+					"type": "Matrix",
+					"description": "The matrix transpoosed"
+				}
+			]
 		}
 	]
 }

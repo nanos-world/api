@@ -6,10 +6,12 @@
 			"name": "GetAll",
 			"description": "Returns a table containing all Actors of the class this is called on",
 			"authority": "both",
-			"return": {
-				"type": "Actor[]",
-				"description": "copy of table containing all actors"
-			}
+			"return": [
+				{
+					"type": "Actor[]",
+					"description": "copy of table containing all actors"
+				}
+			]
 		},
 		{
 			"name": "GetByIndex",
@@ -22,29 +24,35 @@
 					"description": "the index of the Actor"
 				}
 			],
-			"return": {
-				"type": "Actor",
-				"description": "Actor at index"
-			}
+			"return": [
+				{
+					"type": "Actor",
+					"description": "Actor at index"
+				}
+			]
 		},
 		{
 			"name": "GetCount",
 			"description": "Returns how many Actors of this class exist",
 			"authority": "both",
-			"return": {
-				"type": "number",
-				"description": "number of Actors of this class"
-			}
+			"return": [
+				{
+					"type": "number",
+					"description": "number of Actors of this class"
+				}
+			]
 		},
 		{
 			"name": "GetPairs",
 			"description": "Returns an iterator with all Actors of this class to be used with <code>pairs()</code>",
 			"description_long": "Returns an iterator with all Actors of this class to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Actors directly instead of creating and returning a copy of the Actors table.<br><br><b>Note:</b> Destroying Actors from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
 			"authority": "both",
-			"return": {
-				"type": "iterator",
-				"description": "Iterator with all Actors of this class"
-			}
+			"return": [
+				{
+					"type": "iterator",
+					"description": "Iterator with all Actors of this class"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -349,148 +357,184 @@
 			"description": "Returns true if this Actor is being destroyed",
 			"description_long": "Returns true if this Actor is being destroyed.<br>You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
 			"authority": "both",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "IsVisible",
 			"description": "Returns true if this Actor is visible",
 			"authority": "both",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "IsGravityEnabled",
 			"description": "Returns true if gravity is enabled on this Actor",
 			"authority": "both",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "IsInWater",
 			"description": "Returns true if this Actor is in water",
 			"authority": "both",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "IsNetworkDistributed",
 			"description": "Returns true if this Actor is currently network distributed",
 			"description_long": "Returns true if this Actor is currently network distributed. Only actors being network distributed can have their network authority set<br>Entities have NetworkDistributed automatically disabled when: Attached, Possessed, Grabbed, Picked Up or Driving",
 			"authority": "both",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "IsValid",
 			"description": "Returns true if this Actor is valid (i.e. wasn't destroyed and points to a valid Actor)",
 			"authority": "both",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "GetAttachedEntities",
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
-			"return": {
-				"type": "Actor[]"
-			}
+			"return": [
+				{
+					"type": "Actor[]"
+				}
+			]
 		},
 		{
 			"name": "GetAttachedTo",
 			"description": "Gets the Actor this Actor is attached to",
 			"authority": "both",
-			"return": {
-				"type": "Actor?"
-			}
+			"return": [
+				{
+					"type": "Actor?"
+				}
+			]
 		},
 		{
 			"name": "GetBounds",
 			"description": "Gets this Actor's bounds",
 			"authority": "client",
-			"return": {
-				"type": "table",
-				"description": "in the format <code>{\"Origin\", \"BoxExtent\", \"SphereRadius\"}</code>"
-			}
+			"return": [
+				{
+					"type": "table",
+					"description": "in the format <code>{\"Origin\", \"BoxExtent\", \"SphereRadius\"}</code>"
+				}
+			]
 		},
 		{
 			"name": "GetCollision",
 			"description": "Gets this Actor's collision type",
 			"authority": "both",
-			"return": {
-				"type": "CollisionType"
-			}
+			"return": [
+				{
+					"type": "CollisionType"
+				}
+			]
 		},
 		{
 			"name": "GetID",
 			"description": "Gets the universal network ID of this Actor (same on both client and server)",
 			"authority": "both",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"name": "GetLocation",
 			"description": "Gets this Actor's location in the game world",
 			"authority": "both",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"name": "GetRotation",
 			"description": "Gets this Actor's angle in the game world",
 			"authority": "both",
-			"return": {
-				"type": "Rotator"
-			}
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
 		},
 		{
 			"name": "GetForce",
 			"description": "Gets this Actor's force (set by <code>SetForce()</code>)",
 			"authority": "both",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"name": "HasNetworkAuthority",
 			"description": "Returns true if the local Player is currently the Network Authority of this Actor",
 			"authority": "client",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"name": "HasAuthority",
 			"description": "Gets if this Actor was spawned by the client side",
 			"authority": "client",
-			"return": {
-				"type": "boolean",
-				"description": "false if it was spawned by the Server or true if it was spawned by the client"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "false if it was spawned by the Server or true if it was spawned by the client"
+				}
+			]
 		},
 		{
 			"name": "GetScale",
 			"description": "Gets this Actor's scale",
 			"authority": "both",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"name": "GetType",
 			"description": "Gets the type of this Actor",
 			"authority": "both",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"name": "GetValue",
@@ -507,18 +551,22 @@
 					"description": "Fallback value if key doesn't exist"
 				}
 			],
-			"return": {
-				"type": "any",
-				"description": "Value at key or fallback if key doesn't exist"
-			}
+			"return": [
+				{
+					"type": "any",
+					"description": "Value at key or fallback if key doesn't exist"
+				}
+			]
 		},
 		{
 			"name": "GetVelocity",
 			"description": "Gets this Actor's current velocity",
 			"authority": "both",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"name": "AddActorTag",
@@ -546,9 +594,11 @@
 			"name": "GetActorTags",
 			"description": "Gets all Unreal Actor Tags on this Actor",
 			"authority": "client",
-			"return": {
-				"type": "string[]"
-			}
+			"return": [
+				{
+					"type": "string[]"
+				}
+			]
 		},
 		{
 			"name": "Subscribe",
@@ -566,10 +616,12 @@
 					"description": "Function to call when the event is triggered"
 				}
 			],
-			"return": {
-				"type": "function",
-				"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
-			}
+			"return": [
+				{
+					"type": "function",
+					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
+				}
+			]
 		},
 		{
 			"name": "Unsubscribe",

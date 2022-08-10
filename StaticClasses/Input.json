@@ -55,8 +55,7 @@
 				},
 				{
 					"type": "string",
-					"name": "key_name",
-					"description": ""
+					"name": "key_name"
 				}
 			]
 		},
@@ -72,8 +71,7 @@
 				},
 				{
 					"type": "string",
-					"name": "key_name",
-					"description": ""
+					"name": "key_name"
 				}
 			]
 		},
@@ -85,19 +83,19 @@
 				{
 					"type": "string",
 					"name": "key_name",
-					"default": "",
-					"description": ""
+					"default": ""
 				},
 				{
 					"type": "boolean",
 					"name": "dark_mode",
-					"default": "false",
-					"description": ""
+					"default": "false"
 				}
 			],
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "client",
@@ -110,9 +108,14 @@
 					"description": "The keybinding id"
 				}
 			],
-			"return": {
-				"type": "string,number"
-			}
+			"return": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "client",
@@ -123,9 +126,11 @@
 			"authority": "client",
 			"name": "GetScriptingKeyBindings",
 			"description": "Returns a table with all Scripting KeyBindings",
-			"return": {
-				"type": "table"
-			}
+			"return": [
+				{
+					"type": "table"
+				}
+			]
 		}
 	]
 }

@@ -79,10 +79,12 @@
 					"description": "Arguments to pass to the function"
 				}
 			],
-			"return": {
-				"type": "any",
-				"description": "Any return values from the called function"
-			}
+			"return": [
+				{
+					"type": "any",
+					"description": "Any return values from the called function"
+				}
+			]
 		},
 		{
 			"name": "Export",
@@ -142,10 +144,12 @@
 					"description": "Callback to run on the event occuring"
 				}
 			],
-			"return": {
-				"type": "function",
-				"description": "The function callback"
-			}
+			"return": [
+				{
+					"type": "function",
+					"description": "The function callback"
+				}
+			]
 		},
 		{
 			"name": "Unsubscribe",
@@ -195,11 +199,12 @@
 					"description": "Path filter"
 				}
 			],
-			"return": {
-				"type": "string",
-				"is_array": true,
-				"description": "List of directories"
-			}
+			"return": [
+				{
+					"type": "string[]",
+					"description": "List of directories"
+				}
+			]
 		},
 		{
 			"name": "GetFiles",
@@ -214,47 +219,56 @@
 					"description": "Path filter"
 				}
 			],
-			"return": {
-				"type": "string",
-				"is_array": true,
-				"description": "List of files"
-			}
+			"return": [
+				{
+					"type": "string[]",
+					"description": "List of files"
+				}
+			]
 		},
 		{
 			"name": "GetName",
 			"description": "Gives the package name",
 			"authority": "both",
-			"return": {
-				"type": "string",
-				"description": "The package name"
-			}
+			"return": [
+				{
+					"type": "string",
+					"description": "The package name"
+				}
+			]
 		},
 		{
 			"name": "GetPath",
 			"description": "Gives the package path",
 			"authority": "both",
-			"return": {
-				"type": "string",
-				"description": "The package path"
-			}
+			"return": [
+				{
+					"type": "string",
+					"description": "The package path"
+				}
+			]
 		},
 		{
 			"name": "GetVersion",
 			"description": "Gives the package version",
 			"authority": "both",
-			"return": {
-				"type": "string",
-				"description": "The package version"
-			}
+			"return": [
+				{
+					"type": "string",
+					"description": "The package version"
+				}
+			]
 		},
 		{
 			"name": "GetPersistentData",
 			"description": "Gets all Persistent Values from the disk",
 			"authority": "both",
-			"return": {
-				"type": "table",
-				"description": "Persistent values from disk"
-			}
+			"return": [
+				{
+					"type": "table",
+					"description": "Persistent values from disk"
+				}
+			]
 		}
 	],
 	"events": [

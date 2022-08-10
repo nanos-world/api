@@ -27,20 +27,17 @@
 			"parameters": [
 				{
 					"type": "Actor",
-					"name": "other",
-					"description": ""
+					"name": "other"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)",
-					"description": ""
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"type": "string",
 					"name": "bone_name",
-					"default": "",
-					"description": ""
+					"default": ""
 				}
 			]
 		},
@@ -51,20 +48,17 @@
 			"parameters": [
 				{
 					"type": "Actor",
-					"name": "other",
-					"description": ""
+					"name": "other"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)",
-					"description": ""
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"type": "string",
 					"name": "bone_name",
-					"default": "",
-					"description": ""
+					"default": ""
 				}
 			]
 		},
@@ -237,19 +231,23 @@
 			"authority": "both",
 			"name": "GetAttachedStartTo",
 			"description": "Gets the Actor attached to Start",
-			"return": {
-				"type": "Actor",
-				"description": "the Actor or nil"
-			}
+			"return": [
+				{
+					"type": "Actor",
+					"description": "the Actor or nil"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetAttachedEndTo",
 			"description": "Gets the Actor attached to End",
-			"return": {
-				"type": "Actor",
-				"description": "the Actor or nil"
-			}
+			"return": [
+				{
+					"type": "Actor",
+					"description": "the Actor or nil"
+				}
+			]
 		}
 	]
 }
