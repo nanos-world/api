@@ -511,213 +511,273 @@
 			"authority": "both",
 			"name": "GetAmmoBag",
 			"description": "Gets this Weapon's Ammo Bag",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetAmmoClip",
 			"description": "Gets this Weapon's Ammo Clip",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetAmmoToReload",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetHandlingMode",
-			"return": {
-				"type": "HandlingMode"
-			}
+			"return": [
+				{
+					"type": "HandlingMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetAnimationCharacterFire",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetAnimationFire",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetMagazineMesh",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetParticlesBulletTrail",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetParticlesShells",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSoundDry",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSoundLoad",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSoundUnload",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSoundZooming",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSoundAim",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSoundFire",
-			"return": {
-				"type": "string"
-			}
+			"return": [
+				{
+					"type": "string"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanHoldUse",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetHoldReleaseUse",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetBulletCount",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetBulletColor",
-			"return": {
-				"type": "Color"
-			}
+			"return": [
+				{
+					"type": "Color"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCadence",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetClipCapacity",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetDamage",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetRightHandOffset",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetLeftHandLocation",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetLeftHandRotation",
-			"return": {
-				"type": "Rotator"
-			}
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSightLocation",
-			"return": {
-				"type": "Vector"
-			}
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSightRotation",
-			"return": {
-				"type": "Rotator"
-			}
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSightFOVMultiplier",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSpread",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetRecoil",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		}
 	],
 	"events": [

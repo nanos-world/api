@@ -82,10 +82,12 @@
 		},
 		{
 			"authority": "both",
-			"return": {
-				"type": "function",
-				"description": "the subscribed callback itself"
-			},
+			"return": [
+				{
+					"type": "function",
+					"description": "the subscribed callback itself"
+				}
+			],
 			"name": "Subscribe",
 			"description": "Subscribes for an user-created event which will be triggered for both local or remote called events",
 			"parameters": [

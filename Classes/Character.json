@@ -55,35 +55,33 @@
 		{
 			"authority": "server",
 			"name": "ApplyDamage",
-			"return": {
-				"type": "number",
-				"description": "the damage applied"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "the damage applied"
+				}
+			],
 			"description": "Do damage to a character",
 			"description_long": "Do damage to a character, will trigger all related events and apply modified damage based on bone. Also will apply impulse if it's a heavy explosion",
 			"parameters": [
 				{
 					"type": "number",
-					"name": "damage",
-					"description": ""
+					"name": "damage"
 				},
 				{
 					"type": "string",
 					"name": "bone_name",
-					"default": "",
-					"description": ""
+					"default": ""
 				},
 				{
 					"type": "DamageType",
 					"name": "damage_type",
-					"default": "DamageType.Shot",
-					"description": ""
+					"default": "DamageType.Shot"
 				},
 				{
 					"type": "Vector",
 					"name": "from_direction",
-					"default": "Vector(0, 0, 0)",
-					"description": ""
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"type": "Player",
@@ -113,8 +111,7 @@
 				{
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_asset",
-					"default": "",
-					"description": ""
+					"default": ""
 				}
 			]
 		},
@@ -132,26 +129,22 @@
 				{
 					"type": "StaticMeshPath",
 					"name": "static_mesh_asset",
-					"default": "",
-					"description": ""
+					"default": ""
 				},
 				{
 					"type": "string",
 					"name": "socket",
-					"default": "",
-					"description": ""
+					"default": ""
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)",
-					"description": ""
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
-					"default": "Rotator(0, 0, 0)",
-					"description": ""
+					"default": "Rotator(0, 0, 0)"
 				}
 			]
 		},
@@ -169,14 +162,12 @@
 			"parameters": [
 				{
 					"type": "Vehicle",
-					"name": "vehicle",
-					"description": ""
+					"name": "vehicle"
 				},
 				{
 					"type": "number",
 					"name": "seat",
-					"default": "0",
-					"description": ""
+					"default": "0"
 				}
 			]
 		},
@@ -187,8 +178,7 @@
 			"parameters": [
 				{
 					"type": "Prop",
-					"name": "prop",
-					"description": ""
+					"name": "prop"
 				}
 			]
 		},
@@ -222,10 +212,12 @@
 		{
 			"authority": "both",
 			"name": "IsBoneHidden",
-			"return": {
-				"type": "boolean",
-				"description": "if the bone is hidden"
-			},
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the bone is hidden"
+				}
+			],
 			"description": "Gets if a bone is hidden",
 			"parameters": [
 				{
@@ -265,14 +257,12 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location",
-					"description": ""
+					"name": "location"
 				},
 				{
 					"type": "number",
 					"name": "acceptance_radius",
-					"default": "50",
-					"description": ""
+					"default": "50"
 				}
 			]
 		},
@@ -326,8 +316,7 @@
 			"parameters": [
 				{
 					"type": "Pickable",
-					"name": "pickable",
-					"description": ""
+					"name": "pickable"
 				}
 			]
 		},
@@ -338,38 +327,32 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "animation_path",
-					"description": ""
+					"name": "animation_path"
 				},
 				{
 					"type": "AnimationSlotType",
 					"name": "slot_type",
-					"default": "AnimationSlotType.FullBody",
-					"description": ""
+					"default": "AnimationSlotType.FullBody"
 				},
 				{
 					"type": "boolean",
 					"name": "loop_indefinitely",
-					"default": "false",
-					"description": ""
+					"default": "false"
 				},
 				{
 					"type": "number",
 					"name": "blend_in_time",
-					"default": "0.25",
-					"description": ""
+					"default": "0.25"
 				},
 				{
 					"type": "number",
 					"name": "blend_out_time",
-					"default": "0.25",
-					"description": ""
+					"default": "0.25"
 				},
 				{
 					"type": "number",
 					"name": "play_rate",
-					"default": "1.0",
-					"description": ""
+					"default": "1.0"
 				},
 				{
 					"type": "boolean",
@@ -386,8 +369,7 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "id",
-					"description": ""
+					"name": "id"
 				}
 			]
 		},
@@ -398,8 +380,7 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "id",
-					"description": ""
+					"name": "id"
 				}
 			]
 		},
@@ -427,8 +408,7 @@
 				{
 					"type": "Rotator",
 					"name": "rotation",
-					"default": "Rotator(0, 0, 0)",
-					"description": ""
+					"default": "Rotator(0, 0, 0)"
 				}
 			]
 		},
@@ -440,44 +420,37 @@
 				{
 					"type": "number",
 					"name": "walking",
-					"default": "768",
-					"description": ""
+					"default": "768"
 				},
 				{
 					"type": "number",
 					"name": "parachuting",
-					"default": "512",
-					"description": ""
+					"default": "512"
 				},
 				{
 					"type": "number",
 					"name": "skydiving",
-					"default": "768",
-					"description": ""
+					"default": "768"
 				},
 				{
 					"type": "number",
 					"name": "falling",
-					"default": "128",
-					"description": ""
+					"default": "128"
 				},
 				{
 					"type": "number",
 					"name": "swimming",
-					"default": "256",
-					"description": ""
+					"default": "256"
 				},
 				{
 					"type": "number",
 					"name": "swimming_surface",
-					"default": "256",
-					"description": ""
+					"default": "256"
 				},
 				{
 					"type": "number",
 					"name": "flying",
-					"default": "1024",
-					"description": ""
+					"default": "1024"
 				}
 			]
 		},
@@ -489,38 +462,32 @@
 				{
 					"type": "number",
 					"name": "ground_friction",
-					"default": "2",
-					"description": ""
+					"default": "2"
 				},
 				{
 					"type": "number",
 					"name": "braking_friction_factor",
-					"default": "2",
-					"description": ""
+					"default": "2"
 				},
 				{
 					"type": "number",
 					"name": "braking_walking",
-					"default": "96",
-					"description": ""
+					"default": "96"
 				},
 				{
 					"type": "number",
 					"name": "braking_flying",
-					"default": "3000",
-					"description": ""
+					"default": "3000"
 				},
 				{
 					"type": "number",
 					"name": "braking_swimming",
-					"default": "10",
-					"description": ""
+					"default": "10"
 				},
 				{
 					"type": "number",
 					"name": "braking_falling",
-					"default": "0",
-					"description": ""
+					"default": "0"
 				}
 			]
 		},
@@ -532,8 +499,7 @@
 			"parameters": [
 				{
 					"type": "CameraMode",
-					"name": "camera_mode",
-					"description": ""
+					"name": "camera_mode"
 				}
 			]
 		},
@@ -544,8 +510,7 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "camera_offset",
-					"description": ""
+					"name": "camera_offset"
 				}
 			]
 		},
@@ -556,8 +521,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_crouch",
-					"description": ""
+					"name": "can_crouch"
 				}
 			]
 		},
@@ -568,8 +532,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_aim",
-					"description": ""
+					"name": "can_aim"
 				}
 			]
 		},
@@ -580,8 +543,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_drop",
-					"description": ""
+					"name": "can_drop"
 				}
 			]
 		},
@@ -592,8 +554,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_sprint",
-					"description": ""
+					"name": "can_sprint"
 				}
 			]
 		},
@@ -604,8 +565,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_grab_props",
-					"description": ""
+					"name": "can_grab_props"
 				}
 			]
 		},
@@ -616,19 +576,18 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_pickup",
-					"description": ""
+					"name": "can_pickup"
 				}
 			]
-		},{
+		},
+		{
 			"authority": "server",
 			"name": "SetCanPunch",
 			"description": "Sets if this Character is allowed to Punch",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_punch",
-					"description": ""
+					"name": "can_punch"
 				}
 			]
 		},
@@ -639,8 +598,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_deploy_parachute",
-					"description": ""
+					"name": "can_deploy_parachute"
 				}
 			]
 		},
@@ -669,13 +627,11 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "bone_name",
-					"description": ""
+					"name": "bone_name"
 				},
 				{
 					"type": "number",
-					"name": "multiplier",
-					"description": ""
+					"name": "multiplier"
 				}
 			]
 		},
@@ -686,8 +642,7 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "sound_asset",
-					"description": ""
+					"name": "sound_asset"
 				}
 			]
 		},
@@ -711,8 +666,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "flying_mode",
-					"description": ""
+					"name": "flying_mode"
 				}
 			]
 		},
@@ -723,8 +677,7 @@
 			"parameters": [
 				{
 					"type": "number",
-					"name": "multiplier",
-					"description": ""
+					"name": "multiplier"
 				}
 			]
 		},
@@ -748,8 +701,7 @@
 			"parameters": [
 				{
 					"type": "GaitMode",
-					"name": "mode",
-					"description": ""
+					"name": "mode"
 				}
 			]
 		},
@@ -761,8 +713,7 @@
 			"parameters": [
 				{
 					"type": "number",
-					"name": "scale",
-					"description": ""
+					"name": "scale"
 				}
 			]
 		},
@@ -774,8 +725,7 @@
 			"parameters": [
 				{
 					"type": "number",
-					"name": "new_health",
-					"description": ""
+					"name": "new_health"
 				}
 			]
 		},
@@ -799,8 +749,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_invulnerable",
-					"description": ""
+					"name": "is_invulnerable"
 				}
 			]
 		},
@@ -823,8 +772,7 @@
 			"parameters": [
 				{
 					"type": "number",
-					"name": "new_max_health",
-					"description": ""
+					"name": "new_max_health"
 				}
 			]
 		},
@@ -835,8 +783,7 @@
 			"parameters": [
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh_asset",
-					"description": ""
+					"name": "skeletal_mesh_asset"
 				}
 			]
 		},
@@ -852,8 +799,7 @@
 				},
 				{
 					"type": "number",
-					"name": "value",
-					"description": ""
+					"name": "value"
 				}
 			]
 		},
@@ -861,10 +807,12 @@
 			"authority": "both",
 			"name": "GetMorphTarget",
 			"description": "Returns the value of a Morph Target",
-			"return": {
-				"type": "number",
-				"description": "value of the Morph Target"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "value of the Morph Target"
+				}
+			],
 			"parameters": [
 				{
 					"type": "string",
@@ -882,10 +830,12 @@
 			"authority": "client",
 			"name": "GetAllMorphTargetNames",
 			"description": "Returns a table with all morph targets available",
-			"return": {
-				"type": "string[]",
-				"description": "table with all morph targets available"
-			}
+			"return": [
+				{
+					"type": "string[]",
+					"description": "table with all morph targets available"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -957,8 +907,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_movement_enabled",
-					"description": ""
+					"name": "is_movement_enabled"
 				}
 			]
 		},
@@ -969,8 +918,7 @@
 			"parameters": [
 				{
 					"type": "ImagePath",
-					"name": "texture",
-					"description": ""
+					"name": "texture"
 				}
 			]
 		},
@@ -981,8 +929,7 @@
 			"parameters": [
 				{
 					"type": "SoundPath",
-					"name": "sound_asset",
-					"description": ""
+					"name": "sound_asset"
 				}
 			]
 		},
@@ -1005,8 +952,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "ragdoll_enabled",
-					"description": ""
+					"name": "ragdoll_enabled"
 				}
 			]
 		},
@@ -1029,8 +975,7 @@
 			"parameters": [
 				{
 					"type": "StanceMode",
-					"name": "mode",
-					"description": ""
+					"name": "mode"
 				}
 			]
 		},
@@ -1053,8 +998,7 @@
 			"parameters": [
 				{
 					"type": "ViewMode",
-					"name": "view_mode",
-					"description": ""
+					"name": "view_mode"
 				}
 			]
 		},
@@ -1065,8 +1009,7 @@
 			"parameters": [
 				{
 					"type": "AimMode",
-					"name": "aim_mode",
-					"description": ""
+					"name": "aim_mode"
 				}
 			]
 		},
@@ -1077,8 +1020,7 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "animation_asset",
-					"description": ""
+					"name": "animation_asset"
 				}
 			]
 		},
@@ -1091,107 +1033,133 @@
 			"authority": "both",
 			"name": "IsInRagdollMode",
 			"description": "Gets if Character is in ragdoll mode",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "IsInvulnerable",
 			"description": "Gets if is invulnerable",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "IsMovementEnabled",
 			"description": "Gets if has movement enabled",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCameraMode",
 			"description": "Gets the camera mode",
-			"return": {
-				"type": "CameraMode"
-			}
+			"return": [
+				{
+					"type": "CameraMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanDrop",
 			"description": "Gets if can drop",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanPunch",
 			"description": "Gets if can punch",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanAim",
 			"description": "Gets if can aim",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanCrouch",
 			"description": "Gets if can crouch",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanSprint",
 			"description": "Gets if can sprint",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanGrabProps",
 			"description": "Gets if can grab props",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCanPickupPickables",
 			"description": "Gets if can pickup Pickables (Weapons, Melee, Grenade...)",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetCapsuleSize",
 			"description": "Gets the Capsule Size",
-			"return": {
-				"type": "table",
-				"description": "table in the format <code>{ Radius, HalfHeight }</code>"
-			}
+			"return": [
+				{
+					"type": "table",
+					"description": "table in the format <code>{ Radius, HalfHeight }</code>"
+				}
+			]
 		},
 		{
 			"authority": "client",
 			"name": "GetBoneTransform",
 			"description": "Gets a Bone Transform in world space given a bone name",
-			"return": {
-				"type": "table",
-				"description": "table in the format <code>{ Location, Rotation }</code>"
-			},
+			"return": [
+				{
+					"type": "table",
+					"description": "table in the format <code>{ Location, Rotation }</code>"
+				}
+			],
 			"parameters": [
 				{
 					"name": "bone_name",
@@ -1203,18 +1171,22 @@
 			"authority": "both",
 			"name": "GetControlRotation",
 			"description": "Gets the Control Rotation",
-			"return": {
-				"type": "Rotator"
-			}
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetDamageMultiplier",
 			"description": "Gets the Damage Multiplier of a bone",
-			"return": {
-				"type": "number",
-				"description": "the damage multiplier of the bone"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "the damage multiplier of the bone"
+				}
+			],
 			"parameters": [
 				{
 					"name": "bone_name",
@@ -1226,178 +1198,222 @@
 			"authority": "both",
 			"name": "GetFallDamageTaken",
 			"description": "Gets the Fall Damage",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetFallingMode",
 			"description": "Gets the FallingMode",
-			"return": {
-				"type": "FallingMode"
-			}
+			"return": [
+				{
+					"type": "FallingMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetFlyingMode",
 			"description": "Gets if it's in Flying mode",
-			"return": {
-				"type": "boolean"
-			}
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetGaitMode",
 			"description": "Gets the GaitMode",
-			"return": {
-				"type": "GaitMode"
-			}
+			"return": [
+				{
+					"type": "GaitMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetGrabbedProp",
 			"description": "Gets the Grabbed Prop",
-			"return": {
-				"type": "Prop?"
-			}
+			"return": [
+				{
+					"type": "Prop?"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetGravityScale",
 			"description": "Gets the gravity scale",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetHealth",
 			"description": "Gets the current health",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetImpactDamageTaken",
 			"description": "Gets the impact damage taken",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetJumpZVelocity",
 			"description": "Gets the Jump Z Velocity",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetMaxHealth",
 			"description": "Gets the Max Health",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetMesh",
 			"description": "Gets the Skeletal Mesh Asset",
-			"return": {
-				"type": "SkeletalMeshPath"
-			}
+			"return": [
+				{
+					"type": "SkeletalMeshPath"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetMovingTo",
 			"description": "Gets the Moving To location",
-			"return": {
-				"type": "Vector",
-				"description": "the moving to location or Vector(0, 0, 0) if not moving"
-			}
+			"return": [
+				{
+					"type": "Vector",
+					"description": "the moving to location or Vector(0, 0, 0) if not moving"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetPicked",
 			"description": "Gets the Pickable if picking up",
-			"return": {
-				"type": "Pickable?"
-			}
+			"return": [
+				{
+					"type": "Pickable?"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetPlayer",
 			"description": "Gets the possessing Player",
-			"return": {
-				"type": "Player?"
-			}
+			"return": [
+				{
+					"type": "Player?"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetPunchDamage",
 			"description": "Gets the punch damage",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSpeedMultiplier",
 			"description": "Gets the speed multiplier",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetStanceMode",
 			"description": "Gets the Stance Mode",
-			"return": {
-				"type": "StanceMode"
-			}
+			"return": [
+				{
+					"type": "StanceMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetSwimmingMode",
 			"description": "Gets the Swimming Mode",
-			"return": {
-				"type": "SwimmingMode"
-			}
+			"return": [
+				{
+					"type": "SwimmingMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetTeam",
 			"description": "Gets the Team",
-			"return": {
-				"type": "number"
-			}
+			"return": [
+				{
+					"type": "number"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetVehicle",
 			"description": "Gets the entered Vehicle",
-			"return": {
-				"type": "Vehicle?"
-			}
+			"return": [
+				{
+					"type": "Vehicle?"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetViewMode",
 			"description": "Gets the View Mode",
-			"return": {
-				"type": "ViewMode"
-			}
+			"return": [
+				{
+					"type": "ViewMode"
+				}
+			]
 		},
 		{
 			"authority": "both",
 			"name": "GetWeaponAimMode",
 			"description": "Gets the Weapon Aim Mode",
-			"return": {
-				"type": "AimMode"
-			}
+			"return": [
+				{
+					"type": "AimMode"
+				}
+			]
 		}
 	],
 	"events": [
@@ -1408,13 +1424,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "string",
-					"name": "notify_name",
-					"description": ""
+					"name": "notify_name"
 				}
 			]
 		},
@@ -1425,13 +1439,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "string",
-					"name": "notify_name",
-					"description": ""
+					"name": "notify_name"
 				}
 			]
 		},
@@ -1442,33 +1454,27 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "number",
-					"name": "last_damage_taken",
-					"description": ""
+					"name": "last_damage_taken"
 				},
 				{
 					"type": "string",
-					"name": "last_bone_damaged",
-					"description": ""
+					"name": "last_bone_damaged"
 				},
 				{
 					"type": "DamageType",
-					"name": "damage_type_reason",
-					"description": ""
+					"name": "damage_type_reason"
 				},
 				{
 					"type": "Vector",
-					"name": "hit_from_direction",
-					"description": ""
+					"name": "hit_from_direction"
 				},
 				{
 					"type": "Player?",
-					"name": "instigator",
-					"description": ""
+					"name": "instigator"
 				},
 				{
 					"type": "Actor?",
@@ -1484,18 +1490,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Pickable",
-					"name": "object",
-					"description": ""
+					"name": "object"
 				},
 				{
 					"type": "boolean",
-					"name": "triggered_by_player",
-					"description": ""
+					"name": "triggered_by_player"
 				}
 			]
 		},
@@ -1506,18 +1509,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle",
-					"description": ""
+					"name": "vehicle"
 				},
 				{
 					"type": "number",
-					"name": "seat_index",
-					"description": ""
+					"name": "seat_index"
 				}
 			]
 		},
@@ -1528,24 +1528,23 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle",
-					"description": ""
+					"name": "vehicle"
 				},
 				{
 					"type": "number",
-					"name": "seat_index",
-					"description": ""
+					"name": "seat_index"
 				}
 			],
-			"return": {
-				"type": "boolean",
-				"description": "Return <code>false</code> to prevent it"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to prevent it"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -1554,18 +1553,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "FallingMode",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "FallingMode",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		},
@@ -1576,13 +1572,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Weapon",
-					"name": "weapon",
-					"description": ""
+					"name": "weapon"
 				}
 			]
 		},
@@ -1593,18 +1587,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "GaitMode",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "GaitMode",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		},
@@ -1615,13 +1606,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Prop",
-					"name": "prop",
-					"description": ""
+					"name": "prop"
 				}
 			]
 		},
@@ -1632,18 +1621,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "number",
-					"name": "old_health",
-					"description": ""
+					"name": "old_health"
 				},
 				{
 					"type": "number",
-					"name": "new_health",
-					"description": ""
+					"name": "new_health"
 				}
 			]
 		},
@@ -1654,8 +1640,7 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "boolean",
@@ -1664,8 +1649,7 @@
 				},
 				{
 					"type": "Prop|Pickable",
-					"name": "object",
-					"description": ""
+					"name": "object"
 				}
 			]
 		},
@@ -1676,19 +1660,19 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Prop|Pickable",
-					"name": "object",
-					"description": ""
+					"name": "object"
 				}
 			],
-			"return": {
-				"type": "boolean",
-				"description": "Return <code>false</code> to prevent it"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to prevent it"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -1697,13 +1681,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle",
-					"description": ""
+					"name": "vehicle"
 				}
 			]
 		},
@@ -1714,19 +1696,19 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle",
-					"description": ""
+					"name": "vehicle"
 				}
 			],
-			"return": {
-				"type": "boolean",
-				"description": "Return <code>false</code> to prevent it"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to prevent it"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -1735,13 +1717,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "boolean",
-					"name": "succeeded",
-					"description": ""
+					"name": "succeeded"
 				}
 			]
 		},
@@ -1752,13 +1732,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Pickable",
-					"name": "object",
-					"description": ""
+					"name": "object"
 				}
 			]
 		},
@@ -1769,13 +1747,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Player",
-					"name": "possesser",
-					"description": ""
+					"name": "possesser"
 				}
 			]
 		},
@@ -1786,8 +1762,7 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				}
 			]
 		},
@@ -1798,18 +1773,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "boolean",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "boolean",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		},
@@ -1820,19 +1792,19 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Weapon",
-					"name": "weapon",
-					"description": ""
+					"name": "weapon"
 				}
 			],
-			"return": {
-				"type": "boolean",
-				"description": "Return <code>false</code> to prevent it"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to prevent it"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -1841,18 +1813,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Weapon",
-					"name": "weapon",
-					"description": ""
+					"name": "weapon"
 				},
 				{
 					"type": "number",
-					"name": "ammo_to_reload",
-					"description": ""
+					"name": "ammo_to_reload"
 				}
 			]
 		},
@@ -1863,8 +1832,7 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				}
 			]
 		},
@@ -1875,18 +1843,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "StanceMode",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "StanceMode",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		},
@@ -1897,18 +1862,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "SwimmingMode",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "SwimmingMode",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		},
@@ -1919,13 +1881,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "number",
-					"name": "damage",
-					"description": ""
+					"name": "damage"
 				},
 				{
 					"type": "string",
@@ -1953,10 +1913,12 @@
 					"description": "The object which caused the damage"
 				}
 			],
-			"return": {
-				"type": "boolean",
-				"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
+				}
+			]
 		},
 		{
 			"authority": "both",
@@ -1965,13 +1927,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Prop",
-					"name": "prop",
-					"description": ""
+					"name": "prop"
 				}
 			]
 		},
@@ -1982,13 +1942,11 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "Player",
-					"name": "old_possesser",
-					"description": ""
+					"name": "old_possesser"
 				}
 			]
 		},
@@ -1999,18 +1957,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "ViewMode",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "ViewMode",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		},
@@ -2021,18 +1976,15 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self",
-					"description": ""
+					"name": "self"
 				},
 				{
 					"type": "AimMode",
-					"name": "old_state",
-					"description": ""
+					"name": "old_state"
 				},
 				{
 					"type": "AimMode",
-					"name": "new_state",
-					"description": ""
+					"name": "new_state"
 				}
 			]
 		}

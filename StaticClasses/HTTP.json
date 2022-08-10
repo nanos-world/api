@@ -60,10 +60,12 @@
 		},
 		{
 			"name": "RequestSync",
-			"return": {
-				"type": "table",
-				"description": "the data in the format <code>{ Status, Data }</code>"
-			},
+			"return": [
+				{
+					"type": "table",
+					"description": "the data in the format <code>{ Status, Data }</code>"
+				}
+			],
 			"description": "Makes a synchronous HTTP Request.<br/><br/>The request will be made synchronously and will freeze the server until it's done.",
 			"authority": "server",
 			"parameters": [

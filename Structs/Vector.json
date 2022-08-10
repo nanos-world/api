@@ -43,10 +43,12 @@
 			"name": "Equals",
 			"description": "Check against another vector for equality, within specified error limits",
 			"description_long": "Check if the vector is equal to another vector, within specified error limits",
-			"return": {
-				"type": "boolean",
-				"description": "Are the vectors equal or not"
-			},
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Are the vectors equal or not"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
@@ -65,10 +67,12 @@
 			"name": "Distance",
 			"description": "Distance between two points",
 			"description_long": "Returns the distance of 2 vectors",
-			"return": {
-				"type": "number",
-				"description": "The distance betweem the vectors"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "The distance betweem the vectors"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
@@ -81,10 +85,12 @@
 			"name": "DistanceSquared",
 			"description": "Squared distance between two points",
 			"description_long": "Return the squared distance of 2 vectors",
-			"return": {
-				"type": "number",
-				"description": "The squared distance betweem the vectors"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "The squared distance betweem the vectors"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
@@ -97,29 +103,35 @@
 			"name": "GetUnsafeNormal",
 			"description": "Calculates normalized version of vector without checking for zero length",
 			"description_long": "Returns the normalized version of vector without checking for zero length",
-			"return": {
-				"type": "Vector",
-				"description": "The unsafe normal"
-			},
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The unsafe normal"
+				}
+			],
 			"parameters": []
 		},
 		{
 			"name": "GetSafeNormal",
 			"description": "Gets a normalized copy of the vector, checking it is safe to do so based on the length",
 			"description_long": "Returns a normalized copy of the vector, checking it is safe to do so based on the length",
-			"return": {
-				"type": "Vector",
-				"description": "The safe normal"
-			},
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The safe normal"
+				}
+			],
 			"parameters": []
 		},
 		{
 			"name": "IsNearlyZero",
 			"description": "Checks whether vector is near to zero within a specified tolerance",
-			"return": {
-				"type": "boolean",
-				"description": "If the bool is near to zero"
-			},
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the bool is near to zero"
+				}
+			],
 			"parameters": [
 				{
 					"type": "number",
@@ -132,42 +144,52 @@
 		{
 			"name": "IsZero",
 			"description": "Checks whether all components of the vector are exactly zero",
-			"return": {
-				"type": "boolean",
-				"description": "If all components of the vector are exactly zero"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If all components of the vector are exactly zero"
+				}
+			]
 		},
 		{
 			"name": "Normalize",
 			"description": "Normalize this vector in-place if it is larger than a given tolerance. Leaves it unchanged if not",
-			"return": {
-				"type": "boolean",
-				"description": "If the vector has been modified"
-			}
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the vector has been modified"
+				}
+			]
 		},
 		{
 			"name": "Size",
 			"description": "Get the length (magnitude) of this vector",
-			"return": {
-				"type": "number",
-				"description": "The lenght of the vector"
-			}
+			"return": [
+				{
+					"type": "number",
+					"description": "The lenght of the vector"
+				}
+			]
 		},
 		{
 			"name": "SizeSquared",
 			"description": "Get the squared length of this vector",
-			"return": {
-				"type": "number",
-				"description": "The squared length of the vector"
-			}
+			"return": [
+				{
+					"type": "number",
+					"description": "The squared length of the vector"
+				}
+			]
 		},
 		{
 			"name": "Rotation",
 			"description": "Returns the orientation corresponding to the direction in which the vector points",
-			"return": {
-				"type": "Rotator",
-				"description": "The orientation of the vector"
-			}
+			"return": [
+				{
+					"type": "Rotator",
+					"description": "The orientation of the vector"
+				}
+			]
 		}
 	]
 }

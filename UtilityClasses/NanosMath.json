@@ -5,10 +5,12 @@
 		{
 			"name": "Round",
 			"description": "Rounds a number",
-			"return": {
-				"type": "number",
-				"description": "the rounded number"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "the rounded number"
+				}
+			],
 			"parameters": [
 				{
 					"type": "number",
@@ -20,10 +22,12 @@
 		{
 			"name": "Clamp",
 			"description": "Clamps a number",
-			"return": {
-				"type": "number",
-				"description": "the number clamped"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "the number clamped"
+				}
+			],
 			"parameters": [
 				{
 					"type": "number",
@@ -45,10 +49,12 @@
 		{
 			"name": "ClampAxis",
 			"description": "Clamps an angle to the range of [0, 360]",
-			"return": {
-				"type": "number",
-				"description": "the number clamped"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "the number clamped"
+				}
+			],
 			"parameters": [
 				{
 					"type": "number",
@@ -60,10 +66,12 @@
 		{
 			"name": "NormalizeAxis",
 			"description": "Clamps an angle to the range of [-180, 180]",
-			"return": {
-				"type": "number",
-				"description": "the number clamped"
-			},
+			"return": [
+				{
+					"type": "number",
+					"description": "the number clamped"
+				}
+			],
 			"parameters": [
 				{
 					"type": "number",
@@ -75,10 +83,16 @@
 		{
 			"name": "RelativeTo",
 			"description": "Calculates the location and rotation relative to an actor",
-			"return": {
-				"type": "Vector,Rotator",
-				"description": "the location and rotation relative to the actor"
-			},
+			"return": [
+				{
+					"type": "Vector",
+					"description": "the location relative to the actor"
+				},
+				{
+					"type": "Rotator",
+					"description": "The rotation relative to the actor"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
@@ -100,150 +114,135 @@
 		{
 			"name": "FInterpTo",
 			"description": "Interpolate number from Current to Target",
-			"return": {
-				"type": "number",
-				"description": ""
-			},
+			"return": [
+				{
+					"type": "number"
+				}
+			],
 			"parameters": [
 				{
 					"type": "number",
-					"name": "current",
-					"description": ""
+					"name": "current"
 				},
 				{
 					"type": "number",
-					"name": "target",
-					"description": ""
+					"name": "target"
 				},
 				{
 					"type": "number",
-					"name": "delta_time",
-					"description": ""
+					"name": "delta_time"
 				},
 				{
 					"type": "number",
-					"name": "interp_speed",
-					"description": ""
+					"name": "interp_speed"
 				}
 			]
 		},
 		{
 			"name": "RInterpTo",
 			"description": "Interpolate Rotator from Current to Target",
-			"return": {
-				"type": "Rotator",
-				"description": ""
-			},
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "current",
-					"description": ""
+					"name": "current"
 				},
 				{
 					"type": "Rotator",
-					"name": "target",
-					"description": ""
+					"name": "target"
 				},
 				{
 					"type": "number",
-					"name": "delta_time",
-					"description": ""
+					"name": "delta_time"
 				},
 				{
 					"type": "number",
-					"name": "interp_speed",
-					"description": ""
+					"name": "interp_speed"
 				}
 			]
 		},
 		{
 			"name": "RInterpConstantTo",
 			"description": "Interpolate Rotator from Current to Target with a constant step",
-			"return": {
-				"type": "Rotator",
-				"description": ""
-			},
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "current",
-					"description": ""
+					"name": "current"
 				},
 				{
 					"type": "Rotator",
-					"name": "target",
-					"description": ""
+					"name": "target"
 				},
 				{
 					"type": "number",
-					"name": "delta_time",
-					"description": ""
+					"name": "delta_time"
 				},
 				{
 					"type": "number",
-					"name": "interp_speed",
-					"description": ""
+					"name": "interp_speed"
 				}
 			]
 		},
 		{
 			"name": "VInterpTo",
 			"description": "Interpolate Vector from Current to Target",
-			"return": {
-				"type": "Vector",
-				"description": ""
-			},
+			"return": [
+				{
+					"type": "Vector"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "current",
-					"description": ""
+					"name": "current"
 				},
 				{
 					"type": "Vector",
-					"name": "target",
-					"description": ""
+					"name": "target"
 				},
 				{
 					"type": "number",
-					"name": "delta_time",
-					"description": ""
+					"name": "delta_time"
 				},
 				{
 					"type": "number",
-					"name": "interp_speed",
-					"description": ""
+					"name": "interp_speed"
 				}
 			]
 		},
 		{
 			"name": "VInterpConstantTo",
 			"description": "Interpolate Vector from Current to Target with a constant step",
-			"return": {
-				"type": "Vector",
-				"description": ""
-			},
+			"return": [
+				{
+					"type": "Vector"
+				}
+			],
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "current",
-					"description": ""
+					"name": "current"
 				},
 				{
 					"type": "Vector",
-					"name": "target",
-					"description": ""
+					"name": "target"
 				},
 				{
 					"type": "number",
-					"name": "delta_time",
-					"description": ""
+					"name": "delta_time"
 				},
 				{
 					"type": "number",
-					"name": "interp_speed",
-					"description": ""
+					"name": "interp_speed"
 				}
 			]
 		}
