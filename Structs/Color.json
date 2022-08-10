@@ -53,11 +53,12 @@
 		{
 			"name": "ToHex",
 			"description": "Gets the Hexadecimal representation of this Color",
-			"return":
-			{
-				"type": "string",
-				"description": "Hexadecimal representation of this Color"
-			}
+			"return": [
+				{
+					"type": "string",
+					"description": "Hexadecimal representation of this Color"
+				}
+			]
 		}
 	],
 	"static_functions": [
@@ -72,20 +73,22 @@
 					"description": "Includes blacks in the scope"
 				}
 			],
-			"return":
-			{
-				"type": "Color",
-				"description": "Random color from Color Palette"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Random color from Color Palette"
+				}
+			]
 		},
 		{
 			"name": "Random",
 			"description": "Returns a random color from all color scope",
-			"return":
-			{
-				"type": "Color",
-				"description": "Random color from all color scope"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Random color from all color scope"
+				}
+			]
 		},
 		{
 			"name": "FromRGBA",
@@ -116,11 +119,12 @@
 					"description": "Alpha"
 				}
 			],
-			"return":
-			{
-				"type": "Color",
-				"description": "Final Color"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Final Color"
+				}
+			]
 		},
 		{
 			"name": "FromCYMK",
@@ -157,11 +161,12 @@
 					"description": "Alpha"
 				}
 			],
-			"return":
-			{
-				"type": "Color",
-				"description": "Final Color"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Final Color"
+				}
+			]
 		},
 		{
 			"name": "FromHSL",
@@ -186,11 +191,12 @@
 					"description": "Lightness"
 				}
 			],
-			"return":
-			{
-				"type": "Color",
-				"description": "Final Color"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Final Color"
+				}
+			]
 		},
 		{
 			"name": "FromHSV",
@@ -215,11 +221,12 @@
 					"description": "Value"
 				}
 			],
-			"return":
-			{
-				"type": "Color",
-				"description": "Final Color"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Final Color"
+				}
+			]
 		},
 		{
 			"name": "FromHEX",
@@ -231,11 +238,12 @@
 					"description": "Hexadecimal"
 				}
 			],
-			"return":
-			{
-				"type": "Color",
-				"description": "Final Color"
-			}
+			"return": [
+				{
+					"type": "Color",
+					"description": "Final Color"
+				}
+			]
 		}
 	]
 }
