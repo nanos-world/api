@@ -90,7 +90,7 @@
 				},
 				{
 					"type": "Rotator",
-					"description": "The rotation relative to the actor"
+					"description": "the rotation relative to the actor"
 				}
 			],
 			"parameters": [
