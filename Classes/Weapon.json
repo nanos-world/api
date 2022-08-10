@@ -134,6 +134,17 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAutoReload",
+			"description": "Sets if the Weapon auto reloads when ammo empties",
+			"parameters": [
+				{
+					"name": "auto_reload",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetBulletSettings",
 			"description": "Aux for setting and configuring the Bullet",
 			"parameters": [

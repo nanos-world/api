@@ -100,12 +100,12 @@
 					"description": "The location of the new system"
 				},
 				{
-					"type": "Rotation",
+					"type": "Rotator",
 					"name": "rotation",
 					"description": "The rotation of the new system"
 				},
 				{
-					"type": "Base Actor",
+					"type": "Actor",
 					"name": "actor",
 					"description": "The actor to be translated to the new system"
 				}
