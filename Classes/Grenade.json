@@ -1,6 +1,6 @@
 {
 	"name": "Grenade",
-	"description": "Chad Grenade",
+	"description": "Grenades are Pickables which Characters can grab and throw. It explodes after X seconds after thrown, causing damage around.",
 	"authority": "server",
 	"inheritance": [
 		"Actor",
@@ -8,9 +8,195 @@
 		"Pickable"
 	],
 	"constructor": [
-
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Vector",
+			"name": "rotation",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "StaticMeshPath",
+			"name": "static_mesh_asset",
+			"default": "nanos-world::SM_Grenade_G67"
+		},
+		{
+			"type": "ParticlePath",
+			"name": "explosion_particles",
+			"default": "nanos-world::P_Grenade_Special"
+		},
+		{
+			"type": "SoundPath",
+			"name": "explosion_sound",
+			"default": "nanos-world::A_Explosion_Large"
+		},
+		{
+			"type": "CollisionType",
+			"name": "collision_type",
+			"default": "CollisionType.Normal"
+		},
+		{
+			"type": "boolean",
+			"name": "gravity_enabled",
+			"default": "true"
+		}
 	],
 	"functions": [
- 
+		{
+			"authority": "server",
+			"name": "Explode",
+			"description": "Forces this grenade to Explode"
+		},
+		{
+			"authority": "server",
+			"name": "SetDamage",
+			"description": "Sets Damage parameters of this Grenade",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "base_damage",
+					"default": "90",
+					"description": "Max damage when inner radius"
+				},
+				{
+					"type": "number",
+					"name": "minimum_damage",
+					"default": "0",
+					"description": "Min damage when outer radius"
+				},
+				{
+					"type": "number",
+					"name": "damage_inner_radius",
+					"default": "200",
+					"description": "Radius which damage will be 100%"
+				},
+				{
+					"type": "number",
+					"name": "damage_outer_radius",
+					"default": "1000",
+					"description": "Radius which damage will be interpoled through falloff"
+				},
+				{
+					"type": "number",
+					"name": "damage_falloff",
+					"default": "1",
+					"description": "Lerp function between Max and Min damage"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetTimeToExplode",
+			"description": "Set Time until Explosion after thrown"
+		},
+		{
+			"authority": "server",
+			"name": "SetThrowForce",
+			"description": "Set Impulse applied when throwing"
+		},
+		{
+			"authority": "both",
+			"name": "GetBaseDamage",
+			"description": "Damage at Inner Radius",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetDamageFalloff",
+			"description": "Radius which BaseDamage will apply proportionally",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetDamageInnerRadius",
+			"description": "Radius which MinimumDamage will apply",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetDamageOuterRadius",
+			"description": "Radius which BaseDamage will apply",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMinimumDamage",
+			"description": "Damage at Outer Radius",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetTimeToExplode",
+			"description": "Time until Explosion",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetThrowForce",
+			"description": "Impulse applied when throwing",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Explode",
+			"authority": "both",
+			"description": "Triggered when the grenade has exploded",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Grenade",
+					"description": "The grenade which exploded"
+				}
+			]
+		},
+		{
+			"name": "Throw",
+			"authority": "both",
+			"description": "Triggered when the grenade has been thrown",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Grenade",
+					"description": "The grenade which exploded"
+				},
+				{
+					"name": "handler",
+					"type": "Character",
+					"description": "The Character which has thrown it"
+				}
+			]
+		}
 	]
 }

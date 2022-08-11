@@ -1,6 +1,6 @@
 {
 	"name": "JSON",
-	"description": "JSON library, useful for sending data from Client's Package to WebUI environment",
+	"description": "JSON library, useful for sending data from Client's Package to WebUI environment.",
 	"static_functions": [
 		{
 			"name": "stringify",
@@ -19,7 +19,7 @@
 				}
 			]
 		},
-    {
+		{
 			"name": "parse",
 			"description": "Returns a value representing the decoded JSON string",
 			"return": [
