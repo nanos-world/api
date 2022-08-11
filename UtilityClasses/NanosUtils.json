@@ -1,0 +1,93 @@
+{
+	"name": "NanosUtils",
+	"description": "A table containing useful and aux functions",
+	"static_functions": [
+		{
+			"name": "IsA",
+			"description": "Returns if an object is a type",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "the type of the object corresponds"
+				}
+			],
+			"parameters": [
+				{
+					"type": "any",
+					"name": "object",
+					"description": "Object to verify"
+				},
+        {
+					"type": "any",
+					"name": "type",
+					"description": "Type to verify"
+				}
+			]
+		},
+		{
+			"name": "Dump",
+			"description": "Dumps a table into a readable text",
+			"return": [
+				{
+					"type": "string",
+					"description": "the table as readable text"
+				}
+			],
+			"parameters": [
+				{
+					"type": "table",
+					"name": "table",
+					"description": "Table to dump"
+				}
+			]
+		},
+		{
+			"name": "Benchmark",
+			"description": "Benchmarks a function performance, outputs in the console the elapsed time",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "Benchmark name to output"
+				},
+        {
+					"type": "number",
+					"name": "amount",
+					"description": "Amount of times to loop"
+				},
+        {
+					"type": "function",
+					"name": "func",
+					"description": "The function to call"
+				},
+        {
+					"type": "any",
+					"name": "args...",
+					"description": "The arguments of the function to call"
+				}
+			]
+		},
+		{
+			"name": "FormatString",
+			"description": "A better string.format, replace {num} by the corresponding vararg in a string",
+			"return": [
+				{
+					"type": "string",
+					"description": "the final text with the arguments"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "Text to format"
+				},
+        {
+					"type": "any",
+					"name": "args...",
+					"description": "The arguments to replace"
+				}
+			]
+		}
+	]
+}
