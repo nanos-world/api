@@ -6,9 +6,181 @@
 		"Actor"
 	],
 	"constructor": [
-
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)",
+			"description": "Relevant only for Rect and Spot LightTypes"
+		},
+		{
+			"type": "Color",
+			"name": "color",
+			"default": "Color(1, 1, 1)"
+		},
+		{
+			"type": "LightType",
+			"name": "light_type",
+			"default": "LightType.Point"
+		},
+		{
+			"type": "number",
+			"name": "intensity",
+			"default": "30"
+		},
+		{
+			"type": "number",
+			"name": "attenuation_radius",
+			"default": "250"
+		},
+		{
+			"type": "number",
+			"name": "cone_angle",
+			"default": "44",
+			"description": "Relevant only for Spot LightType"
+		},
+		{
+			"type": "number",
+			"name": "inner_cone_angle_percent",
+			"default": "0",
+			"description": "Inner Cone Angle Percent (Relevant only for Spot LightType) (0-1)"
+		},
+		{
+			"type": "number",
+			"name": "max_daw_distance",
+			"default": "5000",
+			"description": "Max Draw Distance (Good for performance) - 0 for infinite"
+		},
+		{
+			"type": "boolean",
+			"name": "use_inverse_squared_falloff",
+			"default": "true",
+			"description": "Whether to use physically based inverse squared distance falloff, where Attenuation Radius is only clamping the light's contribution. (Spot and Point types only)"
+		},
+		{
+			"type": "boolean",
+			"name": "cast_shadows",
+			"default": "true"
+		},
+		{
+			"type": "boolean",
+			"name": "visible",
+			"default": "true"
+		}
 	],
     "functions": [
- 
+		{
+			"name": "SetColor",
+			"description": "Sets the light color",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "The light color"
+				}
+			]
+		},
+		{
+			"name": "SetTextureLightProfile",
+			"description": "Sets the light Texture Profile",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "LightProfile",
+					"name": "light_profile",
+					"description": "The Light Profile to use"
+				}
+			]
+		},
+		{
+			"name": "SetEnabled",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			]
+		},
+		{
+			"name": "SetCastShadows",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_shadows_enabled"
+				}
+			]
+		},
+		{
+			"name": "SetIntensity",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"name": "SetAttenuationRadius",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "attenuation_radius"
+				}
+			]
+		},
+		{
+			"name": "IsEnabled",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "GetCastShadows",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "GetIntensity",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetAttenuationRadius",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetColor",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Color"
+				}
+			]
+		}
     ]
 }
