@@ -1,6 +1,6 @@
 {
 	"name": "Rotator",
-	"description": "A container for rotation information. All rotation values are stored in degrees.",
+	"description": "A container for rotation information (Pitch, Yaw, Ro). All rotation values are stored in degrees.",
 	"constructor": [
 		{
 			"name": "Pitch",
@@ -45,7 +45,7 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "The forward direction"
+					"description": "the forward direction"
 				}
 			]
 		},
@@ -55,7 +55,7 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "The right direction"
+					"description": "the right direction"
 				}
 			]
 		},
@@ -65,7 +65,7 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "The up direction"
+					"description": "the up direction"
 				}
 			]
 		},
@@ -76,13 +76,13 @@
 				{
 					"type": "Vector",
 					"name": "vector",
-					"description": "The vector to rotate by the Rotator"
+					"description": "the vector to rotate by the Rotator"
 				}
 			],
 			"return": [
 				{
 					"type": "Vector",
-					"description": "The rotated vector"
+					"description": "the rotated vector"
 				}
 			]
 		},
@@ -103,7 +103,7 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "The unrotated vector"
+					"description": "the unrotated vector"
 				}
 			]
 		},
@@ -113,7 +113,7 @@
 			"return": [
 				{
 					"type": "Quat",
-					"description": "The rotation as a quaternion"
+					"description": "the rotation as a quaternion"
 				}
 			]
 		},
@@ -123,7 +123,7 @@
 			"return": [
 				{
 					"type": "Rotator",
-					"description": "The normalized Rotator"
+					"description": "the normalized Rotator"
 				}
 			]
 		},
@@ -141,7 +141,7 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "Whether the rotator is nearly zero"
+					"description": "whether the rotator is nearly zero"
 				}
 			]
 		},
@@ -151,7 +151,7 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "Whether the rotator is exactly zero"
+					"description": "whether the rotator is exactly zero"
 				}
 			]
 		}
@@ -171,7 +171,7 @@
 			"return": [
 				{
 					"type": "Rotator",
-					"description": "The random rotation"
+					"description": "the random rotation"
 				}
 			]
 		}
