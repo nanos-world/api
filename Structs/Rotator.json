@@ -1,0 +1,179 @@
+{
+	"name": "Rotator",
+	"description": "A container for rotation information. All rotation values are stored in degrees.",
+	"constructor": [
+		{
+			"name": "Pitch",
+			"type": "number",
+			"default": "0",
+			"description": "Pitch"
+		},
+		{
+			"name": "Yaw",
+			"type": "number",
+			"default": "0",
+			"description": "Yaw"
+		},
+		{
+			"name": "Roll",
+			"type": "number",
+			"default": "0",
+			"description": "Roll"
+		}
+	],
+	"properties": [
+		{
+			"name": "Pitch",
+			"type": "number",
+			"description": "Rotation around the right axis (around Y axis), Looking up and down (0=Straight Ahead, +Up, -Down)"
+		},
+		{
+			"name": "Yaw",
+			"type": "number",
+			"description": "Rotation around the up axis (around Z axis), Running in circles 0=East, +North, -South."
+		},
+		{
+			"name": "Roll",
+			"type": "number",
+			"description": "Rotation around the forward axis (around X axis), Tilting your head, 0=Straight, +Clockwise, -CCW."
+		}
+	],
+	"functions": [
+		{
+			"name": "GetForwardVector",
+			"description": "Get the forward (X) unit direction vector from this component, in world space.",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The forward direction"
+				}
+			]
+		},
+		{
+			"name": "GetRightVector",
+			"description": "Get the right (Y) unit direction vector from this component, in world space.",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The right direction"
+				}
+			]
+		},
+		{
+			"name": "GetUpVector",
+			"description": "Get the up (Z) unit direction vector from this component, in world space.",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The up direction"
+				}
+			]
+		},
+		{
+			"name": "RotateVector",
+			"description": "Rotate a vector rotated by this rotator.",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "vector",
+					"description": "The vector to rotate by the Rotator"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The rotated vector"
+				}
+			]
+		},
+		{
+			"name": "Normalize",
+			"description": "In-place normalize, removes all winding and creates the “shortest route” rotation."
+		},
+		{
+			"name": "UnrotateVector",
+			"description": "Returns the vector rotated by the inverse of this rotator.",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "vector",
+					"description": "The vector to rotate by the inverse of the Rotator"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The unrotated vector"
+				}
+			]
+		},
+		{
+			"name": "Quaternion",
+			"description": "Get Rotation as a quaternion.",
+			"return": [
+				{
+					"type": "Quat",
+					"description": "The rotation as a quaternion"
+				}
+			]
+		},
+		{
+			"name": "GetNormalized",
+			"description": "Returns a new Rotator normalized.",
+			"return": [
+				{
+					"type": "Rotator",
+					"description": "The normalized Rotator"
+				}
+			]
+		},
+		{
+			"name": "IsNearlyZero",
+			"description": "Checks whether rotator is near to zero within a specified tolerance",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "tolerance",
+					"description": "Tolerance to check",
+					"default": "0.000001"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Whether the rotator is nearly zero"
+				}
+			]
+		},
+		{
+			"name": "IsZero",
+			"description": "Checks whether all components of the rotator are exactly zero",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Whether the rotator is exactly zero"
+				}
+			]
+		}
+	],
+	"static_functions": [
+		{
+			"name": "Random",
+			"description": "Generates a random rotation, with optional random roll",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "roll",
+					"description": "Whether to use a random roll in the rotator, otherwise uses 0 for roll",
+					"default": "false"
+				}
+			],
+			"return": [
+				{
+					"type": "Rotator",
+					"description": "The random rotation"
+				}
+			]
+		}
+	]
+}
