@@ -6,9 +6,90 @@
 		"Actor"
 	],
 	"constructor": [
-
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"type": "Vector",
+			"name": "extent",
+			"default": "Vector(0, 0, 0)",
+			"description": "Size of the Trigger. If using Sphere, only the X is used"
+		},
+		{
+			"type": "TriggerType",
+			"name": "trigger_type",
+			"default": "TriggerType.Sphere"
+		},
+		{
+			"type": "boolean",
+			"name": "is_visible",
+			"default": "false",
+			"description": "Useful for debugging"
+		},
+		{
+			"type": "Color",
+			"name": "color",
+			"default": "Color.RED",
+			"description": "Color to paint the Trigger bounds - if Visible"
+		}
 	],
 	"functions": [
- 
+		{
+			"name": "ForceOverlapChecking",
+			"description": "Forces a Overlap checking to occur, will immediately trigger overlaps",
+			"authority": "server"
+		},
+		{
+			"name": "SetExtent",
+			"description": "Sets the extent size of this trigger (sphere triggers will use only the .X component for radius)",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "extent"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "BeginOverlap",
+			"description": "Triggered when something overlaps this Trigger",
+			"arguments": [
+				{
+					"type": "Trigger",
+					"name": "self",
+					"description": "The Trigger entity"
+				},
+				{
+					"type": "Actor",
+					"name": "entity",
+					"description": "Any Actor which overlaps"
+				}
+			]
+		},
+		{
+			"name": "EndOverlap",
+			"description": "Triggered when something leaves this Trigger",
+			"arguments": [
+				{
+					"type": "Trigger",
+					"name": "self",
+					"description": "The Trigger entity"
+				},
+				{
+					"type": "Actor",
+					"name": "entity",
+					"description": "Any Actor which left the Trigger"
+				}
+			]
+		}
 	]
 }
