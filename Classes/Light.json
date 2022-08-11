@@ -136,6 +136,51 @@
 					"name": "attenuation_radius"
 				}
 			]
+		},
+		{
+			"name": "IsEnabled",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "GetCastShadows",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "GetIntensity",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetAttenuationRadius",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetColor",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Color"
+				}
+			]
 		}
     ]
 }
