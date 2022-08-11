@@ -1,0 +1,40 @@
+{
+	"name": "JSON",
+	"description": "JSON library, useful for sending data from Client's Package to WebUI environment",
+	"static_functions": [
+		{
+			"name": "stringify",
+			"description": "Returns a string representing value encoded in JSON",
+			"return": [
+				{
+					"type": "string",
+					"description": "the table in JSON"
+				}
+			],
+			"parameters": [
+				{
+					"type": "table",
+					"name": "value",
+					"description": "the table that will become JSON"
+				}
+			]
+		},
+    {
+			"name": "parse",
+			"description": "Returns a value representing the decoded JSON string",
+			"return": [
+				{
+					"type": "any",
+					"description": "the json in table"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "value",
+					"description": "the JSON that will become a table"
+				}
+			]
+		}
+	]
+}
