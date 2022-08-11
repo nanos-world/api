@@ -1,6 +1,6 @@
 {
 	"name": "NanosUtils",
-	"description": "A table containing useful and aux functions",
+	"description": "A table containing useful and aux functions.",
 	"static_functions": [
 		{
 			"name": "IsA",
@@ -17,7 +17,7 @@
 					"name": "object",
 					"description": "Object to verify"
 				},
-        {
+				{
 					"type": "any",
 					"name": "type",
 					"description": "Type to verify"
@@ -43,24 +43,25 @@
 		},
 		{
 			"name": "Benchmark",
-			"description": "Benchmarks a function performance, outputs in the console the elapsed time",
+			"description": "Benchmarks a function performance",
+			"description_long": "Benchmarks a function performance, outputs in the console the elapsed time",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "name",
 					"description": "Benchmark name to output"
 				},
-        {
+				{
 					"type": "number",
 					"name": "amount",
 					"description": "Amount of times to loop"
 				},
-        {
+				{
 					"type": "function",
 					"name": "func",
 					"description": "The function to call"
 				},
-        {
+		{
 					"type": "any",
 					"name": "args...",
 					"description": "The arguments of the function to call"
@@ -69,7 +70,8 @@
 		},
 		{
 			"name": "FormatString",
-			"description": "A better string.format, replace {num} by the corresponding vararg in a string",
+			"description": "A better string.format",
+			"description_long": "A better string.format. replace {num} by the corresponding vararg in a string<br/><br/>Example: <code>NanosUtils.FormatString(\"Hello {2} I'm {1}\", \"a noob\", \"world!\") -- \"Hello world! I'm a noob\"</code>",
 			"return": [
 				{
 					"type": "string",
@@ -82,7 +84,7 @@
 					"name": "text",
 					"description": "Text to format"
 				},
-        {
+				{
 					"type": "any",
 					"name": "args...",
 					"description": "The arguments to replace"
