@@ -1,6 +1,6 @@
 {
 	"name": "Particle",
-	"description": "Particle Entity.",
+	"description": "Class to spawn Particle Systems used to create effects in the world.",
 	"authority": "both",
 	"inheritance": [
 		"Actor"

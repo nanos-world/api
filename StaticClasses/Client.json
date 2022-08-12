@@ -1,0 +1,8 @@
+{
+	"name": "Client",
+	"description": "",
+	"authority": "client",
+	"static_functions": [
+
+    ]
+}

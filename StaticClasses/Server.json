@@ -1,43 +1,48 @@
 {
-	"name": "SERVER",
-	"description": "Server represents all Server controls in the Server side",
-	"functions": [
+	"name": "Server",
+	"description": "Server represents all Server controls in the Server side.",
+	"authority": "server",
+	"static_functions": [
 		{
 			"name": "BroadcastChatMessage",
 			"description": "Sends a chat message to everyone",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "message",
-					"description": "The message send to everyone"
+					"description": "The message to send to everyone"
 				}
 			]
 		},
 		{
 			"name": "ChangeMap",
 			"description": "Restarts the server in a new Map, restarts all packages and reconnects all players",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "map_path",
-					"description": "The new map"
+					"description": "The new map to load"
 				}
 			]
 		},
 		{
 			"name": "ReloadPackage",
 			"description": "Reloads a Package",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "package_folder_name",
-					"description": "The package you want reload"
+					"description": "The package to reload"
 				}
 			]
 		},
 		{
 			"name": "SendChatMessage",
 			"description": "Sends a chat message to Player only",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "Player",
@@ -54,6 +59,7 @@
 		{
 			"name": "SetDescription",
 			"description": "Sets the description of the server, optionally overrides Config.toml",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -71,6 +77,7 @@
 		{
 			"name": "SetLogo",
 			"description": "Sets the logo of the server, optionally overrides Config.toml",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -88,6 +95,7 @@
 		{
 			"name": "SetMaxPlayers",
 			"description": "Sets the maximum player slots of the server, optionally overrides Config.toml",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "number",
@@ -105,6 +113,7 @@
 		{
 			"name": "SetName",
 			"description": "Sets the name of the server, optionally overrides Config.toml",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -122,6 +131,7 @@
 		{
 			"name": "SetPassword",
 			"description": "Sets the password of the server, optionally overrides Config.toml",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -139,6 +149,7 @@
 		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -155,6 +166,7 @@
 		{
 			"name": "GetValue",
 			"description": "Gets a value given a key",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -171,14 +183,16 @@
 		{
 			"name": "Stop",
 			"description": "Stops the server",
+			"authority": "server"
 		},
 		{
 			"name": "Subscribe",
 			"description": "Subscribes for an Event",
+			"authority": "server",
 			"return": [
 				{
 					"type": "function",
-					"description": "The function callback itself"
+					"description": "the function callback itself"
 				}
 			],
 			"parameters": [
@@ -197,6 +211,7 @@
 		{
 			"name": "UnloadPackage",
 			"description": "Unloads a Package",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -208,6 +223,7 @@
 		{
 			"name": "Unsubscribe",
 			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -225,40 +241,44 @@
 		{
 			"name": "GetMap",
 			"description": "Returns the current Map",
+			"authority": "server",
 			"return": [
 				{
 					"type": "string",
-					"description": "The current map"
+					"description": "the current map"
 				}
 			]
 		},
 		{
 			"name": "GetMapConfig",
 			"description": "Returns a list of the Custom Config of the current map (stored in the MAP_NAME.toml)",
+			"authority": "server",
 			"return": [
 				{
 					"type": "table",
-					"description": "A list of the Custom Config of the current map"
+					"description": "a list of the Custom Config of the current map"
 				}
 			]
 		},
 		{
 			"name": "GetMaps",
 			"description": "Returns a list of all Maps installed on the server",
+			"authority": "server",
 			"return": [
 				{
-					"type": "table",
-					"description": "A list of all Maps installed on the server"
+					"type": "string[]",
+					"description": "a list of all Maps installed on the server"
 				}
 			]
 		},
 		{
 			"name": "GetPackages",
 			"description": "Returns a list of Packages folder names available in the server, optionally returns only loaded and running packages",
+			"authority": "server",
 			"return": [
 				{
-					"type": "table",
-					"description": "A list of Packages folder names available in the server"
+					"type": "string[]",
+					"description": "a list of Packages folder names available in the server"
 				}
 			],
 			"parameters": [
@@ -273,80 +293,88 @@
 		{
 			"name": "GetVersion",
 			"description": "Returns the server version",
+			"authority": "server",
 			"return": [
 				{
 					"type": "string",
-					"description": "The server version"
+					"description": "the server version"
 				}
 			]
 		},
 		{
 			"name": "GetIP",
 			"description": "Returns the server Public IP",
+			"authority": "server",
 			"return": [
 				{
 					"type": "string",
-					"description": "The server Public IP"
+					"description": "the server Public IP"
 				}
 			]
 		},
 		{
 			"name": "GetPort",
 			"description": "Returns the server Port",
+			"authority": "server",
 			"return": [
 				{
 					"type": "number",
-					"description": "The server Port"
+					"description": "the server Port"
 				}
 			]
 		},
 		{
 			"name": "GetQueryPort",
 			"description": "Returns the server QueryPort",
+			"authority": "server",
 			"return": [
 				{
 					"type": "number",
-					"description": "The server QueryPort"
+					"description": "the server QueryPort"
 				}
 			]
 		},
 		{
 			"name": "GetMaxPlayers",
 			"description": "Returns the Max Players configured",
+			"authority": "server",
 			"return": [
 				{
 					"type": "number",
-					"description": "The max players configured"
+					"description": "the max players configured"
 				}
 			]
 		},
 		{
 			"name": "GetDescription",
 			"description": "Returns the Server Description",
+			"authority": "server",
 			"return": [
 				{
 					"type": "string",
-					"description": "The Server Description"
+					"description": "the Server Description"
 				}
 			]
 		},
 		{
 			"name": "GetTickRate",
 			"description": "Returns the Configured Tick Rate",
+			"authority": "server",
 			"return": [
 				{
 					"type": "number",
-					"description": "The server Tick Rate"
+					"description": "the server Tick Rate"
 				}
 			]
 		},
 		{
 			"name": "IsAnnounced",
 			"description": "Returns if the Server is announced in the Master List",
+			"authority": "server",
 			"return": [
 				{
 					"type": "boolean",
-					"description": "If the Server is announced in the Master List"
+					"description": "if the Server is announced in the Master List"
 				}
 			]
 		}
@@ -354,7 +382,8 @@
 	"events": [
 		{
 			"name": "Chat",
-			"description": "Called when a player types something in the chat - return false to do not send the message",
+			"description": "Called when a player types something in the chat",
+			"authority": "server",
 			"return": [
 				{
 					"type": "boolean",
@@ -377,6 +406,7 @@
 		{
 			"name": "Console",
 			"description": "Called when a console command is submitted",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -388,6 +418,7 @@
 		{
 			"name": "LogEntry",
 			"description": "Called when a Server log is received",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -404,11 +435,12 @@
 		{
 			"name": "Start",
 			"description": "Server has been started",
-			"parameters": []
+			"authority": "server"
 		},
 		{
 			"name": "PlayerConnect",
-			"description": "Called when a player is attempting to connect to the server - return false to do not allow it",
+			"description": "Called when a player is attempting to connect to the server",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
@@ -441,11 +473,13 @@
 		{
 			"name": "Stop",
 			"description": "Server has been stopped",
-			"parameters": []
+			"authority": "server"
 		},
 		{
 			"name": "Tick",
-			"description": "Is called every 30 ms by default. Only small operations should be performed here, otherwise this can lead the server to delays.",
+			"description": "Triggered every 33ms by default",
+			"description_long": "Triggered every 33ms by default<br/><br/>Caution: Only small operations should be performed here, otherwise this can lead to server lag and delays",
+			"authority": "server",
 			"parameters": [
 				{
 					"type": "number",

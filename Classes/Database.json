@@ -40,7 +40,7 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "Callback to call when finishes"
+					"description": "Callback to call when finishes<br/>The argument passed to it will be the <code>rows_affected</code> number"
 				},
 				{
 					"type": "any",
@@ -88,7 +88,7 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "Callback to call when finishes"
+					"description": "Callback to call when finishes<br/>The argument passed to it will be a table of rows"
 				},
 				{
 					"type": "any",
@@ -101,7 +101,7 @@
 		{
 			"return": [
 				{
-					"type": "table",
+					"type": "table[]",
 					"description": "rows fetched"
 				}
 			],
