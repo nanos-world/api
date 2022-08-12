@@ -7,9 +7,226 @@
 		"Paintable"
 	],
 	"constructor": [
-
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"type": "StaticMeshReference",
+			"name": "asset",
+			"default": ""
+		},
+		{
+			"type": "CollisionType",
+			"name": "collision_type",
+			"default": "CollisionType.Auto"
+		},
+		{
+			"type": "boolean",
+			"name": "gravity_enabled",
+			"default": "true"
+		},
+		{
+			"type": "boolean",
+			"name": "is_grabbable",
+			"default": "true"
+		},
+		{
+			"type": "boolean",
+			"name": "force_no_ccd",
+			"default": "false"
+		}
 	],
 	"functions": [
- 
+		{
+			"name": "SetGrabbable",
+			"description": "Sets ability to Characters to Grab this Prop",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_grabbable",
+					"description": "If the Prop will be able to be grabbable or not"
+				}
+			],
+			"authority": "server"
+		},
+		{
+			"name": "SetPhysicsDamping",
+			"description": "Sets the Physics damping of this Prop",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "linear_damping",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "angular_damping",
+					"description": ""
+				}
+			],
+			"authority": "authority"
+		},
+		{
+			"name": "GetAssetName",
+			"description": "Gets the Asset name",
+			"return": [
+				{
+					"type": "string",
+					"description": "asset name"
+				}
+			],
+			"authority": "both"
+		},
+		{
+			"name": "GetHandler",
+			"description": "Gets the Character (if existing) which is holding this",
+			"return": [
+				{
+					"type": "Character",
+					"description": "the character that holds the object"
+				}
+			],
+			"authority": "both"
+		},
+		{
+			"name": "IsGrabbable",
+			"description": "Gets ability to Grab this Prop",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "can take the object"
+				}
+			],
+			"authority": "both"
+		}
+	],
+	"events": [
+		{
+			"name": "Grab",
+			"description": "Triggered when Character grabs a Prop",
+			"arguments": [
+				{
+					"type": "Prop",
+					"name": "self",
+					"description": "The prop which was Grabbed"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The new Grabber"
+				}
+			]
+		},
+		{
+			"name": "Hit",
+			"description": "Triggered when this Prop hits something",
+			"arguments": [
+				{
+					"type": "Prop",
+					"name": "self",
+					"description": "The prop which has been hit"
+				},
+				{
+					"type": "number",
+					"name": "impact_force",
+					"description": "The intensity of the Hit normalized by the Prop's weight"
+				},
+				{
+					"type": "Vector",
+					"name": "normal_impulse",
+					"description": "The impulse direction it hits"
+				},
+				{
+					"type": "Vector",
+					"name": "impact_location",
+					"description": "The world 3D location of the impact"
+				},
+				{
+					"type": "Vector",
+					"name": "velocity",
+					"description": "The Prop velocity at the moment it hits"
+				}
+			]
+		},
+		{
+			"name": "Interact",
+			"description": "When a Character interacts with this Prop (i.e. try to Grab it). Return false to prevent it",
+			"arguments": [
+				{
+					"type": "Prop",
+					"name": "self",
+					"description": "the object that undergoes an interaction"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "the character who interacts with the object"
+				}
+			]
+		},
+		{
+			"name": "TakeDamage",
+			"description": "When Prop takes Damage",
+			"arguments": [
+				{
+					"type": "Prop",
+					"name": "self",
+					"description": "the object that takes the damage"
+				},
+				{
+					"type": "number",
+					"name": "damage",
+					"description": "amount of damage"
+				},
+				{
+					"type": "string",
+					"name": "bone",
+					"description": "Damaged bone"
+				},
+				{
+					"type": "DamageType",
+					"name": "type",
+					"description": "Damage Type"
+				},
+				{
+					"type": "Vector",
+					"name": "from_direction",
+					"description": "Direction of the damage relative to the damaged actor"
+				},
+				{
+					"type": "Player",
+					"name": "instigator",
+					"description": "The player which caused the damage"
+				},
+				{
+					"type": "any",
+					"name": "causer",
+					"description": "The object which caused the damage"
+				}
+			]
+		},
+		{
+			"name": "UnGrab",
+			"description": "Triggered when this Prop hits something",
+			"arguments": [
+				{
+					"type": "Prop",
+					"name": "self",
+					"description": "The prop which has been ungrabbed"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The old Grabber"
+				}
+			]
+		}
 	]
 }
