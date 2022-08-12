@@ -3,9 +3,365 @@
 	"description": "Class for spawning a dynamic Web Browser",
 	"authority": "client",
 	"constructor": [
-
+		{
+			"type": "string",
+			"name": "Used for debugging logs"
+		},
+		{
+			"type": "string",
+			"name": "path",
+			"description": "URL or <code>file://my_file.html</code> or <code>package://my-package/Client/file.html</code>"
+		},
+		{
+			"type": "boolean",
+			"name": "is_visible",
+			"default": "true",
+			"description": "if WebUI is visible on screen"
+		},
+		{
+			"type": "boolean",
+			"name": "is_transparent",
+			"default": "true",
+			"description": "if WebUI background is transparent"
+		},
+		{
+			"type": "boolean",
+			"name": "auto_resize",
+			"default": "true",
+			"description": "if should auto resize when screen changes it's size (useful OFF when you are painting meshes with WebUI)"
+		},
+		{
+			"type": "number",
+			"name": "width",
+			"default": "0",
+			"description": "size of the WebUI width when you are not using auto_resize"
+		},
+		{
+			"type": "number",
+			"name": "height",
+			"default": "0",
+			"description": "size of the WebUI height when you are not using auto_resize"
+		}
 	],
 	"functions": [
- 
+		{
+			"name": "BringToFront",
+			"description": "Puts this WebUI in the front of all WebUIs"
+		},
+		{
+			"name": "CallEvent",
+			"description": "Calls an Event on the Browser's JavaScript",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"name": "Destroy",
+			"description": "Destroys this Browser"
+		},
+		{
+			"name": "LoadURL",
+			"description": "Loads a new File/URL in this Browser",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "url"
+				}
+			]
+		},
+		{
+			"name": "SetFocus",
+			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
+			"description_long": "Note: Only one browser can have focus per time."
+		},
+		{
+			"name": "RemoveFocus",
+			"description": "Removes the focus from this WebUI (and sets it back to game viewport)",
+			"description_long": "You MUST call this after you don't need keyboard input anymore"
+		},
+		{
+			"name": "SetFreeze",
+			"description": "Freezes the WebUI Rendering to the surface (it will still execute the JS under the hood)",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "freeze"
+				}
+			]
+		},
+		{
+			"name": "SetVisible",
+			"description": "Toggles the visibility",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_visible"
+				}
+			]
+		},
+		{
+			"name": "SpawnSound",
+			"description": "Spawns a Sound entity to plays this WebUI sound",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "boolean",
+					"name": "is_2d",
+					"default": "true"
+				},
+				{
+					"type": "number",
+					"name": "volume",
+					"default": "1.0"
+				},
+				{
+					"type": "number",
+					"name": "inner_radius",
+					"default": "400"
+				},
+				{
+					"type": "number",
+					"name": "falloff_distance",
+					"default": "3600"
+				},
+				{
+					"type": "AttenuationFunction",
+					"name": "attenuation_function",
+					"default": "AttenuationFunction.Linear"
+				}
+			],
+			"return": [
+				{
+					"type": "Sound"
+				}
+			]
+		},
+		{
+			"name": "SendMouseWheelEvent",
+			"description": "Sends a Mouse Event into the WebUI programatically",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": "Position X of the mouse"
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": "Position Y of the mouse"
+				},
+				{
+					"type": "number",
+					"name": "delta_x"
+				},
+				{
+					"type": "number",
+					"name": "delta_y"
+				}
+			]
+		},
+		{
+			"name": "SendKeyEvent",
+			"description": "Sends a Key Event into the WebUI programatically",
+			"parameters": [
+				{
+					"type": "WebUIKeyType",
+					"name": "key_type"
+				},
+				{
+					"type": "number",
+					"name": "key_code"
+				},
+				{
+					"type": "WebUIModifier",
+					"name": "modifiers",
+					"default": "WebUIModifier.None",
+					"description": "Accept bitwise operators"
+				}
+			]
+		},
+		{
+			"name": "SendMouseMoveEvent",
+			"description": "Sends a Mouse Move Event into the WebUI programatically",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": "Position X of the mouse"
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": "Position Y of the mouse"
+				},
+				{
+					"type": "WebUIModifier",
+					"name": "modifiers",
+					"default": "WebUIModifier.None",
+					"description": "Accept bitwise operators"
+				},
+				{
+					"type": "boolean",
+					"name": "mouse_leave",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SendMouseClickEvent",
+			"description": "Sends a Mouse Click into the WebUI programatically",
+			"description_long": "You must send both Down and Up to make it work properly",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": "Position X of the mouse"
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": "Position Y of the mouse"
+				},
+				{
+					"type": "WebUIMouseType",
+					"name": "mouse_type",
+					"description": "Which mouse button"
+				},
+				{
+					"type": "boolean",
+					"name": "is_mouse_up",
+					"description": "Whether the event was up or down"
+				},
+				{
+					"type": "WebUIModifier",
+					"name": "modifiers",
+					"default": "WebUIModifier.None",
+					"description": "Accept bitwise operators"
+				},
+				{
+					"type": "number",
+					"name": "click_count",
+					"default": "1",
+					"description": "Use 2 for double click event"
+				}
+			]
+		},
+		{
+			"name": "IsValid",
+			"description": "Gets if this entity is Valid",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "GetID",
+			"description": "Gets the network ID of this entity",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetSize",
+			"description": "Gets the current size of this WebUI",
+			"return": [
+				{
+					"type": "Vector2D"
+				}
+			]
+		},
+		{
+			"name": "GetType",
+			"description": "Returns the type of this Entity",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "IsVisible",
+			"description": "Returns if this WebUI is currently visible",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes for an Event",
+			"return": [
+				{
+					"type": "function",
+					"description": "the subscribed callback itself"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to subscribe"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The callback function to execute"
+				}
+			]
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Entity and in this Package, optionally passing the function to unsubscribe only that callback",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to unsubscribe"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "The callback function to unsubscribe"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Failed",
+			"description": "Triggered when this page fails to load",
+			"arguments": [
+				{
+					"type": "number",
+					"name": "error_code"
+				},
+				{
+					"type": "string",
+					"name": "message"
+				}
+			]
+		},
+		{
+			"name": "Ready",
+			"description": "Triggered when this page is fully loaded"
+		}
 	]
 }
