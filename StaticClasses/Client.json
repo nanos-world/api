@@ -1,8 +1,1336 @@
 {
 	"name": "Client",
-	"description": "",
+	"description": "Static Class present on Client side.",
 	"authority": "client",
 	"static_functions": [
-
-    ]
+		{
+			"name": "CallLevelBlueprintEvent",
+			"description": "Calls a Level Blueprint custom event (which can be added when creating levels through Unreal Engine)",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "DrawDebugBox",
+			"description": "",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "extent",
+					"description": ""
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugCoordinateSystem",
+			"description": "",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "size",
+					"description": "",
+					"default_value" : "100"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugCrosshairs",
+			"description": "",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "size",
+					"description": "",
+					"default_value": "100"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugCylinder",
+			"description": "",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "segments",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugDirectionalArrow",
+			"description": "",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "arrow_size",
+					"description": "",
+					"default_value": "100"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugLine",
+			"description": "Draws a Debug Line in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_position",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_position",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugPoint",
+			"description": "Draws a Debug Point in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_position",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "size",
+					"description": "",
+					"default_value" : "10"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugSphere",
+			"description": "Draws a Debug Line in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "segments",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDebugString",
+			"description": "",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default_value": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "boolean",
+					"name": "draw_shadow",
+					"description": "",
+					"default_value" : "false"
+				},
+				{
+					"type": "number",
+					"name": "font_scale",
+					"description": "",
+					"default_value" : "1"
+				}
+			]
+		},
+		{
+			"name": "ProjectWorldToScreen",
+			"description": "Transforms a 3D world-space vector into 2D screen coordinates",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "world_position",
+					"description": "World 3D position"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector2D"
+				}
+			]
+		},
+		{
+			"name": "DeprojectScreenToWorld",
+			"description": "Transforms a 2D screen coordinates into 3D world-space location",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_position",
+					"description": "Screen position"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"name": "InitializeDiscord",
+			"description": "Initializes the Discord Integration with your custom client_id",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "client_id",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SendChatMessage",
+			"description": "Sends a chat message which will display local only",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetChatConfiguration",
+			"description": "Configure the Chat",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_location",
+					"description": "",
+					"default_value": "Vector(-25, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "size",
+					"description": "",
+					"default_value": "Vector(600, 250)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_min",
+					"description": "",
+					"default_value": "Vector(1, 0.5)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_max",
+					"description": "",
+					"default_value": "Vector(1, 0.5)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "alignment",
+					"description": "",
+					"default_value": "Vector(1, 0.5)"
+				},
+				{
+					"type": "boolean",
+					"name": "justify",
+					"description": "",
+					"default_value": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "show_scrollbar",
+					"description": "",
+					"default_value": "true"
+				}
+			]
+		},
+		{
+			"name": "SetChatVisibility",
+			"description": "Set if the Chat is visible or not",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_visible",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetCrosshairEnabled",
+			"description": "Enables/Disables the Blood Screen effect",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetBloodScreenEnabled",
+			"description": "Enables/Disables the Blood Screen effect",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetBloodScreenIntensity",
+			"description": "Manually sets the Blood Screen intensity",
+			"description_long": "If you want the Blood Screen to do not be overridden, disable it with <code>Client.SetBloodScreenEnabled(false)</code> before",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity",
+					"description": "From 0.0 to 1.0"
+				}
+			]
+		},
+		{
+			"name": "SetHardwareCursor",
+			"description": "Loads or sets a hardware cursor from the content directory in the game",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "CursorType",
+					"name": "cursor_shape",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "cursor_path",
+					"description": ""
+				},
+				{
+					"type": "Vector2D",
+					"name": "hotspot",
+					"description": "",
+					"default_value": "Vector(0, 0)"
+				}
+			]
+		},
+		{
+			"name": "SetDiscordActivity",
+			"description": "Communicates with Discord and sets a custom user status",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "state",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "details",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "large_image",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "large_text",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "reset_time",
+					"description": "Whether or not to reset current activity elapsed time",
+					"default_value": "false"
+				}
+			]
+		},
+		{
+			"name": "SetInputEnabled",
+			"description": "Toggles Local Player input",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_input",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetMouseEnabled",
+			"description": "Displays/Hides Mouse Cursor",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetMousePosition",
+			"description": "Sets the mouse position",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "new_position",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetHighlightColor",
+			"description": "Changes the Highlight Color for highlighted actors at a specific Index",
+			"description_long": "Changes the Highlight Color for highlighted actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 differents indexes (0, 1 or 2).",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "highlight_color",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"description": ""
+				},
+				{
+					"type": "HighlightMode",
+					"name": "mode",
+					"description": "",
+					"default_value": "HighlightMode.Always"
+				}
+			]
+		},
+		{
+			"name": "SetOutlineColor",
+			"description": "Changes the Outline Color for outlined actors at a specific Index",
+			"description_long": "Changes the Outline Color for outlined actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/>Note: You can only have 3 differents indexes (0, 1 or 2), and the default Outline color index used by the game is  <code>0</code> (when interacting with stuff).",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "outline_color",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"description": "",
+					"default_value": "0"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value": "2"
+				}
+			]
+		},
+		{
+			"name": "SetSteamRichPresence",
+			"description": "Sets Steam Rich Presence value",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetValue",
+			"description": "Sets a global value in the Client, which can be accessed from anywhere (client side)",
+			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side)<br/><br/>Please refer to <a href=\"https://docs.nanos.world/docs/next/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": ""
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes for an Event",
+			"authority": "client",
+			"return": [
+				{
+					"type": "function",
+					"description": "The function callback itself"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": ""
+				},
+				{
+					"type": "function",
+					"name": "function",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": ""
+				},
+				{
+					"type": "function",
+					"name": "function",
+					"description": "",
+					"default_value": "nil"
+				}
+			]
+		},
+		{
+			"name": "Trace",
+			"description": "Trace a ray against the world and returns a table with the first blocking hit information",
+			"description_long": "Trace a ray against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\"}"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by |",
+					"default_value": "CollisionChannel.WorldStatic"
+				},
+				{
+					"type": "boolean",
+					"name": "trace_complex",
+					"description": "",
+					"default_value": "false"
+				},
+				{
+					"type": "boolean",
+					"name": "return_entity",
+					"description": "",
+					"default_value": "false"
+				},
+				{
+					"type": "boolean",
+					"name": "return_physical_material",
+					"description": "",
+					"default_value": "false"
+				},
+				{
+					"type": "table",
+					"name": "ignored_actors",
+					"description": "",
+					"default_value": "{}"
+				},
+				{
+					"type": "boolean",
+					"name": "draw_debug",
+					"description": "",
+					"default_value": "false"
+				}
+			]
+		},
+		{
+			"name": "GetLocalPlayer",
+			"description": "Gets the local Player",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Player",
+					"description": "The local Player"
+				}
+			]
+		},
+		{
+			"name": "GetRandomReachablePointInRadius",
+			"description": "Finds random, reachable point in navigable space restricted to radius around origin",
+			"description_long": "Finds random, reachable point in navigable space restricted to radius around origin (only if map has a NavMesh)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The random point"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "origin",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "GetRandomPointInNavigableRadius",
+			"description": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin",
+			"description_long": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin (only if map has a NavMesh)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The random point"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "origin",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "FindPathToLocation",
+			"description": "Finds a Path given Start and End location",
+			"description_long": "Finds a Path given Start and End location (only if map has a NavMesh)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"description": "Returned Table: {\"IsValid\", \"IsPartial\", \"Length\", \"Cost\", \"PathPoints\"}"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "GetMap",
+			"description": "Returns the current Map",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string",
+					"description": "The current Map"
+				}
+			]
+		},
+		{
+			"name": "GetMousePosition",
+			"description": "Gets the current mouse screen location",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector2D",
+					"description": "The current mouse screen location"
+				}
+			]
+		},
+		{
+			"name": "GetPackages",
+			"description": "Returns a list of Packages folder names loaded and running in the client",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "packages folder names"
+				}
+			]
+		},
+		{
+			"name": "GetViewportSize",
+			"description": "Gets the size of viewport",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector2D",
+					"description": "The size of viewport"
+				}
+			]
+		},
+		{
+			"name": "GetValue",
+			"description": "Gets a value given a key",
+			"authority": "client",
+			"return": [
+				{
+					"type": "any?",
+					"description": "the value"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": ""
+				},
+				{
+					"type": "any",
+					"name": "fallback",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "InputKey",
+			"description": "Forces an Input Key event on Local Player",
+			"description_long": "Forces an Input Key event on Local Player<br/><br/>This won't trigger any Scripting event as it bypass internal validations",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": "Key Name to input"
+				},
+				{
+					"type": "InputEvent",
+					"name": "input_event",
+					"description": "Which Event to input"
+				},
+				{
+					"type": "number",
+					"name": "amount_depressed",
+					"description": "The amount pressed",
+					"default_value": "1"
+				}
+			]
+		},
+		{
+			"name": "IsKeyDown",
+			"description": "Returns if a key is being pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the key is pressed"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "IsMouseEnabled",
+			"description": "",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the mouse is visible"
+				}
+			]
+		},
+		{
+			"name": "IsInputEnabled",
+			"description": "",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the input is visible"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Chat",
+			"description": "Called when a chat text is submitted (by LocalPlayer)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to do not send the message"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "The message send by the player"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who send the message"
+				}
+			]
+		},
+		{
+			"name": "ChatEntry",
+			"description": "Called when a Chat Entry is received, this is also triggered when SendChatMessage is called",
+			"description_long": "Called when a Chat Entry is received, this is also triggered when SendChatMessage is called<br/><br/>This is also triggered when <code>SendChatMessage</code> is called (useful for creating your own Chat interface while still use the built-in system)",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "The message send by the player"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who send the message"
+				}
+			]
+		},
+		{
+			"name": "Console",
+			"description": "Called when a console command is submitted",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "KeyDown",
+			"description": "A keyboard key is being pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": "The message send by the player"
+				}
+			]
+		},
+		{
+			"name": "KeyPress",
+			"description": "A keyboard key has been pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "KeyUp",
+			"description": "A keyboard key has been released",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "LogEntry",
+			"description": "Called when a Client log is received",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				},
+				{
+					"type": "LogType",
+					"name": "type",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseDown",
+			"description": "A mouse button has been pressed / is being pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseUp",
+			"description": "A mouse button has been released",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseEnabled",
+			"description": "When mouse cursor is displayed/hidden",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseMoveX",
+			"description": "Called when the mouse moves in the X axis",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "delta",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "delta_time",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "num_samples",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseMoveY",
+			"description": "Called when the mouse moves in the Y axis",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "delta",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "delta_time",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "num_samples",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseScroll",
+			"description": "Called when the mouse scrolls",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "delta",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "OpenChat",
+			"description": "When player opens the Chat",
+			"authority": "client"
+		},
+		{
+			"name": "CloseChat",
+			"description": "When player closes the Chat",
+			"authority": "client"
+		},
+		{
+			"name": "OpenConsole",
+			"description": "When player closes the Console",
+			"authority": "client"
+		},
+		{
+			"name": "CloseConsole",
+			"description": "When player closes the Console",
+			"authority": "client"
+		},
+		{
+			"name": "Tick",
+			"description": "Called Every Frame. Do not abuse",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "numbe",
+					"name": "delta_time",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SpawnLocalPlayer",
+			"description": "Called when the local player spawns (just after the game has loaded)",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Player",
+					"name": "local_player",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "ViewportResized",
+			"description": "Called when the screen is resized",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "new_size",
+					"description": "New new screen size"
+				}
+			]
+		},
+		{
+			"name": "WindowFocusChanged",
+			"description": "Called when the game is focused/unfocused",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_focused",
+					"description": "If it's focused"
+				}
+			]
+		}
+	]
 }

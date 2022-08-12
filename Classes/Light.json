@@ -72,7 +72,7 @@
 			"default": "true"
 		}
 	],
-    "functions": [
+	"functions": [
 		{
 			"name": "SetColor",
 			"description": "Sets the light color",
@@ -182,5 +182,5 @@
 				}
 			]
 		}
-    ]
+	]
 }
