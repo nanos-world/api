@@ -179,19 +179,19 @@
 					"type": "number",
 					"name": "front_rear_split",
 					"default": "0.45",
-					"description": "Ratio of torque split between front and rear. >0.5 means more to front <0.5 means more to rear (works only with 4W type)"
+					"description": "Ratio of torque split between front and rear<br/>bigger than 0.5 means more to front<br/>lower than 0.5 means more to rear (works only with 4W type)"
 				},
 				{
 					"type": "number",
 					"name": "front_left_right_split",
 					"default": "0.5",
-					"description": "Ratio of torque split between front-left and front-right. >0.5 means more to front-left <0.5 means more to front-right (works only with 4W and LimitedSlip_FrontDrive)"
+					"description": "Ratio of torque split between front-left and front-right<br/>bigger than 0.5 means more to front-left<br/>lower than 0.5 means more to front-right (works only with 4W and LimitedSlip_FrontDrive)"
 				},
 				{
 					"type": "number",
 					"name": "rear_left_right_split",
 					"default": "0.5",
-					"description": "Ratio of torque split between rear-left and rear-right >0.5 means more to rear-left <0.5 means more to rear-right (works only with 4W and LimitedSlip_RearDrive)"
+					"description": "Ratio of torque split between rear-left and rear-right<br/>bigger than 0.5 means more to rear-left<br/>lower than 0.5 means more to rear-right (works only with 4W and LimitedSlip_RearDrive)"
 				},
 				{
 					"type": "number",
@@ -482,7 +482,7 @@
 					"type": "number",
 					"name": "suspension_wheel_load_ratio",
 					"default": "0.5",
-					"description": "Amount wheel load effects wheel friction. <br> - At 0 wheel friction is completely independent of the loading on the wheel (This is artificial as it always assumes even balance between all wheels) <br> - At 1 wheel friction is based on the force pressing wheel into the ground. This is more realistic. <br> - Lower value cures lift off over-steer, generally makes vehicle easier to handle under extreme motions."
+					"description": "Amount wheel load effects wheel friction. <br/> - At 0 wheel friction is completely independent of the loading on the wheel (This is artificial as it always assumes even balance between all wheels) <br/> - At 1 wheel friction is based on the force pressing wheel into the ground. This is more realistic. <br/> - Lower value cures lift off over-steer, generally makes vehicle easier to handle under extreme motions."
 				},
 				{
 					"type": "Vector",
