@@ -1,14 +1,15 @@
 {
 	"name": "WebUI",
-	"description": "Class for spawning a dynamic Web Browser",
+	"description": "Class for spawning a dynamic Web Browser.",
 	"authority": "client",
 	"constructor": [
 		{
 			"type": "string",
-			"name": "Used for debugging logs"
+			"name": "name",
+			"description": "Used for debugging logs"
 		},
 		{
-			"type": "string",
+			"type": "HTMLPath",
 			"name": "path",
 			"description": "URL or <code>file://my_file.html</code> or <code>package://my-package/Client/file.html</code>"
 		},
@@ -46,10 +47,12 @@
 	"functions": [
 		{
 			"name": "BringToFront",
+			"authority": "client",
 			"description": "Puts this WebUI in the front of all WebUIs"
 		},
 		{
 			"name": "CallEvent",
+			"authority": "client",
 			"description": "Calls an Event on the Browser's JavaScript",
 			"parameters": [
 				{
@@ -66,30 +69,35 @@
 		},
 		{
 			"name": "Destroy",
+			"authority": "client",
 			"description": "Destroys this Browser"
 		},
 		{
 			"name": "LoadURL",
+			"authority": "client",
 			"description": "Loads a new File/URL in this Browser",
 			"parameters": [
 				{
-					"type": "string",
+					"type": "HTMLPath",
 					"name": "url"
 				}
 			]
 		},
 		{
 			"name": "SetFocus",
+			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
-			"description_long": "Note: Only one browser can have focus per time."
+			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one browser can have focus per time."
 		},
 		{
 			"name": "RemoveFocus",
+			"authority": "client",
 			"description": "Removes the focus from this WebUI (and sets it back to game viewport)",
-			"description_long": "You MUST call this after you don't need keyboard input anymore"
+			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport)<br/>You MUST call this after you don't need keyboard input anymore"
 		},
 		{
 			"name": "SetFreeze",
+			"authority": "client",
 			"description": "Freezes the WebUI Rendering to the surface (it will still execute the JS under the hood)",
 			"parameters": [
 				{
@@ -100,6 +108,7 @@
 		},
 		{
 			"name": "SetVisible",
+			"authority": "client",
 			"description": "Toggles the visibility",
 			"parameters": [
 				{
@@ -110,6 +119,7 @@
 		},
 		{
 			"name": "SpawnSound",
+			"authority": "client",
 			"description": "Spawns a Sound entity to plays this WebUI sound",
 			"parameters": [
 				{
@@ -151,6 +161,7 @@
 		},
 		{
 			"name": "SendMouseWheelEvent",
+			"authority": "client",
 			"description": "Sends a Mouse Event into the WebUI programatically",
 			"parameters": [
 				{
@@ -175,6 +186,7 @@
 		},
 		{
 			"name": "SendKeyEvent",
+			"authority": "client",
 			"description": "Sends a Key Event into the WebUI programatically",
 			"parameters": [
 				{
@@ -195,6 +207,7 @@
 		},
 		{
 			"name": "SendMouseMoveEvent",
+			"authority": "client",
 			"description": "Sends a Mouse Move Event into the WebUI programatically",
 			"parameters": [
 				{
@@ -222,6 +235,7 @@
 		},
 		{
 			"name": "SendMouseClickEvent",
+			"authority": "client",
 			"description": "Sends a Mouse Click into the WebUI programatically",
 			"description_long": "You must send both Down and Up to make it work properly",
 			"parameters": [
@@ -261,6 +275,7 @@
 		},
 		{
 			"name": "IsValid",
+			"authority": "client",
 			"description": "Gets if this entity is Valid",
 			"return": [
 				{
@@ -270,6 +285,7 @@
 		},
 		{
 			"name": "GetID",
+			"authority": "client",
 			"description": "Gets the network ID of this entity",
 			"return": [
 				{
@@ -279,6 +295,7 @@
 		},
 		{
 			"name": "GetSize",
+			"authority": "client",
 			"description": "Gets the current size of this WebUI",
 			"return": [
 				{
@@ -288,6 +305,7 @@
 		},
 		{
 			"name": "GetType",
+			"authority": "client",
 			"description": "Returns the type of this Entity",
 			"return": [
 				{
@@ -297,6 +315,7 @@
 		},
 		{
 			"name": "IsVisible",
+			"authority": "client",
 			"description": "Returns if this WebUI is currently visible",
 			"return": [
 				{
@@ -306,6 +325,7 @@
 		},
 		{
 			"name": "Subscribe",
+			"authority": "client",
 			"description": "Subscribes for an Event",
 			"return": [
 				{
@@ -328,6 +348,7 @@
 		},
 		{
 			"name": "Unsubscribe",
+			"authority": "client",
 			"description": "Unsubscribes from all subscribed Events in this Entity and in this Package, optionally passing the function to unsubscribe only that callback",
 			"parameters": [
 				{
@@ -347,6 +368,7 @@
 	"events": [
 		{
 			"name": "Failed",
+			"authority": "client",
 			"description": "Triggered when this page fails to load",
 			"arguments": [
 				{
@@ -361,6 +383,7 @@
 		},
 		{
 			"name": "Ready",
+			"authority": "client",
 			"description": "Triggered when this page is fully loaded"
 		}
 	]

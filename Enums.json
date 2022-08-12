@@ -948,6 +948,32 @@
 			"value": "1"
 		}
 	],
+	"TraceMode": [
+		{
+			"key": "DrawDebug",
+			"value": "1 << 0"
+		},
+		{
+			"key": "TraceComplex",
+			"value": "1 << 1"
+		},
+		{
+			"key": "ReturnPhysicalMaterial",
+			"value": "1 << 2"
+		},
+		{
+			"key": "ReturnEntity",
+			"value": "1 << 3"
+		},
+		{
+			"key": "ReturnNames",
+			"value": "1 << 4"
+		},
+		{
+			"key": "ReturnUV",
+			"value": "1 << 5"
+		}
+	],
 	"ViewMode": [
 		{
 			"key": "FPS",
