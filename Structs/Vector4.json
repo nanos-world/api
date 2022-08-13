@@ -1,0 +1,54 @@
+{
+	"name": "Vector4",
+	"description": "A four dimensional array of numbers",
+	"constructor": [
+		{
+			"name": "X",
+			"type": "number",
+			"default": "0",
+			"description": "X Coordinate"
+		},
+		{
+			"name": "Y",
+			"type": "number",
+			"default": "0",
+			"description": "Y Coordinate"
+		},
+		{
+			"name": "Z",
+			"type": "number",
+			"default": "0",
+			"description": "Z Coordinate"
+		},
+		{
+			"name": "W",
+			"type": "number",
+			"default": "0",
+			"description": "W Coordinate"
+		}
+	],
+	"properties": [
+		{
+			"name": "X",
+			"type": "number",
+			"description": "X Coordinate"
+		},
+		{
+			"name": "Y",
+			"type": "number",
+			"description": "Y Coordinate"
+		},
+		{
+			"name": "Z",
+			"type": "number",
+			"default": "0",
+			"description": "Z Coordinate"
+		},
+		{
+			"name": "W",
+			"type": "number",
+			"default": "0",
+			"description": "W Coordinate"
+		}
+	]
+}
