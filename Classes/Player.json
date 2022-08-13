@@ -155,7 +155,7 @@
 			"parameters": [
 				{
 					"name": "actor",
-					"type": "Base Actor"
+					"type": "Actor"
 				},
 				{
 					"name": "socket_offset",
@@ -361,7 +361,7 @@
 			"name": "GetVOIPChannel",
 			"return": [
 				{
-					"type": "VOIPChannel"
+					"type": "number"
 				}
 			]
 		},

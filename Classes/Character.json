@@ -34,9 +34,9 @@
 		},
 		{
 			"type": "number",
-			"name": "health/max_health",
+			"name": "max_health",
 			"default": "100",
-			"description": "Current and Max Health"
+			"description": "Current / Max Health"
 		},
 		{
 			"type": "SoundPath",
