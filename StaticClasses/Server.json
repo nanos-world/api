@@ -390,7 +390,7 @@
 					"description": "Return false to do not send the message"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -407,7 +407,7 @@
 			"name": "Console",
 			"description": "Called when a console command is submitted",
 			"authority": "server",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -419,7 +419,7 @@
 			"name": "LogEntry",
 			"description": "Called when a Server log is received",
 			"authority": "server",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -441,7 +441,7 @@
 			"name": "PlayerConnect",
 			"description": "Called when a player is attempting to connect to the server",
 			"authority": "server",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "IP",
@@ -480,7 +480,7 @@
 			"description": "Triggered every 33ms by default",
 			"description_long": "Triggered every 33ms by default<br/><br/>Caution: Only small operations should be performed here, otherwise this can lead to server lag and delays",
 			"authority": "server",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "number",
 					"name": "delta_time",

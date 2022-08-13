@@ -1016,7 +1016,7 @@
 					"description": "Return false to do not send the message"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -1034,7 +1034,7 @@
 			"description": "Called when a Chat Entry is received, this is also triggered when SendChatMessage is called",
 			"description_long": "Called when a Chat Entry is received, this is also triggered when SendChatMessage is called<br/><br/>This is also triggered when <code>SendChatMessage</code> is called (useful for creating your own Chat interface while still use the built-in system)",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -1051,7 +1051,7 @@
 			"name": "Console",
 			"description": "Called when a console command is submitted",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -1069,7 +1069,7 @@
 					"description": "Return false to block it"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "key_name",
@@ -1087,7 +1087,7 @@
 					"description": "Return false to block it"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "key_name",
@@ -1105,7 +1105,7 @@
 					"description": "Return false to block it"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "key_name",
@@ -1117,7 +1117,7 @@
 			"name": "LogEntry",
 			"description": "Called when a Client log is received",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "text",
@@ -1140,7 +1140,7 @@
 					"description": "Return false to block it"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "key_name",
@@ -1168,7 +1168,7 @@
 					"description": "Return false to block it"
 				}
 			],
-			"parameters": [
+			"arguments": [
 				{
 					"type": "string",
 					"name": "key_name",
@@ -1190,7 +1190,7 @@
 			"name": "MouseEnabled",
 			"description": "When mouse cursor is displayed/hidden",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "boolean",
 					"name": "is_enabled",
@@ -1202,7 +1202,7 @@
 			"name": "MouseMoveX",
 			"description": "Called when the mouse moves in the X axis",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "number",
 					"name": "delta",
@@ -1224,7 +1224,7 @@
 			"name": "MouseMoveY",
 			"description": "Called when the mouse moves in the Y axis",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "number",
 					"name": "delta",
@@ -1246,7 +1246,7 @@
 			"name": "MouseScroll",
 			"description": "Called when the mouse scrolls",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "number",
 					"name": "delta",
@@ -1288,7 +1288,7 @@
 			"name": "Tick",
 			"description": "Called Every Frame. Do not abuse",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "numbe",
 					"name": "delta_time",
@@ -1300,7 +1300,7 @@
 			"name": "SpawnLocalPlayer",
 			"description": "Called when the local player spawns (just after the game has loaded)",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "Player",
 					"name": "local_player",
@@ -1312,7 +1312,7 @@
 			"name": "ViewportResized",
 			"description": "Called when the screen is resized",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "Vector2D",
 					"name": "new_size",
@@ -1324,7 +1324,7 @@
 			"name": "WindowFocusChanged",
 			"description": "Called when the game is focused/unfocused",
 			"authority": "client",
-			"parameters": [
+			"arguments": [
 				{
 					"type": "boolean",
 					"name": "is_focused",
