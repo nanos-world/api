@@ -951,27 +951,33 @@
 	"TraceMode": [
 		{
 			"key": "DrawDebug",
-			"value": "1 << 0"
+			"value": "1 << 0",
+			"description": "Whether to draw a 3D line representing the ray"
 		},
 		{
 			"key": "TraceComplex",
-			"value": "1 << 1"
+			"value": "1 << 1",
+			"description": "Whether should trace against complex collision"
 		},
 		{
 			"key": "ReturnPhysicalMaterial",
-			"value": "1 << 2"
+			"value": "1 << 2",
+			"description": "Whether want to include the physical material in the results (adds <code>SurfaceType</code> to result)"
 		},
 		{
 			"key": "ReturnEntity",
-			"value": "1 << 3"
+			"value": "1 << 3",
+			"description": "Whether want to return the Entity hit (adds <code>Entity</code> to result)"
 		},
 		{
 			"key": "ReturnNames",
-			"value": "1 << 4"
+			"value": "1 << 4",
+			"description": "Whether should return names (adds <code>ActorName</code>, <code>ComponentName</code> and <code>BoneName</code> to result)"
 		},
 		{
 			"key": "ReturnUV",
-			"value": "1 << 5"
+			"value": "1 << 5",
+			"description": "Whether want to trace and return UV information (adds <code>UV</code> to result)"
 		}
 	],
 	"ViewMode": [

@@ -122,6 +122,18 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAutoReload",
+			"description": "If the Character will reload automatically when ammo empties",
+			"description_long": "If the Character will reload automatically when ammo empties. Default is true",
+			"parameters": [
+				{
+					"name": "auto_reload",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetBulletColor",
 			"description": "Set the Bullet Color",
 			"description_long": "Set the Bullet Color<br/><br/>Only has effect if using Bullet Trail particle P_Bullet_Trail or if you particle has the Color parameter",

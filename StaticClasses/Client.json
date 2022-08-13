@@ -731,13 +731,55 @@
 			]
 		},
 		{
-			"name": "Trace",
+			"name": "TraceLineSingle",
 			"description": "Trace a ray against the world and returns a table with the first blocking hit information",
 			"description_long": "Trace a ray against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
 			"authority": "client",
 			"return": [
 				{
 					"type": "table",
+					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\", \"UV\"}"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the ray"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the ray"
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
+		},
+		{
+			"name": "TraceLineMulti",
+			"description": "Trace a ray against the world using object types and return overlapping hits and then first blocking hit",
+			"description_long": "Trace a ray against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table[]",
 					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\"}"
 				}
 			],
@@ -745,48 +787,30 @@
 				{
 					"type": "Vector",
 					"name": "start_location",
-					"description": ""
+					"description": "Start location of the ray"
 				},
 				{
 					"type": "Vector",
 					"name": "end_location",
-					"description": ""
+					"description": "End location of the ray"
 				},
 				{
 					"type": "CollisionChannel",
 					"name": "collision_channel",
-					"description": "Supports several channels separating by |",
-					"default": "CollisionChannel.WorldStatic"
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
 				},
 				{
-					"type": "boolean",
-					"name": "trace_complex",
-					"description": "",
-					"default": "false"
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
 				},
 				{
-					"type": "boolean",
-					"name": "return_entity",
-					"description": "",
-					"default": "false"
-				},
-				{
-					"type": "boolean",
-					"name": "return_physical_material",
-					"description": "",
-					"default": "false"
-				},
-				{
-					"type": "table",
+					"type": "Actor[]",
 					"name": "ignored_actors",
-					"description": "",
+					"description": "Array of actors to ignore during the trace",
 					"default": "{}"
-				},
-				{
-					"type": "boolean",
-					"name": "draw_debug",
-					"description": "",
-					"default": "false"
 				}
 			]
 		},
