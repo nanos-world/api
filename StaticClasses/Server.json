@@ -70,7 +70,7 @@
 					"type": "boolean",
 					"name": "persist_to_config_file",
 					"description": "Persist to config file",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -88,7 +88,7 @@
 					"type": "boolean",
 					"name": "persist_to_config_file",
 					"description": "Persist to config file",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -106,7 +106,7 @@
 					"type": "boolean",
 					"name": "persist_to_config_file",
 					"description": "Persist to config file",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -124,7 +124,7 @@
 					"type": "boolean",
 					"name": "persist_to_config_file",
 					"description": "Persist to config file",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -142,7 +142,7 @@
 					"type": "boolean",
 					"name": "persist_to_config_file",
 					"description": "Persist to config file",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -234,7 +234,7 @@
 					"type": "function",
 					"name": "function",
 					"description": "Callback function",
-					"default_value": "nil"
+					"default": "nil"
 				}
 			]
 		},
@@ -286,7 +286,7 @@
 					"type": "boolean",
 					"name": "only_loaded",
 					"description": "Set to true the function return only loaded and running packages",
-					"default_value": "true"
+					"default": "true"
 				}
 			]
 		},

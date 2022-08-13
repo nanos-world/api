@@ -108,13 +108,13 @@
 					"type": "number",
 					"name": "size",
 					"description": "",
-					"default_value": "100"
+					"default": "100"
 				},
 				{
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -159,7 +159,7 @@
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -194,13 +194,13 @@
 					"type": "number",
 					"name": "arrow_size",
 					"description": "",
-					"default_value": "100"
+					"default": "100"
 				},
 				{
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -235,7 +235,7 @@
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -265,7 +265,7 @@
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -305,7 +305,7 @@
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -340,7 +340,7 @@
 					"type": "Color",
 					"name": "color",
 					"description": "",
-					"default_value": "Color.RED"
+					"default": "Color.RED"
 				},
 				{
 					"type": "number",
@@ -429,43 +429,43 @@
 					"type": "Vector2D",
 					"name": "screen_location",
 					"description": "",
-					"default_value": "Vector(-25, 0)"
+					"default": "Vector(-25, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "size",
 					"description": "",
-					"default_value": "Vector(600, 250)"
+					"default": "Vector(600, 250)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_min",
 					"description": "",
-					"default_value": "Vector(1, 0.5)"
+					"default": "Vector(1, 0.5)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_max",
 					"description": "",
-					"default_value": "Vector(1, 0.5)"
+					"default": "Vector(1, 0.5)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "alignment",
 					"description": "",
-					"default_value": "Vector(1, 0.5)"
+					"default": "Vector(1, 0.5)"
 				},
 				{
 					"type": "boolean",
 					"name": "justify",
 					"description": "",
-					"default_value": "true"
+					"default": "true"
 				},
 				{
 					"type": "boolean",
 					"name": "show_scrollbar",
 					"description": "",
-					"default_value": "true"
+					"default": "true"
 				}
 			]
 		},
@@ -537,7 +537,7 @@
 					"type": "Vector2D",
 					"name": "hotspot",
 					"description": "",
-					"default_value": "Vector(0, 0)"
+					"default": "Vector(0, 0)"
 				}
 			]
 		},
@@ -570,7 +570,7 @@
 					"type": "string",
 					"name": "reset_time",
 					"description": "Whether or not to reset current activity elapsed time",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -630,7 +630,7 @@
 					"type": "HighlightMode",
 					"name": "mode",
 					"description": "",
-					"default_value": "HighlightMode.Always"
+					"default": "HighlightMode.Always"
 				}
 			]
 		},
@@ -649,13 +649,13 @@
 					"type": "number",
 					"name": "index",
 					"description": "",
-					"default_value": "0"
+					"default": "0"
 				},
 				{
 					"type": "number",
 					"name": "thickness",
 					"description": "",
-					"default_value": "2"
+					"default": "2"
 				}
 			]
 		},
@@ -726,7 +726,7 @@
 					"type": "function",
 					"name": "function",
 					"description": "",
-					"default_value": "nil"
+					"default": "nil"
 				}
 			]
 		},
@@ -756,37 +756,37 @@
 					"type": "CollisionChannel",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by |",
-					"default_value": "CollisionChannel.WorldStatic"
+					"default": "CollisionChannel.WorldStatic"
 				},
 				{
 					"type": "boolean",
 					"name": "trace_complex",
 					"description": "",
-					"default_value": "false"
+					"default": "false"
 				},
 				{
 					"type": "boolean",
 					"name": "return_entity",
 					"description": "",
-					"default_value": "false"
+					"default": "false"
 				},
 				{
 					"type": "boolean",
 					"name": "return_physical_material",
 					"description": "",
-					"default_value": "false"
+					"default": "false"
 				},
 				{
 					"type": "table",
 					"name": "ignored_actors",
 					"description": "",
-					"default_value": "{}"
+					"default": "{}"
 				},
 				{
 					"type": "boolean",
 					"name": "draw_debug",
 					"description": "",
-					"default_value": "false"
+					"default": "false"
 				}
 			]
 		},
@@ -960,7 +960,7 @@
 					"type": "number",
 					"name": "amount_depressed",
 					"description": "The amount pressed",
-					"default_value": "1"
+					"default": "1"
 				}
 			]
 		},

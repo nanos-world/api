@@ -4,7 +4,7 @@
 	"constructor": [
 		{
 			"name": "rotation",
-			"type": "Rotation",
+			"type": "Rotator",
 			"description": "The rotation of the matrix"
 		},
 		{
