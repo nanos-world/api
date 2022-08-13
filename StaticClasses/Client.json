@@ -392,7 +392,8 @@
 			],
 			"return": [
 				{
-					"type": "Vector"
+					"type": "table",
+					"description": "A table of the format <code>{ \"Position\": Vector, \"Direction\": Vector }</code>"
 				}
 			]
 		},
@@ -1314,7 +1315,7 @@
 			"authority": "client",
 			"arguments": [
 				{
-					"type": "numbe",
+					"type": "number",
 					"name": "delta_time",
 					"description": ""
 				}
