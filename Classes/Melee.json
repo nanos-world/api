@@ -47,13 +47,55 @@
 	"functions": [
 		{
 			"authority": "server",
-			"name": "SetAnimationCharacterUse",
-			"description": "Sets the Animation when attacking",
+			"name": "AddAnimationCharacterUse",
+			"description": "Sets an Animation when attacking",
+			"description_long": "Sets an Animation when attacking<br/><br/>You can add more than one animation, which will be selected randomly when attacking",
 			"parameters": [
 				{
 					"type": "AnimationPath",
 					"name": "asset_path",
 					"description": "The Animation used when attacking"
+				},
+				{
+					"type": "number",
+					"name": "play_rate",
+					"description": "The Animation Play Rate"
+				},
+				{
+					"type": "AnimationSlotType",
+					"name": "slot_Type",
+					"description": "Whether to play it on upper body or full body"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "ClearAnimationsCharacterUse",
+			"description": "Clears the Character Attack Animation list"
+		},
+		{
+			"authority": "server",
+			"name": "SetImpactSound",
+			"description": "Sets the Sound when hitting something",
+			"description_long": "Sets the Sound when hitting something<br/><br/>Note: Surfaces <b>Water</b> and <b>Flesh</b> already have default sounds and must be explicitly set to override",
+			"parameters": [
+				{
+					"type": "SurfaceType",
+					"name": "surface_type",
+					"description": "The surface to apply the sound. Use <code>SurfaceType.Default</code> to be the default to all hits"
+				},
+				{
+					"type": "SoundPath",
+					"name": "asset_path",
+					"description": "The Sound used when attacking"
+				},
+				{
+					"type": "number",
+					"name": "volume"
+				},
+				{
+					"type": "number",
+					"name": "pitch"
 				}
 			]
 		},
@@ -114,11 +156,11 @@
 		},
 		{
 			"authority": "",
-			"name": "GetAnimationCharacterUse",
-			"description": "Gets the Animation when Character uses it",
+			"name": "GetAnimationsCharacterUse",
+			"description": "Gets the Animations when Character uses it",
 			"return": [
 				{
-					"type": "AnimationPath"
+					"type": "AnimationPath[]"
 				}
 			]
 		},
