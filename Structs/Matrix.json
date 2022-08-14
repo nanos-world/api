@@ -1,6 +1,6 @@
 {
 	"name": "Matrix",
-	"description": "A Matrix is an array of numbers this can be used for geometric and positional calculations",
+	"description": "A Matrix is an array of numbers this can be used for geometric and positional calculations. This is mainly used internally.",
 	"constructor": [
 		{
 			"name": "rotation",
@@ -32,25 +32,8 @@
 			]
 		},
 		{
-			"name": "TransformVector4",
-			"description": "Transform the vector with the matrix",
-			"return": [
-				{
-					"type": "Vector4",
-					"description": "The new vector4"
-				}
-			],
-			"parameters": [
-				{
-					"type": "Vector4",
-					"name": "vector",
-					"description": "The vector4 who will be transformed"
-				}
-			]
-		},
-		{
 			"name": "GetTransposed",
-			"description": "Returns a new matrix transposed (https://en.wikipedia.org/wiki/Transpose)",
+			"description": "Returns a new matrix transposed (<a href=\"https://en.wikipedia.org/wiki/Transpose\">Wikipedia</a>)",
 			"return": [
 				{
 					"type": "Matrix",
