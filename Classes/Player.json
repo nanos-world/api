@@ -307,7 +307,7 @@
 			"name": "GetControlledCharacter",
 			"return": [
 				{
-					"type": "nil"
+					"type": "Character?"
 				}
 			]
 		},
