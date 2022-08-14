@@ -14,9 +14,9 @@
 			"default": "Vector(0, 0, 0)"
 		},
 		{
-			"type": "Vector",
+			"type": "Rotator",
 			"name": "rotation",
-			"default": "Vector(0, 0, 0)"
+			"default": "Rotator(0, 0, 0)"
 		},
 		{
 			"type": "StaticMeshPath",
@@ -90,7 +90,14 @@
 		{
 			"authority": "server",
 			"name": "SetTimeToExplode",
-			"description": "Set Time until Explosion after thrown"
+			"description": "Set Time until Explosion after thrown",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "time",
+					"description": "Time in seconds"
+				}
+			]
 		},
 		{
 			"authority": "server",

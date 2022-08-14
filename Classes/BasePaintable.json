@@ -119,7 +119,7 @@
 					"description": "The name of the material parameter"
 				},
 				{
-					"type": "string",
+					"type": "number",
 					"name": "scalar",
 					"description": "The value to set"
 				}

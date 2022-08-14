@@ -223,6 +223,12 @@
 					"name": "path_filter",
 					"default": "",
 					"description": "Path filter"
+				},
+				{
+					"type": "string",
+					"name": "extension_filter",
+					"default": "",
+					"description": "Example : .lua"
 				}
 			],
 			"return": [
