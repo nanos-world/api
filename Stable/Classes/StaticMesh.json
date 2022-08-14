@@ -1,0 +1,98 @@
+{
+	"name": "StaticMesh",
+	"description": "A StaticMesh entity represents a Mesh which can be spawned in the world, can't move and is more optimized for using in decorating the world.",
+	"authority": "both",
+	"inheritance": [
+		"Actor",
+		"Paintable"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"type": "StaticMeshPath",
+			"name": "static_mesh_asset",
+			"default": ""
+		},
+		{
+			"type": "CollisionType",
+			"name": "collision_type",
+			"default": "CollisionType.Normal"
+		}
+	],
+	"functions": [
+		{
+			"name": "GetMesh",
+			"description": "Gets the Asset path mesh used",
+			"return": [
+				{
+					"type": "StaticMeshPath",
+					"description": "asset path"
+				}
+			],
+			"authority": "both"
+		},
+		{
+			"name": "IsFromLevel",
+			"description": "Gets if this StaticMesh is from the Level",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if this StaticMesh is from the level"
+				}
+			],
+			"authority": "client"
+		}
+	],
+	"events": [
+		{
+			"name": "TakeDamage",
+			"description": "Called when a StaticMesh takes Damage",
+			"arguments": [
+				{
+					"type": "StaticMesh",
+					"name": "self",
+					"description": "The entity which triggered"
+				},
+				{
+					"type": "number",
+					"name": "damage",
+					"description": "Damage amount"
+				},
+				{
+					"type": "string",
+					"name": "bone",
+					"description": "Damaged bone"
+				},
+				{
+					"type": "DamageType",
+					"name": "type",
+					"description": "Damage Type"
+				},
+				{
+					"type": "Vector",
+					"name": "from_direction",
+					"description": "Direction of the damage relative to the damaged actor"
+				},
+				{
+					"type": "Player",
+					"name": "instigator",
+					"description": "The player which caused the damage"
+				},
+				{
+					"type": "any",
+					"name": "causer",
+					"description": "The object which caused the damage"
+				}
+			]
+		}
+	]
+}

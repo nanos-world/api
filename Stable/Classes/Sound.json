@@ -1,0 +1,303 @@
+{
+	"name": "Sound",
+	"description": "Class for playing in-game 2D and 3D sounds.",
+	"authority": "client",
+	"inheritance": [
+		"Actor"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)",
+			"description": "Only used if 3D sound"
+		},
+		{
+			"type": "SoundPath",
+			"name": "asset",
+			"description": "The Sound Asset to load"
+		},
+		{
+			"type": "boolean",
+			"name": "is_2D_sound",
+			"default": "false",
+			"description": "Whether to spawn it as 2D or 3D"
+		},
+		{
+			"type": "boolean",
+			"name": "auto_destroy",
+			"default": "true",
+			"description": "Whether to destroy after finished playing"
+		},
+		{
+			"type": "SoundType",
+			"name": "sound_type",
+			"default": "SoundType.SFX",
+			"description": "Used to apply user's volume settings"
+		},
+		{
+			"type": "number",
+			"name": "volume",
+			"default": "1"
+		},
+		{
+			"type": "number",
+			"name": "pitch",
+			"default": "1"
+		},
+		{
+			"type": "number",
+			"name": "inner_radius",
+			"default": "400",
+			"description": "Only used if 3D sound"
+		},
+		{
+			"type": "number",
+			"name": "falloff_distance",
+			"default": "3600",
+			"description": "Only used if 3D sound"
+		},
+		{
+			"type": "AttenuationFunction",
+			"name": "attenuation_function",
+			"default": "Linear",
+			"description": "Only used if 3D sound"
+		},
+		{
+			"type": "boolean",
+			"name": "keep_playig_when_silent",
+			"default": "false",
+			"description": "Only used if 3D sound - Use with caution, it may cause performance issues!"
+		},
+		{
+			"type": "SoundLoopMode",
+			"name": "loop_mode",
+			"default": "Default",
+			"description": "Whether should force sound to loop"
+		}
+	],
+    "functions": [
+		{
+			"name": "FadeIn",
+			"authority": "client",
+			"description": "Plays the sound with a fade effect",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "fade_in_duration"
+				},
+				{
+					"type": "number",
+					"name": "fade_volume_level",
+					"default": "1"
+				},
+				{
+					"type": "number",
+					"name": "start_time",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"name": "FadeOut",
+			"authority": "client",
+			"description": "Stops the sound with a fade effect",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "fade_out_duration"
+				},
+				{
+					"type": "number",
+					"name": "fade_volume_level",
+					"default": "0"
+				},
+				{
+					"type": "boolean",
+					"name": "destroy_after_fadeout",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "Play",
+			"authority": "client",
+			"description": "Starts the sound",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "start_time",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"name": "SetFalloffDistance",
+			"authority": "client",
+			"description": "If a 3D Sound, sets the distance which the sound is inaudible",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "falloff_distance"
+				}
+			]
+		},
+		{
+			"name": "SetInnerRadius",
+			"authority": "client",
+			"description": "If a 3D Sound, sets the distance within the volume is 100%",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "inner_radius"
+				}
+			]
+		},
+		{
+			"name": "SetLowPassFilter",
+			"authority": "client",
+			"description": "Sets lowpass filter frequency. Sets 0 to disable it.",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "frequency"
+				}
+			]
+		},
+		{
+			"name": "SetPaused",
+			"authority": "client",
+			"description": "Pauses the sound",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "pause",
+					"default": "true"
+				}
+			]
+		},
+		{
+			"name": "SetPitch",
+			"authority": "client",
+			"description": "Sets the Sound's pitch",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "new_pitch"
+				}
+			]
+		},
+		{
+			"name": "SetVolume",
+			"authority": "client",
+			"description": "Sets the Sound's volume",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "new_volume",
+					"description": "0-1"
+				}
+			]
+		},
+		{
+			"name": "Stop",
+			"authority": "client",
+			"description": "Stops the sound"
+		},
+		{
+			"name": "StopDelayed",
+			"authority": "client",
+			"description": "Stops the sound after the provided delay",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "delay"
+				}
+			]
+		},
+		{
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"name": "Is2D",
+			"authority": "client",
+			"description": "Gets if the sound is 2D"
+		},
+		{
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"name": "IsPlaying",
+			"authority": "client",
+			"description": "Gets if the sound is playing"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetDuration",
+			"authority": "client",
+			"description": "Gets the duration of the Sound"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetPitch",
+			"authority": "client"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetVolume",
+			"authority": "client"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetLowPassFilter",
+			"authority": "client"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetInnerRadius",
+			"authority": "client"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetFalloffDistance",
+			"authority": "client"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"name": "GetSoundType",
+			"authority": "client"
+		}
+    ]
+}

@@ -1,0 +1,186 @@
+{
+	"name": "Timer",
+	"description": "Execute code at specified time intervals.",
+	"authority": "both",
+	"static_functions": [
+		{
+			"name": "SetTimeout",
+			"authority": "both",
+			"description": "Executes a function, after waiting a specified number of milliseconds",
+			"parameters": [
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The callback that will be executed"
+				},
+				{
+					"type": "number",
+					"name": "milliseconds",
+					"default": "0",
+					"description": "The time in milliseconds to wait before executing the function"
+				},
+				{
+					"type": "any",
+					"name": "parameters...",
+					"default": "nil",
+					"description": "Additional parameters to pass to the function"
+				}
+			],
+			"return": [
+				{
+					"type": "number",
+					"description": "the timeout_id"
+				}
+			]
+		},
+		{
+			"name": "SetInterval",
+			"authority": "both",
+			"description": "Same as SetTimeout(), but repeats the execution of the function continuously",
+			"parameters": [
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The callback that will be executed.<br/>Return false to stop it from being called."
+				},
+				{
+					"type": "number",
+					"name": "milliseconds",
+					"default": "0",
+					"description": "The time in milliseconds the timer should delay in between executions of the specified function"
+				},
+				{
+					"type": "any",
+					"name": "parameters...",
+					"default": "nil",
+					"description": "Additional parameters to pass to the function"
+				}
+			],
+			"return": [
+				{
+					"type": "number",
+					"description": "the interval_id"
+				}
+			]
+		},
+		{
+			"name": "ClearTimeout",
+			"authority": "both",
+			"description": "Stops the execution of the function specified in SetTimeout()",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timeout_id",
+					"description": "The ID value returned by SetTimeout() is used as the parameter for this method"
+				}
+			]
+		},
+		{
+			"name": "ClearInterval",
+			"authority": "both",
+			"description": "Stops the execution of the function specified in SetInterval()",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "interval_id",
+					"description": "The ID value returned by SetInterval() is used as the parameter for this method"
+				}
+			]
+		},
+		{
+			"name": "Bind",
+			"authority": "both",
+			"description": "Binds a Timer to any Actor. The timer will be automatically cleared when the Actor is destroyed",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				},
+				{
+					"type": "Actor",
+					"name": "actor",
+					"description": "Actor to be bound"
+				}
+			]
+		},
+		{
+			"name": "IsValid",
+			"authority": "both",
+			"description": "Checks if a Timer is currently active or waiting to be triggered",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"name": "is_valid"
+				}
+			]
+		},
+		{
+			"name": "GetElapsedTime",
+			"authority": "both",
+			"description": "Returns the time elapsed since the last tick",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				}
+			],
+			"return": [
+				{
+					"type": "number",
+					"name": "elapsed_time"
+				}
+			]
+		},
+		{
+			"name": "GetRemainingTime",
+			"authority": "both",
+			"description": "Returns the time remaining to the next tick",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				}
+			],
+			"return": [
+				{
+					"type": "number",
+					"name": "remaining_time"
+				}
+			]
+		},
+		{
+			"name": "Pause",
+			"authority": "both",
+			"description": "Pauses the Timer",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				}
+			]
+		},
+		{
+			"name": "Resume",
+			"authority": "both",
+			"description": "Resumes the Timer",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				}
+			]
+		}
+	]
+}

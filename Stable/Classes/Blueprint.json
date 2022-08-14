@@ -1,0 +1,46 @@
+{
+	"name": "Blueprint",
+	"description": "A Blueprint Class allows spawning any Unreal Blueprint Actor in nanos world.",
+	"authority": "both",
+	"inheritance": [
+		"Actor",
+		"Paintable"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"type": "BlueprintPath",
+			"name": "blueprint_asset",
+			"default": ""
+		}
+	],
+	"functions": [
+		{
+			"name": "CallBlueprintEvent",
+			"description": "Calls a Blueprint Event or Function",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
+				}
+			]
+		}
+	]
+}

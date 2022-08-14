@@ -1,0 +1,880 @@
+{
+	"name": "Weapon",
+	"description": "Weapons are entities with firing, reloading and aiming functionalities.<br/><br/>They are fully customizable, all pieces of the weapon can be changed with immense possibility of creation.",
+	"authority": "server",
+	"inheritance": [
+		"Actor",
+		"Paintable",
+		"Pickable"
+	],
+	"constructor": [
+		{
+			"name": "location",
+			"type": "Vector",
+			"default": "Vector(0, 0, 0)"
+		},
+		{
+			"name": "rotation",
+			"type": "Rotator",
+			"default": "Rotator(0, 0, 0)"
+		},
+		{
+			"name": "asset",
+			"type": "SkeletalMeshPath",
+			"default": ""
+		},
+		{
+			"name": "collision_type",
+			"type": "CollisionType",
+			"default": "CollisionType.Normal"
+		},
+		{
+			"name": "gravity_enabled",
+			"type": "boolean",
+			"default": "true"
+		}
+	],
+	"functions": [
+		{
+			"authority": "server",
+			"name": "Reload",
+			"description": "Forces this Weapon to reload",
+			"description_long": "Forces this Weapon to reload (only if being handled by a Character)"
+		},
+		{
+			"authority": "server",
+			"name": "SetAmmoBag",
+			"description": "Sets this Weapon's Ammo in the Bag",
+			"parameters": [
+				{
+					"name": "new_ammo",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAmmoClip",
+			"description": "Sets this Weapon's Ammo in the Clip",
+			"parameters": [
+				{
+					"name": "new_ammo",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAmmoSettings",
+			"description": "Aux for setting and configuring ammo",
+			"parameters": [
+				{
+					"name": "ammo_clip",
+					"type": "number"
+				},
+				{
+					"name": "ammo_bag",
+					"type": "number"
+				},
+				{
+					"name": "ammo_to_reload",
+					"type": "number",
+					"default": "ammo_clip"
+				},
+				{
+					"name": "clip_capacity",
+					"type": "number",
+					"default": "ammo_clip"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationFire",
+			"description": "Animation played by the Weapon when Firing",
+			"parameters": [
+				{
+					"name": "animation_asset_path",
+					"type": "AnimationPath"
+				},
+				{
+					"name": "play_rate",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationCharacterFire",
+			"description": "Animation played by the Character when Firing",
+			"parameters": [
+				{
+					"name": "animation_path",
+					"type": "AnimationPath"
+				},
+				{
+					"name": "play_rate",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAutoReload",
+			"description": "If the Character will reload automatically when ammo empties",
+			"description_long": "If the Character will reload automatically when ammo empties. Default is true",
+			"parameters": [
+				{
+					"name": "auto_reload",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetBulletColor",
+			"description": "Set the Bullet Color",
+			"description_long": "Set the Bullet Color<br/><br/>Only has effect if using Bullet Trail particle P_Bullet_Trail or if you particle has the Color parameter",
+			"parameters": [
+				{
+					"name": "color",
+					"type": "Color"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAutoReload",
+			"description": "Sets if the Weapon auto reloads when ammo empties",
+			"parameters": [
+				{
+					"name": "auto_reload",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetBulletSettings",
+			"description": "Aux for setting and configuring the Bullet",
+			"parameters": [
+				{
+					"name": "bullet_count",
+					"type": "number",
+					"description": "1 for common weapons<br/>> 1 for shotguns"
+				},
+				{
+					"name": "bullet_max_distance",
+					"type": "number"
+				},
+				{
+					"name": "bullet_velocity",
+					"type": "number",
+					"description": "Visuals only"
+				},
+				{
+					"name": "bullet_color",
+					"type": "Color"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCadence",
+			"description": "Speed of shots",
+			"parameters": [
+				{
+					"name": "cadence",
+					"type": "number",
+					"description": "1 shot at each <code>cadence</code> second"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetClipCapacity",
+			"description": "Capacity of the Weapon's clip",
+			"parameters": [
+				{
+					"name": "clip",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetDamage",
+			"description": "Set the Base Weapon's Damage",
+			"description_long": "Base Weapon's Damage<br/><br/>This will be multiplied by multiplier factors when hitting specific bones",
+			"parameters": [
+				{
+					"name": "damage",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetHandlingMode",
+			"description": "Sets how the Character grabs this Weapon",
+			"parameters": [
+				{
+					"name": "mode",
+					"type": "HandlingMode"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetLeftHandTransform",
+			"description": "Left Hand Offset",
+			"parameters": [
+				{
+					"name": "location",
+					"type": "Vector"
+				},
+				{
+					"name": "rotation",
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetMagazineMesh",
+			"description": "Set the mesh used when the Character reloads the weapon",
+			"description_long": "Set the mesh used when the Character reloads the weapon.<br/><br/>Will drop this Mesh as an animation effect.",
+			"parameters": [
+				{
+					"name": "static_mesh_asset_path",
+					"type": "StaticMeshPath"
+				},
+				{
+					"name": "magazine_mesh_hide_bone",
+					"type": "string",
+					"default": "b_gun_mag",
+					"description": "Weapon bone to hide when reloading it"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetParticlesBulletTrail",
+			"description": "Particle of the Bullet flying",
+			"parameters": [
+				{
+					"name": "particle_asset_path",
+					"type": "ParticlePath"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetParticlesBarrel",
+			"description": "Particle of the Fire Blast in the muzzle",
+			"parameters": [
+				{
+					"name": "particle_asset_path",
+					"type": "ParticlePath"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetParticlesShells",
+			"description": "Particle of the empty bullet flying from the weapon when shooting",
+			"parameters": [
+				{
+					"name": "particle_asset_path",
+					"type": "ParticlePath"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetRightHandOffset",
+			"description": "Set the offset of Right Hand",
+			"description_long": "Set the Offset of Right Hand. To position relative to the camera.",
+			"parameters": [
+				{
+					"name": "offset",
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSightFOVMultiplier",
+			"description": "The FOV multiplier when ADS",
+			"parameters": [
+				{
+					"name": "multiplier",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSightTransform",
+			"description": "Offset applied to align player's head to weapon's sight and rotation applied on the weapon when ADS",
+			"parameters": [
+				{
+					"name": "location",
+					"type": "Vector"
+				},
+				{
+					"name": "rotation",
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundDry",
+			"description": "Sound when weapon has not bullet and try to shoot",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "volume",
+					"type": "number",
+					"default": "1"
+				},
+				{
+					"name": "pitch",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundLoad",
+			"description": "Sound when Loading a magazine",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "volume",
+					"type": "number",
+					"default": "1"
+				},
+				{
+					"name": "pitch",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundUnload",
+			"description": "Sound when Unloading a magazine",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "volume",
+					"type": "number",
+					"default": "1"
+				},
+				{
+					"name": "pitch",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundZooming",
+			"description": "Sound when Zooming",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "volume",
+					"type": "number",
+					"default": "1"
+				},
+				{
+					"name": "pitch",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundFire",
+			"description": "Sound when Shooting",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "volume",
+					"type": "number",
+					"default": "1"
+				},
+				{
+					"name": "pitch",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundAim",
+			"description": "Sound when Aiming",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "volume",
+					"type": "number",
+					"default": "1"
+				},
+				{
+					"name": "pitch",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSoundFireLastBullets",
+			"description": "Sound when firing with only having X remaining bullets in the magazine",
+			"description_long": "Sound when firing with only having X remaining bullets in the magazine, useful for last shot 'ping' or sound when low on bullets",
+			"parameters": [
+				{
+					"name": "sound_asset_path",
+					"type": "SoundPath"
+				},
+				{
+					"name": "remaining_bullets_count",
+					"type": "number",
+					"default": "1",
+					"description": "The amount of remaining bullet to start playing this sound"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSpread",
+			"description": "Base Weapon's Spread",
+			"parameters": [
+				{
+					"name": "spread",
+					"type": "number",
+					"description": "the higher the less precision - recommended value: 20"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetRecoil",
+			"description": "Base Weapon's Recoil",
+			"parameters": [
+				{
+					"name": "recoil",
+					"type": "number",
+					"description": "0 means no Recoil, default is 1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetUsageSettings",
+			"description": "Sets if the Weapon can hold to keep firing and if it needs to release to fire",
+			"parameters": [
+				{
+					"name": "can_hold_use",
+					"type": "boolean"
+				},
+				{
+					"name": "hold_release_use",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetWallbangSettings",
+			"description": "Sets how the bullet will pass through walls",
+			"parameters": [
+				{
+					"name": "max_distance",
+					"type": "number",
+					"description": "Max distance to pass through another wall"
+				},
+				{
+					"name": "damage_multiplier",
+					"type": "number",
+					"description": "Damage given if wallbangged"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAmmoBag",
+			"description": "Gets this Weapon's Ammo Bag",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAmmoClip",
+			"description": "Gets this Weapon's Ammo Clip",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAmmoToReload",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetHandlingMode",
+			"return": [
+				{
+					"type": "HandlingMode"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAnimationCharacterFire",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAnimationFire",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMagazineMesh",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetParticlesBulletTrail",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetParticlesShells",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSoundDry",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSoundLoad",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSoundUnload",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSoundZooming",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSoundAim",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSoundFire",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetCanHoldUse",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetHoldReleaseUse",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetBulletCount",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetBulletColor",
+			"return": [
+				{
+					"type": "Color"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetCadence",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetClipCapacity",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetDamage",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetRightHandOffset",
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetLeftHandLocation",
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetLeftHandRotation",
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSightLocation",
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSightRotation",
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSightFOVMultiplier",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetSpread",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetRecoil",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "both",
+			"name": "Fire",
+			"description": "Triggered when Weapon fires (this will be triggered for each shot)",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Weapon"
+				},
+				{
+					"name": "shooter",
+					"type": "Character"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Reload",
+			"description": "When a Weapon is reloaded, optionally by a Character",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Weapon"
+				},
+				{
+					"name": "character",
+					"type": "Character"
+				},
+				{
+					"name": "ammo_to_reload",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "AmmoClipChanged",
+			"description": "When the Ammo Clip is changed, by reloading or manually setting through scripting",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Weapon"
+				},
+				{
+					"name": "old_ammo_clip",
+					"type": "number"
+				},
+				{
+					"name": "new_ammo_clip",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "AmmoBagChanged",
+			"description": "When the Ammo Bag is changed, by reloading or manually setting through scripting",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Weapon"
+				},
+				{
+					"name": "old_ammo_clip",
+					"type": "number"
+				},
+				{
+					"name": "new_ammo_clip",
+					"type": "number"
+				}
+			]
+		}
+	]
+}

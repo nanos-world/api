@@ -1,0 +1,376 @@
+{
+	"name": "World",
+	"authority": "client",
+	"description": "Interaction with World and Environment elements.",
+	"static_functions": [
+		{
+			"authority": "client",
+			"name": "LoadStreamLevel",
+			"description": "Loads a Level in runtime",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "level_name"
+				},
+				{
+					"type": "boolean",
+					"name": "should_block_on_load",
+					"default": "false",
+					"description": "If this should be a blocking operation - the game will freeze"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "UnloadStreamLevel",
+			"description": "Unloads a Level in runtime",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "level_name"
+				},
+				{
+					"type": "boolean",
+					"name": "should_block_on_unload",
+					"default": "false",
+					"description": "If this should be a blocking operation - the game will freeze"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetFogDensity",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "density"
+				},
+				{
+					"type": "number",
+					"name": "second_density",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetFogHeightFalloff",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "falloff"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetFogHeightOffset",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "offset"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunLightColor",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSkyLightIntensity",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetskyRayleighScattering",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunLightIntensity",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunTemperatureMultiplier",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "multiplier"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetPPBloom",
+			"description": "Set Post Process Bloom Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity",
+					"default": "0.675"
+				},
+				{
+					"type": "number",
+					"name": "threshold",
+					"default": "-1"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetPPChromaticAberration",
+			"description": "Set Post Process Chromatic Abberation Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "start_offset",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetPPImageEffects",
+			"description": "Set Post Process Image Effect Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "vignette_intensity",
+					"default": "0.6"
+				},
+				{
+					"type": "number",
+					"name": "grain_jitter",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "grain_intensity",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetPPFilm",
+			"description": "Set Post Process Film Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "slope",
+					"default": "0.8"
+				},
+				{
+					"type": "number",
+					"name": "toe",
+					"default": "0.55"
+				},
+				{
+					"type": "number",
+					"name": "shoulder",
+					"default": "0.26"
+				},
+				{
+					"type": "number",
+					"name": "black_clip",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "white_clip",
+					"default": "0.3"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetPPGlobalSaturation",
+			"description": "Set Post Process Saturation Colors. Use Alpha for everall Saturation intensity",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetPPMaterial",
+			"description": "Sets a Post Process Material",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "material_path",
+					"description": "The Material Asset to set as Post Process"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "RemovePPMaterial",
+			"description": "Removes the current Post Process Material"
+		},
+		{
+			"authority": "client",
+			"name": "SetSunAngle",
+			"description": "Sets the sun's angle (0-360)",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "angle"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunSpeed",
+			"description": "Sets the sun's time speed(default: '60', which means 60 seconds in game = 1 second in real world)",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "speed"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetTime",
+			"description": "Sets the Global time of the day",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "hours"
+				},
+				{
+					"type": "number",
+					"name": "minutes"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetWeather",
+			"description": "Sets the global Predefined Weather (Clear, Rain, Cloudy, Thunderstorm)",
+			"parameters": [
+				{
+					"type": "WeatherType",
+					"name": "weather"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SpawnDefaultSun",
+			"description": "Overrides all Light/Sun Actors with the NanosWorld's Official one, to be able to use the functions from this page"
+		},
+		{
+			"authority": "client",
+			"name": "SetWind",
+			"description": "Sets the global Wind intensity",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"authority": "client",
+			"name": "GetSunAngle"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"authority": "client",
+			"name": "GetSunSpeed"
+		},
+		{
+			"return": [
+				{
+					"type": "number[]",
+					"description": "in the format {hours, minutes}"
+				}
+			],
+			"authority": "client",
+			"name": "GetTime"
+		},
+		{
+			"return": [
+				{
+					"type": "WeatherType"
+				}
+			],
+			"authority": "client",
+			"name": "GetWeather"
+		},
+		{
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"authority": "client",
+			"name": "GetWind"
+		}
+	],
+	"events": [
+		{
+			"name": "StreamLevelLoaded",
+			"authority": "client",
+			"description": "Called when a Stream Level is loaded",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "level_name"
+				}
+			]
+		},
+		{
+			"name": "StreamLevelUnloaded",
+			"authority": "client",
+			"description": "Called when a Stream Level is unloaded",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "level_name"
+				}
+			]
+		}
+	]
+}

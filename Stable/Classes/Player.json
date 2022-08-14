@@ -1,0 +1,538 @@
+{
+	"name": "Player",
+	"description": "Players are Entities that represents the individual behind the mouse and keyboard. Players are spawned automatically when connected to the server.",
+	"functions": [
+		{
+			"authority": "server",
+			"name": "Ban",
+			"description": "Bans the player from the server",
+			"parameters": [
+				{
+					"name": "reason",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Connect",
+			"description": "Redirects the player to another server",
+			"parameters": [
+				{
+					"name": "IP",
+					"type": "string"
+				},
+				{
+					"name": "password",
+					"type": "string",
+					"default": "",
+					"description": "Server password"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Kick",
+			"description": "Kicks the player from the server",
+			"parameters": [
+				{
+					"name": "reason",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Possess",
+			"description": "Makes a Player to possess and control a Character",
+			"parameters": [
+				{
+					"name": "new_character",
+					"type": "Character"
+				},
+				{
+					"name": "blend_time",
+					"type": "number",
+					"default": "0"
+				},
+				{
+					"name": "exp",
+					"type": "number",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraLocation",
+			"description": "Sets the Player's Camera Location (only works if not possessing any Character)",
+			"parameters": [
+				{
+					"name": "location",
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraRotation",
+			"description": "Sets the Player's Camera Rotation",
+			"parameters": [
+				{
+					"name": "rotation",
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "TranslateCameraTo",
+			"description": "Smoothly moves the Player's Camera Location (only works if not possessing any Character)",
+			"parameters": [
+				{
+					"name": "location",
+					"type": "Vector"
+				},
+				{
+					"name": "time",
+					"type": "number"
+				},
+				{
+					"name": "exp",
+					"type": "number",
+					"default": "0",
+					"description": "Exponential used to smooth interp, use 0 for linear movement"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RotateCameraTo",
+			"description": "Smoothly moves the Player's Camera Rotation",
+			"parameters": [
+				{
+					"name": "rotation",
+					"type": "Rotator"
+				},
+				{
+					"name": "time",
+					"type": "number"
+				},
+				{
+					"name": "exp",
+					"type": "number",
+					"default": "0",
+					"description": "Exponential used to smooth interp, use 0 for linear movement"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraSocketOffset",
+			"description": "Sets the Player's Camera Socket Offset (Spring Arm Offset)",
+			"parameters": [
+				{
+					"name": "socket_offset",
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraArmLength",
+			"description": "Sets the Player's Camera Arm Length (Spring Arm length)",
+			"parameters": [
+				{
+					"name": "length",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "AttachCameraTo",
+			"description": "Attaches the Player`s Camera to an Actor",
+			"parameters": [
+				{
+					"name": "actor",
+					"type": "Actor"
+				},
+				{
+					"name": "socket_offset",
+					"type": "Vector"
+				},
+				{
+					"name": "blend_speed",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "ResetCamera",
+			"description": "Resets the Camera to default state (Unspectate and Detaches)"
+		},
+		{
+			"authority": "both",
+			"name": "Spectate",
+			"description": "Spectates other Player",
+			"parameters": [
+				{
+					"name": "player",
+					"type": "Player"
+				},
+				{
+					"name": "blend_speed",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetName",
+			"description": "Sets the player's name",
+			"parameters": [
+				{
+					"name": "new_name",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetValue",
+			"description": "Sets a value in this entity, which can be accessed by any package (optionally sync on clients if called from server). Please refer to Entity Values for more information",
+			"parameters": [
+				{
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"name": "value",
+					"type": "any"
+				},
+				{
+					"name": "sync_on_clients",
+					"type": "boolean",
+					"default": "false",
+					"description": "Server side parameter, if enabled will sync this value through all clients"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetVOIPChannel",
+			"description": "Sets the VOIP Channel of this Player (will only communicate with other players in the same channel)",
+			"parameters": [
+				{
+					"name": "channel",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPSetting",
+			"description": "Sets the VOIP Settings of this Player",
+			"parameters": [
+				{
+					"name": "setting",
+					"type": "VOIPSetting"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPVolume",
+			"description": "Sets the VOIP Volume of this Player",
+			"parameters": [
+				{
+					"name": "volume",
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "UnPossess",
+			"description": "Release the Player from the Character"
+		},
+		{
+			"authority": "both",
+			"name": "GetSteamID",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAccountID",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAccountName",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetCameraLocation",
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetCameraRotation",
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetControlledCharacter",
+			"return": [
+				{
+					"type": "Character?"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetID",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "GetIP",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetName",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetPing",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetType",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPChannel",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetValue",
+			"parameters": [
+				{
+					"name": "key",
+					"type": "string"
+				},
+				{
+					"name": "fallback",
+					"type": "any"
+				}
+			],
+			"return": [
+				{
+					"type": "any"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "IsHost",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "IsLocalPlayer",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "IsValid",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPSetting",
+			"return": [
+				{
+					"type": "VOIPSetting"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Subscribe",
+			"parameters": [
+				{
+					"name": "event_name",
+					"type": "string"
+				},
+				{
+					"name": "function",
+					"type": "function"
+				}
+			],
+			"return": [
+				{
+					"type": "function"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Entity and in this Package, optionally passing the function to unsubscribe only that callback",
+			"parameters": [
+				{
+					"name": "event_name",
+					"type": "string"
+				},
+				{
+					"name": "function",
+					"type": "function"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "both",
+			"name": "Destroy",
+			"description": "Triggered when Player disconnects from the server",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Possess",
+			"description": "Trigerred when Player starts controlling a Character",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				},
+				{
+					"name": "character",
+					"type": "Character"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Spawn",
+			"description": "Triggered when Player connects to the server",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Ready",
+			"description": "Triggered when Player is ready (the client fully joined, loaded the map and all entities and is ready to play)",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "UnPossess",
+			"description": "A Character was released from the Player",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				},
+				{
+					"name": "character",
+					"type": "Character"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "VOIP",
+			"description": "When a Player starts/ends using VOIP",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				},
+				{
+					"name": "is_talking",
+					"type": "boolean"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,299 @@
+{
+	"name": "Pickable",
+	"description": "<b>Pickables</b> are special Actors which can be <b>grabbed</b>, <b>held</b> and <b>used</b> by Characters.",
+	"functions": [
+		{
+			"authority": "both",
+			"name": "AddSkeletalMeshAttached",
+			"description": "Attaches a Skeletal Mesh as master pose to this entity",
+			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing it later.<br><br>For customizing the Materials specific to a mesh attached with this function, use the following syntax as the <code>parameter_name</code> in the <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/base-classes/paintable\">Base Paintable</a> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where <code>[ATTACHABLE_ID]</code> is the ID of the Attachable, and <code>[PARAMETER_NAME]</code> is the name of the parameter you want to change.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID to assign to the SkeletalMesh"
+				},
+				{
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh_path",
+					"description": "Path to SkeletalMesh asset to attach"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "AddStaticMeshAttached",
+			"description": "Attaches a Static Mesh to this entity",
+			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing it later<br><br>For customizing the Materials specific to a mesh attached with this function, use the following syntax as the <code>parameter_name</code> in the <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/base-classes/paintable\">Base Paintable</a> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where <code>[ATTACHABLE_ID]</code> is the ID of the Attachable, and <code>[PARAMETER_NAME]</code> is the name of the parameter you want to change.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID to assign to the StaticMesh"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_path",
+					"description": "Path to StaticMesh asset to attach"
+				},
+				{
+					"type": "string",
+					"name": "socket",
+					"default": "",
+					"description": "Bone socket to attach to"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "Vector(0, 0, 0)",
+					"description": "Relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relative rotation"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "PullUse",
+			"description": "Pulls the usage of this Pickable (will start firing if this is a weapon)",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "release_use_after",
+					"default": "-1",
+					"description": "Time in seconds to automatically release the usage (-1 will not release, 0 will release one tick after)"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "ReleaseUse",
+			"description": "Releases the usage of this Pickable (will stop firing if this is a weapon)"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the SkeletalMesh to remove"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh to remove"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAttachmentSettings",
+			"description": "Sets the Attachment Settings for this Pickable (how it attaches to the Character when Picking up)",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "Location relative to the Socket"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Rotation relative to the Socket"
+				},
+				{
+					"type": "string",
+					"name": "socket",
+					"default": "hand_r_socket",
+					"description": "Character Socket to attach to when picked up"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCrosshairMaterial",
+			"description": "Sets the crosshair material for this Pickable",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "material_asset",
+					"description": "Asset path to the crosshair material"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetPickable",
+			"description": "Sets if this Pickable can be picked up from ground by the player",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_pickable"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAssetName",
+			"description": "Gets the name of the asset this Pickable uses",
+			"return": [
+				{
+					"type": "SkeletalMeshPath"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetHandler",
+			"description": "Gets the Character, if it exists, that's holding this Pickable",
+			"return": [
+				{
+					"type": "Character?"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "both",
+			"name": "Drop",
+			"description": "When a Character drops this Pickable",
+			"arguments": [
+				{
+					"type": "Pickable",
+					"name": "self",
+					"description": "The Pickable which has been dropped"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The Character that dropped it"
+				},
+				{
+					"type": "boolean",
+					"name": "was_triggered_by_player",
+					"description": "If the Player actively pressed the Drop binding to drop"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Hit",
+			"description": "When this Pickable hits something",
+			"arguments": [
+				{
+					"type": "Pickable",
+					"name": "self",
+					"description": "The Actor that was hit"
+				},
+				{
+					"type": "number",
+					"name": "impact_force",
+					"description": "The intensity of the hit normalized by the Pickable's weight"
+				},
+				{
+					"type": "Vector",
+					"name": "normal_impulse",
+					"description": "The impulse direction of the hit"
+				},
+				{
+					"type": "Vector",
+					"name": "impact_location",
+					"description": "The world space location of the impact"
+				},
+				{
+					"type": "Vector",
+					"name": "velocity",
+					"description": "The Pickable's velocity at the moment it hit"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Interact",
+			"description": "Triggered when a Character interacts with this Pickable (i.e. tries to pick it up)",
+			"arguments": [
+				{
+					"type": "Pickable",
+					"name": "self",
+					"description": "The Pickable that just got interacted with"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The Character that interacted with it"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to prevent the interaction"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "PickUp",
+			"description": "Triggered When a Character picks this up",
+			"arguments": [
+				{
+					"type": "Pickable",
+					"name": "self",
+					"description": "The Pickable that just got picked up"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The Character that picked it up"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "PullUse",
+			"description": "Triggered when a Character presses the use button for this Pickable (i.e. clicks left mouse button with this equipped)",
+			"arguments": [
+				{
+					"type": "Pickable",
+					"name": "self",
+					"description": "The Pickable which has just been used"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The Character that used it"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "ReleaseUse",
+			"description": "Triggered when a Character releases the use button for this Pickable (i.e. releases left mouse button with this equipped)",
+			"arguments": [
+				{
+					"type": "Pickable",
+					"name": "self",
+					"description": "The Pickable which has just stopped being used"
+				},
+				{
+					"type": "Character",
+					"name": "character",
+					"description": "The Character that stopped using it"
+				}
+			]
+		}
+	]
+}

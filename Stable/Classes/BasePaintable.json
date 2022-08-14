@@ -1,0 +1,176 @@
+{
+	"name": "Paintable",
+	"description": "Base class for all Paintable entities. This class provides customization for materials, exposing common functions to allow you to set custom material parameters, including loading textures from disk.",
+	"functions": [
+		{
+			"authority": "both",
+			"name": "SetMaterial",
+			"description": "Sets the material at the specified index of this Actor",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "material_path",
+					"description": "The new Material to apply"
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply<br/>-1 means all indices"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMaterialFromCanvas",
+			"description": "Sets the material at the specified index of this Actor to a Canvas object",
+			"parameters": [
+				{
+					"type": "Canvas",
+					"name": "canvas",
+					"description": "The Canvas object to use as a materia"
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply<br/>-1 means all indices"
+				}
+			]
+		},
+		
+		{
+			"authority": "client",
+			"name": "SetMaterialFromSceneCapture",
+			"description": "Sets the material at the specified index of this Actor to a SceneCapture object",
+			"parameters": [
+				{
+					"type": "SceneCapture",
+					"name": "scene_capture",
+					"description": "The SceneCapture object to use as a material"
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply<br/>-1 means all indices"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMaterialFromWebUI",
+			"description": "Sets the material at the specified index of this Actor to a WebUI object",
+			"parameters": [
+				{
+					"type": "WebUI",
+					"name": "webui",
+					"description": "The WebUI object to use as a material"
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply<br/>-1 means all indices"
+				}
+			]
+		},
+		
+		{
+			"authority": "both",
+			"name": "ResetMaterial",
+			"description": "Resets the material from the specified index to the original one",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "index",
+					"default": "-1",
+					"description": "The index to apply<br/>-1 means all indices"
+				}
+			]
+		},
+		
+		{
+			"authority": "both",
+			"name": "SetMaterialColorParameter",
+			"description": "Sets a Color parameter in this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+						{
+					"type": "Color",
+					"name": "color",
+					"description": "The value to set"
+				}
+			]
+		},
+		
+		{
+			"authority": "both",
+			"name": "SetMaterialScalarParameter",
+			"description": "Sets a Scalar parameter in this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "string",
+					"name": "scalar",
+					"description": "The value to set"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetMaterialTextureParameter",
+			"description": "Sets a texture parameter in this Actor's material to an image on disk",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "ImagePath",
+					"name": "texture_path",
+					"description": "The path to the texture"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetMaterialVectorParameter",
+			"description": "Sets a Vector parameter in this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "Vector",
+					"name": "vector",
+					"description": "The value to set"
+				}
+			]
+		},
+		
+		{
+			"authority": "both",
+			"name": "SetPhysicalMaterial",
+			"description": "Overrides this Actor's Physical Material with a new one",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "physical_material_path",
+					"description": "The Physical Material to override"
+				}
+			]
+		}
+	]
+}

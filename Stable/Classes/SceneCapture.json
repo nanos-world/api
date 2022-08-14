@@ -1,0 +1,102 @@
+{
+	"name": "SceneCapture",
+	"description": "Scene Capture is an Actor which captures a fully dynamic image of the scene into a Texture. It captures the scene from its view frustum, stores that view as an image, which is then used within a Material.",
+	"authority": "client",
+	"inheritance": [
+		"Actor"
+	],
+	"constructor": [
+		{
+			"type": "Vector",
+			"name": "location",
+			"default": "Vector(0, 0, 0)",
+			"description": "Location"
+		},
+		{
+			"type": "Rotator",
+			"name": "rotation",
+			"default": "Rotator(0, 0, 0)",
+			"description": "Rotation"
+		},
+		{
+			"type": "number",
+			"name": "width",
+			"default": "128",
+			"description": "Width of the generated Texture"
+		},
+		{
+			"type": "number",
+			"name": "height",
+			"default": "128",
+			"description": "Height of the generated Texture"
+		},
+		{
+			"type": "number",
+			"name": "render_rate",
+			"default": "0.033",
+			"description": "Render Rate (how frequent is the capture)"
+		},
+		{
+			"type": "number",
+			"name": "view_distance",
+			"default": "5000",
+			"description": "Maximum distance of capturing"
+		},
+		{
+			"type": "number",
+			"name": "fov_angle",
+			"default": "90",
+			"description": "FOV"
+		}
+	],
+	"functions": [
+		{
+			"name": "SetFreeze",
+			"description": "Stops or Restore Capturing",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "freeze"
+				}
+			]
+		},
+		{
+			"name": "SetFOVAngle",
+			"description": "Sets the FOV",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "angle"
+				}
+			]
+		},
+		{
+			"name": "Resize",
+			"description": "Change the output Texture size\nNote: too high texture will make the capture slower and will affect game performance",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "width"
+				},
+				{
+					"type": "number",
+					"name": "height"
+				}
+			]
+		},
+		{
+			"name": "SetRenderRate",
+			"description": "Set how frequent is the capture\nNote: Setting to 0 will make it capture every frame",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "render_rate"
+				}
+			]
+		}
+	]
+}

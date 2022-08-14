@@ -1,0 +1,492 @@
+{
+	"name": "Server",
+	"description": "Server represents all Server controls in the Server side.",
+	"authority": "server",
+	"static_functions": [
+		{
+			"name": "BroadcastChatMessage",
+			"description": "Sends a chat message to everyone",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message to send to everyone"
+				}
+			]
+		},
+		{
+			"name": "ChangeMap",
+			"description": "Restarts the server in a new Map, restarts all packages and reconnects all players",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "map_path",
+					"description": "The new map to load"
+				}
+			]
+		},
+		{
+			"name": "ReloadPackage",
+			"description": "Reloads a Package",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_folder_name",
+					"description": "The package to reload"
+				}
+			]
+		},
+		{
+			"name": "SendChatMessage",
+			"description": "Sends a chat message to Player only",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who receive the message"
+				},
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message"
+				}
+			]
+		},
+		{
+			"name": "SetDescription",
+			"description": "Sets the description of the server, optionally overrides Config.toml",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "description",
+					"description": "The new description"
+				},
+				{
+					"type": "boolean",
+					"name": "persist_to_config_file",
+					"description": "Persist to config file",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SetLogo",
+			"description": "Sets the logo of the server, optionally overrides Config.toml",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "logo_url",
+					"description": "The new logo"
+				},
+				{
+					"type": "boolean",
+					"name": "persist_to_config_file",
+					"description": "Persist to config file",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SetMaxPlayers",
+			"description": "Sets the maximum player slots of the server, optionally overrides Config.toml",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "max_players",
+					"description": "The maximum players"
+				},
+				{
+					"type": "boolean",
+					"name": "persist_to_config_file",
+					"description": "Persist to config file",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SetName",
+			"description": "Sets the name of the server, optionally overrides Config.toml",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "The new name"
+				},
+				{
+					"type": "boolean",
+					"name": "persist_to_config_file",
+					"description": "Persist to config file",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SetPassword",
+			"description": "Sets the password of the server, optionally overrides Config.toml",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "password",
+					"description": "The new password"
+				},
+				{
+					"type": "boolean",
+					"name": "persist_to_config_file",
+					"description": "Persist to config file",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"name": "SetValue",
+			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "Key"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "Value"
+				}
+			]
+		},
+		{
+			"name": "GetValue",
+			"description": "Gets a value given a key",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "Key"
+				},
+				{
+					"type": "any",
+					"name": "fallback",
+					"description": "Fallback Value if key doesn't exist"
+				}
+			]
+		},
+		{
+			"name": "Stop",
+			"description": "Stops the server",
+			"authority": "server"
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes for an Event",
+			"authority": "server",
+			"return": [
+				{
+					"type": "function",
+					"description": "the function callback itself"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The name of the Event"
+				},
+				{
+					"type": "function",
+					"name": "function",
+					"description": "Callback function"
+				}
+			]
+		},
+		{
+			"name": "UnloadPackage",
+			"description": "Unloads a Package",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_folder_name",
+					"description": "The package you want unload"
+				}
+			]
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The name of the Events"
+				},
+				{
+					"type": "function",
+					"name": "function",
+					"description": "Callback function",
+					"default": "nil"
+				}
+			]
+		},
+		{
+			"name": "GetMap",
+			"description": "Returns the current Map",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string",
+					"description": "the current map"
+				}
+			]
+		},
+		{
+			"name": "GetMapConfig",
+			"description": "Returns a list of the Custom Config of the current map (stored in the MAP_NAME.toml)",
+			"authority": "server",
+			"return": [
+				{
+					"type": "table",
+					"description": "a list of the Custom Config of the current map"
+				}
+			]
+		},
+		{
+			"name": "GetMaps",
+			"description": "Returns a list of all Maps installed on the server",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "a list of all Maps installed on the server"
+				}
+			]
+		},
+		{
+			"name": "GetPackages",
+			"description": "Returns a list of Packages folder names available in the server, optionally returns only loaded and running packages",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "a list of Packages folder names available in the server"
+				}
+			],
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "only_loaded",
+					"description": "Set to true the function return only loaded and running packages",
+					"default": "true"
+				}
+			]
+		},
+		{
+			"name": "GetVersion",
+			"description": "Returns the server version",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string",
+					"description": "the server version"
+				}
+			]
+		},
+		{
+			"name": "GetIP",
+			"description": "Returns the server Public IP",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string",
+					"description": "the server Public IP"
+				}
+			]
+		},
+		{
+			"name": "GetPort",
+			"description": "Returns the server Port",
+			"authority": "server",
+			"return": [
+				{
+					"type": "number",
+					"description": "the server Port"
+				}
+			]
+		},
+		{
+			"name": "GetQueryPort",
+			"description": "Returns the server QueryPort",
+			"authority": "server",
+			"return": [
+				{
+					"type": "number",
+					"description": "the server QueryPort"
+				}
+			]
+		},
+		{
+			"name": "GetMaxPlayers",
+			"description": "Returns the Max Players configured",
+			"authority": "server",
+			"return": [
+				{
+					"type": "number",
+					"description": "the max players configured"
+				}
+			]
+		},
+		{
+			"name": "GetDescription",
+			"description": "Returns the Server Description",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string",
+					"description": "the Server Description"
+				}
+			]
+		},
+		{
+			"name": "GetTickRate",
+			"description": "Returns the Configured Tick Rate",
+			"authority": "server",
+			"return": [
+				{
+					"type": "number",
+					"description": "the server Tick Rate"
+				}
+			]
+		},
+		{
+			"name": "IsAnnounced",
+			"description": "Returns if the Server is announced in the Master List",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Server is announced in the Master List"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Chat",
+			"description": "Called when a player types something in the chat",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to do not send the message"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "The message send by the player"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who send the message"
+				}
+			]
+		},
+		{
+			"name": "Console",
+			"description": "Called when a console command is submitted",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "The console command"
+				}
+			]
+		},
+		{
+			"name": "LogEntry",
+			"description": "Called when a Server log is received",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "The log"
+				},
+				{
+					"type": "LogType",
+					"name": "type",
+					"description": "The log type"
+				}
+			]
+		},
+		{
+			"name": "Start",
+			"description": "Server has been started",
+			"authority": "server"
+		},
+		{
+			"name": "PlayerConnect",
+			"description": "Called when a player is attempting to connect to the server",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "IP",
+					"description": "IP of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_account_ID",
+					"description": "Account ID of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_name",
+					"description": "Player name"
+				},
+				{
+					"type": "string",
+					"name": "player_steam_ID",
+					"description": "SteamID of the player"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to do not allow the player to connect"
+				}
+			]
+		},
+		{
+			"name": "Stop",
+			"description": "Server has been stopped",
+			"authority": "server"
+		},
+		{
+			"name": "Tick",
+			"description": "Triggered every 33ms by default",
+			"description_long": "Triggered every 33ms by default<br/><br/>Caution: Only small operations should be performed here, otherwise this can lead to server lag and delays",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "number",
+					"name": "delta_time",
+					"description": ""
+				}
+			]
+		}
+	]
+}
