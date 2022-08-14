@@ -183,7 +183,8 @@
 				},
 				{
 					"name": "blend_speed",
-					"type": "number"
+					"type": "number",
+					"default": "0"
 				}
 			]
 		},
