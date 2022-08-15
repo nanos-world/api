@@ -34,27 +34,27 @@
 			"default": "true"
 		},
 		{
-			"type": "boolean",
-			"name": "is_grabbable",
-			"default": "true",
-			"description": "Props bigger than radius <b>200</b> units will have it off by default (even if setting it to <b>true</b>). This can be overridden with <code>:SetGrabbable(true)</code>."
+			"type": "GrabMode",
+			"name": "grab_mode",
+			"default": "GrabMode.Auto",
+			"description": "Whether or not the Prop can be grabbed"
 		},
 		{
-			"type": "boolean",
-			"name": "force_no_ccd",
-			"default": "false",
-			"description": "Force CCD to not be used on small Props (may cause Props passing through objects if it's kinda small). It's smart to enable it on 'visual only' props."
+			"type": "CCDMode",
+			"name": "ccd_mode",
+			"default": "CCDMode.Auto",
+			"description": "Whether or not the Prop should have CCD enabled (disabling it may cause Props passing through objects if it's kinda small). It's smart to force it disabled on 'visual only' props."
 		}
 	],
 	"functions": [
 		{
-			"name": "SetGrabbable",
+			"name": "SetGrabMode",
 			"description": "Sets ability to Characters to Grab this Prop",
 			"parameters": [
 				{
-					"type": "boolean",
-					"name": "is_grabbable",
-					"description": "If the Prop will be able to be grabbable or not"
+					"type": "GrabMode",
+					"name": "grab_mode",
+					"description": "If the Prop will be able to be grabbable or not. Set to Auto to automatically define based on Prop's size."
 				}
 			],
 			"authority": "server"
@@ -99,11 +99,11 @@
 			"authority": "both"
 		},
 		{
-			"name": "IsGrabbable",
+			"name": "GetGrabMode",
 			"description": "Gets ability to Grab this Prop",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "GrabMode"
 				}
 			],
 			"authority": "both"

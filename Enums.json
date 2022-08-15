@@ -111,6 +111,23 @@
 			"value": "2"
 		}
 	],
+	"CCDMode": [
+		{
+			"key": "Auto",
+			"value": "0",
+			"description": "Automatically enables/disables depending on the Object size"
+		},
+		{
+			"key": "Disabled",
+			"value": "1",
+			"description": "Disables CCD"
+		},
+		{
+			"key": "Enabled",
+			"value": "2",
+			"description": "Enables CCD"
+		}
+	],
 	"CollisionChannel": [
 		{
 			"key": "WorldStatic",
@@ -394,6 +411,23 @@
 		{
 			"key": "Sprinting",
 			"value": "2"
+		}
+	],
+	"GrabMode": [
+		{
+			"key": "Disabled",
+			"value": "0",
+			"description": "Disables grabbing"
+		},
+		{
+			"key": "Auto",
+			"value": "1",
+			"description": "Automatically enables/disables depending on the Prop size"
+		},
+		{
+			"key": "Enabled",
+			"value": "2",
+			"description": "Enables grabbing"
 		}
 	],
 	"HighlightMode": [
