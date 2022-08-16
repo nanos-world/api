@@ -74,7 +74,7 @@
 			"description": "Clears the Character Attack Animation list"
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "SetImpactSound",
 			"description": "Sets the Sound when hitting something",
 			"description_long": "Sets the Sound when hitting something<br/><br/>Note: Surfaces <b>Water</b> and <b>Flesh</b> already have default sounds and must be explicitly set to override",
@@ -100,7 +100,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "SetSoundUse",
 			"description": "Sets the Sound when attacking",
 			"parameters": [
@@ -144,7 +144,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "SetCooldown",
 			"description": "Sets the cooldown between attacking",
 			"parameters": [
@@ -155,7 +155,7 @@
 			]
 		},
 		{
-			"authority": "",
+			"authority": "both",
 			"name": "GetAnimationsCharacterUse",
 			"description": "Gets the Animations when Character uses it",
 			"return": [
@@ -165,7 +165,7 @@
 			]
 		},
 		{
-			"authority": "",
+			"authority": "both",
 			"name": "GetSoundUse",
 			"description": "Gets the Sound when Character uses it",
 			"return": [
@@ -175,7 +175,7 @@
 			]
 		},
 		{
-			"authority": "",
+			"authority": "both",
 			"name": "GetBaseDamage",
 			"description": "Gets the Base Damage",
 			"return": [
@@ -185,7 +185,7 @@
 			]
 		},
 		{
-			"authority": "",
+			"authority": "both",
 			"name": "GetCooldown",
 			"description": "Gets the Cooldown between usages",
 			"return": [
