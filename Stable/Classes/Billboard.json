@@ -13,14 +13,20 @@
 			"default": "Vector(0, 0, 0)"
 		},
 		{
-			"type": "Rotator",
-			"name": "rotation",
-			"default": "Rotator(0, 0, 0)"
-		},
-		{
 			"type": "MaterialPath",
 			"name": "material_asset",
 			"default": ""
+		},
+		{
+			"type": "Vector2D",
+			"name": "size",
+			"default": "Vector2D(32, 32)"
+		},
+		{
+			"type": "boolean",
+			"name": "size_in_screen_space",
+			"default": "false",
+			"description": "Size is in Screen or World Space"
 		}
 	]
 }
