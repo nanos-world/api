@@ -1146,6 +1146,16 @@
 			"return": [
 				{
 					"type": "table",
+					"table_props": [
+						{
+							"name": "Radius",
+							"type": "number"
+						},
+						{
+							"name": "HalfHeight",
+							"type": "number"
+						}
+					],
 					"description": "table in the format <code>{ Radius, HalfHeight }</code>"
 				}
 			]
@@ -1157,6 +1167,16 @@
 			"return": [
 				{
 					"type": "table",
+					"table_props": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					],
 					"description": "table in the format <code>{ Location, Rotation }</code>"
 				}
 			],

@@ -7,6 +7,24 @@
 			"return": [
 				{
 					"type": "table[]",
+					"table_props": [
+						{
+							"name": "Name",
+							"type": "string"
+						},
+						{
+							"name": "Path",
+							"type": "string"
+						},
+						{
+							"name": "Author",
+							"type": "string"
+						},
+						{
+							"name": "Version",
+							"type": "string"
+						}
+					],
 					"description": "in the format <code>[{Name, Path, Author, Version}, ...]</code>"
 				}
 			],

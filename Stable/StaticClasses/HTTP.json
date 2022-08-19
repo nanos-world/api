@@ -63,6 +63,16 @@
 			"return": [
 				{
 					"type": "table",
+					"table_props": [
+						{
+							"name": "Status",
+							"type": "number"
+						},
+						{
+							"name": "Data",
+							"type": "string"
+						}
+					],
 					"description": "the data in the format <code>{ Status, Data }</code>"
 				}
 			],
