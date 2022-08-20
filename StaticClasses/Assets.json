@@ -7,7 +7,7 @@
 			"return": [
 				{
 					"type": "table[]",
-					"table_props": [
+					"table_properties": [
 						{
 							"name": "Name",
 							"type": "string"
@@ -24,8 +24,7 @@
 							"name": "Version",
 							"type": "string"
 						}
-					],
-					"description": "in the format <code>[{Name, Path, Author, Version}, ...]</code>"
+					]
 				}
 			],
 			"name": "GetAssetPacks",

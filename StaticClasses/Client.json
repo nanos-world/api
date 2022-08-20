@@ -393,7 +393,16 @@
 			"return": [
 				{
 					"type": "table",
-					"description": "A table of the format <code>{ \"Position\": Vector, \"Direction\": Vector }</code>"
+					"table_properties": [
+						{
+							"name": "Position",
+							"type": "Vector"
+						},
+						{
+							"name": "Direction",
+							"type": "Vector"
+						}
+					]
 				}
 			]
 		},
@@ -697,7 +706,7 @@
 			"return": [
 				{
 					"type": "function",
-					"description": "The function callback itself"
+					"description": "the function callback itself"
 				}
 			],
 			"parameters": [
@@ -708,7 +717,7 @@
 				},
 				{
 					"type": "function",
-					"name": "function",
+					"name": "callback",
 					"description": ""
 				}
 			]
@@ -725,7 +734,7 @@
 				},
 				{
 					"type": "function",
-					"name": "function",
+					"name": "callback",
 					"description": "",
 					"default": "nil"
 				}
@@ -739,7 +748,7 @@
 			"return": [
 				{
 					"type": "table",
-					"table_props": [
+					"table_properties": [
 						{
 							"name": "Success",
 							"type": "boolean"
@@ -774,10 +783,9 @@
 						},
 						{
 							"name": "UV",
-							"type": "Vector2"
+							"type": "Vector2D"
 						}
-					],
-					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\", \"UV\"}"
+					]
 				}
 			],
 			"parameters": [
@@ -819,7 +827,7 @@
 			"return": [
 				{
 					"type": "table[]",
-					"table_props": [
+					"table_properties": [
 						{
 							"name": "Success",
 							"type": "boolean"
@@ -856,8 +864,7 @@
 							"name": "UV",
 							"type": "Vector2"
 						}
-					],
-					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\"}"
+					]
 				}
 			],
 			"parameters": [
@@ -958,7 +965,7 @@
 			"return": [
 				{
 					"type": "table",
-					"table_props": [
+					"table_properties": [
 						{
 							"name": "IsValid",
 							"type": "boolean"
@@ -979,8 +986,7 @@
 							"name": "PathPoints",
 							"type": "Vector[]"
 						}
-					],
-					"description": "Returned Table: {\"IsValid\", \"IsPartial\", \"Length\", \"Cost\", \"PathPoints\"}"
+					]
 				}
 			],
 			"parameters": [

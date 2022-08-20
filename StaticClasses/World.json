@@ -323,8 +323,17 @@
 		{
 			"return": [
 				{
-					"type": "number[]",
-					"description": "in the format {hours, minutes}"
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Hours",
+							"type": "number"
+						},
+						{
+							"name": "Minutes",
+							"type": "number"
+						}
+					]
 				}
 			],
 			"authority": "client",
