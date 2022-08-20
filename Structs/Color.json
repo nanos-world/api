@@ -31,36 +31,48 @@
 		{
 			"name": "+",
 			"operator": "__add",
-			"type": "Color|number",
+			"lhs": "Color|number",
+			"rhs": "Color|number",
+			"return": "Color",
 			"description": "Adds two Colors or a number into each component"
 		},
 		{
 			"name": "-",
 			"operator": "__sub",
-			"type": "Color|number",
+			"lhs": "Color",
+			"rhs": "Color|number",
+			"return": "Color",
 			"description": "Subtracts two Colors or a number from each component"
 		},
 		{
 			"name": "*",
 			"operator": "__mul",
-			"type": "Color|number",
+			"lhs": "Color|number",
+			"rhs": "Color|number",
+			"return": "Color",
 			"description": "Multiplies two Colors or a number into each component"
 		},
 		{
 			"name": "/",
 			"operator": "__div",
-			"type": "Color|number",
+			"lhs": "Color",
+			"rhs": "Color|number",
+			"return": "Color",
 			"description": "Divides two Colors or a number from each component"
 		},
 		{
 			"name": "==",
 			"operator": "__eq",
+			"lhs": "Color",
+			"rhs": "Color",
+			"return": "boolean",
 			"description": "Checks if two Colors have the same values"
 		},
 		{ 
 			"name": "tostring",
 			"operator": "tostring",
-			"type": "Color",
+			"lhs": "Color",
+			"return": "string",
 			"description": "Gets a string representation of this struct"
 		}
 	],
