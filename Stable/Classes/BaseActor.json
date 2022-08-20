@@ -441,6 +441,20 @@
 			"return": [
 				{
 					"type": "table",
+					"table_props": [
+						{
+							"name": "Origin",
+							"type": "Vector"
+						},
+						{
+							"name": "BoxExtent",
+							"type": "Vector"
+						},
+						{
+							"name": "SphereRadius",
+							"type": "number"
+						}
+					],
 					"description": "in the format <code>{\"Origin\", \"BoxExtent\", \"SphereRadius\"}</code>"
 				}
 			]

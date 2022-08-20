@@ -739,6 +739,44 @@
 			"return": [
 				{
 					"type": "table",
+					"table_props": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2"
+						}
+					],
 					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\", \"UV\"}"
 				}
 			],
@@ -781,6 +819,44 @@
 			"return": [
 				{
 					"type": "table[]",
+					"table_props": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2"
+						}
+					],
 					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\"}"
 				}
 			],
@@ -882,6 +958,28 @@
 			"return": [
 				{
 					"type": "table",
+					"table_props": [
+						{
+							"name": "IsValid",
+							"type": "boolean"
+						},
+						{
+							"name": "IsPartial",
+							"type": "boolean"
+						},
+						{
+							"name": "Length",
+							"type": "number"
+						},
+						{
+							"name": "Cost",
+							"type": "number"
+						},
+						{
+							"name": "PathPoints",
+							"type": "Vector[]"
+						}
+					],
 					"description": "Returned Table: {\"IsValid\", \"IsPartial\", \"Length\", \"Cost\", \"PathPoints\"}"
 				}
 			],
