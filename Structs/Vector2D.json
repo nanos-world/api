@@ -3,20 +3,32 @@
 	"description": "A Vector2D composed of components (X, Y) with floating point precision. Used mainly for HUD and Drawing on screen.",
 	"operators": [
 		{
-			"key": "add",
-			"allowed_types": ["Vector", "number"]
+			"name": "+",
+			"operator": "__add",
+			"lhs": "Vector2D|number",
+			"rhs": "Vector2D|number",
+			"return": "Vector2D"
 		},
 		{
-			"key": "sub",
-			"allowed_types": ["Vector", "number"]
+			"name": "-",
+			"operator": "__sub",
+			"lhs": "Vector2D|number",
+			"rhs": "Vector2D|number",
+			"return": "Vector2D"
 		},
 		{
-			"key": "mul",
-			"allowed_types": ["Vector", "number"]
+			"name": "*",
+			"operator": "__mul",
+			"lhs": "Vector2D|number",
+			"rhs": "Vector2D|number",
+			"return": "Vector2D"
 		},
 		{
-			"key": "div",
-			"allowed_types": ["Vector", "number"]
+			"name": "/",
+			"operator": "__div",
+			"lhs": "Vector2D",
+			"rhs": "Vector2D|number",
+			"return": "Vector2D"
 		}
 	],
 	"constructor": [

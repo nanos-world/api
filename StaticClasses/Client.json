@@ -862,7 +862,7 @@
 						},
 						{
 							"name": "UV",
-							"type": "Vector2"
+							"type": "Vector2D"
 						}
 					]
 				}

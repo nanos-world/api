@@ -774,7 +774,7 @@
 						},
 						{
 							"name": "UV",
-							"type": "Vector2"
+							"type": "Vector2D"
 						}
 					],
 					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\", \"UV\"}"
@@ -854,7 +854,7 @@
 						},
 						{
 							"name": "UV",
-							"type": "Vector2"
+							"type": "Vector2D"
 						}
 					],
 					"description": "in the format: {\"Success\", \"Location\", \"Normal\", \"Entity\", \"BoneName\", \"ActorName\", \"ComponentName\", \"SurfaceType\"}"
