@@ -42,6 +42,11 @@
 			"type": "MaterialPath",
 			"name": "crosshair_material",
 			"default": ""
+		},
+		{	
+			"type": "boolean",
+			"name": "can_use",
+			"default": "true"
 		}
 	],
 	"functions": [
@@ -191,6 +196,23 @@
 			"return": [
 				{
 					"type": "number"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Attack",
+			"authority": "both",
+			"description": "Triggered when the Character effectively attacks with this Melee",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Melee"
+				},
+				{
+					"name": "handler",
+					"type": "Character"
 				}
 			]
 		}

@@ -549,6 +549,28 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetCanJump",
+			"description": "Sets if this Character is allowed to Jump",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_jump"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCanDive",
+			"description": "Sets if this Character is allowed to Dive",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_dive"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetCanSprint",
 			"description": "Sets if this Character is allowed to Sprint",
 			"parameters": [
@@ -1462,6 +1484,21 @@
 				{
 					"type": "string",
 					"name": "notify_name"
+				}
+			]
+		},
+		{
+			"name": "Attack",
+			"authority": "both",
+			"description": "Triggered when the Character effectively attacks with a Melee",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Character"
+				},
+				{
+					"name": "melee",
+					"type": "Melee"
 				}
 			]
 		},

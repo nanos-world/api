@@ -1003,6 +1003,17 @@
 			]
 		},
 		{
+			"name": "GetTime",
+			"description": "Gets the Unix Epoch Time in milliseconds",
+			"authority": "client",
+			"return": [
+				{
+					"type": "number",
+					"description": "the unix timestamp"
+				}
+			]
+		},
+		{
 			"name": "GetMap",
 			"description": "Returns the current Map",
 			"authority": "client",

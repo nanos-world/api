@@ -368,6 +368,17 @@
 			]
 		},
 		{
+			"name": "GetTime",
+			"description": "Gets the Unix Epoch Time in milliseconds",
+			"authority": "server",
+			"return": [
+				{
+					"type": "number",
+					"description": "the unix timestamp"
+				}
+			]
+		},
+		{
 			"name": "IsAnnounced",
 			"description": "Returns if the Server is announced in the Master List",
 			"authority": "server",
