@@ -414,6 +414,50 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAnimationIdleWalkRunStanding",
+			"description": "Sets the Blend Space (2D) Animation for Standing",
+			"description_long": "Sets the Blend Space (2D) Animation for Standing<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "blend_space_path"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_turn_in_place",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationIdleWalkRunCrouching",
+			"description": "Sets the Blend Space (2D) Animation for Crouching<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "blend_space_path"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_turn_in_place",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationIdleWalkRunProning",
+			"description": "Sets the Blend Space (2D) Animation for Proning<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "blend_space_path"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetAccelerationSettings",
 			"description": "Sets the Movement Max Acceleration of this Character",
 			"parameters": [

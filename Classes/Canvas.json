@@ -6,37 +6,44 @@
 		{	
 			"type": "boolean",
 			"name": "is_visible",
-			"default": "true"
+			"default": "true",
+			"description": "Whether to draw it on screen"
 		},
 		{	
 			"type": "Color",
 			"name": "clear_color",
-			"default": "Color.TRANSPARENT"
+			"default": "Color.TRANSPARENT",
+			"description": "Color to clear with (background color)"
 		},
 		{	
 			"type": "number",
 			"name": "auto_repaint_rate",
-			"default": "-1"
+			"default": "-1",
+			"description": "Rate to auto repaint (call Update event), pass 0 for every frame, -1 to disable"
 		},
 		{	
 			"type": "boolean",
 			"name": "should_clear_before_update",
-			"default": "true"
+			"default": "true",
+			"description": "Whether to clear with Clear Color before updates"
 		},
 		{	
 			"type": "boolean",
 			"name": "auto_resize",
-			"default": "true"
+			"default": "true",
+			"description": "Auto resize with screen's size"
 		},
 		{	
 			"type": "number",
 			"name": "width",
-			"default": "0"
+			"default": "0",
+			"description": "If not using auto_resize"
 		},
 		{	
 			"type": "number",
 			"name": "height",
-			"default": "0"
+			"default": "0",
+			"description": "If not using auto_resize"
 		}
 	],
 	"functions": [
@@ -62,6 +69,11 @@
 					"type": "Color",
 					"name": "render_color",
 					"default": "Color.WHITE"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
 				}
 			]
 		},
@@ -86,6 +98,11 @@
 				{
 					"type": "Color",
 					"name": "render_color"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
 				}
 			]
 		},
@@ -125,6 +142,99 @@
 					"type": "Vector2D",
 					"name": "pivot_point",
 					"default": "Vector2D(0.5, 0.5)"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "DrawMaterialFromWebUI",
+			"description": "Draws a WebUI on the Canvas",
+			"description_long": "Draws a WebUI on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event",
+			"parameters": [
+				{
+					"type": "WebUI",
+					"name": "webui_entity"
+				},
+				{
+					"type": "Vector2D",
+					"name": "screen_position"
+				},
+				{
+					"type": "Vector2D",
+					"name": "screen_size"
+				},
+				{
+					"type": "Vector2D",
+					"name": "coordinate_position"
+				},
+				{
+					"type": "Vector2D",
+					"name": "coordinate_size",
+					"default": "Vector2D(1, 1)"
+				},
+				{
+					"type": "number",
+					"name": "rotation",
+					"default": "0"
+				},
+				{
+					"type": "Vector2D",
+					"name": "pivot_point",
+					"default": "Vector2D(0.5, 0.5)"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "DrawMaterialFromSceneCapture",
+			"description": "Draws a SceneCapture on the Canvas",
+			"description_long": "Draws a SceneCapture on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event",
+			"parameters": [
+				{
+					"type": "SceneCapture",
+					"name": "scenecapture_entity"
+				},
+				{
+					"type": "Vector2D",
+					"name": "screen_position"
+				},
+				{
+					"type": "Vector2D",
+					"name": "screen_size"
+				},
+				{
+					"type": "Vector2D",
+					"name": "coordinate_position"
+				},
+				{
+					"type": "Vector2D",
+					"name": "coordinate_size",
+					"default": "Vector2D(1, 1)"
+				},
+				{
+					"type": "number",
+					"name": "rotation",
+					"default": "0"
+				},
+				{
+					"type": "Vector2D",
+					"name": "pivot_point",
+					"default": "Vector2D(0.5, 0.5)"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
 				}
 			]
 		},
@@ -273,6 +383,11 @@
 					"type": "Color",
 					"name": "render_color",
 					"default": "Color.WHITE"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
 				}
 			]
 		},
@@ -299,6 +414,11 @@
 					"type": "Color",
 					"name": "render_color",
 					"default": "Color.WHITE"
+				},
+				{
+					"type": "BlendMode",
+					"name": "blend_mode",
+					"default": "BlendMode.Opaque"
 				}
 			]
 		},

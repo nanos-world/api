@@ -41,6 +41,23 @@
 					"description": "Sequence of arguments to pass to the event"
 				}
 			]
+		},
+		{
+			"name": "BindBlueprintEventDispatcher",
+			"description": "Assigns and Binds a Blueprint Event Dispatcher",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback function to call"
+				}
+			]
 		}
 	]
 }

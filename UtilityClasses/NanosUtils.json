@@ -25,6 +25,23 @@
 			]
 		},
 		{
+			"name": "IsEntityValid",
+			"description": "Returns if an entity is valid",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the entity is valid"
+				}
+			],
+			"parameters": [
+				{
+					"type": "any",
+					"name": "entity",
+					"description": "Entity to verify"
+				}
+			]
+		},
+		{
 			"name": "Dump",
 			"description": "Dumps a table into a readable text",
 			"return": [
