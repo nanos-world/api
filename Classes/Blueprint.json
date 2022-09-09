@@ -45,7 +45,7 @@
 		{
 			"name": "BindBlueprintEventDispatcher",
 			"description": "Assigns and Binds a Blueprint Event Dispatcher",
-			"authority": "both",
+			"authority": "client",
 			"parameters": [
 				{
 					"type": "string",
