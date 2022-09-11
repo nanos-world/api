@@ -55,7 +55,7 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback function to call"
+					"description": "Callback function to call (the first argument is the blueprint itself)"
 				}
 			]
 		}
