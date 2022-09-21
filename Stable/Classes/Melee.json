@@ -199,5 +199,22 @@
 				}
 			]
 		}
+	],
+	"events": [
+		{
+			"name": "Attack",
+			"authority": "both",
+			"description": "Triggered when the Character effectively attacks with this Melee",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Melee"
+				},
+				{
+					"name": "handler",
+					"type": "Character"
+				}
+			]
+		}
 	]
 }

@@ -1,6 +1,29 @@
 {
 	"name": "Rotator",
 	"description": "A container for rotation information (Pitch, Yaw, Ro). All rotation values are stored in degrees.",
+	"operators": [
+		{
+			"name": "+",
+			"operator": "__add",
+			"lhs": "Rotator|number",
+			"rhs": "Rotator|number",
+			"return": "Rotator"
+		},
+		{
+			"name": "-",
+			"operator": "__sub",
+			"lhs": "Rotator|number",
+			"rhs": "Rotator|number",
+			"return": "Rotator"
+		},
+		{
+			"name": "*",
+			"operator": "__mul",
+			"lhs": "Rotator|number",
+			"rhs": "Rotator|number",
+			"return": "Rotator"
+		}
+	],
 	"constructor": [
 		{
 			"name": "Pitch",

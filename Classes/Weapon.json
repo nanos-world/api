@@ -686,6 +686,32 @@
 			]
 		},
 		{
+			"authority": "client",
+			"name": "GetBoneTransform",
+			"description": "Gets a Bone Transform in world space given a bone name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "bone_name",
+					"type": "string"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "GetBulletCount",
 			"return": [

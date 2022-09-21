@@ -118,6 +118,29 @@
 			"description": "Reads and returns the next file line"
 		},
 		{
+			"return": [
+				{
+					"type": "table",
+					"description": "parsed table"
+				}
+			],
+			"authority":"server",
+			"name": "ReadJSON",
+			"description": "Reads the whole file as a JSON and returns it."
+		},
+		{
+			"authority":"server",
+			"name": "ReadJSONAsync",
+			"description": "Reads the whole file as a JSON and returns it asynchronously.",
+			"parameters": [
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback with the file read"
+				}
+			]
+		},
+		{
 			"name": "Seek",
 			"authority":"server",
 			"description": "Sets the file pointer to a specific position",

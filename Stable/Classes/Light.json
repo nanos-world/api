@@ -98,16 +98,6 @@
 			]
 		},
 		{
-			"name": "SetEnabled",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "boolean",
-					"name": "is_enabled"
-				}
-			]
-		},
-		{
 			"name": "SetCastShadows",
 			"authority": "both",
 			"parameters": [
@@ -134,15 +124,6 @@
 				{
 					"type": "number",
 					"name": "attenuation_radius"
-				}
-			]
-		},
-		{
-			"name": "IsEnabled",
-			"authority": "both",
-			"return": [
-				{
-					"type": "boolean"
 				}
 			]
 		},

@@ -1,6 +1,43 @@
 {
 	"name": "Vector",
 	"description": "A Vector composed of components (X, Y, Z) with floating point precision. Used mainly for entity position.",
+	"operators": [
+		{
+			"name": "+",
+			"operator": "__add",
+			"lhs": "Vector|number",
+			"rhs": "Vector|number",
+			"return": "Vector"
+		},
+		{
+			"name": "-",
+			"operator": "__sub",
+			"lhs": "Vector|number",
+			"rhs": "Vector|number",
+			"return": "Vector"
+		},
+		{
+			"name": "*",
+			"operator": "__mul",
+			"lhs": "Vector|number",
+			"rhs": "Vector|number",
+			"return": "Vector"
+		},
+		{
+			"name": "/",
+			"operator": "__div",
+			"lhs": "Vector",
+			"rhs": "Vector|number",
+			"return": "Vector"
+		},
+		{
+			"name": "^",
+			"operator": "__pow",
+			"lhs": "Vector",
+			"rhs": "Vector|number",
+			"return": "Vector"
+		}
+	],
 	"constructor": [
 		{
 			"name": "X",

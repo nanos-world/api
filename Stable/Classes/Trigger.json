@@ -38,6 +38,12 @@
 			"name": "color",
 			"default": "Color.RED",
 			"description": "Color to paint the Trigger bounds - if Visible"
+		},
+		{
+			"type": "string[]",
+			"name": "overlap_only_classes",
+			"default": "{}",
+			"description": "Filter Trigger to only overlap specific Classes. Leave it empty for all Classes"
 		}
 	],
 	"functions": [

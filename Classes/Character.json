@@ -414,6 +414,80 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAnimationIdleWalkRunStanding",
+			"description": "Sets the Blend Space (2D) Animation for Standing",
+			"description_long": "Sets the Blend Space (2D) Animation for Standing<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "blend_space_path"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_turn_in_place",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationIdleWalkRunCrouching",
+			"description": "Sets the Blend Space (2D) Animation for Crouching<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "blend_space_path"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_turn_in_place",
+					"default": "false"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationIdleWalkRunProning",
+			"description": "Sets the Blend Space (2D) Animation for Proning<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "blend_space_path"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationsTransitionStandingCrouching",
+			"description": "Sets the Transition Animation between Standing and Crouching",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "standing_to_crouching"
+				},
+				{
+					"type": "Animation",
+					"name": "crouching_to_standing"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationsTransitionCrouchingProning",
+			"description": "Sets the Transition Animation between Crouching and Proning",
+			"parameters": [
+				{
+					"type": "Animation",
+					"name": "crouching_to_proning"
+				},
+				{
+					"type": "Animation",
+					"name": "pronng_to_crouching"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetAccelerationSettings",
 			"description": "Sets the Movement Max Acceleration of this Character",
 			"parameters": [
@@ -980,6 +1054,17 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetSimulatePhysics",
+			"description": "Sets the Character Capsule to simulate physics",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "simulate_physics"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetSpeedMultiplier",
 			"description": "Sets all speed multiplier",
 			"parameters": [
@@ -1014,7 +1099,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "network-authority",
 			"name": "SetViewMode",
 			"description": "Sets the View Mode",
 			"parameters": [
@@ -1025,7 +1110,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "network-authority",
 			"name": "SetWeaponAimMode",
 			"description": "Sets the Weapon's Aim Mode",
 			"parameters": [

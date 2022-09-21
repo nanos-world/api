@@ -40,7 +40,7 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "Callback to call when finishes<br/>The argument passed to it will be the <code>rows_affected</code> number"
+					"description": "Callback in the format (rows_affected, error)"
 				},
 				{
 					"type": "any",
@@ -54,7 +54,11 @@
 			"return": [
 				{
 					"type": "number",
-					"description": "affected_rows"
+					"description": "affected rows"
+				},
+				{
+					"type": "string",
+					"description": "error (if any)"
 				}
 			],
 			"name": "ExecuteSync",
@@ -88,7 +92,7 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "Callback to call when finishes<br/>The argument passed to it will be a table of rows"
+					"description": "Callback in the format (rows: table[], error: string?)"
 				},
 				{
 					"type": "any",
@@ -103,6 +107,10 @@
 				{
 					"type": "table[]",
 					"description": "rows fetched"
+				},
+				{
+					"type": "string",
+					"description": "error (if any)"
 				}
 			],
 			"name": "SelectSync",

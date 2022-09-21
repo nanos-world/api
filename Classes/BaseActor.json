@@ -60,7 +60,7 @@
 			"name": "AddImpulse",
 			"description": "Applies a force in world world to this Actor",
 			"description_long": "Applies a force in world world to this Actor (the force is applied client side, by, in most cases, the player closest to this Actor)",
-			"authority": "authority",
+			"authority": "network-authority",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -135,7 +135,7 @@
 		{
 			"name": "SetForce",
 			"description": "Adds a permanent force to this Actor, set to Vector(0, 0, 0) to cancel",
-			"authority": "authority",
+			"authority": "network-authority",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -311,7 +311,7 @@
 		{
 			"name": "TranslateTo",
 			"description": "Smoothly moves this actor to a location over a certain time",
-			"authority": "authority",
+			"authority": "network-authority",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -333,7 +333,7 @@
 		{
 			"name": "RotateTo",
 			"description": "Smoothly rotates this actor to an angle over a certain time",
-			"authority": "authority",
+			"authority": "network-authority",
 			"parameters": [
 				{
 					"type": "Rotator",

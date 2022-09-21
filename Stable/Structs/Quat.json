@@ -1,6 +1,29 @@
 {
 	"name": "Quat",
 	"description": "Floating point Quaternion that can represent a rotation about an axis in 3-D space",
+	"operators": [
+		{
+			"name": "+",
+			"operator": "__add",
+			"lhs": "Quat|number",
+			"rhs": "Quat|number",
+			"return": "Quat"
+		},
+		{
+			"name": "-",
+			"operator": "__sub",
+			"lhs": "Quat|number",
+			"rhs": "Quat|number",
+			"return": "Quat"
+		},
+		{
+			"name": "*",
+			"operator": "__mul",
+			"lhs": "Quat|number",
+			"rhs": "Quat|number",
+			"return": "Quat"
+		}
+	],
 	"constructor": [
 		{
 			"name": "X",

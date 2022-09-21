@@ -101,6 +101,22 @@
 			]
 		},
 		{
+			"name": "SetShowFlag",
+			"description": "Enables/Disables rendering features from being captured",
+			"description_long": "Enables/Disables rendering features from being captured<br/>A complete list of available flags can be found in the <a href='https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/FEngineShowFlags/'>Official Unreal Documentation</a>",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "flag"
+				},
+				{
+					"type": "boolean",
+					"name": "enable"
+				}
+			]
+		},
+		{
 			"name": "Resize",
 			"description": "Change the output Texture size\nNote: too high texture will make the capture slower and will affect game performance",
 			"authority": "client",

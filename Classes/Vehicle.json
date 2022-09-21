@@ -586,6 +586,32 @@
 			]
 		},
 		{
+			"authority": "client",
+			"name": "GetBoneTransform",
+			"description": "Gets a Bone Transform in world space given a bone name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "bone_name",
+					"type": "string"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "GetPassenger",
 			"description": "Gets a passenger from a seat",
@@ -759,6 +785,52 @@
 				{
 					"type": "boolean",
 					"description": "Return false to prevent it"
+				}
+			]
+		},
+		{
+			"name": "TakeDamage",
+			"authority": "server",
+			"description": "Triggered when this Vehicle takes damage",
+			"arguments": [
+				{
+					"type": "Vehicle",
+					"name": "self"
+				},
+				{
+					"type": "number",
+					"name": "damage"
+				},
+				{
+					"type": "string",
+					"name": "bone",
+					"description": "Damaged bone"
+				},
+				{
+					"type": "DamageType",
+					"name": "type",
+					"description": "Damage Type"
+				},
+				{
+					"type": "Vector",
+					"name": "from_direction",
+					"description": "Direction of the damage relative to the damaged actor"
+				},
+				{
+					"type": "Player",
+					"name": "instigator",
+					"description": "The player which caused the damage"
+				},
+				{
+					"type": "any",
+					"name": "causer",
+					"description": "The object which caused the damage"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
 				}
 			]
 		}

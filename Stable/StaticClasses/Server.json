@@ -160,6 +160,12 @@
 					"type": "any",
 					"name": "value",
 					"description": "Value"
+				},
+				{
+					"name": "sync_on_client",
+					"type": "boolean",
+					"default": "false",
+					"description": "If enabled will sync this value through all clients, accessible through Client.GetValue() static class."
 				}
 			]
 		},
@@ -177,6 +183,18 @@
 					"type": "any",
 					"name": "fallback",
 					"description": "Fallback Value if key doesn't exist"
+				}
+			]
+		},
+		{
+			"name": "Unban",
+			"description": "Unbans a Player by it's account ID",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "account_id",
+					"description": "nanos account ID"
 				}
 			]
 		},
@@ -364,6 +382,17 @@
 				{
 					"type": "number",
 					"description": "the server Tick Rate"
+				}
+			]
+		},
+		{
+			"name": "GetTime",
+			"description": "Gets the Unix Epoch Time in milliseconds",
+			"authority": "server",
+			"return": [
+				{
+					"type": "number",
+					"description": "the unix timestamp"
 				}
 			]
 		},

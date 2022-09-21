@@ -89,12 +89,40 @@
 			"value": "4"
 		},
 		{
-			"key": "AlphaComposite",
+			"key": "MaskedDistanceField",
 			"value": "5"
 		},
 		{
-			"key": "AlphaHoldout",
+			"key": "MaskedDistanceFieldShadowed",
 			"value": "6"
+		},
+		{
+			"key": "TranslucentDistanceField",
+			"value": "7"
+		},
+		{
+			"key": "TranslucentDistanceFieldShadowed",
+			"value": "8"
+		},
+		{
+			"key": "AlphaComposite",
+			"value": "9"
+		},
+		{
+			"key": "AlphaHoldout",
+			"value": "10"
+		},
+		{
+			"key": "AlphaBlend",
+			"value": "11"
+		},
+		{
+			"key": "TranslucentAlphaOnly",
+			"value": "12"
+		},
+		{
+			"key": "TranslucentAlphaOnlyWriteAlpha",
+			"value": "13"
 		}
 	],
 	"CameraMode": [
@@ -109,6 +137,23 @@
 		{
 			"key": "TPSOnly",
 			"value": "2"
+		}
+	],
+	"CCDMode": [
+		{
+			"key": "Auto",
+			"value": "0",
+			"description": "Automatically enables/disables depending on the Object size"
+		},
+		{
+			"key": "Disabled",
+			"value": "1",
+			"description": "Disables CCD"
+		},
+		{
+			"key": "Enabled",
+			"value": "2",
+			"description": "Enables CCD"
 		}
 	],
 	"CollisionChannel": [
@@ -394,6 +439,23 @@
 		{
 			"key": "Sprinting",
 			"value": "2"
+		}
+	],
+	"GrabMode": [
+		{
+			"key": "Disabled",
+			"value": "0",
+			"description": "Disables grabbing"
+		},
+		{
+			"key": "Auto",
+			"value": "1",
+			"description": "Automatically enables/disables depending on the Prop size"
+		},
+		{
+			"key": "Enabled",
+			"value": "2",
+			"description": "Enables grabbing"
 		}
 	],
 	"HighlightMode": [
@@ -732,6 +794,10 @@
 		{
 			"key": "Music",
 			"value": "1"
+		},
+		{
+			"key": "UI",
+			"value": "2"
 		}
 	],
 	"SoundLoopMode": [

@@ -549,6 +549,28 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetCanJump",
+			"description": "Sets if this Character is allowed to Jump",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_jump"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCanDive",
+			"description": "Sets if this Character is allowed to Dive",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_dive"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetCanSprint",
 			"description": "Sets if this Character is allowed to Sprint",
 			"parameters": [
@@ -1146,7 +1168,7 @@
 			"return": [
 				{
 					"type": "table",
-					"table_props": [
+					"table_properties": [
 						{
 							"name": "Radius",
 							"type": "number"
@@ -1155,8 +1177,7 @@
 							"name": "HalfHeight",
 							"type": "number"
 						}
-					],
-					"description": "table in the format <code>{ Radius, HalfHeight }</code>"
+					]
 				}
 			]
 		},
@@ -1167,7 +1188,7 @@
 			"return": [
 				{
 					"type": "table",
-					"table_props": [
+					"table_properties": [
 						{
 							"name": "Location",
 							"type": "Vector"
@@ -1176,8 +1197,7 @@
 							"name": "Rotation",
 							"type": "Rotator"
 						}
-					],
-					"description": "table in the format <code>{ Location, Rotation }</code>"
+					]
 				}
 			],
 			"parameters": [
@@ -1464,6 +1484,21 @@
 				{
 					"type": "string",
 					"name": "notify_name"
+				}
+			]
+		},
+		{
+			"name": "Attack",
+			"authority": "both",
+			"description": "Triggered when the Character effectively attacks with a Melee",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Character"
+				},
+				{
+					"name": "melee",
+					"type": "Melee"
 				}
 			]
 		},

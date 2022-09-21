@@ -181,6 +181,18 @@
 					"description": "The Timer ID"
 				}
 			]
+		},
+		{
+			"name": "ResetElapsedTime",
+			"authority": "both",
+			"description": "Resets a Timer to start from beginning",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				}
+			]
 		}
 	]
 }

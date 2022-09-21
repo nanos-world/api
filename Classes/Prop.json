@@ -184,7 +184,7 @@
 		},
 		{
 			"name": "TakeDamage",
-			"authority": "both",
+			"authority": "server",
 			"description": "When Prop takes Damage",
 			"arguments": [
 				{

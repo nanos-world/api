@@ -55,6 +55,7 @@
 	"events": [
 		{
 			"name": "TakeDamage",
+			"authority": "server",
 			"description": "Called when a StaticMesh takes Damage",
 			"arguments": [
 				{

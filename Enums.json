@@ -31,6 +31,40 @@
 			"value": "1"
 		}
 	],
+	"AssetType": [
+		{
+			"key": "Map",
+			"value": 2
+		},
+		{
+			"key": "StaticMesh",
+			"value": 4
+		},
+		{
+			"key": "SkeletalMesh",
+			"value": 8
+		},
+		{
+			"key": "Sound",
+			"value": 16
+		},
+		{
+			"key": "Animation",
+			"value": 32
+		},
+		{
+			"key": "Particle",
+			"value": 64
+		},
+		{
+			"key": "Material",
+			"value": 128
+		},
+		{
+			"key": "Blueprint",
+			"value": 256
+		}
+	],
 	"AttachmentRule": [
 		{
 			"key": "KeepRelative",
@@ -178,24 +212,24 @@
 			"description": "Pickables and Props Meshes"
 		},
 		{
-			"key": "Vehicle",
-			"value": "1 << 22",
-			"description": "Vehicles Meshes"
-		},
-		{
-			"key": "TracePrimitive",
-			"value": "1 << 16",
-			"description": "Interactable Spheres, Damage Primitives (mainly internal use)"
-		},
-		{
 			"key": "Mesh",
 			"value": "1 << 17",
 			"description": "Character Mesh"
 		},
 		{
+			"key": "Water",
+			"value": "1 << 19",
+			"description": "Water Body"
+		},
+		{
 			"key": "Foliage",
 			"value": "1 << 20",
 			"description": "Foliage Meshes"
+		},
+		{
+			"key": "Vehicle",
+			"value": "1 << 22",
+			"description": "Vehicles Meshes"
 		}
 	],
 	"CollisionType": [

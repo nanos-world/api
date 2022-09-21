@@ -27,6 +27,55 @@
 			"description": "Alpha transparency percentage (0-1)"
 		}
 	],
+	"operators": [
+		{
+			"name": "+",
+			"operator": "__add",
+			"lhs": "Color|number",
+			"rhs": "Color|number",
+			"return": "Color",
+			"description": "Adds two Colors or a number into each component"
+		},
+		{
+			"name": "-",
+			"operator": "__sub",
+			"lhs": "Color",
+			"rhs": "Color|number",
+			"return": "Color",
+			"description": "Subtracts two Colors or a number from each component"
+		},
+		{
+			"name": "*",
+			"operator": "__mul",
+			"lhs": "Color|number",
+			"rhs": "Color|number",
+			"return": "Color",
+			"description": "Multiplies two Colors or a number into each component"
+		},
+		{
+			"name": "/",
+			"operator": "__div",
+			"lhs": "Color",
+			"rhs": "Color|number",
+			"return": "Color",
+			"description": "Divides two Colors or a number from each component"
+		},
+		{
+			"name": "==",
+			"operator": "__eq",
+			"lhs": "Color",
+			"rhs": "Color",
+			"return": "boolean",
+			"description": "Checks if two Colors have the same values"
+		},
+		{ 
+			"name": "tostring",
+			"operator": "tostring",
+			"lhs": "Color",
+			"return": "string",
+			"description": "Gets a string representation of this struct"
+		}
+	],
 	"properties": [
 		{
 			"name": "R",

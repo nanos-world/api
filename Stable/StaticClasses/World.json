@@ -34,6 +34,28 @@
 					"name": "should_block_on_unload",
 					"default": "false",
 					"description": "If this should be a blocking operation - the game will freeze"
+				},
+				{
+					"type": "boolean",
+					"name": "make_visible_after_load",
+					"default": "true",
+					"description": "If this should be visible automatically after loaded"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetStreamLevelVisibility",
+			"description": "Sets a Stream Level visibility",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "level_name"
+				},
+				{
+					"type": "boolean",
+					"name": "visibility",
+					"description": "If this level should be visible"
 				}
 			]
 		},
@@ -323,8 +345,17 @@
 		{
 			"return": [
 				{
-					"type": "number[]",
-					"description": "in the format {hours, minutes}"
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Hours",
+							"type": "number"
+						},
+						{
+							"name": "Minutes",
+							"type": "number"
+						}
+					]
 				}
 			],
 			"authority": "client",

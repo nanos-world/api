@@ -51,6 +51,34 @@
 	],
 	"functions": [
 		{
+			"name": "AddRenderActor",
+			"description": "Adds an Actor to the Render Only list",
+			"description_long": "Adds an Actor to the Render Only list<br/><br/>Note: adding one actor to this will make the SceneCapture only to render those Actors.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Actor",
+					"name": "actor"
+				}
+			]
+		},
+		{
+			"name": "RemoveRenderActor",
+			"description": "Removes an Actor from the Render Only list",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Actor",
+					"name": "actor"
+				}
+			]
+		},
+		{
+			"name": "ClearRenderActors",
+			"description": "Clears the Render Only list",
+			"authority": "client"
+		},
+		{
 			"name": "SetFreeze",
 			"description": "Stops or Restore Capturing",
 			"authority": "client",
