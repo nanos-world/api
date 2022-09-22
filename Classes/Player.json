@@ -1,6 +1,9 @@
 {
 	"name": "Player",
 	"description": "Players are Entities that represents the individual behind the mouse and keyboard. Players are spawned automatically when connected to the server.",
+	"inheritance": [
+		"Actor"
+	],
 	"functions": [
 		{
 			"authority": "server",
