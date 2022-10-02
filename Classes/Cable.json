@@ -9,8 +9,7 @@
 	"constructor": [
 		{
 			"type": "Vector",
-			"name": "location",
-			"default": "Vector(0, 0, 0)"
+			"name": "location"
 		},
 		{
 			"type": "boolean",

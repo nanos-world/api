@@ -9,7 +9,6 @@
 		{
 			"type": "Vector",
 			"name": "location",
-			"default": "Vector(0, 0, 0)",
 			"description": "Only used if 3D sound"
 		},
 		{

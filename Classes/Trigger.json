@@ -8,18 +8,15 @@
 	"constructor": [
 		{
 			"type": "Vector",
-			"name": "location",
-			"default": "Vector(0, 0, 0)"
+			"name": "location"
 		},
 		{
 			"type": "Rotator",
-			"name": "rotation",
-			"default": "Rotator(0, 0, 0)"
+			"name": "rotation"
 		},
 		{
 			"type": "Vector",
 			"name": "extent",
-			"default": "Vector(0, 0, 0)",
 			"description": "Size of the Trigger. If using Sphere, only the X is used"
 		},
 		{
