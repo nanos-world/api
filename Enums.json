@@ -1113,11 +1113,13 @@
 	"VOIPSetting": [
 		{
 			"key": "Local",
-			"value": "0"
+			"value": "0",
+			"description": "3D Sound"
 		},
 		{
 			"key": "Global",
-			"value": "1"
+			"value": "1",
+			"description": "2D Sound"
 		},
 		{
 			"key": "Muted",

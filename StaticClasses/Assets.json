@@ -29,14 +29,7 @@
 			],
 			"name": "GetAssetPacks",
 			"description": "Gets a list containing information about all loaded Asset Packs",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "asset_pack_path",
-					"description": "The Asset Pack path to get the assets"
-				}
-			]
+			"authority": "both"
 		},
 		{
 			"return": [
