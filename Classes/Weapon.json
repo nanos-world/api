@@ -10,18 +10,15 @@
 	"constructor": [
 		{
 			"name": "location",
-			"type": "Vector",
-			"default": "Vector(0, 0, 0)"
+			"type": "Vector"
 		},
 		{
 			"name": "rotation",
-			"type": "Rotator",
-			"default": "Rotator(0, 0, 0)"
+			"type": "Rotator"
 		},
 		{
 			"name": "asset",
-			"type": "SkeletalMeshPath",
-			"default": ""
+			"type": "SkeletalMeshPath"
 		},
 		{
 			"name": "collision_type",

@@ -9,18 +9,15 @@
 	"constructor": [
 		{
 			"type": "Vector",
-			"name": "location",
-			"default": "Vector(0, 0, 0)"
+			"name": "location"
 		},
 		{
 			"type": "Rotator",
-			"name": "rotation",
-			"default": "Rotator(0, 0, 0)"
+			"name": "rotation"
 		},
 		{
 			"type": "MaterialPath",
 			"name": "material_asset",
-			"default": "",
 			"description": "Material Asset"
 		},
 		{
