@@ -133,6 +133,17 @@
 			]
 		},
 		{
+			"name": "SetDimension",
+			"description": "Sets this Actor's Dimension",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "dimension"
+				}
+			]
+		},
+		{
 			"name": "SetForce",
 			"description": "Adds a permanent force to this Actor, set to Vector(0, 0, 0) to cancel",
 			"authority": "network-authority",

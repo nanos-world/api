@@ -81,6 +81,29 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "BroadcastRemoteDimension",
+			"description": "Calls an Event on Server which will be triggered in all Client's Packages of all Players in that dimension",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "dimension",
+					"description": "The Dimension to send this event"
+				},
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"return": [
 				{
