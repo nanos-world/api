@@ -500,6 +500,16 @@
 			]
 		},
 		{
+			"name": "GetNetworkAuthority",
+			"description": "Gets this Actor's Network Authority Player",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Player?"
+				}
+			]
+		},
+		{
 			"name": "GetRotation",
 			"description": "Gets this Actor's angle in the game world",
 			"authority": "both",
