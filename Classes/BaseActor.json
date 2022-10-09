@@ -530,6 +530,16 @@
 			]
 		},
 		{
+			"name": "GetDimension",
+			"description": "Gets this Actor's dimension",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
 			"name": "HasNetworkAuthority",
 			"description": "Returns true if the local Player is currently the Network Authority of this Actor",
 			"authority": "client",
