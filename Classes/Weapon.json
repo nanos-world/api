@@ -119,6 +119,22 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAnimationReload",
+			"description": "Animation played by the Character when Reloading",
+			"parameters": [
+				{
+					"name": "animation_path",
+					"type": "AnimationPath"
+				},
+				{
+					"name": "play_rate",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetAutoReload",
 			"description": "If the Character will reload automatically when ammo empties",
 			"description_long": "If the Character will reload automatically when ammo empties. Default is true",
