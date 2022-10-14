@@ -70,6 +70,11 @@
 			"type": "boolean",
 			"name": "auto_start_engine",
 			"default": "true"
+		},
+		{
+			"type": "BlueprintPath",
+			"name": "custom_animation_blueprint",
+			"default": ""
 		}
 	],
 	"functions": [
