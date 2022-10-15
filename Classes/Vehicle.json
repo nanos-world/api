@@ -292,6 +292,12 @@
 					"name": "vehicle_downforce_coefficient",
 					"default": "0.3",
 					"description": "Force pressing vehicle into ground at speed"
+				},
+				{
+					"type": "Vector",
+					"name": "center_of_mass_override",
+					"default": "Vector(0, 0, 0)",
+					"description": "Overrides the center of mass. Good for curves stabilization"
 				}
 			]
 		},
