@@ -744,7 +744,7 @@
 			"authority": "server",
 			"name": "SetFallDamageTaken",
 			"description": "Set the Fall Damage multiplier taken when falling from High places",
-			"description_long": "Set the Fall Damage multiplier taken when falling from High places.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
+			"description_long": "Set the Fall Damage multiplier taken when falling from High places.<br/><br/>Setting to 0 will make the Character to do not take any damage",
 			"parameters": [
 				{
 					"type": "number",
