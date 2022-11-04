@@ -357,8 +357,12 @@
 			"value": "5"
 		},
 		{
-			"key": "Unknown",
+			"key": "Melee",
 			"value": "6"
+		},
+		{
+			"key": "Unknown",
+			"value": "7"
 		}
 	],
 	"DatabaseEngine": [
