@@ -1,6 +1,60 @@
 {
 	"name": "Player",
 	"description": "Players are Entities that represents the individual behind the mouse and keyboard. Players are spawned automatically when connected to the server.",
+	"static_functions": [
+		{
+			"name": "GetAll",
+			"description": "Returns a table containing all Players",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Player[]",
+					"description": "copy of table containing all Players"
+				}
+			]
+		},
+		{
+			"name": "GetByIndex",
+			"description": "Returns a specific Player at an index",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "index",
+					"description": "the index of the Player"
+				}
+			],
+			"return": [
+				{
+					"type": "Player",
+					"description": "Player at index"
+				}
+			]
+		},
+		{
+			"name": "GetCount",
+			"description": "Returns how many Players exist",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number",
+					"description": "number of Players"
+				}
+			]
+		},
+		{
+			"name": "GetPairs",
+			"description": "Returns an iterator with all Players to be used with <code>pairs()</code>",
+			"description_long": "Returns an iterator with all Players to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Players directly instead of creating and returning a copy of the Players table.<br><br><b>Note:</b> Destroying Players from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
+			"authority": "both",
+			"return": [
+				{
+					"type": "iterator",
+					"description": "Iterator with all Players"
+				}
+			]
+		}
+	],
 	"functions": [
 		{
 			"authority": "server",
