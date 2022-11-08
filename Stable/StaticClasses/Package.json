@@ -273,12 +273,21 @@
 		},
 		{
 			"name": "GetPersistentData",
-			"description": "Gets all Persistent Values from the disk",
+			"description": "Gets the Persistent Value from the disk",
+			"description_large": "Gets a Persistent Value from the disk<br/>Pass no parameter to return the whole table, or a key to get a specific value",
 			"authority": "both",
 			"return": [
 				{
 					"type": "table",
 					"description": "Persistent values from disk"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string?",
+					"name": "key",
+					"default": "",
+					"description": "The key to get the data"
 				}
 			]
 		}

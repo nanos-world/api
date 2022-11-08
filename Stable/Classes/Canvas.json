@@ -110,7 +110,7 @@
 			"authority": "client",
 			"name": "DrawMaterial",
 			"description": "Draws a Material on the Canvas",
-			"description_long": "Draws a Material on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event",
+			"description_long": "Draws a Material on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event<br/><br/><strong>Note:</strong> Due how Unreal handles Render Targets, drawing material on Canvas result on a weird translucent effect. Hope in the future to be improved.",
 			"parameters": [
 				{
 					"type": "MaterialPath",
@@ -154,7 +154,7 @@
 			"authority": "client",
 			"name": "DrawMaterialFromWebUI",
 			"description": "Draws a WebUI on the Canvas",
-			"description_long": "Draws a WebUI on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event",
+			"description_long": "Draws a WebUI on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event<br/><br/><strong>Note:</strong> Due how Unreal handles Render Targets, drawing material on Canvas result on a weird translucent effect. Hope in the future to be improved.",
 			"parameters": [
 				{
 					"type": "WebUI",
@@ -198,7 +198,7 @@
 			"authority": "client",
 			"name": "DrawMaterialFromSceneCapture",
 			"description": "Draws a SceneCapture on the Canvas",
-			"description_long": "Draws a SceneCapture on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event",
+			"description_long": "Draws a SceneCapture on the Canvas<br/></br>This method can only be called from inside <code>Update</code> event<br/><br/><strong>Note:</strong> Due how Unreal handles Render Targets, drawing material on Canvas result on a weird translucent effect. Hope in the future to be improved.",
 			"parameters": [
 				{
 					"type": "SceneCapture",

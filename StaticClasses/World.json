@@ -311,7 +311,13 @@
 		{
 			"authority": "client",
 			"name": "SpawnDefaultSun",
-			"description": "Overrides all Light/Sun Actors with the NanosWorld's Official one, to be able to use the functions from this page"
+			"description": "Destroys all Light/Sun Actors and spawns the nanos world's official one, to be able to use the functions from this page",
+			"description_long": "Destroys all Directional Lights, Sky Lights and Actors with the **Sun** Actor Tag, and spawns nanos world's official Sun Blueprint, to be able to use the functions from this page"
+		},
+		{
+			"authority": "client",
+			"name": "DestroySun",
+			"description": "Destroys all Directional Lights, Sky Lights and Actors with the **Sun** Actor Tag"
 		},
 		{
 			"authority": "client",

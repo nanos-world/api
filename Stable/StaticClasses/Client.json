@@ -585,6 +585,18 @@
 			]
 		},
 		{
+			"name": "SetDebugEnabled",
+			"description": "Enables/Disables Debug settings to be used",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_debug",
+					"description": ""
+				}
+			]
+		},
+		{
 			"name": "SetInputEnabled",
 			"description": "Toggles Local Player input",
 			"authority": "client",

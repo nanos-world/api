@@ -84,6 +84,17 @@
 			]
 		},
 		{
+			"name": "LoadHTML",
+			"authority": "client",
+			"description": "Loads a pure HTML in this Browser",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "html"
+				}
+			]
+		},
+		{
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",

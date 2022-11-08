@@ -26,7 +26,14 @@
 	"functions": [
 		{
 			"name": "CallBlueprintEvent",
+			"return": [
+				{
+					"type": "any",
+					"description": "The event return values"
+				}
+			],
 			"description": "Calls a Blueprint Event or Function",
+			"description_long": "Calls a Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong>",
 			"authority": "both",
 			"parameters": [
 				{

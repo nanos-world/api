@@ -10,18 +10,15 @@
 	"constructor": [
 		{
 			"name": "location",
-			"type": "Vector",
-			"default": "Vector(0, 0, 0)"
+			"type": "Vector"
 		},
 		{
 			"name": "rotation",
-			"type": "Rotator",
-			"default": "Rotator(0, 0, 0)"
+			"type": "Rotator"
 		},
 		{
 			"name": "asset",
-			"type": "SkeletalMeshPath",
-			"default": ""
+			"type": "SkeletalMeshPath"
 		},
 		{
 			"name": "collision_type",
@@ -108,6 +105,22 @@
 			"authority": "server",
 			"name": "SetAnimationCharacterFire",
 			"description": "Animation played by the Character when Firing",
+			"parameters": [
+				{
+					"name": "animation_path",
+					"type": "AnimationPath"
+				},
+				{
+					"name": "play_rate",
+					"type": "number",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationReload",
+			"description": "Animation played by the Character when Reloading",
 			"parameters": [
 				{
 					"name": "animation_path",
@@ -682,6 +695,32 @@
 			"return": [
 				{
 					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetBoneTransform",
+			"description": "Gets a Bone Transform in world space given a bone name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "bone_name",
+					"type": "string"
 				}
 			]
 		},

@@ -56,6 +56,24 @@
 					"description": "array of strings"
 				}
 			],
+			"name": "GetBlueprints",
+			"description": "Gets a list containing all Blueprints Assets Keys from an AssetPack",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "asset_pack_path",
+					"description": "The Asset Pack path to get the assets"
+				}
+			]
+		},
+		{
+			"return": [
+				{
+					"type": "string[]",
+					"description": "array of strings"
+				}
+			],
 			"name": "GetMaps",
 			"description": "Gets a list containing all Map Asset Keys from an AssetPack",
 			"authority": "both",
@@ -172,6 +190,23 @@
 					"type": "string",
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
+				}
+			]
+		},
+		{
+			"name": "Precache",
+			"description": "Manually adds an Asset to be loaded during the Player's loading screen",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "asset_path",
+					"description": "The Asset Key"
+				},
+				{
+					"type": "AssetType",
+					"name": "asset_type",
+					"description": "The Asset Type"
 				}
 			]
 		}

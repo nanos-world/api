@@ -17,6 +17,12 @@
 					"name": "should_block_on_load",
 					"default": "false",
 					"description": "If this should be a blocking operation - the game will freeze"
+				},
+				{
+					"type": "boolean",
+					"name": "make_visible_after_load",
+					"default": "true",
+					"description": "If this should be visible automatically after loaded"
 				}
 			]
 		},
@@ -34,12 +40,6 @@
 					"name": "should_block_on_unload",
 					"default": "false",
 					"description": "If this should be a blocking operation - the game will freeze"
-				},
-				{
-					"type": "boolean",
-					"name": "make_visible_after_load",
-					"default": "true",
-					"description": "If this should be visible automatically after loaded"
 				}
 			]
 		},
@@ -311,7 +311,13 @@
 		{
 			"authority": "client",
 			"name": "SpawnDefaultSun",
-			"description": "Overrides all Light/Sun Actors with the NanosWorld's Official one, to be able to use the functions from this page"
+			"description": "Destroys all Light/Sun Actors and spawns the nanos world's official one, to be able to use the functions from this page",
+			"description_long": "Destroys all Directional Lights, Sky Lights and Actors with the **Sun** Actor Tag, and spawns nanos world's official Sun Blueprint, to be able to use the functions from this page"
+		},
+		{
+			"authority": "client",
+			"name": "DestroySun",
+			"description": "Destroys all Directional Lights, Sky Lights and Actors with the **Sun** Actor Tag"
 		},
 		{
 			"authority": "client",
