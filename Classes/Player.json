@@ -118,6 +118,72 @@
 		},
 		{
 			"authority": "both",
+			"name": "StartCameraFade",
+			"description": "Does a camera fade to/from a solid color",
+			"description_long": "Does a camera fade to/from a solid color. Animates automatically",
+			"parameters": [
+				{
+					"name": "from_alpha",
+					"type": "number",
+					"description": "Alpha at which to begin the fade. Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color."
+				},
+				{
+					"name": "to_alpha",
+					"type": "number",
+					"description": "Alpha at which to finish the fade."
+				},
+				{
+					"name": "duration",
+					"type": "number",
+					"description": "How long the fade should take, in seconds."
+				},
+				{
+					"name": "to_color",
+					"type": "Color",
+					"description": "Color to fade to/from."
+				},
+				{
+					"name": "should_fade_audio",
+					"type": "boolean",
+					"description": "True to fade audio volume along with the alpha of the solid color.",
+					"deafult": false
+				},
+				{
+					"name": "hold_when_finished",
+					"type": "boolean",
+					"description": "True for fade to hold at the ToAlpha until explicitly stopped (e.g. with StopCameraFade)",
+					"deafult": false
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetManualCameraFade",
+			"description": "Turns on camera fading at the given opacity",
+			"description_long": "Turns on camera fading at the given opacity. Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off.",
+			"parameters": [
+				{
+					"name": "in_fade_amount",
+					"type": "number",
+					"description": "Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color."
+				},
+				{
+					"name": "color",
+					"type": "Color"
+				},
+				{
+					"name": "in_fade_audio",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "StopCameraFade",
+			"description": "Stops camera fading."
+		},
+		{
+			"authority": "both",
 			"name": "SetCameraLocation",
 			"description": "Sets the Player's Camera Location (only works if not possessing any Character)",
 			"parameters": [
@@ -519,6 +585,25 @@
 				{
 					"name": "self",
 					"type": "Player"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "DimensionChange",
+			"description": "Triggered when a Player changes it's dimension",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				},
+				{
+					"name": "old_dimension",
+					"type": "number"
+				},
+				{
+					"name": "new_dimension",
+					"type": "number"
 				}
 			]
 		},

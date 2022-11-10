@@ -245,6 +245,17 @@
 		},
 		{
 			"authority": "client",
+			"name": "SetPPLookupTable",
+			"description": "Set Post Process Lookup Table Texture",
+			"parameters": [
+				{
+					"type": "ImagePath",
+					"name": "texture_path"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "SetPPMaterial",
 			"description": "Sets a Post Process Material",
 			"parameters": [

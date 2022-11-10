@@ -700,6 +700,25 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "DimensionChange",
+			"description": "Triggered when an Actor changes it's dimension",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				},
+				{
+					"name": "old_dimension",
+					"type": "number"
+				},
+				{
+					"name": "new_dimension",
+					"type": "number"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "Spawn",
 			"description": "Triggered when an Actor is spawned/created",
