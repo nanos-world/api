@@ -982,7 +982,7 @@
 					"description": "The max force used to correct linear errors"
 				},
 				{
-					"type": "boolean",
+					"type": "number",
 					"name": "max_angular_force",
 					"default": "0",
 					"description": "The max force used to correct angular errors"
