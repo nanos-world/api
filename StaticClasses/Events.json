@@ -112,7 +112,30 @@
 				}
 			],
 			"name": "Subscribe",
-			"description": "Subscribes for an user-created event which will be triggered for both local or remote called events",
+			"description": "Subscribes for an user-created event which will be triggered for only local called events",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to subscribe"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The callback function to execute"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"return": [
+				{
+					"type": "function",
+					"description": "the subscribed callback itself"
+				}
+			],
+			"name": "SubscribeRemote",
+			"description": "Subscribes for an user-created event which will be triggered for only remote called events",
 			"parameters": [
 				{
 					"type": "string",

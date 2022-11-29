@@ -185,6 +185,7 @@
 		{
 			"name": "SetHighlightEnabled",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
+			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the hight on every attached entity too",
 			"authority": "client",
 			"parameters": [
 				{
@@ -202,6 +203,7 @@
 		{
 			"name": "SetOutlineEnabled",
 			"description": "Sets whether the outline is enabled on this Actor, and which outline index to use",
+			"description_long": "Sets whether the outline is enabled on this Actor, and which outline index to use. This will apply the outline on every attached entity too",
 			"authority": "client",
 			"parameters": [
 				{
@@ -641,6 +643,36 @@
 			"return": [
 				{
 					"type": "string[]"
+				}
+			]
+		},
+		{
+			"name": "WasRecentlyRendered",
+			"description": "Gets if this Actor was recently rendered on screen",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "GetDistanceFromCamera",
+			"description": "Gets the distance of this Actor from the Camera",
+			"authority": "client",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetScreenPercentage",
+			"description": "Gets the percentage of this Actor size in the screen",
+			"authority": "client",
+			"return": [
+				{
+					"type": "number"
 				}
 			]
 		},
