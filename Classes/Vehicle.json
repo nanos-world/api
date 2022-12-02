@@ -296,8 +296,8 @@
 				{
 					"type": "Vector",
 					"name": "center_of_mass_override",
-					"default": "Vector(0, 0, 0)",
-					"description": "Overrides the center of mass. Good for curves stabilization"
+					"default": "Vector(0, 0, 50)",
+					"description": "Overrides the center of mass. Good for curves stabilization. Ideally the Z should be the same as the wheels radius"
 				}
 			]
 		},

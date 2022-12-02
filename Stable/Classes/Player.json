@@ -440,7 +440,7 @@
 			]
 		},
 		{
-			"authority": "client",
+			"authority": "server",
 			"name": "IsHost",
 			"return": [
 				{

@@ -922,6 +922,17 @@
 			]
 		},
 		{
+			"name": "GetFrameTime",
+			"description": "Gets the current Frame Time",
+			"authority": "client",
+			"return": [
+				{
+					"type": "number",
+					"description": "The Frame Time"
+				}
+			]
+		},
+		{
 			"name": "GetRandomReachablePointInRadius",
 			"description": "Finds random, reachable point in navigable space restricted to radius around origin",
 			"description_long": "Finds random, reachable point in navigable space restricted to radius around origin (only if map has a NavMesh)",
