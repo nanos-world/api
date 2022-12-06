@@ -2125,6 +2125,40 @@
 					"name": "new_state"
 				}
 			]
+		},
+		{
+			"authority": "both",
+			"name": "PullUse",
+			"description": "Triggered when a Character presses the use button for a Pickable (i.e. clicks left mouse button with this equipped)",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self",
+					"description": "The Character that used it"
+				},
+				{
+					"type": "Pickable",
+					"name": "pickable",
+					"description": "The Pickable which has just been used"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "ReleaseUse",
+			"description": "Triggered when a Character releases the use button for a Pickable (i.e. releases left mouse button with this equipped)",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self",
+					"description": "The Character that stopped using it"
+				},
+				{
+					"type": "Pickable",
+					"name": "pickable",
+					"description": "The Pickable which has just stopped being used"
+				}
+			]
 		}
 	]
 }

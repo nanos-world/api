@@ -451,6 +451,16 @@
 			]
 		},
 		{
+			"name": "GetDimension",
+			"description": "Gets this Player's dimension",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "GetName",
 			"return": [
