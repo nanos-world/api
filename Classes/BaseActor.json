@@ -502,6 +502,16 @@
 			]
 		},
 		{
+			"name": "GetRelativeLocation",
+			"description": "Gets this Actor's Relative Location if it's attached",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Vector"
+				}
+			]
+		},
+		{
 			"name": "GetNetworkAuthority",
 			"description": "Gets this Actor's Network Authority Player",
 			"authority": "server",
@@ -514,6 +524,16 @@
 		{
 			"name": "GetRotation",
 			"description": "Gets this Actor's angle in the game world",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"name": "GetRelativeRotation",
+			"description": "Gets this Actor's Relative Rotation if it's attached",
 			"authority": "both",
 			"return": [
 				{
