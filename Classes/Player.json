@@ -53,6 +53,35 @@
 					"description": "Iterator with all Players"
 				}
 			]
+		},
+		{
+			"name": "Inherit",
+			"description": "Inherits this class with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "the name of the new Class"
+				}
+			],
+			"return": [
+				{
+					"type": "table",
+					"description": "the new Class table"
+				}
+			]
+		},
+		{
+			"name": "GetInheritedClasses",
+			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "all children Classes"
+				}
+			]
 		}
 	],
 	"functions": [
