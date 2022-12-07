@@ -76,6 +76,14 @@
 			"name": "GetInheritedClasses",
 			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
+			"parameters": [
+				{
+					"type": "boolean",
+					"default": "false",
+					"name": "recursively",
+					"description": "returns all inherited children"
+				}
+			],
 			"return": [
 				{
 					"type": "table[]",
@@ -508,11 +516,22 @@
 			]
 		},
 		{
-			"authority": "both",
 			"name": "GetType",
+			"description": "Gets the type of this entity",
+			"authority": "both",
 			"return": [
 				{
 					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "GetClass",
+			"description": "Gets the class of this entity",
+			"authority": "both",
+			"return": [
+				{
+					"type": "table"
 				}
 			]
 		},

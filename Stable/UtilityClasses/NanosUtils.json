@@ -107,6 +107,23 @@
 					"description": "The arguments to replace"
 				}
 			]
+		},
+		{
+			"name": "ShallowCopyTable",
+			"description": "Performs a shallow copy of a table",
+			"return": [
+				{
+					"type": "table",
+					"description": "the copied table"
+				}
+			],
+			"parameters": [
+				{
+					"type": "table",
+					"name": "table",
+					"description": "The table to shallow copy"
+				}
+			]
 		}
 	]
 }
