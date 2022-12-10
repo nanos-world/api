@@ -493,7 +493,7 @@
 		},
 		{
 			"name": "SetCrosshairEnabled",
-			"description": "Enables/Disables the Blood Screen effect",
+			"description": "Enables/Disables the Crosshair",
 			"authority": "client",
 			"parameters": [
 				{
@@ -530,7 +530,7 @@
 		},
 		{
 			"name": "SetHardwareCursor",
-			"description": "Loads or sets a hardware cursor from the content directory in the game",
+			"description": "Loads and sets a hardware cursor in the game from a PNG image",
 			"authority": "client",
 			"parameters": [
 				{
@@ -541,7 +541,7 @@
 				{
 					"type": "string",
 					"name": "cursor_path",
-					"description": ""
+					"description": "a PNG image relative to Assets/"
 				},
 				{
 					"type": "Vector2D",

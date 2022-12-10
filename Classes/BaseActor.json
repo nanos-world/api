@@ -90,6 +90,34 @@
 					"description": "all children Classes"
 				}
 			]
+		},
+		{
+			"name": "GetParentClass",
+			"description": "Gets the parent class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"return": [
+				{
+					"type": "table?",
+					"description": "the parent class"
+				}
+			]
+		},
+		{
+			"name": "IsChildOf",
+			"description": "Gets if this Class is child of another class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "class",
+					"description": "the other class to check"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -630,22 +658,29 @@
 			]
 		},
 		{
-			"name": "GetType",
-			"description": "Gets the type of this entity",
-			"authority": "both",
-			"return": [
-				{
-					"type": "string"
-				}
-			]
-		},
-		{
 			"name": "GetClass",
 			"description": "Gets the class of this entity",
 			"authority": "both",
 			"return": [
 				{
 					"type": "table"
+				}
+			]
+		},
+		{
+			"name": "IsA",
+			"description": "Recursively checks if this entity is inherited from a Class",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "class",
+					"description": "the Class"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean"
 				}
 			]
 		},
