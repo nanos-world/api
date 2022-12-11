@@ -3,6 +3,7 @@
 	"description": "A Light represents a Lighting source.",
 	"authority": "both",
 	"inheritance": [
+		"Entity",
 		"Actor"
 	],
 	"constructor": [

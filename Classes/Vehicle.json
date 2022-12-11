@@ -3,6 +3,7 @@
 	"description": "Vehicles are wheeled entities which Characters can possesses and drive.",
 	"authority": "server",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],

@@ -1428,7 +1428,7 @@
 		},
 		{
 			"name": "OpenConsole",
-			"description": "When player closes the Console",
+			"description": "When player opens the Console",
 			"authority": "client"
 		},
 		{

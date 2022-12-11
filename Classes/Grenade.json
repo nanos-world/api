@@ -3,6 +3,7 @@
 	"description": "Grenades are Pickables which Characters can grab and throw. It explodes after X seconds after thrown, causing damage around.",
 	"authority": "server",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable",
 		"Pickable"

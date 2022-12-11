@@ -3,6 +3,7 @@
 	"description": "Decals are Materials that are projected onto meshes in your level, including Static Meshes and Skeletal Meshes.",
 	"authority": "client",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],

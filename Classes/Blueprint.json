@@ -3,6 +3,7 @@
 	"description": "A Blueprint Class allows spawning any Unreal Blueprint Actor in nanos world.",
 	"authority": "both",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],

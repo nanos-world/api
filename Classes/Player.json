@@ -1,124 +1,8 @@
 {
 	"name": "Player",
 	"description": "Players are Entities that represents the individual behind the mouse and keyboard. Players are spawned automatically when connected to the server.",
-	"static_functions": [
-		{
-			"name": "GetAll",
-			"description": "Returns a table containing all Players",
-			"authority": "both",
-			"return": [
-				{
-					"type": "Player[]",
-					"description": "copy of table containing all Players"
-				}
-			]
-		},
-		{
-			"name": "GetByIndex",
-			"description": "Returns a specific Player at an index",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "number",
-					"name": "index",
-					"description": "the index of the Player"
-				}
-			],
-			"return": [
-				{
-					"type": "Player",
-					"description": "Player at index"
-				}
-			]
-		},
-		{
-			"name": "GetCount",
-			"description": "Returns how many Players exist",
-			"authority": "both",
-			"return": [
-				{
-					"type": "number",
-					"description": "number of Players"
-				}
-			]
-		},
-		{
-			"name": "GetPairs",
-			"description": "Returns an iterator with all Players to be used with <code>pairs()</code>",
-			"description_long": "Returns an iterator with all Players to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Players directly instead of creating and returning a copy of the Players table.<br><br><b>Note:</b> Destroying Players from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
-			"authority": "both",
-			"return": [
-				{
-					"type": "iterator",
-					"description": "Iterator with all Players"
-				}
-			]
-		},
-		{
-			"name": "Inherit",
-			"description": "Inherits this class with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "name",
-					"description": "the name of the new Class"
-				}
-			],
-			"return": [
-				{
-					"type": "table",
-					"description": "the new Class table"
-				}
-			]
-		},
-		{
-			"name": "GetInheritedClasses",
-			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "boolean",
-					"default": "false",
-					"name": "recursively",
-					"description": "returns all inherited children"
-				}
-			],
-			"return": [
-				{
-					"type": "table[]",
-					"description": "all children Classes"
-				}
-			]
-		},
-		{
-			"name": "GetParentClass",
-			"description": "Gets the parent class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"return": [
-				{
-					"type": "table?",
-					"description": "the parent class"
-				}
-			]
-		},
-		{
-			"name": "IsChildOf",
-			"description": "Gets if this Class is child of another class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "table",
-					"name": "class",
-					"description": "the other class to check"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		}
+	"inheritance": [
+		"Entity"
 	],
 	"functions": [
 		{
@@ -385,27 +269,6 @@
 			]
 		},
 		{
-			"authority": "both",
-			"name": "SetValue",
-			"description": "Sets a value in this entity, which can be accessed by any package (optionally sync on clients if called from server). Please refer to Entity Values for more information",
-			"parameters": [
-				{
-					"name": "key",
-					"type": "string"
-				},
-				{
-					"name": "value",
-					"type": "any"
-				},
-				{
-					"name": "sync_on_clients",
-					"type": "boolean",
-					"default": "false",
-					"description": "Server side parameter, if enabled will sync this value through all clients"
-				}
-			]
-		},
-		{
 			"authority": "server",
 			"name": "SetVOIPChannel",
 			"description": "Sets the VOIP Channel of this Player (will only communicate with other players in the same channel)",
@@ -498,15 +361,6 @@
 			]
 		},
 		{
-			"authority": "both",
-			"name": "GetID",
-			"return": [
-				{
-					"type": "number"
-				}
-			]
-		},
-		{
 			"authority": "server",
 			"name": "GetIP",
 			"return": [
@@ -540,33 +394,6 @@
 			"return": [
 				{
 					"type": "number"
-				}
-			]
-		},
-		{
-			"name": "GetClass",
-			"description": "Gets the class of this entity",
-			"authority": "both",
-			"return": [
-				{
-					"type": "table"
-				}
-			]
-		},
-		{
-			"name": "IsA",
-			"description": "Recursively checks if this entity is inherited from a Class",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "table",
-					"name": "class",
-					"description": "the Class"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean"
 				}
 			]
 		},
@@ -618,69 +445,15 @@
 		},
 		{
 			"authority": "both",
-			"name": "IsValid",
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
-			"authority": "both",
 			"name": "GetVOIPSetting",
 			"return": [
 				{
 					"type": "VOIPSetting"
 				}
 			]
-		},
-		{
-			"authority": "both",
-			"name": "Subscribe",
-			"parameters": [
-				{
-					"name": "event_name",
-					"type": "string"
-				},
-				{
-					"name": "function",
-					"type": "function"
-				}
-			],
-			"return": [
-				{
-					"type": "function"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "Unsubscribe",
-			"description": "Unsubscribes from all subscribed Events in this Entity and in this Package, optionally passing the function to unsubscribe only that callback",
-			"parameters": [
-				{
-					"name": "event_name",
-					"type": "string"
-				},
-				{
-					"name": "function",
-					"type": "function"
-				}
-			]
 		}
 	],
 	"events": [
-		{
-			"authority": "both",
-			"name": "Destroy",
-			"description": "Triggered when Player disconnects from the server",
-			"arguments": [
-				{
-					"name": "self",
-					"type": "Player"
-				}
-			]
-		},
 		{
 			"authority": "server",
 			"name": "DimensionChange",
@@ -712,17 +485,6 @@
 				{
 					"name": "character",
 					"type": "Character"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "Spawn",
-			"description": "Triggered when Player connects to the server",
-			"arguments": [
-				{
-					"name": "self",
-					"type": "Player"
 				}
 			]
 		},

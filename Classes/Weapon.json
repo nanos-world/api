@@ -3,6 +3,7 @@
 	"description": "Weapons are entities with firing, reloading and aiming functionalities.<br/><br/>They are fully customizable, all pieces of the weapon can be changed with immense possibility of creation.",
 	"authority": "server",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable",
 		"Pickable"

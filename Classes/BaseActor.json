@@ -1,125 +1,6 @@
 {
 	"name": "Actor",
-	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>In nanos world, <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
-	"static_functions": [
-		{
-			"name": "GetAll",
-			"description": "Returns a table containing all Actors of the class this is called on",
-			"authority": "both",
-			"return": [
-				{
-					"type": "Actor[]",
-					"description": "copy of table containing all actors"
-				}
-			]
-		},
-		{
-			"name": "GetByIndex",
-			"description": "Returns a specific Actor of this class at an index",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "number",
-					"name": "index",
-					"description": "the index of the Actor"
-				}
-			],
-			"return": [
-				{
-					"type": "Actor",
-					"description": "Actor at index"
-				}
-			]
-		},
-		{
-			"name": "GetCount",
-			"description": "Returns how many Actors of this class exist",
-			"authority": "both",
-			"return": [
-				{
-					"type": "number",
-					"description": "number of Actors of this class"
-				}
-			]
-		},
-		{
-			"name": "GetPairs",
-			"description": "Returns an iterator with all Actors of this class to be used with <code>pairs()</code>",
-			"description_long": "Returns an iterator with all Actors of this class to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Actors directly instead of creating and returning a copy of the Actors table.<br><br><b>Note:</b> Destroying Actors from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
-			"authority": "both",
-			"return": [
-				{
-					"type": "iterator",
-					"description": "Iterator with all Actors of this class"
-				}
-			]
-		},
-		{
-			"name": "Inherit",
-			"description": "Inherits this class with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "name",
-					"description": "the name of the new Class"
-				}
-			],
-			"return": [
-				{
-					"type": "table",
-					"description": "the new Class table"
-				}
-			]
-		},
-		{
-			"name": "GetInheritedClasses",
-			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "boolean",
-					"default": "false",
-					"name": "recursively",
-					"description": "returns all inherited children"
-				}
-			],
-			"return": [
-				{
-					"type": "table[]",
-					"description": "all children Classes"
-				}
-			]
-		},
-		{
-			"name": "GetParentClass",
-			"description": "Gets the parent class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"return": [
-				{
-					"type": "table?",
-					"description": "the parent class"
-				}
-			]
-		},
-		{
-			"name": "IsChildOf",
-			"description": "Gets if this Class is child of another class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "table",
-					"name": "class",
-					"description": "the other class to check"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		}
-	],
+	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>An <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
 	"functions": [
 		{
 			"name": "AddImpulse",
@@ -175,11 +56,6 @@
 					"description": "Whether to force attached object to use absolute rotation (will not follow parent)"
 				}
 			]
-		},
-		{
-			"name": "Destroy",
-			"description": "Destroys this Actor",
-			"authority": "authority"
 		},
 		{
 			"name": "Detach",
@@ -365,28 +241,6 @@
 			]
 		},
 		{
-			"name": "SetValue",
-			"description": "Sets a value in this Actor",
-			"description_long": "Sets a value in this Actor, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "key"
-				},
-				{
-					"type": "any",
-					"name": "value"
-				},
-				{
-					"type": "boolean",
-					"name": "sync_on_clients",
-					"default": "false",
-					"description": "Server side parameter, if enabled will sync this value with all clients"
-				}
-			]
-		},
-		{
 			"name": "TranslateTo",
 			"description": "Smoothly moves this actor to a location over a certain time",
 			"authority": "network-authority",
@@ -483,16 +337,6 @@
 			]
 		},
 		{
-			"name": "IsValid",
-			"description": "Returns true if this Actor is valid (i.e. wasn't destroyed and points to a valid Actor)",
-			"authority": "both",
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
 			"name": "GetAttachedEntities",
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
@@ -543,16 +387,6 @@
 			"return": [
 				{
 					"type": "CollisionType"
-				}
-			]
-		},
-		{
-			"name": "GetID",
-			"description": "Gets the universal network ID of this Actor (same on both client and server)",
-			"authority": "both",
-			"return": [
-				{
-					"type": "number"
 				}
 			]
 		},
@@ -658,55 +492,6 @@
 			]
 		},
 		{
-			"name": "GetClass",
-			"description": "Gets the class of this entity",
-			"authority": "both",
-			"return": [
-				{
-					"type": "table"
-				}
-			]
-		},
-		{
-			"name": "IsA",
-			"description": "Recursively checks if this entity is inherited from a Class",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "table",
-					"name": "class",
-					"description": "the Class"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "GetValue",
-			"description": "Gets a value stored on this Actor at the given key. Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "key"
-				},
-				{
-					"type": "any",
-					"name": "fallback",
-					"description": "Fallback value if key doesn't exist"
-				}
-			],
-			"return": [
-				{
-					"type": "any",
-					"description": "Value at key or fallback if key doesn't exist"
-				}
-			]
-		},
-		{
 			"name": "GetVelocity",
 			"description": "Gets this Actor's current velocity",
 			"authority": "both",
@@ -777,62 +562,9 @@
 					"type": "number"
 				}
 			]
-		},
-		{
-			"name": "Subscribe",
-			"description": "Subscribes to an Event",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "Name of the event to subscribe to"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"description": "Function to call when the event is triggered"
-				}
-			],
-			"return": [
-				{
-					"type": "function",
-					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
-				}
-			]
-		},
-		{
-			"name": "Unsubscribe",
-			"description": "Unsubscribes all callbacks from this Event in this Actor within this Package, or only the callback passed",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "Name of the event to unsubscribe from"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"default": "nil",
-					"description": "Optional callback to unsubscribe"
-				}
-			]
 		}
 	],
 	"events": [
-		{
-			"authority": "both",
-			"name": "Destroy",
-			"description": "Triggered when an Actor is destroyed",
-			"arguments": [
-				{
-					"type": "Actor",
-					"name": "self",
-					"description": "The Actor which that was destroyed"
-				}
-			]
-		},
 		{
 			"authority": "server",
 			"name": "DimensionChange",
@@ -849,40 +581,6 @@
 				{
 					"name": "new_dimension",
 					"type": "number"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "Spawn",
-			"description": "Triggered when an Actor is spawned/created",
-			"arguments": [
-				{
-					"type": "Actor",
-					"name": "self",
-					"description": "The Actor that was spawned"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "ValueChange",
-			"description": "Triggered when an Actor has a value changed with <code>:SetValue()</code>",
-			"arguments": [
-				{
-					"type": "Actor",
-					"name": "self",
-					"description": "The Actor that just had a value changed"
-				},
-				{
-					"type": "string",
-					"name": "key",
-					"description": "The key used"
-				},
-				{
-					"type": "any",
-					"name": "value",
-					"description": "The value that was set"
 				}
 			]
 		}
