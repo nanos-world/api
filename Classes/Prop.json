@@ -75,7 +75,18 @@
 			"authority": "authority"
 		},
 		{
-			"name": "GetAssetName",
+			"name": "SetMesh",
+			"description": "Changes the mesh in runtime",
+			"return": [
+				{
+					"type": "StaticMeshPath",
+					"description": "asset"
+				}
+			],
+			"authority": "authority"
+		},
+		{
+			"name": "GetMesh",
 			"description": "Gets the Asset name",
 			"return": [
 				{

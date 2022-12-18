@@ -3,28 +3,6 @@
 	"description": "A table containing useful and aux functions.",
 	"static_functions": [
 		{
-			"name": "IsA",
-			"description": "Returns if an object is a type",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "the type of the object corresponds"
-				}
-			],
-			"parameters": [
-				{
-					"type": "any",
-					"name": "object",
-					"description": "Object to verify"
-				},
-				{
-					"type": "any",
-					"name": "type",
-					"description": "Type to verify"
-				}
-			]
-		},
-		{
 			"name": "IsEntityValid",
 			"description": "Returns if an entity is valid",
 			"return": [

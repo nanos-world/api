@@ -60,6 +60,17 @@
 					"name": "extent"
 				}
 			]
+		},
+		{
+			"name": "SetOverlapOnlyClasses",
+			"description": "Sets the filter to Trigger to only overlap specific Classes. Leave it empty for all Classes",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string[]",
+					"name": "overlap_only_classes"
+				}
+			]
 		}
 	],
 	"events": [

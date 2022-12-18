@@ -585,7 +585,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetAssetName",
+			"name": "GetMesh",
 			"description": "Gets the Asset name",
 			"return": [
 				{
