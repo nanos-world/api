@@ -102,6 +102,14 @@
 		{
 			"name": "ToHex",
 			"description": "Gets the Hexadecimal representation of this Color",
+			"parameters": [
+				{
+					"name": "appends_transparency",
+					"type": "boolean",
+					"default": "true",
+					"description": "Appends transparency part"
+				}
+			],
 			"return": [
 				{
 					"type": "string",

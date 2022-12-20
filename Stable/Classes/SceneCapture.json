@@ -3,6 +3,7 @@
 	"description": "Scene Capture is an Actor which captures a fully dynamic image of the scene into a Texture. It captures the scene from its view frustum, stores that view as an image, which is then used within a Material.",
 	"authority": "client",
 	"inheritance": [
+		"Entity",
 		"Actor"
 	],
 	"constructor": [
@@ -47,6 +48,18 @@
 			"name": "fov_angle",
 			"default": "90",
 			"description": "FOV"
+		},
+		{
+			"type": "boolean",
+			"name": "enable_distance_optimization",
+			"default": "true",
+			"description": "Reduces the rendering frequency if the entities with this Material are too far"
+		},
+		{
+			"type": "boolean",
+			"name": "force_always_rendering",
+			"default": "false",
+			"description": "Forces it always re-rendering even if no Material using it is on screen"
 		}
 	],
 	"functions": [
@@ -139,6 +152,28 @@
 				{
 					"type": "number",
 					"name": "render_rate"
+				}
+			]
+		},
+		{
+			"name": "SetDistanceOptimizationEnabled",
+			"description": "Enables or not the rendering frequency optimization if the entities with this Material are too far",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled"
+				}
+			]
+		},
+		{
+			"name": "SetForceAlwaysRendering",
+			"description": "Forces it always re-rendering even if no Material using it is on screen",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled"
 				}
 			]
 		}

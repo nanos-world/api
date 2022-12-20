@@ -315,16 +315,6 @@
 			]
 		},
 		{
-			"name": "GetType",
-			"description": "Gets the type of this entity",
-			"authority": "both",
-			"return": [
-				{
-					"type": "string"
-				}
-			]
-		},
-		{
 			"name": "GetClass",
 			"description": "Gets the class of this entity",
 			"authority": "both",

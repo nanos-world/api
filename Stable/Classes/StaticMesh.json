@@ -3,6 +3,7 @@
 	"description": "A StaticMesh entity represents a Mesh which can be spawned in the world, can't move and is more optimized for using in decorating the world.",
 	"authority": "both",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],
@@ -27,6 +28,17 @@
 	],
 	"functions": [
 		{
+			"name": "SetMesh",
+			"description": "Changes the mesh in runtime",
+			"return": [
+				{
+					"type": "StaticMeshPath",
+					"description": "asset"
+				}
+			],
+			"authority": "authority"
+		},
+		{
 			"name": "GetMesh",
 			"description": "Gets the Asset path mesh used",
 			"return": [
@@ -47,50 +59,6 @@
 				}
 			],
 			"authority": "client"
-		}
-	],
-	"events": [
-		{
-			"name": "TakeDamage",
-			"authority": "server",
-			"description": "Called when a StaticMesh takes Damage",
-			"arguments": [
-				{
-					"type": "StaticMesh",
-					"name": "self",
-					"description": "The entity which triggered"
-				},
-				{
-					"type": "number",
-					"name": "damage",
-					"description": "Damage amount"
-				},
-				{
-					"type": "string",
-					"name": "bone",
-					"description": "Damaged bone"
-				},
-				{
-					"type": "DamageType",
-					"name": "type",
-					"description": "Damage Type"
-				},
-				{
-					"type": "Vector",
-					"name": "from_direction",
-					"description": "Direction of the damage relative to the damaged actor"
-				},
-				{
-					"type": "Player",
-					"name": "instigator",
-					"description": "The player which caused the damage"
-				},
-				{
-					"type": "any",
-					"name": "causer",
-					"description": "The object which caused the damage"
-				}
-			]
 		}
 	]
 }

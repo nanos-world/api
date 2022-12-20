@@ -3,6 +3,7 @@
 	"description": "Characters represents Actors which can be possessed, can move and interact with world. They are the default Skeletal Mesh Character built for nanos world.",
 	"authority": "server",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],
@@ -779,7 +780,7 @@
 			"authority": "server",
 			"name": "SetHighFallingTime",
 			"description": "Sets time to transition to HighFalling state",
-			"description_long": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds",
+			"description_long": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
 			"parameters": [
 				{
 					"type": "number",
@@ -2123,6 +2124,40 @@
 				{
 					"type": "AimMode",
 					"name": "new_state"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "PullUse",
+			"description": "Triggered when a Character presses the use button for a Pickable (i.e. clicks left mouse button with this equipped)",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self",
+					"description": "The Character that used it"
+				},
+				{
+					"type": "Pickable",
+					"name": "pickable",
+					"description": "The Pickable which has just been used"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "ReleaseUse",
+			"description": "Triggered when a Character releases the use button for a Pickable (i.e. releases left mouse button with this equipped)",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self",
+					"description": "The Character that stopped using it"
+				},
+				{
+					"type": "Pickable",
+					"name": "pickable",
+					"description": "The Pickable which has just stopped being used"
 				}
 			]
 		}

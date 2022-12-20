@@ -3,6 +3,7 @@
 	"description": "A Trigger class is a utility class to trigger events when any Entity enters an Area.",
 	"authority": "server",
 	"inheritance": [
+		"Entity",
 		"Actor"
 	],
 	"constructor": [
@@ -57,6 +58,17 @@
 				{
 					"type": "Vector",
 					"name": "extent"
+				}
+			]
+		},
+		{
+			"name": "SetOverlapOnlyClasses",
+			"description": "Sets the filter to Trigger to only overlap specific Classes. Leave it empty for all Classes",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string[]",
+					"name": "overlap_only_classes"
 				}
 			]
 		}

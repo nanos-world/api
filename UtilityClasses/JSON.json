@@ -1,6 +1,6 @@
 {
 	"name": "JSON",
-	"description": "JSON library, useful for sending data from Client's Package to WebUI environment.",
+	"description": "JSON library.",
 	"static_functions": [
 		{
 			"name": "stringify",

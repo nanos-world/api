@@ -1,0 +1,457 @@
+{
+	"name": "Entity",
+	"description": "<b>Entity</b> is the base for all Classes, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
+	"static_functions": [
+		{
+			"name": "GetAll",
+			"description": "Returns a table containing all Entities of the class this is called on",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Entity[]",
+					"description": "copy of table containing all Entities"
+				}
+			]
+		},
+		{
+			"name": "GetByIndex",
+			"description": "Returns a specific Entity of this class at an index",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "index",
+					"description": "the index of the Entity"
+				}
+			],
+			"return": [
+				{
+					"type": "Entity",
+					"description": "Entity at index"
+				}
+			]
+		},
+		{
+			"name": "GetCount",
+			"description": "Returns how many Entities of this class exist",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number",
+					"description": "number of Entities of this class"
+				}
+			]
+		},
+		{
+			"name": "GetPairs",
+			"description": "Returns an iterator with all Entities of this class to be used with <code>pairs()</code>",
+			"description_long": "Returns an iterator with all Entities of this class to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Entities directly instead of creating and returning a copy of the Entities table.<br><br><b>Note:</b> Destroying Entities from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
+			"authority": "both",
+			"return": [
+				{
+					"type": "iterator",
+					"description": "Iterator with all Entities of this class"
+				}
+			]
+		},
+		{
+			"name": "Inherit",
+			"description": "Inherits this class with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "the name of the new Class"
+				}
+			],
+			"return": [
+				{
+					"type": "table",
+					"description": "the new Class table"
+				}
+			]
+		},
+		{
+			"name": "GetInheritedClasses",
+			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "boolean",
+					"default": "false",
+					"name": "recursively",
+					"description": "returns all inherited children"
+				}
+			],
+			"return": [
+				{
+					"type": "table[]",
+					"description": "all children Classes"
+				}
+			]
+		},
+		{
+			"name": "GetParentClass",
+			"description": "Gets the parent class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"return": [
+				{
+					"type": "table?",
+					"description": "the parent class"
+				}
+			]
+		},
+		{
+			"name": "IsChildOf",
+			"description": "Gets if this Class is child of another class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "class",
+					"description": "the other class to check"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes to an <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> for all entities of this Class",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Name of the event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Function to call when the event is triggered"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
+				}
+			]
+		},
+		{
+			"name": "SubscribeRemote",
+			"description": "Subscribes to a custom event called from server",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Name of the event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Function to call when the event is triggered"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
+				}
+			]
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes all callbacks from this <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> in this Class within this Package, or only the callback passed",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Name of the event to unsubscribe from"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "Optional callback to unsubscribe"
+				}
+			]
+		}
+	],
+	"functions": [
+		{
+			"name": "GetID",
+			"description": "Gets the universal network ID of this Entity (same on both client and server)",
+			"authority": "both",
+			"return": [
+				{
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetClass",
+			"description": "Gets the class of this entity",
+			"authority": "both",
+			"return": [
+				{
+					"type": "table"
+				}
+			]
+		},
+		{
+			"name": "IsA",
+			"description": "Recursively checks if this entity is <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>inherited</a> from a Class",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "class",
+					"description": "the Class"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes to an <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> on this specific entity",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Name of the event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Function to call when the event is triggered"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
+				}
+			]
+		},
+		{
+			"name": "SubscribeRemote",
+			"description": "Subscribes to a custom event called from server on this specific entity",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Name of the event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Function to call when the event is triggered"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
+				}
+			]
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes all callbacks from this <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> in this Entity within this Package, or only the callback passed",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Name of the event to unsubscribe from"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "Optional callback to unsubscribe"
+				}
+			]
+		},
+		{
+			"name": "SetValue",
+			"description": "Sets a <a href='https://docs.nanos.world/docs/core-concepts/scripting/entity-values'>Value</a> in this Entity",
+			"description_long": "Sets a value in this Entity, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key"
+				},
+				{
+					"type": "any",
+					"name": "value"
+				},
+				{
+					"type": "boolean",
+					"name": "sync_on_clients",
+					"default": "false",
+					"description": "Server side parameter, if enabled will sync this value with all clients"
+				}
+			]
+		},
+		{
+			"name": "GetValue",
+			"description": "Gets a <a href='https://docs.nanos.world/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key",
+			"description_long": "Gets a <a href='https://docs.nanos.world/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key. Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key"
+				},
+				{
+					"type": "any",
+					"name": "fallback",
+					"description": "Fallback value if key doesn't exist"
+				}
+			],
+			"return": [
+				{
+					"type": "any",
+					"description": "Value at key or fallback if key doesn't exist"
+				}
+			]
+		},
+		{
+			"name": "Destroy",
+			"description": "Destroys this Entity",
+			"authority": "authority"
+		},
+		{
+			"name": "IsValid",
+			"description": "Returns true if this Entity is valid (i.e. wasn't destroyed and points to a valid Entity)",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "CallRemoteEvent",
+			"description": "Calls a custom remote event directly on this entity to a specific Player",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The remote player to send this event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"name": "CallRemoteEvent",
+			"description": "Calls a custom remote event directly on this entity",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"name": "BroadcastRemoteEvent",
+			"description": "Calls a custom remote event directly on this entity to all Players",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "both",
+			"name": "Spawn",
+			"description": "Triggered when an Entity is spawned/created",
+			"arguments": [
+				{
+					"type": "Entity",
+					"name": "self",
+					"description": "The Entity that was spawned"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Destroy",
+			"description": "Triggered when an Entity is destroyed",
+			"arguments": [
+				{
+					"type": "Entity",
+					"name": "self",
+					"description": "The Entity which that was destroyed"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "ValueChange",
+			"description": "Triggered when an Entity has a value changed with <code>:SetValue()</code>",
+			"arguments": [
+				{
+					"type": "Entity",
+					"name": "self",
+					"description": "The Entity that just had a value changed"
+				},
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The key used"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "The value that was set"
+				}
+			]
+		}
+	]
+}

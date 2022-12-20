@@ -3,6 +3,7 @@
 	"description": "A Prop represents a Dynamic Mesh which can be spawned in the world, can be grabbed around by characters and have physics.",
 	"authority": "both",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],
@@ -74,7 +75,18 @@
 			"authority": "authority"
 		},
 		{
-			"name": "GetAssetName",
+			"name": "SetMesh",
+			"description": "Changes the mesh in runtime",
+			"return": [
+				{
+					"type": "StaticMeshPath",
+					"description": "asset"
+				}
+			],
+			"authority": "authority"
+		},
+		{
+			"name": "GetMesh",
 			"description": "Gets the Asset name",
 			"return": [
 				{

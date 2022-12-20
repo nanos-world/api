@@ -241,6 +241,19 @@
 			]
 		},
 		{
+			"name": "SetNetworkAuthorityAutoDistributed",
+			"description": "Sets if this Actor will auto distribute the network authority betwen players",
+			"description_long": "Sets if this Actor will auto distribute the network authority betwen players when idle<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "auto_distribute",
+					"description": "If this Actor will be auto network distributed"
+				}
+			]
+		},
+		{
 			"name": "TranslateTo",
 			"description": "Smoothly moves this actor to a location over a certain time",
 			"authority": "network-authority",

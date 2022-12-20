@@ -315,12 +315,12 @@
 			]
 		},
 		{
-			"name": "GetType",
-			"authority": "client",
-			"description": "Returns the type of this Entity",
+			"name": "GetClass",
+			"description": "Gets the class of this entity",
+			"authority": "both",
 			"return": [
 				{
-					"type": "string"
+					"type": "table"
 				}
 			]
 		},

@@ -3,6 +3,7 @@
 	"description": "Vehicles are wheeled entities which Characters can possesses and drive.",
 	"authority": "server",
 	"inheritance": [
+		"Entity",
 		"Actor",
 		"Paintable"
 	],
@@ -296,8 +297,8 @@
 				{
 					"type": "Vector",
 					"name": "center_of_mass_override",
-					"default": "Vector(0, 0, 0)",
-					"description": "Overrides the center of mass. Good for curves stabilization"
+					"default": "Vector(0, 0, 50)",
+					"description": "Overrides the center of mass. Good for curves stabilization. Ideally the Z should be the same as the wheels radius"
 				}
 			]
 		},
@@ -584,7 +585,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetAssetName",
+			"name": "GetMesh",
 			"description": "Gets the Asset name",
 			"return": [
 				{

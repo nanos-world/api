@@ -147,7 +147,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetAssetName",
+			"name": "GetMesh",
 			"description": "Gets the name of the asset this Pickable uses",
 			"return": [
 				{

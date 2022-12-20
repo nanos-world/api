@@ -1,60 +1,6 @@
 {
 	"name": "Actor",
-	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>In nanos world, <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
-	"static_functions": [
-		{
-			"name": "GetAll",
-			"description": "Returns a table containing all Actors of the class this is called on",
-			"authority": "both",
-			"return": [
-				{
-					"type": "Actor[]",
-					"description": "copy of table containing all actors"
-				}
-			]
-		},
-		{
-			"name": "GetByIndex",
-			"description": "Returns a specific Actor of this class at an index",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "number",
-					"name": "index",
-					"description": "the index of the Actor"
-				}
-			],
-			"return": [
-				{
-					"type": "Actor",
-					"description": "Actor at index"
-				}
-			]
-		},
-		{
-			"name": "GetCount",
-			"description": "Returns how many Actors of this class exist",
-			"authority": "both",
-			"return": [
-				{
-					"type": "number",
-					"description": "number of Actors of this class"
-				}
-			]
-		},
-		{
-			"name": "GetPairs",
-			"description": "Returns an iterator with all Actors of this class to be used with <code>pairs()</code>",
-			"description_long": "Returns an iterator with all Actors of this class to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Actors directly instead of creating and returning a copy of the Actors table.<br><br><b>Note:</b> Destroying Actors from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
-			"authority": "both",
-			"return": [
-				{
-					"type": "iterator",
-					"description": "Iterator with all Actors of this class"
-				}
-			]
-		}
-	],
+	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>An <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
 	"functions": [
 		{
 			"name": "AddImpulse",
@@ -110,11 +56,6 @@
 					"description": "Whether to force attached object to use absolute rotation (will not follow parent)"
 				}
 			]
-		},
-		{
-			"name": "Destroy",
-			"description": "Destroys this Actor",
-			"authority": "authority"
 		},
 		{
 			"name": "Detach",
@@ -185,6 +126,7 @@
 		{
 			"name": "SetHighlightEnabled",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
+			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the hight on every attached entity too",
 			"authority": "client",
 			"parameters": [
 				{
@@ -202,6 +144,7 @@
 		{
 			"name": "SetOutlineEnabled",
 			"description": "Sets whether the outline is enabled on this Actor, and which outline index to use",
+			"description_long": "Sets whether the outline is enabled on this Actor, and which outline index to use. This will apply the outline on every attached entity too",
 			"authority": "client",
 			"parameters": [
 				{
@@ -298,24 +241,15 @@
 			]
 		},
 		{
-			"name": "SetValue",
-			"description": "Sets a value in this Actor",
-			"description_long": "Sets a value in this Actor, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
-			"authority": "both",
+			"name": "SetNetworkAuthorityAutoDistributed",
+			"description": "Sets if this Actor will auto distribute the network authority betwen players",
+			"description_long": "Sets if this Actor will auto distribute the network authority betwen players when idle<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
+			"authority": "server",
 			"parameters": [
 				{
-					"type": "string",
-					"name": "key"
-				},
-				{
-					"type": "any",
-					"name": "value"
-				},
-				{
 					"type": "boolean",
-					"name": "sync_on_clients",
-					"default": "false",
-					"description": "Server side parameter, if enabled will sync this value with all clients"
+					"name": "auto_distribute",
+					"description": "If this Actor will be auto network distributed"
 				}
 			]
 		},
@@ -416,16 +350,6 @@
 			]
 		},
 		{
-			"name": "IsValid",
-			"description": "Returns true if this Actor is valid (i.e. wasn't destroyed and points to a valid Actor)",
-			"authority": "both",
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
 			"name": "GetAttachedEntities",
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
@@ -480,18 +404,18 @@
 			]
 		},
 		{
-			"name": "GetID",
-			"description": "Gets the universal network ID of this Actor (same on both client and server)",
+			"name": "GetLocation",
+			"description": "Gets this Actor's location in the game world",
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "Vector"
 				}
 			]
 		},
 		{
-			"name": "GetLocation",
-			"description": "Gets this Actor's location in the game world",
+			"name": "GetRelativeLocation",
+			"description": "Gets this Actor's Relative Location if it's attached",
 			"authority": "both",
 			"return": [
 				{
@@ -512,6 +436,16 @@
 		{
 			"name": "GetRotation",
 			"description": "Gets this Actor's angle in the game world",
+			"authority": "both",
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"name": "GetRelativeRotation",
+			"description": "Gets this Actor's Relative Rotation if it's attached",
 			"authority": "both",
 			"return": [
 				{
@@ -571,38 +505,6 @@
 			]
 		},
 		{
-			"name": "GetType",
-			"description": "Gets the type of this Actor",
-			"authority": "both",
-			"return": [
-				{
-					"type": "string"
-				}
-			]
-		},
-		{
-			"name": "GetValue",
-			"description": "Gets a value stored on this Actor at the given key. Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "key"
-				},
-				{
-					"type": "any",
-					"name": "fallback",
-					"description": "Fallback value if key doesn't exist"
-				}
-			],
-			"return": [
-				{
-					"type": "any",
-					"description": "Value at key or fallback if key doesn't exist"
-				}
-			]
-		},
-		{
 			"name": "GetVelocity",
 			"description": "Gets this Actor's current velocity",
 			"authority": "both",
@@ -645,91 +547,53 @@
 			]
 		},
 		{
-			"name": "Subscribe",
-			"description": "Subscribes to an Event",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "Name of the event to subscribe to"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"description": "Function to call when the event is triggered"
-				}
-			],
+			"name": "WasRecentlyRendered",
+			"description": "Gets if this Actor was recently rendered on screen",
+			"authority": "client",
 			"return": [
 				{
-					"type": "function",
-					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
+					"type": "boolean"
 				}
 			]
 		},
 		{
-			"name": "Unsubscribe",
-			"description": "Unsubscribes all callbacks from this Event in this Actor within this Package, or only the callback passed",
-			"authority": "both",
-			"parameters": [
+			"name": "GetDistanceFromCamera",
+			"description": "Gets the distance of this Actor from the Camera",
+			"authority": "client",
+			"return": [
 				{
-					"type": "string",
-					"name": "event_name",
-					"description": "Name of the event to unsubscribe from"
-				},
+					"type": "number"
+				}
+			]
+		},
+		{
+			"name": "GetScreenPercentage",
+			"description": "Gets the percentage of this Actor size in the screen",
+			"authority": "client",
+			"return": [
 				{
-					"type": "function",
-					"name": "callback",
-					"default": "nil",
-					"description": "Optional callback to unsubscribe"
+					"type": "number"
 				}
 			]
 		}
 	],
 	"events": [
 		{
-			"authority": "both",
-			"name": "Destroy",
-			"description": "Triggered when an Actor is destroyed",
+			"authority": "server",
+			"name": "DimensionChange",
+			"description": "Triggered when an Actor changes it's dimension",
 			"arguments": [
 				{
-					"type": "Actor",
 					"name": "self",
-					"description": "The Actor which that was destroyed"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "Spawn",
-			"description": "Triggered when an Actor is spawned/created",
-			"arguments": [
-				{
-					"type": "Actor",
-					"name": "self",
-					"description": "The Actor that was spawned"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "ValueChange",
-			"description": "Triggered when an Actor has a value changed with <code>:SetValue()</code>",
-			"arguments": [
-				{
-					"type": "Actor",
-					"name": "self",
-					"description": "The Actor that just had a value changed"
+					"type": "Actor"
 				},
 				{
-					"type": "string",
-					"name": "key",
-					"description": "The key used"
+					"name": "old_dimension",
+					"type": "number"
 				},
 				{
-					"type": "any",
-					"name": "value",
-					"description": "The value that was set"
+					"name": "new_dimension",
+					"type": "number"
 				}
 			]
 		}
