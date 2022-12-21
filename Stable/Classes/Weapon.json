@@ -587,7 +587,7 @@
 			"name": "GetAnimationCharacterFire",
 			"return": [
 				{
-					"type": "string"
+					"type": "AnimationPath"
 				}
 			]
 		},
@@ -596,7 +596,7 @@
 			"name": "GetAnimationFire",
 			"return": [
 				{
-					"type": "string"
+					"type": "AnimationPath"
 				}
 			]
 		},
@@ -605,7 +605,7 @@
 			"name": "GetMagazineMesh",
 			"return": [
 				{
-					"type": "string"
+					"type": "StaticMeshPath"
 				}
 			]
 		},
@@ -614,7 +614,7 @@
 			"name": "GetParticlesBulletTrail",
 			"return": [
 				{
-					"type": "string"
+					"type": "ParticlePath"
 				}
 			]
 		},
@@ -623,7 +623,7 @@
 			"name": "GetParticlesShells",
 			"return": [
 				{
-					"type": "string"
+					"type": "ParticlePath"
 				}
 			]
 		},
@@ -632,7 +632,7 @@
 			"name": "GetSoundDry",
 			"return": [
 				{
-					"type": "string"
+					"type": "SoundPath"
 				}
 			]
 		},
@@ -641,7 +641,7 @@
 			"name": "GetSoundLoad",
 			"return": [
 				{
-					"type": "string"
+					"type": "SoundPath"
 				}
 			]
 		},
@@ -650,7 +650,7 @@
 			"name": "GetSoundUnload",
 			"return": [
 				{
-					"type": "string"
+					"type": "SoundPath"
 				}
 			]
 		},
@@ -659,7 +659,7 @@
 			"name": "GetSoundZooming",
 			"return": [
 				{
-					"type": "string"
+					"type": "SoundPath"
 				}
 			]
 		},
@@ -668,7 +668,7 @@
 			"name": "GetSoundAim",
 			"return": [
 				{
-					"type": "string"
+					"type": "SoundPath"
 				}
 			]
 		},
@@ -677,7 +677,7 @@
 			"name": "GetSoundFire",
 			"return": [
 				{
-					"type": "string"
+					"type": "SoundPath"
 				}
 			]
 		},
