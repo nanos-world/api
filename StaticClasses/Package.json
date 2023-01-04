@@ -4,102 +4,19 @@
 	"authority": "both",
 	"static_functions": [
 		{
-			"name": "Log",
-			"description": "Logs and formats a message in the console, with formatted arguments",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "message",
-					"description": "Message to print"
-				},
-				{
-					"type": "any",
-					"name": "args...",
-					"default": "nil",
-					"description": "Other arguments to format with the message using string.format"
-				}
-			]
-		},
-		{
-			"name": "Warn",
-			"description": "Logs an orange warning in the console, with formatted arguments",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "message",
-					"description": "Message to print"
-				},
-				{
-					"type": "any",
-					"name": "args...",
-					"default": "nil",
-					"description": "Other arguments to format with the message using string.format"
-				}
-			]
-		},
-		{
-			"name": "Error",
-			"description": "Logs a red error in the console, with formatted arguments",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "message",
-					"description": "Message to print"
-				},
-				{
-					"type": "any",
-					"name": "args...",
-					"default": "nil",
-					"description": "Other arguments to format with the message using string.format"
-				}
-			]
-		},
-		{
-			"name": "Call",
-			"description": "Calls an exported function from another Package",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "package_name",
-					"description": "Name of the package to call"
-				},
-				{
-					"type": "string",
-					"name": "function_name",
-					"description": "Name of the function to call from the package"
-				},
-				{
-					"type": "any",
-					"name": "args...",
-					"default": "nil",
-					"description": "Arguments to pass to the function"
-				}
-			],
-			"return": [
-				{
-					"type": "any",
-					"description": "Any return values from the called function"
-				}
-			]
-		},
-		{
 			"name": "Export",
-			"description": "'Exports' a function to be called from any other Package",
+			"description": "Makes any variable available in the global scope",
 			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
-					"name": "function_name",
-					"description": "Name of the function to export from the current package"
+					"name": "variable_name",
+					"description": "Name of the variable to export"
 				},
 				{
-					"type": "function",
-					"name": "callback",
-					"description": "Function to be called by other packages"
+					"type": "any",
+					"name": "value",
+					"description": "Value to be set in the global scope"
 				}
 			]
 		},
@@ -119,18 +36,6 @@
 				{
 					"type": "any",
 					"description": "Any return values from the included file"
-				}
-			]
-		},
-		{
-			"name": "RequirePackage",
-			"description": "Includes other Package in this Package",
-			"authority": "both",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "package_name",
-					"description": "Package to require"
 				}
 			]
 		},

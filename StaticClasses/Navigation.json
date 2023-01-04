@@ -1,0 +1,100 @@
+{
+	"name": "Navigation",
+	"description": "Creates a reachable path into navigable space.",
+	"authority": "client",
+	"static_functions": [
+		{
+			"name": "GetRandomReachablePointInRadius",
+			"description": "Finds random, reachable point in navigable space restricted to radius around origin",
+			"description_long": "Finds random, reachable point in navigable space restricted to radius around origin (only if map has a NavMesh)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The random point"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "origin",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "GetRandomPointInNavigableRadius",
+			"description": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin",
+			"description_long": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin (only if map has a NavMesh)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "The random point"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "origin",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "FindPathToLocation",
+			"description": "Finds a Path given Start and End location",
+			"description_long": "Finds a Path given Start and End location (only if map has a NavMesh)",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "IsValid",
+							"type": "boolean"
+						},
+						{
+							"name": "IsPartial",
+							"type": "boolean"
+						},
+						{
+							"name": "Length",
+							"type": "number"
+						},
+						{
+							"name": "Cost",
+							"type": "number"
+						},
+						{
+							"name": "PathPoints",
+							"type": "Vector[]"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				}
+			]
+		}
+	]
+}

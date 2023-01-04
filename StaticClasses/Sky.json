@@ -1,0 +1,131 @@
+{
+	"name": "Sky",
+	"description": "Interact with built-in Sky & Weather system.",
+	"authority": "client",
+	"static_functions": [
+		{
+			"authority": "client",
+			"name": "Spawn",
+			"description": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page",
+			"description_long": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page. Internally this calls <code>Sky.DestroyAllSky()</code> automatically"
+		},
+		{
+			"authority": "client",
+			"name": "DestroyAllSky",
+			"description": "Destroys all Directional Lights, Sky Lights, Exponential Height Fogs, Volumetric Clouds, Sky Atmosphere, Ultra Dynamic Sky Actors and all Actors with the <code>Sun</code> Actor Tag from the Level"
+		},
+		{
+			"authority": "client",
+			"name": "SetCloudCoverage",
+			"description": "The amount of coverage for the cloud layer, from a clear sky to overcast",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "cloud_coverage"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetFog",
+			"description": "The fogginess of the scene. The impact this has on fog density is scaled from the Fog Density category",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "fog_percentage"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetContrast",
+			"description": "A simple contrast boost for the sky material. Cannot affect volumetric clouds",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "contrast"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetOverallIntensity",
+			"description": "The overall brightness of the shader",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetNightBrightness",
+			"description": "Can be used to scale the brightness of the sky and lighting, at night",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "brightness"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetAnimateTimeOfDay",
+			"description": "Sets whether or not to animate the time of day",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "animate",
+					"description": "Whether or not to animate the time of day"
+				},
+				{
+					"type": "number?",
+					"name": "day_length",
+					"default": "30.0",
+					"description": "The time (in minutes) from sunrise to sunset"
+				},
+				{
+					"type": "number?",
+					"name": "night_length",
+					"default": "15.0",
+					"description": "The time (in minutes) from sunset to sunrise"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetTimeOfDay",
+			"description": "Sets the current time",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "hours"
+				},
+				{
+					"type": "number",
+					"name": "minutes"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetTimeOfDay",
+			"description": "Gets the current time",
+			"return": [
+				{
+					"type": "number",
+					"description": "hours"
+				},
+				{
+					"type": "number",
+					"description": "minutes"
+				},
+				{
+					"type": "number",
+					"description": "seconds"
+				}
+			]
+		}
+	]
+}

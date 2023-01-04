@@ -1,0 +1,52 @@
+{
+	"name": "Discord",
+	"description": "Initialize and set Discord activity.",
+	"authority": "client",
+	"static_functions": [
+		{
+			"name": "Initialize",
+			"description": "Initializes the Discord Integration with your custom client_id",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "client_id",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetActivity",
+			"description": "Communicates with Discord and sets a custom user status",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "state",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "details",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "large_image",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "large_text",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "reset_time",
+					"description": "Whether or not to reset current activity elapsed time",
+					"default": "false"
+				}
+			]
+		}
+	]
+}

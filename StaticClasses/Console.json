@@ -1,0 +1,102 @@
+{
+	"name": "Console",
+	"description": "Log messages on console.",
+	"authority": "both",
+	"static_functions": [
+		{
+			"name": "Log",
+			"description": "Logs and formats a message in the console, with formatted arguments",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		},
+		{
+			"name": "Warn",
+			"description": "Logs an orange warning in the console, with formatted arguments",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		},
+		{
+			"name": "Error",
+			"description": "Logs a red error in the console, with formatted arguments",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		}
+	],
+	"events" : [
+		{
+			"name": "PlayerSubmit",
+			"description": "Called when a console command is submitted",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "LogEntry",
+			"description": "Called when a log is received",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				},
+				{
+					"type": "LogType",
+					"name": "type",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "Open",
+			"description": "When player opens the Console",
+			"authority": "client"
+		},
+		{
+			"name": "Close",
+			"description": "When player closes the Console",
+			"authority": "client"
+		}
+	]
+}

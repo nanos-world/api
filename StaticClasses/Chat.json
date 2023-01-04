@@ -1,0 +1,162 @@
+{
+	"name": "Chat",
+	"description": "Configure, send and intercept chat messages.",
+	"authority": "both",
+	"static_functions": [
+		{
+			"name": "AddMessage",
+			"description": "Adds a chat message which will display local only",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SendMessage",
+			"description": "Sends a chat message to a Player only",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player to receive the message"
+				},
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message"
+				}
+			]
+		},
+		{
+			"name": "SetConfiguration",
+			"description": "Configures the Chat visuals and position",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_location",
+					"description": "",
+					"default": "Vector(-25, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "size",
+					"description": "",
+					"default": "Vector(600, 250)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_min",
+					"description": "",
+					"default": "Vector(1, 0.5)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_max",
+					"description": "",
+					"default": "Vector(1, 0.5)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "alignment",
+					"description": "",
+					"default": "Vector(1, 0.5)"
+				},
+				{
+					"type": "boolean",
+					"name": "justify",
+					"description": "",
+					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "show_scrollbar",
+					"description": "",
+					"default": "true"
+				}
+			]
+		},
+		{
+			"name": "SetVisibility",
+			"description": "Sets if the Chat is visible or not",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_visible",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "BroadcastMessage",
+			"description": "Sends a chat message to all Players",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message to send to all Players"
+				}
+			]
+		}
+	],
+	"events" : [
+		{
+			"name": "PlayerSubmit",
+			"description": "Called when a player submits a message in the chat",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to prevent the message from being sent"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message sent by the player"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who sent the message - on client it will always be the localplayer"
+				}
+			]
+		},
+		{
+			"name": "ChatEntry",
+			"description": "Called when a new Chat Message is received, this is also triggered when new messages are sent programatically",
+			"description_long": "Called when a new Chat Message is received, this is also triggered when new messages are sent programatically<br/><br/>This is useful for creating your own Chat interface while still use the built-in system",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message"
+				},
+				{
+					"type": "Player?",
+					"name": "player",
+					"description": "The player who sent the message or <code>nil</code> if this was called on client side or was sent through code"
+				}
+			]
+		},
+		{
+			"name": "Open",
+			"description": "When player opens the Chat",
+			"authority": "client"
+		},
+		{
+			"name": "Close",
+			"description": "When player closes the Chat",
+			"authority": "client"
+		}
+	]
+}

@@ -1,0 +1,159 @@
+{
+	"name": "Viewport",
+	"description": "Work with screen properties and effects.",
+	"authority": "client",
+	"static_functions": [
+		{
+			"name": "ProjectWorldToScreen",
+			"description": "Transforms a 3D world-space vector into 2D screen coordinates",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "world_position",
+					"description": "World 3D position"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector2D"
+				}
+			]
+		},
+		{
+			"name": "DeprojectScreenToWorld",
+			"description": "Transforms a 2D screen coordinates into 3D world-space location",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_position",
+					"description": "Screen position"
+				}
+			],
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Position",
+							"type": "Vector"
+						},
+						{
+							"name": "Direction",
+							"type": "Vector"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SetHardwareCursor",
+			"description": "Loads and sets a hardware cursor in the game from a PNG image",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "CursorType",
+					"name": "cursor_shape",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "cursor_path",
+					"description": "a PNG image relative to Assets/"
+				},
+				{
+					"type": "Vector2D",
+					"name": "hotspot",
+					"description": "",
+					"default": "Vector(0, 0)"
+				}
+			]
+		},
+		{
+			"name": "GetViewportSize",
+			"description": "Gets the size of viewport",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector2D",
+					"description": "The size of viewport"
+				}
+			]
+		},
+		{
+			"name": "SetMousePosition",
+			"description": "Sets the mouse position",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "new_position",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "GetMousePosition",
+			"description": "Gets the current mouse screen location",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Vector2D",
+					"description": "The current mouse screen location"
+				}
+			]
+		},
+		{
+			"name": "SetCrosshairEnabled",
+			"description": "Enables/Disables the Crosshair",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetBloodScreenEnabled",
+			"description": "Enables/Disables the Blood Screen effect",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetBloodScreenIntensity",
+			"description": "Manually sets the Blood Screen intensity",
+			"description_long": "If you want the Blood Screen to do not be overridden, disable it with <code>Client.SetBloodScreenEnabled(false)</code> before",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity",
+					"description": "From 0.0 to 1.0"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Resize",
+			"description": "Called when the screen is resized",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "Vector2D",
+					"name": "new_size",
+					"description": "New new screen size"
+				}
+			]
+		}
+	]
+}

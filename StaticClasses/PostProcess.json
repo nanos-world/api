@@ -1,0 +1,145 @@
+{
+	"name": "PostProcess",
+	"authority": "client",
+	"description": "Interaction with Post Process effects.",
+	"static_functions": [
+		{
+			"authority": "client",
+			"name": "SetBloom",
+			"description": "Set Post Process Bloom Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity",
+					"default": "0.675"
+				},
+				{
+					"type": "number",
+					"name": "threshold",
+					"default": "-1"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetChromaticAberration",
+			"description": "Set Post Process Chromatic Abberation Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "intensity",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "start_offset",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetImageEffects",
+			"description": "Set Post Process Image Effect Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "vignette_intensity",
+					"default": "0.6"
+				},
+				{
+					"type": "number",
+					"name": "grain_jitter",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "grain_intensity",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetFilm",
+			"description": "Set Post Process Film Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "slope",
+					"default": "0.8"
+				},
+				{
+					"type": "number",
+					"name": "toe",
+					"default": "0.55"
+				},
+				{
+					"type": "number",
+					"name": "shoulder",
+					"default": "0.26"
+				},
+				{
+					"type": "number",
+					"name": "black_clip",
+					"default": "0"
+				},
+				{
+					"type": "number",
+					"name": "white_clip",
+					"default": "0.3"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetGlobalSaturation",
+			"description": "Set Post Process Saturation Colors. Use Alpha for everall Saturation intensity",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetLookupTable",
+			"description": "Set Post Process Lookup Table Texture",
+			"parameters": [
+				{
+					"type": "ImagePath",
+					"name": "texture_path"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMaterial",
+			"description": "Sets a Post Process Material",
+			"parameters": [
+				{
+					"type": "MaterialPath",
+					"name": "material_path",
+					"description": "The Material Asset to set as Post Process"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "RemoveMaterial",
+			"description": "Removes the current Post Process Material"
+		},
+		{
+			"authority": "client",
+			"name": "SetSunAngle",
+			"description": "Sets the sun's angle (0-360)",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "angle"
+				}
+			]
+		}
+	]
+}

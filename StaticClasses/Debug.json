@@ -1,0 +1,354 @@
+{
+	"name": "Debug",
+	"description": "Draws Debug shapes in the world.",
+	"authority": "client",
+	"static_functions": [
+		{
+			"name": "DrawBox",
+			"description": "Draws a Debug box in the world",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "extent",
+					"description": ""
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawCoordinateSystem",
+			"description": "Draws a Debug coordinate system in the world",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "size",
+					"description": "",
+					"default_value" : "100"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawCrosshairs",
+			"description": "Draws a Debug crosshair in the world",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "size",
+					"description": "",
+					"default": "100"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawCylinder",
+			"description": "Draws a Debug cylinder in the world",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "segments",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawDirectionalArrow",
+			"description": "Draws a Debug directional arrow in the world",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "arrow_size",
+					"description": "",
+					"default": "100"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawLine",
+			"description": "Draws a Debug Line in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_position",
+					"description": ""
+				},
+				{
+					"type": "Vector",
+					"name": "end_position",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawPoint",
+			"description": "Draws a Debug Point in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_position",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "size",
+					"description": "",
+					"default_value" : "10"
+				}
+			]
+		},
+		{
+			"name": "DrawSphere",
+			"description": "Draws a Debug sphere in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "segments",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "number",
+					"name": "thickness",
+					"description": "",
+					"default_value" : "0"
+				}
+			]
+		},
+		{
+			"name": "DrawString",
+			"description": "Draws a Debug string in the world",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"name": "text",
+					"description": ""
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "",
+					"default": "Color.RED"
+				},
+				{
+					"type": "number",
+					"name": "life_time",
+					"description": "",
+					"default_value" : "5"
+				},
+				{
+					"type": "boolean",
+					"name": "draw_shadow",
+					"description": "",
+					"default_value" : "false"
+				},
+				{
+					"type": "number",
+					"name": "font_scale",
+					"description": "",
+					"default_value" : "1"
+				}
+			]
+		}
+	]
+}

@@ -131,6 +131,284 @@
 					"type": "table"
 				}
 			]
+		},
+		{
+			"name": "SetInputEnabled",
+			"description": "Toggles Local Player input",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_input",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetMouseEnabled",
+			"description": "Displays/Hides Mouse Cursor",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "InputKey",
+			"description": "Forces an Input Key event on Local Player",
+			"description_long": "Forces an Input Key event on Local Player<br/><br/>This won't trigger any Scripting event as it bypass internal validations",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": "Key Name to input"
+				},
+				{
+					"type": "InputEvent",
+					"name": "input_event",
+					"description": "Which Event to input"
+				},
+				{
+					"type": "number",
+					"name": "amount_depressed",
+					"description": "The amount pressed",
+					"default": "1"
+				}
+			]
+		},
+		{
+			"name": "IsKeyDown",
+			"description": "Returns if a key is being pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the key is pressed"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "IsMouseEnabled",
+			"description": "",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the mouse is visible"
+				}
+			]
+		},
+		{
+			"name": "IsInputEnabled",
+			"description": "",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the input is visible"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "KeyDown",
+			"description": "A keyboard key is being pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": "The message send by the player"
+				}
+			]
+		},
+		{
+			"name": "KeyPress",
+			"description": "A keyboard key has been pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "KeyUp",
+			"description": "A keyboard key has been released",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseDown",
+			"description": "A mouse button has been pressed / is being pressed",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseUp",
+			"description": "A mouse button has been released",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to block it"
+				}
+			],
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key_name",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseEnable",
+			"description": "When mouse cursor is displayed/hidden",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "boolean",
+					"name": "is_enabled",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseMoveX",
+			"description": "Called when the mouse moves in the X axis",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "number",
+					"name": "delta",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "delta_time",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "num_samples",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseMoveY",
+			"description": "Called when the mouse moves in the Y axis",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "number",
+					"name": "delta",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "delta_time",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "num_samples",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "MouseScroll",
+			"description": "Called when the mouse scrolls",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "number",
+					"name": "delta",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_x",
+					"description": ""
+				},
+				{
+					"type": "number",
+					"name": "mouse_y",
+					"description": ""
+				}
+			]
 		}
 	]
 }
