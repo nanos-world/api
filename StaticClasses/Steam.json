@@ -1,6 +1,6 @@
 {
 	"name": "Steam",
-	"description": "Interact with built-in Sky & Weather system.",
+	"description": "Interact with Steam APIs.",
 	"authority": "client",
 	"static_functions": [
 		{
