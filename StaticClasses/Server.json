@@ -16,6 +16,18 @@
 			]
 		},
 		{
+			"name": "LoadPackage",
+			"description": "Loads a Package",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_folder_name",
+					"description": "The package to load"
+				}
+			]
+		},
+		{
 			"name": "ReloadPackage",
 			"description": "Reloads a Package",
 			"authority": "server",
