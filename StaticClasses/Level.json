@@ -60,6 +60,17 @@
 			]
 		},
 		{
+			"authority": "client",
+			"name": "GetStreamLevels",
+			"description": "Gets a list of all Stream Levels",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "in the format <code>{ name, is_loaded, is_visible }</code>"
+				}
+			]
+		},
+		{
 			"name": "CallLevelBlueprintEvent",
 			"description": "Calls a Level Blueprint custom event (which can be added when creating levels through Unreal Engine)",
 			"authority": "client",

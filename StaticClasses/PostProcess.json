@@ -61,6 +61,38 @@
 		},
 		{
 			"authority": "client",
+			"name": "SetExposure",
+			"description": "Set Post Process Exposure Settings",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "exposure_compensation",
+					"default": "1"
+				},
+				{
+					"type": "number",
+					"name": "min_ev100",
+					"default": "-10"
+				},
+				{
+					"type": "number",
+					"name": "max_ev100",
+					"default": "20"
+				},
+				{
+					"type": "number",
+					"name": "low_percent",
+					"default": "10"
+				},
+				{
+					"type": "number",
+					"name": "high_percent",
+					"default": "90"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "SetFilm",
 			"description": "Set Post Process Film Settings",
 			"parameters": [
