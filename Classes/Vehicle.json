@@ -716,7 +716,7 @@
 			]
 		},
 		{
-			"name": "CharacterEntered",
+			"name": "CharacterEnter",
 			"description": "Triggered when a Character fully enters the Vehicle",
 			"authority": "both",
 			"arguments": [
@@ -736,7 +736,7 @@
 			]
 		},
 		{
-			"name": "CharacterLeft",
+			"name": "CharacterLeave",
 			"description": "Triggered when a Character fully leaves the Vehicle",
 			"authority": "both",
 			"arguments": [

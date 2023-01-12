@@ -890,7 +890,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "AmmoClipChanged",
+			"name": "AmmoClipChange",
 			"description": "When the Ammo Clip is changed, by reloading or manually setting through scripting",
 			"arguments": [
 				{
@@ -909,7 +909,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "AmmoBagChanged",
+			"name": "AmmoBagChange",
 			"description": "When the Ammo Bag is changed, by reloading or manually setting through scripting",
 			"arguments": [
 				{

@@ -228,7 +228,7 @@
 			]
 		},
 		{
-			"name": "WindowFocusChanged",
+			"name": "WindowFocusChange",
 			"description": "Called when the game is focused/unfocused",
 			"authority": "client",
 			"arguments": [

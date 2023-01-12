@@ -1687,7 +1687,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "FallingModeChanged",
+			"name": "FallingModeChange",
 			"description": "Called when FallingMode changes",
 			"arguments": [
 				{
@@ -1721,7 +1721,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "GaitModeChanged",
+			"name": "GaitModeChange",
 			"description": "Called when GaitMode changes",
 			"arguments": [
 				{
@@ -1755,7 +1755,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "HealthChanged",
+			"name": "HealthChange",
 			"description": "When Character has it's Health changed, or because took damage or manually set through scripting or respawning",
 			"arguments": [
 				{
@@ -1851,7 +1851,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "MoveCompleted",
+			"name": "MoveComplete",
 			"description": "Called when AI reaches it's destination, or when it fails",
 			"arguments": [
 				{
@@ -1881,7 +1881,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "Possessed",
+			"name": "Possess",
 			"description": "When Character is possessed",
 			"arguments": [
 				{
@@ -1907,7 +1907,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "RagdollModeChanged",
+			"name": "RagdollModeChange",
 			"description": "When Character enters or leaves ragdoll",
 			"arguments": [
 				{
@@ -1977,7 +1977,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "StanceModeChanged",
+			"name": "StanceModeChange",
 			"description": "Called when StanceMode changes",
 			"arguments": [
 				{
@@ -1996,7 +1996,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "SwimmingModeChanged",
+			"name": "SwimmingModeChange",
 			"description": "Called when Swimming Mode changes",
 			"arguments": [
 				{
@@ -2076,7 +2076,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "UnPossessed",
+			"name": "UnPossess",
 			"description": "When Character is unpossessed",
 			"arguments": [
 				{
@@ -2091,7 +2091,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "ViewModeChanged",
+			"name": "ViewModeChange",
 			"description": "When Character changes it's View Mode",
 			"arguments": [
 				{
@@ -2110,7 +2110,7 @@
 		},
 		{
 			"authority": "both",
-			"name": "WeaponAimModeChanged",
+			"name": "WeaponAimModeChange",
 			"description": "Called when Weapon Aim Mode changes",
 			"arguments": [
 				{

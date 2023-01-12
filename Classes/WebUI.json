@@ -378,7 +378,7 @@
 	],
 	"events": [
 		{
-			"name": "Failed",
+			"name": "Fail",
 			"authority": "client",
 			"description": "Triggered when this page fails to load",
 			"arguments": [
