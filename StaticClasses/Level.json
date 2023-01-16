@@ -105,6 +105,28 @@
 					"name": "level_name"
 				}
 			]
+		},
+		{
+			"name": "StreamLevelShow",
+			"authority": "client",
+			"description": "Called when a Stream Level is shown",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "level_name"
+				}
+			]
+		},
+		{
+			"name": "StreamLevelHide",
+			"authority": "client",
+			"description": "Called when a Stream Level is hidden",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "level_name"
+				}
+			]
 		}
 	]
 }
