@@ -11,7 +11,7 @@
 		{
 			"type": "string",
 			"name": "connection_string",
-			"description": "<a href='/docs/scripting-reference/classes/database#connection-string'>Connection String</a> used to create and connect to the database"
+			"description": "<a href='#connection-string'>Connection String</a> used to create and connect to the database"
 		},
 		{
 			"type": "number",
