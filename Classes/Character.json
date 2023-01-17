@@ -704,12 +704,12 @@
 			"description_long": "Sets this Character's Capsule size (will affect Camera location and Character's collision)",
 			"parameters": [
 				{
-					"type": "boolean",
+					"type": "number",
 					"name": "radius",
 					"description": "Default is 42"
 				},
 				{
-					"type": "boolean",
+					"type": "number",
 					"name": "half_height",
 					"description": "Default is 96"
 				}
