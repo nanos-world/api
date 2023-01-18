@@ -82,8 +82,7 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "key_name",
-					"default": ""
+					"name": "key_name"
 				},
 				{
 					"type": "boolean",
@@ -94,6 +93,22 @@
 			"return": [
 				{
 					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetKeyCode",
+			"description": "Gets the key code of a key",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "key_name"
+				}
+			],
+			"return": [
+				{
+					"type": "number"
 				}
 			]
 		},

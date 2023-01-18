@@ -539,15 +539,15 @@
 					"description": ""
 				},
 				{
-					"type": "string",
+					"type": "Image",
 					"name": "cursor_path",
-					"description": "a PNG image relative to Assets/"
+					"description": "a PNG image"
 				},
 				{
 					"type": "Vector2D",
 					"name": "hotspot",
 					"description": "",
-					"default": "Vector(0, 0)"
+					"default": "Vector2D(0, 0)"
 				}
 			]
 		},
