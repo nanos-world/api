@@ -27,7 +27,7 @@
 			"description": "Closes the Database"
 		},
 		{
-			"name": "Execute",
+			"name": "ExecuteAsync",
 			"authority": "server",
 			"description": "Execute a query asyncronously",
 			"parameters": [
@@ -51,17 +51,7 @@
 			]
 		},
 		{
-			"return": [
-				{
-					"type": "number",
-					"description": "affected rows"
-				},
-				{
-					"type": "string",
-					"description": "error (if any)"
-				}
-			],
-			"name": "ExecuteSync",
+			"name": "Execute",
 			"authority": "server",
 			"description": "Execute a query syncronously",
 			"parameters": [
@@ -76,10 +66,20 @@
 					"default": "nil",
 					"description": "Sequence of parameters to escape into the Query"
 				}
+			],
+			"return": [
+				{
+					"type": "number",
+					"description": "affected rows"
+				},
+				{
+					"type": "string",
+					"description": "error (if any)"
+				}
 			]
 		},
 		{
-			"name": "Select",
+			"name": "SelectAsync",
 			"authority": "server",
 			"description": "Execute a select query asyncronously",
 			"parameters": [
@@ -103,17 +103,7 @@
 			]
 		},
 		{
-			"return": [
-				{
-					"type": "table[]",
-					"description": "rows fetched"
-				},
-				{
-					"type": "string",
-					"description": "error (if any)"
-				}
-			],
-			"name": "SelectSync",
+			"name": "Select",
 			"authority": "server",
 			"description": "Selects a query syncronously",
 			"parameters": [
@@ -127,6 +117,16 @@
 					"name": "parameters...",
 					"default": "nil",
 					"description": "Sequence of parameters to escape into the Query"
+				}
+			],
+			"return": [
+				{
+					"type": "table[]",
+					"description": "rows fetched"
+				},
+				{
+					"type": "string",
+					"description": "error (if any)"
 				}
 			]
 		}

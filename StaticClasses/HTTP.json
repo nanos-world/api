@@ -4,7 +4,7 @@
 	"authority": "server",
 	"static_functions": [
 		{
-			"name": "Request",
+			"name": "RequestAsync",
 			"description": "Makes an asynchronous HTTP Request",
 			"description_long": "Makes an asynchronous HTTP Request.<br/><br/>The request will be made asynchronously and returned safetly in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload.",
 			"authority": "server",
@@ -59,7 +59,7 @@
 			]
 		},
 		{
-			"name": "RequestSync",
+			"name": "Request",
 			"return": [
 				{
 					"type": "table",

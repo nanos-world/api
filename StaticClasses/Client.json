@@ -4,8 +4,20 @@
 	"authority": "client",
 	"static_functions": [
 		{
+			"name": "SetNearClipPlane",
+			"description": "Sets the Near Clip Plane",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "number",
+					"name": "near_clip_plane",
+					"description": ""
+				}
+			]
+		},
+		{
 			"name": "SetDebugEnabled",
-			"description": "Enables/Disables Debug settings to be used",
+			"description": "Enables/Disables Debug settings and Client Console to be used",
 			"authority": "client",
 			"parameters": [
 				{

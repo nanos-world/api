@@ -58,7 +58,7 @@
 					"description": ""
 				},
 				{
-					"type": "string",
+					"type": "ImagePath",
 					"name": "cursor_path",
 					"description": "a PNG image relative to Assets/"
 				},

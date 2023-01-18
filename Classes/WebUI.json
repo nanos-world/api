@@ -107,6 +107,43 @@
 			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport)<br/>You MUST call this after you don't need keyboard input anymore"
 		},
 		{
+			"name": "SetLayout",
+			"authority": "client",
+			"description": "Sets the Canvas Layout on Screen",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_location",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "size",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_min",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_max",
+					"description": "",
+					"default": "Vector(1, 1)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "alignment",
+					"description": "",
+					"default": "Vector(0.5, 0.5)"
+				}
+			]
+		},
+		{
 			"name": "SetFreeze",
 			"authority": "client",
 			"description": "Freezes the WebUI Rendering to the surface (it will still execute the JS under the hood)",
@@ -118,7 +155,7 @@
 			]
 		},
 		{
-			"name": "SetVisible",
+			"name": "SetVisibility",
 			"authority": "client",
 			"description": "Toggles the visibility",
 			"parameters": [

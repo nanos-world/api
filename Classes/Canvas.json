@@ -3,43 +3,43 @@
 	"description": "Canvas is an entity which you can draw onto it.",
 	"authority": "client",
 	"constructor": [
-		{	
+		{
 			"type": "boolean",
 			"name": "is_visible",
 			"default": "true",
 			"description": "Whether to draw it on screen"
 		},
-		{	
+		{
 			"type": "Color",
 			"name": "clear_color",
 			"default": "Color.TRANSPARENT",
 			"description": "Color to clear with (background color)"
 		},
-		{	
+		{
 			"type": "number",
 			"name": "auto_repaint_rate",
 			"default": "-1",
 			"description": "Rate to auto repaint (call Update event), pass 0 for every frame, -1 to disable"
 		},
-		{	
+		{
 			"type": "boolean",
 			"name": "should_clear_before_update",
 			"default": "true",
 			"description": "Whether to clear with Clear Color before updates"
 		},
-		{	
+		{
 			"type": "boolean",
 			"name": "auto_resize",
 			"default": "true",
 			"description": "Auto resize with screen's size"
 		},
-		{	
+		{
 			"type": "number",
 			"name": "width",
 			"default": "0",
 			"description": "If not using auto_resize"
 		},
-		{	
+		{
 			"type": "number",
 			"name": "height",
 			"default": "0",
@@ -353,7 +353,7 @@
 				}
 			]
 		},
-		
+
 		{
 			"authority": "client",
 			"name": "DrawPolygon",
@@ -436,7 +436,7 @@
 		},
 		{
 			"authority": "client",
-			"name": "SetVisible",
+			"name": "SetVisibility",
 			"description": "Sets if it's visible on screen",
 			"parameters": [
 				{
@@ -445,7 +445,7 @@
 				}
 			]
 		},
-		
+
 		{
 			"authority": "client",
 			"name": "Repaint",
