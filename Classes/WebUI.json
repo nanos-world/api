@@ -11,7 +11,7 @@
 		{
 			"type": "HTMLPath",
 			"name": "path",
-			"description": "URL or <code>file://my_file.html</code> or <code>package://my-package/Client/file.html</code>"
+			"description": "Web URL or <a href='#html-path-searchers'>HTML File Path</a> as <code>file://my_file.html</code>"
 		},
 		{
 			"type": "boolean",
