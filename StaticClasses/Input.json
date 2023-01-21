@@ -410,17 +410,17 @@
 			"arguments": [
 				{
 					"type": "number",
-					"name": "delta",
-					"description": ""
-				},
-				{
-					"type": "number",
 					"name": "mouse_x",
 					"description": ""
 				},
 				{
 					"type": "number",
 					"name": "mouse_y",
+					"description": ""
+				}
+				{
+					"type": "number",
+					"name": "delta",
 					"description": ""
 				}
 			]
