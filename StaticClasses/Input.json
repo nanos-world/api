@@ -417,7 +417,7 @@
 					"type": "number",
 					"name": "mouse_y",
 					"description": ""
-				}
+				},
 				{
 					"type": "number",
 					"name": "delta",
