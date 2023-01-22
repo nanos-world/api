@@ -114,6 +114,17 @@
 		},
 		{
 			"authority": "client",
+			"name": "GetModifierKeys",
+			"description": "Gets the currently pressed modifier keys",
+			"description_long": "Gets the currently pressed modifier keys.<br/>Use bit-wise operators like <code>modifier & KeyModifier.LeftShiftDown</code> to know if the left shift is pressed.",
+			"return": [
+				{
+					"type": "KeyModifier"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "GetMappedKey",
 			"description": "Returns the key bound to a keybinding",
 			"parameters": [
@@ -126,9 +137,6 @@
 			"return": [
 				{
 					"type": "string"
-				},
-				{
-					"type": "number"
 				}
 			]
 		},

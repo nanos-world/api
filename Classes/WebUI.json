@@ -249,7 +249,7 @@
 					"type": "WebUIModifier",
 					"name": "modifiers",
 					"default": "WebUIModifier.None",
-					"description": "Accept bitwise operators"
+					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				}
 			]
 		},
@@ -272,7 +272,7 @@
 					"type": "WebUIModifier",
 					"name": "modifiers",
 					"default": "WebUIModifier.None",
-					"description": "Accept bitwise operators"
+					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				},
 				{
 					"type": "boolean",
@@ -311,7 +311,7 @@
 					"type": "WebUIModifier",
 					"name": "modifiers",
 					"default": "WebUIModifier.None",
-					"description": "Accept bitwise operators"
+					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				},
 				{
 					"type": "number",
@@ -365,6 +365,16 @@
 			"name": "IsVisible",
 			"authority": "client",
 			"description": "Returns if this WebUI is currently visible",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "IsFrozen",
+			"authority": "client",
+			"description": "Returns if this WebUI is currently frozen",
 			"return": [
 				{
 					"type": "boolean"

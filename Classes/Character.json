@@ -997,12 +997,12 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetMovementEnabled",
-			"description": "Enables/Disables Character's Movement",
+			"name": "SetInputEnabled",
+			"description": "Enables/Disables Character's Input",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_movement_enabled"
+					"name": "is_enabled"
 				}
 			]
 		},

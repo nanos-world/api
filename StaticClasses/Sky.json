@@ -7,7 +7,15 @@
 			"authority": "client",
 			"name": "Spawn",
 			"description": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page",
-			"description_long": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page. Internally this calls <code>Sky.DestroyAllSky()</code> automatically"
+			"description_long": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page. Internally this calls <code>Sky.DestroyAllSky()</code> automatically",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "spawn_weather",
+					"default": "false",
+					"description": "Whether or not to spawn the Weather Actor (to be able to use Weather related methods)"
+				}
+			]
 		},
 		{
 			"authority": "client",
@@ -124,6 +132,23 @@
 				{
 					"type": "number",
 					"description": "seconds"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "ChangeWeather",
+			"description": "Gets the current time",
+			"parameters": [
+				{
+					"type": "WeatherType",
+					"name": "weather",
+					"description": "weather to change"
+				},
+				{
+					"type": "number",
+					"name": "transition_time",
+					"description": "fade time to completely change to new weather"
 				}
 			]
 		}
