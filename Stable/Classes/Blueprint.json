@@ -27,26 +27,6 @@
 					"default": ""
 				}
 			]
-		},
-		{
-			"description": "Default Constructor",
-			"parameters": [
-				{
-					"type": "Vector",
-					"name": "location",
-					"default": "Vector(0, 0, 0)"
-				},
-				{
-					"type": "Rotator",
-					"name": "rotation",
-					"default": "Rotator(0, 0, 0)"
-				},
-				{
-					"type": "BlueprintPath",
-					"name": "blueprint_asset",
-					"default": ""
-				}
-			]
 		}
 	],
 	"functions": [
