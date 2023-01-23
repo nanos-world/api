@@ -55,12 +55,12 @@
 				},
 				{
 					"name": "blend_time",
-					"type": "number",
+					"type": "float",
 					"default": "0"
 				},
 				{
 					"name": "exp",
-					"type": "number",
+					"type": "float",
 					"default": "0"
 				}
 			]
@@ -73,17 +73,17 @@
 			"parameters": [
 				{
 					"name": "from_alpha",
-					"type": "number",
+					"type": "float",
 					"description": "Alpha at which to begin the fade. Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color."
 				},
 				{
 					"name": "to_alpha",
-					"type": "number",
+					"type": "float",
 					"description": "Alpha at which to finish the fade."
 				},
 				{
 					"name": "duration",
-					"type": "number",
+					"type": "float",
 					"description": "How long the fade should take, in seconds."
 				},
 				{
@@ -113,7 +113,7 @@
 			"parameters": [
 				{
 					"name": "in_fade_amount",
-					"type": "number",
+					"type": "float",
 					"description": "Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color."
 				},
 				{
@@ -164,11 +164,11 @@
 				},
 				{
 					"name": "time",
-					"type": "number"
+					"type": "float"
 				},
 				{
 					"name": "exp",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Exponential used to smooth interp, use 0 for linear movement"
 				}
@@ -185,11 +185,11 @@
 				},
 				{
 					"name": "time",
-					"type": "number"
+					"type": "float"
 				},
 				{
 					"name": "exp",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Exponential used to smooth interp, use 0 for linear movement"
 				}
@@ -213,7 +213,7 @@
 			"parameters": [
 				{
 					"name": "length",
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -232,7 +232,7 @@
 				},
 				{
 					"name": "blend_speed",
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -252,7 +252,7 @@
 				},
 				{
 					"name": "blend_speed",
-					"type": "number",
+					"type": "float",
 					"default": "0"
 				}
 			]
@@ -275,7 +275,7 @@
 			"parameters": [
 				{
 					"name": "channel",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -297,7 +297,7 @@
 			"parameters": [
 				{
 					"name": "volume",
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -375,7 +375,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -393,7 +393,7 @@
 			"name": "GetPing",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -402,7 +402,7 @@
 			"name": "GetVOIPChannel",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -465,11 +465,11 @@
 				},
 				{
 					"name": "old_dimension",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "new_dimension",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},

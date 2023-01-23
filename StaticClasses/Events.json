@@ -86,7 +86,7 @@
 			"description": "Calls an Event on Server which will be triggered in all Client's Packages of all Players in that dimension",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "dimension",
 					"description": "The Dimension to send this event"
 				},

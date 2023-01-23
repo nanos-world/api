@@ -2,22 +2,27 @@
 	"name": "Database",
 	"description": "The Database entity provides programmers a way to access SQL databases easily through scripting.",
 	"authority": "server",
-	"constructor": [
+	"constructors": [
 		{
-			"type": "DatabaseEngine",
-			"name": "database_engine",
-			"description": "Database Engine"
-		},
-		{
-			"type": "string",
-			"name": "connection_string",
-			"description": "<a href='#connection-string'>Connection String</a> used to create and connect to the database"
-		},
-		{
-			"type": "number",
-			"name": "pool_size",
-			"default": "10",
-			"description": "Size of the connection pool when calling several queries simultaneously"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "DatabaseEngine",
+					"name": "database_engine",
+					"description": "Database Engine"
+				},
+				{
+					"type": "string",
+					"name": "connection_string",
+					"description": "<a href='#connection-string'>Connection String</a> used to create and connect to the database"
+				},
+				{
+					"type": "integer",
+					"name": "pool_size",
+					"default": "10",
+					"description": "Size of the connection pool when calling several queries simultaneously"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -69,7 +74,7 @@
 			],
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "affected rows"
 				},
 				{

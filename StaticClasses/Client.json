@@ -9,7 +9,7 @@
 			"authority": "client",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "near_clip_plane",
 					"description": ""
 				}
@@ -39,7 +39,7 @@
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"description": ""
 				},
@@ -63,13 +63,13 @@
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"description": "",
 					"default": "0"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "thickness",
 					"description": "",
 					"default": "2"
@@ -152,7 +152,7 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The Frame Time"
 				}
 			]
@@ -163,7 +163,7 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the unix timestamp"
 				}
 			]
@@ -221,7 +221,7 @@
 			"authority": "client",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_time",
 					"description": ""
 				}

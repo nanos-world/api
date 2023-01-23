@@ -8,28 +8,33 @@
 		"Paintable",
 		"Pickable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"name": "location",
-			"type": "Vector"
-		},
-		{
-			"name": "rotation",
-			"type": "Rotator"
-		},
-		{
-			"name": "asset",
-			"type": "SkeletalMeshPath"
-		},
-		{
-			"name": "collision_type",
-			"type": "CollisionType",
-			"default": "CollisionType.Normal"
-		},
-		{
-			"name": "gravity_enabled",
-			"type": "boolean",
-			"default": "true"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "location",
+					"type": "Vector"
+				},
+				{
+					"name": "rotation",
+					"type": "Rotator"
+				},
+				{
+					"name": "asset",
+					"type": "SkeletalMeshPath"
+				},
+				{
+					"name": "collision_type",
+					"type": "CollisionType",
+					"default": "CollisionType.Normal"
+				},
+				{
+					"name": "gravity_enabled",
+					"type": "boolean",
+					"default": "true"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -46,7 +51,7 @@
 			"parameters": [
 				{
 					"name": "new_ammo",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -57,7 +62,7 @@
 			"parameters": [
 				{
 					"name": "new_ammo",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -68,20 +73,20 @@
 			"parameters": [
 				{
 					"name": "ammo_clip",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "ammo_bag",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "ammo_to_reload",
-					"type": "number",
+					"type": "integer",
 					"default": "ammo_clip"
 				},
 				{
 					"name": "clip_capacity",
-					"type": "number",
+					"type": "integer",
 					"default": "ammo_clip"
 				}
 			]
@@ -97,7 +102,7 @@
 				},
 				{
 					"name": "play_rate",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -113,7 +118,7 @@
 				},
 				{
 					"name": "play_rate",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -129,7 +134,7 @@
 				},
 				{
 					"name": "play_rate",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -186,16 +191,16 @@
 			"parameters": [
 				{
 					"name": "bullet_count",
-					"type": "number",
+					"type": "integer",
 					"description": "1 for common weapons<br/>> 1 for shotguns"
 				},
 				{
 					"name": "bullet_max_distance",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "bullet_velocity",
-					"type": "number",
+					"type": "integer",
 					"description": "Visuals only"
 				},
 				{
@@ -211,7 +216,7 @@
 			"parameters": [
 				{
 					"name": "cadence",
-					"type": "number",
+					"type": "float",
 					"description": "1 shot at each <code>cadence</code> second"
 				}
 			]
@@ -223,7 +228,7 @@
 			"parameters": [
 				{
 					"name": "clip",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -235,7 +240,7 @@
 			"parameters": [
 				{
 					"name": "damage",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -335,7 +340,7 @@
 			"parameters": [
 				{
 					"name": "multiplier",
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -365,12 +370,12 @@
 				},
 				{
 					"name": "volume",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				},
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -386,12 +391,12 @@
 				},
 				{
 					"name": "volume",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				},
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -407,12 +412,12 @@
 				},
 				{
 					"name": "volume",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				},
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -428,12 +433,12 @@
 				},
 				{
 					"name": "volume",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				},
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -449,12 +454,12 @@
 				},
 				{
 					"name": "volume",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				},
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -470,12 +475,12 @@
 				},
 				{
 					"name": "volume",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				},
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "1"
 				}
 			]
@@ -492,7 +497,7 @@
 				},
 				{
 					"name": "remaining_bullets_count",
-					"type": "number",
+					"type": "integer",
 					"default": "1",
 					"description": "The amount of remaining bullet to start playing this sound"
 				}
@@ -505,7 +510,7 @@
 			"parameters": [
 				{
 					"name": "spread",
-					"type": "number",
+					"type": "float",
 					"description": "the higher the less precision - recommended value: 20"
 				}
 			]
@@ -517,7 +522,7 @@
 			"parameters": [
 				{
 					"name": "recoil",
-					"type": "number",
+					"type": "float",
 					"description": "0 means no Recoil, default is 1"
 				}
 			]
@@ -544,12 +549,12 @@
 			"parameters": [
 				{
 					"name": "max_distance",
-					"type": "number",
+					"type": "integer",
 					"description": "Max distance to pass through another wall"
 				},
 				{
 					"name": "damage_multiplier",
-					"type": "number",
+					"type": "float",
 					"description": "Damage given if wallbangged"
 				}
 			]
@@ -560,7 +565,7 @@
 			"description": "Gets this Weapon's Ammo Bag",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -570,7 +575,7 @@
 			"description": "Gets this Weapon's Ammo Clip",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -579,7 +584,7 @@
 			"name": "GetAmmoToReload",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -740,7 +745,7 @@
 			"name": "GetBulletCount",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -758,7 +763,7 @@
 			"name": "GetCadence",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -767,7 +772,7 @@
 			"name": "GetClipCapacity",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -776,7 +781,7 @@
 			"name": "GetDamage",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -830,7 +835,7 @@
 			"name": "GetSightFOVMultiplier",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -839,7 +844,7 @@
 			"name": "GetSpread",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -848,7 +853,7 @@
 			"name": "GetRecoil",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		}
@@ -884,7 +889,7 @@
 				},
 				{
 					"name": "ammo_to_reload",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -899,11 +904,11 @@
 				},
 				{
 					"name": "old_ammo_clip",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "new_ammo_clip",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -918,11 +923,11 @@
 				},
 				{
 					"name": "old_ammo_clip",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "new_ammo_clip",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		}

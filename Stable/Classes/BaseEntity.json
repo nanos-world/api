@@ -9,7 +9,7 @@
 			"return": [
 				{
 					"type": "Entity[]",
-					"description": "copy of table containing all Entities"
+					"description": "Copy of table containing all Entities"
 				}
 			]
 		},
@@ -19,9 +19,9 @@
 			"authority": "both",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
-					"description": "the index of the Entity"
+					"description": "The index of the Entity"
 				}
 			],
 			"return": [
@@ -37,8 +37,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number",
-					"description": "number of Entities of this class"
+					"type": "integer",
+					"description": "Number of Entities of this class"
 				}
 			]
 		},
@@ -62,13 +62,18 @@
 				{
 					"type": "string",
 					"name": "name",
-					"description": "the name of the new Class"
+					"description": "The name of the new Class"
+				},
+				{
+					"type": "table?",
+					"name": "custom_values",
+					"description": "An optional table with custom values to be set in the inherited class table"
 				}
 			],
 			"return": [
 				{
 					"type": "table",
-					"description": "the new Class table"
+					"description": "The new Class table"
 				}
 			]
 		},
@@ -81,13 +86,13 @@
 					"type": "boolean",
 					"default": "false",
 					"name": "recursively",
-					"description": "returns all inherited children"
+					"description": "Returns all inherited children"
 				}
 			],
 			"return": [
 				{
 					"type": "table[]",
-					"description": "all children Classes"
+					"description": "All children Classes"
 				}
 			]
 		},
@@ -98,7 +103,7 @@
 			"return": [
 				{
 					"type": "table?",
-					"description": "the parent class"
+					"description": "The parent class"
 				}
 			]
 		},
@@ -110,7 +115,7 @@
 				{
 					"type": "table",
 					"name": "class",
-					"description": "the other class to check"
+					"description": "The other class to check"
 				}
 			],
 			"return": [
@@ -191,7 +196,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -213,7 +218,7 @@
 				{
 					"type": "table",
 					"name": "class",
-					"description": "the Class"
+					"description": "The Class"
 				}
 			],
 			"return": [
@@ -450,6 +455,18 @@
 					"type": "any",
 					"name": "value",
 					"description": "The value that was set"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "ClassRegister",
+			"description": "Triggered when a new Class is registered with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"arguments": [
+				{
+					"type": "table",
+					"name": "class",
+					"description": "The inherited Class"
 				}
 			]
 		}

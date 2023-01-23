@@ -44,7 +44,7 @@
 					"description": "Which bone to attach to"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "lifespan_when_detached",
 					"default": "-1",
 					"description": "Seconds before destroying this Actor when detached"
@@ -79,7 +79,7 @@
 			"authority": "server",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "dimension"
 				}
 			]
@@ -134,7 +134,7 @@
 					"name": "is_enabled"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "0",
 					"description": "Index to use (should be <code>0</code>, <code>1</code or <code>2</code>)"
@@ -152,7 +152,7 @@
 					"name": "is_enabled"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "0",
 					"description": "Index to use (should be <code>0</code>, <code>1</code or <code>2</code>)"
@@ -165,7 +165,7 @@
 			"authority": "authority",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "seconds",
 					"description": "Seconds before being destroyed"
 				}
@@ -263,12 +263,12 @@
 					"name": "location"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "time",
 					"description": "Time to interpolate from current location to target location"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "exp",
 					"default": "0",
 					"description": "Exponent used to smooth interpolation. Use <code>0</code> for linear movement"
@@ -285,12 +285,12 @@
 					"name": "rotation"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "time",
 					"description": "Time to interpolate from current location to target location"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "exp",
 					"default": "0",
 					"description": "Exponent used to smooth interpolation. Use <code>0</code> for linear movement"
@@ -387,7 +387,7 @@
 						},
 						{
 							"name": "SphereRadius",
-							"type": "number"
+							"type": "float"
 						}
 					]
 				}
@@ -469,7 +469,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -562,7 +562,7 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -572,7 +572,7 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		}
@@ -589,11 +589,11 @@
 				},
 				{
 					"name": "old_dimension",
-					"type": "number"
+					"type": "integer"
 				},
 				{
 					"name": "new_dimension",
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		}

@@ -1,30 +1,35 @@
 {
 	"name": "Color",
 	"description": "A color composed of components (R, G, B, A) with floating point precision.",
-	"constructor": [
+	"constructors": [
 		{
-			"name": "R",
-			"type": "number",
-			"default": "0",
-			"description": "Red color percentage (0-1)"
-		},
-		{
-			"name": "G",
-			"type": "number",
-			"default": "0",
-			"description": "Green color percentage (0-1)"
-		},
-		{
-			"name": "B",
-			"type": "number",
-			"default": "0",
-			"description": "Blue color percentage (0-1)"
-		},
-		{
-			"name": "A",
-			"type": "number",
-			"default": "0",
-			"description": "Alpha transparency percentage (0-1)"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "R",
+					"type": "number",
+					"default": "0",
+					"description": "Red color percentage (0-1)"
+				},
+				{
+					"name": "G",
+					"type": "number",
+					"default": "0",
+					"description": "Green color percentage (0-1)"
+				},
+				{
+					"name": "B",
+					"type": "number",
+					"default": "0",
+					"description": "Blue color percentage (0-1)"
+				},
+				{
+					"name": "A",
+					"type": "number",
+					"default": "0",
+					"description": "Alpha transparency percentage (0-1)"
+				}
+			]
 		}
 	],
 	"operators": [
@@ -68,7 +73,7 @@
 			"return": "boolean",
 			"description": "Checks if two Colors have the same values"
 		},
-		{ 
+		{
 			"name": "tostring",
 			"operator": "tostring",
 			"lhs": "Color",

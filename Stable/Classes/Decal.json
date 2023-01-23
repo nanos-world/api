@@ -7,37 +7,42 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "MaterialPath",
-			"name": "material_asset",
-			"description": "Material Asset"
-		},
-		{
-			"type": "Vector",
-			"name": "size",
-			"default": "Vector(128, 256, 256)",
-			"description": "Size of the Decal"
-		},
-		{
-			"type": "number",
-			"name": "lifespan",
-			"default": "60",
-			"description": "Time until automatically destroyed in seconds"
-		},
-		{
-			"type": "number",
-			"name": "fade_screen_size",
-			"default": "0.01",
-			"description": "Size percentage in screen to fade out"
+			"description": "Default Constructor",
+				"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "MaterialPath",
+					"name": "material_asset",
+					"description": "Material Asset"
+				},
+				{
+					"type": "Vector",
+					"name": "size",
+					"default": "Vector(128, 256, 256)",
+					"description": "Size of the Decal"
+				},
+				{
+					"type": "float",
+					"name": "lifespan",
+					"default": "60",
+					"description": "Time until automatically destroyed in seconds"
+				},
+				{
+					"type": "float",
+					"name": "fade_screen_size",
+					"default": "0.01",
+					"description": "Size percentage in screen to fade out"
+				}
+			]
 		}
 	]
 }

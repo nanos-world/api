@@ -7,75 +7,80 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "SkeletalMeshPath",
-			"name": "asset"
-		},
-		{
-			"type": "CollisionType",
-			"name": "collision_type",
-			"default": "CollisionType.Normal"
-		},
-		{
-			"type": "boolean",
-			"name": "gravity_enabled",
-			"default": "true"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_create_physics",
-			"default": "true",
-			"description": "Can be disabled to improve performance when setting several configs. Must call <code>RecreatePhysics()</code> after all"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_unflip",
-			"default": "true",
-			"description": "Auto rotates the vehicle if flipped"
-		},
-		{
-			"type": "SoundPath",
-			"name": "engine_sound",
-			"default": "nanos-world::A_Vehicle_Engine_01"
-		},
-		{
-			"type": "SoundPath",
-			"name": "horn_sound",
-			"default": "nanos-world::A_Vehicle_Horn_Toyota"
-		},
-		{
-			"type": "SoundPath",
-			"name": "brake_sound",
-			"default": "nanos-world::A_Vehicle_Brake"
-		},
-		{
-			"type": "SoundPath",
-			"name": "engine_start_sound",
-			"default": "nanos-world::A_Car_Engine_Start"
-		},
-		{
-			"type": "SoundPath",
-			"name": "vehicle_door_sound",
-			"default": "nanos-world::A_Vehicle_Door"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_start_engine",
-			"default": "true"
-		},
-		{
-			"type": "BlueprintPath",
-			"name": "custom_animation_blueprint",
-			"default": ""
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "SkeletalMeshPath",
+					"name": "asset"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Normal"
+				},
+				{
+					"type": "boolean",
+					"name": "gravity_enabled",
+					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_create_physics",
+					"default": "true",
+					"description": "Can be disabled to improve performance when setting several configs. Must call <code>RecreatePhysics()</code> after all"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_unflip",
+					"default": "true",
+					"description": "Auto rotates the vehicle if flipped"
+				},
+				{
+					"type": "SoundPath",
+					"name": "engine_sound",
+					"default": "nanos-world::A_Vehicle_Engine_01"
+				},
+				{
+					"type": "SoundPath",
+					"name": "horn_sound",
+					"default": "nanos-world::A_Vehicle_Horn_Toyota"
+				},
+				{
+					"type": "SoundPath",
+					"name": "brake_sound",
+					"default": "nanos-world::A_Vehicle_Brake"
+				},
+				{
+					"type": "SoundPath",
+					"name": "engine_start_sound",
+					"default": "nanos-world::A_Car_Engine_Start"
+				},
+				{
+					"type": "SoundPath",
+					"name": "vehicle_door_sound",
+					"default": "nanos-world::A_Vehicle_Door"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_start_engine",
+					"default": "true"
+				},
+				{
+					"type": "BlueprintPath",
+					"name": "custom_animation_blueprint",
+					"default": ""
+				}
+			]
 		}
 	],
 	"functions": [
@@ -179,37 +184,37 @@
 					"default": "LimitedSlip_4W"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "front_rear_split",
 					"default": "0.45",
 					"description": "Ratio of torque split between front and rear<br/>bigger than 0.5 means more to front<br/>lower than 0.5 means more to rear (works only with 4W type)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "front_left_right_split",
 					"default": "0.5",
 					"description": "Ratio of torque split between front-left and front-right<br/>bigger than 0.5 means more to front-left<br/>lower than 0.5 means more to front-right (works only with 4W and LimitedSlip_FrontDrive)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "rear_left_right_split",
 					"default": "0.5",
 					"description": "Ratio of torque split between rear-left and rear-right<br/>bigger than 0.5 means more to rear-left<br/>lower than 0.5 means more to rear-right (works only with 4W and LimitedSlip_RearDrive)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "center_bias",
 					"default": "1.3",
 					"description": "Maximum allowed ratio of average front wheel rotation speed and rear wheel rotation speeds Acceptable range: 1 .. infinite (works only with LimitedSlip_4W)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "front_bias",
 					"default": "1.3",
 					"description": "Maximum allowed ratio of front-left and front-right wheel rotation speeds Acceptable range: 1 .. infinite (works only with LimitedSlip_4W, LimitedSlip_FrontDrive)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "rear_bias",
 					"default": "1.3",
 					"description": "Maximum allowed ratio of rear-left and rear-right wheel rotation speeds Acceptable range: 1 .. infinite (works only with LimitedSlip_4W, LimitedSlip_FrontDrive)"
@@ -222,37 +227,37 @@
 			"description": "Configures the Vehicle Engine (Torque, RPM, Braking)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_torque",
 					"default": "700",
 					"description": "Max Engine Torque (Nm) is multiplied by TorqueCurve"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_rpm",
 					"default": "5700",
 					"description": "Maximum revolutions per minute of the engine"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "idle_rpm",
 					"default": "1200",
 					"description": "Idle RMP of engine then in neutral/stationary"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "brake_effect",
 					"default": "0.05",
 					"description": "Braking effect from engine, when throttle released"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "rev_up_moi",
 					"default": "5",
 					"description": "Affects how fast the engine RPM speed up"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "rev_down_rate",
 					"default": "600",
 					"description": "Affects how fast the engine RPM slows down"
@@ -265,31 +270,31 @@
 			"description": "Configures the Vehicle Aerodynamics Settings",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mass",
 					"default": "1500",
 					"description": "Mass of the vehicle chassis"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "drag_coefficient",
 					"default": "0.3",
 					"description": "Force resisting forward motion at speed"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "vehicle_chassis_width",
 					"default": "180",
 					"description": "Chassis width used for drag force computation (cm)"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "vehicle_chassis_height",
 					"default": "140",
 					"description": "Chassis height used for drag force computation (cm)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "vehicle_downforce_coefficient",
 					"default": "0.3",
 					"description": "Force pressing vehicle into ground at speed"
@@ -308,31 +313,31 @@
 			"description": "Configures the Vehicle Transmission",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "transmission_final_ratio",
 					"default": "3.08",
 					"description": "The final gear ratio multiplies the transmission gear ratios"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "transmission_change_up_rpm",
 					"default": "4500",
 					"description": "Engine Revs at which gear up change ocurrs"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "transmission_change_down_rpm",
 					"default": "2000",
 					"description": "Engine Revs at which gear down change ocurrs"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "transmission_gear_change_time",
 					"default": "0.4",
 					"description": "Time it takes to switch gears (seconds)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "transmission_efficiency",
 					"default": "0.94",
 					"description": "Mechanical frictional losses mean transmission might operate at 0.94 (94% efficiency)"
@@ -346,7 +351,7 @@
 			"description_long": "Wheels can be updated in runtime by calling SetWheel again, you can for example change the suspension high or disable a wheel totally by toggling affected_by_engine off or setting radius to 0.",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"description": "Index of the wheel (0-N). Set it in ASC order"
 				},
@@ -356,19 +361,19 @@
 					"description": "Name of the bone to attach this wheel to"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "radius",
 					"default": "32",
 					"description": "Radius of the wheel"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "width",
 					"default": "20",
 					"description": "Width of the wheel"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_steer_angle",
 					"default": "50",
 					"description": "Steer angle in degrees for this wheel"
@@ -410,85 +415,85 @@
 					"description": "Straight Line Traction Control Enabled"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_brake_torque",
 					"default": "1500",
 					"description": "Max brake torque for this wheel (Nm)"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_handbrake_torque",
 					"default": "3000",
 					"description": "Max handbrake brake torque for this wheel (Nm). A handbrake should have a stronger brake torque than the brake"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "cornering_stiffness",
 					"default": "1000",
 					"description": "Tyre Cornering Ability"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "side_slip_modifier",
-					"default": "1",
+					"default": "1.0",
 					"description": "Wheel Lateral Skid Grip Loss, lower number less grip on skid"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "friction_force_multiplier",
-					"default": "2",
+					"default": "2.0",
 					"description": "Friction Force Multiplier"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "slip_threshold",
-					"default": "20",
+					"default": "20.0",
 					"description": "Wheel Longitudinal Slip Threshold"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "skid_threshold",
-					"default": "20",
+					"default": "20.0",
 					"description": "Wheel Lateral Skid Threshold"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_spring_rate",
-					"default": "250",
+					"default": "250.0",
 					"description": "Spring Force (N/m)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_spring_preload",
-					"default": "50",
+					"default": "50.0",
 					"description": "Spring Preload (N/m)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_max_raise",
-					"default": "10",
+					"default": "10.0",
 					"description": "How far the wheel can go above the resting position"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_max_drop",
-					"default": "10",
+					"default": "10.0",
 					"description": "How far the wheel can drop below the resting position"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_smoothing",
-					"default": "0",
+					"default": "0.0",
 					"description": "Smooth suspension [0-off, 10-max] - Warning might cause momentary visual inter-penetration of the wheel against objects/terrain"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_damping_ratio",
 					"default": "0.5",
 					"description": "Suspension damping, larger value causes the suspension to come to rest faster [range 0 to 1]"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "suspension_wheel_load_ratio",
 					"default": "0.5",
 					"description": "Amount wheel load effects wheel friction. <br/> - At 0 wheel friction is completely independent of the loading on the wheel (This is artificial as it always assumes even balance between all wheels) <br/> - At 1 wheel friction is based on the force pressing wheel into the ground. This is more realistic. <br/> - Lower value cures lift off over-steer, generally makes vehicle easier to handle under extreme motions."
@@ -514,7 +519,7 @@
 			"description_long": "Adds a Door at offset_location from root which will pose the Character at seat_location with seat_rotation rotation.",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat_index"
 				},
 				{
@@ -530,11 +535,11 @@
 					"name": "seat_rotation"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "trigger_radius"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "leave_lateral_offset",
 					"description": "It's where the Character will be ejected when leaving it (e.g. -150 for left door or 150 for right door)"
 				}
@@ -551,7 +556,7 @@
 					"name": "location"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "radius"
 				}
 			]
@@ -626,7 +631,7 @@
 			"description": "Gets a passenger from a seat",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat"
 				}
 			],
@@ -653,7 +658,7 @@
 			"description": "Gets the current RPM",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -663,7 +668,7 @@
 			"description": "Gets the current Gear",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		}
@@ -694,7 +699,7 @@
 					"name": "self"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "impact_force",
 					"description": "The intensity of the Hit normalized by the Vehicle's weight"
 				},
@@ -729,7 +734,7 @@
 					"name": "character"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat",
 					"description": "The seat index"
 				}
@@ -764,7 +769,7 @@
 					"name": "character"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat",
 					"description": "The seat index"
 				}
@@ -807,7 +812,7 @@
 					"name": "self"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage"
 				},
 				{

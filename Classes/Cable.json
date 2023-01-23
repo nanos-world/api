@@ -7,16 +7,21 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "boolean",
-			"name": "enable_visuals",
-			"default": "true",
-			"description": "Toggles the cable visuals"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_visuals",
+					"default": "true",
+					"description": "Toggles the cable visuals"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -78,17 +83,17 @@
 			"description": "Set the overall settings for this cable (visuals only)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "length",
 					"description": "Rest length of the cable. Default is 100"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "num_segments",
 					"description": "How many segments the cable has. Default is 10"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "solver_iterations",
 					"description": "The number of solver iterations controls how 'stiff' the cable is. Default is 0"
 				}
@@ -105,7 +110,7 @@
 					"description": "Force vector (world space) applied to all particles in cable. Default is Vector(0, 0, 0)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "gravity_scale",
 					"default": "1",
 					"description": "Scaling applied to world gravity affecting this cable. Default is 1"
@@ -133,19 +138,19 @@
 					"description": "Indicates whether the Twist limit is used"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "swing_1_limit",
 					"default": "0",
 					"description": "Angle of movement along the XY plane. This defines the first symmetric angle of the cone"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "swing_2_limit",
 					"default": "0",
 					"description": "Angle of movement along the XZ plane. This defines the second symmetric angle of the cone"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "twist_limit",
 					"default": "0",
 					"description": "Symmetric angle of roll along the X-axis"
@@ -174,13 +179,13 @@
 					"description": "Indicates the linear constraint applied along theZX-axis. Free implies no constraint at all. Locked implies no movement along Z is allowed. Limited implies the distance in the joint along all active axes must be less than the Distance provided"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "limit",
 					"default": "0",
 					"description": "The distance allowed between between the two joint reference frames. Distance applies on all axes enabled (one axis means line, two axes implies circle, three axes implies sphere)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "restitution",
 					"default": "0",
 					"description": "Controls the amount of bounce when the constraint is violated. A restitution value of 1 will bounce back with the same velocity the limit was hit. A value of 0 will stop dead"
@@ -192,13 +197,13 @@
 					"description": "Whether we want to use a soft constraint (spring)"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "stiffness",
 					"default": "0",
 					"description": "Stiffness of the soft constraint. Only used when Soft Constraint is on"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "damping",
 					"default": "0",
 					"description": "Damping of the soft constraint. Only used when Soft Constraint is on"
@@ -211,17 +216,17 @@
 			"description": "Set the rendering settings of this cable (visuals only)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "width",
 					"description": "How wide the cable geometry is. Default is 6"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "num_sides",
 					"description": "Number of sides of the cable geometry. Default is 4"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "tile_material",
 					"description": "How many times to repeat the material along the length of the cable. Default is 1"
 				}

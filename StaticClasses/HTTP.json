@@ -66,7 +66,7 @@
 					"table_properties": [
 						{
 							"name": "Status",
-							"type": "number"
+							"type": "integer"
 						},
 						{
 							"name": "Data",

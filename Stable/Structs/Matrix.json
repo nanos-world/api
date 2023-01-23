@@ -1,16 +1,21 @@
 {
 	"name": "Matrix",
 	"description": "A Matrix is an array of numbers this can be used for geometric and positional calculations. This is mainly used internally.",
-	"constructor": [
+	"constructors": [
 		{
-			"name": "rotation",
-			"type": "Rotator",
-			"description": "The rotation of the matrix"
-		},
-		{
-			"name": "origin",
-			"type": "Vector",
-			"description": "The origin of the matrix"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "rotation",
+					"type": "Rotator",
+					"description": "The rotation of the matrix"
+				},
+				{
+					"name": "origin",
+					"type": "Vector",
+					"description": "The origin of the matrix"
+				}
+			]
 		}
 	],
 	"functions": [

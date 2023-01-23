@@ -6,28 +6,33 @@
 		"Entity",
 		"Actor"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "ParticlePath",
-			"name": "asset"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_destroy",
-			"default": "true"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_activate",
-			"default": "true"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "ParticlePath",
+					"name": "asset"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_destroy",
+					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_activate",
+					"default": "true"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -59,7 +64,7 @@
 					"description": "The parameter name"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "value",
 					"description": "The float value"
 				}
@@ -76,7 +81,7 @@
 					"description": "The parameter name"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "value",
 					"description": "The int value"
 				}

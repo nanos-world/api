@@ -14,7 +14,7 @@
 					"description": "The callback that will be executed"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "milliseconds",
 					"default": "0",
 					"description": "The time in milliseconds to wait before executing the function"
@@ -28,7 +28,7 @@
 			],
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the timeout_id"
 				}
 			]
@@ -44,7 +44,7 @@
 					"description": "The callback that will be executed.<br/>Return false to stop it from being called."
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "milliseconds",
 					"default": "0",
 					"description": "The time in milliseconds the timer should delay in between executions of the specified function"
@@ -58,7 +58,7 @@
 			],
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the interval_id"
 				}
 			]
@@ -69,7 +69,7 @@
 			"description": "Stops the execution of the function specified in SetTimeout()",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timeout_id",
 					"description": "The ID value returned by SetTimeout() is used as the parameter for this method"
 				}
@@ -81,7 +81,7 @@
 			"description": "Stops the execution of the function specified in SetInterval()",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "interval_id",
 					"description": "The ID value returned by SetInterval() is used as the parameter for this method"
 				}
@@ -93,7 +93,7 @@
 			"description": "Binds a Timer to any Actor. The timer will be automatically cleared when the Actor is destroyed",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				},
@@ -110,7 +110,7 @@
 			"description": "Checks if a Timer is currently active or waiting to be triggered",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
@@ -128,14 +128,14 @@
 			"description": "Returns the time elapsed since the last tick",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
 			],
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "elapsed_time"
 				}
 			]
@@ -146,14 +146,14 @@
 			"description": "Returns the time remaining to the next tick",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
 			],
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "remaining_time"
 				}
 			]
@@ -164,7 +164,7 @@
 			"description": "Pauses the Timer",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
@@ -176,7 +176,7 @@
 			"description": "Resumes the Timer",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
@@ -188,7 +188,7 @@
 			"description": "Resets a Timer to start from beginning",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}

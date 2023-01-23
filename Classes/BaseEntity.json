@@ -19,7 +19,7 @@
 			"authority": "both",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"description": "The index of the Entity"
 				}
@@ -37,7 +37,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "Number of Entities of this class"
 				}
 			]
@@ -196,7 +196,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},

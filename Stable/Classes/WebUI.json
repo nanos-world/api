@@ -2,46 +2,51 @@
 	"name": "WebUI",
 	"description": "Class for spawning a dynamic Web Browser.",
 	"authority": "client",
-	"constructor": [
+	"constructors": [
 		{
-			"type": "string",
-			"name": "name",
-			"description": "Used for debugging logs"
-		},
-		{
-			"type": "HTMLPath",
-			"name": "path",
-			"description": "URL or <code>file://my_file.html</code> or <code>package://my-package/Client/file.html</code>"
-		},
-		{
-			"type": "boolean",
-			"name": "is_visible",
-			"default": "true",
-			"description": "if WebUI is visible on screen"
-		},
-		{
-			"type": "boolean",
-			"name": "is_transparent",
-			"default": "true",
-			"description": "if WebUI background is transparent"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_resize",
-			"default": "true",
-			"description": "if should auto resize when screen changes it's size (useful OFF when you are painting meshes with WebUI)"
-		},
-		{
-			"type": "number",
-			"name": "width",
-			"default": "0",
-			"description": "size of the WebUI width when you are not using auto_resize"
-		},
-		{
-			"type": "number",
-			"name": "height",
-			"default": "0",
-			"description": "size of the WebUI height when you are not using auto_resize"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "Used for debugging logs"
+				},
+				{
+					"type": "HTMLPath",
+					"name": "path",
+					"description": "Web URL or <a href='#html-path-searchers'>HTML File Path</a> as <code>file://my_file.html</code>"
+				},
+				{
+					"type": "boolean",
+					"name": "is_visible",
+					"default": "true",
+					"description": "if WebUI is visible on screen"
+				},
+				{
+					"type": "boolean",
+					"name": "is_transparent",
+					"default": "true",
+					"description": "if WebUI background is transparent"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_resize",
+					"default": "true",
+					"description": "if should auto resize when screen changes it's size (useful OFF when you are painting meshes with WebUI)"
+				},
+				{
+					"type": "integer",
+					"name": "width",
+					"default": "0",
+					"description": "size of the WebUI width when you are not using auto_resize"
+				},
+				{
+					"type": "integer",
+					"name": "height",
+					"default": "0",
+					"description": "size of the WebUI height when you are not using auto_resize"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -107,6 +112,43 @@
 			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport)<br/>You MUST call this after you don't need keyboard input anymore"
 		},
 		{
+			"name": "SetLayout",
+			"authority": "client",
+			"description": "Sets the Canvas Layout on Screen",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_location",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "size",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_min",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_max",
+					"description": "",
+					"default": "Vector(1, 1)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "alignment",
+					"description": "",
+					"default": "Vector(0.5, 0.5)"
+				}
+			]
+		},
+		{
 			"name": "SetFreeze",
 			"authority": "client",
 			"description": "Freezes the WebUI Rendering to the surface (it will still execute the JS under the hood)",
@@ -118,7 +160,7 @@
 			]
 		},
 		{
-			"name": "SetVisible",
+			"name": "SetVisibility",
 			"authority": "client",
 			"description": "Toggles the visibility",
 			"parameters": [
@@ -144,17 +186,17 @@
 					"default": "true"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "volume",
 					"default": "1.0"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "inner_radius",
 					"default": "400"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "falloff_distance",
 					"default": "3600"
 				},
@@ -176,21 +218,21 @@
 			"description": "Sends a Mouse Event into the WebUI programatically",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mouse_x",
 					"description": "Position X of the mouse"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mouse_y",
 					"description": "Position Y of the mouse"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_x"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_y"
 				}
 			]
@@ -205,14 +247,14 @@
 					"name": "key_type"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "key_code"
 				},
 				{
 					"type": "WebUIModifier",
 					"name": "modifiers",
 					"default": "WebUIModifier.None",
-					"description": "Accept bitwise operators"
+					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				}
 			]
 		},
@@ -222,12 +264,12 @@
 			"description": "Sends a Mouse Move Event into the WebUI programatically",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mouse_x",
 					"description": "Position X of the mouse"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mouse_y",
 					"description": "Position Y of the mouse"
 				},
@@ -235,7 +277,7 @@
 					"type": "WebUIModifier",
 					"name": "modifiers",
 					"default": "WebUIModifier.None",
-					"description": "Accept bitwise operators"
+					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				},
 				{
 					"type": "boolean",
@@ -251,12 +293,12 @@
 			"description_long": "You must send both Down and Up to make it work properly",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mouse_x",
 					"description": "Position X of the mouse"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "mouse_y",
 					"description": "Position Y of the mouse"
 				},
@@ -274,10 +316,10 @@
 					"type": "WebUIModifier",
 					"name": "modifiers",
 					"default": "WebUIModifier.None",
-					"description": "Accept bitwise operators"
+					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "click_count",
 					"default": "1",
 					"description": "Use 2 for double click event"
@@ -300,7 +342,7 @@
 			"description": "Gets the network ID of this entity",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -328,6 +370,16 @@
 			"name": "IsVisible",
 			"authority": "client",
 			"description": "Returns if this WebUI is currently visible",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "IsFrozen",
+			"authority": "client",
+			"description": "Returns if this WebUI is currently frozen",
 			"return": [
 				{
 					"type": "boolean"
@@ -378,12 +430,12 @@
 	],
 	"events": [
 		{
-			"name": "Failed",
+			"name": "Fail",
 			"authority": "client",
 			"description": "Triggered when this page fails to load",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "error_code"
 				},
 				{

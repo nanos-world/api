@@ -81,7 +81,7 @@
 			"authority": "server",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_players",
 					"description": "The maximum players"
 				},
@@ -319,7 +319,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the server Port"
 				}
 			]
@@ -330,7 +330,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the server QueryPort"
 				}
 			]
@@ -341,7 +341,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the max players configured"
 				}
 			]
@@ -374,7 +374,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the server Tick Rate"
 				}
 			]
@@ -385,7 +385,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the unix timestamp"
 				}
 			]
@@ -453,7 +453,7 @@
 			"authority": "server",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_time",
 					"description": ""
 				}

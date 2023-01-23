@@ -7,47 +7,52 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "SkeletalMeshPath",
-			"name": "skeletal_mesh",
-			"default": "nanos-world::SK_Mannequin"
-		},
-		{
-			"type": "CollisionType",
-			"name": "collision_type",
-			"default": "CollisionType.Normal"
-		},
-		{
-			"type": "boolean",
-			"name": "gravity_enabled",
-			"default": "true"
-		},
-		{
-			"type": "number",
-			"name": "max_health",
-			"default": "100",
-			"description": "Current / Max Health"
-		},
-		{
-			"type": "SoundPath",
-			"name": "death_sound",
-			"default": "nanos-world::A_Male_01_Death",
-			"description": "Played when Character dies"
-		},
-		{
-			"type": "SoundPath",
-			"name": "pain_sound",
-			"default": "nanos-world::A_Male_01_Pain",
-			"description": "Played when Character takes damage"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh",
+					"default": "nanos-world::SK_Mannequin"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Normal"
+				},
+				{
+					"type": "boolean",
+					"name": "gravity_enabled",
+					"default": "true"
+				},
+				{
+					"type": "integer",
+					"name": "max_health",
+					"default": "100",
+					"description": "Current / Max Health"
+				},
+				{
+					"type": "SoundPath",
+					"name": "death_sound",
+					"default": "nanos-world::A_Male_01_Death",
+					"description": "Played when Character dies"
+				},
+				{
+					"type": "SoundPath",
+					"name": "pain_sound",
+					"default": "nanos-world::A_Male_01_Pain",
+					"description": "Played when Character takes damage"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -56,7 +61,7 @@
 			"name": "ApplyDamage",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the damage applied"
 				}
 			],
@@ -64,7 +69,7 @@
 			"description_long": "Do damage to a character, will trigger all related events and apply modified damage based on bone. Also will apply impulse if it's a heavy explosion",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage"
 				},
 				{
@@ -164,7 +169,7 @@
 					"name": "vehicle"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat",
 					"default": "0"
 				}
@@ -259,7 +264,7 @@
 					"name": "location"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "acceptance_radius",
 					"default": "50"
 				}
@@ -277,7 +282,7 @@
 					"description": "Actor to follow"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "acceptance_radius",
 					"default": "50",
 					"description": "Radius to consider success"
@@ -295,7 +300,7 @@
 					"description": "Whether to stop when failed to reach the target"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "update_rate",
 					"default": "0.25",
 					"description": "How often to recalculate the AI path"
@@ -339,17 +344,17 @@
 					"default": "false"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "blend_in_time",
 					"default": "0.25"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "blend_out_time",
 					"default": "0.25"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "play_rate",
 					"default": "1.0"
 				},
@@ -491,37 +496,37 @@
 			"description": "Sets the Movement Max Acceleration of this Character",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "walking",
 					"default": "768"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "parachuting",
 					"default": "512"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "skydiving",
 					"default": "768"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "falling",
 					"default": "128"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "swimming",
 					"default": "256"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "swimming_surface",
 					"default": "256"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "flying",
 					"default": "1024"
 				}
@@ -533,32 +538,32 @@
 			"description": "Sets the Movement Braking Settings of this Character",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "ground_friction",
 					"default": "2"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "braking_friction_factor",
 					"default": "2"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "braking_walking",
 					"default": "96"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "braking_flying",
 					"default": "3000"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "braking_swimming",
 					"default": "10"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "braking_falling",
 					"default": "0"
 				}
@@ -704,12 +709,12 @@
 			"description_long": "Sets this Character's Capsule size (will affect Camera location and Character's collision)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "radius",
 					"description": "Default is 42"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "half_height",
 					"description": "Default is 96"
 				}
@@ -725,7 +730,7 @@
 					"name": "bone_name"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "multiplier"
 				}
 			]
@@ -748,7 +753,7 @@
 			"description_long": "Set the Fall Damage multiplier taken when falling from High places.<br/><br/>Setting to 0 will make the Character to do not take any damage",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage",
 					"description": "Default is 10"
 				}
@@ -771,7 +776,7 @@
 			"description": "Sets the Field of View multiplier",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "multiplier"
 				}
 			]
@@ -783,7 +788,7 @@
 			"description_long": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "time",
 					"description": "Default is 1 second"
 				}
@@ -807,7 +812,7 @@
 			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "scale"
 				}
 			]
@@ -819,7 +824,7 @@
 			"description_long": "Sets the Health of this Character. You can only call it on alive characters (call Respawn first)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "new_health"
 				}
 			]
@@ -831,7 +836,7 @@
 			"description_long": "Set the Impact Damage taken when being roamed by things.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage",
 					"description": "Default is 10"
 				}
@@ -854,7 +859,7 @@
 			"description": "Sets the velocity of the jump",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "velocity",
 					"description": "Default is 450"
 				}
@@ -866,7 +871,7 @@
 			"description": "Sets the MaxHealth of this Character",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "new_max_health"
 				}
 			]
@@ -893,7 +898,7 @@
 					"description": "Morph Target Name"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "value"
 				}
 			]
@@ -904,7 +909,7 @@
 			"description": "Returns the value of a Morph Target",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "value of the Morph Target"
 				}
 			],
@@ -953,37 +958,37 @@
 					"description": "Whether the drive targets are in world space or local"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "orientation_strength",
 					"default": "0",
 					"description": "The strength used to correct orientation error"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "angular_velocity_strength",
 					"default": "0",
 					"description": "The strength used to correct angular velocity error"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "position_strength",
 					"default": "0",
 					"description": "The strength used to correct linear position error. Only used for non-local simulation"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "velocity_strength",
 					"default": "0",
 					"description": "The strength used to correct linear velocity error. Only used for non-local simulation"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "max_linear_force",
 					"default": "0",
 					"description": "The max force used to correct linear errors"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "max_angular_force",
 					"default": "0",
 					"description": "The max force used to correct angular errors"
@@ -1034,7 +1039,7 @@
 			"description": "Set the Punch Damage this Character will apply on others",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage",
 					"description": "Default is 15"
 				}
@@ -1068,7 +1073,7 @@
 			"description": "Sets all speed multiplier",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "multiplier",
 					"description": "1 is normal"
 				}
@@ -1091,7 +1096,7 @@
 			"description": "Sets a Team which will disable damaging same Team Members",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "team",
 					"description": "0 is neutral and default"
 				}
@@ -1255,11 +1260,11 @@
 					"table_properties": [
 						{
 							"name": "Radius",
-							"type": "number"
+							"type": "integer"
 						},
 						{
 							"name": "HalfHeight",
-							"type": "number"
+							"type": "integer"
 						}
 					]
 				}
@@ -1307,7 +1312,7 @@
 			"description": "Gets the Damage Multiplier of a bone",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "the damage multiplier of the bone"
 				}
 			],
@@ -1324,7 +1329,7 @@
 			"description": "Gets the Fall Damage",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1374,7 +1379,7 @@
 			"description": "Gets the gravity scale",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -1384,7 +1389,7 @@
 			"description": "Gets the current health",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1394,7 +1399,7 @@
 			"description": "Gets the impact damage taken",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1404,7 +1409,7 @@
 			"description": "Gets the Jump Z Velocity",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1414,7 +1419,7 @@
 			"description": "Gets the Max Health",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1465,7 +1470,7 @@
 			"description": "Gets the punch damage",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1475,7 +1480,7 @@
 			"description": "Gets the speed multiplier",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -1505,7 +1510,7 @@
 			"description": "Gets the Team",
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -1596,7 +1601,7 @@
 					"name": "self"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "last_damage_taken"
 				},
 				{
@@ -1655,7 +1660,7 @@
 					"name": "vehicle"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat_index"
 				}
 			]
@@ -1674,7 +1679,7 @@
 					"name": "vehicle"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "seat_index"
 				}
 			],
@@ -1763,11 +1768,11 @@
 					"name": "self"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "old_health"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "new_health"
 				}
 			]
@@ -1959,7 +1964,7 @@
 					"name": "weapon"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "ammo_to_reload"
 				}
 			]
@@ -2023,7 +2028,7 @@
 					"name": "self"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage"
 				},
 				{

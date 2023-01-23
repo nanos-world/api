@@ -4,18 +4,6 @@
 	"authority": "server",
 	"static_functions": [
 		{
-			"name": "BroadcastChatMessage",
-			"description": "Sends a chat message to everyone",
-			"authority": "server",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "message",
-					"description": "The message to send to everyone"
-				}
-			]
-		},
-		{
 			"name": "ChangeMap",
 			"description": "Restarts the server in a new Map, restarts all packages and reconnects all players",
 			"authority": "server",
@@ -28,6 +16,18 @@
 			]
 		},
 		{
+			"name": "LoadPackage",
+			"description": "Loads a Package",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_folder_name",
+					"description": "The package to load"
+				}
+			]
+		},
+		{
 			"name": "ReloadPackage",
 			"description": "Reloads a Package",
 			"authority": "server",
@@ -36,23 +36,6 @@
 					"type": "string",
 					"name": "package_folder_name",
 					"description": "The package to reload"
-				}
-			]
-		},
-		{
-			"name": "SendChatMessage",
-			"description": "Sends a chat message to Player only",
-			"authority": "server",
-			"parameters": [
-				{
-					"type": "Player",
-					"name": "player",
-					"description": "The player who receive the message"
-				},
-				{
-					"type": "string",
-					"name": "message",
-					"description": "The message"
 				}
 			]
 		},
@@ -98,7 +81,7 @@
 			"authority": "server",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_players",
 					"description": "The maximum players"
 				},
@@ -336,7 +319,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the server Port"
 				}
 			]
@@ -347,7 +330,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the server QueryPort"
 				}
 			]
@@ -358,7 +341,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the max players configured"
 				}
 			]
@@ -375,12 +358,23 @@
 			]
 		},
 		{
+			"name": "GetCustomSettings",
+			"description": "Returns the Server Custom Settings passed as parameter or New Game screen",
+			"authority": "server",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "a list of the Custom Settings in the format (key = value)"
+				}
+			]
+		},
+		{
 			"name": "GetTickRate",
 			"description": "Returns the Configured Tick Rate",
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the server Tick Rate"
 				}
 			]
@@ -391,7 +385,7 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the unix timestamp"
 				}
 			]
@@ -409,58 +403,6 @@
 		}
 	],
 	"events": [
-		{
-			"name": "Chat",
-			"description": "Called when a player types something in the chat",
-			"authority": "server",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "Return false to do not send the message"
-				}
-			],
-			"arguments": [
-				{
-					"type": "string",
-					"name": "text",
-					"description": "The message send by the player"
-				},
-				{
-					"type": "Player",
-					"name": "player",
-					"description": "The player who send the message"
-				}
-			]
-		},
-		{
-			"name": "Console",
-			"description": "Called when a console command is submitted",
-			"authority": "server",
-			"arguments": [
-				{
-					"type": "string",
-					"name": "text",
-					"description": "The console command"
-				}
-			]
-		},
-		{
-			"name": "LogEntry",
-			"description": "Called when a Server log is received",
-			"authority": "server",
-			"arguments": [
-				{
-					"type": "string",
-					"name": "text",
-					"description": "The log"
-				},
-				{
-					"type": "LogType",
-					"name": "type",
-					"description": "The log type"
-				}
-			]
-		},
 		{
 			"name": "Start",
 			"description": "Server has been started",
@@ -511,7 +453,7 @@
 			"authority": "server",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_time",
 					"description": ""
 				}

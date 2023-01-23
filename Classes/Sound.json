@@ -6,74 +6,79 @@
 		"Entity",
 		"Actor"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location",
-			"description": "Only used if 3D sound"
-		},
-		{
-			"type": "SoundPath",
-			"name": "asset",
-			"description": "The Sound Asset to load"
-		},
-		{
-			"type": "boolean",
-			"name": "is_2D_sound",
-			"default": "false",
-			"description": "Whether to spawn it as 2D or 3D"
-		},
-		{
-			"type": "boolean",
-			"name": "auto_destroy",
-			"default": "true",
-			"description": "Whether to destroy after finished playing"
-		},
-		{
-			"type": "SoundType",
-			"name": "sound_type",
-			"default": "SoundType.SFX",
-			"description": "Used to apply user's volume settings"
-		},
-		{
-			"type": "number",
-			"name": "volume",
-			"default": "1"
-		},
-		{
-			"type": "number",
-			"name": "pitch",
-			"default": "1"
-		},
-		{
-			"type": "number",
-			"name": "inner_radius",
-			"default": "400",
-			"description": "Only used if 3D sound"
-		},
-		{
-			"type": "number",
-			"name": "falloff_distance",
-			"default": "3600",
-			"description": "Only used if 3D sound"
-		},
-		{
-			"type": "AttenuationFunction",
-			"name": "attenuation_function",
-			"default": "Linear",
-			"description": "Only used if 3D sound"
-		},
-		{
-			"type": "boolean",
-			"name": "keep_playig_when_silent",
-			"default": "false",
-			"description": "Only used if 3D sound - Use with caution, it may cause performance issues!"
-		},
-		{
-			"type": "SoundLoopMode",
-			"name": "loop_mode",
-			"default": "Default",
-			"description": "Whether should force sound to loop"
+			"description": "Normal",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "Only used if 3D sound"
+				},
+				{
+					"type": "SoundPath",
+					"name": "asset",
+					"description": "The Sound Asset to load"
+				},
+				{
+					"type": "boolean",
+					"name": "is_2D_sound",
+					"default": "false",
+					"description": "Whether to spawn it as 2D or 3D"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_destroy",
+					"default": "true",
+					"description": "Whether to destroy after finished playing"
+				},
+				{
+					"type": "SoundType",
+					"name": "sound_type",
+					"default": "SoundType.SFX",
+					"description": "Used to apply user's volume settings"
+				},
+				{
+					"type": "float",
+					"name": "volume",
+					"default": "1"
+				},
+				{
+					"type": "float",
+					"name": "pitch",
+					"default": "1"
+				},
+				{
+					"type": "float",
+					"name": "inner_radius",
+					"default": "400",
+					"description": "Only used if 3D sound"
+				},
+				{
+					"type": "float",
+					"name": "falloff_distance",
+					"default": "3600",
+					"description": "Only used if 3D sound"
+				},
+				{
+					"type": "AttenuationFunction",
+					"name": "attenuation_function",
+					"default": "Linear",
+					"description": "Only used if 3D sound"
+				},
+				{
+					"type": "boolean",
+					"name": "keep_playig_when_silent",
+					"default": "false",
+					"description": "Only used if 3D sound - Use with caution, it may cause performance issues!"
+				},
+				{
+					"type": "SoundLoopMode",
+					"name": "loop_mode",
+					"default": "Default",
+					"description": "Whether should force sound to loop"
+				}
+			]
 		}
 	],
     "functions": [
@@ -83,16 +88,16 @@
 			"description": "Plays the sound with a fade effect",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "fade_in_duration"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "fade_volume_level",
 					"default": "1"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "start_time",
 					"default": "0"
 				}
@@ -104,11 +109,11 @@
 			"description": "Stops the sound with a fade effect",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "fade_out_duration"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "fade_volume_level",
 					"default": "0"
 				},
@@ -125,7 +130,7 @@
 			"description": "Starts the sound",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "start_time",
 					"default": "0"
 				}
@@ -137,7 +142,7 @@
 			"description": "If a 3D Sound, sets the distance which the sound is inaudible",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "falloff_distance"
 				}
 			]
@@ -148,7 +153,7 @@
 			"description": "If a 3D Sound, sets the distance within the volume is 100%",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "inner_radius"
 				}
 			]
@@ -159,7 +164,7 @@
 			"description": "Sets lowpass filter frequency. Sets 0 to disable it.",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "frequency"
 				}
 			]
@@ -182,7 +187,7 @@
 			"description": "Sets the Sound's pitch",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "new_pitch"
 				}
 			]
@@ -193,7 +198,7 @@
 			"description": "Sets the Sound's volume",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "new_volume",
 					"description": "0-1"
 				}
@@ -210,7 +215,7 @@
 			"description": "Stops the sound after the provided delay",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delay"
 				}
 			]
@@ -238,7 +243,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetDuration",
@@ -248,7 +253,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetPitch",
@@ -257,7 +262,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetVolume",
@@ -266,7 +271,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetLowPassFilter",
@@ -275,7 +280,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetInnerRadius",
@@ -284,7 +289,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetFalloffDistance",
@@ -293,7 +298,7 @@
 		{
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			],
 			"name": "GetSoundType",

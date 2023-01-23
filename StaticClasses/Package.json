@@ -177,6 +177,17 @@
 			]
 		},
 		{
+			"name": "GetCompatibilityVersion",
+			"description": "Gives the package compatibility version",
+			"authority": "both",
+			"return": [
+				{
+					"type": "string",
+					"description": "The package compatibility version"
+				}
+			]
+		},
+		{
 			"name": "GetPersistentData",
 			"description": "Gets the Persistent Value from the disk",
 			"description_large": "Gets a Persistent Value from the disk<br/>Pass no parameter to return the whole table, or a key to get a specific value",

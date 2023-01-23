@@ -7,41 +7,46 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "StaticMeshPath",
-			"name": "asset"
-		},
-		{
-			"type": "CollisionType",
-			"name": "collision_type",
-			"default": "CollisionType.Auto",
-			"description": "Setting <code>CollisionType.Auto</code> will make it automatically switch between <b>Normal</b> and <b>IgnoreOnlyPawn</b> if they are smaller than radius <b>40</b> units."
-		},
-		{
-			"type": "boolean",
-			"name": "gravity_enabled",
-			"default": "true"
-		},
-		{
-			"type": "GrabMode",
-			"name": "grab_mode",
-			"default": "GrabMode.Auto",
-			"description": "Whether or not the Prop can be grabbed"
-		},
-		{
-			"type": "CCDMode",
-			"name": "ccd_mode",
-			"default": "CCDMode.Auto",
-			"description": "Whether or not the Prop should have CCD enabled (disabling it may cause Props passing through objects if it's kinda small). It's smart to force it disabled on 'visual only' props."
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "asset"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Auto",
+					"description": "Setting <code>CollisionType.Auto</code> will make it automatically switch between <b>Normal</b> and <b>IgnoreOnlyPawn</b> if they are smaller than radius <b>40</b> units."
+				},
+				{
+					"type": "boolean",
+					"name": "gravity_enabled",
+					"default": "true"
+				},
+				{
+					"type": "GrabMode",
+					"name": "grab_mode",
+					"default": "GrabMode.Auto",
+					"description": "Whether or not the Prop can be grabbed"
+				},
+				{
+					"type": "CCDMode",
+					"name": "ccd_mode",
+					"default": "CCDMode.Auto",
+					"description": "Whether or not the Prop should have CCD enabled (disabling it may cause Props passing through objects if it's kinda small). It's smart to force it disabled on 'visual only' props."
+				}
+			]
 		}
 	],
 	"functions": [
@@ -62,12 +67,12 @@
 			"description": "Sets the Physics damping of this Prop",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "linear_damping",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "angular_damping",
 					"description": ""
 				}
@@ -147,7 +152,7 @@
 					"description": "The prop which has been hit"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "impact_force",
 					"description": "The intensity of the Hit normalized by the Prop's weight"
 				},
@@ -202,7 +207,7 @@
 					"description": "the object that takes the damage"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "damage",
 					"description": "amount of damage"
 				},

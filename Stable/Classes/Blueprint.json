@@ -7,21 +7,46 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location",
-			"default": "Vector(0, 0, 0)"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"default": "Rotator(0, 0, 0)"
+				},
+				{
+					"type": "BlueprintPath",
+					"name": "blueprint_asset",
+					"default": ""
+				}
+			]
 		},
 		{
-			"type": "Rotator",
-			"name": "rotation",
-			"default": "Rotator(0, 0, 0)"
-		},
-		{
-			"type": "BlueprintPath",
-			"name": "blueprint_asset",
-			"default": ""
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"default": "Rotator(0, 0, 0)"
+				},
+				{
+					"type": "BlueprintPath",
+					"name": "blueprint_asset",
+					"default": ""
+				}
+			]
 		}
 	],
 	"functions": [
@@ -64,6 +89,38 @@
 					"type": "function",
 					"name": "callback",
 					"description": "Callback function to call (the first argument is the blueprint itself)"
+				}
+			]
+		},
+		{
+			"name": "SetBlueprintPropertyValue",
+			"description": "Sets a Blueprint Property/Variable value directly",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				},
+				{
+					"type": "any",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "GetBlueprintPropertyValue",
+			"description": "Gets a Blueprint Property/Variable value",
+			"authority": "client",
+			"return": [
+				{
+					"type": "any",
+					"description": "the value"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
 				}
 			]
 		}

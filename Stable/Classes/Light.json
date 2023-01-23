@@ -6,70 +6,75 @@
 		"Entity",
 		"Actor"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation",
-			"default": "Rotator(0, 0, 0)",
-			"description": "Relevant only for Rect and Spot LightTypes"
-		},
-		{
-			"type": "Color",
-			"name": "color",
-			"default": "Color(1, 1, 1)"
-		},
-		{
-			"type": "LightType",
-			"name": "light_type",
-			"default": "LightType.Point"
-		},
-		{
-			"type": "number",
-			"name": "intensity",
-			"default": "30"
-		},
-		{
-			"type": "number",
-			"name": "attenuation_radius",
-			"default": "250"
-		},
-		{
-			"type": "number",
-			"name": "cone_angle",
-			"default": "44",
-			"description": "Relevant only for Spot LightType"
-		},
-		{
-			"type": "number",
-			"name": "inner_cone_angle_percent",
-			"default": "0",
-			"description": "Inner Cone Angle Percent (Relevant only for Spot LightType) (0-1)"
-		},
-		{
-			"type": "number",
-			"name": "max_daw_distance",
-			"default": "5000",
-			"description": "Max Draw Distance (Good for performance) - 0 for infinite"
-		},
-		{
-			"type": "boolean",
-			"name": "use_inverse_squared_falloff",
-			"default": "true",
-			"description": "Whether to use physically based inverse squared distance falloff, where Attenuation Radius is only clamping the light's contribution. (Spot and Point types only)"
-		},
-		{
-			"type": "boolean",
-			"name": "cast_shadows",
-			"default": "true"
-		},
-		{
-			"type": "boolean",
-			"name": "visible",
-			"default": "true"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relevant only for Rect and Spot LightTypes"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"default": "Color(1, 1, 1)"
+				},
+				{
+					"type": "LightType",
+					"name": "light_type",
+					"default": "LightType.Point"
+				},
+				{
+					"type": "float",
+					"name": "intensity",
+					"default": "30"
+				},
+				{
+					"type": "float",
+					"name": "attenuation_radius",
+					"default": "250"
+				},
+				{
+					"type": "float",
+					"name": "cone_angle",
+					"default": "44",
+					"description": "Relevant only for Spot LightType"
+				},
+				{
+					"type": "float",
+					"name": "inner_cone_angle_percent",
+					"default": "0",
+					"description": "Inner Cone Angle Percent (Relevant only for Spot LightType) (0-1)"
+				},
+				{
+					"type": "float",
+					"name": "max_daw_distance",
+					"default": "5000",
+					"description": "Max Draw Distance (Good for performance) - 0 for infinite"
+				},
+				{
+					"type": "boolean",
+					"name": "use_inverse_squared_falloff",
+					"default": "true",
+					"description": "Whether to use physically based inverse squared distance falloff, where Attenuation Radius is only clamping the light's contribution. (Spot and Point types only)"
+				},
+				{
+					"type": "boolean",
+					"name": "cast_shadows",
+					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "visible",
+					"default": "true"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -112,7 +117,7 @@
 			"authority": "both",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "intensity"
 				}
 			]
@@ -122,7 +127,7 @@
 			"authority": "both",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "attenuation_radius"
 				}
 			]
@@ -141,7 +146,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -150,7 +155,7 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},

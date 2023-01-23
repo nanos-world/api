@@ -13,7 +13,7 @@
 					"description": "The new Material to apply"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "-1",
 					"description": "The index to apply<br/>-1 means all indices"
@@ -31,14 +31,14 @@
 					"description": "The Canvas object to use as a materia"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "-1",
 					"description": "The index to apply<br/>-1 means all indices"
 				}
 			]
 		},
-		
+
 		{
 			"authority": "client",
 			"name": "SetMaterialFromSceneCapture",
@@ -50,7 +50,7 @@
 					"description": "The SceneCapture object to use as a material"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "-1",
 					"description": "The index to apply<br/>-1 means all indices"
@@ -68,28 +68,28 @@
 					"description": "The WebUI object to use as a material"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "-1",
 					"description": "The index to apply<br/>-1 means all indices"
 				}
 			]
 		},
-		
+
 		{
 			"authority": "both",
 			"name": "ResetMaterial",
 			"description": "Resets the material from the specified index to the original one",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "index",
 					"default": "-1",
 					"description": "The index to apply<br/>-1 means all indices"
 				}
 			]
 		},
-		
+
 		{
 			"authority": "both",
 			"name": "SetMaterialColorParameter",
@@ -107,7 +107,7 @@
 				}
 			]
 		},
-		
+
 		{
 			"authority": "both",
 			"name": "SetMaterialScalarParameter",
@@ -119,7 +119,7 @@
 					"description": "The name of the material parameter"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "scalar",
 					"description": "The value to set"
 				}
@@ -159,7 +159,7 @@
 				}
 			]
 		},
-		
+
 		{
 			"authority": "both",
 			"name": "SetPhysicalMaterial",

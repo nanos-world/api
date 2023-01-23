@@ -24,30 +24,35 @@
 			"return": "Quat"
 		}
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"name": "X",
-			"type": "number",
-			"default": "0",
-			"description": "The quaternion's X-component"
-		},
-		{
-			"name": "Y",
-			"type": "number",
-			"default": "0",
-			"description": "The quaternion's Y-component"
-		},
-		{
-			"name": "Z",
-			"type": "number",
-			"default": "0",
-			"description": "The quaternion's Z-component"
-		},
-		{
-			"name": "W",
-			"type": "number",
-			"default": "0",
-			"description": "The quaternion's W-component"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "X",
+					"type": "number",
+					"default": "0",
+					"description": "The quaternion's X-component"
+				},
+				{
+					"name": "Y",
+					"type": "number",
+					"default": "0",
+					"description": "The quaternion's Y-component"
+				},
+				{
+					"name": "Z",
+					"type": "number",
+					"default": "0",
+					"description": "The quaternion's Z-component"
+				},
+				{
+					"name": "W",
+					"type": "number",
+					"default": "0",
+					"description": "The quaternion's W-component"
+				}
+			]
 		}
 	],
 	"properties": [

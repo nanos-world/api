@@ -7,23 +7,28 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "StaticMeshPath",
-			"name": "static_mesh_asset"
-		},
-		{
-			"type": "CollisionType",
-			"name": "collision_type",
-			"default": "CollisionType.Normal"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_asset"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Normal"
+				}
+			]
 		}
 	],
 	"functions": [

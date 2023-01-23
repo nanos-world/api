@@ -6,60 +6,65 @@
 		"Entity",
 		"Actor"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location",
-			"default": "Vector(0, 0, 0)",
-			"description": "Location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation",
-			"default": "Rotator(0, 0, 0)",
-			"description": "Rotation"
-		},
-		{
-			"type": "number",
-			"name": "width",
-			"default": "128",
-			"description": "Width of the generated Texture"
-		},
-		{
-			"type": "number",
-			"name": "height",
-			"default": "128",
-			"description": "Height of the generated Texture"
-		},
-		{
-			"type": "number",
-			"name": "render_rate",
-			"default": "0.033",
-			"description": "Render Rate (how frequent is the capture)"
-		},
-		{
-			"type": "number",
-			"name": "view_distance",
-			"default": "5000",
-			"description": "Maximum distance of capturing"
-		},
-		{
-			"type": "number",
-			"name": "fov_angle",
-			"default": "90",
-			"description": "FOV"
-		},
-		{
-			"type": "boolean",
-			"name": "enable_distance_optimization",
-			"default": "true",
-			"description": "Reduces the rendering frequency if the entities with this Material are too far"
-		},
-		{
-			"type": "boolean",
-			"name": "force_always_rendering",
-			"default": "false",
-			"description": "Forces it always re-rendering even if no Material using it is on screen"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"default": "Vector(0, 0, 0)",
+					"description": "Location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Rotation"
+				},
+				{
+					"type": "integer",
+					"name": "width",
+					"default": "128",
+					"description": "Width of the generated Texture"
+				},
+				{
+					"type": "integer",
+					"name": "height",
+					"default": "128",
+					"description": "Height of the generated Texture"
+				},
+				{
+					"type": "float",
+					"name": "render_rate",
+					"default": "0.033",
+					"description": "Render Rate (how frequent is the capture)"
+				},
+				{
+					"type": "float",
+					"name": "view_distance",
+					"default": "5000",
+					"description": "Maximum distance of capturing"
+				},
+				{
+					"type": "float",
+					"name": "fov_angle",
+					"default": "90",
+					"description": "FOV"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_distance_optimization",
+					"default": "true",
+					"description": "Reduces the rendering frequency if the entities with this Material are too far"
+				},
+				{
+					"type": "boolean",
+					"name": "force_always_rendering",
+					"default": "false",
+					"description": "Forces it always re-rendering even if no Material using it is on screen"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -108,7 +113,7 @@
 			"authority": "client",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "angle"
 				}
 			]
@@ -135,11 +140,11 @@
 			"authority": "client",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "width"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "height"
 				}
 			]
@@ -150,7 +155,7 @@
 			"authority": "client",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "render_rate"
 				}
 			]

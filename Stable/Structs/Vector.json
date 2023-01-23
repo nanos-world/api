@@ -38,24 +38,29 @@
 			"return": "Vector"
 		}
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"name": "X",
-			"type": "number",
-			"default": "0",
-			"description": "X Coordinate"
-		},
-		{
-			"name": "Y",
-			"type": "number",
-			"default": "0",
-			"description": "Y Coordinate"
-		},
-		{
-			"name": "Z",
-			"type": "number",
-			"default": "0",
-			"description": "Z Coordinate"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "X",
+					"type": "number",
+					"default": "0",
+					"description": "X Coordinate"
+				},
+				{
+					"name": "Y",
+					"type": "number",
+					"default": "0",
+					"description": "Y Coordinate"
+				},
+				{
+					"name": "Z",
+					"type": "number",
+					"default": "0",
+					"description": "Z Coordinate"
+				}
+			]
 		}
 	],
 	"properties": [

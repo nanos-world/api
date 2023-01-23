@@ -7,38 +7,43 @@
 		"Actor",
 		"Paintable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "string",
-			"name": "text"
-		},
-		{
-			"type": "Vector",
-			"name": "scale",
-			"default": "Vector(1, 1, 1)"
-		},
-		{
-			"type": "Color",
-			"name": "color",
-			"default": "Color(1, 1, 1, 1)"
-		},
-		{
-			"type": "FontType",
-			"name": "font_type",
-			"default": "FontType.Roboto"
-		},
-		{
-			"type": "TextRenderAlignCamera",
-			"name": "align_camera",
-			"default": "TextRenderAlignCamera.Unaligned"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "string",
+					"name": "text"
+				},
+				{
+					"type": "Vector",
+					"name": "scale",
+					"default": "Vector(1, 1, 1)"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"default": "Color(1, 1, 1, 1)"
+				},
+				{
+					"type": "FontType",
+					"name": "font_type",
+					"default": "FontType.Roboto"
+				},
+				{
+					"type": "TextRenderAlignCamera",
+					"name": "align_camera",
+					"default": "TextRenderAlignCamera.Unaligned"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -82,12 +87,12 @@
 			"description": "Sets the Glyph representation settings to generate the 3D Mesh for this text render",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "extrude",
 					"default": "0"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "level",
 					"default": "0"
 				},
@@ -97,7 +102,7 @@
 					"default": "TextRenderBevelType.Convex"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "bevel_segments",
 					"default": "8"
 				},
@@ -114,12 +119,12 @@
 			"description": "Sets the Max Size of the TextRender, optionally scaling it proportionally",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_width",
 					"default": "0"
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "max_height",
 					"default": "0"
 				},
@@ -147,17 +152,17 @@
 			"description": "Sets the Text & Font settings for this text render",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "kerning",
 					"default": "0"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "line_spacing",
 					"default": "0"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "word_spacing",
 					"default": "0"
 				},

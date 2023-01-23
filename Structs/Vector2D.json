@@ -31,18 +31,23 @@
 			"return": "Vector2D"
 		}
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"name": "X",
-			"type": "number",
-			"default": "0",
-			"description": "X Coordinate"
-		},
-		{
-			"name": "Y",
-			"type": "number",
-			"default": "0",
-			"description": "Y Coordinate"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "X",
+					"type": "number",
+					"default": "0",
+					"description": "X Coordinate"
+				},
+				{
+					"name": "Y",
+					"type": "number",
+					"default": "0",
+					"description": "Y Coordinate"
+				}
+			]
 		}
 	],
 	"properties": [

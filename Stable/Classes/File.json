@@ -2,17 +2,22 @@
 	"name": "File",
 	"description": "A File represents an entry to a system file.",
 	"authority": "server",
-	"constructor": [
+	"constructors": [
 		{
-			"type": "string",
-			"name": "file_path",
-			"description": "Path relative to server executable"
-		},
-		{
-			"type": "boolean",
-			"name": "truncate",
-			"default": "false",
-			"description": "Whether or not to clear the file upon opening it"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "file_path",
+					"description": "Path relative to server executable"
+				},
+				{
+					"type": "boolean",
+					"name": "truncate",
+					"default": "false",
+					"description": "Whether or not to clear the file upon opening it"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -82,7 +87,7 @@
 			"description": "Reads characters from the File and returns it. Also moves the file pointer to the latest read position. Pass 0 to read the whole file",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "length",
 					"default": "0",
 					"description": "Length to be read from file"
@@ -95,7 +100,7 @@
 			"description": "Reads characters from the File asynchronously.",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "length",
 					"description": "Length to be read from file"
 				},
@@ -146,7 +151,7 @@
 			"description": "Sets the file pointer to a specific position",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "position",
 					"description": "Position to offset the file pointer"
 				}
@@ -155,7 +160,7 @@
 		{
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "file size"
 				}
 			],
@@ -169,7 +174,7 @@
 			"description": "Skips n (amount) positions from the current file pointer position",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "amount",
 					"description": "Amount to offset the file pointer"
 				}
@@ -178,7 +183,7 @@
 		{
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "current file pointer position"
 				}
 			],
@@ -201,11 +206,11 @@
 	],
 	"static_functions": [
 		{
-			"type": "number",
+			"type": "integer",
 			"name": "Time",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "the last update time in unix time"
 				}
 			],
@@ -242,7 +247,7 @@
 			"name": "Remove",
 			"return": [
 				{
-					"type": "number",
+					"type": "integer",
 					"description": "amount of files deleted"
 				}
 			],

@@ -108,7 +108,7 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "integer"
 				}
 			]
 		},
@@ -196,7 +196,7 @@
 					"description": "Which Event to input"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "amount_depressed",
 					"description": "The amount pressed",
 					"default": "1"
@@ -316,12 +316,12 @@
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "mouse_x",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "mouse_y",
 					"description": ""
 				}
@@ -344,12 +344,12 @@
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "mouse_x",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "mouse_y",
 					"description": ""
 				}
@@ -373,17 +373,17 @@
 			"authority": "client",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_time",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "num_samples",
 					"description": ""
 				}
@@ -395,17 +395,17 @@
 			"authority": "client",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta_time",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "integer",
 					"name": "num_samples",
 					"description": ""
 				}
@@ -417,17 +417,17 @@
 			"authority": "client",
 			"arguments": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "mouse_x",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "mouse_y",
 					"description": ""
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "delta",
 					"description": ""
 				}

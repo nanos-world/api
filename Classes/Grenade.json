@@ -8,39 +8,44 @@
 		"Paintable",
 		"Pickable"
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"type": "Vector",
-			"name": "location"
-		},
-		{
-			"type": "Rotator",
-			"name": "rotation"
-		},
-		{
-			"type": "StaticMeshPath",
-			"name": "static_mesh_asset",
-			"default": "nanos-world::SM_Grenade_G67"
-		},
-		{
-			"type": "ParticlePath",
-			"name": "explosion_particles",
-			"default": "nanos-world::P_Grenade_Special"
-		},
-		{
-			"type": "SoundPath",
-			"name": "explosion_sound",
-			"default": "nanos-world::A_Explosion_Large"
-		},
-		{
-			"type": "CollisionType",
-			"name": "collision_type",
-			"default": "CollisionType.Normal"
-		},
-		{
-			"type": "boolean",
-			"name": "gravity_enabled",
-			"default": "true"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_asset",
+					"default": "nanos-world::SM_Grenade_G67"
+				},
+				{
+					"type": "ParticlePath",
+					"name": "explosion_particles",
+					"default": "nanos-world::P_Grenade_Special"
+				},
+				{
+					"type": "SoundPath",
+					"name": "explosion_sound",
+					"default": "nanos-world::A_Explosion_Large"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Normal"
+				},
+				{
+					"type": "boolean",
+					"name": "gravity_enabled",
+					"default": "true"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -55,31 +60,31 @@
 			"description": "Sets Damage parameters of this Grenade",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "base_damage",
 					"default": "90",
 					"description": "Max damage when inner radius"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "minimum_damage",
 					"default": "0",
 					"description": "Min damage when outer radius"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "damage_inner_radius",
 					"default": "200",
 					"description": "Radius which damage will be 100%"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "damage_outer_radius",
 					"default": "1000",
 					"description": "Radius which damage will be interpoled through falloff"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "damage_falloff",
 					"default": "1",
 					"description": "Lerp function between Max and Min damage"
@@ -92,7 +97,7 @@
 			"description": "Set Time until Explosion after thrown",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "time",
 					"description": "Time in seconds"
 				}
@@ -109,7 +114,7 @@
 			"description": "Damage at Inner Radius",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -119,7 +124,7 @@
 			"description": "Radius which BaseDamage will apply proportionally",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -129,7 +134,7 @@
 			"description": "Radius which MinimumDamage will apply",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -139,7 +144,7 @@
 			"description": "Radius which BaseDamage will apply",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -149,7 +154,7 @@
 			"description": "Damage at Outer Radius",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -159,7 +164,7 @@
 			"description": "Time until Explosion",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		},
@@ -169,7 +174,7 @@
 			"description": "Impulse applied when throwing",
 			"return": [
 				{
-					"type": "number"
+					"type": "float"
 				}
 			]
 		}

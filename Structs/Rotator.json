@@ -24,24 +24,29 @@
 			"return": "Rotator"
 		}
 	],
-	"constructor": [
+	"constructors": [
 		{
-			"name": "Pitch",
-			"type": "number",
-			"default": "0",
-			"description": "Pitch"
-		},
-		{
-			"name": "Yaw",
-			"type": "number",
-			"default": "0",
-			"description": "Yaw"
-		},
-		{
-			"name": "Roll",
-			"type": "number",
-			"default": "0",
-			"description": "Roll"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"name": "Pitch",
+					"type": "number",
+					"default": "0",
+					"description": "Pitch"
+				},
+				{
+					"name": "Yaw",
+					"type": "number",
+					"default": "0",
+					"description": "Yaw"
+				},
+				{
+					"name": "Roll",
+					"type": "number",
+					"default": "0",
+					"description": "Roll"
+				}
+			]
 		}
 	],
 	"properties": [

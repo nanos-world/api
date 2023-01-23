@@ -2,22 +2,27 @@
 	"name": "Database",
 	"description": "The Database entity provides programmers a way to access SQL databases easily through scripting.",
 	"authority": "server",
-	"constructor": [
+	"constructors": [
 		{
-			"type": "DatabaseEngine",
-			"name": "database_engine",
-			"description": "Database Engine"
-		},
-		{
-			"type": "string",
-			"name": "connection_string",
-			"description": "<a href='/docs/scripting-reference/classes/database#connection-string'>Connection String</a> used to create and connect to the database"
-		},
-		{
-			"type": "number",
-			"name": "pool_size",
-			"default": "10",
-			"description": "Size of the connection pool when calling several queries simultaneously"
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "DatabaseEngine",
+					"name": "database_engine",
+					"description": "Database Engine"
+				},
+				{
+					"type": "string",
+					"name": "connection_string",
+					"description": "<a href='#connection-string'>Connection String</a> used to create and connect to the database"
+				},
+				{
+					"type": "integer",
+					"name": "pool_size",
+					"default": "10",
+					"description": "Size of the connection pool when calling several queries simultaneously"
+				}
+			]
 		}
 	],
 	"functions": [
@@ -27,7 +32,7 @@
 			"description": "Closes the Database"
 		},
 		{
-			"name": "Execute",
+			"name": "ExecuteAsync",
 			"authority": "server",
 			"description": "Execute a query asyncronously",
 			"parameters": [
@@ -51,17 +56,7 @@
 			]
 		},
 		{
-			"return": [
-				{
-					"type": "number",
-					"description": "affected rows"
-				},
-				{
-					"type": "string",
-					"description": "error (if any)"
-				}
-			],
-			"name": "ExecuteSync",
+			"name": "Execute",
 			"authority": "server",
 			"description": "Execute a query syncronously",
 			"parameters": [
@@ -76,10 +71,20 @@
 					"default": "nil",
 					"description": "Sequence of parameters to escape into the Query"
 				}
+			],
+			"return": [
+				{
+					"type": "integer",
+					"description": "affected rows"
+				},
+				{
+					"type": "string",
+					"description": "error (if any)"
+				}
 			]
 		},
 		{
-			"name": "Select",
+			"name": "SelectAsync",
 			"authority": "server",
 			"description": "Execute a select query asyncronously",
 			"parameters": [
@@ -103,17 +108,7 @@
 			]
 		},
 		{
-			"return": [
-				{
-					"type": "table[]",
-					"description": "rows fetched"
-				},
-				{
-					"type": "string",
-					"description": "error (if any)"
-				}
-			],
-			"name": "SelectSync",
+			"name": "Select",
 			"authority": "server",
 			"description": "Selects a query syncronously",
 			"parameters": [
@@ -127,6 +122,16 @@
 					"name": "parameters...",
 					"default": "nil",
 					"description": "Sequence of parameters to escape into the Query"
+				}
+			],
+			"return": [
+				{
+					"type": "table[]",
+					"description": "rows fetched"
+				},
+				{
+					"type": "string",
+					"description": "error (if any)"
 				}
 			]
 		}

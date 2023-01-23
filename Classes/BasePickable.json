@@ -62,7 +62,7 @@
 			"description": "Pulls the usage of this Pickable (will start firing if this is a weapon)",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "release_use_after",
 					"default": "-1",
 					"description": "Time in seconds to automatically release the usage (-1 will not release, 0 will release one tick after)"
@@ -200,7 +200,7 @@
 					"description": "The Actor that was hit"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "impact_force",
 					"description": "The intensity of the hit normalized by the Pickable's weight"
 				},
