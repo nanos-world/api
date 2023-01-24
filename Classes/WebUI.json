@@ -103,7 +103,7 @@
 			"name": "ExecuteJavaScript",
 			"authority": "client",
 			"description": "Executes a JavaScript code in the Browser",
-			"description_long": "Executes a JavaScript code in the Browser<br/>Note: This method is experimental and should be used cautiously. Events are still the prefered way of communicating between Packages and WebUI.",
+			"description_long": "Executes a JavaScript code in the Browser<br/>Note: This method is experimental and should be used cautiously. Events are still the preferred way of communicating between Packages and WebUI.",
 			"parameters": [
 				{
 					"type": "string",
