@@ -354,6 +354,15 @@
 		},
 		{
 			"authority": "client",
+			"name": "GetCameraArmLength",
+			"return": [
+				{
+					"type": "float"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "GetCameraRotation",
 			"return": [
 				{

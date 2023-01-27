@@ -174,11 +174,11 @@
 		{
 			"name": "SetVisibility",
 			"authority": "client",
-			"description": "Toggles the visibility",
+			"description": "Sets the visibility in screen",
 			"parameters": [
 				{
-					"type": "boolean",
-					"name": "is_visible"
+					"type": "WebUIVisibility",
+					"name": "visibility"
 				}
 			]
 		},
