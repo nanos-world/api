@@ -21,8 +21,7 @@
 				},
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh",
-					"default": "nanos-world::SK_Mannequin"
+					"name": "skeletal_mesh"
 				},
 				{
 					"type": "CollisionType",

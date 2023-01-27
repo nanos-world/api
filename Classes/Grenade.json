@@ -60,25 +60,25 @@
 			"description": "Sets Damage parameters of this Grenade",
 			"parameters": [
 				{
-					"type": "float",
+					"type": "integer",
 					"name": "base_damage",
 					"default": "90",
 					"description": "Max damage when inner radius"
 				},
 				{
-					"type": "float",
+					"type": "integer",
 					"name": "minimum_damage",
 					"default": "0",
 					"description": "Min damage when outer radius"
 				},
 				{
-					"type": "float",
+					"type": "integer",
 					"name": "damage_inner_radius",
 					"default": "200",
 					"description": "Radius which damage will be 100%"
 				},
 				{
-					"type": "float",
+					"type": "integer",
 					"name": "damage_outer_radius",
 					"default": "1000",
 					"description": "Radius which damage will be interpoled through falloff"
