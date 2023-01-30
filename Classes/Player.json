@@ -355,6 +355,14 @@
 		{
 			"authority": "client",
 			"name": "GetCameraArmLength",
+			"parameters": [
+				{
+					"name": "return_target",
+					"type": "boolean",
+					"default": "false",
+					"description": "Whether to return the current (false) or target (true) value"
+				}
+			],
 			"return": [
 				{
 					"type": "float"
