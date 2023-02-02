@@ -125,8 +125,8 @@
 		},
 		{
 			"authority": "client",
-			"name": "GetMappedKey",
-			"description": "Returns the key bound to a keybinding",
+			"name": "GetMappedKeys",
+			"description": "Returns the keys bound to a keybinding",
 			"parameters": [
 				{
 					"type": "string",
@@ -136,7 +136,8 @@
 			],
 			"return": [
 				{
-					"type": "string"
+					"type": "string[]",
+					"description": "list of all keys"
 				}
 			]
 		},
@@ -151,7 +152,19 @@
 			"description": "Returns a table with all Scripting KeyBindings",
 			"return": [
 				{
-					"type": "table"
+					"type": "table",
+					"description": "in the format <code>{ \"[BINDING_NAME]\" = { \"[KEY_01]\", \"[KEY_02]\", ... }, ... }</code>"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetGameKeyBindings",
+			"description": "Returns a table with all Game KeyBindings",
+			"return": [
+				{
+					"type": "table",
+					"description": "in the format <code>{ \"[BINDING_NAME]\" = { \"[KEY_01]\", \"[KEY_02]\", ... }, ... }</code>"
 				}
 			]
 		},
@@ -259,7 +272,12 @@
 				{
 					"type": "string",
 					"name": "key_name",
-					"description": "The message send by the player"
+					"description": "The key pressed"
+				},
+				{
+					"type": "float?",
+					"name": "delta",
+					"description": "The amount depressed in case of this is an Axis input"
 				}
 			]
 		},
@@ -277,7 +295,12 @@
 				{
 					"type": "string",
 					"name": "key_name",
-					"description": ""
+					"description": "The key pressed"
+				},
+				{
+					"type": "float?",
+					"name": "delta",
+					"description": "The amount depressed in case of this is an Axis input"
 				}
 			]
 		},
@@ -295,7 +318,12 @@
 				{
 					"type": "string",
 					"name": "key_name",
-					"description": ""
+					"description": "The key pressed"
+				},
+				{
+					"type": "float?",
+					"name": "delta",
+					"description": "The amount depressed in case of this is an Axis input"
 				}
 			]
 		},

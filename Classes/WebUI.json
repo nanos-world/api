@@ -379,12 +379,12 @@
 			]
 		},
 		{
-			"name": "IsVisible",
+			"name": "GetVisibility",
 			"authority": "client",
-			"description": "Returns if this WebUI is currently visible",
+			"description": "Returns the current WebUI visibility",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "WebUIVisibility"
 				}
 			]
 		},
