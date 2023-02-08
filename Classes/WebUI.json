@@ -17,9 +17,9 @@
 					"description": "Web URL or <a href='#html-path-searchers'>HTML File Path</a> as <code>file://my_file.html</code>"
 				},
 				{
-					"type": "boolean",
-					"name": "is_visible",
-					"default": "true",
+					"type": "WebUIVisibility",
+					"name": "visibility",
+					"default": "WebUIVisibility.Visible",
 					"description": "if WebUI is visible on screen"
 				},
 				{

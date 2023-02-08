@@ -366,6 +366,17 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "StopAnimation",
+			"description": "Stops an Animation Montage on this character",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_asset"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "RemoveSkeletalMeshAttached",
 			"description": "Removes, if existing, a SkeletalMesh from this Character given it's custom ID",
@@ -1120,17 +1131,6 @@
 				{
 					"type": "AimMode",
 					"name": "aim_mode"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "StopAnimation",
-			"description": "Stops an Animation Montage on this character",
-			"parameters": [
-				{
-					"type": "AnimationPath",
-					"name": "animation_asset"
 				}
 			]
 		},
