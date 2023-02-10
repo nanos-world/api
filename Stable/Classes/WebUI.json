@@ -17,9 +17,9 @@
 					"description": "Web URL or <a href='#html-path-searchers'>HTML File Path</a> as <code>file://my_file.html</code>"
 				},
 				{
-					"type": "boolean",
-					"name": "is_visible",
-					"default": "true",
+					"type": "WebUIVisibility",
+					"name": "visibility",
+					"default": "WebUIVisibility.Visible",
 					"description": "if WebUI is visible on screen"
 				},
 				{
@@ -100,6 +100,18 @@
 			]
 		},
 		{
+			"name": "ExecuteJavaScript",
+			"authority": "client",
+			"description": "Executes a JavaScript code in the Browser",
+			"description_long": "Executes a JavaScript code in the Browser<br/>Note: This method is experimental and should be used cautiously. Events are still the preferred way of communicating between Packages and WebUI.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "javascript_code"
+				}
+			]
+		},
+		{
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
@@ -162,11 +174,11 @@
 		{
 			"name": "SetVisibility",
 			"authority": "client",
-			"description": "Toggles the visibility",
+			"description": "Sets the visibility in screen",
 			"parameters": [
 				{
-					"type": "boolean",
-					"name": "is_visible"
+					"type": "WebUIVisibility",
+					"name": "visibility"
 				}
 			]
 		},
@@ -367,12 +379,12 @@
 			]
 		},
 		{
-			"name": "IsVisible",
+			"name": "GetVisibility",
 			"authority": "client",
-			"description": "Returns if this WebUI is currently visible",
+			"description": "Returns the current WebUI visibility",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "WebUIVisibility"
 				}
 			]
 		},

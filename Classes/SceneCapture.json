@@ -108,6 +108,24 @@
 			]
 		},
 		{
+			"name": "EncodeToBase64",
+			"description": "Takes a snapshot of the SceneCapture and returns a Base64 of it",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "ImageFormat",
+					"name": "image_format",
+					"default": "ImageFormat.JPEG",
+					"description": "Which format to generate - JPEG is fastest but discards Alpha channel"
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
 			"name": "SetFOVAngle",
 			"description": "Sets the FOV",
 			"authority": "client",

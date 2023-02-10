@@ -334,11 +334,38 @@
 			]
 		},
 		{
+			"authority": "both",
+			"name": "GetAccountIconURL",
+			"description": "Return a URL which can be used through WebUI to display the Player's Steam Avatar (64x64)",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
 			"authority": "client",
 			"name": "GetCameraLocation",
 			"return": [
 				{
 					"type": "Vector"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetCameraArmLength",
+			"parameters": [
+				{
+					"name": "return_target",
+					"type": "boolean",
+					"default": "false",
+					"description": "Whether to return the current (false) or target (true) value"
+				}
+			],
+			"return": [
+				{
+					"type": "float"
 				}
 			]
 		},

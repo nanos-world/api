@@ -94,6 +94,11 @@
 			]
 		},
 		{
+			"name": "Clear",
+			"description": "Clears all messages",
+			"authority": "client"
+		},
+		{
 			"name": "BroadcastMessage",
 			"description": "Sends a chat message to all Players",
 			"authority": "server",

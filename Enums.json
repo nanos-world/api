@@ -544,6 +544,16 @@
 			"value": "7"
 		}
 	],
+	"ImageFormat": [
+		{
+			"key": "JPEG",
+			"value": "0"
+		},
+		{
+			"key": "PNG",
+			"value": "1"
+		}
+	],
 	"InputEvent": [
 		{
 			"key": "Pressed",

@@ -137,6 +137,33 @@
 		},
 		{
 			"authority": "client",
+			"name": "IsSpawned",
+			"description": "Returns if the Ultra Dynamic Sky was spawned",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "including_weather",
+					"description": "if to check for Weather Actor too"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "GetWeather",
+			"description": "Gets the current weather",
+			"return": [
+				{
+					"type": "WeatherType"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "ChangeWeather",
 			"description": "Gets the current time",
 			"parameters": [

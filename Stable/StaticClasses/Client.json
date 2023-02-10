@@ -16,6 +16,16 @@
 			]
 		},
 		{
+			"name": "GetNearClipPlane",
+			"description": "Gets the Near Clip Plane value",
+			"authority": "client",
+			"return": [
+				{
+					"type": "float"
+				}
+			]
+		},
+		{
 			"name": "SetDebugEnabled",
 			"description": "Enables/Disables Debug settings and Client Console to be used",
 			"authority": "client",

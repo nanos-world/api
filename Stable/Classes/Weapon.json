@@ -289,6 +289,52 @@
 			]
 		},
 		{
+			"authority": "both",
+			"name": "PlayAnimation",
+			"description": "Plays an Animation on this Weapon",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_path"
+				},
+				{
+					"type": "string",
+					"name": "slot_name",
+					"default": "DefaultSlot"
+				},
+				{
+					"type": "boolean",
+					"name": "loop_indefinitely",
+					"default": "false",
+					"description": "This parameter is only used if the Weapon has an Animation Blueprint"
+				},
+				{
+					"type": "float",
+					"name": "blend_in_time",
+					"default": "0.25",
+					"description": "This parameter is only used if the Weapon has an Animation Blueprint"
+				},
+				{
+					"type": "float",
+					"name": "blend_out_time",
+					"default": "0.25",
+					"description": "This parameter is only used if the Weapon has an Animation Blueprint"
+				},
+				{
+					"type": "float",
+					"name": "play_rate",
+					"default": "1.0",
+					"description": "This parameter is only used if the Weapon has an Animation Blueprint"
+				},
+				{
+					"type": "boolean",
+					"name": "stop_all_montages",
+					"default": "false",
+					"description": "Stops all running Montages from the same Group. This parameter is only used if the Weapon has an Animation Blueprint"
+				}
+			]
+		},
+		{
 			"authority": "server",
 			"name": "SetParticlesBulletTrail",
 			"description": "Particle of the Bullet flying",

@@ -1315,5 +1315,19 @@
 			"key": "Middle",
 			"value": "2"
 		}
+	],
+	"WebUIVisibility": [
+		{
+			"key": "Hidden",
+			"value": "0"
+		},
+		{
+			"key": "Visible",
+			"value": "1"
+		},
+		{
+			"key": "VisibleNotHitTestable",
+			"value": "2"
+		}
 	]
 }

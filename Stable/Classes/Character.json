@@ -21,8 +21,7 @@
 				},
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh",
-					"default": "nanos-world::SK_Mannequin"
+					"name": "skeletal_mesh"
 				},
 				{
 					"type": "CollisionType",
@@ -363,6 +362,17 @@
 					"name": "stop_all_montages",
 					"default": "false",
 					"description": "Stops all running Montages from the same Group"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "StopAnimation",
+			"description": "Stops an Animation Montage on this character",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_asset"
 				}
 			]
 		},
@@ -1121,17 +1131,6 @@
 				{
 					"type": "AimMode",
 					"name": "aim_mode"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "StopAnimation",
-			"description": "Stops an Animation Montage on this character",
-			"parameters": [
-				{
-					"type": "AnimationPath",
-					"name": "animation_asset"
 				}
 			]
 		},

@@ -56,6 +56,33 @@
 					"description": "Other arguments to format with the message using string.format"
 				}
 			]
+		},
+		{
+			"name": "RegisterCommand",
+			"description": "Registers a new Console Command",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "command",
+					"description": "The command"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "The callback to be called when the command is inputted"
+				},
+				{
+					"type": "string",
+					"name": "description",
+					"description": "The command description to display in the console"
+				},
+				{
+					"type": "string[]",
+					"name": "parameters",
+					"description": "The list of supported parameters to display in the console"
+				}
+			]
 		}
 	],
 	"events" : [

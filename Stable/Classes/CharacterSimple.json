@@ -1,0 +1,558 @@
+{
+	"name": "CharacterSimple",
+	"description": "CharacterSimple is a simpler Character implementation with basic Movement implementation. Aimed for custom NPCs or basic Pawns.",
+	"authority": "both",
+	"inheritance": [
+		"Entity",
+		"Actor",
+		"Paintable"
+	],
+	"constructors": [
+		{
+			"description": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "SkeletalMeshPath|StaticMeshPath",
+					"name": "mesh"
+				},
+				{
+					"type": "BlueprintPath",
+					"name": "custom_animation_blueprint",
+					"default": ""
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Normal"
+				},
+				{
+					"type": "boolean",
+					"name": "gravity_enabled",
+					"default": "true"
+				}
+			]
+		}
+	],
+	"functions": [
+		{
+			"authority": "authority",
+			"name": "PlayAnimation",
+			"description": "Plays an Animation Montage on this character",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_path"
+				},
+				{
+					"type": "AnimationSlotType",
+					"name": "slot_type",
+					"default": "AnimationSlotType.FullBody"
+				},
+				{
+					"type": "boolean",
+					"name": "loop_indefinitely",
+					"default": "false"
+				},
+				{
+					"type": "float",
+					"name": "blend_in_time",
+					"default": "0.25"
+				},
+				{
+					"type": "float",
+					"name": "blend_out_time",
+					"default": "0.25"
+				},
+				{
+					"type": "float",
+					"name": "play_rate",
+					"default": "1.0"
+				},
+				{
+					"type": "boolean",
+					"name": "stop_all_montages",
+					"default": "false",
+					"description": "Stops all running Montages from the same Group"
+				}
+			]
+		},
+		{
+			"authority": "authority",
+			"name": "StopAnimation",
+			"description": "Stops an Animation Montage on this character",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_asset"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "AddSkeletalMeshAttached",
+			"description": "Spawns and Attaches a SkeletalMesh into this Character",
+			"description_long": "Spawns and Attaches a SkeletalMesh into this Character, the SkeletalMesh must have the same Skeletal used by the Character Mesh, and will follow all animations from it. Uses a custom ID to be used for removing it further.<br/><br/>For customizing the Materials specific of a SkeletalMeshAttached, please use the following syntax in the Paintable methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Used further for removing or applying material settings on it"
+				},
+				{
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh_asset",
+					"default": ""
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "AddStaticMeshAttached",
+			"description": "Spawns and Attaches a StaticMesh into this Character",
+			"description_long": "Spawns and Attaches a StaticMesh into this Character in a Socket with relative Location and Rotation. Uses a custom ID to be used for removing it further<br/><br/>For customizing the Materials specific of a StaticMeshAttached, please use the following syntax as the <code>parameter_name</code> in the Paintable methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Used further for removing or applying material settings on it"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_asset",
+					"default": ""
+				},
+				{
+					"type": "string",
+					"name": "socket",
+					"default": ""
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if existing, a SkeletalMesh from this Character given it's custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if existing, a StaticMesh from this Character given it's custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllStaticMeshesAttached",
+			"description": "Removes all StaticMeshes attached"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllSkeletalMeshesAttached",
+			"description": "Removes all SkeletalMeshes attached"
+		},
+		{
+			"authority": "authority",
+			"name": "SetMesh",
+			"description": "Changes the Character Mesh on the fly",
+			"parameters": [
+				{
+					"type": "SkeletalMeshPath|StaticMeshPath",
+					"name": "mesh_asset"
+				},
+				{
+					"type": "boolean",
+					"name": "adjust_capsule_size",
+					"description": "Auto adjust the capsule size based on the Mesh size"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMesh",
+			"description": "Gets the Skeletal Mesh Asset",
+			"return": [
+				{
+					"type": "SkeletalMeshPath|StaticMeshPath"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMovingTo",
+			"description": "Gets the Moving To location",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "the moving to location or Vector(0, 0, 0) if not moving"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "MoveTo",
+			"description": "AI: Makes this Character to walk to the Location",
+			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "float",
+					"name": "acceptance_radius",
+					"default": "50"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Follow",
+			"description": "AI: Makes this Character to follow another actor",
+			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"parameters": [
+				{
+					"type": "Actor",
+					"name": "actor",
+					"description": "Actor to follow"
+				},
+				{
+					"type": "float",
+					"name": "acceptance_radius",
+					"default": "50",
+					"description": "Radius to consider success"
+				},
+				{
+					"type": "boolean",
+					"name": "stop_on_succeed",
+					"default": "false",
+					"description": "Whether to stop when reaching the target"
+				},
+				{
+					"type": "boolean",
+					"name": "stop_on_fail",
+					"default": "false",
+					"description": "Whether to stop when failed to reach the target"
+				},
+				{
+					"type": "float",
+					"name": "update_rate",
+					"default": "0.25",
+					"description": "How often to recalculate the AI path"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "StopMovement",
+			"description": "AI: Stops the movement",
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event [MoveCompleted](character#movecompleted)"
+		},
+		{
+			"authority": "both",
+			"name": "GetPlayer",
+			"description": "Gets the possessing Player",
+			"return": [
+				{
+					"type": "Player?"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetControlRotation",
+			"description": "Gets the Control Rotation",
+			"return": [
+				{
+					"type": "Rotator"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "HideBone",
+			"description": "Hides a bone of this Character",
+			"description_long": "Hides a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name",
+					"default": "",
+					"description": "Bone to hide"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "UnHideBone",
+			"description": "UnHide a bone of this Character",
+			"description_long": "UnHide a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name",
+					"description": "Bone to unhide"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "IsBoneHidden",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the bone is hidden"
+				}
+			],
+			"description": "Gets if a bone is hidden",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name",
+					"description": "Bone to check"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Jump",
+			"description": "Triggers this Character to jump"
+		},
+		{
+			"authority": "server",
+			"name": "SetJumpZVelocity",
+			"description": "Sets the velocity of the jump",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "velocity",
+					"description": "Default is 450"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetMaxAcceleration",
+			"description": "Sets the max acceleration",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "acceleration",
+					"description": "Default is 2048"
+				}
+			]
+		},
+		{
+			"authority": "authority",
+			"name": "SetCapsuleSize",
+			"description": "Sets this Character's Capsule size",
+			"description_long": "Sets this Character's Capsule size (will affect Camera location and Character's collision)",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "radius",
+					"description": "Default is 42"
+				},
+				{
+					"type": "integer",
+					"name": "half_height",
+					"description": "Default is 96"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCanJump",
+			"description": "Sets if this Character is allowed to Jump",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_jump"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCanCrouch",
+			"description": "Sets if this Character is allowed to Crouch and to Prone",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_crouch"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetBrakingSettings",
+			"description": "Sets the Movement Braking Settings of this Character",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "ground_friction",
+					"default": "2"
+				},
+				{
+					"type": "float",
+					"name": "braking_friction_factor",
+					"default": "2"
+				},
+				{
+					"type": "integer",
+					"name": "braking_walking",
+					"default": "96"
+				},
+				{
+					"type": "integer",
+					"name": "braking_flying",
+					"default": "3000"
+				},
+				{
+					"type": "integer",
+					"name": "braking_swimming",
+					"default": "10"
+				},
+				{
+					"type": "integer",
+					"name": "braking_falling",
+					"default": "0"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSpringArmSettings",
+			"description": "Sets the Spring Arm Settings of this Character",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "relative_location"
+				},
+				{
+					"type": "float",
+					"name": "target_arm_length"
+				},
+				{
+					"type": "Vector",
+					"name": "socket_offset"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_camera_lag"
+				},
+				{
+					"type": "float",
+					"name": "camera_lag_speed"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetRotationSettings",
+			"description": "Sets the Rotation Settings of this Character",
+			"parameters": [
+				{
+					"type": "Rotator",
+					"name": "rotation_rate"
+				},
+				{
+					"type": "boolean",
+					"name": "use_controller_desired_rotation"
+				},
+				{
+					"type": "boolean",
+					"name": "orient_rotation_to_movement"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetPawnSettings",
+			"description": "Sets the Pawn Settings of this Character",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "use_controller_rotation_pitch"
+				},
+				{
+					"type": "boolean",
+					"name": "use_controller_rotation_yaw"
+				},
+				{
+					"type": "boolean",
+					"name": "use_controller_rotation_roll"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAnimationBlueprint",
+			"description": "Sets the Animation Blueprint of this Character",
+			"parameters": [
+				{
+					"type": "BlueprintPath",
+					"name": "custom_animation_blueprint"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "both",
+			"name": "Possess",
+			"description": "When Character is possessed",
+			"arguments": [
+				{
+					"type": "CharacterSimple",
+					"name": "self"
+				},
+				{
+					"type": "Player",
+					"name": "possesser"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "UnPossess",
+			"description": "When Character is unpossessed",
+			"arguments": [
+				{
+					"type": "CharacterSimple",
+					"name": "self"
+				},
+				{
+					"type": "Player",
+					"name": "old_possesser"
+				}
+			]
+		}
+	]
+}
