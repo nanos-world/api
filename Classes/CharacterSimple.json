@@ -494,6 +494,21 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetSpeedSettings",
+			"description": "Sets the Speed Settings of this Character",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "max_walk_speed"
+				},
+				{
+					"type": "integer",
+					"name": "max_walk_speed_crouched"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetPawnSettings",
 			"description": "Sets the Pawn Settings of this Character",
 			"parameters": [
