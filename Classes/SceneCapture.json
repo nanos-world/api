@@ -126,6 +126,24 @@
 			]
 		},
 		{
+			"name": "EncodeToBase64Async",
+			"description": "Takes a snapshot of the SceneCapture and returns a Base64 of it (asynchronously)",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "ImageFormat",
+					"name": "image_format",
+					"default": "ImageFormat.JPEG",
+					"description": "Which format to generate - JPEG is fastest but discards Alpha channel"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback in the format (base_64: string)"
+				}
+			]
+		},
+		{
 			"name": "SetFOVAngle",
 			"description": "Sets the FOV",
 			"authority": "client",
@@ -197,6 +215,19 @@
 				{
 					"type": "boolean",
 					"name": "enabled"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Capture",
+			"authority": "client",
+			"description": "Triggered when this SceneCapture does an update/renders a frame",
+			"arguments": [
+				{
+					"type": "SceneCapture",
+					"name": "self"
 				}
 			]
 		}
