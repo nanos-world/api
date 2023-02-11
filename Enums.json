@@ -552,6 +552,10 @@
 		{
 			"key": "PNG",
 			"value": "1"
+		},
+		{
+			"key": "BMP",
+			"value": "2"
 		}
 	],
 	"InputEvent": [
