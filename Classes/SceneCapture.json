@@ -72,7 +72,13 @@
 					"type": "Actor",
 					"name": "actor"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"RemoveRenderActor",
+					"ClearRenderActors"
+				]
+			}
 		},
 		{
 			"name": "RemoveRenderActor",
@@ -83,12 +89,24 @@
 					"type": "Actor",
 					"name": "actor"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"AddRenderActor",
+					"ClearRenderActors"
+				]
+			}
 		},
 		{
 			"name": "ClearRenderActors",
 			"description": "Clears the Render Only list",
-			"authority": "client"
+			"authority": "client",
+			"relations": {
+				"functions": [
+					"AddRenderActor",
+					"RemoveRenderActor"
+				]
+			}
 		},
 		{
 			"name": "SetFreeze",
@@ -117,7 +135,12 @@
 				{
 					"type": "string"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"EncodeToBase64Async"
+				]
+			}
 		},
 		{
 			"name": "EncodeToBase64Async",
@@ -135,7 +158,12 @@
 					"name": "callback",
 					"description": "Callback in the format (base_64: string)"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"EncodeToBase64"
+				]
+			}
 		},
 		{
 			"name": "SetFOVAngle",
