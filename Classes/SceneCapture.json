@@ -56,13 +56,7 @@
 					"type": "boolean",
 					"name": "enable_distance_optimization",
 					"default": "true",
-					"description": "Reduces the rendering frequency if the entities with this Material are too far"
-				},
-				{
-					"type": "boolean",
-					"name": "force_always_rendering",
-					"default": "false",
-					"description": "Forces it always re-rendering even if no Material using it is on screen"
+					"description": "Reduces the rendering frequency if the entities with this Material are too far or not visible. Disable it to always render at the render_rate"
 				}
 			]
 		}
@@ -199,17 +193,6 @@
 		{
 			"name": "SetDistanceOptimizationEnabled",
 			"description": "Enables or not the rendering frequency optimization if the entities with this Material are too far",
-			"authority": "client",
-			"parameters": [
-				{
-					"type": "boolean",
-					"name": "enabled"
-				}
-			]
-		},
-		{
-			"name": "SetForceAlwaysRendering",
-			"description": "Forces it always re-rendering even if no Material using it is on screen",
 			"authority": "client",
 			"parameters": [
 				{
