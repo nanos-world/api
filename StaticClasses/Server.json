@@ -25,11 +25,23 @@
 					"name": "package_folder_name",
 					"description": "The package to load"
 				}
-			]
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Package was loaded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"ReloadPackage",
+					"UnloadPackage"
+				]
+			}
 		},
 		{
 			"name": "ReloadPackage",
-			"description": "Reloads a Package",
+			"description_long": "Reloads a Package<br/>Note: the package is effectively reloaded in the next server tick",
 			"authority": "server",
 			"parameters": [
 				{
@@ -37,7 +49,44 @@
 					"name": "package_folder_name",
 					"description": "The package to reload"
 				}
-			]
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Package was found"
+				}
+			],
+			"relations": {
+				"functions": [
+					"LoadPackage",
+					"UnloadPackage"
+				]
+			}
+		},
+		{
+			"name": "UnloadPackage",
+			"description": "Unloads a Package",
+			"description_long": "Unloads a Package<br/>Note: the package is effectively unloaded in the next server tick",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_folder_name",
+					"description": "The package you want unload"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Package was found"
+				}
+			],
+			"relations": {
+				"functions": [
+					"LoadPackage",
+					"ReloadPackage"
+				]
+			}
 		},
 		{
 			"name": "SetDescription",
@@ -206,18 +255,6 @@
 					"type": "function",
 					"name": "function",
 					"description": "Callback function"
-				}
-			]
-		},
-		{
-			"name": "UnloadPackage",
-			"description": "Unloads a Package",
-			"authority": "server",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "package_folder_name",
-					"description": "The package you want unload"
 				}
 			]
 		},
