@@ -854,6 +854,30 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetRadialDamageToRagdoll",
+			"description": "Set the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
+			"description_long": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character to do not enter ragdoll mode when getting radial damage",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "damage",
+					"description": "Default is 50"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetFootstepVolumeMultiplier",
+			"description": "Set the Footstep Volume multiplier",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "volume_multiplier"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetInvulnerable",
 			"description": "Sets if the Character can receive any damage",
 			"parameters": [
