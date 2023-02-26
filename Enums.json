@@ -897,15 +897,18 @@
 	"SoundLoopMode": [
 		{
 			"key": "Default",
-			"value": "0"
+			"value": "0",
+			"description": "Default value defined in the asset"
 		},
 		{
 			"key": "Forever",
-			"value": "1"
+			"value": "1",
+			"description": "Overrides it to make it loop forever"
 		},
 		{
 			"key": "Never",
-			"value": "2"
+			"value": "2",
+			"description": "Overrides it to make it play once"
 		}
 	],
 	"StanceMode": [

@@ -106,7 +106,13 @@
 		{
 			"authority": "server",
 			"name": "SetThrowForce",
-			"description": "Set Impulse applied when throwing"
+			"description": "Set Impulse applied when throwing",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "force"
+				}
+			]
 		},
 		{
 			"authority": "both",
