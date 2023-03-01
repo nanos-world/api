@@ -151,6 +151,17 @@
 			"description": "Removes all StaticMeshes attached"
 		},
 		{
+			"authority": "both",
+			"name": "SetCameraOffset",
+			"description": "Sets the Vehicle Camera Offset",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "offset"
+				}
+			]
+		},
+		{
 			"authority": "server",
 			"name": "SetAutoStartEngine",
 			"description": "Sets if the Engine auto starts when the driver enters the Vehicle",

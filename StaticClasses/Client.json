@@ -4,6 +4,17 @@
 	"authority": "client",
 	"static_functions": [
 		{
+			"name": "CopyToClipboard",
+			"description": "Copies a text to Clipboard",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text"
+				}
+			]
+		},
+		{
 			"name": "SetNearClipPlane",
 			"description": "Sets the Near Clip Plane",
 			"authority": "client",

@@ -126,17 +126,18 @@
 		{
 			"name": "SetLayout",
 			"authority": "client",
-			"description": "Sets the Canvas Layout on Screen",
+			"description": "Sets the Layout as Canvas on Screen",
+			"description_long": "Sets the Layout as Canvas on Screen. <strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_location",
+					"name": "screen_location/offset_left_top",
 					"description": "",
 					"default": "Vector(0, 0)"
 				},
 				{
 					"type": "Vector2D",
-					"name": "size",
+					"name": "size/offset_right_bottom",
 					"description": "",
 					"default": "Vector(0, 0)"
 				},
