@@ -1,0 +1,226 @@
+{
+	"name": "Damageable",
+	"description": "Base class for all Damageable entities. It provides Health and Damage related methods and events.",
+	"functions": [
+		{
+			"authority": "server",
+			"name": "ApplyDamage",
+			"return": [
+				{
+					"type": "integer",
+					"description": "the damage applied"
+				}
+			],
+			"description": "Do damage to this entity",
+			"description_long": "Do damage to this entity, will trigger all related events and apply modified damage based on bone. Also will apply impulse if it's a heavy explosion",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "damage"
+				},
+				{
+					"type": "string",
+					"name": "bone_name",
+					"default": ""
+				},
+				{
+					"type": "DamageType",
+					"name": "damage_type",
+					"default": "DamageType.Shot"
+				},
+				{
+					"type": "Vector",
+					"name": "from_direction",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "Player",
+					"name": "instigator",
+					"default": "nil",
+					"description": "The player which caused the damage"
+				},
+				{
+					"type": "any",
+					"name": "causer",
+					"default": "nil",
+					"description": "The object which caused the damage"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetHealth",
+			"description": "Gets the current health",
+			"return": [
+				{
+					"type": "integer"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMaxHealth",
+			"description": "Gets the Max Health",
+			"return": [
+				{
+					"type": "integer"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "Respawn",
+			"description": "Respawns the Entity, fullying it's Health and moving it to it's Initial Location",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"default": "initial location",
+					"description": "If not passed will use the initial location passed when the Entity spawned"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"default": "Rotator(0, 0, 0)"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetHealth",
+			"description": "Sets the Health of this Entity",
+			"description_long": "Sets the Health of this Entity. You can only call it on alive Entities (call Respawn first)",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "new_health"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetMaxHealth",
+			"description": "Sets the MaxHealth of this Entity",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "new_max_health"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "both",
+			"name": "HealthChange",
+			"description": "When Entity has it's Health changed, or because took damage or manually set through scripting or respawning",
+			"arguments": [
+				{
+					"type": "Damageable",
+					"name": "self"
+				},
+				{
+					"type": "integer",
+					"name": "old_health"
+				},
+				{
+					"type": "integer",
+					"name": "new_health"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Respawn",
+			"description": "When Entity Respawns",
+			"arguments": [
+				{
+					"type": "Damageable",
+					"name": "self"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "Death",
+			"description": "When Entity Dies",
+			"arguments": [
+				{
+					"type": "Damageable",
+					"name": "self"
+				},
+				{
+					"type": "integer",
+					"name": "last_damage_taken"
+				},
+				{
+					"type": "string",
+					"name": "last_bone_damaged"
+				},
+				{
+					"type": "DamageType",
+					"name": "damage_type_reason"
+				},
+				{
+					"type": "Vector",
+					"name": "hit_from_direction"
+				},
+				{
+					"type": "Player?",
+					"name": "instigator"
+				},
+				{
+					"type": "Actor?",
+					"name": "causer",
+					"description": "The object which caused the damage"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "TakeDamage",
+			"description": "Triggered when this Entity takes damage",
+			"arguments": [
+				{
+					"type": "Damageable",
+					"name": "self"
+				},
+				{
+					"type": "integer",
+					"name": "damage"
+				},
+				{
+					"type": "string",
+					"name": "bone",
+					"description": "Damaged bone"
+				},
+				{
+					"type": "DamageType",
+					"name": "type",
+					"description": "Damage Type"
+				},
+				{
+					"type": "Vector",
+					"name": "from_direction",
+					"description": "Direction of the damage relative to the damaged actor"
+				},
+				{
+					"type": "Player",
+					"name": "instigator",
+					"description": "The player which caused the damage"
+				},
+				{
+					"type": "any",
+					"name": "causer",
+					"description": "The object which caused the damage"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
+				}
+			]
+		}
+	]
+}

@@ -5,7 +5,8 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Paintable"
+		"Paintable",
+		"Damageable"
 	],
 	"constructors": [
 		{
@@ -55,51 +56,6 @@
 		}
 	],
 	"functions": [
-		{
-			"authority": "server",
-			"name": "ApplyDamage",
-			"return": [
-				{
-					"type": "integer",
-					"description": "the damage applied"
-				}
-			],
-			"description": "Do damage to a character",
-			"description_long": "Do damage to a character, will trigger all related events and apply modified damage based on bone. Also will apply impulse if it's a heavy explosion",
-			"parameters": [
-				{
-					"type": "integer",
-					"name": "damage"
-				},
-				{
-					"type": "string",
-					"name": "bone_name",
-					"default": ""
-				},
-				{
-					"type": "DamageType",
-					"name": "damage_type",
-					"default": "DamageType.Shot"
-				},
-				{
-					"type": "Vector",
-					"name": "from_direction",
-					"default": "Vector(0, 0, 0)"
-				},
-				{
-					"type": "Player",
-					"name": "instigator",
-					"default": "nil",
-					"description": "The player which caused the damage"
-				},
-				{
-					"type": "any",
-					"name": "causer",
-					"default": "nil",
-					"description": "The object which caused the damage"
-				}
-			]
-		},
 		{
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
@@ -407,24 +363,6 @@
 			"authority": "both",
 			"name": "RemoveAllSkeletalMeshesAttached",
 			"description": "Removes all SkeletalMeshes attached"
-		},
-		{
-			"authority": "server",
-			"name": "Respawn",
-			"description": "Respawns the Character, fullying it's Health and moving it to it's Initial Location",
-			"parameters": [
-				{
-					"type": "Vector",
-					"name": "location",
-					"default": "initial location",
-					"description": "If not passed will use the initial location passed when the Character spawned"
-				},
-				{
-					"type": "Rotator",
-					"name": "rotation",
-					"default": "Rotator(0, 0, 0)"
-				}
-			]
 		},
 		{
 			"authority": "server",
@@ -829,18 +767,6 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetHealth",
-			"description": "Sets the Health of this Character",
-			"description_long": "Sets the Health of this Character. You can only call it on alive characters (call Respawn first)",
-			"parameters": [
-				{
-					"type": "integer",
-					"name": "new_health"
-				}
-			]
-		},
-		{
-			"authority": "server",
 			"name": "SetImpactDamageTaken",
 			"description": "Set the Impact Damage taken when being roamed by things",
 			"description_long": "Set the Impact Damage taken when being roamed by things.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
@@ -896,17 +822,6 @@
 					"type": "integer",
 					"name": "velocity",
 					"description": "Default is 450"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "SetMaxHealth",
-			"description": "Sets the MaxHealth of this Character",
-			"parameters": [
-				{
-					"type": "integer",
-					"name": "new_max_health"
 				}
 			]
 		},
@@ -1408,16 +1323,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetHealth",
-			"description": "Gets the current health",
-			"return": [
-				{
-					"type": "integer"
-				}
-			]
-		},
-		{
-			"authority": "both",
 			"name": "GetImpactDamageTaken",
 			"description": "Gets the impact damage taken",
 			"return": [
@@ -1430,16 +1335,6 @@
 			"authority": "both",
 			"name": "GetJumpZVelocity",
 			"description": "Gets the Jump Z Velocity",
-			"return": [
-				{
-					"type": "integer"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetMaxHealth",
-			"description": "Gets the Max Health",
 			"return": [
 				{
 					"type": "integer"
@@ -1616,42 +1511,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "Death",
-			"description": "When Character Dies",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "integer",
-					"name": "last_damage_taken"
-				},
-				{
-					"type": "string",
-					"name": "last_bone_damaged"
-				},
-				{
-					"type": "DamageType",
-					"name": "damage_type_reason"
-				},
-				{
-					"type": "Vector",
-					"name": "hit_from_direction"
-				},
-				{
-					"type": "Player?",
-					"name": "instigator"
-				},
-				{
-					"type": "Actor?",
-					"name": "causer",
-					"description": "The object which caused the damage"
-				}
-			]
-		},
-		{
-			"authority": "both",
 			"name": "Drop",
 			"description": "When Character drops the currently picked up Pickable",
 			"arguments": [
@@ -1778,25 +1637,6 @@
 				{
 					"type": "Prop",
 					"name": "prop"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "HealthChange",
-			"description": "When Character has it's Health changed, or because took damage or manually set through scripting or respawning",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "integer",
-					"name": "old_health"
-				},
-				{
-					"type": "integer",
-					"name": "new_health"
 				}
 			]
 		},
@@ -1994,17 +1834,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "Respawn",
-			"description": "When Character Respawns",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				}
-			]
-		},
-		{
-			"authority": "both",
 			"name": "StanceModeChange",
 			"description": "Called when StanceMode changes",
 			"arguments": [
@@ -2038,52 +1867,6 @@
 				{
 					"type": "SwimmingMode",
 					"name": "new_state"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "TakeDamage",
-			"description": "Triggered when this Character takes damage",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "integer",
-					"name": "damage"
-				},
-				{
-					"type": "string",
-					"name": "bone",
-					"description": "Damaged bone"
-				},
-				{
-					"type": "DamageType",
-					"name": "type",
-					"description": "Damage Type"
-				},
-				{
-					"type": "Vector",
-					"name": "from_direction",
-					"description": "Direction of the damage relative to the damaged actor"
-				},
-				{
-					"type": "Player",
-					"name": "instigator",
-					"description": "The player which caused the damage"
-				},
-				{
-					"type": "any",
-					"name": "causer",
-					"description": "The object which caused the damage"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean",
-					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
 				}
 			]
 		},
