@@ -880,6 +880,38 @@
 			"value": "2"
 		}
 	],
+	"SkyMode": [
+		{
+			"key": "VolumetricClouds",
+			"value": "0",
+			"description": "Uses a 3D Volumetric Cloud layer"
+		},
+		{
+			"key": "StaticClouds",
+			"value": "1",
+			"description": "Designed to mimic the look of the volumetric clouds but as a static cloud texture. Much lower performance cost than volumetric clouds."
+		},
+		{
+			"key": "DynamicClouds2D",
+			"value": "2",
+			"description": "Uses simple 2D dynamic clouds"
+		},
+		{
+			"key": "NoClouds",
+			"value": "3",
+			"description": "Disables all forms of dynamic clouds"
+		},
+		{
+			"key": "VolumetricAurora",
+			"value": "4",
+			"description": "Trades clouds for a full 3D volumetric aurora, much more convincing than the 2D effect."
+		},
+		{
+			"key": "Space",
+			"value": "5",
+			"description": "Turns off all sky color, atmospheric scattering, clouds, etc. Specifically for environments which are set in outer space with no planet/ground beneath the camera."
+		}
+	],
 	"SoundType": [
 		{
 			"key": "SFX",

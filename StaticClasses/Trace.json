@@ -160,6 +160,530 @@
 					"default": "{}"
 				}
 			]
+		},
+		{
+			"name": "SphereSingle",
+			"description": "Trace a sphere against the world and returns a table with the first blocking hit information",
+			"description_long": "Trace a sphere against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2D"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the sphere"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the sphere"
+				},
+				{
+					"type": "float",
+					"name": "radius",
+					"description": "Radius of the sphere"
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
+		},
+		{
+			"name": "SphereMulti",
+			"description": "Trace a sphere against the world using object types and return overlapping hits and then first blocking hit",
+			"description_long": "Trace a sphere against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table[]",
+					"table_properties": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2D"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the sphere"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the sphere"
+				},
+				{
+					"type": "float",
+					"name": "radius",
+					"description": "Radius of the sphere"
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
+		},
+		{
+			"name": "BoxSingle",
+			"description": "Trace a box against the world and returns a table with the first blocking hit information",
+			"description_long": "Trace a box against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2D"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the box"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the box"
+				},
+				{
+					"type": "Vector",
+					"name": "half_size",
+					"description": "Distance from the center of box along each axis"
+				},
+				{
+					"type": "Rotator",
+					"name": "orientation",
+					"description": "Orientation of the box"
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
+		},
+		{
+			"name": "BoxMulti",
+			"description": "Trace a box against the world using object types and return overlapping hits and then first blocking hit",
+			"description_long": "Trace a box against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table[]",
+					"table_properties": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2D"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the box"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the box"
+				},
+				{
+					"type": "Vector",
+					"name": "half_size",
+					"description": "Distance from the center of box along each axis"
+				},
+				{
+					"type": "Rotator",
+					"name": "orientation",
+					"description": "Orientation of the box"
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
+		},
+		{
+			"name": "CapsuleSingle",
+			"description": "Trace a capsule against the world and returns a table with the first blocking hit information",
+			"description_long": "Trace a capsule against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2D"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the capsule"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the capsule"
+				},
+				{
+					"type": "float",
+					"name": "radius",
+					"description": "Radius of the capsule to sweep"
+				},
+				{
+					"type": "float",
+					"name": "half_height",
+					"description": "Distance from center of capsule to tip of hemisphere endcap."
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
+		},
+		{
+			"name": "CapsuleMulti",
+			"description": "Trace a capsule against the world using object types and return overlapping hits and then first blocking hit",
+			"description_long": "Trace a capsule against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table[]",
+					"table_properties": [
+						{
+							"name": "Success",
+							"type": "boolean"
+						},
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Normal",
+							"type": "Vector"
+						},
+						{
+							"name": "Entity",
+							"type": "Actor"
+						},
+						{
+							"name": "BoneName",
+							"type": "string"
+						},
+						{
+							"name": "ActorName",
+							"type": "string"
+						},
+						{
+							"name": "ComponentName",
+							"type": "string"
+						},
+						{
+							"name": "SurfaceType",
+							"type": "SurfaceType"
+						},
+						{
+							"name": "UV",
+							"type": "Vector2D"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "start_location",
+					"description": "Start location of the capsule"
+				},
+				{
+					"type": "Vector",
+					"name": "end_location",
+					"description": "End location of the capsule"
+				},
+				{
+					"type": "float",
+					"name": "radius",
+					"description": "Radius of the capsule to sweep"
+				},
+				{
+					"type": "float",
+					"name": "half_height",
+					"description": "Distance from center of capsule to tip of hemisphere endcap."
+				},
+				{
+					"type": "CollisionChannel",
+					"name": "collision_channel",
+					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
+					"default": "WorldStatic"
+				},
+				{
+					"type": "TraceMode",
+					"name": "trace_mode",
+					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitily pass the modes to return the values you want",
+					"default": "0"
+				},
+				{
+					"type": "Actor[]",
+					"name": "ignored_actors",
+					"description": "Array of actors to ignore during the trace",
+					"default": "{}"
+				}
+			]
 		}
 	]
 }
