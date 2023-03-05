@@ -52,6 +52,17 @@
 		},
 		{
 			"authority": "client",
+			"name": "SetMoonVerticalOffset",
+			"description": "Sets the Moon Vertical Offset",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "offset"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "SetMoonScale",
 			"description": "Sets the Moon Scale",
 			"parameters": [
