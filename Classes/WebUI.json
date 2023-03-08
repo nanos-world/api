@@ -17,9 +17,9 @@
 					"description": "Web URL or <a href='#html-path-searchers'>HTML File Path</a> as <code>file://my_file.html</code>"
 				},
 				{
-					"type": "WebUIVisibility",
+					"type": "WidgetVisibility",
 					"name": "visibility",
-					"default": "WebUIVisibility.Visible",
+					"default": "WidgetVisibility.Visible",
 					"description": "if WebUI is visible on screen"
 				},
 				{
@@ -53,7 +53,7 @@
 		{
 			"name": "BringToFront",
 			"authority": "client",
-			"description": "Puts this WebUI in the front of all WebUIs"
+			"description": "Puts this WebUI in the front of all WebUIs and Widgets"
 		},
 		{
 			"name": "CallEvent",
@@ -178,7 +178,7 @@
 			"description": "Sets the visibility in screen",
 			"parameters": [
 				{
-					"type": "WebUIVisibility",
+					"type": "WidgetVisibility",
 					"name": "visibility"
 				}
 			]
@@ -385,7 +385,7 @@
 			"description": "Returns the current WebUI visibility",
 			"return": [
 				{
-					"type": "WebUIVisibility"
+					"type": "WidgetVisibility"
 				}
 			]
 		},
