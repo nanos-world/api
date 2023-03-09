@@ -37,6 +37,16 @@
 			]
 		},
 		{
+			"name": "GetConnectedServerIP",
+			"description": "Gets the current connected server IP:Port",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
 			"name": "SetDebugEnabled",
 			"description": "Enables/Disables Debug settings and Client Console to be used",
 			"authority": "client",
