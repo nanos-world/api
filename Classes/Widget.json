@@ -69,12 +69,28 @@
 		{
 			"name": "AddChild",
 			"authority": "client",
-			"description": "Adds a new child widget to this Widget container, if it is a Panel",
+			"description": "Adds a new child widget to this Widget container, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Components/UPanelWidget/'>Panel</a>",
 			"parameters": [
 				{
 					"type": "WebUI|Widget",
 					"name": "other",
 					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetContentForSlot",
+			"authority": "client",
+			"description": "Sets the widget for a given <a href='https://docs.unrealengine.com/5.1/en-US/using-named-slots-in-umg-for-unreal-engine/'>slot</a> by name, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Blueprint/UUserWidget/'>UserWidget</a>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "slot_name"
+				},
+				{
+					"type": "Widget?",
+					"name": "widget",
+					"description": "Pass it nil to remove it"
 				}
 			]
 		},
@@ -121,7 +137,7 @@
 			"return": [
 				{
 					"type": "any",
-					"description": "The function return values"
+					"description": "the function return values"
 				}
 			],
 			"description": "Calls a Blueprint Event or Function",
