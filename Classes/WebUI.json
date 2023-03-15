@@ -98,6 +98,16 @@
 			]
 		},
 		{
+			"name": "GetName",
+			"authority": "client",
+			"description": "Gets this WebUI name",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
 			"name": "ExecuteJavaScript",
 			"authority": "client",
 			"description": "Executes a JavaScript code in the Browser",
