@@ -186,49 +186,18 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetDifferentialSetup",
-			"description": "Configures the Vehicle Differential",
+			"name": "SetSteeringSetup",
+			"description": "Configures the Vehicle Steering",
 			"parameters": [
 				{
-					"type": "DifferentialType",
-					"name": "differential_type",
-					"default": "LimitedSlip_4W"
+					"type": "SteeringType",
+					"name": "steering_type"
 				},
 				{
 					"type": "float",
-					"name": "front_rear_split",
-					"default": "0.45",
-					"description": "Ratio of torque split between front and rear<br/>bigger than 0.5 means more to front<br/>lower than 0.5 means more to rear (works only with 4W type)"
-				},
-				{
-					"type": "float",
-					"name": "front_left_right_split",
-					"default": "0.5",
-					"description": "Ratio of torque split between front-left and front-right<br/>bigger than 0.5 means more to front-left<br/>lower than 0.5 means more to front-right (works only with 4W and LimitedSlip_FrontDrive)"
-				},
-				{
-					"type": "float",
-					"name": "rear_left_right_split",
-					"default": "0.5",
-					"description": "Ratio of torque split between rear-left and rear-right<br/>bigger than 0.5 means more to rear-left<br/>lower than 0.5 means more to rear-right (works only with 4W and LimitedSlip_RearDrive)"
-				},
-				{
-					"type": "float",
-					"name": "center_bias",
-					"default": "1.3",
-					"description": "Maximum allowed ratio of average front wheel rotation speed and rear wheel rotation speeds Acceptable range: 1 .. infinite (works only with LimitedSlip_4W)"
-				},
-				{
-					"type": "float",
-					"name": "front_bias",
-					"default": "1.3",
-					"description": "Maximum allowed ratio of front-left and front-right wheel rotation speeds Acceptable range: 1 .. infinite (works only with LimitedSlip_4W, LimitedSlip_FrontDrive)"
-				},
-				{
-					"type": "float",
-					"name": "rear_bias",
-					"default": "1.3",
-					"description": "Maximum allowed ratio of rear-left and rear-right wheel rotation speeds Acceptable range: 1 .. infinite (works only with LimitedSlip_4W, LimitedSlip_FrontDrive)"
+					"name": "angle_ratio",
+					"default": "0.7",
+					"description": "Only applies when AngleRatio is selected"
 				}
 			]
 		},

@@ -1063,6 +1063,23 @@
 			"value": "3"
 		}
 	],
+	"SteeringType": [
+		{
+			"key": "SingleAngle",
+			"value": "0",
+			"description": "Both wheels steer by the same amount"
+		},
+		{
+			"key": "AngleRatio",
+			"value": "1",
+			"description": "Outer wheels on corner steer less than the inner ones by set ratio"
+		},
+		{
+			"key": "Ackermann",
+			"value": "2",
+			"description": "Ackermann steering principle is applied"
+		}
+	],
 	"SurfaceType": [
 		{
 			"key": "Default",

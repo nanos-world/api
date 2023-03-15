@@ -2,6 +2,9 @@
 	"name": "WebUI",
 	"description": "Class for spawning a dynamic Web Browser.",
 	"authority": "client",
+	"inheritance": [
+		"Entity"
+	],
 	"constructors": [
 		{
 			"description": "Default Constructor",
@@ -71,11 +74,6 @@
 					"description": "Arguments to pass to the event"
 				}
 			]
-		},
-		{
-			"name": "Destroy",
-			"authority": "client",
-			"description": "Destroys this Browser"
 		},
 		{
 			"name": "LoadURL",
@@ -340,42 +338,12 @@
 			]
 		},
 		{
-			"name": "IsValid",
-			"authority": "client",
-			"description": "Gets if this entity is Valid",
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "GetID",
-			"authority": "client",
-			"description": "Gets the network ID of this entity",
-			"return": [
-				{
-					"type": "integer"
-				}
-			]
-		},
-		{
 			"name": "GetSize",
 			"authority": "client",
 			"description": "Gets the current size of this WebUI",
 			"return": [
 				{
 					"type": "Vector2D"
-				}
-			]
-		},
-		{
-			"name": "GetClass",
-			"description": "Gets the class of this entity",
-			"authority": "both",
-			"return": [
-				{
-					"type": "table"
 				}
 			]
 		},
@@ -396,47 +364,6 @@
 			"return": [
 				{
 					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "Subscribe",
-			"authority": "client",
-			"description": "Subscribes for an Event",
-			"return": [
-				{
-					"type": "function",
-					"description": "the subscribed callback itself"
-				}
-			],
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "The Event Name to subscribe"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"description": "The callback function to execute"
-				}
-			]
-		},
-		{
-			"name": "Unsubscribe",
-			"authority": "client",
-			"description": "Unsubscribes from all subscribed Events in this Entity and in this Package, optionally passing the function to unsubscribe only that callback",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "The Event Name to unsubscribe"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"default": "nil",
-					"description": "The callback function to unsubscribe"
 				}
 			]
 		}
