@@ -1,0 +1,48 @@
+{
+	"name": "string",
+	"description": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
+	"functions": [
+		{
+			"name": "byte",
+			"description": "Returns the internal numeric codes of the characters <code>s[start_pos], s[start_pos + 1], ..., s[end_pos]</code>",
+			"is_native": true,
+			"return": [
+				{
+					"type": "integer...",
+					"description": "the internal numeric code"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "start_pos",
+					"default": "1",
+					"description": "The first character of the string to get the byte of"
+				},
+				{
+					"type": "integer",
+					"name": "end_pos",
+					"default": "start_pos",
+					"description": "The last character of the string to get the byte of"
+				}
+			]
+		},
+		{
+			"name": "char",
+			"description": "Receives zero or more integers. Returns a string with length equal to the number of arguments, in which each character has the internal numeric code equal to its corresponding argument",
+			"is_native": true,
+			"return": [
+				{
+					"type": "string",
+					"description": "the string"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer...",
+					"name": "values"
+				}
+			]
+		}
+	]
+}
