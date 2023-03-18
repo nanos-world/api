@@ -73,6 +73,23 @@
 			]
 		},
 		{
+			"name": "UnbindBlueprintEventDispatcher",
+			"description": "Unbinds a Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback?",
+					"description": "Optional callback to unbind"
+				}
+			]
+		},
+		{
 			"name": "SetBlueprintPropertyValue",
 			"description": "Sets a Blueprint Property/Variable value directly",
 			"authority": "client",
