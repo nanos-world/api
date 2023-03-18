@@ -1,6 +1,6 @@
 {
 	"name": "table",
-	"description": "This library provides generic functions for table manipulation. It provides all its functions inside the table `table`. ",
+	"description": "This library provides generic functions for table manipulation. It provides all its functions inside the table <code>table</code>.",
 	"static_functions": [
 		{
 			"parameters": [
