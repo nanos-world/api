@@ -35,10 +35,6 @@
 			"name": "tan"
 		},
 		{
-			"is_native": true,
-			"name": "huge"
-		},
-		{
 			"parameters": [
 				{
 					"type": "vararg",

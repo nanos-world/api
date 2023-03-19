@@ -331,28 +331,6 @@
 			"is_native": true,
 			"name": "format",
 			"description": "Returns a formatted version of its variable number of arguments following the description given in its first argument."
-		},
-		{
-			"parameters": [
-				{
-					"type": "string",
-					"name": "format",
-					"description": "The string to be formatted"
-				},
-				{
-					"type": "number",
-					"name": "formatParameters",
-					"description": "Values to be formatted into the string."
-				}
-			],
-			"return": [
-				{
-					"type": "string"
-				}
-			],
-			"is_native": true,
-			"name": "format",
-			"description": "Returns a formatted version of its variable number of arguments following the description given in its first argument."
 		}
 	]
 }
