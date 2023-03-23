@@ -81,7 +81,7 @@
 		{
 			"name": "SetContentForSlot",
 			"authority": "client",
-			"description": "Sets the widget for a given <a href='https://docs.unrealengine.com/5.1/en-US/using-named-slots-in-umg-for-unreal-engine/'>slot</a> by name, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Blueprint/UUserWidget/'>UserWidget</a>",
+			"description": "Sets the widget for a given <a href='https://docs.unrealengine.com/5.0/en-US/using-named-slots-in-umg-for-unreal-engine/'>slot</a> by name, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Blueprint/UUserWidget/'>UserWidget</a>",
 			"parameters": [
 				{
 					"type": "string",
