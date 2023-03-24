@@ -172,6 +172,12 @@
 					"name": "callback",
 					"description": "Callback function to call (the first argument is the blueprint itself)"
 				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "the callback itself"
+				}
 			]
 		},
 		{

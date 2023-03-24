@@ -299,6 +299,27 @@
 			]
 		},
 		{
+			"name": "GetMapSpawnPoints",
+			"description": "Returns a list of the Spawn Points of the current map (stored in the MAP_NAME.toml)",
+			"authority": "server",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "a list of the Custom Config of the current map",
+					"table_properties": [
+						{
+							"name": "location",
+							"type": "Vector"
+						},
+						{
+							"name": "rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "GetMaps",
 			"description": "Returns a list of all Maps installed on the server",
 			"authority": "server",
