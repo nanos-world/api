@@ -120,6 +120,30 @@
 					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'>Headers</a> to be used"
 				}
 			]
+		},
+		{
+			"name": "SetConnectionTimeout",
+			"description": "Sets the global Connection Timeout in seconds",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "connection_timeout",
+					"description": "The timeout in seconds"
+				}
+			]
+		},
+		{
+			"name": "SetReadWriteTimeout",
+			"description": "Sets the global Read and Write Timeout in seconds",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "read_write_timeout",
+					"description": "The timeout in seconds"
+				}
+			]
 		}
 	]
 }
