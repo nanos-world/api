@@ -53,9 +53,9 @@
 					"name": "animation_path"
 				},
 				{
-					"type": "AnimationSlotType",
-					"name": "slot_type",
-					"default": "AnimationSlotType.FullBody"
+					"type": "string",
+					"name": "slot_name",
+					"default": ""
 				},
 				{
 					"type": "boolean",
