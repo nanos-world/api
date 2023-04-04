@@ -626,6 +626,42 @@
 			]
 		},
 		{
+			"authority": "both",
+			"name": "GetDoors",
+			"description": "Gets all configured Doors",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "seat_index",
+							"type": "integer"
+						},
+						{
+							"name": "offset_location",
+							"type": "Vector"
+						},
+						{
+							"name": "seat_location",
+							"type": "Vector"
+						},
+						{
+							"name": "seat_rotation",
+							"type": "Rotator"
+						},
+						{
+							"name": "leave_lateral_offset",
+							"type": "integer"
+						},
+						{
+							"name": "sphere_radius",
+							"type": "integer"
+						}
+					]
+				}
+			]
+		},
+		{
 			"authority": "client",
 			"name": "GetBoneTransform",
 			"description": "Gets a Bone Transform in world space given a bone name",

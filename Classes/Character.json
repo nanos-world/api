@@ -1100,8 +1100,8 @@
 		},
 		{
 			"authority": "both",
-			"name": "IsMovementEnabled",
-			"description": "Gets if has movement enabled",
+			"name": "IsInputEnabled",
+			"description": "Gets if has input enabled",
 			"return": [
 				{
 					"type": "boolean"
