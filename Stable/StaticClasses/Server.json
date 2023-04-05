@@ -25,11 +25,23 @@
 					"name": "package_folder_name",
 					"description": "The package to load"
 				}
-			]
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Package was loaded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"ReloadPackage",
+					"UnloadPackage"
+				]
+			}
 		},
 		{
 			"name": "ReloadPackage",
-			"description": "Reloads a Package",
+			"description_long": "Reloads a Package<br/>Note: the package is effectively reloaded in the next server tick",
 			"authority": "server",
 			"parameters": [
 				{
@@ -37,7 +49,44 @@
 					"name": "package_folder_name",
 					"description": "The package to reload"
 				}
-			]
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Package was found"
+				}
+			],
+			"relations": {
+				"functions": [
+					"LoadPackage",
+					"UnloadPackage"
+				]
+			}
+		},
+		{
+			"name": "UnloadPackage",
+			"description": "Unloads a Package",
+			"description_long": "Unloads a Package<br/>Note: the package is effectively unloaded in the next server tick",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_folder_name",
+					"description": "The package you want unload"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the Package was found"
+				}
+			],
+			"relations": {
+				"functions": [
+					"LoadPackage",
+					"ReloadPackage"
+				]
+			}
 		},
 		{
 			"name": "SetDescription",
@@ -210,18 +259,6 @@
 			]
 		},
 		{
-			"name": "UnloadPackage",
-			"description": "Unloads a Package",
-			"authority": "server",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "package_folder_name",
-					"description": "The package you want unload"
-				}
-			]
-		},
-		{
 			"name": "Unsubscribe",
 			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
 			"authority": "server",
@@ -258,6 +295,27 @@
 				{
 					"type": "table",
 					"description": "a list of the Custom Config of the current map"
+				}
+			]
+		},
+		{
+			"name": "GetMapSpawnPoints",
+			"description": "Returns a list of the Spawn Points of the current map (stored in the MAP_NAME.toml)",
+			"authority": "server",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "a list of the Custom Config of the current map",
+					"table_properties": [
+						{
+							"name": "location",
+							"type": "Vector"
+						},
+						{
+							"name": "rotation",
+							"type": "Rotator"
+						}
+					]
 				}
 			]
 		},

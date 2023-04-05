@@ -100,7 +100,15 @@
 					"name": "light_profile",
 					"description": "The Light Profile to use"
 				}
-			]
+			],
+			"relations": {
+				"etc": [
+					{
+						"label": "💡 Light Profiles",
+						"url": "#light-profiles"
+					}
+				]
+			}
 		},
 		{
 			"name": "SetCastShadows",

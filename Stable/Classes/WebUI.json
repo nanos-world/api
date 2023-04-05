@@ -2,6 +2,9 @@
 	"name": "WebUI",
 	"description": "Class for spawning a dynamic Web Browser.",
 	"authority": "client",
+	"inheritance": [
+		"Entity"
+	],
 	"constructors": [
 		{
 			"description": "Default Constructor",
@@ -17,9 +20,9 @@
 					"description": "Web URL or <a href='#html-path-searchers'>HTML File Path</a> as <code>file://my_file.html</code>"
 				},
 				{
-					"type": "WebUIVisibility",
+					"type": "WidgetVisibility",
 					"name": "visibility",
-					"default": "WebUIVisibility.Visible",
+					"default": "WidgetVisibility.Visible",
 					"description": "if WebUI is visible on screen"
 				},
 				{
@@ -53,7 +56,7 @@
 		{
 			"name": "BringToFront",
 			"authority": "client",
-			"description": "Puts this WebUI in the front of all WebUIs"
+			"description": "Puts this WebUI in the front of all WebUIs and Widgets"
 		},
 		{
 			"name": "CallEvent",
@@ -71,11 +74,6 @@
 					"description": "Arguments to pass to the event"
 				}
 			]
-		},
-		{
-			"name": "Destroy",
-			"authority": "client",
-			"description": "Destroys this Browser"
 		},
 		{
 			"name": "LoadURL",
@@ -96,6 +94,16 @@
 				{
 					"type": "string",
 					"name": "html"
+				}
+			]
+		},
+		{
+			"name": "GetName",
+			"authority": "client",
+			"description": "Gets this WebUI name",
+			"return": [
+				{
+					"type": "string"
 				}
 			]
 		},
@@ -126,17 +134,18 @@
 		{
 			"name": "SetLayout",
 			"authority": "client",
-			"description": "Sets the Canvas Layout on Screen",
+			"description": "Sets the Layout as Canvas on Screen",
+			"description_long": "Sets the Layout as Canvas on Screen. <strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_location",
+					"name": "screen_location/offset_left_top",
 					"description": "",
 					"default": "Vector(0, 0)"
 				},
 				{
 					"type": "Vector2D",
-					"name": "size",
+					"name": "size/offset_right_bottom",
 					"description": "",
 					"default": "Vector(0, 0)"
 				},
@@ -177,7 +186,7 @@
 			"description": "Sets the visibility in screen",
 			"parameters": [
 				{
-					"type": "WebUIVisibility",
+					"type": "WidgetVisibility",
 					"name": "visibility"
 				}
 			]
@@ -339,26 +348,6 @@
 			]
 		},
 		{
-			"name": "IsValid",
-			"authority": "client",
-			"description": "Gets if this entity is Valid",
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "GetID",
-			"authority": "client",
-			"description": "Gets the network ID of this entity",
-			"return": [
-				{
-					"type": "integer"
-				}
-			]
-		},
-		{
 			"name": "GetSize",
 			"authority": "client",
 			"description": "Gets the current size of this WebUI",
@@ -369,22 +358,12 @@
 			]
 		},
 		{
-			"name": "GetClass",
-			"description": "Gets the class of this entity",
-			"authority": "both",
-			"return": [
-				{
-					"type": "table"
-				}
-			]
-		},
-		{
 			"name": "GetVisibility",
 			"authority": "client",
 			"description": "Returns the current WebUI visibility",
 			"return": [
 				{
-					"type": "WebUIVisibility"
+					"type": "WidgetVisibility"
 				}
 			]
 		},
@@ -395,47 +374,6 @@
 			"return": [
 				{
 					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "Subscribe",
-			"authority": "client",
-			"description": "Subscribes for an Event",
-			"return": [
-				{
-					"type": "function",
-					"description": "the subscribed callback itself"
-				}
-			],
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "The Event Name to subscribe"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"description": "The callback function to execute"
-				}
-			]
-		},
-		{
-			"name": "Unsubscribe",
-			"authority": "client",
-			"description": "Unsubscribes from all subscribed Events in this Entity and in this Package, optionally passing the function to unsubscribe only that callback",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "event_name",
-					"description": "The Event Name to unsubscribe"
-				},
-				{
-					"type": "function",
-					"name": "callback",
-					"default": "nil",
-					"description": "The callback function to unsubscribe"
 				}
 			]
 		}

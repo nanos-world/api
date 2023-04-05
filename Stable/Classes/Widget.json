@@ -1,0 +1,234 @@
+{
+	"name": "Widget",
+	"description": "The Widget class supports spawning Unreal Widgets classes through scripting and manipulate them such as Blueprints!",
+	"authority": "client",
+	"inheritance": [
+		"Entity"
+	],
+	"constructors": [
+		{
+			"description": "UserWidget Constructor",
+			"parameters": [
+				{
+					"type": "BlueprintPath",
+					"name": "blueprint_path",
+					"description": "A custom UserWidget Blueprint to spawn"
+				}
+			]
+		},
+		{
+			"description": "Native Widget Constructor",
+			"parameters": [
+				{
+					"type": "NativeWidget",
+					"name": "native_widget",
+					"description": "One of the native Widgets to spawn"
+				}
+			]
+		}
+	],
+	"functions": [
+		{
+			"name": "SetVisibility",
+			"authority": "client",
+			"description": "Sets the visibility in screen",
+			"parameters": [
+				{
+					"type": "WidgetVisibility",
+					"name": "visibility"
+				}
+			]
+		},
+		{
+			"name": "GetVisibility",
+			"authority": "client",
+			"description": "Returns the current WebUI visibility",
+			"return": [
+				{
+					"type": "WidgetVisibility"
+				}
+			]
+		},
+		{
+			"name": "SetFocus",
+			"authority": "client",
+			"description": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events)",
+			"description_long": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one Widget can have focus per time."
+		},
+		{
+			"name": "BringToFront",
+			"authority": "client",
+			"description": "Puts this Widget in the front of all WebUIs and Widgets",
+			"description_long": "Puts this Widget in the front of all WebUIs and Widgets. Note: You can only call it if the Widget is parented to the Viewport!"
+		},
+		{
+			"name": "AddToViewport",
+			"authority": "client",
+			"description": "Adds it to the game's viewport and fills the entire screen"
+		},
+		{
+			"name": "AddChild",
+			"authority": "client",
+			"description": "Adds a new child widget to this Widget container, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Components/UPanelWidget/'>Panel</a>",
+			"parameters": [
+				{
+					"type": "WebUI|Widget",
+					"name": "other",
+					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetContentForSlot",
+			"authority": "client",
+			"description": "Sets the widget for a given <a href='https://docs.unrealengine.com/5.0/en-US/using-named-slots-in-umg-for-unreal-engine/'>slot</a> by name, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Blueprint/UUserWidget/'>UserWidget</a>",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "slot_name"
+				},
+				{
+					"type": "Widget?",
+					"name": "widget",
+					"description": "Pass it nil to remove it"
+				}
+			]
+		},
+		{
+			"name": "SetCanvasLayout",
+			"authority": "client",
+			"description": "Sets the Layout as Canvas on Screen",
+			"description_long": "Sets the Layout as Canvas on Screen.<br/><br/>Note: This method only works if this Widget is child of a Canvas Panel.<br/><br/><strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "screen_location/offset_left_top",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "size/offset_right_bottom",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_min",
+					"description": "",
+					"default": "Vector(0, 0)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "anchors_max",
+					"description": "",
+					"default": "Vector(1, 1)"
+				},
+				{
+					"type": "Vector2D",
+					"name": "alignment",
+					"description": "",
+					"default": "Vector(0.5, 0.5)"
+				}
+			]
+		},
+		{
+			"name": "CallBlueprintEvent",
+			"return": [
+				{
+					"type": "any",
+					"description": "the function return values"
+				}
+			],
+			"description": "Calls a Blueprint Event or Function",
+			"description_long": "Calls a Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong>",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
+				}
+			]
+		},
+		{
+			"name": "BindBlueprintEventDispatcher",
+			"description": "Assigns and Binds a Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback function to call (the first argument is the blueprint itself)"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "the callback itself"
+				}
+			]
+		},
+		{
+			"name": "UnbindBlueprintEventDispatcher",
+			"description": "Unbinds a Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback?",
+					"description": "Optional callback to unbind"
+				}
+			]
+		},
+		{
+			"name": "SetBlueprintPropertyValue",
+			"description": "Sets a Blueprint Property/Variable value directly",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				},
+				{
+					"type": "any",
+					"name": "value"
+				}
+			]
+		},
+		{
+			"name": "GetBlueprintPropertyValue",
+			"description": "Gets a Blueprint Property/Variable value",
+			"authority": "client",
+			"return": [
+				{
+					"type": "any",
+					"description": "the value"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				}
+			]
+		}
+	],
+	"events": []
+}

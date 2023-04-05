@@ -544,6 +544,20 @@
 			"value": "7"
 		}
 	],
+	"ImageFormat": [
+		{
+			"key": "JPEG",
+			"value": "0"
+		},
+		{
+			"key": "PNG",
+			"value": "1"
+		},
+		{
+			"key": "BMP",
+			"value": "2"
+		}
+	],
 	"InputEvent": [
 		{
 			"key": "Pressed",
@@ -866,6 +880,140 @@
 			"value": "2"
 		}
 	],
+	"NativeWidget": [
+		{
+			"key": "Border",
+			"value": "0"
+		},
+		{
+			"key": "Button",
+			"value": "1"
+		},
+		{
+			"key": "CheckBox",
+			"value": "2"
+		},
+		{
+			"key": "Image",
+			"value": "3"
+		},
+		{
+			"key": "ProgressBar",
+			"value": "4"
+		},
+		{
+			"key": "RichTextBlock",
+			"value": "5"
+		},
+		{
+			"key": "Slider",
+			"value": "6"
+		},
+		{
+			"key": "Text",
+			"value": "7"
+		},
+		{
+			"key": "ComboBox",
+			"value": "8"
+		},
+		{
+			"key": "EditableText",
+			"value": "9"
+		},
+		{
+			"key": "EditableTextMultiLine",
+			"value": "10"
+		},
+		{
+			"key": "SpinBox",
+			"value": "11"
+		},
+		{
+			"key": "TextBox",
+			"value": "12"
+		},
+		{
+			"key": "TextBoxMultiLine",
+			"value": "13"
+		},
+		{
+			"key": "CanvasPanel",
+			"value": "14"
+		},
+		{
+			"key": "GridPanel",
+			"value": "15"
+		},
+		{
+			"key": "HorizontalBox",
+			"value": "16"
+		},
+		{
+			"key": "Overlay",
+			"value": "17"
+		},
+		{
+			"key": "ScaleBox",
+			"value": "18"
+		},
+		{
+			"key": "ScrollBox",
+			"value": "19"
+		},
+		{
+			"key": "SizeBox",
+			"value": "20"
+		},
+		{
+			"key": "UniformGridPanel",
+			"value": "21"
+		},
+		{
+			"key": "VerticalBox",
+			"value": "22"
+		},
+		{
+			"key": "WrapBox",
+			"value": "23"
+		},
+		{
+			"key": "BackgroundBlur",
+			"value": "24"
+		}
+	],
+	"SkyMode": [
+		{
+			"key": "VolumetricClouds",
+			"value": "0",
+			"description": "Uses a 3D Volumetric Cloud layer"
+		},
+		{
+			"key": "StaticClouds",
+			"value": "1",
+			"description": "Designed to mimic the look of the volumetric clouds but as a static cloud texture. Much lower performance cost than volumetric clouds."
+		},
+		{
+			"key": "DynamicClouds2D",
+			"value": "2",
+			"description": "Uses simple 2D dynamic clouds"
+		},
+		{
+			"key": "NoClouds",
+			"value": "3",
+			"description": "Disables all forms of dynamic clouds"
+		},
+		{
+			"key": "VolumetricAurora",
+			"value": "4",
+			"description": "Trades clouds for a full 3D volumetric aurora, much more convincing than the 2D effect."
+		},
+		{
+			"key": "Space",
+			"value": "5",
+			"description": "Turns off all sky color, atmospheric scattering, clouds, etc. Specifically for environments which are set in outer space with no planet/ground beneath the camera."
+		}
+	],
 	"SoundType": [
 		{
 			"key": "SFX",
@@ -883,15 +1031,18 @@
 	"SoundLoopMode": [
 		{
 			"key": "Default",
-			"value": "0"
+			"value": "0",
+			"description": "Default value defined in the asset"
 		},
 		{
 			"key": "Forever",
-			"value": "1"
+			"value": "1",
+			"description": "Overrides it to make it loop forever"
 		},
 		{
 			"key": "Never",
-			"value": "2"
+			"value": "2",
+			"description": "Overrides it to make it play once"
 		}
 	],
 	"StanceMode": [
@@ -910,6 +1061,23 @@
 		{
 			"key": "Proning",
 			"value": "3"
+		}
+	],
+	"SteeringType": [
+		{
+			"key": "SingleAngle",
+			"value": "0",
+			"description": "Both wheels steer by the same amount"
+		},
+		{
+			"key": "AngleRatio",
+			"value": "1",
+			"description": "Outer wheels on corner steer less than the inner ones by set ratio"
+		},
+		{
+			"key": "Ackermann",
+			"value": "2",
+			"description": "Ackermann steering principle is applied"
 		}
 	],
 	"SurfaceType": [
@@ -1316,7 +1484,7 @@
 			"value": "2"
 		}
 	],
-	"WebUIVisibility": [
+	"WidgetVisibility": [
 		{
 			"key": "Hidden",
 			"value": "0"

@@ -5,7 +5,8 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Paintable"
+		"Paintable",
+		"Damageable"
 	],
 	"constructors": [
 		{
@@ -52,9 +53,9 @@
 					"name": "animation_path"
 				},
 				{
-					"type": "AnimationSlotType",
-					"name": "slot_type",
-					"default": "AnimationSlotType.FullBody"
+					"type": "string",
+					"name": "slot_name",
+					"default": ""
 				},
 				{
 					"type": "boolean",
@@ -489,6 +490,21 @@
 				{
 					"type": "boolean",
 					"name": "orient_rotation_to_movement"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetSpeedSettings",
+			"description": "Sets the Speed Settings of this Character",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "max_walk_speed"
+				},
+				{
+					"type": "integer",
+					"name": "max_walk_speed_crouched"
 				}
 			]
 		},

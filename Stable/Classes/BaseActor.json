@@ -82,7 +82,12 @@
 					"type": "integer",
 					"name": "dimension"
 				}
-			]
+			],
+			"relations": {
+				"events": [
+					"DimensionChange"
+				]
+			}
 		},
 		{
 			"name": "SetForce",
@@ -139,7 +144,15 @@
 					"default": "0",
 					"description": "Index to use (should be <code>0</code>, <code>1</code or <code>2</code>)"
 				}
-			]
+			],
+			"relations": {
+				"etc": [
+					{
+						"label": "Client.SetHighlightColor()",
+						"url": "/docs/scripting-reference/static-classes/client#static-function-sethighlightcolor"
+					}
+				]
+			}
 		},
 		{
 			"name": "SetOutlineEnabled",
@@ -157,7 +170,15 @@
 					"default": "0",
 					"description": "Index to use (should be <code>0</code>, <code>1</code or <code>2</code>)"
 				}
-			]
+			],
+			"relations": {
+				"etc": [
+					{
+						"label": "Client.SetOutlineColor()",
+						"url": "/docs/scripting-reference/static-classes/client#static-function-setoutlinecolor"
+					}
+				]
+			}
 		},
 		{
 			"name": "SetLifeSpan",
@@ -471,7 +492,12 @@
 				{
 					"type": "integer"
 				}
-			]
+			],
+			"relations": {
+				"events": [
+					"DimensionChange"
+				]
+			}
 		},
 		{
 			"name": "HasNetworkAuthority",
@@ -523,7 +549,13 @@
 					"type": "string",
 					"name": "tag"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"RemoveActorTag",
+					"GetActorTags"
+				]
+			}
 		},
 		{
 			"name": "RemoveActorTag",
@@ -534,7 +566,13 @@
 					"type": "string",
 					"name": "tag"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"AddActorTag",
+					"GetActorTags"
+				]
+			}
 		},
 		{
 			"name": "GetActorTags",
@@ -544,7 +582,13 @@
 				{
 					"type": "string[]"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"AddActorTag",
+					"RemoveActorTag"
+				]
+			}
 		},
 		{
 			"name": "WasRecentlyRendered",
@@ -595,7 +639,13 @@
 					"name": "new_dimension",
 					"type": "integer"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDimension",
+					"GetDimension"
+				]
+			}
 		}
 	]
 }

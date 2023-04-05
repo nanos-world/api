@@ -1,0 +1,136 @@
+{
+	"name": "table",
+	"description": "This library provides generic functions for table manipulation. It provides all its functions inside the table <code>table</code>.",
+	"static_functions": [
+		{
+			"parameters": [
+				{
+					"type": "table",
+					"name": "tbl",
+					"description": "The table to insert the variable into."
+				},
+				{
+					"type": "number",
+					"name": "position",
+					"description": "The position in the table to insert the variable. If the third argument is nil this argument becomes the value to insert at the end of given table."
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "The variable to insert into the table."
+				}
+			],
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"is_native": true,
+			"name": "insert"
+		},
+		{
+			"parameters": [
+				{
+					"type": "table",
+					"name": "tbl",
+					"description": "The table to sort."
+				},
+				{
+					"type": "function",
+					"name": "sorter",
+					"description": "If specified, the function will be called with 2 parameters each.\r\nReturn true in this function if you want the first parameter to come first in the sorted array."
+				}
+			],
+			"is_native": true,
+			"name": "sort"
+		},
+		{
+			"parameters": [
+				{
+					"type": "table",
+					"name": "sourceTbl",
+					"description": "The source table from which the elements are to be moved."
+				},
+				{
+					"type": "number",
+					"name": "from",
+					"description": "The start index of the source range from which the elements are to be moved."
+				},
+				{
+					"type": "number",
+					"name": "to",
+					"description": "The end index of the source range until which the elements are to be moved."
+				},
+				{
+					"type": "number",
+					"name": "dest",
+					"description": "The index within the destination table where the moved elements should be inserted. If this is not specified, the moved elements will be inserted at the end of the table."
+				},
+				{
+					"type": "table",
+					"name": "destTbl",
+					"description": "The destination table to which the elements are to be moved. By default, this is the same as the source table."
+				}
+			],
+			"return": [
+				{
+					"type": "table"
+				}
+			],
+			"is_native": true,
+			"name": "move"
+		},
+		{
+			"parameters": [
+				{
+					"type": "table",
+					"name": "tbl",
+					"description": "The table to remove the value from."
+				},
+				{
+					"type": "number",
+					"name": "index",
+					"description": "The index of the value to remove."
+				}
+			],
+			"return": [
+				{
+					"type": "any"
+				}
+			],
+			"is_native": true,
+			"name": "remove"
+		},
+		{
+			"parameters": [
+				{
+					"type": "table",
+					"name": "tbl",
+					"description": "The table to concatenate."
+				},
+				{
+					"type": "string",
+					"name": "concatenator",
+					"description": "A separator to insert between strings"
+				},
+				{
+					"type": "number",
+					"name": "startPos",
+					"description": "The key to start at"
+				},
+				{
+					"type": "number",
+					"name": "endPos",
+					"description": "The key to end at"
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "concat"
+		}
+	]
+}

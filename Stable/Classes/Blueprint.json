@@ -35,7 +35,7 @@
 			"return": [
 				{
 					"type": "any",
-					"description": "The event return values"
+					"description": "the function return values"
 				}
 			],
 			"description": "Calls a Blueprint Event or Function",
@@ -69,6 +69,29 @@
 					"type": "function",
 					"name": "callback",
 					"description": "Callback function to call (the first argument is the blueprint itself)"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "the callback itself"
+				}
+			]
+		},
+		{
+			"name": "UnbindBlueprintEventDispatcher",
+			"description": "Unbinds a Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback?",
+					"description": "Optional callback to unbind"
 				}
 			]
 		},

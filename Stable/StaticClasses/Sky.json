@@ -24,6 +24,147 @@
 		},
 		{
 			"authority": "client",
+			"name": "Reconstruct",
+			"description": "Reconstruct the Ultra Dynamic Sky Actor, forces most of the changes to be applied"
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonTexture",
+			"description": "Sets the Moon Texture",
+			"description_long": "Sets the Moon Texture<br /><br />Set it to empty to restore the default. After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
+			"parameters": [
+				{
+					"type": "ImagePath",
+					"name": "texture"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonTextureRotation",
+			"description": "Sets the Moon Texture Rotation",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "rotation"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonVerticalOffset",
+			"description": "Sets the Moon Vertical Offset",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "offset"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonScale",
+			"description": "Sets the Moon Scale",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "scale"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonPhase",
+			"description": "Sets the Moon Phase",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "phase",
+					"description": "Ranges from 0-30"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonGlowIntensity",
+			"description": "Sets the Moon Glow Intensity",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "glow_intensity"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonLightIntensity",
+			"description": "Sets the Moon Light Intensity",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunAngle",
+			"description": "Sets the Sun Angle",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "angle"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunRadius",
+			"description": "Sets the Sun Radius",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "radius"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSunLightIntensity",
+			"description": "Sets the Sun Light Intensity",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "intensity"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetSkyMode",
+			"description": "Sets the Sky Mode",
+			"description_long": "Sets the Sky Mode<br /><br />After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
+			"parameters": [
+				{
+					"type": "SkyMode",
+					"name": "sky_mode"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetVolumetricCloudColor",
+			"description": "Sets the Volumetric Cloud Color",
+			"description_long": "Sets the Volumetric Cloud Color<br /><br />This is only applied if <code>SetSkyMode(SkyMode.VolumetricClouds)</code> is set",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "SetCloudCoverage",
 			"description": "The amount of coverage for the cloud layer, from a clear sky to overcast",
 			"parameters": [

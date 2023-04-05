@@ -1,0 +1,336 @@
+{
+	"name": "string",
+	"description": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
+	"functions": [
+		{
+			"name": "byte",
+			"description": "Returns the internal numeric codes of the characters <code>s[start_pos], s[start_pos + 1], ..., s[end_pos]</code>",
+			"is_native": true,
+			"return": [
+				{
+					"type": "integer...",
+					"description": "the internal numeric code"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "start_pos",
+					"default": "1",
+					"description": "The first character of the string to get the byte of"
+				},
+				{
+					"type": "integer",
+					"name": "end_pos",
+					"default": "start_pos",
+					"description": "The last character of the string to get the byte of"
+				}
+			]
+		},
+		{
+			"name": "char",
+			"description": "Receives zero or more integers. Returns a string with length equal to the number of arguments, in which each character has the internal numeric code equal to its corresponding argument",
+			"is_native": true,
+			"return": [
+				{
+					"type": "string",
+					"description": "the string"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer...",
+					"name": "values"
+				}
+			]
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "haystack",
+					"description": "The string to search in."
+				},
+				{
+					"type": "string",
+					"name": "needle",
+					"description": "The string to find, can contain patterns if enabled."
+				},
+				{
+					"type": "number",
+					"name": "startPos",
+					"description": "The position to start the search from, can be negative start position will be relative to the end position."
+				},
+				{
+					"type": "boolean",
+					"name": "noPatterns",
+					"description": "Disable patterns."
+				}
+			],
+			"return": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "find",
+			"description": "Looks for the first match of `pattern` in the string."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "str",
+					"description": "The string to convert."
+				},
+				{
+					"type": "number",
+					"name": "repetitions",
+					"description": "Timer to repeat, this values gets rounded internally."
+				},
+				{
+					"type": "string",
+					"name": "separator",
+					"description": "String that will separate the repeated piece. Notice that it doesn't add this string to the start or the end of the result, only between the repeated parts."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "rep",
+			"description": "Returns a string that is the concatenation of `n` copies of the string `s` separated by the string `sep`."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "str",
+					"description": "The string to convert."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "lower",
+			"description": "Returns a copy of this string with all uppercase letters changed to lowercase."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "str",
+					"description": "The string to convert."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "upper",
+			"description": "Returns a copy of this string with all lowercase letters changed to uppercase."
+		},
+		{
+			"parameters": [
+				{
+					"type": "function",
+					"name": "func",
+					"description": "The function to get the bytecode of"
+				},
+				{
+					"type": "boolean",
+					"name": "stripDebugInfo",
+					"description": "True to strip the debug data, false to keep it"
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "dump",
+			"description": "Returns a string containing a binary representation (a *binary chunk*) of the given function."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "string",
+					"description": "String which should be searched in for matches."
+				},
+				{
+					"type": "string",
+					"name": "pattern",
+					"description": "The pattern that defines what should be matched."
+				},
+				{
+					"type": "number",
+					"name": "startPosition",
+					"description": "The start index to start the matching from, can be negative to start the match from a position relative to the end."
+				}
+			],
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"is_native": true,
+			"name": "match",
+			"description": "Looks for the first match of `pattern` in the string."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "str",
+					"description": "The string to be reversed."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "reverse",
+			"description": "Returns a string that is the string `s` reversed."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "string",
+					"description": "The string you'll take a sub-string out of."
+				},
+				{
+					"type": "number",
+					"name": "StartPos",
+					"description": "The position of the first character that will be included in the sub-string."
+				},
+				{
+					"type": "number",
+					"name": "EndPos",
+					"description": "The position of the last character to be included in the sub-string. It can be negative to count from the end."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "sub",
+			"description": "Returns the substring of the string that starts at `i` and continues until `j`."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "data",
+					"description": "The string to search in"
+				},
+				{
+					"type": "string",
+					"name": "pattern",
+					"description": "The pattern to search for"
+				}
+			],
+			"return": [
+				{
+					"type": "function"
+				}
+			],
+			"is_native": true,
+			"name": "gmatch",
+			"description": "Returns an iterator function that, each time it is called, returns the next captures from `pattern` over the string s. "
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "str",
+					"description": "The string to find the length of."
+				}
+			],
+			"return": [
+				{
+					"type": "number"
+				}
+			],
+			"is_native": true,
+			"name": "len",
+			"description": "Returns its length."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "string",
+					"description": "String which should be modified."
+				},
+				{
+					"type": "string",
+					"name": "pattern",
+					"description": "The pattern that defines what should be matched and eventually be replaced."
+				},
+				{
+					"type": "string",
+					"name": "replacement",
+					"description": "In case of a string the matched sequence will be replaced with it. In case of a table, the matched sequence will be used as key and the table will tested for the key, if a value exists it will be used as replacement.  In case of a function all matches will be passed as parameters to the function, the return value(s) of the function will then be used as replacement."
+				},
+				{
+					"type": "number",
+					"name": "maxReplaces",
+					"description": "Maximum number of replacements to be made."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "number"
+				}
+			],
+			"is_native": true,
+			"name": "gsub",
+			"description": "Returns a copy of s in which all (or the first `n`, if given) occurrences of the `pattern` have been replaced by a replacement string specified by `repl`."
+		},
+		{
+			"parameters": [
+				{
+					"type": "string",
+					"name": "format",
+					"description": "The string to be formatted"
+				},
+				{
+					"type": "number",
+					"name": "formatParameters",
+					"description": "Values to be formatted into the string."
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"is_native": true,
+			"name": "format",
+			"description": "Returns a formatted version of its variable number of arguments following the description given in its first argument."
+		}
+	]
+}

@@ -4,6 +4,17 @@
 	"authority": "client",
 	"static_functions": [
 		{
+			"name": "CopyToClipboard",
+			"description": "Copies a text to Clipboard",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text"
+				}
+			]
+		},
+		{
 			"name": "SetNearClipPlane",
 			"description": "Sets the Near Clip Plane",
 			"authority": "client",
@@ -16,12 +27,40 @@
 			]
 		},
 		{
+			"name": "SetEscapeMenuText",
+			"description": "Sets the Escape Menu text",
+			"authority": "client",
+			"examples": [
+				{
+					"title": "Adding customized texts",
+					"content": "Client.SetEscapeMenuText([[\n    <h1>Header 1</>\n    <h2>Header 2</>\n    <h3>Header 3</>\n    <strong>Strong</>\n    Normal Text\n]])"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "Supports using <code>&#60h1&#62</code>, <code>&#60h2&#62</code>, <code>&#60h3&#62</code> and <code>&#60strong&#62</code> tags in the text."
+				}
+			]
+		},
+		{
 			"name": "GetNearClipPlane",
 			"description": "Gets the Near Clip Plane value",
 			"authority": "client",
 			"return": [
 				{
 					"type": "float"
+				}
+			]
+		},
+		{
+			"name": "GetConnectedServerIP",
+			"description": "Gets the current connected server IP:Port",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string"
 				}
 			]
 		},
