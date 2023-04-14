@@ -982,6 +982,24 @@
 			"value": "24"
 		}
 	],
+	"PackageType": [
+		{
+			"key": "Script",
+			"value": "0"
+		},
+		{
+			"key": "GameMode",
+			"value": "1"
+		},
+		{
+			"key": "LoadingScreen",
+			"value": "2"
+		},
+		{
+			"key": "Map",
+			"value": "4"
+		}
+	],
 	"SkyMode": [
 		{
 			"key": "VolumetricClouds",
