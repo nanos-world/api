@@ -278,12 +278,23 @@
 		},
 		{
 			"name": "GetMap",
-			"description": "Returns the current Map",
+			"description": "Returns the current Map Package name",
 			"authority": "server",
 			"return": [
 				{
 					"type": "string",
-					"description": "the current map"
+					"description": "the current map package"
+				}
+			]
+		},
+		{
+			"name": "GetMapAsset",
+			"description": "Returns the current Map Asset reference",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string",
+					"description": "the current map asset"
 				}
 			]
 		},
@@ -320,32 +331,49 @@
 			]
 		},
 		{
-			"name": "GetMaps",
-			"description": "Returns a list of all Maps installed on the server",
-			"authority": "server",
-			"return": [
-				{
-					"type": "string[]",
-					"description": "a list of all Maps installed on the server"
-				}
-			]
-		},
-		{
 			"name": "GetPackages",
-			"description": "Returns a list of Packages folder names available in the server, optionally returns only loaded and running packages",
+			"description": "Returns a list of Packages running, optionally returns all Packages installed in the server",
 			"authority": "server",
 			"return": [
 				{
-					"type": "string[]",
-					"description": "a list of Packages folder names available in the server"
+					"type": "table[]",
+					"description": "a list of Packages data",
+					"table_properties": [
+						{
+							"name": "title",
+							"type": "string"
+						},
+						{
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"name": "type",
+							"type": "PackageType"
+						},
+						{
+							"name": "version",
+							"type": "string"
+						},
+						{
+							"name": "author",
+							"type": "string"
+						}
+					]
 				}
 			],
 			"parameters": [
 				{
 					"type": "boolean",
 					"name": "only_loaded",
-					"description": "Set to true the function return only loaded and running packages",
+					"description": "Set to true the function return only loaded and running packages. Caution: setting to false will retrieve Packages list from disk, which is a slow operation!",
 					"default": "true"
+				},
+				{
+					"type": "PackageType",
+					"name": "package_type_filter",
+					"description": "Which Package type to return. Leave it default (-1) to return all types.",
+					"default": "-1"
 				}
 			]
 		},

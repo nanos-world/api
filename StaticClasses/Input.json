@@ -271,6 +271,23 @@
 	],
 	"events": [
 		{
+			"name": "KeyBindingChange",
+			"description": "A key binding has been changed through the settings",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				},
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The new key associated"
+				}
+			]
+		},
+		{
 			"name": "KeyDown",
 			"description": "A keyboard key is being pressed",
 			"authority": "client",
