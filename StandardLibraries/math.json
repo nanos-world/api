@@ -37,7 +37,7 @@
 		{
 			"parameters": [
 				{
-					"type": "vararg",
+					"type": "number...",
 					"name": "numbers",
 					"description": "Numbers to get the smallest from."
 				}
@@ -202,7 +202,7 @@
 		{
 			"parameters": [
 				{
-					"type": "vararg",
+					"type": "number...",
 					"name": "numbers",
 					"description": "Numbers to get the largest from"
 				}

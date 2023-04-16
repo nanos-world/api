@@ -20,23 +20,6 @@
 			]
 		},
 		{
-			"name": "Dump",
-			"description": "Dumps a table into a readable text",
-			"return": [
-				{
-					"type": "string",
-					"description": "the table as readable text"
-				}
-			],
-			"parameters": [
-				{
-					"type": "table",
-					"name": "table",
-					"description": "Table to dump"
-				}
-			]
-		},
-		{
 			"name": "Benchmark",
 			"description": "Benchmarks a function performance",
 			"description_long": "Benchmarks a function performance, outputs in the console the elapsed time",
@@ -60,46 +43,6 @@
 					"type": "any",
 					"name": "args...",
 					"description": "The arguments of the function to call"
-				}
-			]
-		},
-		{
-			"name": "FormatString",
-			"description": "A better string.format",
-			"description_long": "A better string.format. replace {num} by the corresponding vararg in a string<br/><br/>Example: <code>NanosUtils.FormatString(\"Hello {2} I'm {1}\", \"a noob\", \"world!\") -- \"Hello world! I'm a noob\"</code>",
-			"return": [
-				{
-					"type": "string",
-					"description": "the final text with the arguments"
-				}
-			],
-			"parameters": [
-				{
-					"type": "string",
-					"name": "text",
-					"description": "Text to format"
-				},
-				{
-					"type": "any",
-					"name": "args...",
-					"description": "The arguments to replace"
-				}
-			]
-		},
-		{
-			"name": "ShallowCopyTable",
-			"description": "Performs a shallow copy of a table",
-			"return": [
-				{
-					"type": "table",
-					"description": "the copied table"
-				}
-			],
-			"parameters": [
-				{
-					"type": "table",
-					"name": "table",
-					"description": "The table to shallow copy"
 				}
 			]
 		}

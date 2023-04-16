@@ -3,6 +3,69 @@
 	"description": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
 	"functions": [
 		{
+			"name": "StartsWith",
+			"description": "Test whether this string starts with given string",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "other_string",
+					"description": "The given string"
+				}
+			]
+		},
+		{
+			"name": "EndsWith",
+			"description": "Test whether this string ends with given string",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "other_string",
+					"description": "The given string"
+				}
+			]
+		},
+		{
+			"name": "Trim",
+			"description": "Returns a new string with removed whitespace characters from the front and end of this string",
+			"return": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "FormatArgs",
+			"description": "A better string.Format, replace <code>{num}</code> by the corresponding vararg in a string",
+			"examples": [
+				{
+					"title": "Replaces {1} and {2} with corresponding texts",
+					"content": "local str = \"Hello {2} I'm {1}\"\nlocal new_str = str:FormatArgs(\"a noob\", \"world!\")\n-- Outputs: \"Hello world! I'm a noob\""
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"parameters": [
+				{
+					"type": "any...",
+					"name": "args",
+					"description": "The args"
+				}
+			]
+		},
+		{
 			"name": "byte",
 			"description": "Returns the internal numeric codes of the characters <code>s[start_pos], s[start_pos + 1], ..., s[end_pos]</code>",
 			"is_native": true,
