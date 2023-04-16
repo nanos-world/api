@@ -143,7 +143,7 @@
 			],
 			"is_native": true,
 			"name": "find",
-			"description": "Looks for the first match of `pattern` in the string."
+			"description": "Looks for the first match of <code>pattern</code> in the string."
 		},
 		{
 			"parameters": [
@@ -170,7 +170,7 @@
 			],
 			"is_native": true,
 			"name": "rep",
-			"description": "Returns a string that is the concatenation of `n` copies of the string `s` separated by the string `sep`."
+			"description": "Returns a string that is the concatenation of <code>n</code> copies of the string <code>s</code> separated by the string <code>sep</code>."
 		},
 		{
 			"parameters": [
@@ -253,7 +253,7 @@
 			],
 			"is_native": true,
 			"name": "match",
-			"description": "Looks for the first match of `pattern` in the string."
+			"description": "Looks for the first match of <code>pattern</code> in the string."
 		},
 		{
 			"parameters": [
@@ -270,7 +270,7 @@
 			],
 			"is_native": true,
 			"name": "reverse",
-			"description": "Returns a string that is the string `s` reversed."
+			"description": "Returns a string that is the string <code>s</code> reversed."
 		},
 		{
 			"parameters": [
@@ -297,7 +297,7 @@
 			],
 			"is_native": true,
 			"name": "sub",
-			"description": "Returns the substring of the string that starts at `i` and continues until `j`."
+			"description": "Returns the substring of the string that starts at <code>i</code> and continues until <code>j</code>."
 		},
 		{
 			"parameters": [
@@ -319,7 +319,7 @@
 			],
 			"is_native": true,
 			"name": "gmatch",
-			"description": "Returns an iterator function that, each time it is called, returns the next captures from `pattern` over the string s. "
+			"description": "Returns an iterator function that, each time it is called, returns the next captures from <code>pattern</code> over the string s. "
 		},
 		{
 			"parameters": [
@@ -371,7 +371,7 @@
 			],
 			"is_native": true,
 			"name": "gsub",
-			"description": "Returns a copy of s in which all (or the first `n`, if given) occurrences of the `pattern` have been replaced by a replacement string specified by `repl`."
+			"description": "Returns a copy of s in which all (or the first <code>n</code>, if given) occurrences of the <code>pattern</code> have been replaced by a replacement string specified by <code>repl</code>."
 		},
 		{
 			"parameters": [

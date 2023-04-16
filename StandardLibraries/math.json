@@ -16,6 +16,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the integer no greater than the given value (even for negatives)",
 			"name": "ceil"
 		},
 		{
@@ -32,6 +33,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the tangent value for a given value in radians.",
 			"name": "tan"
 		},
 		{
@@ -48,6 +50,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the minimum value from a variable length list of arguments",
 			"name": "min"
 		},
 		{
@@ -69,6 +72,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Returns the remainder of the division of <code>base</code> by <code>modulator</code> that rounds the quotient towards zero",
 			"name": "fmod"
 		},
 		{
@@ -85,6 +89,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Returns e (the base of natural logarithms) raised to the power <code>exponent</code>",
 			"name": "exp"
 		},
 		{
@@ -106,6 +111,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Generates pseudo-random numbers uniformly distributed",
 			"name": "random"
 		},
 		{
@@ -122,6 +128,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Convert from degrees to radians",
 			"name": "rad"
 		},
 		{
@@ -138,6 +145,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the sine value for a given value in radians.",
 			"name": "sin"
 		},
 		{
@@ -154,6 +162,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the cosine value for a given value in radians.",
 			"name": "cos"
 		},
 		{
@@ -170,6 +179,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the inverse sine in radians of the given value.",
 			"name": "asin"
 		},
 		{
@@ -181,6 +191,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Sets a seed for the pseudo-random generator: Equal seeds produce equal sequences of numbers",
 			"name": "randomseed"
 		},
 		{
@@ -197,6 +208,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the integer no less than the given value (even for negatives)",
 			"name": "floor"
 		},
 		{
@@ -213,6 +225,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the maximum value from a variable length list of arguments",
 			"name": "max"
 		},
 		{
@@ -229,6 +242,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the inverse tangent in radians. We can do this by supplying y/x ourselves or we can pass y and x to math.atan to do this for us",
 			"name": "atan"
 		},
 		{
@@ -245,6 +259,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the inverse cosine in radians of the given value.",
 			"name": "acos"
 		},
 		{
@@ -261,6 +276,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the absolute, or non-negative value, of a given value",
 			"name": "abs"
 		},
 		{
@@ -282,6 +298,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Returns the inverse of this. <code>math.exp(1)</code> returns <code>e</code>",
 			"name": "log"
 		},
 		{
@@ -301,6 +318,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the integral and fractional parts of the given number",
 			"name": "modf"
 		},
 		{
@@ -317,6 +335,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Convert from radians to degrees",
 			"name": "deg"
 		},
 		{
@@ -333,6 +352,7 @@
 				}
 			],
 			"is_native": true,
+			"description": "Return the square root of a given number. Only non-negative arguments are allowed",
 			"name": "sqrt"
 		}
 	]

@@ -12,12 +12,14 @@
 				{
 					"type": "number",
 					"name": "position",
-					"description": "The position in the table to insert the variable. If the third argument is nil this argument becomes the value to insert at the end of given table."
+					"description": "The position in the table to insert the variable. If the third argument is nil this argument becomes the value to insert at the end of given table.",
+					"default": "#tbl + 1"
 				},
 				{
 					"type": "any",
 					"name": "value",
-					"description": "The variable to insert into the table."
+					"description": "The variable to insert into the table.",
+					"default": ""
 				}
 			],
 			"return": [
@@ -26,6 +28,8 @@
 				}
 			],
 			"is_native": true,
+			"description": "Inserts element value at <code>position</code> in <code>tbl</code>",
+			"description_long": "Inserts element value at <code>position</code> in <code>tbl</code>, shifting up the elements <code>tbl[position], tbl[position + 1], ···, tbl[#tbl]</code>",
 			"name": "insert"
 		},
 		{
@@ -42,13 +46,15 @@
 				}
 			],
 			"is_native": true,
+			"description": "Sorts the <code>tbl</code> elements in a given order, in-place, from <code>tbl[1]</code> to <code>tbl[#tbl]</code>",
+			"description_long": "Sorts the <code>tbl</code> elements in a given order, in-place, from <code>tbl[1]</code> to <code>tbl[#tbl]</code>. If <code>sorter</code> is given, then it must be a function that receives two <code>tbl</code> elements and returns true when the first element must come before the second in the final order, so that, after the sort, i <= j implies <code>not sorter(tbl[j], tbl[i])</code>. If <code>sorter</code> is not given, then the standard Lua operator < is used instead.<br/><br/>The <code>sorter</code> function must define a consistent order; more formally, the function must define a strict weak order. (A weak order is similar to a total order, but it can equate different elements for comparison purposes).<br/><br/>The sort algorithm is not stable: Different elements considered equal by the given order may have their relative positions changed by the sort.",
 			"name": "sort"
 		},
 		{
 			"parameters": [
 				{
 					"type": "table",
-					"name": "sourceTbl",
+					"name": "source_table",
 					"description": "The source table from which the elements are to be moved."
 				},
 				{
@@ -68,8 +74,9 @@
 				},
 				{
 					"type": "table",
-					"name": "destTbl",
-					"description": "The destination table to which the elements are to be moved. By default, this is the same as the source table."
+					"name": "dest_table",
+					"description": "The destination table to which the elements are to be moved. By default, this is the same as the source table.",
+					"default": "source_table"
 				}
 			],
 			"return": [
@@ -78,6 +85,8 @@
 				}
 			],
 			"is_native": true,
+			"description": "Moves elements from the <code>source_table</code> to the <code>dest_table</code>",
+			"description_long": "Moves elements from the <code>source_table</code> to the <code>dest_table</code>, performing the equivalent to the following multiple assignment: <code>dest_table[dest], ··· = a1[from], ···, source_table[to]</code>.<br /><br />The destination range can overlap with the source range. The number of elements to be moved must fit in a Lua integer.",
 			"name": "move"
 		},
 		{
@@ -99,6 +108,8 @@
 				}
 			],
 			"is_native": true,
+			"description": "Removes from <code>tbl</code> the element at position <code>index</code>, returning the value of the removed element",
+			"description_long": "Removes from <code>tbl</code> the element at position <code>index</code>, returning the value of the removed element.<br /><br />When <code>index</code> is an integer between 1 and <code>#tbl</code>, it shifts down the elements <code>tbl[index + 1], tbl[index + 2], ···, tbl[#tbl]</code> and erases element <code>tbl[#tbl]</code>.<br /><br />The <code>index</code> can also be 0 when <code>#tbl</code> is 0, or <code>#tbl + 1</code>.",
 			"name": "remove"
 		},
 		{
@@ -110,18 +121,21 @@
 				},
 				{
 					"type": "string",
-					"name": "concatenator",
-					"description": "A separator to insert between strings"
+					"name": "separator",
+					"description": "A separator to insert between strings",
+					"default": "\"\""
 				},
 				{
 					"type": "number",
-					"name": "startPos",
-					"description": "The key to start at"
+					"name": "start_pos",
+					"description": "The index to start at",
+					"default": "1"
 				},
 				{
 					"type": "number",
-					"name": "endPos",
-					"description": "The key to end at"
+					"name": "end_pos",
+					"description": "The index to end at",
+					"default": "#tbl"
 				}
 			],
 			"return": [
@@ -130,6 +144,8 @@
 				}
 			],
 			"is_native": true,
+			"description": "Given a <code>tbl</code> where all elements are strings or numbers, returns the string with elements concatenated.",
+			"description_long": "Given a <code>tbl</code> where all elements are strings or numbers, returns the string <code>tbl[start_pos] .. separator .. tbl[start_pos + 1] ... separator .. tbl[end_pos]</code>.<br/><br/>If <code>start_pos</code> is greater than <code>end_pos</code>, returns the empty string",
 			"name": "concat"
 		}
 	]
