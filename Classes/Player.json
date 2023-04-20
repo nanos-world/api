@@ -336,7 +336,7 @@
 		{
 			"authority": "both",
 			"name": "GetAccountIconURL",
-			"description": "Return a URL which can be used through WebUI to display the Player's Steam Avatar (64x64)",
+			"description": "Return a URL which can be used through WebUI and Widgets to display the Player's Steam Avatar (64x64)",
 			"return": [
 				{
 					"type": "string"
