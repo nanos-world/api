@@ -68,7 +68,17 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback function to call (the first argument is the blueprint itself)"
+					"description": "Callback function to call",
+					"function_parameters": [
+						{
+							"name": "self",
+							"type": "Blueprint"
+						},
+						{
+							"name": "params",
+							"type": "any..."
+						}
+					]
 				}
 			],
 			"return": [

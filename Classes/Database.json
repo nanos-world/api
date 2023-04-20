@@ -34,7 +34,7 @@
 		{
 			"name": "ExecuteAsync",
 			"authority": "server",
-			"description": "Execute a query asyncronously",
+			"description": "Execute a query asynchronously",
 			"parameters": [
 				{
 					"type": "string",
@@ -45,7 +45,19 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "Callback in the format (rows_affected, error)"
+					"description": "Callback",
+					"function_parameters": [
+						{
+							"name": "rows_affected",
+							"type": "integer",
+							"description": "Amount of rows affected"
+						},
+						{
+							"name": "error",
+							"type": "string?",
+							"description": "Error message, if got error"
+						}
+					]
 				},
 				{
 					"type": "any",
@@ -58,7 +70,7 @@
 		{
 			"name": "Execute",
 			"authority": "server",
-			"description": "Execute a query syncronously",
+			"description": "Execute a query synchronously",
 			"parameters": [
 				{
 					"type": "string",
@@ -86,7 +98,7 @@
 		{
 			"name": "SelectAsync",
 			"authority": "server",
-			"description": "Execute a select query asyncronously",
+			"description": "Execute a select query asynchronously",
 			"parameters": [
 				{
 					"type": "string",
@@ -97,7 +109,19 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "Callback in the format (rows: table[], error: string?)"
+					"description": "Callback",
+					"function_parameters": [
+						{
+							"name": "rows",
+							"type": "table[]",
+							"description": "All rows returned by the query"
+						},
+						{
+							"name": "error",
+							"type": "string?",
+							"description": "Error message, if got error"
+						}
+					]
 				},
 				{
 					"type": "any",
@@ -110,7 +134,7 @@
 		{
 			"name": "Select",
 			"authority": "server",
-			"description": "Selects a query syncronously",
+			"description": "Selects a query synchronously",
 			"parameters": [
 				{
 					"type": "string",

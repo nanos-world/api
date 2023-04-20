@@ -52,7 +52,7 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback to run on the event occuring"
+					"description": "Callback to run on the event occurring"
 				}
 			],
 			"return": [

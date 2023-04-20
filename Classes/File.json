@@ -107,7 +107,14 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback with the file read"
+					"description": "Callback",
+					"function_parameters": [
+						{
+							"name": "file_content",
+							"type": "string",
+							"description": "File content"
+						}
+					]
 				}
 			]
 		},
@@ -141,7 +148,14 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback with the file read"
+					"description": "Callback with the file read",
+					"function_parameters": [
+						{
+							"name": "file_content",
+							"type": "table",
+							"description": "File content in table format"
+						}
+					]
 				}
 			]
 		},

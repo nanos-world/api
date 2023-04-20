@@ -70,7 +70,13 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "The callback to be called when the command is inputted"
+					"description": "The callback to be called when the command is inputted",
+					"function_parameters": [
+						{
+							"name": "params",
+							"type": "any..."
+						}
+					]
 				},
 				{
 					"type": "string",
