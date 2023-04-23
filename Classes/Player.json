@@ -214,6 +214,11 @@
 				{
 					"name": "length",
 					"type": "float"
+				},
+				{
+					"name": "force",
+					"type": "boolean",
+					"description": "Whether to bypass interpolation and set the target to its value directly"
 				}
 			]
 		},
@@ -357,10 +362,10 @@
 			"name": "GetCameraArmLength",
 			"parameters": [
 				{
-					"name": "return_target",
+					"name": "return_base",
 					"type": "boolean",
 					"default": "false",
-					"description": "Whether to return the current (false) or target (true) value"
+					"description": "Whether to return the current (false) or base (true) value. The base is the same value set by SetCameraArmLength()."
 				}
 			],
 			"return": [
