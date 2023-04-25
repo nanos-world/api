@@ -39,10 +39,26 @@
 					"name": "func",
 					"description": "The function to call"
 				},
-		{
+				{
 					"type": "any",
 					"name": "args...",
 					"description": "The arguments of the function to call"
+				}
+			],
+			"examples": [
+				{
+					"title": "Benchmarks a function",
+					"content": [
+						"local arg1 = math.random()",
+						"local arg2 = math.random()",
+						"",
+						"NanosUtils.Benchmark(\"My Heavy Operation\", 1000, function(param1, param2)",
+						"    -- Do some heavy operations here",
+						"    local result = param1 * param2",
+						"end, arg1, arg2)",
+						""
+					],
+					"output": "Benchmark 'My Heavy Operation' (x1000) took 1.5ms"
 				}
 			]
 		}

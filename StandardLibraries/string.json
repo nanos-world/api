@@ -5,6 +5,7 @@
 		{
 			"name": "StartsWith",
 			"description": "Test whether this string starts with given string",
+			"is_native": false,
 			"return": [
 				{
 					"type": "boolean"
@@ -15,12 +16,23 @@
 					"type": "string",
 					"name": "other_string",
 					"description": "The given string"
+				}
+			],
+			"examples": [
+				{
+					"title": "Checks if string starts with text",
+					"content": [
+						"local str = \"awesome text!\"",
+						"local starts = str:StartsWith(\"awesome\")"
+					],
+					"output": "true"
 				}
 			]
 		},
 		{
 			"name": "EndsWith",
 			"description": "Test whether this string ends with given string",
+			"is_native": false,
 			"return": [
 				{
 					"type": "boolean"
@@ -32,24 +44,50 @@
 					"name": "other_string",
 					"description": "The given string"
 				}
+			],
+			"examples": [
+				{
+					"title": "Checks if string ends with text",
+					"content": [
+						"local str = \"awesome text!\"",
+						"local ends = str:EndsWith(\"text!\")"
+					],
+					"output": "true"
+				}
 			]
 		},
 		{
 			"name": "Trim",
 			"description": "Returns a new string with removed whitespace characters from the front and end of this string",
+			"is_native": false,
 			"return": [
 				{
 					"type": "string"
+				}
+			],
+			"examples": [
+				{
+					"title": "Removes extra spaces",
+					"content": [
+						"local str = \"  Hello world!    \"",
+						"local new_str = str:Trim()"
+					],
+					"output": "Hello world!"
 				}
 			]
 		},
 		{
 			"name": "FormatArgs",
 			"description": "A better string.Format, replace <code>{num}</code> by the corresponding vararg in a string",
+			"is_native": false,
 			"examples": [
 				{
 					"title": "Replaces {1} and {2} with corresponding texts",
-					"content": "local str = \"Hello {2} I'm {1}\"\nlocal new_str = str:FormatArgs(\"a noob\", \"world!\")\n-- Outputs: \"Hello world! I'm a noob\""
+					"content": [
+						"local str = \"Hello {2} I'm {1}\"",
+						"local new_str = str:FormatArgs(\"a noob\", \"world!\")"
+					],
+					"output": "Hello world! I'm a noob"
 				}
 			],
 			"return": [

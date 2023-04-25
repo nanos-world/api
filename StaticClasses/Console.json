@@ -29,12 +29,19 @@
 				},
 				{
 					"title": "With formatting (string)",
-					"content": "local player_name = \"John\"\nConsole.Log(\"Hello %s!\", player_name)",
+					"content": [
+						"local player_name = \"John\"",
+						"Console.Log(\"Hello %s!\", player_name)"
+					],
 					"output": "Hello John!"
 				},
 				{
 					"title": "With formatting (integer)",
-					"content": "local health = 50\nlocal max_health = 100\nConsole.Log(\"Player health: %d/%d\", health, max_health)",
+					"content": [
+						"local health = 50",
+						"local max_health = 100",
+						"Console.Log(\"Player health: %d/%d\", health, max_health)"
+					],
 					"output": "Player health: 50/100"
 				}
 			]
@@ -112,7 +119,12 @@
 			"examples": [
 				{
 					"title": "Registering to a command that sends a message to everyone",
-					"content": "Console.RegisterCommand(\"hello\", function(text)\n\tConsole.Log(\"Sending a 'Hello %s' to everyone!\", text)\n\tChat.BroadcastMessage(\"Hello \" .. text)\nend, \"says a message to everyone\", { \"my_text\" })"
+					"content": [
+						"Console.RegisterCommand(\"hello\", function(text)",
+						"    Console.Log(\"Sending a 'Hello %s' to everyone!\", text)",
+						"    Chat.BroadcastMessage(\"Hello \" .. text)",
+						"end, \"says a message to everyone\", { \"my_text\" })"
+					]
 				}
 			]
 		}
@@ -132,7 +144,11 @@
 			"examples": [
 				{
 					"title": "Handles Console Inputs",
-					"content": "if (text == \"some_text\") then\n\tConsole.Log(\"Player submitted some_text!\")\nend"
+					"content": [
+						"if (text == \"some_text\") then",
+						"    Console.Log(\"Player submitted some_text!\")",
+						"end"
+					]
 				}
 			]
 		},

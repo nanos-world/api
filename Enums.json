@@ -379,32 +379,6 @@
 			"value": "2"
 		}
 	],
-	"DifferentialType": [
-		{
-			"key": "LimitedSlip_4W",
-			"value": "0"
-		},
-		{
-			"key": "LimitedSlip_FrontDrive",
-			"value": "1"
-		},
-		{
-			"key": "LimitedSlip_RearDrive",
-			"value": "2"
-		},
-		{
-			"key": "Open_4W",
-			"value": "3"
-		},
-		{
-			"key": "Open_FrontDrive",
-			"value": "4"
-		},
-		{
-			"key": "Open_RearDrive",
-			"value": "5"
-		}
-	],
 	"FallingMode": [
 		{
 			"key": "None",

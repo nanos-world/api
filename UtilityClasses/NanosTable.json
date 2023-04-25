@@ -17,6 +17,29 @@
 					"name": "table",
 					"description": "Table to dump"
 				}
+			],
+			"examples": [
+				{
+					"title": "Dumps a table",
+					"content": [
+						"local table = {",
+						"    \"my_key\" = 123,",
+						"    [2] = \"my_value\"",
+						"}",
+						"",
+						"local dump_text = NanosTable.Dump(table)",
+						"",
+						"Console.Log(dump_text)",
+						"",
+						"-- Outputs Text",
+						"--[[",
+						"{",
+						"   \"my_key\": 123,",
+						"    2 = \"my_value\"",
+						"}",
+						"--]]"
+					]
+				}
 			]
 		},
 		{

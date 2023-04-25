@@ -33,7 +33,15 @@
 			"examples": [
 				{
 					"title": "Adding customized texts",
-					"content": "Client.SetEscapeMenuText([[\n    <h1>Header 1</>\n    <h2>Header 2</>\n    <h3>Header 3</>\n    <strong>Strong</>\n    Normal Text\n]])"
+					"content": [
+						"Client.SetEscapeMenuText([[",
+						"    <h1>Header 1</>",
+						"    <h2>Header 2</>",
+						"    <h3>Header 3</>",
+						"    <strong>Strong</>",
+						"    Normal Text",
+						"]])"
+					]
 				}
 			],
 			"parameters": [

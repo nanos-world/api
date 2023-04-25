@@ -61,6 +61,12 @@
 					"name": "value",
 					"description": "The number to be clamped"
 				}
+			],
+			"examples": [
+				{
+					"title": "Clamping an angle",
+					"content": "local axis = NanosMath.ClampAxis(720)"
+				}
 			]
 		},
 		{
@@ -135,6 +141,17 @@
 				{
 					"type": "number",
 					"name": "interp_speed"
+				}
+			],
+			"examples": [
+				{
+					"title": "Interpolating a number until it reaches 100 with speed 3",
+					"content": [
+						"local my_value = 0",
+						"Client.Subscribe(\"Tick\", function(delta_time)",
+						"    my_value = NanosMath.FInterpTo(my_value, 100, delta_time, 3)",
+						"end)"
+					]
 				}
 			]
 		},
@@ -216,6 +233,17 @@
 				{
 					"type": "number",
 					"name": "interp_speed"
+				}
+			],
+			"examples": [
+				{
+					"title": "Interpolating a Vector until it reaches Vector(1000, 200, 100) with speed 5",
+					"content": [
+						"local my_value = Vector(0, 0, 0)",
+						"Client.Subscribe(\"Tick\", function(delta_time)",
+						"    my_value = NanosMath.VInterpTo(my_value, Vector(1000, 200, 100), delta_time, 5)",
+						"end)"
+					]
 				}
 			]
 		},
