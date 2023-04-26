@@ -222,11 +222,11 @@ function PreprocessClass(type, class_name, file, version) {
 
 function Run() {
 	// Create generated folders
-	fs.mkdirSync(".generated/Classes/", { recursive: true });
-	fs.mkdirSync(".generated/Stable/Classes/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/Classes/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/Stable/Classes/", { recursive: true });
 
-	fs.mkdirSync(".generated/StaticClasses/", { recursive: true });
-	fs.mkdirSync(".generated/Stable/StaticClasses/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/StaticClasses/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/Stable/StaticClasses/", { recursive: true });
 
 	// Process Classes
 	for (const class_key in APIData.Class)
