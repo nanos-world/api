@@ -212,7 +212,7 @@
 			"authority": "server",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -223,13 +223,22 @@
 					"name": "acceptance_radius",
 					"default": "50"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"StopMovement",
+					"Follow"
+				],
+				"events": [
+					"MoveComplete"
+				]
+			}
 		},
 		{
 			"authority": "server",
 			"name": "Follow",
 			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -260,13 +269,31 @@
 					"default": "0.25",
 					"description": "How often to recalculate the AI path"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"StopMovement",
+					"MoveTo"
+				],
+				"events": [
+					"MoveComplete"
+				]
+			}
 		},
 		{
 			"authority": "server",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event [MoveCompleted](character#movecompleted)"
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"relations": {
+				"functions": [
+					"Follow",
+					"MoveTo"
+				],
+				"events": [
+					"MoveComplete"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -1730,7 +1757,14 @@
 					"type": "boolean",
 					"name": "succeeded"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"StopMovement",
+					"MoveTo",
+					"Follow"
+				]
+			}
 		},
 		{
 			"authority": "both",

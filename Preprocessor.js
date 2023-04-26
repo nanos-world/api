@@ -179,12 +179,12 @@ function FindsGetSetRelationsAutomatically(functions, table, version_key, class_
 // Sort and Process a Class
 function ProcessClass(class_data, version_key, class_key, class_type) {
 	if (class_data.functions) {
-		class_data.functions.sort((a, b) => { return a.name > b.name; });
+		class_data.functions.sort((a, b) => a.name.localeCompare(b.name));
 		FindsGetSetRelationsAutomatically(class_data.functions, "functions", version_key, class_key, class_type);
 	}
 
 	if (class_data.static_functions) {
-		class_data.static_functions.sort((a, b) => { return a.name > b.name; });
+		class_data.static_functions.sort((a, b) => a.name.localeCompare(b.name));
 		FindsGetSetRelationsAutomatically(class_data.static_functions, "static_functions", version_key, class_key, class_type);
 	}
 
@@ -207,17 +207,17 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 	}
 
 	if (class_data.events)
-		class_data.events.sort((a, b) => { return a.name > b.name; });
+		class_data.events.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 // Process a Class
 function PreprocessClass(type, class_name, file, version) {
 	console.log("Processing %s '%s' (%s)...", type, class_name, version);
-	let Data = LoadJSON(file);
+	let data = LoadJSON(file);
 
-	ProcessClass(Data, version, class_name, type);
+	ProcessClass(data, version, class_name, type);
 
-	SaveJSON(".generated/" + file, Data);
+	SaveJSON(".generated/" + file, data);
 }
 
 function Run() {

@@ -231,7 +231,16 @@
 					"name": "acceptance_radius",
 					"default": "50"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"StopMovement",
+					"Follow"
+				],
+				"events": [
+					"MoveComplete"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -268,13 +277,31 @@
 					"default": "0.25",
 					"description": "How often to recalculate the AI path"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"StopMovement",
+					"MoveTo"
+				],
+				"events": [
+					"MoveComplete"
+				]
+			}
 		},
 		{
 			"authority": "server",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event [MoveCompleted](character#movecompleted)"
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"relations": {
+				"functions": [
+					"MoveTo",
+					"Follow"
+				],
+				"events": [
+					"MoveComplete"
+				]
+			}
 		},
 		{
 			"authority": "both",
