@@ -37,19 +37,19 @@
 				{
 					"name": "Y",
 					"type": "number",
-					"default": "0",
+					"default": "X",
 					"description": "The quaternion's Y-component"
 				},
 				{
 					"name": "Z",
 					"type": "number",
-					"default": "0",
+					"default": "X",
 					"description": "The quaternion's Z-component"
 				},
 				{
 					"name": "W",
 					"type": "number",
-					"default": "0",
+					"default": "X",
 					"description": "The quaternion's W-component"
 				}
 			]

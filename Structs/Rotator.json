@@ -29,21 +29,21 @@
 			"description": "Default Constructor",
 			"parameters": [
 				{
-					"name": "Pitch",
+					"name": "pitch",
 					"type": "number",
 					"default": "0",
 					"description": "Pitch"
 				},
 				{
-					"name": "Yaw",
+					"name": "yaw",
 					"type": "number",
-					"default": "0",
+					"default": "pitch",
 					"description": "Yaw"
 				},
 				{
-					"name": "Roll",
+					"name": "roll",
 					"type": "number",
-					"default": "0",
+					"default": "pitch",
 					"description": "Roll"
 				}
 			]
