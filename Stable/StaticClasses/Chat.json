@@ -108,6 +108,12 @@
 					"name": "message",
 					"description": "The message to send to all Players"
 				}
+			],
+			"examples": [
+				{
+					"title": "Sends a message to everyone",
+					"content": "Chat.BroadcastMessage(\"Welcome to the server!\")"
+				}
 			]
 		}
 	],

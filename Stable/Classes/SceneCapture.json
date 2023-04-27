@@ -156,7 +156,14 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback in the format (base_64: string)"
+					"description": "Callback",
+					"function_parameters": [
+						{
+							"name": "base_64",
+							"type": "string",
+							"description": "The base 64 content"
+						}
+					]
 				}
 			],
 			"relations": {

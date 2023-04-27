@@ -52,7 +52,7 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback to run on the event occuring"
+					"description": "Callback to run on the event occurring"
 				}
 			],
 			"return": [
@@ -145,29 +145,29 @@
 		},
 		{
 			"name": "GetName",
-			"description": "Gives the package name",
+			"description": "Returns the package name/path",
 			"authority": "both",
 			"return": [
 				{
 					"type": "string",
-					"description": "The package name"
+					"description": "The package name/path"
 				}
 			]
 		},
 		{
-			"name": "GetPath",
-			"description": "Gives the package path",
+			"name": "GetTitle",
+			"description": "Returns the package title",
 			"authority": "both",
 			"return": [
 				{
 					"type": "string",
-					"description": "The package path"
+					"description": "The package title"
 				}
 			]
 		},
 		{
 			"name": "GetVersion",
-			"description": "Gives the package version",
+			"description": "Returns the package version",
 			"authority": "both",
 			"return": [
 				{
@@ -178,7 +178,7 @@
 		},
 		{
 			"name": "GetCompatibilityVersion",
-			"description": "Gives the package compatibility version",
+			"description": "Returns the package compatibility version",
 			"authority": "both",
 			"return": [
 				{

@@ -1,1501 +1,1590 @@
 {
-	"AimMode": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "ADS",
-			"value": "1"
-		},
-		{
-			"key": "ZoomedZoom",
-			"value": "2"
-		},
-		{
-			"key": "Zoomed",
-			"value": "3"
-		},
-		{
-			"key": "ZoomedFar",
-			"value": "4"
-		}
-	],
-	"AnimationSlotType": [
-		{
-			"key": "FullBody",
-			"value": "0"
-		},
-		{
-			"key": "UpperBody",
-			"value": "1"
-		}
-	],
-	"AssetType": [
-		{
-			"key": "Map",
-			"value": 2
-		},
-		{
-			"key": "StaticMesh",
-			"value": 4
-		},
-		{
-			"key": "SkeletalMesh",
-			"value": 8
-		},
-		{
-			"key": "Sound",
-			"value": 16
-		},
-		{
-			"key": "Animation",
-			"value": 32
-		},
-		{
-			"key": "Particle",
-			"value": 64
-		},
-		{
-			"key": "Material",
-			"value": 128
-		},
-		{
-			"key": "Blueprint",
-			"value": 256
-		}
-	],
-	"AttachmentRule": [
-		{
-			"key": "KeepRelative",
-			"value": "0"
-		},
-		{
-			"key": "KeepWorld",
-			"value": "1"
-		},
-		{
-			"key": "SnapToTarget",
-			"value": "2"
-		}
-	],
-	"AttenuationFunction": [
-		{
-			"key": "Linear",
-			"value": "0"
-		},
-		{
-			"key": "Logarithmic",
-			"value": "1"
-		},
-		{
-			"key": "Inverse",
-			"value": "2"
-		},
-		{
-			"key": "LogReverse",
-			"value": "3"
-		},
-		{
-			"key": "NaturalSound",
-			"value": "4"
-		}
-	],
-	"BlendMode": [
-		{
-			"key": "Opaque",
-			"value": "0"
-		},
-		{
-			"key": "Masked",
-			"value": "1"
-		},
-		{
-			"key": "Translucent",
-			"value": "2"
-		},
-		{
-			"key": "Additive",
-			"value": "3"
-		},
-		{
-			"key": "Modulate",
-			"value": "4"
-		},
-		{
-			"key": "MaskedDistanceField",
-			"value": "5"
-		},
-		{
-			"key": "MaskedDistanceFieldShadowed",
-			"value": "6"
-		},
-		{
-			"key": "TranslucentDistanceField",
-			"value": "7"
-		},
-		{
-			"key": "TranslucentDistanceFieldShadowed",
-			"value": "8"
-		},
-		{
-			"key": "AlphaComposite",
-			"value": "9"
-		},
-		{
-			"key": "AlphaHoldout",
-			"value": "10"
-		},
-		{
-			"key": "AlphaBlend",
-			"value": "11"
-		},
-		{
-			"key": "TranslucentAlphaOnly",
-			"value": "12"
-		},
-		{
-			"key": "TranslucentAlphaOnlyWriteAlpha",
-			"value": "13"
-		}
-	],
-	"CameraMode": [
-		{
-			"key": "FPSTPS",
-			"value": "0"
-		},
-		{
-			"key": "FPSOnly",
-			"value": "1"
-		},
-		{
-			"key": "TPSOnly",
-			"value": "2"
-		}
-	],
-	"CCDMode": [
-		{
-			"key": "Auto",
-			"value": "0",
-			"description": "Automatically enables/disables depending on the Object size"
-		},
-		{
-			"key": "Disabled",
-			"value": "1",
-			"description": "Disables CCD"
-		},
-		{
-			"key": "Enabled",
-			"value": "2",
-			"description": "Enables CCD"
-		}
-	],
-	"CollisionChannel": [
-		{
-			"key": "WorldStatic",
-			"value": "1 << 0",
-			"description": "WorldStatic Object Types"
-		},
-		{
-			"key": "WorldDynamic",
-			"value": "1 << 1",
-			"description": "WorldDynamic Object Types"
-		},
-		{
-			"key": "Pawn",
-			"value": "1 << 2",
-			"description": "Capsules (usually from Characters)"
-		},
-		{
-			"key": "PhysicsBody",
-			"value": "1 << 5",
-			"description": "Pickables and Props Meshes"
-		},
-		{
-			"key": "Mesh",
-			"value": "1 << 17",
-			"description": "Character Mesh"
-		},
-		{
-			"key": "Water",
-			"value": "1 << 19",
-			"description": "Water Body"
-		},
-		{
-			"key": "Foliage",
-			"value": "1 << 20",
-			"description": "Foliage Meshes"
-		},
-		{
-			"key": "Vehicle",
-			"value": "1 << 22",
-			"description": "Vehicles Meshes"
-		}
-	],
-	"CollisionType": [
-		{
-			"key": "Normal",
-			"value": "0",
-			"description": "Blocks All"
-		},
-		{
-			"key": "StaticOnly",
-			"value": "1",
-			"description": "Only Blocks Static objects"
-		},
-		{
-			"key": "NoCollision",
-			"value": "2",
-			"description": "Doesn't Block anything"
-		},
-		{
-			"key": "IgnoreOnlyPawn",
-			"value": "3",
-			"description": "Blocks everything but Pawns (Characters)"
-		},
-		{
-			"key": "Auto",
-			"value": "4",
-			"description": "Automatically selects - usually will be Normal. On Props it will switch between <b>Normal</b> and <b>IgnoreOnlyPawn</b> depending on the Prop size"
-		}
-	],
-	"CursorType": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "Default",
-			"value": "1"
-		},
-		{
-			"key": "TextEditBeam",
-			"value": "2"
-		},
-		{
-			"key": "ResizeLeftRight",
-			"value": "3"
-		},
-		{
-			"key": "ResizeUpDown",
-			"value": "4"
-		},
-		{
-			"key": "ResizeSouthEast",
-			"value": "5"
-		},
-		{
-			"key": "ResizeSouthWest",
-			"value": "6"
-		},
-		{
-			"key": "CardinalCross",
-			"value": "7"
-		},
-		{
-			"key": "Crosshairs",
-			"value": "8"
-		},
-		{
-			"key": "Hand",
-			"value": "9"
-		},
-		{
-			"key": "GrabHand",
-			"value": "10"
-		},
-		{
-			"key": "GrabHandClosed",
-			"value": "11"
-		},
-		{
-			"key": "SlashedCircle",
-			"value": "12"
-		},
-		{
-			"key": "EyeDropper",
-			"value": "13"
-		}
-	],
-	"ConstraintMotion": [
-		{
-			"key": "Free",
-			"value": "0"
-		},
-		{
-			"key": "Limited",
-			"value": "1"
-		},
-		{
-			"key": "Locked",
-			"value": "2"
-		}
-	],
-	"DamageType": [
-		{
-			"key": "Shot",
-			"value": "0"
-		},
-		{
-			"key": "Explosion",
-			"value": "1"
-		},
-		{
-			"key": "Punch",
-			"value": "2"
-		},
-		{
-			"key": "Fall",
-			"value": "3"
-		},
-		{
-			"key": "RunOverProp",
-			"value": "4"
-		},
-		{
-			"key": "RunOverVehicle",
-			"value": "5"
-		},
-		{
-			"key": "Melee",
-			"value": "6"
-		},
-		{
-			"key": "Unknown",
-			"value": "7"
-		}
-	],
-	"DatabaseEngine": [
-		{
-			"key": "SQLite",
-			"value": "0"
-		},
-		{
-			"key": "MySQL",
-			"value": "1"
-		},
-		{
-			"key": "PostgreSQL",
-			"value": "2"
-		}
-	],
-	"DifferentialType": [
-		{
-			"key": "LimitedSlip_4W",
-			"value": "0"
-		},
-		{
-			"key": "LimitedSlip_FrontDrive",
-			"value": "1"
-		},
-		{
-			"key": "LimitedSlip_RearDrive",
-			"value": "2"
-		},
-		{
-			"key": "Open_4W",
-			"value": "3"
-		},
-		{
-			"key": "Open_FrontDrive",
-			"value": "4"
-		},
-		{
-			"key": "Open_RearDrive",
-			"value": "5"
-		}
-	],
-	"FallingMode": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "Jumping",
-			"value": "1"
-		},
-		{
-			"key": "Climbing",
-			"value": "2"
-		},
-		{
-			"key": "Vaulting",
-			"value": "3"
-		},
-		{
-			"key": "Falling",
-			"value": "4"
-		},
-		{
-			"key": "HighFalling",
-			"value": "5"
-		},
-		{
-			"key": "Parachuting",
-			"value": "6"
-		},
-		{
-			"key": "SkyDiving",
-			"value": "7"
-		}
-	],
-	"FontType": [
-		{
-			"key": "Roboto",
-			"value": "0"
-		},
-		{
-			"key": "GothicA1",
-			"value": "1"
-		},
-		{
-			"key": "PoiretOne",
-			"value": "2"
-		},
-		{
-			"key": "Oswald",
-			"value": "3"
-		},
-		{
-			"key": "RobotoMono",
-			"value": "4"
-		},
-		{
-			"key": "OpenSans",
-			"value": "5"
-		}
-	],
-	"GaitMode": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "Walking",
-			"value": "1"
-		},
-		{
-			"key": "Sprinting",
-			"value": "2"
-		}
-	],
-	"GrabMode": [
-		{
-			"key": "Disabled",
-			"value": "0",
-			"description": "Disables grabbing"
-		},
-		{
-			"key": "Auto",
-			"value": "1",
-			"description": "Automatically enables/disables depending on the Prop size"
-		},
-		{
-			"key": "Enabled",
-			"value": "2",
-			"description": "Enables grabbing"
-		}
-	],
-	"HighlightMode": [
-		{
-			"key": "Always",
-			"value": "0"
-		},
-		{
-			"key": "OnlyHidden",
-			"value": "1"
-		},
-		{
-			"key": "OnlyVisible",
-			"value": "2"
-		}
-	],
-	"HandlingMode": [
-		{
-			"key": "SingleHandedWeapon",
-			"value": "0"
-		},
-		{
-			"key": "DoubleHandedWeapon",
-			"value": "1"
-		},
-		{
-			"key": "SingleHandedMelee",
-			"value": "2"
-		},
-		{
-			"key": "DoubleHandedMelee",
-			"value": "3"
-		},
-		{
-			"key": "Throwable",
-			"value": "4"
-		},
-		{
-			"key": "Torch",
-			"value": "5"
-		},
-		{
-			"key": "Barrel",
-			"value": "6"
-		},
-		{
-			"key": "Box",
-			"value": "7"
-		}
-	],
-	"ImageFormat": [
-		{
-			"key": "JPEG",
-			"value": "0"
-		},
-		{
-			"key": "PNG",
-			"value": "1"
-		},
-		{
-			"key": "BMP",
-			"value": "2"
-		}
-	],
-	"InputEvent": [
-		{
-			"key": "Pressed",
-			"value": "0"
-		},
-		{
-			"key": "Released",
-			"value": "1"
-		}
-	],
-	"KeyModifier": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "LeftShiftDown",
-			"value": "1 << 0"
-		},
-		{
-			"key": "RightShiftDown",
-			"value": "1 << 1"
-		},
-		{
-			"key": "LeftControlDown",
-			"value": "1 << 2"
-		},
-		{
-			"key": "RightControlDown",
-			"value": "1 << 3"
-		},
-		{
-			"key": "LeftAltDown",
-			"value": "1 << 4"
-		},
-		{
-			"key": "RightAltDown",
-			"value": "1 << 5"
-		},
-		{
-			"key": "LeftCommandDown",
-			"value": "1 << 6"
-		},
-		{
-			"key": "RightCommandDown",
-			"value": "1 << 7"
-		},
-		{
-			"key": "CapsLocked",
-			"value": "1 << 8"
-		}
-	],
-	"LightProfile": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "Arrow_Star",
-			"value": "1"
-		},
-		{
-			"key": "Arrow_Up",
-			"value": "2"
-		},
-		{
-			"key": "Beam_01",
-			"value": "3"
-		},
-		{
-			"key": "Beam_02",
-			"value": "4"
-		},
-		{
-			"key": "Beam_03",
-			"value": "5"
-		},
-		{
-			"key": "Beam_04",
-			"value": "6"
-		},
-		{
-			"key": "Beam_05",
-			"value": "7"
-		},
-		{
-			"key": "Beam_06",
-			"value": "8"
-		},
-		{
-			"key": "Beam_07",
-			"value": "9"
-		},
-		{
-			"key": "Beam_08",
-			"value": "10"
-		},
-		{
-			"key": "Beam_LED_01",
-			"value": "11"
-		},
-		{
-			"key": "Beam_LED_02",
-			"value": "12"
-		},
-		{
-			"key": "Beam_LED_03",
-			"value": "13"
-		},
-		{
-			"key": "Beam_LED_04",
-			"value": "14"
-		},
-		{
-			"key": "Beam_LED_05",
-			"value": "15"
-		},
-		{
-			"key": "Beam_LED_06",
-			"value": "16"
-		},
-		{
-			"key": "Beam_LED_07",
-			"value": "17"
-		},
-		{
-			"key": "Bow",
-			"value": "18"
-		},
-		{
-			"key": "Capped_01",
-			"value": "19"
-		},
-		{
-			"key": "Capped_02",
-			"value": "20"
-		},
-		{
-			"key": "Shattered_01",
-			"value": "21"
-		},
-		{
-			"key": "Shattered_02",
-			"value": "22"
-		},
-		{
-			"key": "Shattered_03",
-			"value": "23"
-		},
-		{
-			"key": "Shattered_04",
-			"value": "24"
-		},
-		{
-			"key": "Shattered_05",
-			"value": "25"
-		},
-		{
-			"key": "SpotLight_01",
-			"value": "26"
-		},
-		{
-			"key": "SpotLight_02",
-			"value": "27"
-		},
-		{
-			"key": "SpotLight_03",
-			"value": "28"
-		},
-		{
-			"key": "SpotLight_04",
-			"value": "29"
-		},
-		{
-			"key": "Spreadout_01",
-			"value": "30"
-		},
-		{
-			"key": "Spreadout_02",
-			"value": "31"
-		},
-		{
-			"key": "Spreadout_03",
-			"value": "32"
-		},
-		{
-			"key": "Spreadout_04",
-			"value": "33"
-		},
-		{
-			"key": "Star_Bow",
-			"value": "34"
-		},
-		{
-			"key": "Star_Burst_01",
-			"value": "35"
-		},
-		{
-			"key": "Star_Burst_02",
-			"value": "36"
-		},
-		{
-			"key": "Star_Burst_03",
-			"value": "37"
-		},
-		{
-			"key": "Star_Burst_04",
-			"value": "38"
-		},
-		{
-			"key": "Star_Burst_05",
-			"value": "39"
-		},
-		{
-			"key": "Star_Burst_06",
-			"value": "40"
-		},
-		{
-			"key": "Star_Burst_07",
-			"value": "41"
-		},
-		{
-			"key": "Star_Burst_08",
-			"value": "42"
-		},
-		{
-			"key": "Star_X_01",
-			"value": "43"
-		},
-		{
-			"key": "Star_X_02",
-			"value": "44"
-		},
-		{
-			"key": "Wall_Boomerang",
-			"value": "45"
-		},
-		{
-			"key": "Wall_Inverted_V",
-			"value": "46"
-		},
-		{
-			"key": "Wall_Star_T",
-			"value": "47"
-		},
-		{
-			"key": "Wing_6",
-			"value": "48"
-		},
-		{
-			"key": "Wing_V_01",
-			"value": "49"
-		},
-		{
-			"key": "Wing_V_02",
-			"value": "50"
-		}
-	],
-	"LogType": [
-		{
-			"key": "Display",
-			"value": "0"
-		},
-		{
-			"key": "Warning",
-			"value": "1"
-		},
-		{
-			"key": "Error",
-			"value": "2"
-		},
-		{
-			"key": "Debug",
-			"value": "3"
-		},
-		{
-			"key": "Verbose",
-			"value": "4"
-		},
-		{
-			"key": "Scripting",
-			"value": "5"
-		},
-		{
-			"key": "ScriptingWarn",
-			"value": "6"
-		},
-		{
-			"key": "ScriptingError",
-			"value": "7"
-		},
-		{
-			"key": "Chat",
-			"value": "8"
-		},
-		{
-			"key": "WebUI",
-			"value": "9"
-		},
-		{
-			"key": "Success",
-			"value": "10"
-		},
-		{
-			"key": "Fatal",
-			"value": "11"
-		}
-	],
-	"LightType": [
-		{
-			"key": "Point",
-			"value": "0"
-		},
-		{
-			"key": "Spot",
-			"value": "1"
-		},
-		{
-			"key": "React",
-			"value": "2"
-		}
-	],
-	"NativeWidget": [
-		{
-			"key": "Border",
-			"value": "0"
-		},
-		{
-			"key": "Button",
-			"value": "1"
-		},
-		{
-			"key": "CheckBox",
-			"value": "2"
-		},
-		{
-			"key": "Image",
-			"value": "3"
-		},
-		{
-			"key": "ProgressBar",
-			"value": "4"
-		},
-		{
-			"key": "RichTextBlock",
-			"value": "5"
-		},
-		{
-			"key": "Slider",
-			"value": "6"
-		},
-		{
-			"key": "Text",
-			"value": "7"
-		},
-		{
-			"key": "ComboBox",
-			"value": "8"
-		},
-		{
-			"key": "EditableText",
-			"value": "9"
-		},
-		{
-			"key": "EditableTextMultiLine",
-			"value": "10"
-		},
-		{
-			"key": "SpinBox",
-			"value": "11"
-		},
-		{
-			"key": "TextBox",
-			"value": "12"
-		},
-		{
-			"key": "TextBoxMultiLine",
-			"value": "13"
-		},
-		{
-			"key": "CanvasPanel",
-			"value": "14"
-		},
-		{
-			"key": "GridPanel",
-			"value": "15"
-		},
-		{
-			"key": "HorizontalBox",
-			"value": "16"
-		},
-		{
-			"key": "Overlay",
-			"value": "17"
-		},
-		{
-			"key": "ScaleBox",
-			"value": "18"
-		},
-		{
-			"key": "ScrollBox",
-			"value": "19"
-		},
-		{
-			"key": "SizeBox",
-			"value": "20"
-		},
-		{
-			"key": "UniformGridPanel",
-			"value": "21"
-		},
-		{
-			"key": "VerticalBox",
-			"value": "22"
-		},
-		{
-			"key": "WrapBox",
-			"value": "23"
-		},
-		{
-			"key": "BackgroundBlur",
-			"value": "24"
-		}
-	],
-	"SkyMode": [
-		{
-			"key": "VolumetricClouds",
-			"value": "0",
-			"description": "Uses a 3D Volumetric Cloud layer"
-		},
-		{
-			"key": "StaticClouds",
-			"value": "1",
-			"description": "Designed to mimic the look of the volumetric clouds but as a static cloud texture. Much lower performance cost than volumetric clouds."
-		},
-		{
-			"key": "DynamicClouds2D",
-			"value": "2",
-			"description": "Uses simple 2D dynamic clouds"
-		},
-		{
-			"key": "NoClouds",
-			"value": "3",
-			"description": "Disables all forms of dynamic clouds"
-		},
-		{
-			"key": "VolumetricAurora",
-			"value": "4",
-			"description": "Trades clouds for a full 3D volumetric aurora, much more convincing than the 2D effect."
-		},
-		{
-			"key": "Space",
-			"value": "5",
-			"description": "Turns off all sky color, atmospheric scattering, clouds, etc. Specifically for environments which are set in outer space with no planet/ground beneath the camera."
-		}
-	],
-	"SoundType": [
-		{
-			"key": "SFX",
-			"value": "0"
-		},
-		{
-			"key": "Music",
-			"value": "1"
-		},
-		{
-			"key": "UI",
-			"value": "2"
-		}
-	],
-	"SoundLoopMode": [
-		{
-			"key": "Default",
-			"value": "0",
-			"description": "Default value defined in the asset"
-		},
-		{
-			"key": "Forever",
-			"value": "1",
-			"description": "Overrides it to make it loop forever"
-		},
-		{
-			"key": "Never",
-			"value": "2",
-			"description": "Overrides it to make it play once"
-		}
-	],
-	"StanceMode": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "Standing",
-			"value": "1"
-		},
-		{
-			"key": "Crouching",
-			"value": "2"
-		},
-		{
-			"key": "Proning",
-			"value": "3"
-		}
-	],
-	"SteeringType": [
-		{
-			"key": "SingleAngle",
-			"value": "0",
-			"description": "Both wheels steer by the same amount"
-		},
-		{
-			"key": "AngleRatio",
-			"value": "1",
-			"description": "Outer wheels on corner steer less than the inner ones by set ratio"
-		},
-		{
-			"key": "Ackermann",
-			"value": "2",
-			"description": "Ackermann steering principle is applied"
-		}
-	],
-	"SurfaceType": [
-		{
-			"key": "Default",
-			"value": "0"
-		},
-		{
-			"key": "Carpet",
-			"value": "1"
-		},
-		{
-			"key": "Concrete",
-			"value": "2"
-		},
-		{
-			"key": "Grass",
-			"value": "3"
-		},
-		{
-			"key": "Gravel",
-			"value": "4"
-		},
-		{
-			"key": "Ground",
-			"value": "5"
-		},
-		{
-			"key": "MetalLight",
-			"value": "6"
-		},
-		{
-			"key": "Plastic",
-			"value": "7"
-		},
-		{
-			"key": "Sand",
-			"value": "8"
-		},
-		{
-			"key": "Snow",
-			"value": "9"
-		},
-		{
-			"key": "Water",
-			"value": "10"
-		},
-		{
-			"key": "WoodLight",
-			"value": "11"
-		},
-		{
-			"key": "Flesh",
-			"value": "12"
-		},
-		{
-			"key": "MetalHeavy",
-			"value": "13"
-		},
-		{
-			"key": "WoodHeavy",
-			"value": "14"
-		},
-		{
-			"key": "Ice",
-			"value": "15"
-		},
-		{
-			"key": "Mud",
-			"value": "16"
-		},
-		{
-			"key": "Rock",
-			"value": "17"
-		},
-		{
-			"key": "Thump",
-			"value": "18"
-		},
-		{
-			"key": "Glass",
-			"value": "19"
-		},
-		{
-			"key": "Rubber",
-			"value": "20"
-		},
-		{
-			"key": "Air",
-			"value": "21"
-		}
-	],
-	"SwimmingMode": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "Surface",
-			"value": "1"
-		},
-		{
-			"key": "Underwater",
-			"value": "2"
-		}
-	],
-	"TextRenderAlignCamera": [
-		{
-			"key": "Unaligned",
-			"value": "0"
-		},
-		{
-			"key": "AlignCameraRotation",
-			"value": "1"
-		},
-		{
-			"key": "FaceCamera",
-			"value": "2"
-		}
-	],
-	"TextRenderBevelType": [
-		{
-			"key": "Linear",
-			"value": "0"
-		},
-		{
-			"key": "HalfCircle",
-			"value": "1"
-		},
-		{
-			"key": "Convex",
-			"value": "2"
-		},
-		{
-			"key": "Concave",
-			"value": "3"
-		},
-		{
-			"key": "OneStep",
-			"value": "4"
-		},
-		{
-			"key": "TwoSteps",
-			"value": "5"
-		},
-		{
-			"key": "Engraved",
-			"value": "6"
-		}
-	],
-	"TextRenderHorizontalAlignment": [
-		{
-			"key": "Left",
-			"value": "0"
-		},
-		{
-			"key": "Center",
-			"value": "1"
-		},
-		{
-			"key": "Right",
-			"value": "2"
-		}
-	],
-	"TextRenderVerticalAlignment": [
-		{
-			"key": "Top",
-			"value": "0"
-		},
-		{
-			"key": "Center",
-			"value": "1"
-		},
-		{
-			"key": "Bottom",
-			"value": "2"
-		},
-		{
-			"key": "QuadTop",
-			"value": "3"
-		}
-	],
-	"TriggerType": [
-		{
-			"key": "Sphere",
-			"value": "0"
-		},
-		{
-			"key": "Box",
-			"value": "1"
-		}
-	],
-	"TraceMode": [
-		{
-			"key": "DrawDebug",
-			"value": "1 << 0",
-			"description": "Whether to draw a 3D line representing the ray"
-		},
-		{
-			"key": "TraceComplex",
-			"value": "1 << 1",
-			"description": "Whether should trace against complex collision"
-		},
-		{
-			"key": "ReturnPhysicalMaterial",
-			"value": "1 << 2",
-			"description": "Whether want to include the physical material in the results (adds <code>SurfaceType</code> to result)"
-		},
-		{
-			"key": "ReturnEntity",
-			"value": "1 << 3",
-			"description": "Whether want to return the Entity hit (adds <code>Entity</code> to result)"
-		},
-		{
-			"key": "ReturnNames",
-			"value": "1 << 4",
-			"description": "Whether should return names (adds <code>ActorName</code>, <code>ComponentName</code> and <code>BoneName</code> to result)"
-		},
-		{
-			"key": "ReturnUV",
-			"value": "1 << 5",
-			"description": "Whether want to trace and return UV information (adds <code>UV</code> to result)"
-		}
-	],
-	"ViewMode": [
-		{
-			"key": "FPS",
-			"value": "0"
-		},
-		{
-			"key": "TPS1",
-			"value": "1"
-		},
-		{
-			"key": "TPS2",
-			"value": "2"
-		},
-		{
-			"key": "TPS3",
-			"value": "3"
-		},
-		{
-			"key": "TopDown",
-			"value": "4"
-		}
-	],
-	"VOIPSetting": [
-		{
-			"key": "Local",
-			"value": "0",
-			"description": "3D Sound"
-		},
-		{
-			"key": "Global",
-			"value": "1",
-			"description": "2D Sound"
-		},
-		{
-			"key": "Muted",
-			"value": "2"
-		}
-	],
-	"WeatherType": [
-		{
-			"key": "ClearSkies",
-			"value": "1"
-		},
-		{
-			"key": "Cloudy",
-			"value": "2"
-		},
-		{
-			"key": "Foggy",
-			"value": "3"
-		},
-		{
-			"key": "Overcast",
-			"value": "4"
-		},
-		{
-			"key": "PartlyCloudy",
-			"value": "5"
-		},
-		{
-			"key": "Rain",
-			"value": "6"
-		},
-		{
-			"key": "RainLight",
-			"value": "7"
-		},
-		{
-			"key": "RainThunderstorm",
-			"value": "8"
-		},
-		{
-			"key": "SandDustCalm",
-			"value": "9"
-		},
-		{
-			"key": "SandDustStorm",
-			"value": "10"
-		},
-		{
-			"key": "Snow",
-			"value": "11"
-		},
-		{
-			"key": "SnowBlizzard",
-			"value": "12"
-		},
-		{
-			"key": "SnowLight",
-			"value": "13"
-		}
-	],
-	"WebUIModifier": [
-		{
-			"key": "None",
-			"value": "0"
-		},
-		{
-			"key": "CapsLockOn",
-			"value": "1 << 0"
-		},
-		{
-			"key": "ShiftDown",
-			"value": "1 << 1"
-		},
-		{
-			"key": "ControlDown",
-			"value": "1 << 2"
-		},
-		{
-			"key": "AltDown",
-			"value": "1 << 3"
-		},
-		{
-			"key": "LeftMouseButton",
-			"value": "1 << 4"
-		},
-		{
-			"key": "MiddleMouseButton",
-			"value": "1 << 5"
-		},
-		{
-			"key": "RightMouseButton",
-			"value": "1 << 6"
-		},
-		{
-			"key": "CommandDown",
-			"value": "1 << 7"
-		},
-		{
-			"key": "NumLockOn",
-			"value": "1 << 8"
-		},
-		{
-			"key": "IsKeyPad",
-			"value": "1 << 9"
-		},
-		{
-			"key": "IsLeft",
-			"value": "1 << 10"
-		},
-		{
-			"key": "IsRight",
-			"value": "1 << 11"
-		},
-		{
-			"key": "AltgrDown",
-			"value": "1 << 12"
-		},
-		{
-			"key": "IsRepeat",
-			"value": "1 << 13"
-		}
-	],
-	"WebUIKeyType": [
-		{
-			"key": "Down",
-			"value": "0"
-		},
-		{
-			"key": "Up",
-			"value": "1"
-		},
-		{
-			"key": "Char",
-			"value": "2"
-		}
-	],
-	"WebUIMouseType": [
-		{
-			"key": "Left",
-			"value": "0"
-		},
-		{
-			"key": "Right",
-			"value": "1"
-		},
-		{
-			"key": "Middle",
-			"value": "2"
-		}
-	],
-	"WidgetVisibility": [
-		{
-			"key": "Hidden",
-			"value": "0"
-		},
-		{
-			"key": "Visible",
-			"value": "1"
-		},
-		{
-			"key": "VisibleNotHitTestable",
-			"value": "2"
-		}
-	]
+	"AimMode": {
+		"description": "Used by Characters to change the Aiming Mode while holding Weapons",
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "ADS",
+				"value": "1"
+			},
+			{
+				"key": "ZoomedZoom",
+				"value": "2"
+			},
+			{
+				"key": "Zoomed",
+				"value": "3"
+			},
+			{
+				"key": "ZoomedFar",
+				"value": "4"
+			}
+		]
+	},
+	"AnimationSlotType": {
+		"enums": [
+			{
+				"key": "FullBody",
+				"value": "0"
+			},
+			{
+				"key": "UpperBody",
+				"value": "1"
+			}
+		]
+	},
+	"AssetType": {
+		"enums": [
+			{
+				"key": "Map",
+				"value": 2
+			},
+			{
+				"key": "StaticMesh",
+				"value": 4
+			},
+			{
+				"key": "SkeletalMesh",
+				"value": 8
+			},
+			{
+				"key": "Sound",
+				"value": 16
+			},
+			{
+				"key": "Animation",
+				"value": 32
+			},
+			{
+				"key": "Particle",
+				"value": 64
+			},
+			{
+				"key": "Material",
+				"value": 128
+			},
+			{
+				"key": "Blueprint",
+				"value": 256
+			}
+		]
+	},
+	"AttachmentRule": {
+		"enums": [
+			{
+				"key": "KeepRelative",
+				"value": "0"
+			},
+			{
+				"key": "KeepWorld",
+				"value": "1"
+			},
+			{
+				"key": "SnapToTarget",
+				"value": "2"
+			}
+		]
+	},
+	"AttenuationFunction": {
+		"enums": [
+			{
+				"key": "Linear",
+				"value": "0"
+			},
+			{
+				"key": "Logarithmic",
+				"value": "1"
+			},
+			{
+				"key": "Inverse",
+				"value": "2"
+			},
+			{
+				"key": "LogReverse",
+				"value": "3"
+			},
+			{
+				"key": "NaturalSound",
+				"value": "4"
+			}
+		]
+	},
+	"BlendMode": {
+		"enums": [
+			{
+				"key": "Opaque",
+				"value": "0"
+			},
+			{
+				"key": "Masked",
+				"value": "1"
+			},
+			{
+				"key": "Translucent",
+				"value": "2"
+			},
+			{
+				"key": "Additive",
+				"value": "3"
+			},
+			{
+				"key": "Modulate",
+				"value": "4"
+			},
+			{
+				"key": "MaskedDistanceField",
+				"value": "5"
+			},
+			{
+				"key": "MaskedDistanceFieldShadowed",
+				"value": "6"
+			},
+			{
+				"key": "TranslucentDistanceField",
+				"value": "7"
+			},
+			{
+				"key": "TranslucentDistanceFieldShadowed",
+				"value": "8"
+			},
+			{
+				"key": "AlphaComposite",
+				"value": "9"
+			},
+			{
+				"key": "AlphaHoldout",
+				"value": "10"
+			},
+			{
+				"key": "AlphaBlend",
+				"value": "11"
+			},
+			{
+				"key": "TranslucentAlphaOnly",
+				"value": "12"
+			},
+			{
+				"key": "TranslucentAlphaOnlyWriteAlpha",
+				"value": "13"
+			}
+		]
+	},
+	"CameraMode": {
+		"enums": [
+			{
+				"key": "FPSTPS",
+				"value": "0"
+			},
+			{
+				"key": "FPSOnly",
+				"value": "1"
+			},
+			{
+				"key": "TPSOnly",
+				"value": "2"
+			}
+		]
+	},
+	"CCDMode": {
+		"enums": [
+			{
+				"key": "Auto",
+				"value": "0",
+				"description": "Automatically enables/disables depending on the Object size"
+			},
+			{
+				"key": "Disabled",
+				"value": "1",
+				"description": "Disables CCD"
+			},
+			{
+				"key": "Enabled",
+				"value": "2",
+				"description": "Enables CCD"
+			}
+		]
+	},
+	"CollisionChannel": {
+		"enums": [
+			{
+				"key": "WorldStatic",
+				"value": "1 << 0",
+				"description": "WorldStatic Object Types"
+			},
+			{
+				"key": "WorldDynamic",
+				"value": "1 << 1",
+				"description": "WorldDynamic Object Types"
+			},
+			{
+				"key": "Pawn",
+				"value": "1 << 2",
+				"description": "Capsules (usually from Characters)"
+			},
+			{
+				"key": "PhysicsBody",
+				"value": "1 << 5",
+				"description": "Pickables and Props Meshes"
+			},
+			{
+				"key": "Mesh",
+				"value": "1 << 17",
+				"description": "Character Mesh"
+			},
+			{
+				"key": "Water",
+				"value": "1 << 19",
+				"description": "Water Body"
+			},
+			{
+				"key": "Foliage",
+				"value": "1 << 20",
+				"description": "Foliage Meshes"
+			},
+			{
+				"key": "Vehicle",
+				"value": "1 << 22",
+				"description": "Vehicles Meshes"
+			}
+		]
+	},
+	"CollisionType": {
+		"enums": [
+			{
+				"key": "Normal",
+				"value": "0",
+				"description": "Blocks All"
+			},
+			{
+				"key": "StaticOnly",
+				"value": "1",
+				"description": "Only Blocks Static objects"
+			},
+			{
+				"key": "NoCollision",
+				"value": "2",
+				"description": "Doesn't Block anything"
+			},
+			{
+				"key": "IgnoreOnlyPawn",
+				"value": "3",
+				"description": "Blocks everything but Pawns (Characters)"
+			},
+			{
+				"key": "Auto",
+				"value": "4",
+				"description": "Automatically selects - usually will be Normal. On Props it will switch between <b>Normal</b> and <b>IgnoreOnlyPawn</b> depending on the Prop size"
+			}
+		]
+	},
+	"CursorType": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "Default",
+				"value": "1"
+			},
+			{
+				"key": "TextEditBeam",
+				"value": "2"
+			},
+			{
+				"key": "ResizeLeftRight",
+				"value": "3"
+			},
+			{
+				"key": "ResizeUpDown",
+				"value": "4"
+			},
+			{
+				"key": "ResizeSouthEast",
+				"value": "5"
+			},
+			{
+				"key": "ResizeSouthWest",
+				"value": "6"
+			},
+			{
+				"key": "CardinalCross",
+				"value": "7"
+			},
+			{
+				"key": "Crosshairs",
+				"value": "8"
+			},
+			{
+				"key": "Hand",
+				"value": "9"
+			},
+			{
+				"key": "GrabHand",
+				"value": "10"
+			},
+			{
+				"key": "GrabHandClosed",
+				"value": "11"
+			},
+			{
+				"key": "SlashedCircle",
+				"value": "12"
+			},
+			{
+				"key": "EyeDropper",
+				"value": "13"
+			}
+		]
+	},
+	"ConstraintMotion": {
+		"enums": [
+			{
+				"key": "Free",
+				"value": "0"
+			},
+			{
+				"key": "Limited",
+				"value": "1"
+			},
+			{
+				"key": "Locked",
+				"value": "2"
+			}
+		]
+	},
+	"DamageType": {
+		"enums": [
+			{
+				"key": "Shot",
+				"value": "0"
+			},
+			{
+				"key": "Explosion",
+				"value": "1"
+			},
+			{
+				"key": "Punch",
+				"value": "2"
+			},
+			{
+				"key": "Fall",
+				"value": "3"
+			},
+			{
+				"key": "RunOverProp",
+				"value": "4"
+			},
+			{
+				"key": "RunOverVehicle",
+				"value": "5"
+			},
+			{
+				"key": "Melee",
+				"value": "6"
+			},
+			{
+				"key": "Unknown",
+				"value": "7"
+			}
+		]
+	},
+	"DatabaseEngine": {
+		"enums": [
+			{
+				"key": "SQLite",
+				"value": "0"
+			},
+			{
+				"key": "MySQL",
+				"value": "1"
+			},
+			{
+				"key": "PostgreSQL",
+				"value": "2"
+			}
+		]
+	},
+	"FallingMode": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "Jumping",
+				"value": "1"
+			},
+			{
+				"key": "Climbing",
+				"value": "2"
+			},
+			{
+				"key": "Vaulting",
+				"value": "3"
+			},
+			{
+				"key": "Falling",
+				"value": "4"
+			},
+			{
+				"key": "HighFalling",
+				"value": "5"
+			},
+			{
+				"key": "Parachuting",
+				"value": "6"
+			},
+			{
+				"key": "SkyDiving",
+				"value": "7"
+			}
+		]
+	},
+	"FontType": {
+		"enums": [
+			{
+				"key": "Roboto",
+				"value": "0"
+			},
+			{
+				"key": "GothicA1",
+				"value": "1"
+			},
+			{
+				"key": "PoiretOne",
+				"value": "2"
+			},
+			{
+				"key": "Oswald",
+				"value": "3"
+			},
+			{
+				"key": "RobotoMono",
+				"value": "4"
+			},
+			{
+				"key": "OpenSans",
+				"value": "5"
+			}
+		]
+	},
+	"GaitMode": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "Walking",
+				"value": "1"
+			},
+			{
+				"key": "Sprinting",
+				"value": "2"
+			}
+		]
+	},
+	"GrabMode": {
+		"enums": [
+			{
+				"key": "Disabled",
+				"value": "0",
+				"description": "Disables grabbing"
+			},
+			{
+				"key": "Auto",
+				"value": "1",
+				"description": "Automatically enables/disables depending on the Prop size"
+			},
+			{
+				"key": "Enabled",
+				"value": "2",
+				"description": "Enables grabbing"
+			}
+		]
+	},
+	"HighlightMode": {
+		"enums": [
+			{
+				"key": "Always",
+				"value": "0"
+			},
+			{
+				"key": "OnlyHidden",
+				"value": "1"
+			},
+			{
+				"key": "OnlyVisible",
+				"value": "2"
+			}
+		]
+	},
+	"HandlingMode": {
+		"enums": [
+			{
+				"key": "SingleHandedWeapon",
+				"value": "0"
+			},
+			{
+				"key": "DoubleHandedWeapon",
+				"value": "1"
+			},
+			{
+				"key": "SingleHandedMelee",
+				"value": "2"
+			},
+			{
+				"key": "DoubleHandedMelee",
+				"value": "3"
+			},
+			{
+				"key": "Throwable",
+				"value": "4"
+			},
+			{
+				"key": "Torch",
+				"value": "5"
+			},
+			{
+				"key": "Barrel",
+				"value": "6"
+			},
+			{
+				"key": "Box",
+				"value": "7"
+			}
+		]
+	},
+	"ImageFormat": {
+		"enums": [
+			{
+				"key": "JPEG",
+				"value": "0"
+			},
+			{
+				"key": "PNG",
+				"value": "1"
+			},
+			{
+				"key": "BMP",
+				"value": "2"
+			}
+		]
+	},
+	"InputEvent": {
+		"enums": [
+			{
+				"key": "Pressed",
+				"value": "0"
+			},
+			{
+				"key": "Released",
+				"value": "1"
+			}
+		]
+	},
+	"KeyModifier": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "LeftShiftDown",
+				"value": "1 << 0"
+			},
+			{
+				"key": "RightShiftDown",
+				"value": "1 << 1"
+			},
+			{
+				"key": "LeftControlDown",
+				"value": "1 << 2"
+			},
+			{
+				"key": "RightControlDown",
+				"value": "1 << 3"
+			},
+			{
+				"key": "LeftAltDown",
+				"value": "1 << 4"
+			},
+			{
+				"key": "RightAltDown",
+				"value": "1 << 5"
+			},
+			{
+				"key": "LeftCommandDown",
+				"value": "1 << 6"
+			},
+			{
+				"key": "RightCommandDown",
+				"value": "1 << 7"
+			},
+			{
+				"key": "CapsLocked",
+				"value": "1 << 8"
+			}
+		]
+	},
+	"LightProfile": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "Arrow_Star",
+				"value": "1"
+			},
+			{
+				"key": "Arrow_Up",
+				"value": "2"
+			},
+			{
+				"key": "Beam_01",
+				"value": "3"
+			},
+			{
+				"key": "Beam_02",
+				"value": "4"
+			},
+			{
+				"key": "Beam_03",
+				"value": "5"
+			},
+			{
+				"key": "Beam_04",
+				"value": "6"
+			},
+			{
+				"key": "Beam_05",
+				"value": "7"
+			},
+			{
+				"key": "Beam_06",
+				"value": "8"
+			},
+			{
+				"key": "Beam_07",
+				"value": "9"
+			},
+			{
+				"key": "Beam_08",
+				"value": "10"
+			},
+			{
+				"key": "Beam_LED_01",
+				"value": "11"
+			},
+			{
+				"key": "Beam_LED_02",
+				"value": "12"
+			},
+			{
+				"key": "Beam_LED_03",
+				"value": "13"
+			},
+			{
+				"key": "Beam_LED_04",
+				"value": "14"
+			},
+			{
+				"key": "Beam_LED_05",
+				"value": "15"
+			},
+			{
+				"key": "Beam_LED_06",
+				"value": "16"
+			},
+			{
+				"key": "Beam_LED_07",
+				"value": "17"
+			},
+			{
+				"key": "Bow",
+				"value": "18"
+			},
+			{
+				"key": "Capped_01",
+				"value": "19"
+			},
+			{
+				"key": "Capped_02",
+				"value": "20"
+			},
+			{
+				"key": "Shattered_01",
+				"value": "21"
+			},
+			{
+				"key": "Shattered_02",
+				"value": "22"
+			},
+			{
+				"key": "Shattered_03",
+				"value": "23"
+			},
+			{
+				"key": "Shattered_04",
+				"value": "24"
+			},
+			{
+				"key": "Shattered_05",
+				"value": "25"
+			},
+			{
+				"key": "SpotLight_01",
+				"value": "26"
+			},
+			{
+				"key": "SpotLight_02",
+				"value": "27"
+			},
+			{
+				"key": "SpotLight_03",
+				"value": "28"
+			},
+			{
+				"key": "SpotLight_04",
+				"value": "29"
+			},
+			{
+				"key": "Spreadout_01",
+				"value": "30"
+			},
+			{
+				"key": "Spreadout_02",
+				"value": "31"
+			},
+			{
+				"key": "Spreadout_03",
+				"value": "32"
+			},
+			{
+				"key": "Spreadout_04",
+				"value": "33"
+			},
+			{
+				"key": "Star_Bow",
+				"value": "34"
+			},
+			{
+				"key": "Star_Burst_01",
+				"value": "35"
+			},
+			{
+				"key": "Star_Burst_02",
+				"value": "36"
+			},
+			{
+				"key": "Star_Burst_03",
+				"value": "37"
+			},
+			{
+				"key": "Star_Burst_04",
+				"value": "38"
+			},
+			{
+				"key": "Star_Burst_05",
+				"value": "39"
+			},
+			{
+				"key": "Star_Burst_06",
+				"value": "40"
+			},
+			{
+				"key": "Star_Burst_07",
+				"value": "41"
+			},
+			{
+				"key": "Star_Burst_08",
+				"value": "42"
+			},
+			{
+				"key": "Star_X_01",
+				"value": "43"
+			},
+			{
+				"key": "Star_X_02",
+				"value": "44"
+			},
+			{
+				"key": "Wall_Boomerang",
+				"value": "45"
+			},
+			{
+				"key": "Wall_Inverted_V",
+				"value": "46"
+			},
+			{
+				"key": "Wall_Star_T",
+				"value": "47"
+			},
+			{
+				"key": "Wing_6",
+				"value": "48"
+			},
+			{
+				"key": "Wing_V_01",
+				"value": "49"
+			},
+			{
+				"key": "Wing_V_02",
+				"value": "50"
+			}
+		]
+	},
+	"LogType": {
+		"enums": [
+			{
+				"key": "Display",
+				"value": "0"
+			},
+			{
+				"key": "Warning",
+				"value": "1"
+			},
+			{
+				"key": "Error",
+				"value": "2"
+			},
+			{
+				"key": "Debug",
+				"value": "3"
+			},
+			{
+				"key": "Verbose",
+				"value": "4"
+			},
+			{
+				"key": "Scripting",
+				"value": "5"
+			},
+			{
+				"key": "ScriptingWarn",
+				"value": "6"
+			},
+			{
+				"key": "ScriptingError",
+				"value": "7"
+			},
+			{
+				"key": "Chat",
+				"value": "8"
+			},
+			{
+				"key": "WebUI",
+				"value": "9"
+			},
+			{
+				"key": "Success",
+				"value": "10"
+			},
+			{
+				"key": "Fatal",
+				"value": "11"
+			}
+		]
+	},
+	"LightType": {
+		"enums": [
+			{
+				"key": "Point",
+				"value": "0"
+			},
+			{
+				"key": "Spot",
+				"value": "1"
+			},
+			{
+				"key": "React",
+				"value": "2"
+			}
+		]
+	},
+	"NativeWidget": {
+		"enums": [
+			{
+				"key": "Border",
+				"value": "0"
+			},
+			{
+				"key": "Button",
+				"value": "1"
+			},
+			{
+				"key": "CheckBox",
+				"value": "2"
+			},
+			{
+				"key": "Image",
+				"value": "3"
+			},
+			{
+				"key": "ProgressBar",
+				"value": "4"
+			},
+			{
+				"key": "RichTextBlock",
+				"value": "5"
+			},
+			{
+				"key": "Slider",
+				"value": "6"
+			},
+			{
+				"key": "Text",
+				"value": "7"
+			},
+			{
+				"key": "ComboBox",
+				"value": "8"
+			},
+			{
+				"key": "EditableText",
+				"value": "9"
+			},
+			{
+				"key": "EditableTextMultiLine",
+				"value": "10"
+			},
+			{
+				"key": "SpinBox",
+				"value": "11"
+			},
+			{
+				"key": "TextBox",
+				"value": "12"
+			},
+			{
+				"key": "TextBoxMultiLine",
+				"value": "13"
+			},
+			{
+				"key": "CanvasPanel",
+				"value": "14"
+			},
+			{
+				"key": "GridPanel",
+				"value": "15"
+			},
+			{
+				"key": "HorizontalBox",
+				"value": "16"
+			},
+			{
+				"key": "Overlay",
+				"value": "17"
+			},
+			{
+				"key": "ScaleBox",
+				"value": "18"
+			},
+			{
+				"key": "ScrollBox",
+				"value": "19"
+			},
+			{
+				"key": "SizeBox",
+				"value": "20"
+			},
+			{
+				"key": "UniformGridPanel",
+				"value": "21"
+			},
+			{
+				"key": "VerticalBox",
+				"value": "22"
+			},
+			{
+				"key": "WrapBox",
+				"value": "23"
+			},
+			{
+				"key": "BackgroundBlur",
+				"value": "24"
+			}
+		]
+	},
+	"PackageType": {
+		"enums": [
+			{
+				"key": "Script",
+				"value": "0"
+			},
+			{
+				"key": "GameMode",
+				"value": "1"
+			},
+			{
+				"key": "LoadingScreen",
+				"value": "2"
+			},
+			{
+				"key": "Map",
+				"value": "4"
+			}
+		]
+	},
+	"SkyMode": {
+		"enums": [
+			{
+				"key": "VolumetricClouds",
+				"value": "0",
+				"description": "Uses a 3D Volumetric Cloud layer"
+			},
+			{
+				"key": "StaticClouds",
+				"value": "1",
+				"description": "Designed to mimic the look of the volumetric clouds but as a static cloud texture. Much lower performance cost than volumetric clouds."
+			},
+			{
+				"key": "DynamicClouds2D",
+				"value": "2",
+				"description": "Uses simple 2D dynamic clouds"
+			},
+			{
+				"key": "NoClouds",
+				"value": "3",
+				"description": "Disables all forms of dynamic clouds"
+			},
+			{
+				"key": "VolumetricAurora",
+				"value": "4",
+				"description": "Trades clouds for a full 3D volumetric aurora, much more convincing than the 2D effect."
+			},
+			{
+				"key": "Space",
+				"value": "5",
+				"description": "Turns off all sky color, atmospheric scattering, clouds, etc. Specifically for environments which are set in outer space with no planet/ground beneath the camera."
+			}
+		]
+	},
+	"SoundType": {
+		"enums": [
+			{
+				"key": "SFX",
+				"value": "0"
+			},
+			{
+				"key": "Music",
+				"value": "1"
+			},
+			{
+				"key": "UI",
+				"value": "2"
+			}
+		]
+	},
+	"SoundLoopMode": {
+		"enums": [
+			{
+				"key": "Default",
+				"value": "0",
+				"description": "Default value defined in the asset"
+			},
+			{
+				"key": "Forever",
+				"value": "1",
+				"description": "Overrides it to make it loop forever"
+			},
+			{
+				"key": "Never",
+				"value": "2",
+				"description": "Overrides it to make it play once"
+			}
+		]
+	},
+	"StanceMode": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "Standing",
+				"value": "1"
+			},
+			{
+				"key": "Crouching",
+				"value": "2"
+			},
+			{
+				"key": "Proning",
+				"value": "3"
+			}
+		]
+	},
+	"SteeringType": {
+		"enums": [
+			{
+				"key": "SingleAngle",
+				"value": "0",
+				"description": "Both wheels steer by the same amount"
+			},
+			{
+				"key": "AngleRatio",
+				"value": "1",
+				"description": "Outer wheels on corner steer less than the inner ones by set ratio"
+			},
+			{
+				"key": "Ackermann",
+				"value": "2",
+				"description": "Ackermann steering principle is applied"
+			}
+		]
+	},
+	"SurfaceType": {
+		"enums": [
+			{
+				"key": "Default",
+				"value": "0"
+			},
+			{
+				"key": "Carpet",
+				"value": "1"
+			},
+			{
+				"key": "Concrete",
+				"value": "2"
+			},
+			{
+				"key": "Grass",
+				"value": "3"
+			},
+			{
+				"key": "Gravel",
+				"value": "4"
+			},
+			{
+				"key": "Ground",
+				"value": "5"
+			},
+			{
+				"key": "MetalLight",
+				"value": "6"
+			},
+			{
+				"key": "Plastic",
+				"value": "7"
+			},
+			{
+				"key": "Sand",
+				"value": "8"
+			},
+			{
+				"key": "Snow",
+				"value": "9"
+			},
+			{
+				"key": "Water",
+				"value": "10"
+			},
+			{
+				"key": "WoodLight",
+				"value": "11"
+			},
+			{
+				"key": "Flesh",
+				"value": "12"
+			},
+			{
+				"key": "MetalHeavy",
+				"value": "13"
+			},
+			{
+				"key": "WoodHeavy",
+				"value": "14"
+			},
+			{
+				"key": "Ice",
+				"value": "15"
+			},
+			{
+				"key": "Mud",
+				"value": "16"
+			},
+			{
+				"key": "Rock",
+				"value": "17"
+			},
+			{
+				"key": "Thump",
+				"value": "18"
+			},
+			{
+				"key": "Glass",
+				"value": "19"
+			},
+			{
+				"key": "Rubber",
+				"value": "20"
+			},
+			{
+				"key": "Air",
+				"value": "21"
+			}
+		]
+	},
+	"SwimmingMode": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "Surface",
+				"value": "1"
+			},
+			{
+				"key": "Underwater",
+				"value": "2"
+			}
+		]
+	},
+	"TextRenderAlignCamera": {
+		"enums": [
+			{
+				"key": "Unaligned",
+				"value": "0"
+			},
+			{
+				"key": "AlignCameraRotation",
+				"value": "1"
+			},
+			{
+				"key": "FaceCamera",
+				"value": "2"
+			}
+		]
+	},
+	"TextRenderBevelType": {
+		"enums": [
+			{
+				"key": "Linear",
+				"value": "0"
+			},
+			{
+				"key": "HalfCircle",
+				"value": "1"
+			},
+			{
+				"key": "Convex",
+				"value": "2"
+			},
+			{
+				"key": "Concave",
+				"value": "3"
+			},
+			{
+				"key": "OneStep",
+				"value": "4"
+			},
+			{
+				"key": "TwoSteps",
+				"value": "5"
+			},
+			{
+				"key": "Engraved",
+				"value": "6"
+			}
+		]
+	},
+	"TextRenderHorizontalAlignment": {
+		"enums": [
+			{
+				"key": "Left",
+				"value": "0"
+			},
+			{
+				"key": "Center",
+				"value": "1"
+			},
+			{
+				"key": "Right",
+				"value": "2"
+			}
+		]
+	},
+	"TextRenderVerticalAlignment": {
+		"enums": [
+			{
+				"key": "Top",
+				"value": "0"
+			},
+			{
+				"key": "Center",
+				"value": "1"
+			},
+			{
+				"key": "Bottom",
+				"value": "2"
+			},
+			{
+				"key": "QuadTop",
+				"value": "3"
+			}
+		]
+	},
+	"TriggerType": {
+		"enums": [
+			{
+				"key": "Sphere",
+				"value": "0"
+			},
+			{
+				"key": "Box",
+				"value": "1"
+			}
+		]
+	},
+	"TraceMode": {
+		"enums": [
+			{
+				"key": "DrawDebug",
+				"value": "1 << 0",
+				"description": "Whether to draw a 3D line representing the ray"
+			},
+			{
+				"key": "TraceComplex",
+				"value": "1 << 1",
+				"description": "Whether should trace against complex collision"
+			},
+			{
+				"key": "ReturnPhysicalMaterial",
+				"value": "1 << 2",
+				"description": "Whether want to include the physical material in the results (adds <code>SurfaceType</code> to result)"
+			},
+			{
+				"key": "ReturnEntity",
+				"value": "1 << 3",
+				"description": "Whether want to return the Entity hit (adds <code>Entity</code> to result)"
+			},
+			{
+				"key": "ReturnNames",
+				"value": "1 << 4",
+				"description": "Whether should return names (adds <code>ActorName</code>, <code>ComponentName</code> and <code>BoneName</code> to result)"
+			},
+			{
+				"key": "ReturnUV",
+				"value": "1 << 5",
+				"description": "Whether want to trace and return UV information (adds <code>UV</code> to result)"
+			}
+		]
+	},
+	"ViewMode": {
+		"enums": [
+			{
+				"key": "FPS",
+				"value": "0"
+			},
+			{
+				"key": "TPS1",
+				"value": "1"
+			},
+			{
+				"key": "TPS2",
+				"value": "2"
+			},
+			{
+				"key": "TPS3",
+				"value": "3"
+			},
+			{
+				"key": "TopDown",
+				"value": "4"
+			}
+		]
+	},
+	"VOIPSetting": {
+		"enums": [
+			{
+				"key": "Local",
+				"value": "0",
+				"description": "3D Sound"
+			},
+			{
+				"key": "Global",
+				"value": "1",
+				"description": "2D Sound"
+			},
+			{
+				"key": "Muted",
+				"value": "2"
+			}
+		]
+	},
+	"WeatherType": {
+		"enums": [
+			{
+				"key": "ClearSkies",
+				"value": "1"
+			},
+			{
+				"key": "Cloudy",
+				"value": "2"
+			},
+			{
+				"key": "Foggy",
+				"value": "3"
+			},
+			{
+				"key": "Overcast",
+				"value": "4"
+			},
+			{
+				"key": "PartlyCloudy",
+				"value": "5"
+			},
+			{
+				"key": "Rain",
+				"value": "6"
+			},
+			{
+				"key": "RainLight",
+				"value": "7"
+			},
+			{
+				"key": "RainThunderstorm",
+				"value": "8"
+			},
+			{
+				"key": "SandDustCalm",
+				"value": "9"
+			},
+			{
+				"key": "SandDustStorm",
+				"value": "10"
+			},
+			{
+				"key": "Snow",
+				"value": "11"
+			},
+			{
+				"key": "SnowBlizzard",
+				"value": "12"
+			},
+			{
+				"key": "SnowLight",
+				"value": "13"
+			}
+		]
+	},
+	"WebUIModifier": {
+		"enums": [
+			{
+				"key": "None",
+				"value": "0"
+			},
+			{
+				"key": "CapsLockOn",
+				"value": "1 << 0"
+			},
+			{
+				"key": "ShiftDown",
+				"value": "1 << 1"
+			},
+			{
+				"key": "ControlDown",
+				"value": "1 << 2"
+			},
+			{
+				"key": "AltDown",
+				"value": "1 << 3"
+			},
+			{
+				"key": "LeftMouseButton",
+				"value": "1 << 4"
+			},
+			{
+				"key": "MiddleMouseButton",
+				"value": "1 << 5"
+			},
+			{
+				"key": "RightMouseButton",
+				"value": "1 << 6"
+			},
+			{
+				"key": "CommandDown",
+				"value": "1 << 7"
+			},
+			{
+				"key": "NumLockOn",
+				"value": "1 << 8"
+			},
+			{
+				"key": "IsKeyPad",
+				"value": "1 << 9"
+			},
+			{
+				"key": "IsLeft",
+				"value": "1 << 10"
+			},
+			{
+				"key": "IsRight",
+				"value": "1 << 11"
+			},
+			{
+				"key": "AltgrDown",
+				"value": "1 << 12"
+			},
+			{
+				"key": "IsRepeat",
+				"value": "1 << 13"
+			}
+		]
+	},
+	"WebUIKeyType": {
+		"enums": [
+			{
+				"key": "Down",
+				"value": "0"
+			},
+			{
+				"key": "Up",
+				"value": "1"
+			},
+			{
+				"key": "Char",
+				"value": "2"
+			}
+		]
+	},
+	"WebUIMouseType": {
+		"enums": [
+			{
+				"key": "Left",
+				"value": "0"
+			},
+			{
+				"key": "Right",
+				"value": "1"
+			},
+			{
+				"key": "Middle",
+				"value": "2"
+			}
+		]
+	},
+	"WidgetVisibility": {
+		"enums": [
+			{
+				"key": "Hidden",
+				"value": "0"
+			},
+			{
+				"key": "Visible",
+				"value": "1"
+			},
+			{
+				"key": "VisibleNotHitTestable",
+				"value": "2"
+			}
+		]
+	}
 }

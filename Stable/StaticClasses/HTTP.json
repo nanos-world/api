@@ -54,7 +54,19 @@
 					"type": "function",
 					"name": "callback",
 					"default": "nil",
-					"description": "The result will be called in the format `function(status, data)`"
+					"description": "The result",
+					"function_parameters": [
+						{
+							"name": "status",
+							"type": "integer",
+							"description": "The HTTP status"
+						},
+						{
+							"name": "data",
+							"type": "string",
+							"description": "The response data"
+						}
+					]
 				}
 			]
 		},

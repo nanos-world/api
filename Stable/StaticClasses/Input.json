@@ -21,7 +21,13 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "The function to trigger"
+					"description": "The function to trigger",
+					"function_parameters": [
+						{
+							"name": "delta?",
+							"type": "float"
+						}
+					]
 				}
 			]
 		},
@@ -193,6 +199,18 @@
 			]
 		},
 		{
+			"name": "SetMouseCursor",
+			"description": "Sets the current Mouse Cursor type",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "CursorType",
+					"name": "cursor_type",
+					"description": ""
+				}
+			]
+		},
+		{
 			"name": "InputKey",
 			"description": "Forces an Input Key event on Local Player",
 			"description_long": "Forces an Input Key event on Local Player<br/><br/>This won't trigger any Scripting event as it bypass internal validations",
@@ -258,6 +276,23 @@
 		}
 	],
 	"events": [
+		{
+			"name": "KeyBindingChange",
+			"description": "A key binding has been changed through the settings",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "binding_name",
+					"description": "The keybinding id"
+				},
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The new key associated"
+				}
+			]
+		},
 		{
 			"name": "KeyDown",
 			"description": "A keyboard key is being pressed",
@@ -396,45 +431,28 @@
 			]
 		},
 		{
-			"name": "MouseMoveX",
-			"description": "Called when the mouse moves in the X axis",
+			"name": "MouseMove",
+			"description": "Called when the mouse moves",
 			"authority": "client",
 			"arguments": [
 				{
 					"type": "float",
-					"name": "delta",
+					"name": "cursor_delta_x",
 					"description": ""
 				},
 				{
 					"type": "float",
-					"name": "delta_time",
-					"description": ""
-				},
-				{
-					"type": "integer",
-					"name": "num_samples",
-					"description": ""
-				}
-			]
-		},
-		{
-			"name": "MouseMoveY",
-			"description": "Called when the mouse moves in the Y axis",
-			"authority": "client",
-			"arguments": [
-				{
-					"type": "float",
-					"name": "delta",
+					"name": "cursor_delta_y",
 					"description": ""
 				},
 				{
 					"type": "float",
-					"name": "delta_time",
+					"name": "mouse_x",
 					"description": ""
 				},
 				{
-					"type": "integer",
-					"name": "num_samples",
+					"type": "float",
+					"name": "mouse_y",
 					"description": ""
 				}
 			]

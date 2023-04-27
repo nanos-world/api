@@ -1,11 +1,12 @@
 {
 	"name": "Console",
-	"description": "Log messages on console.",
+	"description": "Exposes access to registering Console Commands and Logging messages.",
 	"authority": "both",
 	"static_functions": [
 		{
 			"name": "Log",
-			"description": "Logs and formats a message in the console, with formatted arguments",
+			"description": "Logs and formats a message in the console",
+			"description_long": "Logs and formats a message in the console, with formatted arguments",
 			"authority": "both",
 			"parameters": [
 				{
@@ -19,11 +20,36 @@
 					"default": "nil",
 					"description": "Other arguments to format with the message using string.format"
 				}
+			],
+			"examples": [
+				{
+					"title": "Basic",
+					"content": "Console.Log(\"Hello, world!\")",
+					"output": "Hello, world!"
+				},
+				{
+					"title": "With formatting (string)",
+					"content": [
+						"local player_name = \"John\"",
+						"Console.Log(\"Hello %s!\", player_name)"
+					],
+					"output": "Hello John!"
+				},
+				{
+					"title": "With formatting (integer)",
+					"content": [
+						"local health = 50",
+						"local max_health = 100",
+						"Console.Log(\"Player health: %d/%d\", health, max_health)"
+					],
+					"output": "Player health: 50/100"
+				}
 			]
 		},
 		{
 			"name": "Warn",
-			"description": "Logs an orange warning in the console, with formatted arguments",
+			"description": "Logs an orange warning in the console",
+			"description_long": "Logs an orange warning in the console, with formatted arguments",
 			"authority": "both",
 			"parameters": [
 				{
@@ -41,7 +67,8 @@
 		},
 		{
 			"name": "Error",
-			"description": "Logs a red error in the console, with formatted arguments",
+			"description": "Logs a red error in the console",
+			"description_long": "Logs a red error in the console, with formatted arguments",
 			"authority": "both",
 			"parameters": [
 				{
@@ -70,7 +97,13 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "The callback to be called when the command is inputted"
+					"description": "The callback to be called when the command is inputted",
+					"function_parameters": [
+						{
+							"name": "params",
+							"type": "any..."
+						}
+					]
 				},
 				{
 					"type": "string",
@@ -81,6 +114,17 @@
 					"type": "string[]",
 					"name": "parameters",
 					"description": "The list of supported parameters to display in the console"
+				}
+			],
+			"examples": [
+				{
+					"title": "Registering to a command that sends a message to everyone",
+					"content": [
+						"Console.RegisterCommand(\"hello\", function(text)",
+						"    Console.Log(\"Sending a 'Hello %s' to everyone!\", text)",
+						"    Chat.BroadcastMessage(\"Hello \" .. text)",
+						"end, \"says a message to everyone\", { \"my_text\" })"
+					]
 				}
 			]
 		}
@@ -94,7 +138,17 @@
 				{
 					"type": "string",
 					"name": "text",
-					"description": ""
+					"description": "Text submitted"
+				}
+			],
+			"examples": [
+				{
+					"title": "Handles Console Inputs",
+					"content": [
+						"if (text == \"some_text\") then",
+						"    Console.Log(\"Player submitted some_text!\")",
+						"end"
+					]
 				}
 			]
 		},
@@ -106,12 +160,12 @@
 				{
 					"type": "string",
 					"name": "text",
-					"description": ""
+					"description": "Log Message"
 				},
 				{
 					"type": "LogType",
 					"name": "type",
-					"description": ""
+					"description": "Type of the log"
 				}
 			]
 		},

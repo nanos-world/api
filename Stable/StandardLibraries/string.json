@@ -3,6 +3,107 @@
 	"description": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
 	"functions": [
 		{
+			"name": "StartsWith",
+			"description": "Test whether this string starts with given string",
+			"is_native": false,
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "other_string",
+					"description": "The given string"
+				}
+			],
+			"examples": [
+				{
+					"title": "Checks if string starts with text",
+					"content": [
+						"local str = \"awesome text!\"",
+						"local starts = str:StartsWith(\"awesome\")"
+					],
+					"output": "true"
+				}
+			]
+		},
+		{
+			"name": "EndsWith",
+			"description": "Test whether this string ends with given string",
+			"is_native": false,
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "other_string",
+					"description": "The given string"
+				}
+			],
+			"examples": [
+				{
+					"title": "Checks if string ends with text",
+					"content": [
+						"local str = \"awesome text!\"",
+						"local ends = str:EndsWith(\"text!\")"
+					],
+					"output": "true"
+				}
+			]
+		},
+		{
+			"name": "Trim",
+			"description": "Returns a new string with removed whitespace characters from the front and end of this string",
+			"is_native": false,
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"examples": [
+				{
+					"title": "Removes extra spaces",
+					"content": [
+						"local str = \"  Hello world!    \"",
+						"local new_str = str:Trim()"
+					],
+					"output": "Hello world!"
+				}
+			]
+		},
+		{
+			"name": "FormatArgs",
+			"description": "A better string.Format, replace <code>{num}</code> by the corresponding vararg in a string",
+			"is_native": false,
+			"examples": [
+				{
+					"title": "Replaces {1} and {2} with corresponding texts",
+					"content": [
+						"local str = \"Hello {2} I'm {1}\"",
+						"local new_str = str:FormatArgs(\"a noob\", \"world!\")"
+					],
+					"output": "Hello world! I'm a noob"
+				}
+			],
+			"return": [
+				{
+					"type": "string"
+				}
+			],
+			"parameters": [
+				{
+					"type": "any...",
+					"name": "args",
+					"description": "The args"
+				}
+			]
+		},
+		{
 			"name": "byte",
 			"description": "Returns the internal numeric codes of the characters <code>s[start_pos], s[start_pos + 1], ..., s[end_pos]</code>",
 			"is_native": true,
@@ -80,7 +181,7 @@
 			],
 			"is_native": true,
 			"name": "find",
-			"description": "Looks for the first match of `pattern` in the string."
+			"description": "Looks for the first match of <code>pattern</code> in the string."
 		},
 		{
 			"parameters": [
@@ -107,7 +208,7 @@
 			],
 			"is_native": true,
 			"name": "rep",
-			"description": "Returns a string that is the concatenation of `n` copies of the string `s` separated by the string `sep`."
+			"description": "Returns a string that is the concatenation of <code>n</code> copies of the string <code>s</code> separated by the string <code>sep</code>."
 		},
 		{
 			"parameters": [
@@ -190,7 +291,7 @@
 			],
 			"is_native": true,
 			"name": "match",
-			"description": "Looks for the first match of `pattern` in the string."
+			"description": "Looks for the first match of <code>pattern</code> in the string."
 		},
 		{
 			"parameters": [
@@ -207,7 +308,7 @@
 			],
 			"is_native": true,
 			"name": "reverse",
-			"description": "Returns a string that is the string `s` reversed."
+			"description": "Returns a string that is the string <code>s</code> reversed."
 		},
 		{
 			"parameters": [
@@ -234,7 +335,7 @@
 			],
 			"is_native": true,
 			"name": "sub",
-			"description": "Returns the substring of the string that starts at `i` and continues until `j`."
+			"description": "Returns the substring of the string that starts at <code>i</code> and continues until <code>j</code>."
 		},
 		{
 			"parameters": [
@@ -256,7 +357,7 @@
 			],
 			"is_native": true,
 			"name": "gmatch",
-			"description": "Returns an iterator function that, each time it is called, returns the next captures from `pattern` over the string s. "
+			"description": "Returns an iterator function that, each time it is called, returns the next captures from <code>pattern</code> over the string s. "
 		},
 		{
 			"parameters": [
@@ -308,7 +409,7 @@
 			],
 			"is_native": true,
 			"name": "gsub",
-			"description": "Returns a copy of s in which all (or the first `n`, if given) occurrences of the `pattern` have been replaced by a replacement string specified by `repl`."
+			"description": "Returns a copy of s in which all (or the first <code>n</code>, if given) occurrences of the <code>pattern</code> have been replaced by a replacement string specified by <code>repl</code>."
 		},
 		{
 			"parameters": [

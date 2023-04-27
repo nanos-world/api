@@ -1,7 +1,7 @@
 {
 	"name": "File",
 	"description": "A File represents an entry to a system file.",
-	"authority": "server",
+	"authority": "both",
 	"constructors": [
 		{
 			"description": "Default Constructor",
@@ -9,7 +9,7 @@
 				{
 					"type": "string",
 					"name": "file_path",
-					"description": "Path relative to server executable"
+					"description": "If on Server, this is the Path relative to server executable. Otherwise if on Client, this is the Path relative to Client's 'Packages/.transient/' folder"
 				},
 				{
 					"type": "boolean",
@@ -23,12 +23,12 @@
 	"functions": [
 		{
 			"name": "Close",
-			"authority":"server",
+			"authority": "both",
 			"description": "Closes the file and destroys the entity"
 		},
 		{
 			"name": "Flush",
-			"authority":"server",
+			"authority": "both",
 			"description": "Flushes content to the file"
 		},
 		{
@@ -38,7 +38,7 @@
 					"description": "if is EOF"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "IsEOF",
 			"description": "Checks if the file status is End of File"
 		},
@@ -49,7 +49,7 @@
 					"description": "if status is Bad"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "IsBad",
 			"description": "Checks if the file status is Bad"
 		},
@@ -60,7 +60,7 @@
 					"description": "if status is Good"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "IsGood",
 			"description": "Checks if the file status is Good"
 		},
@@ -71,7 +71,7 @@
 					"description": "if last operation failed"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "HasFailed",
 			"description": "Checks if the last operation has Failed"
 		},
@@ -82,7 +82,7 @@
 					"description": "file data"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "Read",
 			"description": "Reads characters from the File and returns it. Also moves the file pointer to the latest read position. Pass 0 to read the whole file",
 			"parameters": [
@@ -95,7 +95,7 @@
 			]
 		},
 		{
-			"authority":"server",
+			"authority": "both",
 			"name": "ReadAsync",
 			"description": "Reads characters from the File asynchronously.",
 			"parameters": [
@@ -107,7 +107,14 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback with the file read"
+					"description": "Callback",
+					"function_parameters": [
+						{
+							"name": "file_content",
+							"type": "string",
+							"description": "File content"
+						}
+					]
 				}
 			]
 		},
@@ -118,7 +125,7 @@
 					"description": "file line data"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "ReadLine",
 			"description": "Reads and returns the next file line"
 		},
@@ -129,25 +136,32 @@
 					"description": "parsed table"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "ReadJSON",
 			"description": "Reads the whole file as a JSON and returns it."
 		},
 		{
-			"authority":"server",
+			"authority": "both",
 			"name": "ReadJSONAsync",
 			"description": "Reads the whole file as a JSON and returns it asynchronously.",
 			"parameters": [
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "Callback with the file read"
+					"description": "Callback with the file read",
+					"function_parameters": [
+						{
+							"name": "file_content",
+							"type": "table",
+							"description": "File content in table format"
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "Seek",
-			"authority":"server",
+			"authority": "both",
 			"description": "Sets the file pointer to a specific position",
 			"parameters": [
 				{
@@ -164,13 +178,13 @@
 					"description": "file size"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "Size",
 			"description": "Returns the size of the file"
 		},
 		{
 			"name": "Skip",
-			"authority":"server",
+			"authority": "both",
 			"description": "Skips n (amount) positions from the current file pointer position",
 			"parameters": [
 				{
@@ -187,13 +201,13 @@
 					"description": "current file pointer position"
 				}
 			],
-			"authority":"server",
+			"authority": "both",
 			"name": "Tell",
 			"description": "Returns the current file pointer position"
 		},
 		{
 			"name": "Write",
-			"authority":"server",
+			"authority": "both",
 			"description": "Writes the Data at the current position of the file",
 			"parameters": [
 				{
@@ -215,7 +229,7 @@
 				}
 			],
 			"description": "Returns when a file was last modified in Unix time",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -234,7 +248,7 @@
 				}
 			],
 			"description": "Creates a Directory (for every folder passed)",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -252,7 +266,7 @@
 				}
 			],
 			"description": "Deletes a folder or file",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -270,7 +284,7 @@
 				}
 			],
 			"description": "Verifies if a entry exists in the file system",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -288,7 +302,7 @@
 				}
 			],
 			"description": "Checks if a path is a directory",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -306,12 +320,12 @@
 				}
 			],
 			"description": "Checks if a path is a file",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "path",
-					"description": "Path to filey"
+					"description": "Path to file"
 				}
 			]
 		}

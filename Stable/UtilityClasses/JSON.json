@@ -17,6 +17,13 @@
 					"name": "value",
 					"description": "the table that will become JSON"
 				}
+			],
+			"examples": [
+				{
+					"title": "Stringifies a Lua table",
+					"content": "local encoded_value = JSON.stringify({ 1, 2, 3, { x = 10, y = Vector(1, 2, 3) }, \"he\" })",
+					"output": "[1,2,3,{\"x\":10,\"y\":\"Vector(1.0, 2.0, 3.0)\"},\"he\"]"
+				}
 			]
 		},
 		{
@@ -33,6 +40,13 @@
 					"type": "string",
 					"name": "value",
 					"description": "the JSON that will become a table"
+				}
+			],
+			"examples": [
+				{
+					"title": "Parses a JSON string into a Lua table",
+					"content": "local decoded_value = JSON.parse('[1,2,3,{\"x\":10,\"y\":\"Vector(1.0, 2.0, 3.0)\"},\"he\"]')",
+					"output": "the table { 1, 2, 3, { x = 10, y = Vector(1, 2, 3) }, \"he\" }"
 				}
 			]
 		}
