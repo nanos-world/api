@@ -58,7 +58,10 @@ const APIData = {
 	}
 };
 
-var EnumsData = LoadJSON("Enums.json");
+var EnumsData = {
+	Stable: LoadJSON("Stable/Enums.json"),
+	BleedingEdge: LoadJSON("Enums.json"),
+}
 
 // Loads JSON from disk and returns its object
 function LoadJSON(path) {
@@ -70,8 +73,8 @@ function SaveJSON(path, object) {
 	return fs.writeFileSync(__dirname + "/" + path, JSON.stringify(object));
 }
 
-function AddUsedEnum(type, table, class_key, class_type, name) {
-	let _enum = EnumsData[type];
+function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
+	let _enum = EnumsData[version_key][type];
 
 	if (!_enum)
 		return;
@@ -115,12 +118,12 @@ function AddUsedEnum(type, table, class_key, class_type, name) {
 	_enum.relations.etc.push({ url, label });
 }
 
-function CheckUsedEnum(func, name, table, class_key, class_type) {
+function CheckUsedEnum(func, name, table, version_key, class_key, class_type) {
 	if (func.parameters)
 	{
 		for (const parameterKey in func.parameters) {
 			const parameter = func.parameters[parameterKey];
-			AddUsedEnum(parameter.type, table, class_key, class_type, name);
+			AddUsedEnum(parameter.type, table, version_key, class_key, class_type, name);
 		}
 	}
 
@@ -128,7 +131,7 @@ function CheckUsedEnum(func, name, table, class_key, class_type) {
 	{
 		for (const argumentKey in func.arguments) {
 			const argument = func.arguments[argumentKey];
-			AddUsedEnum(argument.type, table, class_key, class_type, name);
+			AddUsedEnum(argument.type, table, version_key, class_key, class_type, name);
 		}
 	}
 
@@ -136,7 +139,7 @@ function CheckUsedEnum(func, name, table, class_key, class_type) {
 	{
 		for (const returnKey in func.return) {
 			const ret = func.return[returnKey];
-			AddUsedEnum(ret.type, table, class_key, class_type, name);
+			AddUsedEnum(ret.type, table, version_key, class_key, class_type, name);
 		}
 	}
 }
@@ -153,7 +156,7 @@ function FindsGetSetRelationsAutomatically(functions, table, version_key, class_
 
 		// Only gets enum once
 		if (version_key == "BleedingEdge")
-			CheckUsedEnum(_function, _function.name, table, class_key, class_type);
+			CheckUsedEnum(_function, _function.name, table, version_key, class_key, class_type);
 
 		if (isSetter || isGetter) {
 			const otherName = _function.name.replace(isGetter ? 'G' : 'S', isGetter ? 'S' : 'G');
@@ -195,14 +198,14 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 		if (class_data.constructors)
 		{
 			for (const constructorKey in class_data.constructors)
-				CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].description, "constructors", class_key, class_type);
+				CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].description, "constructors", version_key, class_key, class_type);
 		}
 
 		// Check for events
 		if (class_data.events)
 		{
 			for (const eventKey in class_data.events)
-				CheckUsedEnum(class_data.events[eventKey], class_data.events[eventKey].name, "events", class_key, class_type);
+				CheckUsedEnum(class_data.events[eventKey], class_data.events[eventKey].name, "events", version_key, class_key, class_type);
 		}
 	}
 
@@ -241,6 +244,10 @@ function Run() {
 		PreprocessClass("StaticClass", class_key, "StaticClasses/" + APIData.StaticClass[class_key], "BleedingEdge")
 		PreprocessClass("StaticClass", class_key, "Stable/StaticClasses/" + APIData.StaticClass[class_key], "Stable")
 	}
+
+	// Saves updated Enums
+	SaveJSON(".generated/Enums.json", EnumsData.BleedingEdge);
+	SaveJSON(".generated/Stable/Enums.json", EnumsData.Stable);
 }
 
 Run();
