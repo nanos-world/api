@@ -66,7 +66,20 @@
 			"return": [
 				{
 					"type": "table[]",
-					"description": "in the format <code>{ name, is_loaded, is_visible }</code>"
+					"table_properties": [
+						{
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"name": "is_loaded",
+							"type": "boolean"
+						},
+						{
+							"name": "is_visible",
+							"type": "boolean"
+						}
+					]
 				}
 			]
 		},

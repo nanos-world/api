@@ -316,7 +316,7 @@
 			"return": [
 				{
 					"type": "table[]",
-					"description": "a list of the Custom Config of the current map",
+					"description": "a list of the Spawn Points of the current map",
 					"table_properties": [
 						{
 							"name": "location",
@@ -450,7 +450,8 @@
 			"return": [
 				{
 					"type": "table[]",
-					"description": "a list of the Custom Settings in the format (key = value)"
+					"description": "a list of the Custom Settings",
+					"table_properties_custom": "\n\t\"[KEY_01]\" = \"[VALUE_01]\",\n\t\"[KEY_02]\" = \"[VALUE_02]\",\n\t..."
 				}
 			]
 		},

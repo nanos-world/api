@@ -208,6 +208,7 @@
 		]
 	},
 	"CollisionChannel": {
+		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "WorldStatic",
@@ -588,6 +589,7 @@
 		]
 	},
 	"KeyModifier": {
+		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "None",
@@ -1344,6 +1346,7 @@
 		]
 	},
 	"TraceMode": {
+		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "DrawDebug",
@@ -1476,6 +1479,7 @@
 		]
 	},
 	"WebUIModifier": {
+		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "None",
