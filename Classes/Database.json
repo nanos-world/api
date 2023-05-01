@@ -93,6 +93,12 @@
 					"type": "string",
 					"description": "error (if any)"
 				}
+			],
+			"examples": [
+				{
+					"title": "Inserts into database (SQLite)",
+					"content": "local affected_rows = my_database:Execute(\"INSERT INTO MyTable VALUES (:0, ':1')\", 123, \"MyValue\")"
+				}
 			]
 		},
 		{
@@ -129,6 +135,12 @@
 					"default": "nil",
 					"description": "Sequence of parameters to escape into the Query"
 				}
+			],
+			"examples": [
+				{
+					"title": "Selects from a table asynchronously (SQLite)",
+					"content": "my_database:SelectAsync(\"SELECT * FROM MyTable WHERE name = :0 AND title = :1\", function(rows)\n\tConsole.log(NanosTable.Dump(rows))\nend, \"Val\", \"AnotherVal\")"
+				}
 			]
 		},
 		{
@@ -156,6 +168,12 @@
 				{
 					"type": "string",
 					"description": "error (if any)"
+				}
+			],
+			"examples": [
+				{
+					"title": "Selects from a table (SQLite)",
+					"content": "local rows = my_database:Select(\"SELECT * FROM MyTable WHERE name = :0 AND title = :1\", \"Val\", \"AnotherVal\")"
 				}
 			]
 		}

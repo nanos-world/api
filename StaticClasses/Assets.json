@@ -208,6 +208,12 @@
 					"name": "asset_type",
 					"description": "The Asset Type"
 				}
+			],
+			"examples": [
+				{
+					"title": "Precaches a Static Mesh",
+					"content": "Assets.Precache(\"my-asset-pack::SM_MyStaticMesh\", AssetType.StaticMesh)"
+				}
 			]
 		}
 	]
