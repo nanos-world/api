@@ -136,7 +136,7 @@
 		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Client, which can be accessed from anywhere (client side)",
-			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side)<br/><br/>Please refer to <a href=\"https://docs.nanos.world/docs/next/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side)<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "client",
 			"parameters": [
 				{

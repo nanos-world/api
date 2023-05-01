@@ -250,7 +250,7 @@
 		{
 			"name": "SetNetworkAuthority",
 			"description": "Sets the Player to have network authority over this Actor",
-			"description_long": "Sets the Player to have network authority over this Actor. This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
+			"description_long": "Sets the Player to have network authority over this Actor. This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
 			"authority": "server",
 			"parameters": [
 				{
@@ -264,7 +264,7 @@
 		{
 			"name": "SetNetworkAuthorityAutoDistributed",
 			"description": "Sets if this Actor will auto distribute the network authority betwen players",
-			"description_long": "Sets if this Actor will auto distribute the network authority betwen players when idle<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
+			"description_long": "Sets if this Actor will auto distribute the network authority betwen players when idle<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
 			"authority": "server",
 			"parameters": [
 				{

@@ -67,6 +67,17 @@
 			]
 		},
 		{
+			"name": "SetColor",
+			"description": "Sets the Trigger color (if visible)",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color"
+				}
+			]
+		},
+		{
 			"name": "SetOverlapOnlyClasses",
 			"description": "Sets the filter to Trigger to only overlap specific Classes. Leave it empty for all Classes",
 			"authority": "server",

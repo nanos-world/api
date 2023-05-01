@@ -56,7 +56,7 @@
 		},
 		{
 			"name": "Inherit",
-			"description": "Inherits this class with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"description": "Inherits this class with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"parameters": [
 				{
@@ -79,7 +79,7 @@
 		},
 		{
 			"name": "GetInheritedClasses",
-			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"parameters": [
 				{
@@ -98,7 +98,7 @@
 		},
 		{
 			"name": "GetParentClass",
-			"description": "Gets the parent class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"description": "Gets the parent class if this Class was created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"return": [
 				{
@@ -109,7 +109,7 @@
 		},
 		{
 			"name": "IsChildOf",
-			"description": "Gets if this Class is child of another class if this Class was created with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"description": "Gets if this Class is child of another class if this Class was created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"parameters": [
 				{
@@ -126,7 +126,7 @@
 		},
 		{
 			"name": "Subscribe",
-			"description": "Subscribes to an <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> for all entities of this Class",
+			"description": "Subscribes to an <a href='/docs/core-concepts/scripting/events-guide'>Event</a> for all entities of this Class",
 			"authority": "both",
 			"parameters": [
 				{
@@ -172,7 +172,7 @@
 		},
 		{
 			"name": "Unsubscribe",
-			"description": "Unsubscribes all callbacks from this <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> in this Class within this Package, or only the callback passed",
+			"description": "Unsubscribes all callbacks from this <a href='/docs/core-concepts/scripting/events-guide'>Event</a> in this Class within this Package, or only the callback passed",
 			"authority": "both",
 			"parameters": [
 				{
@@ -212,7 +212,7 @@
 		},
 		{
 			"name": "IsA",
-			"description": "Recursively checks if this entity is <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>inherited</a> from a Class",
+			"description": "Recursively checks if this entity is <a href='/docs/core-concepts/scripting/inheriting-classes'>inherited</a> from a Class",
 			"authority": "both",
 			"parameters": [
 				{
@@ -229,7 +229,7 @@
 		},
 		{
 			"name": "Subscribe",
-			"description": "Subscribes to an <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> on this specific entity",
+			"description": "Subscribes to an <a href='/docs/core-concepts/scripting/events-guide'>Event</a> on this specific entity",
 			"authority": "both",
 			"parameters": [
 				{
@@ -275,7 +275,7 @@
 		},
 		{
 			"name": "Unsubscribe",
-			"description": "Unsubscribes all callbacks from this <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/events-guide'>Event</a> in this Entity within this Package, or only the callback passed",
+			"description": "Unsubscribes all callbacks from this <a href='/docs/core-concepts/scripting/events-guide'>Event</a> in this Entity within this Package, or only the callback passed",
 			"authority": "both",
 			"parameters": [
 				{
@@ -293,8 +293,8 @@
 		},
 		{
 			"name": "SetValue",
-			"description": "Sets a <a href='https://docs.nanos.world/docs/core-concepts/scripting/entity-values'>Value</a> in this Entity",
-			"description_long": "Sets a value in this Entity, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description": "Sets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> in this Entity",
+			"description_long": "Sets a value in this Entity, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
 			"parameters": [
 				{
@@ -315,8 +315,8 @@
 		},
 		{
 			"name": "GetValue",
-			"description": "Gets a <a href='https://docs.nanos.world/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key",
-			"description_long": "Gets a <a href='https://docs.nanos.world/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key. Please refer to <a href=\"https://docs.nanos.world/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description": "Gets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key",
+			"description_long": "Gets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key. Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
 			"parameters": [
 				{
@@ -461,7 +461,7 @@
 		{
 			"authority": "both",
 			"name": "ClassRegister",
-			"description": "Triggered when a new Class is registered with the <a href='https://docs.nanos.world/docs/next/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
+			"description": "Triggered when a new Class is registered with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"arguments": [
 				{
 					"type": "table",
