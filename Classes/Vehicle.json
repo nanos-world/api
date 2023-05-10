@@ -5,7 +5,8 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Paintable"
+		"Paintable",
+		"Damageable"
 	],
 	"constructors": [
 		{
@@ -565,6 +566,49 @@
 				{
 					"type": "Vector",
 					"name": "location"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetExplosionSettings",
+			"description": "Configures the Explosion Settings when health reaches zero",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "engine_relative_location",
+					"description": "Relative location of the Engine. Used to apply particles and effects."
+				},
+				{
+					"type": "table",
+					"name": "materials_index_burnt_override",
+					"description": "List of material indexes to override to burnt when exploded. Leave it empty for all indexes."
+				},
+				{
+					"type": "table",
+					"name": "materials_index_burnt_invisible",
+					"description": "List of material indexes to override to invisible when exploded. Leave it empty for all indexes."
+				}
+			],
+			"examples": [
+				{
+					"title": "Vehicle Explosion Settings",
+					"content": "my_vehicle:SetExplosionSettings(Vector(-50, 0, 0), { 1, 2, 4 }, { 3 })"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetTireFlat",
+			"description": "Sets a Tire as Flat or not",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "wheel_index"
+				},
+				{
+					"type": "boolean",
+					"name": "is_flat"
 				}
 			]
 		},
