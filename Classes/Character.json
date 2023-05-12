@@ -60,7 +60,7 @@
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Spawns and Attaches a SkeletalMesh into this Character",
-			"description_long": "Spawns and Attaches a SkeletalMesh into this Character, the SkeletalMesh must have the same Skeletal used by the Character Mesh, and will follow all animations from it. Uses a custom ID to be used for removing it further.<br/><br/>For customizing the Materials specific of a SkeletalMeshAttached, please use the following syntax in the Paintable methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"description_long": "Spawns and Attaches a SkeletalMesh into this Character, the SkeletalMesh must have the same Skeletal used by the Character Mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -70,7 +70,7 @@
 				{
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_asset",
-					"default": ""
+					"description": "Path to SkeletalMesh asset to attach"
 				}
 			]
 		},
@@ -78,7 +78,7 @@
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Spawns and Attaches a StaticMesh into this Character",
-			"description_long": "Spawns and Attaches a StaticMesh into this Character in a Socket with relative Location and Rotation. Uses a custom ID to be used for removing it further<br/><br/>For customizing the Materials specific of a StaticMeshAttached, please use the following syntax as the <code>parameter_name</code> in the Paintable methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"description_long": "Spawns and Attaches a StaticMesh into this Character in a Socket with relative Location and Rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -87,8 +87,7 @@
 				},
 				{
 					"type": "StaticMeshPath",
-					"name": "static_mesh_asset",
-					"default": ""
+					"name": "static_mesh_asset"
 				},
 				{
 					"type": "string",

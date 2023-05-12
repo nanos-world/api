@@ -16,7 +16,13 @@
 					"type": "integer",
 					"name": "index",
 					"default": "-1",
-					"description": "The index to apply<br/>-1 means all indices"
+					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material. Pass empty to set on main mesh only"
 				}
 			]
 		},
@@ -28,13 +34,13 @@
 				{
 					"type": "Canvas",
 					"name": "canvas",
-					"description": "The Canvas object to use as a materia"
+					"description": "The Canvas object to use as a material"
 				},
 				{
 					"type": "integer",
 					"name": "index",
 					"default": "-1",
-					"description": "The index to apply<br/>-1 means all indices"
+					"description": "The material index to apply (<code>-1</code> means all indices)"
 				}
 			]
 		},
@@ -52,7 +58,7 @@
 					"type": "integer",
 					"name": "index",
 					"default": "-1",
-					"description": "The index to apply<br/>-1 means all indices"
+					"description": "The material index to apply (<code>-1</code> means all indices)"
 				}
 			]
 		},
@@ -70,7 +76,7 @@
 					"type": "integer",
 					"name": "index",
 					"default": "-1",
-					"description": "The index to apply<br/>-1 means all indices"
+					"description": "The material index to apply (<code>-1</code> means all indices)"
 				}
 			]
 		},
@@ -83,7 +89,13 @@
 					"type": "integer",
 					"name": "index",
 					"default": "-1",
-					"description": "The index to apply<br/>-1 means all indices"
+					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to reset the material. Pass empty to reset on main mesh only"
 				}
 			]
 		},
@@ -97,10 +109,22 @@
 					"name": "parameter_name",
 					"description": "The name of the material parameter"
 				},
-						{
+				{
 					"type": "Color",
 					"name": "color",
 					"description": "The value to set"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
 			]
 		},
@@ -118,6 +142,18 @@
 					"type": "float",
 					"name": "scalar",
 					"description": "The value to set"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
 			]
 		},
@@ -135,6 +171,18 @@
 					"type": "ImagePath",
 					"name": "texture_path",
 					"description": "The path to the texture"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
 			]
 		},
@@ -152,6 +200,18 @@
 					"type": "Vector",
 					"name": "vector",
 					"description": "The value to set"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
 			]
 		},

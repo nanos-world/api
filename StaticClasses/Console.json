@@ -127,6 +127,24 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "RunCommand",
+			"description": "Runs a Console Command programmatically",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "command",
+					"description": "The command"
+				}
+			],
+			"examples": [
+				{
+					"title": "Running a Console Command",
+					"content": "Console.RunCommand(\"hello\")"
+				}
+			]
 		}
 	],
 	"events" : [

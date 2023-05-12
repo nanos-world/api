@@ -54,6 +54,16 @@
 			"authority": "both"
 		},
 		{
+			"name": "IsActive",
+			"description": "Returns if this Particle is active",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
 			"name": "SetParameterFloat",
 			"description": "Sets a float parameter in this Particle System",
 			"authority": "both",
