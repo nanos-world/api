@@ -14,23 +14,20 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location",
-					"default": "Vector(0, 0, 0)"
+					"name": "location"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation",
-					"default": "Rotator(0, 0, 0)"
+					"name": "rotation"
 				},
 				{
 					"type": "StaticMeshPath",
-					"name": "asset",
-					"default": ""
+					"name": "asset"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Normal"
+					"default": "CollisionType.Auto"
 				},
 				{
 					"type": "boolean",

@@ -27,7 +27,7 @@
 				{
 					"name": "collision_type",
 					"type": "CollisionType",
-					"default": "CollisionType.Normal"
+					"default": "CollisionType.Auto"
 				},
 				{
 					"name": "gravity_enabled",

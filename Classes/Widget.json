@@ -136,7 +136,7 @@
 			"name": "CallBlueprintEvent",
 			"return": [
 				{
-					"type": "any",
+					"type": "any...",
 					"description": "the function return values"
 				}
 			],

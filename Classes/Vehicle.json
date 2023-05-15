@@ -27,7 +27,7 @@
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Normal"
+					"default": "CollisionType.Auto"
 				},
 				{
 					"type": "boolean",
@@ -663,7 +663,7 @@
 			"description": "Gets the Asset name",
 			"return": [
 				{
-					"type": "VehiclePath",
+					"type": "SkeletalMeshPath",
 					"description": "asset path"
 				}
 			]
