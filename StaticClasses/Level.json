@@ -85,13 +85,25 @@
 		},
 		{
 			"name": "CallLevelBlueprintEvent",
+			"return": [
+				{
+					"type": "any...",
+					"description": "the function return values"
+				}
+			],
 			"description": "Calls a Level Blueprint custom event (which can be added when creating levels through Unreal Engine)",
 			"authority": "client",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "event_name",
-					"description": ""
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
 				}
 			]
 		}
