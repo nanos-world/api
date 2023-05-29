@@ -18,7 +18,12 @@
 					"name": "skeletal_mesh_path",
 					"description": "Path to SkeletalMesh asset to attach"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"RemoveSkeletalMeshAttached"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -54,7 +59,84 @@
 					"default": "Rotator(0, 0, 0)",
 					"description": "Relative rotation"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetStaticMeshAttachedTransform",
+					"RemoveStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the SkeletalMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetStaticMeshAttachedTransform",
+			"description": "Sets a Static Mesh Attached location and rotation",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh set with AddStaticMeshAttached"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "New relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"description": "New relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllStaticMeshesAttached",
+			"description": "Removes all StaticMeshes attached"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllSkeletalMeshesAttached",
+			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
 			"authority": "server",
@@ -73,30 +155,6 @@
 			"authority": "server",
 			"name": "ReleaseUse",
 			"description": "Releases the usage of this Pickable (will stop firing if this is a weapon)"
-		},
-		{
-			"authority": "both",
-			"name": "RemoveSkeletalMeshAttached",
-			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the SkeletalMesh to remove"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the StaticMesh to remove"
-				}
-			]
 		},
 		{
 			"authority": "server",

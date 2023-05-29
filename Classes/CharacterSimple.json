@@ -44,6 +44,142 @@
 	],
 	"functions": [
 		{
+			"authority": "both",
+			"name": "AddSkeletalMeshAttached",
+			"description": "Attaches a Skeletal Mesh as master pose to this entity",
+			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Used further for removing or applying material settings on it"
+				},
+				{
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh_path",
+					"description": "Path to SkeletalMesh asset to attach"
+				}
+			],
+			"relations": {
+				"functions": [
+					"RemoveSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "AddStaticMeshAttached",
+			"description": "Attaches a Static Mesh to this entity",
+			"description_long": "Spawns and attaches a StaticMesh to this entity in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID to assign to the StaticMesh"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_path",
+					"description": "Path to StaticMesh asset to attach"
+				},
+				{
+					"type": "string",
+					"name": "socket",
+					"default": "",
+					"description": "Bone socket to attach to"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "Vector(0, 0, 0)",
+					"description": "Relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetStaticMeshAttachedTransform",
+					"RemoveStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if it exists, a SkeletalMesh from this entity given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the SkeletalMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetStaticMeshAttachedTransform",
+			"description": "Sets a Static Mesh Attached location and rotation",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh set with AddStaticMeshAttached"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "New relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"description": "New relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if it exists, a StaticMesh from this enitity given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllStaticMeshesAttached",
+			"description": "Removes all StaticMeshes attached"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllSkeletalMeshesAttached",
+			"description": "Removes all SkeletalMeshes attached"
+		},
+		{
 			"authority": "authority",
 			"name": "PlayAnimation",
 			"description": "Plays an Animation Montage on this character",
@@ -95,88 +231,6 @@
 					"name": "animation_asset"
 				}
 			]
-		},
-		{
-			"authority": "both",
-			"name": "AddSkeletalMeshAttached",
-			"description": "Spawns and Attaches a SkeletalMesh into this Character",
-			"description_long": "Spawns and Attaches a SkeletalMesh into this Character, the SkeletalMesh must have the same Skeletal used by the Character Mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Used further for removing or applying material settings on it"
-				},
-				{
-					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh_asset",
-					"description": "Path to SkeletalMesh asset to attach"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "AddStaticMeshAttached",
-			"description": "Spawns and Attaches a StaticMesh into this Character",
-			"description_long": "Spawns and Attaches a StaticMesh into this Character in a Socket with relative Location and Rotation. Uses a custom ID to be used for removing/customizing it afterwards",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Used further for removing or applying material settings on it"
-				},
-				{
-					"type": "StaticMeshPath",
-					"name": "static_mesh_asset"
-				},
-				{
-					"type": "string",
-					"name": "socket",
-					"default": ""
-				},
-				{
-					"type": "Vector",
-					"name": "relative_location",
-					"default": "Vector(0, 0, 0)"
-				},
-				{
-					"type": "Rotator",
-					"name": "relative_rotation",
-					"default": "Rotator(0, 0, 0)"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveSkeletalMeshAttached",
-			"description": "Removes, if existing, a SkeletalMesh from this Character given it's custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if existing, a StaticMesh from this Character given it's custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
-		},
-		{
-			"authority": "both",
-			"name": "RemoveAllSkeletalMeshesAttached",
-			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
 			"authority": "authority",

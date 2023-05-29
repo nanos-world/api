@@ -87,9 +87,9 @@
 	"functions": [
 		{
 			"authority": "both",
-			"name": "AddStaticMeshAttached",
-			"description": "Spawns and Attaches a StaticMesh into this Vehicle",
-			"description_long": "Spawns and Attaches a StaticMesh into this Vehicle in a Socket with relative Location and Rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"name": "AddSkeletalMeshAttached",
+			"description": "Attaches a Skeletal Mesh as master pose to this entity",
+			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -97,25 +97,129 @@
 					"description": "Used further for removing or applying material settings on it"
 				},
 				{
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh_path",
+					"description": "Path to SkeletalMesh asset to attach"
+				}
+			],
+			"relations": {
+				"functions": [
+					"RemoveSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "AddStaticMeshAttached",
+			"description": "Attaches a Static Mesh to this entity",
+			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID to assign to the StaticMesh"
+				},
+				{
 					"type": "StaticMeshPath",
-					"name": "static_mesh_asset"
+					"name": "static_mesh_path",
+					"description": "Path to StaticMesh asset to attach"
 				},
 				{
 					"type": "string",
 					"name": "socket",
-					"default": ""
+					"default": "",
+					"description": "Bone socket to attach to"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Relative location"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
-					"default": "Rotator(0, 0, 0)"
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relative rotation"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetStaticMeshAttachedTransform",
+					"RemoveStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the SkeletalMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetStaticMeshAttachedTransform",
+			"description": "Sets a Static Mesh Attached location and rotation",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh set with AddStaticMeshAttached"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "New relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"description": "New relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllStaticMeshesAttached",
+			"description": "Removes all StaticMeshes attached"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllSkeletalMeshesAttached",
+			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
 			"authority": "server",
@@ -133,22 +237,6 @@
 			"name": "RecreatePhysics",
 			"description": "Recreate the Vehicle Physics",
 			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor"
-		},
-		{
-			"authority": "both",
-			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if existing, a StaticMesh from this Vehicle given it's custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
 		},
 		{
 			"authority": "both",
