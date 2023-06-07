@@ -1,7 +1,7 @@
 {
 	"name": "Trigger",
 	"description": "A Trigger class is a utility class to trigger events when any Entity enters an Area.",
-	"authority": "server",
+	"authority": "both",
 	"inheritance": [
 		"Entity",
 		"Actor"
@@ -19,9 +19,9 @@
 					"name": "rotation"
 				},
 				{
-					"type": "Vector",
+					"type": "Vector|float",
 					"name": "extent",
-					"description": "Size of the Trigger. If using Sphere, only the X is used"
+					"description": "Size of the Trigger. If using <code>TriggerType.Sphere</code> it is treated as radius, otherwise as Vector extent"
 				},
 				{
 					"type": "TriggerType",
@@ -53,15 +53,15 @@
 		{
 			"name": "ForceOverlapChecking",
 			"description": "Forces a Overlap checking to occur, will immediately trigger overlaps",
-			"authority": "server"
+			"authority": "authority"
 		},
 		{
 			"name": "SetExtent",
-			"description": "Sets the extent size of this trigger (sphere triggers will use only the .X component for radius)",
-			"authority": "server",
+			"description": "Sets the extent size of this trigger (sphere triggers can receive as float for radius)",
+			"authority": "authority",
 			"parameters": [
 				{
-					"type": "Vector",
+					"type": "Vector|float",
 					"name": "extent"
 				}
 			]
@@ -80,7 +80,7 @@
 		{
 			"name": "SetOverlapOnlyClasses",
 			"description": "Sets the filter to Trigger to only overlap specific Classes. Leave it empty for all Classes",
-			"authority": "server",
+			"authority": "authority",
 			"parameters": [
 				{
 					"type": "string[]",
@@ -99,6 +99,7 @@
 		{
 			"name": "BeginOverlap",
 			"description": "Triggered when something overlaps this Trigger",
+			"authority": "authority",
 			"arguments": [
 				{
 					"type": "Trigger",
@@ -115,6 +116,7 @@
 		{
 			"name": "EndOverlap",
 			"description": "Triggered when something leaves this Trigger",
+			"authority": "authority",
 			"arguments": [
 				{
 					"type": "Trigger",

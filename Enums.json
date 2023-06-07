@@ -1590,5 +1590,19 @@
 				"value": "2"
 			}
 		]
+	},
+	"WidgetSpace": {
+		"enums": [
+			{
+				"key": "World",
+				"value": "0",
+				"description": "The widget is rendered in the world as mesh, it can be occluded like any other mesh in the world"
+			},
+			{
+				"key": "Screen",
+				"value": "1",
+				"description": "The widget is rendered in the screen, completely outside of the world, never occluded"
+			}
+		]
 	}
 }

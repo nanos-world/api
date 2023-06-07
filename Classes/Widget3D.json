@@ -1,0 +1,28 @@
+{
+	"name": "Widget3D",
+	"description": "The Widget3D class is the 3D representation of a Widget class spawned in the world.",
+	"authority": "client",
+	"inheritance": [
+		"Entity",
+		"Actor"
+	],
+	"functions": [
+		{
+			"name": "SetAutoRepaintRate",
+			"authority": "client",
+			"description": "Sets the auto repaint rate",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "rate"
+				}
+			]
+		},
+		{
+			"name": "Repaint",
+			"authority": "client",
+			"description": "Forces this to repaint"
+		}
+	],
+	"events": []
+}

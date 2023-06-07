@@ -29,6 +29,56 @@
 	],
 	"functions": [
 		{
+			"name": "SpawnWidget3D",
+			"authority": "client",
+			"description": "Spawns a 3D Widget actor rendering this Widget in the world",
+			"return": [
+				{
+					"type": "Widget3D",
+					"name": "widget_3D"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"default": "Rotator(0, 0, 0)"
+				},
+				{
+					"type": "WidgetSpace",
+					"name": "widget_space",
+					"default": "WidgetSpace.World"
+				},
+				{
+					"type": "bool",
+					"name": "auto_size",
+					"default": "false"
+				},
+				{
+					"type": "Vector2D",
+					"name": "size",
+					"description": "Only works if auto_size = false",
+					"default": "Vector2D(500, 500)"
+				},
+				{
+					"type": "float",
+					"name": "auto_repaint_rate",
+					"description": "Leaves -1 to repaint every frame",
+					"default": "-1"
+				},
+				{
+					"type": "Vector2D",
+					"name": "pivot",
+					"default": "Vector2D(0.5, 0.5)"
+				}
+			]
+		},
+		{
 			"name": "SetVisibility",
 			"authority": "client",
 			"description": "Sets the visibility in screen",

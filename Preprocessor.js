@@ -34,6 +34,7 @@ const APIData = {
 		Weapon: "Weapon.json",
 		WebUI: "WebUI.json",
 		Widget: "Widget.json",
+		Widget3D: "Widget3D.json",
 	},
 	StaticClass: {
 		Assets: "Assets.json",
@@ -65,7 +66,12 @@ var EnumsData = {
 
 // Loads JSON from disk and returns its object
 function LoadJSON(path) {
-	return JSON.parse(fs.readFileSync(__dirname + "/" + path));
+	const file_path = __dirname + "/" + path;
+
+	if (!fs.existsSync(file_path))
+		return false;
+
+	return JSON.parse(fs.readFileSync(file_path));
 }
 
 // Saves JSON to disk stringified
@@ -217,6 +223,9 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 function PreprocessClass(type, class_name, file, version) {
 	console.log("Processing %s '%s' (%s)...", type, class_name, version);
 	let data = LoadJSON(file);
+
+	if (!data)
+		return;
 
 	ProcessClass(data, version, class_name, type);
 

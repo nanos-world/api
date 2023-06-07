@@ -152,6 +152,28 @@
 		},
 		{
 			"authority": "both",
+			"name": "GetAllStaticMeshAttached",
+			"description": "Gets all Static Meshes attached to this entity",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "the key as the Attached ID, and the value as the Asset Path"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAllSkeletalMeshAttached",
+			"description": "Gets all Skeletal Meshes attached to this entity",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "the key as the Attached ID, and the value as the Asset Path"
+				}
+			]
+		},
+		{
+			"authority": "both",
 			"name": "RemoveSkeletalMeshAttached",
 			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
 			"parameters": [
