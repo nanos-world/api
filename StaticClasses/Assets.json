@@ -40,7 +40,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -68,7 +68,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -96,7 +96,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -124,7 +124,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -152,7 +152,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -180,7 +180,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -208,7 +208,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -236,7 +236,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
@@ -264,7 +264,7 @@
 					"type": "table[]",
 					"table_properties": [
 						{
-							"name": "path",
+							"name": "key",
 							"type": "string"
 						},
 						{
