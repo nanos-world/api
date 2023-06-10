@@ -6,25 +6,30 @@
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing it later.<br><br>For customizing the Materials specific to a mesh attached with this function, use the following syntax as the <code>parameter_name</code> in the <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/base-classes/paintable\">Base Paintable</a> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where <code>[ATTACHABLE_ID]</code> is the ID of the Attachable, and <code>[PARAMETER_NAME]</code> is the name of the parameter you want to change.",
+			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "id",
-					"description": "Unique ID to assign to the SkeletalMesh"
+					"description": "Used further for removing or applying material settings on it"
 				},
 				{
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_path",
 					"description": "Path to SkeletalMesh asset to attach"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"RemoveSkeletalMeshAttached"
+				]
+			}
 		},
 		{
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing it later<br><br>For customizing the Materials specific to a mesh attached with this function, use the following syntax as the <code>parameter_name</code> in the <a href=\"https://docs.nanos.world/docs/scripting-reference/classes/base-classes/paintable\">Base Paintable</a> methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where <code>[ATTACHABLE_ID]</code> is the ID of the Attachable, and <code>[PARAMETER_NAME]</code> is the name of the parameter you want to change.",
+			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -54,7 +59,106 @@
 					"default": "Rotator(0, 0, 0)",
 					"description": "Relative rotation"
 				}
+			],
+			"relations": {
+				"functions": [
+					"SetStaticMeshAttachedTransform",
+					"RemoveStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "GetAllStaticMeshAttached",
+			"description": "Gets all Static Meshes attached to this entity",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "the key as the Attached ID, and the value as the Asset Path"
+				}
 			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAllSkeletalMeshAttached",
+			"description": "Gets all Skeletal Meshes attached to this entity",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "the key as the Attached ID, and the value as the Asset Path"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the SkeletalMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetStaticMeshAttachedTransform",
+			"description": "Sets a Static Mesh Attached location and rotation",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh set with AddStaticMeshAttached"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "New relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"description": "New relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllStaticMeshesAttached",
+			"description": "Removes all StaticMeshes attached"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllSkeletalMeshesAttached",
+			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
 			"authority": "server",
@@ -73,30 +177,6 @@
 			"authority": "server",
 			"name": "ReleaseUse",
 			"description": "Releases the usage of this Pickable (will stop firing if this is a weapon)"
-		},
-		{
-			"authority": "both",
-			"name": "RemoveSkeletalMeshAttached",
-			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the SkeletalMesh to remove"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the StaticMesh to remove"
-				}
-			]
 		},
 		{
 			"authority": "server",

@@ -66,19 +66,44 @@
 			"return": [
 				{
 					"type": "table[]",
-					"description": "in the format <code>{ name, is_loaded, is_visible }</code>"
+					"table_properties": [
+						{
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"name": "is_loaded",
+							"type": "boolean"
+						},
+						{
+							"name": "is_visible",
+							"type": "boolean"
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "CallLevelBlueprintEvent",
+			"return": [
+				{
+					"type": "any...",
+					"description": "the function return values"
+				}
+			],
 			"description": "Calls a Level Blueprint custom event (which can be added when creating levels through Unreal Engine)",
 			"authority": "client",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "event_name",
-					"description": ""
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
 				}
 			]
 		}

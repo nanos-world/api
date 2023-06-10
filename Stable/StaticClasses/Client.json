@@ -136,7 +136,7 @@
 		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Client, which can be accessed from anywhere (client side)",
-			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side)<br/><br/>Please refer to <a href=\"https://docs.nanos.world/docs/next/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side)<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "client",
 			"parameters": [
 				{
@@ -238,12 +238,42 @@
 		},
 		{
 			"name": "GetPackages",
-			"description": "Returns a list of Packages folder names loaded and running in the client",
+			"description": "Returns a list of Packages running",
 			"authority": "client",
 			"return": [
 				{
-					"type": "string[]",
-					"description": "packages folder names"
+					"type": "table[]",
+					"description": "a list of Packages data",
+					"table_properties": [
+						{
+							"name": "title",
+							"type": "string"
+						},
+						{
+							"name": "name",
+							"type": "string"
+						},
+						{
+							"name": "type",
+							"type": "PackageType"
+						},
+						{
+							"name": "version",
+							"type": "string"
+						},
+						{
+							"name": "author",
+							"type": "string"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"type": "PackageType",
+					"name": "package_type_filter",
+					"description": "Which Package type to return. Leave it default (-1) to return all types.",
+					"default": "-1"
 				}
 			]
 		},

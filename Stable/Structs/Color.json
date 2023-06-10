@@ -14,19 +14,19 @@
 				{
 					"name": "G",
 					"type": "number",
-					"default": "0",
+					"default": "X",
 					"description": "Green color percentage (0-1)"
 				},
 				{
 					"name": "B",
 					"type": "number",
-					"default": "0",
+					"default": "X",
 					"description": "Blue color percentage (0-1)"
 				},
 				{
 					"name": "A",
 					"type": "number",
-					"default": "0",
+					"default": "1",
 					"description": "Alpha transparency percentage (0-1)"
 				}
 			]

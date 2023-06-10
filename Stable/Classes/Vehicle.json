@@ -5,7 +5,8 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Paintable"
+		"Paintable",
+		"Damageable"
 	],
 	"constructors": [
 		{
@@ -26,7 +27,7 @@
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Normal"
+					"default": "CollisionType.Auto"
 				},
 				{
 					"type": "boolean",
@@ -86,9 +87,9 @@
 	"functions": [
 		{
 			"authority": "both",
-			"name": "AddStaticMeshAttached",
-			"description": "Spawns and Attaches a StaticMesh into this Vehicle",
-			"description_long": "Spawns and Attaches a StaticMesh into this Vehicle in a Socket with relative Location and Rotation. Uses a custom ID to be used for removing it further<br/><br/>For customizing the Materials specific of a StaticMeshAttached, please use the following syntax as the <code>parameter_name</code> in the Paintable methods: <code>attachable///[ATTACHABLE_ID]/[PARAMETER_NAME]</code>, where [ATTACHABLE_ID] is the ID of the Attachable, and [PARAMETER_NAME] is the name of the parameter you want to change.",
+			"name": "AddSkeletalMeshAttached",
+			"description": "Attaches a Skeletal Mesh as master pose to this entity",
+			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -96,26 +97,151 @@
 					"description": "Used further for removing or applying material settings on it"
 				},
 				{
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh_path",
+					"description": "Path to SkeletalMesh asset to attach"
+				}
+			],
+			"relations": {
+				"functions": [
+					"RemoveSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "AddStaticMeshAttached",
+			"description": "Attaches a Static Mesh to this entity",
+			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID to assign to the StaticMesh"
+				},
+				{
 					"type": "StaticMeshPath",
-					"name": "static_mesh_asset",
-					"default": ""
+					"name": "static_mesh_path",
+					"description": "Path to StaticMesh asset to attach"
 				},
 				{
 					"type": "string",
 					"name": "socket",
-					"default": ""
+					"default": "",
+					"description": "Bone socket to attach to"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Relative location"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
-					"default": "Rotator(0, 0, 0)"
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetStaticMeshAttachedTransform",
+					"RemoveStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "GetAllStaticMeshAttached",
+			"description": "Gets all Static Meshes attached to this entity",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
 			]
+		},
+		{
+			"authority": "both",
+			"name": "GetAllSkeletalMeshAttached",
+			"description": "Gets all Skeletal Meshes attached to this entity",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "the key as the Attached ID, and the value as the Asset Path"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "RemoveSkeletalMeshAttached",
+			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the SkeletalMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddSkeletalMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetStaticMeshAttachedTransform",
+			"description": "Sets a Static Mesh Attached location and rotation",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh set with AddStaticMeshAttached"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "New relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"description": "New relative rotation"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveStaticMeshAttached",
+			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "id",
+					"description": "Unique ID of the StaticMesh to remove"
+				}
+			],
+			"relations": {
+				"functions": [
+					"AddStaticMeshAttached"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllStaticMeshesAttached",
+			"description": "Removes all StaticMeshes attached"
+		},
+		{
+			"authority": "both",
+			"name": "RemoveAllSkeletalMeshesAttached",
+			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
 			"authority": "server",
@@ -133,22 +259,6 @@
 			"name": "RecreatePhysics",
 			"description": "Recreate the Vehicle Physics",
 			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor"
-		},
-		{
-			"authority": "both",
-			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if existing, a StaticMesh from this Vehicle given it's custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
 		},
 		{
 			"authority": "both",
@@ -569,6 +679,49 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "SetExplosionSettings",
+			"description": "Configures the Explosion Settings when health reaches zero",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "engine_relative_location",
+					"description": "Relative location of the Engine. Used to apply particles and effects."
+				},
+				{
+					"type": "table",
+					"name": "materials_index_burnt_override",
+					"description": "List of material indexes to override to burnt when exploded. Leave it empty for all indexes."
+				},
+				{
+					"type": "table",
+					"name": "materials_index_burnt_invisible",
+					"description": "List of material indexes to override to invisible when exploded. Leave it empty for all indexes."
+				}
+			],
+			"examples": [
+				{
+					"title": "Vehicle Explosion Settings",
+					"content": "my_vehicle:SetExplosionSettings(Vector(-50, 0, 0), { 1, 2, 4 }, { 3 })"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetTireFlat",
+			"description": "Sets a Tire as Flat or not",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "wheel_index"
+				},
+				{
+					"type": "boolean",
+					"name": "is_flat"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "PlayAnimation",
 			"description": "Plays an Animation on this Vehicle",
@@ -620,7 +773,7 @@
 			"description": "Gets the Asset name",
 			"return": [
 				{
-					"type": "VehiclePath",
+					"type": "SkeletalMeshPath",
 					"description": "asset path"
 				}
 			]

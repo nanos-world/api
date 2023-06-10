@@ -38,7 +38,7 @@
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Normal"
+					"default": "CollisionType.Auto"
 				},
 				{
 					"type": "boolean",

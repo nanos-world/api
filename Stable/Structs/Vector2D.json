@@ -44,7 +44,7 @@
 				{
 					"name": "Y",
 					"type": "number",
-					"default": "0",
+					"default": "X",
 					"description": "Y Coordinate"
 				}
 			]

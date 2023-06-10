@@ -13,18 +13,20 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location",
-					"default": "Vector(0, 0, 0)"
+					"name": "location"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation",
-					"default": "Rotator(0, 0, 0)"
+					"name": "rotation"
 				},
 				{
 					"type": "BlueprintPath",
-					"name": "blueprint_asset",
-					"default": ""
+					"name": "blueprint_asset"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Auto"
 				}
 			]
 		}
@@ -34,7 +36,7 @@
 			"name": "CallBlueprintEvent",
 			"return": [
 				{
-					"type": "any",
+					"type": "any...",
 					"description": "the function return values"
 				}
 			],

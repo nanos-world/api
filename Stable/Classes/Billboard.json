@@ -13,13 +13,11 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location",
-					"default": "Vector(0, 0, 0)"
+					"name": "location"
 				},
 				{
 					"type": "MaterialPath",
-					"name": "material_asset",
-					"default": ""
+					"name": "material_asset"
 				},
 				{
 					"type": "Vector2D",
