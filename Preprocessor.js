@@ -157,28 +157,31 @@ function FindsGetSetRelationsAutomatically(functions, table, version_key, class_
 	for (const functionKey in functions) {
 		let _function = functions[functionKey];
 
-		const isGetter = _function.name.startsWith("Get")
+		const isIs = _function.name.startsWith("Is");
+		const isGetter = _function.name.startsWith("Get");
 		const isSetter = _function.name.startsWith("Set");
 
 		// Only gets enum once
 		if (version_key == "BleedingEdge")
 			CheckUsedEnum(_function, _function.name, table, version_key, class_key, class_type);
 
-		if (isSetter || isGetter) {
-			const otherName = _function.name.replace(isGetter ? 'G' : 'S', isGetter ? 'S' : 'G');
+		if (isSetter || isGetter || isIs) {
+			const pattern = isGetter ? "Get" : (isSetter ? "Set" : (isIs ? "Is" : ""));
+			const otherNameGet = _function.name.replace(pattern, isGetter ? "Set" : "Get");
+			const otherNameIs = _function.name.replace(pattern, isIs ? "Set" : "Is");
 
 			for (const functionKey2 in functions) {
 				let _function2 = functions[functionKey2];
 
-				if (_function2.name == otherName) {
+				if (_function2.name == otherNameGet || _function2.name == otherNameIs) {
 					if (!_function.relations)
 						_function.relations = {};
 
 					if (!_function.relations[table])
 						_function.relations[table] = [];
 
-					if (!_function.relations[table].includes(otherName))
-						_function.relations[table].push(otherName);
+					if (!_function.relations[table].includes(_function2.name))
+						_function.relations[table].push(_function2.name);
 				}
 			}
 		}
