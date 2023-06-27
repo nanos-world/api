@@ -82,7 +82,7 @@
 		{
 			"name": "SetMesh",
 			"description": "Changes the mesh in runtime",
-			"return": [
+			"parameters": [
 				{
 					"type": "StaticMeshPath",
 					"description": "asset"
