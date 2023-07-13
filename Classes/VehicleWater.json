@@ -1,6 +1,6 @@
 {
 	"name": "VehicleWater",
-	"description": "Vehicles are wheeled entities which Characters can possesses and drive.",
+	"description": "VehicleWater are entities which Characters can possesses and drive over the water with dynamic physics.",
 	"authority": "server",
 	"inheritance": [
 		"Entity",
