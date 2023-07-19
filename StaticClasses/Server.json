@@ -422,6 +422,17 @@
 			]
 		},
 		{
+			"name": "GetCompressionLevel",
+			"description": "Returns the server Compression Level being used",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer",
+					"description": "the server Compression Level"
+				}
+			]
+		},
+		{
 			"name": "GetMaxPlayers",
 			"description": "Returns the Max Players configured",
 			"authority": "server",
