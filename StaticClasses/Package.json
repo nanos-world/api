@@ -133,7 +133,7 @@
 					"type": "string",
 					"name": "extension_filter",
 					"default": "",
-					"description": "Example : .lua"
+					"description": "Example: <code>.lua</code>"
 				}
 			],
 			"return": [

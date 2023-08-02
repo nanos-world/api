@@ -328,6 +328,52 @@
 					"description": "Path to file"
 				}
 			]
+		},
+		{
+			"name": "GetDirectories",
+			"description": "Gets a list of all directories given a path",
+			"description_long": "Gets a list of all directories given a path, optionally with filters",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "path_filter",
+					"default": "",
+					"description": "Path filter"
+				}
+			],
+			"return": [
+				{
+					"type": "string[]",
+					"description": "List of directories"
+				}
+			]
+		},
+		{
+			"name": "GetFiles",
+			"description": "Gets a list of all files in a directory",
+			"description_long": "Gets a list of all files in a directory, optionally with filters",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string|table",
+					"name": "path_filter",
+					"default": "",
+					"description": "Path filter"
+				},
+				{
+					"type": "string",
+					"name": "extension_filter",
+					"default": "",
+					"description": "E.g.: <code>.lua</code>"
+				}
+			],
+			"return": [
+				{
+					"type": "string[]",
+					"description": "List of files"
+				}
+			]
 		}
 	]
 }
