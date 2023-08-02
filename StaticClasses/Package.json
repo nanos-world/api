@@ -206,6 +206,12 @@
 					"description": "The key to get the data"
 				}
 			]
+		},
+		{
+			"name": "FlushPersistentData",
+			"description": "Flushes the Persistent Data pending changes to disk immediately",
+			"description_large": "Flushes the Persistent Data pending changes to disk immediately. Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
+			"authority": "both"
 		}
 	],
 	"events": [
