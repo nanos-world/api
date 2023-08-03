@@ -236,6 +236,11 @@
 			"authority": "server"
 		},
 		{
+			"name": "Restart",
+			"description": "Restarts the server, reloading all Packages and reconnecting all Players",
+			"authority": "server"
+		},
+		{
 			"name": "Subscribe",
 			"description": "Subscribes for an Event",
 			"authority": "server",

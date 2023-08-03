@@ -397,6 +397,30 @@
 					"type": "Character[]"
 				}
 			]
+		},
+		{
+			"authority": "server",
+			"name": "SetEngineOffset",
+			"description": "Sets the relative location of the Engine (where the Physics Thruster, sounds and effects are attached)",
+			"description_long": "Sets the relative location of the Engine (where the Physics Thruster, sounds and effects are attached). Default is Vector(-200, 0, 0)",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "offset"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetThrustStrength",
+			"description": "Sets the force of the Engine/Thruster",
+			"description_long": "Sets the force of the Engine/Thruster. Default is 1000",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "force"
+				}
+			]
 		}
 	],
 	"events": [
