@@ -236,6 +236,11 @@
 			"authority": "server"
 		},
 		{
+			"name": "Restart",
+			"description": "Restarts the server, reloading all Packages and reconnecting all Players",
+			"authority": "server"
+		},
+		{
 			"name": "Subscribe",
 			"description": "Subscribes for an Event",
 			"authority": "server",
@@ -418,6 +423,17 @@
 				{
 					"type": "integer",
 					"description": "the server QueryPort"
+				}
+			]
+		},
+		{
+			"name": "GetCompressionLevel",
+			"description": "Returns the server Compression Level being used",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer",
+					"description": "the server Compression Level"
 				}
 			]
 		},

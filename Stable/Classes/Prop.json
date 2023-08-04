@@ -82,7 +82,7 @@
 		{
 			"name": "SetMesh",
 			"description": "Changes the mesh in runtime",
-			"return": [
+			"parameters": [
 				{
 					"type": "StaticMeshPath",
 					"description": "asset"
@@ -121,6 +121,32 @@
 				}
 			],
 			"authority": "both"
+		},
+		{
+			"authority": "client",
+			"name": "GetSocketTransform",
+			"description": "Gets a Socket Transform in world space given a bone name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "socket_name",
+					"type": "string"
+				}
+			]
 		}
 	],
 	"events": [

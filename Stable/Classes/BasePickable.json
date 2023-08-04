@@ -17,6 +17,12 @@
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_path",
 					"description": "Path to SkeletalMesh asset to attach"
+				},
+				{
+					"type": "boolean",
+					"name": "use_parent_bounds",
+					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
+					"default": "true"
 				}
 			],
 			"relations": {
@@ -58,6 +64,12 @@
 					"name": "relative_rotation",
 					"default": "Rotator(0, 0, 0)",
 					"description": "Relative rotation"
+				},
+				{
+					"type": "boolean",
+					"name": "use_parent_bounds",
+					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
+					"default": "true"
 				}
 			],
 			"relations": {

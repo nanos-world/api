@@ -1,6 +1,6 @@
 {
 	"name": "Rotator",
-	"description": "A container for rotation information (Pitch, Yaw, Ro). All rotation values are stored in degrees.",
+	"description": "A container for rotation information (Pitch, Yaw, Roll). All rotation values are stored in degrees.",
 	"operators": [
 		{
 			"name": "+",

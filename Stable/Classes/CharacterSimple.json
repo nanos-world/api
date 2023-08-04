@@ -58,6 +58,12 @@
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_path",
 					"description": "Path to SkeletalMesh asset to attach"
+				},
+				{
+					"type": "boolean",
+					"name": "use_parent_bounds",
+					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
+					"default": "true"
 				}
 			],
 			"relations": {
@@ -99,6 +105,12 @@
 					"name": "relative_rotation",
 					"default": "Rotator(0, 0, 0)",
 					"description": "Relative rotation"
+				},
+				{
+					"type": "boolean",
+					"name": "use_parent_bounds",
+					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
+					"default": "true"
 				}
 			],
 			"relations": {
@@ -295,7 +307,7 @@
 			"authority": "server",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -321,7 +333,7 @@
 			"authority": "server",
 			"name": "Follow",
 			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -367,7 +379,7 @@
 			"authority": "server",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#movecompleted'>MoveCompleted</a>",
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
 			"relations": {
 				"functions": [
 					"MoveTo",
@@ -671,6 +683,28 @@
 					"name": "old_possesser"
 				}
 			]
+		},
+		{
+			"authority": "both",
+			"name": "MoveComplete",
+			"description": "Called when AI reaches it's destination, or when it fails",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self"
+				},
+				{
+					"type": "boolean",
+					"name": "succeeded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"StopMovement",
+					"MoveTo",
+					"Follow"
+				]
+			}
 		}
 	]
 }

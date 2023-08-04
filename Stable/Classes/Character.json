@@ -71,6 +71,12 @@
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_path",
 					"description": "Path to SkeletalMesh asset to attach"
+				},
+				{
+					"type": "boolean",
+					"name": "use_parent_bounds",
+					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
+					"default": "true"
 				}
 			],
 			"relations": {
@@ -112,6 +118,12 @@
 					"name": "relative_rotation",
 					"default": "Rotator(0, 0, 0)",
 					"description": "Relative rotation"
+				},
+				{
+					"type": "boolean",
+					"name": "use_parent_bounds",
+					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
+					"default": "true"
 				}
 			],
 			"relations": {
@@ -218,8 +230,12 @@
 			"authority": "server",
 			"name": "Drop",
 			"description": "Drops any Pickable the Character is holding",
-			"parameters": [
-			]
+			"relations": {
+				"functions": [
+					"GetPicked",
+					"PickUp"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -235,7 +251,12 @@
 					"name": "seat",
 					"default": "0"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetVehicle"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -246,7 +267,12 @@
 					"type": "Prop",
 					"name": "prop"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetGrabbedProp"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -260,7 +286,13 @@
 					"default": "",
 					"description": "Bone to hide"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"UnHideBone",
+					"IsBoneHidden"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -273,7 +305,13 @@
 					"name": "bone_name",
 					"description": "Bone to unhide"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"HideBone",
+					"IsBoneHidden"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -291,7 +329,13 @@
 					"name": "bone_name",
 					"description": "Bone to check"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"UnHideBone",
+					"HideBone"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -411,7 +455,13 @@
 					"type": "Pickable",
 					"name": "pickable"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Drop",
+					"GetPicked"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -453,7 +503,12 @@
 					"default": "false",
 					"description": "Stops all running Montages from the same Group"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"StopAnimation"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -464,7 +519,12 @@
 					"type": "AnimationPath",
 					"name": "animation_asset"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"PlayAnimation"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -952,7 +1012,14 @@
 					"type": "float",
 					"name": "value"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetMorphTarget",
+					"ClearMorphTargets",
+					"GetAllMorphTargetNames"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -970,12 +1037,26 @@
 					"name": "name",
 					"description": "Morph Target Name"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetMorphTarget",
+					"ClearMorphTargets",
+					"GetAllMorphTargetNames"
+				]
+			}
 		},
 		{
 			"authority": "both",
 			"name": "ClearMorphTargets",
-			"description": "Clear all Morph Target that are set to this Mesh"
+			"description": "Clear all Morph Target that are set to this Mesh",
+			"relations": {
+				"functions": [
+					"SetMorphTarget",
+					"GetMorphTarget",
+					"GetAllMorphTargetNames"
+				]
+			}
 		},
 		{
 			"authority": "client",
@@ -986,7 +1067,14 @@
 					"type": "string[]",
 					"description": "table with all morph targets available"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetMorphTarget",
+					"GetMorphTarget",
+					"ClearMorphTargets"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1411,7 +1499,12 @@
 				{
 					"type": "Prop?"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GrabPop"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1472,7 +1565,13 @@
 				{
 					"type": "Pickable?"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"PickUp",
+					"Drop"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1854,7 +1953,12 @@
 					"type": "Pickable",
 					"name": "object"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetPicked"
+				]
+			}
 		},
 		{
 			"authority": "both",
