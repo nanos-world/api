@@ -38,6 +38,7 @@
 			"parameters": [
 				{
 					"type": "StaticMeshPath",
+					"name": "mesh_asset",
 					"description": "asset"
 				}
 			],
