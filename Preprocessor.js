@@ -19,6 +19,7 @@ const APIData = {
 		Database: "Database.json",
 		Decal: "Decal.json",
 		File: "File.json",
+		Gizmo: "Gizmo.json",
 		Grenade: "Grenade.json",
 		Light: "Light.json",
 		Melee: "Melee.json",

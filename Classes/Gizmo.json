@@ -1,0 +1,128 @@
+{
+	"name": "Gizmo",
+	"description": "A tool to transform objects at runtime.",
+	"authority": "client",
+	"inheritance": [
+		"Entity",
+		"Actor"
+	],
+	"constructors": [
+		{
+			"description": "Default Constructor",
+			"parameters": [
+			]
+		}
+	],
+	"functions": [
+		{
+			"name": "Activate",
+			"description": "Enable the interaction",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "Vector",
+					"name": "scale"
+				}
+			]
+		},
+		{
+			"name": "Deactivate",
+			"description": "Disable the interaction",
+			"authority": "client"
+		},
+		{
+			"name": "IsInteracting",
+			"authority": "client",
+			"description": "Returns if it's currently interacting",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "PressPointer",
+			"authority": "client",
+			"description": "Triggers the press pointer event on it"
+		},
+		{
+			"name": "ReleasePointer",
+			"authority": "client",
+			"description": "Triggers the release pointer event on it"
+		},
+		{
+			"name": "SetTransformMode",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "GizmoTransformMode",
+					"name": "transform_mode"
+				},
+				{
+					"type": "boolean",
+					"name": "combine_translate_rotate"
+				}
+			]
+		},
+		{
+			"name": "SetAlignSpace",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "GizmoAlignSpace",
+					"name": "align_space"
+				}
+			]
+		},
+		{
+			"name": "SetSnapSettings",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "location_grid_size"
+				},
+				{
+					"type": "float",
+					"name": "rotation_grid_size"
+				},
+				{
+					"type": "float",
+					"name": "scale_grid_size"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"name": "Transform",
+			"authority": "client",
+			"description": "Triggered when the Gizmo has it's transform updated",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Vector",
+					"description": "New Gizmo location"
+				},
+				{
+					"name": "self",
+					"type": "Rotator",
+					"description": "New Gizmo rotation"
+				},
+				{
+					"name": "self",
+					"type": "Vector",
+					"description": "New Gizmo scale"
+				}
+			]
+		}
+	]
+}
