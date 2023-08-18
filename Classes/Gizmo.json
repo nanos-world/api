@@ -109,16 +109,21 @@
 			"arguments": [
 				{
 					"name": "self",
+					"type": "Gizmo",
+					"description": "The Gizmo itself"
+				},
+				{
+					"name": "location",
 					"type": "Vector",
 					"description": "New Gizmo location"
 				},
 				{
-					"name": "self",
+					"name": "rotation",
 					"type": "Rotator",
 					"description": "New Gizmo rotation"
 				},
 				{
-					"name": "self",
+					"name": "scale",
 					"type": "Vector",
 					"description": "New Gizmo scale"
 				}
