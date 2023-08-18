@@ -288,7 +288,8 @@
 			"description": "Gets the Skeletal Mesh Asset",
 			"return": [
 				{
-					"type": "SkeletalMeshPath|StaticMeshPath"
+					"type": "SkeletalMeshPath|StaticMeshPath",
+					"name": "mesh"
 				}
 			]
 		},
@@ -299,9 +300,16 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "the moving to location or Vector(0, 0, 0) if not moving"
+					"description": "the moving to location or Vector(0, 0, 0) if not moving",
+					"name": "location"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"MoveTo",
+					"Follow"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -322,7 +330,8 @@
 			"relations": {
 				"functions": [
 					"StopMovement",
-					"Follow"
+					"Follow",
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"

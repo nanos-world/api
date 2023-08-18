@@ -73,6 +73,7 @@
 			"return": [
 				{
 					"type": "table",
+					"name": "class",
 					"description": "The new Class table"
 				}
 			]
@@ -196,7 +197,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "id"
 				}
 			]
 		},
@@ -206,7 +208,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "table"
+					"type": "table",
+					"name": "class"
 				}
 			]
 		},
@@ -332,7 +335,8 @@
 			"return": [
 				{
 					"type": "any",
-					"description": "Value at key or fallback if key doesn't exist"
+					"description": "Value at key or fallback if key doesn't exist",
+					"name": "value"
 				}
 			]
 		},
@@ -347,6 +351,7 @@
 			"authority": "both",
 			"return": [
 				{
+					"name": "is_valid",
 					"type": "boolean"
 				}
 			]

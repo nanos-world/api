@@ -255,6 +255,10 @@
 			"relations": {
 				"functions": [
 					"GetVehicle"
+				],
+				"events": [
+					"EnterVehicle",
+					"AttemptEnterVehicle"
 				]
 			}
 		},
@@ -319,7 +323,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "if the bone is hidden"
+					"description": "if the bone is hidden",
+					"name": "bone_name"
 				}
 			],
 			"description": "Gets if a bone is hidden",
@@ -345,7 +350,17 @@
 		{
 			"authority": "server",
 			"name": "LeaveVehicle",
-			"description": "Leaves the current Vehicle"
+			"description": "Leaves the current Vehicle",
+			"relations": {
+				"functions": [
+					"EnterVehicle",
+					"GetVehicle"
+				],
+				"events": [
+					"LeaveVehicle",
+					"AttemptLeaveVehicle"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -378,7 +393,8 @@
 			"relations": {
 				"functions": [
 					"StopMovement",
-					"Follow"
+					"Follow",
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"
@@ -424,7 +440,8 @@
 			"relations": {
 				"functions": [
 					"StopMovement",
-					"MoveTo"
+					"MoveTo",
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"
@@ -439,7 +456,8 @@
 			"relations": {
 				"functions": [
 					"Follow",
-					"MoveTo"
+					"MoveTo",
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"
@@ -911,7 +929,7 @@
 			"parameters": [
 				{
 					"type": "GaitMode",
-					"name": "mode"
+					"name": "gait_mode"
 				}
 			]
 		},
@@ -923,7 +941,7 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "scale"
+					"name": "gravity_scale"
 				}
 			]
 		},
@@ -935,7 +953,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "damage",
+					"name": "impact_damage",
 					"description": "Default is 10"
 				}
 			]
@@ -982,7 +1000,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "velocity",
+					"name": "jump_z_velocity",
 					"description": "Default is 450"
 				}
 			]
@@ -1028,7 +1046,8 @@
 			"return": [
 				{
 					"type": "float",
-					"description": "value of the Morph Target"
+					"description": "value of the Morph Target",
+					"name": "value"
 				}
 			],
 			"parameters": [
@@ -1179,7 +1198,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "damage",
+					"name": "punch_damage",
 					"description": "Default is 15"
 				}
 			]
@@ -1213,7 +1232,7 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "multiplier",
+					"name": "speed_multiplier",
 					"description": "1 is normal"
 				}
 			]
@@ -1225,7 +1244,7 @@
 			"parameters": [
 				{
 					"type": "StanceMode",
-					"name": "mode"
+					"name": "stance_mode"
 				}
 			]
 		},
@@ -1274,7 +1293,8 @@
 			"description": "Gets if Character is in ragdoll mode",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "ragdoll_enabled"
 				}
 			]
 		},
@@ -1284,7 +1304,8 @@
 			"description": "Gets if is invulnerable",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_invulnerable"
 				}
 			]
 		},
@@ -1294,7 +1315,8 @@
 			"description": "Gets if has input enabled",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_enabled"
 				}
 			]
 		},
@@ -1304,7 +1326,8 @@
 			"description": "Gets the camera mode",
 			"return": [
 				{
-					"type": "CameraMode"
+					"type": "CameraMode",
+					"name": "camera_mode"
 				}
 			]
 		},
@@ -1314,7 +1337,8 @@
 			"description": "Gets if can drop",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_drop"
 				}
 			]
 		},
@@ -1324,7 +1348,8 @@
 			"description": "Gets if can punch",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_punch"
 				}
 			]
 		},
@@ -1334,7 +1359,8 @@
 			"description": "Gets if can aim",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_aim"
 				}
 			]
 		},
@@ -1344,7 +1370,8 @@
 			"description": "Gets if can crouch",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_crouch"
 				}
 			]
 		},
@@ -1354,7 +1381,8 @@
 			"description": "Gets if can sprint",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_sprint"
 				}
 			]
 		},
@@ -1364,7 +1392,8 @@
 			"description": "Gets if can grab props",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_grab_props"
 				}
 			]
 		},
@@ -1374,7 +1403,8 @@
 			"description": "Gets if can pickup Pickables (Weapons, Melee, Grenade...)",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "can_pickup"
 				}
 			]
 		},
@@ -1394,7 +1424,8 @@
 							"name": "HalfHeight",
 							"type": "integer"
 						}
-					]
+					],
+					"name": "capsule_size"
 				}
 			]
 		},
@@ -1430,7 +1461,8 @@
 			"description": "Gets the Control Rotation",
 			"return": [
 				{
-					"type": "Rotator"
+					"type": "Rotator",
+					"name": "control_rotation"
 				}
 			]
 		},
@@ -1441,7 +1473,8 @@
 			"return": [
 				{
 					"type": "float",
-					"description": "the damage multiplier of the bone"
+					"description": "the damage multiplier of the bone",
+					"name": "multiplier"
 				}
 			],
 			"parameters": [
@@ -1457,7 +1490,8 @@
 			"description": "Gets the Fall Damage",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "damage"
 				}
 			]
 		},
@@ -1477,7 +1511,8 @@
 			"description": "Gets if it's in Flying mode",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "flying_mode"
 				}
 			]
 		},
@@ -1487,7 +1522,8 @@
 			"description": "Gets the GaitMode",
 			"return": [
 				{
-					"type": "GaitMode"
+					"type": "GaitMode",
+					"name": "gait_mode"
 				}
 			]
 		},
@@ -1497,12 +1533,14 @@
 			"description": "Gets the Grabbed Prop",
 			"return": [
 				{
-					"type": "Prop?"
+					"type": "Prop?",
+					"name": "prop"
 				}
 			],
 			"relations": {
 				"functions": [
-					"GrabPop"
+					"GrabProp",
+					"UnGrabProp"
 				]
 			}
 		},
@@ -1512,7 +1550,8 @@
 			"description": "Gets the gravity scale",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "gravity_scale"
 				}
 			]
 		},
@@ -1522,7 +1561,8 @@
 			"description": "Gets the impact damage taken",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "impact_damage"
 				}
 			]
 		},
@@ -1532,7 +1572,8 @@
 			"description": "Gets the Jump Z Velocity",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "jump_z_velocity"
 				}
 			]
 		},
@@ -1542,7 +1583,8 @@
 			"description": "Gets the Skeletal Mesh Asset",
 			"return": [
 				{
-					"type": "SkeletalMeshPath"
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh"
 				}
 			]
 		},
@@ -1553,7 +1595,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "the moving to location or Vector(0, 0, 0) if not moving"
+					"description": "the moving to location or Vector(0, 0, 0) if not moving",
+					"name": "location"
 				}
 			]
 		},
@@ -1563,7 +1606,8 @@
 			"description": "Gets the Pickable if picking up",
 			"return": [
 				{
-					"type": "Pickable?"
+					"type": "Pickable?",
+					"name": "object"
 				}
 			],
 			"relations": {
@@ -1579,9 +1623,16 @@
 			"description": "Gets the possessing Player",
 			"return": [
 				{
-					"type": "Player?"
+					"type": "Player?",
+					"name": "possesser"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Possess",
+					"UnPossess"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1589,7 +1640,8 @@
 			"description": "Gets the punch damage",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "punch_damage"
 				}
 			]
 		},
@@ -1599,7 +1651,8 @@
 			"description": "Gets the speed multiplier",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "speed_multiplier"
 				}
 			]
 		},
@@ -1609,7 +1662,8 @@
 			"description": "Gets the Stance Mode",
 			"return": [
 				{
-					"type": "StanceMode"
+					"type": "StanceMode",
+					"name": "stance_mode"
 				}
 			]
 		},
@@ -1619,7 +1673,8 @@
 			"description": "Gets the Swimming Mode",
 			"return": [
 				{
-					"type": "SwimmingMode"
+					"type": "SwimmingMode",
+					"name": "swimming_mode"
 				}
 			]
 		},
@@ -1629,7 +1684,8 @@
 			"description": "Gets the Team",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "team"
 				}
 			]
 		},
@@ -1639,9 +1695,16 @@
 			"description": "Gets the entered Vehicle",
 			"return": [
 				{
-					"type": "Vehicle?"
+					"type": "Vehicle?",
+					"name": "vehicle"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"EnterVehicle",
+					"LeaveVehicle"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1649,7 +1712,8 @@
 			"description": "Gets the View Mode",
 			"return": [
 				{
-					"type": "ViewMode"
+					"type": "ViewMode",
+					"name": "view_mode"
 				}
 			]
 		},
@@ -1659,7 +1723,8 @@
 			"description": "Gets the Weapon Aim Mode",
 			"return": [
 				{
-					"type": "AimMode"
+					"type": "AimMode",
+					"name": "aim_mode"
 				}
 			]
 		}
@@ -1746,7 +1811,16 @@
 					"type": "integer",
 					"name": "seat_index"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetVehicle",
+					"EnterVehicle"
+				],
+				"events": [
+					"AttemptEnterVehicle"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -1771,7 +1845,16 @@
 					"type": "boolean",
 					"description": "Return <code>false</code> to prevent it"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetVehicle",
+					"EnterVehicle"
+				],
+				"events": [
+					"EnterVehicle"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1895,7 +1978,15 @@
 					"type": "Vehicle",
 					"name": "vehicle"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"LeaveVehicle"
+				],
+				"events": [
+					"AttemptLeaveVehicle"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -1916,7 +2007,15 @@
 					"type": "boolean",
 					"description": "Return <code>false</code> to prevent it"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"LeaveVehicle"
+				],
+				"events": [
+					"LeaveVehicle"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -1936,7 +2035,8 @@
 				"functions": [
 					"StopMovement",
 					"MoveTo",
-					"Follow"
+					"Follow",
+					"GetMovingTo"
 				]
 			}
 		},
@@ -1973,7 +2073,13 @@
 					"type": "Player",
 					"name": "possesser"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"UnPossess",
+					"GetPlayer"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -2111,7 +2217,13 @@
 					"type": "Player",
 					"name": "old_possesser"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Possess",
+					"GetPlayer"
+				]
+			}
 		},
 		{
 			"authority": "both",

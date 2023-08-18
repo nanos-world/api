@@ -786,7 +786,8 @@
 			"return": [
 				{
 					"type": "SkeletalMeshPath",
-					"description": "asset path"
+					"description": "asset path",
+					"name": "asset"
 				}
 			]
 		},
@@ -842,7 +843,8 @@
 							"name": "Rotation",
 							"type": "Rotator"
 						}
-					]
+					],
+					"name": "bone_transform"
 				}
 			],
 			"parameters": [
@@ -865,7 +867,8 @@
 			"return": [
 				{
 					"type": "Character",
-					"description": "or nil if no passenger in seat"
+					"description": "or nil if no passenger in seat",
+					"name": "passenger"
 				}
 			]
 		},
@@ -875,7 +878,8 @@
 			"description": "Gets all passengers",
 			"return": [
 				{
-					"type": "Character[]"
+					"type": "Character[]",
+					"name": "passengers"
 				}
 			]
 		},
@@ -885,7 +889,8 @@
 			"description": "Gets the current RPM",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "rpm"
 				}
 			]
 		},
@@ -895,7 +900,8 @@
 			"description": "Gets the current Gear",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "gear"
 				}
 			]
 		}
@@ -1026,52 +1032,6 @@
 				{
 					"type": "boolean",
 					"description": "Return false to prevent it"
-				}
-			]
-		},
-		{
-			"name": "TakeDamage",
-			"authority": "server",
-			"description": "Triggered when this Vehicle takes damage",
-			"arguments": [
-				{
-					"type": "VehicleWheeled",
-					"name": "self"
-				},
-				{
-					"type": "integer",
-					"name": "damage"
-				},
-				{
-					"type": "string",
-					"name": "bone",
-					"description": "Damaged bone"
-				},
-				{
-					"type": "DamageType",
-					"name": "type",
-					"description": "Damage Type"
-				},
-				{
-					"type": "Vector",
-					"name": "from_direction",
-					"description": "Direction of the damage relative to the damaged actor"
-				},
-				{
-					"type": "Player",
-					"name": "instigator",
-					"description": "The player which caused the damage"
-				},
-				{
-					"type": "any",
-					"name": "causer",
-					"description": "The object which caused the damage"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean",
-					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
 				}
 			]
 		}

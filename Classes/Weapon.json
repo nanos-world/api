@@ -50,7 +50,7 @@
 			"description": "Sets this Weapon's Ammo in the Bag",
 			"parameters": [
 				{
-					"name": "new_ammo",
+					"name": "new_ammo_bag",
 					"type": "integer"
 				}
 			]
@@ -61,7 +61,7 @@
 			"description": "Sets this Weapon's Ammo in the Clip",
 			"parameters": [
 				{
-					"name": "new_ammo",
+					"name": "new_ammo_clip",
 					"type": "integer"
 				}
 			]
@@ -97,7 +97,7 @@
 			"description": "Animation played by the Weapon when Firing",
 			"parameters": [
 				{
-					"name": "animation_asset_path",
+					"name": "animation_fire_path",
 					"type": "AnimationPath"
 				},
 				{
@@ -113,7 +113,7 @@
 			"description": "Animation played by the Character when Firing",
 			"parameters": [
 				{
-					"name": "animation_path",
+					"name": "animation_character_fire_path",
 					"type": "AnimationPath"
 				},
 				{
@@ -129,7 +129,7 @@
 			"description": "Animation played by the Character when Reloading",
 			"parameters": [
 				{
-					"name": "animation_path",
+					"name": "reload_animation_path",
 					"type": "AnimationPath"
 				},
 				{
@@ -145,6 +145,7 @@
 			"description": "Gets the reload animation",
 			"return": [
 				{
+					"name": "reload_animation_path",
 					"type": "AnimationPath"
 				}
 			]
@@ -168,7 +169,7 @@
 			"description_long": "Set the Bullet Color<br/><br/>Only has effect if using Bullet Trail particle P_Bullet_Trail or if you particle has the Color parameter",
 			"parameters": [
 				{
-					"name": "color",
+					"name": "bullet_color",
 					"type": "Color"
 				}
 			]
@@ -250,7 +251,7 @@
 			"description": "Sets how the Character grabs this Weapon",
 			"parameters": [
 				{
-					"name": "mode",
+					"name": "handling_mode",
 					"type": "HandlingMode"
 				}
 			]
@@ -261,11 +262,11 @@
 			"description": "Left Hand Offset",
 			"parameters": [
 				{
-					"name": "location",
+					"name": "left_hand_location",
 					"type": "Vector"
 				},
 				{
-					"name": "rotation",
+					"name": "left_hand_rotation",
 					"type": "Rotator"
 				}
 			]
@@ -277,7 +278,7 @@
 			"description_long": "Set the mesh used when the Character reloads the weapon.<br/><br/>Will drop this Mesh as an animation effect.",
 			"parameters": [
 				{
-					"name": "static_mesh_asset_path",
+					"name": "magazine_mesh",
 					"type": "StaticMeshPath"
 				},
 				{
@@ -340,7 +341,7 @@
 			"description": "Particle of the Bullet flying",
 			"parameters": [
 				{
-					"name": "particle_asset_path",
+					"name": "particle_bullet_trail_asset_path",
 					"type": "ParticlePath"
 				}
 			]
@@ -362,7 +363,7 @@
 			"description": "Particle of the empty bullet flying from the weapon when shooting",
 			"parameters": [
 				{
-					"name": "particle_asset_path",
+					"name": "particle_shells_asset_path",
 					"type": "ParticlePath"
 				}
 			]
@@ -374,7 +375,7 @@
 			"description_long": "Set the Offset of Right Hand. To position relative to the camera.",
 			"parameters": [
 				{
-					"name": "offset",
+					"name": "right_hand_offset",
 					"type": "Vector"
 				}
 			]
@@ -385,7 +386,7 @@
 			"description": "The FOV multiplier when ADS",
 			"parameters": [
 				{
-					"name": "multiplier",
+					"name": "sight_fov_multiplier",
 					"type": "float"
 				}
 			]
@@ -396,11 +397,11 @@
 			"description": "Offset applied to align player's head to weapon's sight and rotation applied on the weapon when ADS",
 			"parameters": [
 				{
-					"name": "location",
+					"name": "sight_location",
 					"type": "Vector"
 				},
 				{
-					"name": "rotation",
+					"name": "sight_rotation",
 					"type": "Rotator"
 				}
 			]
@@ -411,7 +412,7 @@
 			"description": "Sound when weapon has not bullet and try to shoot",
 			"parameters": [
 				{
-					"name": "sound_asset_path",
+					"name": "sound_dry_asset_path",
 					"type": "SoundPath"
 				},
 				{
@@ -432,7 +433,7 @@
 			"description": "Sound when Loading a magazine",
 			"parameters": [
 				{
-					"name": "sound_asset_path",
+					"name": "sound_load_asset_path",
 					"type": "SoundPath"
 				},
 				{
@@ -453,7 +454,7 @@
 			"description": "Sound when Unloading a magazine",
 			"parameters": [
 				{
-					"name": "sound_asset_path",
+					"name": "sound_unload_asset_path",
 					"type": "SoundPath"
 				},
 				{
@@ -474,7 +475,7 @@
 			"description": "Sound when Zooming",
 			"parameters": [
 				{
-					"name": "sound_asset_path",
+					"name": "sound_zooming_asset_path",
 					"type": "SoundPath"
 				},
 				{
@@ -495,7 +496,7 @@
 			"description": "Sound when Shooting",
 			"parameters": [
 				{
-					"name": "sound_asset_path",
+					"name": "sound_fire_asset_path",
 					"type": "SoundPath"
 				},
 				{
@@ -516,7 +517,7 @@
 			"description": "Sound when Aiming",
 			"parameters": [
 				{
-					"name": "sound_asset_path",
+					"name": "sound_aim_asset_path",
 					"type": "SoundPath"
 				},
 				{
@@ -611,6 +612,7 @@
 			"description": "Gets this Weapon's Ammo Bag",
 			"return": [
 				{
+					"name": "ammo_bag",
 					"type": "integer"
 				}
 			]
@@ -621,6 +623,7 @@
 			"description": "Gets this Weapon's Ammo Clip",
 			"return": [
 				{
+					"name": "ammo_clip",
 					"type": "integer"
 				}
 			]
@@ -630,6 +633,7 @@
 			"name": "GetAmmoToReload",
 			"return": [
 				{
+					"name": "ammo_to_reload",
 					"type": "integer"
 				}
 			]
@@ -639,6 +643,7 @@
 			"name": "GetHandlingMode",
 			"return": [
 				{
+					"name": "handling_mode",
 					"type": "HandlingMode"
 				}
 			]
@@ -648,6 +653,7 @@
 			"name": "GetAnimationCharacterFire",
 			"return": [
 				{
+					"name": "animation_character_fire_path",
 					"type": "AnimationPath"
 				}
 			]
@@ -657,6 +663,7 @@
 			"name": "GetAnimationFire",
 			"return": [
 				{
+					"name": "animation_fire_path",
 					"type": "AnimationPath"
 				}
 			]
@@ -666,6 +673,7 @@
 			"name": "GetMagazineMesh",
 			"return": [
 				{
+					"name": "magazine_mesh",
 					"type": "StaticMeshPath"
 				}
 			]
@@ -675,6 +683,7 @@
 			"name": "GetParticlesBulletTrail",
 			"return": [
 				{
+					"name": "particle_bullet_trail_asset_path",
 					"type": "ParticlePath"
 				}
 			]
@@ -684,6 +693,7 @@
 			"name": "GetParticlesShells",
 			"return": [
 				{
+					"name": "particle_shells_asset_path",
 					"type": "ParticlePath"
 				}
 			]
@@ -693,6 +703,7 @@
 			"name": "GetSoundDry",
 			"return": [
 				{
+					"name": "sound_dry_asset_path",
 					"type": "SoundPath"
 				}
 			]
@@ -702,6 +713,7 @@
 			"name": "GetSoundLoad",
 			"return": [
 				{
+					"name": "sound_load_asset_path",
 					"type": "SoundPath"
 				}
 			]
@@ -711,6 +723,7 @@
 			"name": "GetSoundUnload",
 			"return": [
 				{
+					"name": "sound_unload_asset_path",
 					"type": "SoundPath"
 				}
 			]
@@ -720,6 +733,7 @@
 			"name": "GetSoundZooming",
 			"return": [
 				{
+					"name": "sound_zooming_asset_path",
 					"type": "SoundPath"
 				}
 			]
@@ -729,6 +743,7 @@
 			"name": "GetSoundAim",
 			"return": [
 				{
+					"name": "sound_aim_asset_path",
 					"type": "SoundPath"
 				}
 			]
@@ -738,6 +753,7 @@
 			"name": "GetSoundFire",
 			"return": [
 				{
+					"name": "sound_fire_asset_path",
 					"type": "SoundPath"
 				}
 			]
@@ -747,6 +763,7 @@
 			"name": "GetCanHoldUse",
 			"return": [
 				{
+					"name": "can_hold_use",
 					"type": "boolean"
 				}
 			]
@@ -756,7 +773,8 @@
 			"name": "GetHoldReleaseUse",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "hold_release_use"
 				}
 			]
 		},
@@ -776,7 +794,8 @@
 							"name": "Rotation",
 							"type": "Rotator"
 						}
-					]
+					],
+					"name": "bone_transform"
 				}
 			],
 			"parameters": [
@@ -791,7 +810,8 @@
 			"name": "GetBulletCount",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "bullet_count"
 				}
 			]
 		},
@@ -800,7 +820,8 @@
 			"name": "GetBulletColor",
 			"return": [
 				{
-					"type": "Color"
+					"type": "Color",
+					"name": "bullet_color"
 				}
 			]
 		},
@@ -809,6 +830,7 @@
 			"name": "GetCadence",
 			"return": [
 				{
+					"name": "cadence",
 					"type": "float"
 				}
 			]
@@ -818,6 +840,7 @@
 			"name": "GetClipCapacity",
 			"return": [
 				{
+					"name": "clip",
 					"type": "integer"
 				}
 			]
@@ -827,6 +850,7 @@
 			"name": "GetDamage",
 			"return": [
 				{
+					"name": "damage",
 					"type": "integer"
 				}
 			]
@@ -836,6 +860,7 @@
 			"name": "GetRightHandOffset",
 			"return": [
 				{
+					"name": "right_hand_offset",
 					"type": "Vector"
 				}
 			]
@@ -845,6 +870,7 @@
 			"name": "GetLeftHandLocation",
 			"return": [
 				{
+					"name": "left_hand_location",
 					"type": "Vector"
 				}
 			]
@@ -854,6 +880,7 @@
 			"name": "GetLeftHandRotation",
 			"return": [
 				{
+					"name": "left_hand_rotation",
 					"type": "Rotator"
 				}
 			]
@@ -863,6 +890,7 @@
 			"name": "GetSightLocation",
 			"return": [
 				{
+					"name": "sight_location",
 					"type": "Vector"
 				}
 			]
@@ -872,6 +900,7 @@
 			"name": "GetSightRotation",
 			"return": [
 				{
+					"name": "sight_rotation",
 					"type": "Rotator"
 				}
 			]
@@ -881,6 +910,7 @@
 			"name": "GetSightFOVMultiplier",
 			"return": [
 				{
+					"name": "sight_fov_multiplier",
 					"type": "float"
 				}
 			]
@@ -890,6 +920,7 @@
 			"name": "GetSpread",
 			"return": [
 				{
+					"name": "spread",
 					"type": "float"
 				}
 			]
@@ -899,6 +930,7 @@
 			"name": "GetRecoil",
 			"return": [
 				{
+					"name": "recoil",
 					"type": "float"
 				}
 			]

@@ -96,8 +96,9 @@
 			"description": "Gets the Asset name",
 			"return": [
 				{
-					"type": "string",
-					"description": "asset name"
+					"type": "StaticMeshPath",
+					"description": "asset name",
+					"name": "asset"
 				}
 			],
 			"authority": "both"
@@ -108,7 +109,8 @@
 			"return": [
 				{
 					"type": "Character?",
-					"description": "the character that holds the object"
+					"description": "the character that holds the object",
+					"name": "handler"
 				}
 			],
 			"authority": "both"
@@ -118,6 +120,7 @@
 			"description": "Gets ability to Grab this Prop",
 			"return": [
 				{
+					"name": "grab_mode",
 					"type": "GrabMode"
 				}
 			],

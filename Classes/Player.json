@@ -268,7 +268,7 @@
 			"description": "Sets the player's name",
 			"parameters": [
 				{
-					"name": "new_name",
+					"name": "player_name",
 					"type": "string"
 				}
 			]
@@ -290,7 +290,7 @@
 			"description": "Sets the VOIP Settings of this Player",
 			"parameters": [
 				{
-					"name": "setting",
+					"name": "voip_setting",
 					"type": "VOIPSetting"
 				}
 			]
@@ -316,7 +316,8 @@
 			"name": "GetSteamID",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "steam_id"
 				}
 			]
 		},
@@ -325,7 +326,8 @@
 			"name": "GetAccountID",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "account_id"
 				}
 			]
 		},
@@ -334,7 +336,8 @@
 			"name": "GetAccountName",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "account_name"
 				}
 			]
 		},
@@ -344,7 +347,8 @@
 			"description": "Return a URL which can be used through WebUI and Widgets to display the Player's Steam Avatar (64x64)",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "account_icon_url"
 				}
 			]
 		},
@@ -353,7 +357,8 @@
 			"name": "GetCameraLocation",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "location"
 				}
 			]
 		},
@@ -370,7 +375,8 @@
 			],
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "length"
 				}
 			]
 		},
@@ -379,7 +385,8 @@
 			"name": "GetCameraRotation",
 			"return": [
 				{
-					"type": "Rotator"
+					"type": "Rotator",
+					"name": "rotation"
 				}
 			]
 		},
@@ -388,7 +395,8 @@
 			"name": "GetControlledCharacter",
 			"return": [
 				{
-					"type": "Character?"
+					"type": "Character?",
+					"name": "controlled_character"
 				}
 			]
 		},
@@ -397,7 +405,8 @@
 			"name": "GetIP",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "ip"
 				}
 			]
 		},
@@ -407,16 +416,39 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "dimension"
 				}
-			]
+			],
+			"relations": {
+				"events": [
+					"DimensionChange"
+				]
+			}
+		},
+		{
+			"name": "SetDimension",
+			"description": "Sets this Player's dimension",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer",
+					"name": "dimension"
+				}
+			],
+			"relations": {
+				"events": [
+					"DimensionChange"
+				]
+			}
 		},
 		{
 			"authority": "both",
 			"name": "GetName",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "player_name"
 				}
 			]
 		},
@@ -425,7 +457,8 @@
 			"name": "GetPing",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "ping"
 				}
 			]
 		},
@@ -434,26 +467,8 @@
 			"name": "GetVOIPChannel",
 			"return": [
 				{
+					"name": "channel",
 					"type": "integer"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetValue",
-			"parameters": [
-				{
-					"name": "key",
-					"type": "string"
-				},
-				{
-					"name": "fallback",
-					"type": "any"
-				}
-			],
-			"return": [
-				{
-					"type": "any"
 				}
 			]
 		},
@@ -462,7 +477,8 @@
 			"name": "IsHost",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_host"
 				}
 			]
 		},
@@ -471,7 +487,8 @@
 			"name": "IsLocalPlayer",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_local_player"
 				}
 			]
 		},
@@ -480,6 +497,7 @@
 			"name": "GetVOIPSetting",
 			"return": [
 				{
+					"name": "voip_setting",
 					"type": "VOIPSetting"
 				}
 			]
@@ -503,7 +521,13 @@
 					"name": "new_dimension",
 					"type": "integer"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDimension",
+					"GetDimension"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -518,7 +542,12 @@
 					"name": "character",
 					"type": "Character"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetControlledCharacter"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -544,7 +573,12 @@
 					"name": "character",
 					"type": "Character"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetControlledCharacter"
+				]
+			}
 		},
 		{
 			"authority": "both",

@@ -53,7 +53,8 @@
 			"description": "Gets the current health",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "health"
 				}
 			]
 		},
@@ -63,7 +64,8 @@
 			"description": "Gets the Max Health",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "max_health"
 				}
 			]
 		},
@@ -104,7 +106,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "new_max_health"
+					"name": "max_health"
 				}
 			]
 		}

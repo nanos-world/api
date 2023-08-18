@@ -52,7 +52,12 @@
 		{
 			"authority": "server",
 			"name": "Explode",
-			"description": "Forces this grenade to Explode"
+			"description": "Forces this grenade to Explode",
+			"relations": {
+				"events": [
+					"Explode"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -89,7 +94,16 @@
 					"default": "1",
 					"description": "Lerp function between Max and Min damage"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetBaseDamage",
+					"GetDamageFalloff",
+					"GetDamageInnerRadius",
+					"GetDamageOuterRadius",
+					"GetMinimumDamage"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -110,7 +124,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "force"
+					"name": "throw_force"
 				}
 			]
 		},
@@ -120,9 +134,15 @@
 			"description": "Damage at Inner Radius",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "base_damage"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDamage"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -130,9 +150,15 @@
 			"description": "Radius which BaseDamage will apply proportionally",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "damage_falloff"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDamage"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -140,9 +166,15 @@
 			"description": "Radius which MinimumDamage will apply",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "damage_inner_radius"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDamage"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -150,9 +182,15 @@
 			"description": "Radius which BaseDamage will apply",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "damage_outer_radius"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDamage"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -160,9 +198,15 @@
 			"description": "Damage at Outer Radius",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "minimum_damage"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDamage"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -170,7 +214,8 @@
 			"description": "Time until Explosion",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "time"
 				}
 			]
 		},
@@ -180,7 +225,8 @@
 			"description": "Impulse applied when throwing",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "throw_force"
 				}
 			]
 		}
@@ -196,7 +242,12 @@
 					"type": "Grenade",
 					"description": "The grenade which exploded"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Explode"
+				]
+			}
 		},
 		{
 			"name": "Throw",
