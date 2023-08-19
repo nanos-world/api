@@ -22,7 +22,7 @@
 				},
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh"
+					"name": "skeletal_mesh_asset"
 				},
 				{
 					"type": "CollisionType",
@@ -1584,7 +1584,7 @@
 			"return": [
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh"
+					"name": "skeletal_mesh_asset"
 				}
 			]
 		},

@@ -273,7 +273,7 @@
 			"parameters": [
 				{
 					"type": "SkeletalMeshPath|StaticMeshPath",
-					"name": "mesh_asset"
+					"name": "mesh"
 				},
 				{
 					"type": "boolean",
