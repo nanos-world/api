@@ -113,7 +113,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_gravity_enabled"
+					"name": "gravity_enabled"
 				}
 			]
 		},
@@ -347,7 +347,7 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_gravity_enabled"
+					"name": "gravity_enabled"
 				}
 			]
 		},
