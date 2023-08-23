@@ -1,6 +1,7 @@
 {
 	"name": "Actor",
 	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>An <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
+	"is_base": true,
 	"functions": [
 		{
 			"name": "AddImpulse",

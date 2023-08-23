@@ -64,7 +64,17 @@ const APIData = {
 var EnumsData = {
 	Stable: LoadJSON("Stable/Enums.json"),
 	BleedingEdge: LoadJSON("Enums.json"),
-}
+};
+
+var ClassesData = {
+	Stable: {},
+	BleedingEdge: {}
+};
+
+var StaticClassesData = {
+	Stable: {},
+	BleedingEdge: {}
+};
 
 // Loads JSON from disk and returns its object
 function LoadJSON(path) {
@@ -102,23 +112,19 @@ function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
 	else if (class_type == "StaticClass")
 		base_url = "/docs/next/scripting-reference/static-classes";
 
-	if (table == "functions")
-	{
+	if (table == "functions") {
 		url = `${base_url}/${class_key.toLowerCase()}#function-${name.toLowerCase()}`;
 		label = `${class_key}.${name}`;
 	}
-	else if (table == "static_functions")
-	{
+	else if (table == "static_functions") {
 		url = `${base_url}/${class_key.toLowerCase()}#static-function-${name.toLowerCase()}`;
 		label = `${class_key}.${name}`;
 	}
-	else if (table == "events")
-	{
+	else if (table == "events") {
 		url = `${base_url}/${class_key.toLowerCase()}#event-${name.toLowerCase()}`;
 		label = `${class_key} ${name} Event`;
 	}
-	else if (table == "constructors")
-	{
+	else if (table == "constructors") {
 		url = `${base_url}/${class_key.toLowerCase()}#constructor-${name.toLowerCase()}`;
 		label = `${class_key} ${name}`;
 	}
@@ -127,24 +133,21 @@ function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
 }
 
 function CheckUsedEnum(func, name, table, version_key, class_key, class_type) {
-	if (func.parameters)
-	{
+	if (func.parameters) {
 		for (const parameterKey in func.parameters) {
 			const parameter = func.parameters[parameterKey];
 			AddUsedEnum(parameter.type, table, version_key, class_key, class_type, name);
 		}
 	}
 
-	if (func.arguments)
-	{
+	if (func.arguments) {
 		for (const argumentKey in func.arguments) {
 			const argument = func.arguments[argumentKey];
 			AddUsedEnum(argument.type, table, version_key, class_key, class_type, name);
 		}
 	}
 
-	if (func.return)
-	{
+	if (func.return) {
 		for (const returnKey in func.return) {
 			const ret = func.return[returnKey];
 			AddUsedEnum(ret.type, table, version_key, class_key, class_type, name);
@@ -203,18 +206,15 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 	}
 
 	// Only gets enum once
-	if (version_key == "BleedingEdge")
-	{
+	if (version_key == "BleedingEdge") {
 		// Check for constructors
-		if (class_data.constructors)
-		{
+		if (class_data.constructors) {
 			for (const constructorKey in class_data.constructors)
 				CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].description, "constructors", version_key, class_key, class_type);
 		}
 
 		// Check for events
-		if (class_data.events)
-		{
+		if (class_data.events) {
 			for (const eventKey in class_data.events)
 				CheckUsedEnum(class_data.events[eventKey], class_data.events[eventKey].name, "events", version_key, class_key, class_type);
 		}
@@ -222,19 +222,17 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 
 	if (class_data.events)
 		class_data.events.sort((a, b) => a.name.localeCompare(b.name));
-}
 
-// Process a Class
-function PreprocessClass(type, class_name, file, version) {
-	console.log("Processing %s '%s' (%s)...", type, class_name, version);
-	let data = LoadJSON(file);
+	// Gets Inherited for Base Class
+	if (class_data.is_base) {
+		class_data.inheritance_children = [];
 
-	if (!data)
-		return;
-
-	ProcessClass(data, version, class_name, type);
-
-	SaveJSON(".generated/" + file, data);
+		for (const class_key in APIData.Class) {
+			if (ClassesData[version_key][class_key].inheritance && ClassesData[version_key][class_key].inheritance.includes(class_data.name)) {
+				class_data.inheritance_children.push(class_key)
+			}
+		}
+	}
 }
 
 function Run() {
@@ -245,18 +243,64 @@ function Run() {
 	fs.mkdirSync(__dirname + "/.generated/StaticClasses/", { recursive: true });
 	fs.mkdirSync(__dirname + "/.generated/Stable/StaticClasses/", { recursive: true });
 
+	// Loads all Classes
+	for (const class_key in APIData.Class) {
+		console.log("Loading Class '%s'...", class_key);
+
+		ClassesData.Stable[class_key] = LoadJSON("Stable/Classes/" + APIData.Class[class_key]);
+		ClassesData.BleedingEdge[class_key] = LoadJSON("Classes/" + APIData.Class[class_key]);
+	}
+
+	// Loads all Static Classes
+	for (const class_key in APIData.StaticClass) {
+		console.log("Loading StaticClass '%s'...", class_key);
+
+		StaticClassesData.Stable[class_key] = LoadJSON("Stable/StaticClasses/" + APIData.StaticClass[class_key]);
+		StaticClassesData.BleedingEdge[class_key] = LoadJSON("StaticClasses/" + APIData.StaticClass[class_key]);
+	}
+
 	// Process Classes
-	for (const class_key in APIData.Class)
-	{
-		PreprocessClass("Class", class_key, "Classes/" + APIData.Class[class_key], "BleedingEdge")
-		PreprocessClass("Class", class_key, "Stable/Classes/" + APIData.Class[class_key], "Stable")
+	for (const class_key in APIData.Class) {
+		let data_stable = ClassesData.Stable[class_key];
+		if (data_stable)
+			ProcessClass(data_stable, "Stable", class_key, "Class");
+
+		let data_bleeding_edge = ClassesData.BleedingEdge[class_key];
+		if (data_bleeding_edge)
+			ProcessClass(data_bleeding_edge, "BleedingEdge", class_key, "Class");
 	}
 
 	// Process Static Classes
-	for (const class_key in APIData.StaticClass)
-	{
-		PreprocessClass("StaticClass", class_key, "StaticClasses/" + APIData.StaticClass[class_key], "BleedingEdge")
-		PreprocessClass("StaticClass", class_key, "Stable/StaticClasses/" + APIData.StaticClass[class_key], "Stable")
+	for (const class_key in APIData.StaticClass) {
+		let data_stable = StaticClassesData.Stable[class_key];
+		if (data_stable)
+			ProcessClass(data_stable, "Stable", class_key, "StaticClass");
+
+		let data_bleeding_edge = StaticClassesData.BleedingEdge[class_key];
+		if (data_bleeding_edge)
+			ProcessClass(data_bleeding_edge, "BleedingEdge", class_key, "StaticClass");
+	}
+
+	// Save Classes
+	for (const class_key in APIData.Class) {
+		let data_stable = ClassesData.Stable[class_key];
+		if (data_stable)
+			SaveJSON(".generated/Stable/Classes/" + APIData.Class[class_key], data_stable);
+
+		let data_bleeding_edge = ClassesData.BleedingEdge[class_key];
+		if (data_bleeding_edge)
+			SaveJSON(".generated/Classes/" + APIData.Class[class_key], data_bleeding_edge);
+	}
+
+	// Save Static Classes
+	for (const class_key in APIData.StaticClass) {
+		let data_stable = StaticClassesData.Stable[class_key];
+		if (data_stable)
+			SaveJSON(".generated/Stable/StaticClasses/" + APIData.StaticClass[class_key], data_stable);
+
+		let data_bleeding_edge = StaticClassesData.BleedingEdge[class_key];
+		if (data_bleeding_edge)
+			SaveJSON(".generated/StaticClasses/" + APIData.StaticClass[class_key], data_bleeding_edge);
 	}
 
 	// Saves updated Enums

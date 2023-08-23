@@ -1,6 +1,7 @@
 {
 	"name": "Paintable",
 	"description": "Base class for all Paintable entities. This class provides customization for materials, exposing common functions to allow you to set custom material parameters, including loading textures from disk.",
+	"is_base": true,
 	"functions": [
 		{
 			"authority": "both",

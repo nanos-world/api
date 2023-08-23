@@ -1,6 +1,7 @@
 {
 	"name": "Damageable",
 	"description": "Base class for all Damageable entities. It provides Health and Damage related methods and events.",
+	"is_base": true,
 	"functions": [
 		{
 			"authority": "server",

@@ -1,6 +1,7 @@
 {
 	"name": "Pickable",
 	"description": "<b>Pickables</b> are special Actors which can be <b>grabbed</b>, <b>held</b> and <b>used</b> by Characters.",
+	"is_base": true,
 	"functions": [
 		{
 			"authority": "both",

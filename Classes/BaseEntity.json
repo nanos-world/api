@@ -1,6 +1,7 @@
 {
 	"name": "Entity",
 	"description": "<b>Entity</b> is the base for all Classes, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
+	"is_base": true,
 	"static_functions": [
 		{
 			"name": "GetAll",
