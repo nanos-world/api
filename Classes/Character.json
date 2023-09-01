@@ -85,7 +85,8 @@
 			],
 			"relations": {
 				"functions": [
-					"GetVehicle"
+					"GetVehicle",
+					"GetVehicleSeat"
 				]
 			}
 		},
@@ -1170,6 +1171,16 @@
 			"return": [
 				{
 					"type": "Vehicle?"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetVehicleSeat",
+			"description": "Gets the entered Vehicle seat",
+			"return": [
+				{
+					"type": "integer"
 				}
 			]
 		},

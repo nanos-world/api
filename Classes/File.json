@@ -340,6 +340,12 @@
 					"name": "path_filter",
 					"default": "",
 					"description": "Path filter"
+				},
+				{
+					"type": "integer",
+					"name": "max_depth",
+					"default": "-1",
+					"description": "The maximum depth to go further in the folders while searching. Pass -1 for maximum depth"
 				}
 			],
 			"return": [
@@ -366,6 +372,12 @@
 					"name": "extension_filter",
 					"default": "",
 					"description": "E.g.: <code>.lua</code>"
+				},
+				{
+					"type": "integer",
+					"name": "max_depth",
+					"default": "-1",
+					"description": "The maximum depth to go further in the folders while searching. Pass -1 for maximum depth"
 				}
 			],
 			"return": [

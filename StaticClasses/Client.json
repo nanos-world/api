@@ -4,6 +4,11 @@
 	"authority": "client",
 	"static_functions": [
 		{
+			"name": "Disconnect",
+			"description": "Disconnects from the server",
+			"authority": "client"
+		},
+		{
 			"name": "CopyToClipboard",
 			"description": "Copies a text to Clipboard",
 			"authority": "client",
