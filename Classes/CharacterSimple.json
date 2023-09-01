@@ -5,6 +5,7 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
+		"Pawn",
 		"Paintable",
 		"Damageable"
 	],
@@ -44,174 +45,20 @@
 	],
 	"functions": [
 		{
-			"authority": "both",
-			"name": "AddSkeletalMeshAttached",
-			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"authority": "authority",
+			"name": "SetMesh",
+			"description": "Changes the Character Mesh on the fly",
 			"parameters": [
 				{
-					"type": "string",
-					"name": "id",
-					"description": "Used further for removing or applying material settings on it"
-				},
-				{
-					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh_path",
-					"description": "Path to SkeletalMesh asset to attach"
+					"type": "SkeletalMeshPath|StaticMeshPath",
+					"name": "mesh_asset"
 				},
 				{
 					"type": "boolean",
-					"name": "use_parent_bounds",
-					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
-					"default": "true"
-				}
-			],
-			"relations": {
-				"functions": [
-					"RemoveSkeletalMeshAttached"
-				]
-			}
-		},
-		{
-			"authority": "both",
-			"name": "AddStaticMeshAttached",
-			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Spawns and attaches a StaticMesh to this entity in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID to assign to the StaticMesh"
-				},
-				{
-					"type": "StaticMeshPath",
-					"name": "static_mesh_path",
-					"description": "Path to StaticMesh asset to attach"
-				},
-				{
-					"type": "string",
-					"name": "socket",
-					"default": "",
-					"description": "Bone socket to attach to"
-				},
-				{
-					"type": "Vector",
-					"name": "relative_location",
-					"default": "Vector(0, 0, 0)",
-					"description": "Relative location"
-				},
-				{
-					"type": "Rotator",
-					"name": "relative_rotation",
-					"default": "Rotator(0, 0, 0)",
-					"description": "Relative rotation"
-				},
-				{
-					"type": "boolean",
-					"name": "use_parent_bounds",
-					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
-					"default": "true"
-				}
-			],
-			"relations": {
-				"functions": [
-					"SetStaticMeshAttachedTransform",
-					"RemoveStaticMeshAttached"
-				]
-			}
-		},
-		{
-			"authority": "both",
-			"name": "GetAllStaticMeshAttached",
-			"description": "Gets all Static Meshes attached to this entity",
-			"return": [
-				{
-					"type": "string[]",
-					"description": "the key as the Attached ID, and the value as the Asset Path"
+					"name": "adjust_capsule_size",
+					"description": "Auto adjust the capsule size based on the Mesh size"
 				}
 			]
-		},
-		{
-			"authority": "both",
-			"name": "GetAllSkeletalMeshAttached",
-			"description": "Gets all Skeletal Meshes attached to this entity",
-			"return": [
-				{
-					"type": "string[]",
-					"description": "the key as the Attached ID, and the value as the Asset Path"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "RemoveSkeletalMeshAttached",
-			"description": "Removes, if it exists, a SkeletalMesh from this entity given its custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the SkeletalMesh to remove"
-				}
-			],
-			"relations": {
-				"functions": [
-					"AddSkeletalMeshAttached"
-				]
-			}
-		},
-		{
-			"authority": "both",
-			"name": "SetStaticMeshAttachedTransform",
-			"description": "Sets a Static Mesh Attached location and rotation",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the StaticMesh set with AddStaticMeshAttached"
-				},
-				{
-					"type": "Vector",
-					"name": "relative_location",
-					"description": "New relative location"
-				},
-				{
-					"type": "Rotator",
-					"name": "relative_rotation",
-					"description": "New relative rotation"
-				}
-			],
-			"relations": {
-				"functions": [
-					"AddStaticMeshAttached"
-				]
-			}
-		},
-		{
-			"authority": "both",
-			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if it exists, a StaticMesh from this enitity given its custom ID",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "id",
-					"description": "Unique ID of the StaticMesh to remove"
-				}
-			],
-			"relations": {
-				"functions": [
-					"AddStaticMeshAttached"
-				]
-			}
-		},
-		{
-			"authority": "both",
-			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
-		},
-		{
-			"authority": "both",
-			"name": "RemoveAllSkeletalMeshesAttached",
-			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
 			"authority": "authority",
@@ -256,223 +103,6 @@
 			]
 		},
 		{
-			"authority": "authority",
-			"name": "StopAnimation",
-			"description": "Stops an Animation Montage on this character",
-			"parameters": [
-				{
-					"type": "AnimationPath",
-					"name": "animation_asset"
-				}
-			]
-		},
-		{
-			"authority": "authority",
-			"name": "SetMesh",
-			"description": "Changes the Character Mesh on the fly",
-			"parameters": [
-				{
-					"type": "SkeletalMeshPath|StaticMeshPath",
-					"name": "mesh_asset"
-				},
-				{
-					"type": "boolean",
-					"name": "adjust_capsule_size",
-					"description": "Auto adjust the capsule size based on the Mesh size"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetMesh",
-			"description": "Gets the Skeletal Mesh Asset",
-			"return": [
-				{
-					"type": "SkeletalMeshPath|StaticMeshPath"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetMovingTo",
-			"description": "Gets the Moving To location",
-			"return": [
-				{
-					"type": "Vector",
-					"description": "the moving to location or Vector(0, 0, 0) if not moving"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "MoveTo",
-			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
-			"parameters": [
-				{
-					"type": "Vector",
-					"name": "location"
-				},
-				{
-					"type": "float",
-					"name": "acceptance_radius",
-					"default": "50"
-				}
-			],
-			"relations": {
-				"functions": [
-					"StopMovement",
-					"Follow"
-				],
-				"events": [
-					"MoveComplete"
-				]
-			}
-		},
-		{
-			"authority": "server",
-			"name": "Follow",
-			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
-			"parameters": [
-				{
-					"type": "Actor",
-					"name": "actor",
-					"description": "Actor to follow"
-				},
-				{
-					"type": "float",
-					"name": "acceptance_radius",
-					"default": "50",
-					"description": "Radius to consider success"
-				},
-				{
-					"type": "boolean",
-					"name": "stop_on_succeed",
-					"default": "false",
-					"description": "Whether to stop when reaching the target"
-				},
-				{
-					"type": "boolean",
-					"name": "stop_on_fail",
-					"default": "false",
-					"description": "Whether to stop when failed to reach the target"
-				},
-				{
-					"type": "float",
-					"name": "update_rate",
-					"default": "0.25",
-					"description": "How often to recalculate the AI path"
-				}
-			],
-			"relations": {
-				"functions": [
-					"StopMovement",
-					"MoveTo"
-				],
-				"events": [
-					"MoveComplete"
-				]
-			}
-		},
-		{
-			"authority": "server",
-			"name": "StopMovement",
-			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
-			"relations": {
-				"functions": [
-					"MoveTo",
-					"Follow"
-				],
-				"events": [
-					"MoveComplete"
-				]
-			}
-		},
-		{
-			"authority": "both",
-			"name": "GetPlayer",
-			"description": "Gets the possessing Player",
-			"return": [
-				{
-					"type": "Player?"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetControlRotation",
-			"description": "Gets the Control Rotation",
-			"return": [
-				{
-					"type": "Rotator"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "HideBone",
-			"description": "Hides a bone of this Character",
-			"description_long": "Hides a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"default": "",
-					"description": "Bone to hide"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "UnHideBone",
-			"description": "UnHide a bone of this Character",
-			"description_long": "UnHide a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to unhide"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "IsBoneHidden",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "if the bone is hidden"
-				}
-			],
-			"description": "Gets if a bone is hidden",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to check"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "Jump",
-			"description": "Triggers this Character to jump"
-		},
-		{
-			"authority": "server",
-			"name": "SetJumpZVelocity",
-			"description": "Sets the velocity of the jump",
-			"parameters": [
-				{
-					"type": "integer",
-					"name": "velocity",
-					"description": "Default is 450"
-				}
-			]
-		},
-		{
 			"authority": "server",
 			"name": "SetMaxAcceleration",
 			"description": "Sets the max acceleration",
@@ -481,83 +111,6 @@
 					"type": "integer",
 					"name": "acceleration",
 					"description": "Default is 2048"
-				}
-			]
-		},
-		{
-			"authority": "authority",
-			"name": "SetCapsuleSize",
-			"description": "Sets this Character's Capsule size",
-			"description_long": "Sets this Character's Capsule size (will affect Camera location and Character's collision)",
-			"parameters": [
-				{
-					"type": "integer",
-					"name": "radius",
-					"description": "Default is 42"
-				},
-				{
-					"type": "integer",
-					"name": "half_height",
-					"description": "Default is 96"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "SetCanJump",
-			"description": "Sets if this Character is allowed to Jump",
-			"parameters": [
-				{
-					"type": "boolean",
-					"name": "can_jump"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "SetCanCrouch",
-			"description": "Sets if this Character is allowed to Crouch and to Prone",
-			"parameters": [
-				{
-					"type": "boolean",
-					"name": "can_crouch"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "SetBrakingSettings",
-			"description": "Sets the Movement Braking Settings of this Character",
-			"parameters": [
-				{
-					"type": "float",
-					"name": "ground_friction",
-					"default": "2"
-				},
-				{
-					"type": "float",
-					"name": "braking_friction_factor",
-					"default": "2"
-				},
-				{
-					"type": "integer",
-					"name": "braking_walking",
-					"default": "96"
-				},
-				{
-					"type": "integer",
-					"name": "braking_flying",
-					"default": "3000"
-				},
-				{
-					"type": "integer",
-					"name": "braking_swimming",
-					"default": "10"
-				},
-				{
-					"type": "integer",
-					"name": "braking_falling",
-					"default": "0"
 				}
 			]
 		},
@@ -651,60 +204,31 @@
 					"name": "custom_animation_blueprint"
 				}
 			]
-		}
-	],
-	"events": [
-		{
-			"authority": "both",
-			"name": "Possess",
-			"description": "When Character is possessed",
-			"arguments": [
-				{
-					"type": "CharacterSimple",
-					"name": "self"
-				},
-				{
-					"type": "Player",
-					"name": "possesser"
-				}
-			]
 		},
 		{
-			"authority": "both",
-			"name": "UnPossess",
-			"description": "When Character is unpossessed",
-			"arguments": [
+			"name": "CallAnimationBlueprintEvent",
+			"return": [
 				{
-					"type": "CharacterSimple",
-					"name": "self"
-				},
-				{
-					"type": "Player",
-					"name": "old_possesser"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "MoveComplete",
-			"description": "Called when AI reaches it's destination, or when it fails",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "boolean",
-					"name": "succeeded"
+					"type": "any...",
+					"description": "the function return values"
 				}
 			],
-			"relations": {
-				"functions": [
-					"StopMovement",
-					"MoveTo",
-					"Follow"
-				]
-			}
+			"description": "Calls an Animation Blueprint Event or Function",
+			"description_long": "Calls an Animation Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong>",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
+				}
+			]
 		}
 	]
 }

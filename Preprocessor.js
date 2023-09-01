@@ -10,6 +10,8 @@ const APIData = {
 		Pickable: "BasePickable.json",
 		Paintable: "BasePaintable.json",
 		Damageable: "BaseDamageable.json",
+		Vehicle: "BaseVehicle.json",
+		Pawn: "BasePawn.json",
 		Billboard: "Billboard.json",
 		Blueprint: "Blueprint.json",
 		Cable: "Cable.json",
