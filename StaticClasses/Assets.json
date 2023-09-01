@@ -40,6 +40,11 @@
 					"type": "string",
 					"name": "asset",
 					"description": "The asset reference in the format <code>asset-pack::AssetKey</code>"
+				},
+				{
+					"type": "AssetType",
+					"name": "asset_type",
+					"description": "The Asset Type"
 				}
 			],
 			"return": [
