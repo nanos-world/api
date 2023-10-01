@@ -312,7 +312,12 @@
 					"default": "false",
 					"description": "Server side parameter, if enabled will sync this value with all clients"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetAllValuesKeys"
+				]
+			}
 		},
 		{
 			"name": "GetValue",
@@ -335,7 +340,29 @@
 					"type": "any",
 					"description": "Value at key or fallback if key doesn't exist"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetAllValuesKeys"
+				]
+			}
+		},
+		{
+			"name": "GetAllValuesKeys",
+			"description": "Gets a list of all values keys",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "a list with all values keys"
+				}
+			],
+			"relations": {
+				"functions": [
+					"GetValue",
+					"SetValue"
+				]
+			}
 		},
 		{
 			"name": "Destroy",
