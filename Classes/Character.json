@@ -490,6 +490,17 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetHitReactionEnabled",
+			"description": "Sets if the character will react to damage by applying small dynamic ragdoll effect to local bones damaged",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetGaitMode",
 			"description": "Sets the Gait Mode",
 			"parameters": [
