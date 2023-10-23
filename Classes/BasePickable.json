@@ -257,6 +257,16 @@
 					"type": "Character?"
 				}
 			]
+		},
+		{
+			"authority": "both",
+			"name": "GetHandlingMode",
+			"description": "Gets the Handling Mode of this Pickable",
+			"return": [
+				{
+					"type": "HandlingMode"
+				}
+			]
 		}
 	],
 	"events": [
