@@ -545,6 +545,27 @@
 			"authority": "server"
 		},
 		{
+			"name": "Restart",
+			"description": "Server has been restarted",
+			"authority": "server"
+		},
+		{
+			"name": "ChangeMap",
+			"description": "Called when the map changes",
+			"description_long": "Called when the map changes. This is always called just before Restart event",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "old_map"
+				},
+				{
+					"type": "string",
+					"name": "new_map"
+				}
+			]
+		},
+		{
 			"name": "PlayerConnect",
 			"description": "Called when a player is attempting to connect to the server",
 			"authority": "server",
