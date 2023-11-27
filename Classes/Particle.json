@@ -46,12 +46,24 @@
 					"name": "should_reset",
 					"description": "If should reset"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Deactivate",
+					"IsActive"
+				]
+			}
 		},
 		{
 			"name": "Deactivate",
 			"description": "Deactivate the Emitter",
-			"authority": "both"
+			"authority": "both",
+			"relations": {
+				"functions": [
+					"Activate",
+					"IsActive"
+				]
+			}
 		},
 		{
 			"name": "IsActive",
@@ -59,9 +71,16 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_active"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Activate",
+					"Deactivate"
+				]
+			}
 		},
 		{
 			"name": "SetParameterFloat",

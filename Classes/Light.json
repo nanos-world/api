@@ -145,7 +145,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_shadows_enabled"
 				}
 			]
 		},
@@ -154,7 +155,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "intensity"
 				}
 			]
 		},
@@ -163,7 +165,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "attenuation_radius"
 				}
 			]
 		},
@@ -172,7 +175,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Color"
+					"type": "Color",
+					"name": "color"
 				}
 			]
 		}

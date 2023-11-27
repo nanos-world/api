@@ -452,7 +452,8 @@
 			"return": [
 				{
 					"type": "Vector2D",
-					"description": "the current size"
+					"description": "the current size",
+					"name": "size"
 				}
 			]
 		},

@@ -103,6 +103,22 @@
 			]
 		},
 		{
+			"authority": "authority",
+			"name": "SetMesh",
+			"description": "Changes the Character Mesh on the fly",
+			"parameters": [
+				{
+					"type": "SkeletalMeshPath|StaticMeshPath",
+					"name": "mesh"
+				},
+				{
+					"type": "boolean",
+					"name": "adjust_capsule_size",
+					"description": "Auto adjust the capsule size based on the Mesh size"
+				}
+			]
+		},
+		{
 			"authority": "server",
 			"name": "SetMaxAcceleration",
 			"description": "Sets the max acceleration",

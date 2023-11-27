@@ -44,7 +44,8 @@
 			"description": "Returns if it's currently interacting",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_interacting"
 				}
 			]
 		},

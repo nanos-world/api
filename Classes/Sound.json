@@ -223,6 +223,7 @@
 		{
 			"return": [
 				{
+					"name": "is_2D_sound",
 					"type": "boolean"
 				}
 			],
@@ -233,6 +234,7 @@
 		{
 			"return": [
 				{
+					"name": "is_playing",
 					"type": "boolean"
 				}
 			],
@@ -243,7 +245,8 @@
 		{
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "duration"
 				}
 			],
 			"name": "GetDuration",
@@ -253,6 +256,7 @@
 		{
 			"return": [
 				{
+					"name": "pitch",
 					"type": "float"
 				}
 			],
@@ -262,6 +266,7 @@
 		{
 			"return": [
 				{
+					"name": "volume",
 					"type": "float"
 				}
 			],
@@ -271,6 +276,7 @@
 		{
 			"return": [
 				{
+					"name": "frequency",
 					"type": "float"
 				}
 			],
@@ -280,7 +286,8 @@
 		{
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "inner_radius"
 				}
 			],
 			"name": "GetInnerRadius",
@@ -289,7 +296,8 @@
 		{
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "falloff_distance"
 				}
 			],
 			"name": "GetFalloffDistance",
@@ -298,6 +306,7 @@
 		{
 			"return": [
 				{
+					"name": "sound_type",
 					"type": "float"
 				}
 			],

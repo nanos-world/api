@@ -114,7 +114,7 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "gravity_enabled"
 				}
 			]
 		},
@@ -336,6 +336,7 @@
 			"authority": "both",
 			"return": [
 				{
+					"name": "is_visible",
 					"type": "boolean"
 				}
 			]
@@ -346,7 +347,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "gravity_enabled"
 				}
 			]
 		},
@@ -421,7 +423,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "CollisionType"
+					"type": "CollisionType",
+					"name": "collision_type"
 				}
 			]
 		},
@@ -431,7 +434,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "location"
 				}
 			]
 		},
@@ -441,7 +445,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "relative_location"
 				}
 			]
 		},
@@ -461,7 +466,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Rotator"
+					"type": "Rotator",
+					"name": "rotation"
 				}
 			]
 		},
@@ -471,7 +477,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Rotator"
+					"type": "Rotator",
+					"name": "relative_rotation"
 				}
 			]
 		},
@@ -481,7 +488,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "force"
 				}
 			]
 		},
@@ -491,7 +499,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "dimension"
 				}
 			],
 			"relations": {
@@ -527,7 +536,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "scale"
 				}
 			]
 		},
@@ -537,7 +547,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "velocity"
 				}
 			]
 		},
