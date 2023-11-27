@@ -318,7 +318,7 @@
 		{
 			"name": "GetAllValuesKeys",
 			"description": "Gets a list of all values keys",
-			"authority": "server",
+			"authority": "client",
 			"return": [
 				{
 					"type": "string[]",
