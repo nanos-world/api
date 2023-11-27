@@ -259,7 +259,8 @@
 			"return": [
 				{
 					"type": "SkeletalMeshPath",
-					"description": "asset path"
+					"description": "asset path",
+					"name": "asset"
 				}
 			]
 		},
@@ -315,7 +316,8 @@
 							"name": "Rotation",
 							"type": "Rotator"
 						}
-					]
+					],
+					"name": "bone_transform"
 				}
 			],
 			"parameters": [
@@ -338,7 +340,8 @@
 			"return": [
 				{
 					"type": "Character",
-					"description": "or nil if no passenger in seat"
+					"description": "or nil if no passenger in seat",
+					"name": "passenger"
 				}
 			]
 		},
@@ -348,7 +351,8 @@
 			"description": "Gets all passengers",
 			"return": [
 				{
-					"type": "Character[]"
+					"type": "Character[]",
+					"name": "passengers"
 				}
 			]
 		},

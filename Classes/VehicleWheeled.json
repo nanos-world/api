@@ -255,13 +255,13 @@
 					"type": "integer",
 					"name": "transmission_change_up_rpm",
 					"default": "4500",
-					"description": "Engine Revs at which gear up change ocurrs"
+					"description": "Engine Revs at which gear up change occurs"
 				},
 				{
 					"type": "integer",
 					"name": "transmission_change_down_rpm",
 					"default": "2000",
-					"description": "Engine Revs at which gear down change ocurrs"
+					"description": "Engine Revs at which gear down change occurs"
 				},
 				{
 					"type": "float",
@@ -509,7 +509,8 @@
 			"description": "Gets the current RPM",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "rpm"
 				}
 			]
 		},
@@ -519,7 +520,8 @@
 			"description": "Gets the current Gear",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "gear"
 				}
 			]
 		}

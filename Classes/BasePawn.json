@@ -190,7 +190,8 @@
 			"description": "Gets the base Mesh Asset",
 			"return": [
 				{
-					"type": "SkeletalMeshPath|StaticMeshPath"
+					"type": "SkeletalMeshPath",
+					"name": "skeletal_mesh_asset"
 				}
 			]
 		},
@@ -201,7 +202,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"description": "the moving to location or Vector(0, 0, 0) if not moving"
+					"description": "the moving to location or Vector(0, 0, 0) if not moving",
+					"name": "location"
 				}
 			]
 		},
@@ -209,7 +211,7 @@
 			"authority": "server",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -224,7 +226,8 @@
 			"relations": {
 				"functions": [
 					"StopMovement",
-					"Follow"
+					"Follow",
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"
@@ -235,7 +238,7 @@
 			"authority": "server",
 			"name": "Follow",
 			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -270,7 +273,8 @@
 			"relations": {
 				"functions": [
 					"StopMovement",
-					"MoveTo"
+					"MoveTo",
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"
@@ -281,11 +285,12 @@
 			"authority": "server",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
 			"relations": {
 				"functions": [
+					"Follow",
 					"MoveTo",
-					"Follow"
+					"GetMovingTo"
 				],
 				"events": [
 					"MoveComplete"
@@ -298,9 +303,16 @@
 			"description": "Gets the possessing Player",
 			"return": [
 				{
-					"type": "Player?"
+					"type": "Player?",
+					"name": "possesser"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Possess",
+					"UnPossess"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -308,7 +320,8 @@
 			"description": "Gets the Control Rotation",
 			"return": [
 				{
-					"type": "Rotator"
+					"type": "Rotator",
+					"name": "control_rotation"
 				}
 			]
 		},
@@ -324,7 +337,13 @@
 					"default": "",
 					"description": "Bone to hide"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"UnHideBone",
+					"IsBoneHidden"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -337,7 +356,13 @@
 					"name": "bone_name",
 					"description": "Bone to unhide"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"HideBone",
+					"IsBoneHidden"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -345,7 +370,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "if the bone is hidden"
+					"description": "if the bone is hidden",
+					"name": "bone_name"
 				}
 			],
 			"description": "Gets if a bone is hidden",
@@ -355,7 +381,13 @@
 					"name": "bone_name",
 					"description": "Bone to check"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"UnHideBone",
+					"HideBone"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -369,7 +401,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "velocity",
+					"name": "jump_z_velocity",
 					"description": "Default is 450"
 				}
 			]
@@ -466,7 +498,13 @@
 					"type": "Player",
 					"name": "possesser"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"UnPossess",
+					"GetPlayer"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -481,7 +519,13 @@
 					"type": "Player",
 					"name": "old_possesser"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"Possess",
+					"GetPlayer"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -501,7 +545,8 @@
 				"functions": [
 					"StopMovement",
 					"MoveTo",
-					"Follow"
+					"Follow",
+					"GetMovingTo"
 				]
 			}
 		}

@@ -95,6 +95,7 @@
 			"description": "Returns the current WebUI visibility",
 			"return": [
 				{
+					"name": "visibility",
 					"type": "WidgetVisibility"
 				}
 			]

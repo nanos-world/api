@@ -244,6 +244,7 @@
 			"description": "Gets the name of the asset this Pickable uses",
 			"return": [
 				{
+					"name": "asset",
 					"type": "SkeletalMeshPath"
 				}
 			]
