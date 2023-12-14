@@ -196,8 +196,11 @@
 				}
 			],
 			"relations": {
-				"functions": [
-					"StopAnimation"
+				"etc": [
+					{
+						"label": "StopAnimation",
+						"url": "/docs/next/scripting-reference/classes/base-classes/pawn#function-stopanimation"
+					}
 				]
 			}
 		},
