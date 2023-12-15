@@ -95,13 +95,13 @@
 					"name": "should_fade_audio",
 					"type": "boolean",
 					"description": "True to fade audio volume along with the alpha of the solid color.",
-					"deafult": false
+					"default": false
 				},
 				{
 					"name": "hold_when_finished",
 					"type": "boolean",
 					"description": "True for fade to hold at the ToAlpha until explicitly stopped (e.g. with StopCameraFade)",
-					"deafult": false
+					"default": false
 				}
 			]
 		},
@@ -219,6 +219,50 @@
 					"name": "force",
 					"type": "boolean",
 					"description": "Whether to bypass interpolation and set the target to its value directly"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraFOV",
+			"description": "Sets the Player's Camera FOV (if not possessing a Character)",
+			"parameters": [
+				{
+					"name": "fov",
+					"type": "float",
+					"default": "90",
+					"description": "Value must be between 5 and 170. Pass empty to reset to default."
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraSpeedSettings",
+			"description": "Sets the Player's Camera Speed Settings (if not possessing a Character)",
+			"parameters": [
+				{
+					"name": "max_speed",
+					"type": "float",
+					"default": "1200",
+					"description": "Maximum velocity magnitude allowed"
+				},
+				{
+					"name": "acceleration",
+					"type": "float",
+					"default": "4000",
+					"description": "Acceleration applied by input (rate of change of velocity)"
+				},
+				{
+					"name": "deceleration",
+					"type": "float",
+					"default": "4000",
+					"description": "Deceleration applied when there is no input (rate of change of velocity)"
+				},
+				{
+					"name": "turning_boost",
+					"type": "float",
+					"default": "8",
+					"description": "Setting affecting extra force applied when changing direction, making turns have less drift and become more responsive. Velocity magnitude is not allowed to increase, that only happens due to normal acceleration. It may decrease with large direction changes. Larger values apply extra force to reach the target direction more quickly, while a zero value disables any extra turn force."
 				}
 			]
 		},

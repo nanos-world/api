@@ -90,7 +90,7 @@
 					"type": "integer",
 					"name": "length",
 					"default": "0",
-					"description": "Length to be read from file"
+					"description": "Length to be read from file, leave it empty to read the whole file"
 				}
 			]
 		},
@@ -102,7 +102,7 @@
 				{
 					"type": "integer",
 					"name": "length",
-					"description": "Length to be read from file"
+					"description": "Length to be read from file, leave it empty to read the whole file"
 				},
 				{
 					"type": "function",

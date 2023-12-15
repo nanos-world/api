@@ -17,7 +17,7 @@
 				{
 					"type": "string",
 					"name": "endpoint",
-					"default": "/",
+					"default": "",
 					"description": "The endpoint"
 				},
 				{
@@ -98,7 +98,7 @@
 				{
 					"type": "string",
 					"name": "endpoint",
-					"default": "/",
+					"default": "",
 					"description": "The endpoint"
 				},
 				{
