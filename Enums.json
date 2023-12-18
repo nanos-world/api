@@ -69,6 +69,10 @@
 			{
 				"key": "Blueprint",
 				"value": 256
+			},
+			{
+				"key": "Other",
+				"value": 32768
 			}
 		]
 	},
