@@ -69,6 +69,10 @@
 			{
 				"key": "Blueprint",
 				"value": 256
+			},
+			{
+				"key": "Other",
+				"value": 32768
 			}
 		]
 	},
@@ -489,6 +493,34 @@
 			}
 		]
 	},
+	"GizmoTransformMode": {
+		"enums": [
+			{
+				"key": "Translation",
+				"value": "0"
+			},
+			{
+				"key": "Rotation",
+				"value": "1"
+			},
+			{
+				"key": "Scale",
+				"value": "2"
+			}
+		]
+	},
+	"GizmoAlignSpace": {
+		"enums": [
+			{
+				"key": "Local",
+				"value": "0"
+			},
+			{
+				"key": "World",
+				"value": "1"
+			}
+		]
+	},
 	"GrabMode": {
 		"enums": [
 			{
@@ -505,22 +537,6 @@
 				"key": "Enabled",
 				"value": "2",
 				"description": "Enables grabbing"
-			}
-		]
-	},
-	"HighlightMode": {
-		"enums": [
-			{
-				"key": "Always",
-				"value": "0"
-			},
-			{
-				"key": "OnlyHidden",
-				"value": "1"
-			},
-			{
-				"key": "OnlyVisible",
-				"value": "2"
 			}
 		]
 	},
@@ -557,6 +573,62 @@
 			{
 				"key": "Box",
 				"value": "7"
+			}
+		]
+	},
+	"HighlightMode": {
+		"enums": [
+			{
+				"key": "Always",
+				"value": "0"
+			},
+			{
+				"key": "OnlyHidden",
+				"value": "1"
+			},
+			{
+				"key": "OnlyVisible",
+				"value": "2"
+			}
+		]
+	},
+	"HTTPMethod": {
+		"description": "HTTP defines a set of request methods to indicate the desired action to be performed for a given resource. Read more <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>here</a>.",
+		"enums": [
+			{
+				"key": "GET",
+				"value": "0",
+				"description": "The GET method requests a representation of the specified resource. Requests using GET should only retrieve data."
+			},
+			{
+				"key": "POST",
+				"value": "1",
+				"description": "The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server."
+			},
+			{
+				"key": "PUT",
+				"value": "2",
+				"description": "The PUT method replaces all current representations of the target resource with the request payload."
+			},
+			{
+				"key": "HEAD",
+				"value": "3",
+				"description": "The HEAD method asks for a response identical to a GET request, but without the response body."
+			},
+			{
+				"key": "DELETE",
+				"value": "4",
+				"description": "The DELETE method deletes the specified resource."
+			},
+			{
+				"key": "PATCH",
+				"value": "5",
+				"description": "The PATCH method applies partial modifications to a resource."
+			},
+			{
+				"key": "OPTIONS",
+				"value": "6",
+				"description": "The OPTIONS method describes the communication options for the target resource."
 			}
 		]
 	},

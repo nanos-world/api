@@ -1,30 +1,30 @@
 {
 	"name": "HTTP",
 	"description": "HTTP Requests Interface.",
-	"authority": "server",
+	"authority": "both",
 	"static_functions": [
 		{
 			"name": "RequestAsync",
 			"description": "Makes an asynchronous HTTP Request",
 			"description_long": "Makes an asynchronous HTTP Request.<br/><br/>The request will be made asynchronously and returned safetly in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload.",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "uri",
-					"description": "The main URI"
+					"description": "The main URI (the base address)"
 				},
 				{
 					"type": "string",
 					"name": "endpoint",
-					"default": "/",
+					"default": "",
 					"description": "The endpoint"
 				},
 				{
-					"type": "string",
+					"type": "HTTPMethod",
 					"name": "method",
-					"default": "GET",
-					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>HTTP Method</a> to be used"
+					"default": "HTTPMethod.GET",
+					"description": "The HTTP Method to be used"
 				},
 				{
 					"type": "string",
@@ -93,19 +93,19 @@
 				{
 					"type": "string",
 					"name": "uri",
-					"description": "The main URI"
+					"description": "The main URI (the base address)"
 				},
 				{
 					"type": "string",
 					"name": "endpoint",
-					"default": "/",
+					"default": "",
 					"description": "The endpoint"
 				},
 				{
-					"type": "string",
+					"type": "HTTPMethod",
 					"name": "method",
-					"default": "GET",
-					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>HTTP Method</a> to be used"
+					"default": "HTTPMethod.GET",
+					"description": "The HTTP Method to be used"
 				},
 				{
 					"type": "string",
@@ -136,7 +136,7 @@
 		{
 			"name": "SetConnectionTimeout",
 			"description": "Sets the global Connection Timeout in seconds",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "integer",
@@ -148,7 +148,7 @@
 		{
 			"name": "SetReadWriteTimeout",
 			"description": "Sets the global Read and Write Timeout in seconds",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "integer",

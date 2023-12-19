@@ -1,6 +1,7 @@
 {
 	"name": "Damageable",
 	"description": "Base class for all Damageable entities. It provides Health and Damage related methods and events.",
+	"is_base": true,
 	"functions": [
 		{
 			"authority": "server",
@@ -53,7 +54,8 @@
 			"description": "Gets the current health",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "health"
 				}
 			]
 		},
@@ -63,7 +65,8 @@
 			"description": "Gets the Max Health",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "max_health"
 				}
 			]
 		},
@@ -104,7 +107,7 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "new_max_health"
+					"name": "max_health"
 				}
 			]
 		}

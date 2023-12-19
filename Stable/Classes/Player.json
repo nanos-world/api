@@ -95,13 +95,13 @@
 					"name": "should_fade_audio",
 					"type": "boolean",
 					"description": "True to fade audio volume along with the alpha of the solid color.",
-					"deafult": false
+					"default": false
 				},
 				{
 					"name": "hold_when_finished",
 					"type": "boolean",
 					"description": "True for fade to hold at the ToAlpha until explicitly stopped (e.g. with StopCameraFade)",
-					"deafult": false
+					"default": false
 				}
 			]
 		},
@@ -224,6 +224,50 @@
 		},
 		{
 			"authority": "both",
+			"name": "SetCameraFOV",
+			"description": "Sets the Player's Camera FOV (if not possessing a Character)",
+			"parameters": [
+				{
+					"name": "fov",
+					"type": "float",
+					"default": "90",
+					"description": "Value must be between 5 and 170. Pass empty to reset to default."
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraSpeedSettings",
+			"description": "Sets the Player's Camera Speed Settings (if not possessing a Character)",
+			"parameters": [
+				{
+					"name": "max_speed",
+					"type": "float",
+					"default": "1200",
+					"description": "Maximum velocity magnitude allowed"
+				},
+				{
+					"name": "acceleration",
+					"type": "float",
+					"default": "4000",
+					"description": "Acceleration applied by input (rate of change of velocity)"
+				},
+				{
+					"name": "deceleration",
+					"type": "float",
+					"default": "4000",
+					"description": "Deceleration applied when there is no input (rate of change of velocity)"
+				},
+				{
+					"name": "turning_boost",
+					"type": "float",
+					"default": "8",
+					"description": "Setting affecting extra force applied when changing direction, making turns have less drift and become more responsive. Velocity magnitude is not allowed to increase, that only happens due to normal acceleration. It may decrease with large direction changes. Larger values apply extra force to reach the target direction more quickly, while a zero value disables any extra turn force."
+				}
+			]
+		},
+		{
+			"authority": "both",
 			"name": "AttachCameraTo",
 			"description": "Attaches the Player`s Camera to an Actor",
 			"parameters": [
@@ -268,7 +312,7 @@
 			"description": "Sets the player's name",
 			"parameters": [
 				{
-					"name": "new_name",
+					"name": "player_name",
 					"type": "string"
 				}
 			]
@@ -290,7 +334,7 @@
 			"description": "Sets the VOIP Settings of this Player",
 			"parameters": [
 				{
-					"name": "setting",
+					"name": "voip_setting",
 					"type": "VOIPSetting"
 				}
 			]
@@ -316,7 +360,8 @@
 			"name": "GetSteamID",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "steam_id"
 				}
 			]
 		},
@@ -325,7 +370,8 @@
 			"name": "GetAccountID",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "account_id"
 				}
 			]
 		},
@@ -334,7 +380,8 @@
 			"name": "GetAccountName",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "account_name"
 				}
 			]
 		},
@@ -344,7 +391,8 @@
 			"description": "Return a URL which can be used through WebUI and Widgets to display the Player's Steam Avatar (64x64)",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "account_icon_url"
 				}
 			]
 		},
@@ -353,7 +401,8 @@
 			"name": "GetCameraLocation",
 			"return": [
 				{
-					"type": "Vector"
+					"type": "Vector",
+					"name": "location"
 				}
 			]
 		},
@@ -370,7 +419,8 @@
 			],
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "length"
 				}
 			]
 		},
@@ -379,7 +429,8 @@
 			"name": "GetCameraRotation",
 			"return": [
 				{
-					"type": "Rotator"
+					"type": "Rotator",
+					"name": "rotation"
 				}
 			]
 		},
@@ -388,7 +439,8 @@
 			"name": "GetControlledCharacter",
 			"return": [
 				{
-					"type": "Character?"
+					"type": "Character?",
+					"name": "controlled_character"
 				}
 			]
 		},
@@ -397,7 +449,8 @@
 			"name": "GetIP",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "ip"
 				}
 			]
 		},
@@ -407,16 +460,39 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "dimension"
 				}
-			]
+			],
+			"relations": {
+				"events": [
+					"DimensionChange"
+				]
+			}
+		},
+		{
+			"name": "SetDimension",
+			"description": "Sets this Player's dimension",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer",
+					"name": "dimension"
+				}
+			],
+			"relations": {
+				"events": [
+					"DimensionChange"
+				]
+			}
 		},
 		{
 			"authority": "both",
 			"name": "GetName",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"name": "player_name"
 				}
 			]
 		},
@@ -425,7 +501,8 @@
 			"name": "GetPing",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "ping"
 				}
 			]
 		},
@@ -434,26 +511,8 @@
 			"name": "GetVOIPChannel",
 			"return": [
 				{
+					"name": "channel",
 					"type": "integer"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetValue",
-			"parameters": [
-				{
-					"name": "key",
-					"type": "string"
-				},
-				{
-					"name": "fallback",
-					"type": "any"
-				}
-			],
-			"return": [
-				{
-					"type": "any"
 				}
 			]
 		},
@@ -462,7 +521,8 @@
 			"name": "IsHost",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_host"
 				}
 			]
 		},
@@ -471,7 +531,8 @@
 			"name": "IsLocalPlayer",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "is_local_player"
 				}
 			]
 		},
@@ -480,6 +541,7 @@
 			"name": "GetVOIPSetting",
 			"return": [
 				{
+					"name": "voip_setting",
 					"type": "VOIPSetting"
 				}
 			]
@@ -503,7 +565,13 @@
 					"name": "new_dimension",
 					"type": "integer"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetDimension",
+					"GetDimension"
+				]
+			}
 		},
 		{
 			"authority": "both",
@@ -518,7 +586,12 @@
 					"name": "character",
 					"type": "Character"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetControlledCharacter"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -544,7 +617,12 @@
 					"name": "character",
 					"type": "Character"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetControlledCharacter"
+				]
+			}
 		},
 		{
 			"authority": "both",

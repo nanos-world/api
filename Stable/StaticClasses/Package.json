@@ -30,6 +30,11 @@
 					"type": "string",
 					"name": "script_file",
 					"description": "Path to the script file to require"
+				},
+				{
+					"type": "boolean?",
+					"name": "force_load",
+					"description": "Whether to force loading this file even if it was already loaded"
 				}
 			],
 			"return": [

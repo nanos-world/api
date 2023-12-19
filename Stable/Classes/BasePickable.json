@@ -1,6 +1,7 @@
 {
 	"name": "Pickable",
 	"description": "<b>Pickables</b> are special Actors which can be <b>grabbed</b>, <b>held</b> and <b>used</b> by Characters.",
+	"is_base": true,
 	"functions": [
 		{
 			"authority": "both",
@@ -243,6 +244,7 @@
 			"description": "Gets the name of the asset this Pickable uses",
 			"return": [
 				{
+					"name": "asset",
 					"type": "SkeletalMeshPath"
 				}
 			]
@@ -254,6 +256,16 @@
 			"return": [
 				{
 					"type": "Character?"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetHandlingMode",
+			"description": "Gets the Handling Mode of this Pickable",
+			"return": [
+				{
+					"type": "HandlingMode"
 				}
 			]
 		}

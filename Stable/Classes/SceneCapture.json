@@ -26,13 +26,13 @@
 					"type": "integer",
 					"name": "width",
 					"default": "128",
-					"description": "Width of the generated Texture"
+					"description": "Width of the generated Texture (max is 4096)"
 				},
 				{
 					"type": "integer",
 					"name": "height",
 					"default": "128",
-					"description": "Height of the generated Texture"
+					"description": "Height of the generated Texture (max is 4096)"
 				},
 				{
 					"type": "float",

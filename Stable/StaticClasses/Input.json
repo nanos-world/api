@@ -46,6 +46,11 @@
 					"type": "InputEvent",
 					"name": "input_event",
 					"description": "Which event to register (Released/Pressed)"
+				},
+				{
+					"type": "function?",
+					"name": "callback",
+					"description": "The specific function to unbind"
 				}
 			]
 		},

@@ -178,7 +178,8 @@
 			"description": "Gets the Sound when Character uses it",
 			"return": [
 				{
-					"type": "SoundPath"
+					"type": "SoundPath",
+					"name": "asset_path"
 				}
 			]
 		},
@@ -188,7 +189,8 @@
 			"description": "Gets the Base Damage",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "damage"
 				}
 			]
 		},
@@ -198,7 +200,8 @@
 			"description": "Gets the Cooldown between usages",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"name": "cooldown"
 				}
 			]
 		}

@@ -82,6 +82,17 @@
 			]
 		},
 		{
+			"name": "GetViewportScale",
+			"description": "Gets the scale of viewport",
+			"authority": "client",
+			"return": [
+				{
+					"type": "float",
+					"description": "The scale of viewport"
+				}
+			]
+		},
+		{
 			"name": "SetMousePosition",
 			"description": "Sets the mouse position",
 			"authority": "client",

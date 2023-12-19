@@ -4,6 +4,11 @@
 	"authority": "client",
 	"static_functions": [
 		{
+			"name": "Disconnect",
+			"description": "Disconnects from the server",
+			"authority": "client"
+		},
+		{
 			"name": "CopyToClipboard",
 			"description": "Copies a text to Clipboard",
 			"authority": "client",
@@ -149,7 +154,12 @@
 					"name": "value",
 					"description": ""
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetAllValuesKeys"
+				]
+			}
 		},
 		{
 			"name": "Subscribe",
@@ -283,8 +293,8 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "any?",
-					"description": "the value"
+					"type": "any",
+					"description": "Value at key or fallback if key doesn't exist"
 				}
 			],
 			"parameters": [
@@ -298,7 +308,29 @@
 					"name": "fallback",
 					"description": ""
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetAllValuesKeys"
+				]
+			}
+		},
+		{
+			"name": "GetAllValuesKeys",
+			"description": "Gets a list of all values keys",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "a list with all values keys"
+				}
+			],
+			"relations": {
+				"functions": [
+					"GetValue",
+					"SetValue"
+				]
+			}
 		}
 	],
 	"events": [

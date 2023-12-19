@@ -129,7 +129,8 @@
 			"return": [
 				{
 					"type": "any",
-					"description": "the value"
+					"description": "the value",
+					"name": "value"
 				}
 			],
 			"parameters": [

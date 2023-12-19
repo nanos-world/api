@@ -32,6 +32,29 @@
 			]
 		},
 		{
+			"name": "GetAssetPath",
+			"description": "Gets the file path of an asset",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "asset",
+					"description": "The asset reference in the format <code>asset-pack::AssetKey</code>"
+				},
+				{
+					"type": "AssetType",
+					"name": "asset_type",
+					"description": "The Asset Type"
+				}
+			],
+			"return": [
+				{
+					"type": "string",
+					"description": "The file path defined in the Assets.toml"
+				}
+			]
+		},
+		{
 			"name": "GetAnimations",
 			"description": "Gets a list containing all Animation Assets Keys from an AssetPack",
 			"authority": "both",

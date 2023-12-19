@@ -41,31 +41,31 @@
 					"type": "Vector2D",
 					"name": "screen_location",
 					"description": "",
-					"default": "Vector(-25, 0)"
+					"default": "Vector2D(-25, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "size",
 					"description": "",
-					"default": "Vector(600, 250)"
+					"default": "Vector2D(600, 250)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_min",
 					"description": "",
-					"default": "Vector(1, 0.5)"
+					"default": "Vector2D(1, 0.5)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_max",
 					"description": "",
-					"default": "Vector(1, 0.5)"
+					"default": "Vector2D(1, 0.5)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "alignment",
 					"description": "",
-					"default": "Vector(1, 0.5)"
+					"default": "Vector2D(1, 0.5)"
 				},
 				{
 					"type": "boolean",

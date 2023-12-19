@@ -199,12 +199,23 @@
 					"default": "false",
 					"description": "If enabled will sync this value through all clients, accessible through Client.GetValue() static class."
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetAllValuesKeys"
+				]
+			}
 		},
 		{
 			"name": "GetValue",
 			"description": "Gets a value given a key",
 			"authority": "server",
+			"return": [
+				{
+					"type": "any",
+					"description": "Value at key or fallback if key doesn't exist"
+				}
+			],
 			"parameters": [
 				{
 					"type": "string",
@@ -216,7 +227,29 @@
 					"name": "fallback",
 					"description": "Fallback Value if key doesn't exist"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"GetAllValuesKeys"
+				]
+			}
+		},
+		{
+			"name": "GetAllValuesKeys",
+			"description": "Gets a list of all values keys",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "a list with all values keys"
+				}
+			],
+			"relations": {
+				"functions": [
+					"GetValue",
+					"SetValue"
+				]
+			}
 		},
 		{
 			"name": "Unban",
@@ -510,6 +543,27 @@
 			"name": "Start",
 			"description": "Server has been started",
 			"authority": "server"
+		},
+		{
+			"name": "Restart",
+			"description": "Server has been restarted",
+			"authority": "server"
+		},
+		{
+			"name": "ChangeMap",
+			"description": "Called when the map changes",
+			"description_long": "Called when the map changes. This is always called just before Restart event",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "old_map"
+				},
+				{
+					"type": "string",
+					"name": "new_map"
+				}
+			]
 		},
 		{
 			"name": "PlayerConnect",

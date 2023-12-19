@@ -239,7 +239,8 @@
 			"return": [
 				{
 					"type": "Actor",
-					"description": "the Actor or nil"
+					"description": "the Actor or nil",
+					"name": "other"
 				}
 			]
 		},
@@ -250,7 +251,8 @@
 			"return": [
 				{
 					"type": "Actor",
-					"description": "the Actor or nil"
+					"description": "the Actor or nil",
+					"name": "other"
 				}
 			]
 		}
