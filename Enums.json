@@ -80,15 +80,18 @@
 		"enums": [
 			{
 				"key": "KeepRelative",
-				"value": "0"
+				"value": "0",
+				"description": "Will keep the current relative position/rotation if already attached."
 			},
 			{
 				"key": "KeepWorld",
-				"value": "1"
+				"value": "1",
+				"description": "Will calculate the new relative position/rotation so the Actor stays at the same position after being attached."
 			},
 			{
 				"key": "SnapToTarget",
-				"value": "2"
+				"value": "2",
+				"description": "Will set the Actor to the same position/rotation as the parent actor (or at the bone location) and reset its relative position/rotation to zero."
 			}
 		]
 	},
