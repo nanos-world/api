@@ -211,7 +211,7 @@
 			"description_long": "Sets the Blend Space (2D) Animation for Standing<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "blend_space_path"
 				},
 				{
@@ -227,7 +227,7 @@
 			"description": "Sets the Blend Space (2D) Animation for Crouching<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "blend_space_path"
 				},
 				{
@@ -243,7 +243,7 @@
 			"description": "Sets the Blend Space (2D) Animation for Proning<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "blend_space_path"
 				}
 			]
@@ -254,11 +254,11 @@
 			"description": "Sets the Transition Animation between Standing and Crouching",
 			"parameters": [
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "standing_to_crouching"
 				},
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "crouching_to_standing"
 				}
 			]
@@ -269,11 +269,11 @@
 			"description": "Sets the Transition Animation between Crouching and Proning",
 			"parameters": [
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "crouching_to_proning"
 				},
 				{
-					"type": "Animation",
+					"type": "AnimationPath",
 					"name": "pronng_to_crouching"
 				}
 			]
