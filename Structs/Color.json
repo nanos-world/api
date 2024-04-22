@@ -105,63 +105,63 @@
 	],
 	"static_properties": [
 		{
-			"name": "Color.WHITE",
+			"name": "WHITE",
 			"value": "Color(1, 1, 1)"
 		},
 		{
-			"name": "Color.BLACK",
+			"name": "BLACK",
 			"value": "Color(0, 0, 0)"
 		},
 		{
-			"name": "Color.TRANSPARENT",
+			"name": "TRANSPARENT",
 			"value": "Color(0, 0, 0, 0)"
 		},
 		{
-			"name": "Color.RED",
+			"name": "RED",
 			"value": "Color(1, 0, 0)"
 		},
 		{
-			"name": "Color.GREEN",
+			"name": "GREEN",
 			"value": "Color(0, 1, 0)"
 		},
 		{
-			"name": "Color.BLUE",
+			"name": "BLUE",
 			"value": "Color(0, 0, 1)"
 		},
 		{
-			"name": "Color.YELLOW",
+			"name": "YELLOW",
 			"value": "Color(1, 1, 0)"
 		},
 		{
-			"name": "Color.CYAN",
+			"name": "CYAN",
 			"value": "Color(0, 1, 1)"
 		},
 		{
-			"name": "Color.MAGENTA",
+			"name": "MAGENTA",
 			"value": "Color(1, 0, 1)"
 		},
 		{
-			"name": "Color.ORANGE",
+			"name": "ORANGE",
 			"value": "Color(1, 0.5, 0)"
 		},
 		{
-			"name": "Color.CHARTREUSE",
+			"name": "CHARTREUSE",
 			"value": "Color(0.5, 1, 1)"
 		},
 		{
-			"name": "Color.AQUAMARINE",
+			"name": "AQUAMARINE",
 			"value": "Color(0, 1, 0.5)"
 		},
 		{
-			"name": "Color.AZURE",
+			"name": "AZURE",
 			"value": "Color(0, 0.5, 1)"
 		},
 		{
-			"name": "Color.VIOLET",
+			"name": "VIOLET",
 			"value": "Color(0.5, 0, 1)"
 		},
 		{
-			"name": "Color.ROSE",
+			"name": "ROSE",
 			"value": "Color(1, 0, 0.5)"
 		}
 	],
