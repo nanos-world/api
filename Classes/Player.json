@@ -474,7 +474,7 @@
 			"name": "SetDimension",
 			"description": "Sets this Player's dimension",
 			"authority": "server",
-			"return": [
+			"parameters": [
 				{
 					"type": "integer",
 					"name": "dimension"
