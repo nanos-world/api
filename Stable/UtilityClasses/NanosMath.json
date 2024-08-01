@@ -118,6 +118,28 @@
 			]
 		},
 		{
+			"name": "RandomFloat",
+			"description": "Returns a random float value",
+			"return": [
+				{
+					"type": "float",
+					"description": "the random value"
+				}
+			],
+			"parameters": [
+				{
+					"type": "float",
+					"name": "min",
+					"description": "Minimum value"
+				},
+				{
+					"type": "float",
+					"name": "max",
+					"description": "Maximum value"
+				}
+			]
+		},
+		{
 			"name": "FInterpTo",
 			"description": "Interpolate number from Current to Target",
 			"return": [

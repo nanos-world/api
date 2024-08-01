@@ -386,6 +386,24 @@
 					"description": "List of files"
 				}
 			]
+		},
+		{
+			"name": "GetFullPath",
+			"return": [
+				{
+					"type": "string",
+					"description": "the full path parsed"
+				}
+			],
+			"description": "Gets the full path given a relative path based on the current side (client or server)",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "path",
+					"description": "Path to file or directory"
+				}
+			]
 		}
 	]
 }

@@ -22,6 +22,16 @@
 			"name": "Repaint",
 			"authority": "client",
 			"description": "Forces this to repaint"
+		},
+		{
+			"return": [
+				{
+					"name": "widget",
+					"type": "Widget"
+				}
+			],
+			"name": "GetWidget",
+			"authority": "client"
 		}
 	],
 	"events": []

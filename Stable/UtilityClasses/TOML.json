@@ -1,0 +1,54 @@
+{
+	"name": "TOML",
+	"description": "TOML library.",
+	"static_functions": [
+		{
+			"name": "Dump",
+			"description": "Returns a string representing value encoded in TOML",
+			"return": [
+				{
+					"type": "string",
+					"description": "the table in TOML"
+				}
+			],
+			"parameters": [
+				{
+					"type": "table",
+					"name": "value",
+					"description": "the table that will become TOML"
+				}
+			],
+			"examples": [
+				{
+					"title": "Stringifies a Lua table",
+					"content": "local encoded_value = TOML.Dump({ 1, 2, 3, { x = 10, y = Vector(1, 2, 3) }, \"he\" })",
+					"output": "[ 1, 2, 3, { y = \"Vector(1.000000, 2.000000, 3.000000)\", x = 10 }, \"he\" ]"
+				}
+			]
+		},
+		{
+			"name": "Parse",
+			"description": "Returns a value representing the decoded TOML string",
+			"return": [
+				{
+					"type": "any",
+					"description": "the TOML in table"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "value",
+					"description": "the TOML that will become a table"
+				}
+			],
+			"examples": [
+				{
+					"title": "Parses a TOML string into a Lua table",
+					"content": "local decoded_value = TOML.Parse(\"my_table = [ 1, 2, 3 ]\")",
+					"output": "the table { [\"my_table\"] = { [1] = 1, [2] = 2, [3] = 3 } }"
+				}
+			]
+		}
+	]
+}

@@ -14,6 +14,12 @@
 					"name": "spawn_weather",
 					"default": "false",
 					"description": "Whether or not to spawn the Weather Actor (to be able to use Weather related methods)"
+				},
+				{
+					"type": "boolean",
+					"name": "find_existing",
+					"default": "true",
+					"description": "Whether or not to try to find existing Sky & Weather Actors spawned in the map, using their references instead"
 				}
 			]
 		},
@@ -74,6 +80,21 @@
 		},
 		{
 			"authority": "client",
+			"name": "SetMoonAngle",
+			"description": "Sets the Moon Angle",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "yaw"
+				},
+				{
+					"type": "float",
+					"name": "pitch"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "SetMoonPhase",
 			"description": "Sets the Moon Phase",
 			"parameters": [
@@ -113,14 +134,18 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "angle"
+					"name": "yaw"
+				},
+				{
+					"type": "float",
+					"name": "pitch"
 				}
 			]
 		},
 		{
 			"authority": "client",
-			"name": "SetSunRadius",
-			"description": "Sets the Sun Radius",
+			"name": "SetSunScale",
+			"description": "Sets the Sun Scale",
 			"parameters": [
 				{
 					"type": "float",

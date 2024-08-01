@@ -312,6 +312,16 @@
 			],
 			"name": "GetSoundType",
 			"authority": "client"
+		},
+		{
+			"return": [
+				{
+					"name": "path",
+					"type": "string"
+				}
+			],
+			"name": "GetPath",
+			"authority": "client"
 		}
     ]
 }

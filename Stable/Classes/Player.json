@@ -47,11 +47,11 @@
 		{
 			"authority": "server",
 			"name": "Possess",
-			"description": "Makes a Player to possess and control a Character",
+			"description": "Makes a Player to possess and control a Pawn",
 			"parameters": [
 				{
-					"name": "new_character",
-					"type": "Character"
+					"name": "new_pawn",
+					"type": "Pawn"
 				},
 				{
 					"name": "blend_time",
@@ -474,7 +474,7 @@
 			"name": "SetDimension",
 			"description": "Sets this Player's dimension",
 			"authority": "server",
-			"return": [
+			"parameters": [
 				{
 					"type": "integer",
 					"name": "dimension"

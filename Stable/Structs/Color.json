@@ -103,6 +103,68 @@
 			"description": "Alpha transparency percentage (0-1)"
 		}
 	],
+	"static_properties": [
+		{
+			"name": "WHITE",
+			"value": "Color(1, 1, 1)"
+		},
+		{
+			"name": "BLACK",
+			"value": "Color(0, 0, 0)"
+		},
+		{
+			"name": "TRANSPARENT",
+			"value": "Color(0, 0, 0, 0)"
+		},
+		{
+			"name": "RED",
+			"value": "Color(1, 0, 0)"
+		},
+		{
+			"name": "GREEN",
+			"value": "Color(0, 1, 0)"
+		},
+		{
+			"name": "BLUE",
+			"value": "Color(0, 0, 1)"
+		},
+		{
+			"name": "YELLOW",
+			"value": "Color(1, 1, 0)"
+		},
+		{
+			"name": "CYAN",
+			"value": "Color(0, 1, 1)"
+		},
+		{
+			"name": "MAGENTA",
+			"value": "Color(1, 0, 1)"
+		},
+		{
+			"name": "ORANGE",
+			"value": "Color(1, 0.5, 0)"
+		},
+		{
+			"name": "CHARTREUSE",
+			"value": "Color(0.5, 1, 1)"
+		},
+		{
+			"name": "AQUAMARINE",
+			"value": "Color(0, 1, 0.5)"
+		},
+		{
+			"name": "AZURE",
+			"value": "Color(0, 0.5, 1)"
+		},
+		{
+			"name": "VIOLET",
+			"value": "Color(0.5, 0, 1)"
+		},
+		{
+			"name": "ROSE",
+			"value": "Color(1, 0, 0.5)"
+		}
+	],
 	"functions": [
 		{
 			"name": "ToHex",

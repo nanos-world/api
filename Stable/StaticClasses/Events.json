@@ -166,6 +166,24 @@
 					"description": "The callback function to unsubscribe"
 				}
 			]
+		},
+		{
+			"authority": "both",
+			"name": "UnsubscribeRemote",
+			"description": "Unsubscribes from all subscribed remote events in this Package with that event name, optionally passing the function to unsubscribe only that callback",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to unsubscribe"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "The callback function to unsubscribe"
+				}
+			]
 		}
 	]
 }

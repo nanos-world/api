@@ -1,6 +1,16 @@
 {
 	"name": "math",
 	"description": "This library provides basic mathematical functions. It provides all its functions and constants inside the table <code>math</code>.",
+	"static_properties": [
+		{
+			"name": "pi",
+			"value": "3.141592653589793"
+		},
+		{
+			"name": "huge",
+			"value": "2^1024"
+		}
+	],
 	"static_functions": [
 		{
 			"parameters": [

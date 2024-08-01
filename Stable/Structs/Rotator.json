@@ -194,6 +194,18 @@
 					"name": "roll",
 					"description": "Whether to use a random roll in the rotator, otherwise uses 0 for roll",
 					"default": "false"
+				},
+				{
+					"type": "float",
+					"name": "min",
+					"description": "Minimum value",
+					"default": "-180"
+				},
+				{
+					"type": "float",
+					"name": "max",
+					"description": "Maximum value",
+					"default": "180"
 				}
 			],
 			"return": [
