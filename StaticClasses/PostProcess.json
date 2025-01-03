@@ -126,7 +126,7 @@
 		{
 			"authority": "client",
 			"name": "SetGlobalSaturation",
-			"description": "Set Post Process Saturation Colors. Use Alpha for everall Saturation intensity",
+			"description": "Set Post Process Saturation Colors. Use Alpha for overall Saturation intensity",
 			"parameters": [
 				{
 					"type": "Color",
@@ -137,7 +137,7 @@
 		{
 			"authority": "client",
 			"name": "SetLookupTable",
-			"description": "Set Post Process Lookup Table Texture",
+			"description": "Set Post Process Lookup Table (LUT) Texture",
 			"parameters": [
 				{
 					"type": "ImagePath",

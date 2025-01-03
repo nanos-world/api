@@ -33,7 +33,7 @@
 	],
 	"constructors": [
 		{
-			"description": "Default Constructor",
+			"name": "Default Constructor",
 			"parameters": [
 				{
 					"name": "X",

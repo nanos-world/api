@@ -7,7 +7,7 @@
 	],
 	"constructors": [
 		{
-			"description": "Default Constructor",
+			"name": "Default Constructor",
 			"parameters": [
 				{
 					"type": "string",

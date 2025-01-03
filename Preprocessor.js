@@ -127,7 +127,7 @@ function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
 		label = `${class_key} ${name} Event`;
 	}
 	else if (table == "constructors") {
-		url = `${base_url}/${class_key.toLowerCase()}#constructor-${name.toLowerCase()}`;
+		url = `${base_url}/${class_key.toLowerCase()}#constructor-${name.toLowerCase().replace(' ', '-')}`;
 		label = `${class_key} ${name}`;
 	}
 
@@ -212,7 +212,7 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 		// Check for constructors
 		if (class_data.constructors) {
 			for (const constructorKey in class_data.constructors)
-				CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].description, "constructors", version_key, class_key, class_type);
+				CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].name, "constructors", version_key, class_key, class_type);
 		}
 
 		// Check for events

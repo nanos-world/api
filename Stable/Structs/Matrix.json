@@ -3,7 +3,7 @@
 	"description": "A Matrix is an array of numbers this can be used for geometric and positional calculations. This is mainly used internally.",
 	"constructors": [
 		{
-			"description": "Default Constructor",
+			"name": "Default Constructor",
 			"parameters": [
 				{
 					"name": "rotation",

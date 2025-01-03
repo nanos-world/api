@@ -7,7 +7,8 @@
 	],
 	"constructors": [
 		{
-			"description": "UserWidget Constructor",
+			"name": "UserWidget Constructor",
+			"description": "Spawns a Widget passing a UserWidget blueprint",
 			"parameters": [
 				{
 					"type": "BlueprintPath",
@@ -17,7 +18,8 @@
 			]
 		},
 		{
-			"description": "Native Widget Constructor",
+			"name": "Native Widget Constructor",
+			"description": "Spawns a Widget passing a NativeWidget enum",
 			"parameters": [
 				{
 					"type": "NativeWidget",
