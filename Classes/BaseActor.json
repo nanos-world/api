@@ -132,7 +132,7 @@
 		{
 			"name": "SetHighlightEnabled",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
-			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the hight on every attached entity too",
+			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the highlight on every attached entity too",
 			"authority": "client",
 			"parameters": [
 				{
