@@ -42,7 +42,8 @@
 				{
 					"type": "string",
 					"name": "bone_name",
-					"default": ""
+					"default": "",
+					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				}
 			]
 		},
@@ -63,7 +64,8 @@
 				{
 					"type": "string",
 					"name": "bone_name",
-					"default": ""
+					"default": "",
+					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				}
 			]
 		},

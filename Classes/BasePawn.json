@@ -488,7 +488,7 @@
 		{
 			"authority": "both",
 			"name": "Possess",
-			"description": "When Character is possessed",
+			"description": "When Character is possessed by a Player",
 			"arguments": [
 				{
 					"type": "Pawn",
@@ -496,7 +496,7 @@
 				},
 				{
 					"type": "Player",
-					"name": "possesser"
+					"name": "player"
 				}
 			],
 			"relations": {
@@ -509,7 +509,7 @@
 		{
 			"authority": "both",
 			"name": "UnPossess",
-			"description": "When Character is unpossessed",
+			"description": "When Character is unpossessed by a Player",
 			"arguments": [
 				{
 					"type": "Pawn",
@@ -517,7 +517,7 @@
 				},
 				{
 					"type": "Player",
-					"name": "old_possesser"
+					"name": "old_player"
 				}
 			],
 			"relations": {
