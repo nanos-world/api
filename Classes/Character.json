@@ -1037,32 +1037,6 @@
 			]
 		},
 		{
-			"authority": "client",
-			"name": "GetBoneTransform",
-			"description": "Gets a Bone Transform in world space given a bone name",
-			"return": [
-				{
-					"type": "table",
-					"table_properties": [
-						{
-							"name": "Location",
-							"type": "Vector"
-						},
-						{
-							"name": "Rotation",
-							"type": "Rotator"
-						}
-					]
-				}
-			],
-			"parameters": [
-				{
-					"name": "bone_name",
-					"type": "string"
-				}
-			]
-		},
-		{
 			"authority": "both",
 			"name": "GetDamageMultiplier",
 			"description": "Gets the Damage Multiplier of a bone",
@@ -1296,36 +1270,6 @@
 		}
 	],
 	"events": [
-		{
-			"authority": "client",
-			"name": "AnimationBeginNotify",
-			"description": "When an Animation Montage Notify begins",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "string",
-					"name": "notify_name"
-				}
-			]
-		},
-		{
-			"authority": "client",
-			"name": "AnimationEndNotify",
-			"description": "When an Animation Montage Notify ends",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "string",
-					"name": "notify_name"
-				}
-			]
-		},
 		{
 			"name": "Attack",
 			"authority": "both",

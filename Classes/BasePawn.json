@@ -81,6 +81,32 @@
 			}
 		},
 		{
+			"authority": "client",
+			"name": "GetBoneTransform",
+			"description": "Gets a Bone Transform in world space given a bone name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "bone_name",
+					"type": "string"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "GetAllStaticMeshAttached",
 			"description": "Gets all Static Meshes attached to this entity",
@@ -485,6 +511,60 @@
 		}
 	],
 	"events": [
+		{
+			"authority": "client",
+			"name": "AnimationBeginNotify",
+			"description": "When an Animation Montage Notify begins",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self"
+				},
+				{
+					"type": "string",
+					"name": "notify_name"
+				},
+				{
+					"type": "string",
+					"name": "animation_name"
+				},
+				{
+					"type": "number",
+					"name": "trigger_begin_time"
+				},
+				{
+					"type": "number",
+					"name": "trigger_end_time"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "AnimationEndNotify",
+			"description": "When an Animation Montage Notify ends",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self"
+				},
+				{
+					"type": "string",
+					"name": "notify_name"
+				},
+				{
+					"type": "string",
+					"name": "animation_name"
+				},
+				{
+					"type": "number",
+					"name": "trigger_begin_time"
+				},
+				{
+					"type": "number",
+					"name": "trigger_end_time"
+				}
+			]
+		},
 		{
 			"authority": "both",
 			"name": "Possess",

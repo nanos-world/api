@@ -131,29 +131,39 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "SetSpringArmSettings",
 			"description": "Sets the Spring Arm Settings of this Character",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "relative_location"
+					"name": "relative_location",
+					"default": "Vector(0, 0, 144)"
 				},
 				{
 					"type": "float",
-					"name": "target_arm_length"
+					"name": "target_arm_length",
+					"default": "300.0"
 				},
 				{
 					"type": "Vector",
-					"name": "socket_offset"
+					"name": "socket_offset",
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"type": "boolean",
-					"name": "enable_camera_lag"
+					"name": "enable_camera_lag",
+					"default": "true"
 				},
 				{
 					"type": "float",
-					"name": "camera_lag_speed"
+					"name": "camera_lag_speed",
+					"default": "15.0"
+				},
+				{
+					"type": "float",
+					"name": "camera_lag_max_distance",
+					"default": "1.0"
 				}
 			]
 		},
