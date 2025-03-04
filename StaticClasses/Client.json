@@ -247,6 +247,24 @@
 			]
 		},
 		{
+			"name": "IsPackageLoaded",
+			"description": "Returns if a Package is currently loaded",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the package is loaded"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": ""
+				}
+			]
+		},
+		{
 			"name": "GetPackages",
 			"description": "Returns a list of Packages running",
 			"authority": "client",

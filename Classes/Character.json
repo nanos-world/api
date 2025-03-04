@@ -1017,27 +1017,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetCapsuleSize",
-			"description": "Gets the Capsule Size",
-			"return": [
-				{
-					"type": "table",
-					"table_properties": [
-						{
-							"name": "Radius",
-							"type": "integer"
-						},
-						{
-							"name": "HalfHeight",
-							"type": "integer"
-						}
-					],
-					"name": "capsule_size"
-				}
-			]
-		},
-		{
-			"authority": "both",
 			"name": "GetDamageMultiplier",
 			"description": "Gets the Damage Multiplier of a bone",
 			"return": [

@@ -252,6 +252,36 @@
 			}
 		},
 		{
+			"authority": "server",
+			"name": "KickByAccountID",
+			"description": "Kicks the player from the server by it's Account ID, ideal for kicking from inside PlayerConnect event",
+			"parameters": [
+				{
+					"name": "player_account_id",
+					"type": "string"
+				},
+				{
+					"name": "reason",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "BanByAccountID",
+			"description": "Ban the player from the server by it's Account ID, ideal for banning from inside PlayerConnect event",
+			"parameters": [
+				{
+					"name": "player_account_id",
+					"type": "string"
+				},
+				{
+					"name": "reason",
+					"type": "string"
+				}
+			]
+		},
+		{
 			"name": "Unban",
 			"description": "Unbans a Player by it's account ID",
 			"authority": "server",
@@ -365,6 +395,24 @@
 							"type": "Rotator"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "IsPackageLoaded",
+			"description": "Returns if a Package is currently loaded",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the package is loaded"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": ""
 				}
 			]
 		},
@@ -568,6 +616,7 @@
 		{
 			"name": "PlayerConnect",
 			"description": "Called when a player is attempting to connect to the server",
+			"description_long": "Called when a player is attempting to connect to the server<br/><br/>Use Server.KickByAccountID() or Server.BanByAccountID() to kick or ban the player from inside this event.",
 			"authority": "server",
 			"arguments": [
 				{
@@ -591,12 +640,12 @@
 					"description": "SteamID of the player"
 				}
 			],
-			"return": [
-				{
-					"type": "boolean",
-					"description": "Return false to do not allow the player to connect"
-				}
-			]
+			"relations": {
+				"functions": [
+					"KickByAccountID",
+					"BanByAccountID"
+				]
+			}
 		},
 		{
 			"name": "Stop",

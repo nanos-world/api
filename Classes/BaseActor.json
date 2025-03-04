@@ -129,6 +129,32 @@
 			]
 		},
 		{
+			"authority": "client",
+			"name": "GetSocketTransform",
+			"description": "Gets a Socket Transform in world space given a bone or socket name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "socket_name",
+					"type": "string"
+				}
+			]
+		},
+		{
 			"name": "SetHighlightEnabled",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
 			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the highlight on every attached entity too",

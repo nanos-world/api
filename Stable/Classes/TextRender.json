@@ -48,18 +48,6 @@
 	],
 	"functions": [
 		{
-			"name": "SetColor",
-			"authority": "both",
-			"description": "Sets the Color",
-			"description_long": "Sets the Color (Internally this will call the <code>SetMaterialColorParameter(\"Tint\", color)</code> method)",
-			"parameters": [
-				{
-					"name": "color",
-					"type": "Color"
-				}
-			]
-		},
-		{
 			"name": "SetFont",
 			"authority": "both",
 			"description": "Sets the Font",
