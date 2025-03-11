@@ -541,6 +541,17 @@
 			]
 		},
 		{
+			"name": "GetName",
+			"description": "Returns the Server Name",
+			"authority": "server",
+			"return": [
+				{
+					"type": "string",
+					"description": "The Server Name"
+				}
+			]
+		},
+		{
 			"name": "GetCustomSettings",
 			"description": "Returns the Server Custom Settings passed as parameter or New Game screen",
 			"authority": "server",
