@@ -554,18 +554,6 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetGravityScale",
-			"description": "Changes the Gravity Scale",
-			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
-			"parameters": [
-				{
-					"type": "float",
-					"name": "gravity_scale"
-				}
-			]
-		},
-		{
-			"authority": "server",
 			"name": "SetImpactDamageTaken",
 			"description": "Set the Impact Damage taken when being roamed by things",
 			"description_long": "Set the Impact Damage taken when being roamed by things.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
@@ -1092,17 +1080,6 @@
 					"UnGrabProp"
 				]
 			}
-		},
-		{
-			"authority": "both",
-			"name": "GetGravityScale",
-			"description": "Gets the gravity scale",
-			"return": [
-				{
-					"type": "float",
-					"name": "gravity_scale"
-				}
-			]
 		},
 		{
 			"authority": "both",

@@ -209,6 +209,24 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAIAvoidanceSettings",
+			"description": "AI: Configures the RVO (Reciprocal Velocity Obstacles) Avoidance system used by the AIs when moving",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"description": "Whether to enable the RVO Avoidance"
+				},
+				{
+					"type": "integer",
+					"name": "avoidance_consideration_Radius",
+					"default": "300",
+					"description": "The radius of the circle used to determine the avoidance distance"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
 			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
@@ -442,6 +460,29 @@
 						}
 					],
 					"name": "capsule_size"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetGravityScale",
+			"description": "Changes the Gravity Scale",
+			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "gravity_scale"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetGravityScale",
+			"description": "Gets the gravity scale",
+			"return": [
+				{
+					"type": "float",
+					"name": "gravity_scale"
 				}
 			]
 		},
