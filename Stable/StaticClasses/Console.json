@@ -48,8 +48,8 @@
 		},
 		{
 			"name": "Warn",
-			"description": "Logs an orange warning in the console",
-			"description_long": "Logs an orange warning in the console, with formatted arguments",
+			"description": "Logs an orange warning in the console with stack information",
+			"description_long": "Logs an orange warning in the console with stack information, with formatted arguments",
 			"authority": "both",
 			"parameters": [
 				{
@@ -67,8 +67,8 @@
 		},
 		{
 			"name": "Error",
-			"description": "Logs a red error in the console",
-			"description_long": "Logs a red error in the console, with formatted arguments",
+			"description": "Logs a red error in the console with stack information",
+			"description_long": "Logs a red error in the console with stack information, with formatted arguments",
 			"authority": "both",
 			"parameters": [
 				{

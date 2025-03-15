@@ -272,7 +272,7 @@
 				{
 					"type": "float",
 					"name": "transmission_efficiency",
-					"default": "0.94",
+					"default": "0.9",
 					"description": "Mechanical frictional losses mean transmission might operate at 0.94 (94% efficiency)"
 				}
 			]

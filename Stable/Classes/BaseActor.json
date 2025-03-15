@@ -24,7 +24,6 @@
 		{
 			"name": "AttachTo",
 			"description": "Attaches this Actor to any other Actor, optionally at a specific bone",
-			"description_long": "<p>Attaches this Actor to any other Actor, optionally at a specific bone</p><ul><li><code>AttachmentRule.KeepRelative</code> will keep the current relative position/rotation if already attached.</li><li><code>AttachmentRule.KeepWorld</code> will calculate the new relative position/rotation so the Actor stays at the same position after being attached.</li><li><code>AttachmentRule.SnapToTarget</code> will set the Actor to the same position/rotation as <code>other_actor</code> (or at the bone location) and reset its relative position/rotation to zero.</li></ul><p>Setting <code>lifespan_when_detached</code> to <code>0</code> will automatically destroy this actor when detached, setting it to <code>10</code> will destroy this after 10 seconds when detached.</p>",
 			"authority": "authority",
 			"parameters": [
 				{
@@ -42,13 +41,13 @@
 					"type": "string",
 					"name": "bone_name",
 					"default": "",
-					"description": "Which bone to attach to"
+					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				},
 				{
 					"type": "float",
 					"name": "lifespan_when_detached",
 					"default": "-1",
-					"description": "Seconds before destroying this Actor when detached"
+					"description": "Seconds before destroying this Actor when detached, setting it to 0 will automatically destroy this actor when detached, setting it to 10 will destroy this after 10 seconds when detached"
 				},
 				{
 					"type": "boolean",
@@ -130,9 +129,35 @@
 			]
 		},
 		{
+			"authority": "client",
+			"name": "GetSocketTransform",
+			"description": "Gets a Socket Transform in world space given a bone or socket name",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator"
+						}
+					]
+				}
+			],
+			"parameters": [
+				{
+					"name": "socket_name",
+					"type": "string"
+				}
+			]
+		},
+		{
 			"name": "SetHighlightEnabled",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
-			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the hight on every attached entity too",
+			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the highlight on every attached entity too",
 			"authority": "client",
 			"parameters": [
 				{

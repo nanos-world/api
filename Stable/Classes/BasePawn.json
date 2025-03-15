@@ -209,6 +209,24 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAIAvoidanceSettings",
+			"description": "AI: Configures the RVO (Reciprocal Velocity Obstacles) Avoidance system used by the AIs when moving",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"description": "Whether to enable the RVO Avoidance"
+				},
+				{
+					"type": "integer",
+					"name": "avoidance_consideration_Radius",
+					"default": "300",
+					"description": "The radius of the circle used to determine the avoidance distance"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
 			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
@@ -425,6 +443,50 @@
 			]
 		},
 		{
+			"authority": "both",
+			"name": "GetCapsuleSize",
+			"description": "Gets the Capsule Size",
+			"return": [
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "Radius",
+							"type": "integer"
+						},
+						{
+							"name": "HalfHeight",
+							"type": "integer"
+						}
+					],
+					"name": "capsule_size"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetGravityScale",
+			"description": "Changes the Gravity Scale",
+			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "gravity_scale"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetGravityScale",
+			"description": "Gets the gravity scale",
+			"return": [
+				{
+					"type": "float",
+					"name": "gravity_scale"
+				}
+			]
+		},
+		{
 			"authority": "server",
 			"name": "SetCanJump",
 			"description": "Sets if this Character is allowed to Jump",
@@ -486,9 +548,63 @@
 	],
 	"events": [
 		{
+			"authority": "client",
+			"name": "AnimationBeginNotify",
+			"description": "When an Animation Montage Notify begins",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self"
+				},
+				{
+					"type": "string",
+					"name": "notify_name"
+				},
+				{
+					"type": "string",
+					"name": "animation_name"
+				},
+				{
+					"type": "number",
+					"name": "trigger_begin_time"
+				},
+				{
+					"type": "number",
+					"name": "trigger_end_time"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "AnimationEndNotify",
+			"description": "When an Animation Montage Notify ends",
+			"arguments": [
+				{
+					"type": "Character",
+					"name": "self"
+				},
+				{
+					"type": "string",
+					"name": "notify_name"
+				},
+				{
+					"type": "string",
+					"name": "animation_name"
+				},
+				{
+					"type": "number",
+					"name": "trigger_begin_time"
+				},
+				{
+					"type": "number",
+					"name": "trigger_end_time"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "Possess",
-			"description": "When Character is possessed",
+			"description": "When Character is possessed by a Player",
 			"arguments": [
 				{
 					"type": "Pawn",
@@ -496,7 +612,7 @@
 				},
 				{
 					"type": "Player",
-					"name": "possesser"
+					"name": "player"
 				}
 			],
 			"relations": {
@@ -509,7 +625,7 @@
 		{
 			"authority": "both",
 			"name": "UnPossess",
-			"description": "When Character is unpossessed",
+			"description": "When Character is unpossessed by a Player",
 			"arguments": [
 				{
 					"type": "Pawn",
@@ -517,7 +633,7 @@
 				},
 				{
 					"type": "Player",
-					"name": "old_possesser"
+					"name": "old_player"
 				}
 			],
 			"relations": {

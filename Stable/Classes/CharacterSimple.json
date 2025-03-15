@@ -131,29 +131,39 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "SetSpringArmSettings",
 			"description": "Sets the Spring Arm Settings of this Character",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "relative_location"
+					"name": "relative_location",
+					"default": "Vector(0, 0, 144)"
 				},
 				{
 					"type": "float",
-					"name": "target_arm_length"
+					"name": "target_arm_length",
+					"default": "300.0"
 				},
 				{
 					"type": "Vector",
-					"name": "socket_offset"
+					"name": "socket_offset",
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"type": "boolean",
-					"name": "enable_camera_lag"
+					"name": "enable_camera_lag",
+					"default": "true"
 				},
 				{
 					"type": "float",
-					"name": "camera_lag_speed"
+					"name": "camera_lag_speed",
+					"default": "15.0"
+				},
+				{
+					"type": "float",
+					"name": "camera_lag_max_distance",
+					"default": "1.0"
 				}
 			]
 		},
@@ -207,6 +217,31 @@
 				{
 					"type": "boolean",
 					"name": "use_controller_rotation_roll"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetAirControl",
+			"description": "Sets the amount of movement control allowed when it is in air",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "air_control",
+					"default": "0.2",
+					"description": "When falling, amount of lateral movement control available to the character. 0 = no control, 1 = full control at max speed of MaxWalkSpeed"
+				},
+				{
+					"type": "float",
+					"name": "boost_multiplier",
+					"default": "512",
+					"description": "When falling, multiplier applied to air_control when lateral velocity is less than boost_velocity_threshold. Setting this to zero will disable air control boosting. Final result is clamped at 1"
+				},
+				{
+					"type": "float",
+					"name": "boost_velocity_threshold",
+					"default": "25",
+					"description": "When falling, if lateral velocity magnitude is less than this value, air_control is multiplied by boost_multiplier. Setting this to zero will disable air control boosting"
 				}
 			]
 		},

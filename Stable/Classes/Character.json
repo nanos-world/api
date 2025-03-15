@@ -322,6 +322,31 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetAirControl",
+			"description": "Sets the amount of movement control allowed when it is in air",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "air_control",
+					"default": "0.2",
+					"description": "When falling, amount of lateral movement control available to the character. 0 = no control, 1 = full control at max speed of MaxWalkSpeed"
+				},
+				{
+					"type": "float",
+					"name": "boost_multiplier",
+					"default": "512",
+					"description": "When falling, multiplier applied to air_control when lateral velocity is less than boost_velocity_threshold. Setting this to zero will disable air control boosting. Final result is clamped at 1"
+				},
+				{
+					"type": "float",
+					"name": "boost_velocity_threshold",
+					"default": "25",
+					"description": "When falling, if lateral velocity magnitude is less than this value, air_control is multiplied by boost_multiplier. Setting this to zero will disable air control boosting"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetCameraMode",
 			"description": "Sets the Camera Mode",
 			"description_long": "Sets the Camera Mode (i.e. Only TPS, FPS or if allow both)<br/><br/>Using FPSOnly CameraMode on AI will lock his body rotation (when using LookAt)",
@@ -524,18 +549,6 @@
 				{
 					"type": "GaitMode",
 					"name": "gait_mode"
-				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "SetGravityScale",
-			"description": "Changes the Gravity Scale",
-			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
-			"parameters": [
-				{
-					"type": "float",
-					"name": "gravity_scale"
 				}
 			]
 		},
@@ -992,53 +1005,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetCapsuleSize",
-			"description": "Gets the Capsule Size",
-			"return": [
-				{
-					"type": "table",
-					"table_properties": [
-						{
-							"name": "Radius",
-							"type": "integer"
-						},
-						{
-							"name": "HalfHeight",
-							"type": "integer"
-						}
-					],
-					"name": "capsule_size"
-				}
-			]
-		},
-		{
-			"authority": "client",
-			"name": "GetBoneTransform",
-			"description": "Gets a Bone Transform in world space given a bone name",
-			"return": [
-				{
-					"type": "table",
-					"table_properties": [
-						{
-							"name": "Location",
-							"type": "Vector"
-						},
-						{
-							"name": "Rotation",
-							"type": "Rotator"
-						}
-					]
-				}
-			],
-			"parameters": [
-				{
-					"name": "bone_name",
-					"type": "string"
-				}
-			]
-		},
-		{
-			"authority": "both",
 			"name": "GetDamageMultiplier",
 			"description": "Gets the Damage Multiplier of a bone",
 			"return": [
@@ -1114,17 +1080,6 @@
 					"UnGrabProp"
 				]
 			}
-		},
-		{
-			"authority": "both",
-			"name": "GetGravityScale",
-			"description": "Gets the gravity scale",
-			"return": [
-				{
-					"type": "float",
-					"name": "gravity_scale"
-				}
-			]
 		},
 		{
 			"authority": "both",
@@ -1271,36 +1226,6 @@
 		}
 	],
 	"events": [
-		{
-			"authority": "client",
-			"name": "AnimationBeginNotify",
-			"description": "When an Animation Montage Notify begins",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "string",
-					"name": "notify_name"
-				}
-			]
-		},
-		{
-			"authority": "client",
-			"name": "AnimationEndNotify",
-			"description": "When an Animation Montage Notify ends",
-			"arguments": [
-				{
-					"type": "Character",
-					"name": "self"
-				},
-				{
-					"type": "string",
-					"name": "notify_name"
-				}
-			]
-		},
 		{
 			"name": "Attack",
 			"authority": "both",

@@ -67,33 +67,6 @@
 				}
 			],
 			"authority": "client"
-		},
-		{
-			"authority": "client",
-			"name": "GetSocketTransform",
-			"description": "Gets a Socket Transform in world space given a bone name",
-			"return": [
-				{
-					"type": "table",
-					"table_properties": [
-						{
-							"name": "Location",
-							"type": "Vector"
-						},
-						{
-							"name": "Rotation",
-							"type": "Rotator"
-						}
-					],
-					"name": "socket_transform"
-				}
-			],
-			"parameters": [
-				{
-					"name": "socket_name",
-					"type": "string"
-				}
-			]
 		}
 	]
 }
