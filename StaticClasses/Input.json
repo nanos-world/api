@@ -48,9 +48,10 @@
 					"description": "Which event to register (Released/Pressed)"
 				},
 				{
-					"type": "function?",
+					"type": "function",
 					"name": "callback",
-					"description": "The specific function to unbind"
+					"description": "The specific function to unbind",
+					"default": "nil"
 				}
 			]
 		},
