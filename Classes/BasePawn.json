@@ -219,7 +219,7 @@
 				},
 				{
 					"type": "integer",
-					"name": "avoidance_consideration_Radius",
+					"name": "avoidance_consideration_radius",
 					"default": "300",
 					"description": "The radius of the circle used to determine the avoidance distance"
 				}
