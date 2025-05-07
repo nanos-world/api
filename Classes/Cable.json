@@ -87,17 +87,25 @@
 				{
 					"type": "float",
 					"name": "length",
-					"description": "Rest length of the cable. Default is 100"
+					"description": "Rest length of the cable. Default is 100. Min is 0"
 				},
 				{
 					"type": "integer",
 					"name": "num_segments",
-					"description": "How many segments the cable has. Default is 10"
+					"description": "How many segments the cable has. Default is 10. Min is 1",
+					"default": "10"
 				},
 				{
 					"type": "integer",
 					"name": "solver_iterations",
-					"description": "The number of solver iterations controls how 'stiff' the cable is. Default is 0"
+					"description": "The number of solver iterations controls how 'stiff' the cable is. Default is 1. Max is 16",
+					"default": "1"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_stiffness",
+					"description": "Add stiffness constraints to cable. Default is true",
+					"default": "true"
 				}
 			]
 		},

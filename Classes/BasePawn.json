@@ -229,7 +229,7 @@
 			"authority": "authority",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -256,7 +256,7 @@
 			"authority": "authority",
 			"name": "Follow",
 			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -303,7 +303,7 @@
 			"authority": "authority",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
 			"relations": {
 				"functions": [
 					"Follow",
