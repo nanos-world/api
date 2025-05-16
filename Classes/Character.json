@@ -1323,7 +1323,7 @@
 			}
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "FallingModeChange",
 			"description": "Called when FallingMode changes",
 			"arguments": [
@@ -1357,7 +1357,7 @@
 			]
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "GaitModeChange",
 			"description": "Called when GaitMode changes",
 			"arguments": [
@@ -1574,7 +1574,7 @@
 			]
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "StanceModeChange",
 			"description": "Called when StanceMode changes",
 			"arguments": [
@@ -1593,7 +1593,7 @@
 			]
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "SwimmingModeChange",
 			"description": "Called when Swimming Mode changes",
 			"arguments": [
@@ -1627,7 +1627,7 @@
 			]
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "ViewModeChange",
 			"description": "When Character changes it's View Mode",
 			"arguments": [
@@ -1646,7 +1646,7 @@
 			]
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "WeaponAimModeChange",
 			"description": "Called when Weapon Aim Mode changes",
 			"arguments": [
