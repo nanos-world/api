@@ -171,7 +171,7 @@
 			"authority": "server",
 			"name": "SetLinearLimits",
 			"description": "Sets the Physics Linear Limits of this cable",
-			"description_long": "Sets the Physics Linear Limits of this cable. If use_soft_constraint is enabled, then stiffness and damping will be used, otherwise restitution will be used.",
+			"description_long": "Sets the Physics Linear Limits of this cable. If use_soft_constraint is enabled, then stiffness and damping will be used, otherwise restitution will be used.<br/><br/>Note: this method must be called before attaching any cable end.",
 			"parameters": [
 				{
 					"type": "ConstraintMotion",
