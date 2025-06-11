@@ -1452,6 +1452,11 @@
 				"key": "ReturnUV",
 				"value": "1 << 5",
 				"description": "Whether want to trace and return UV information (adds <code>UV</code> to result)"
+			},
+			{
+				"key": "TraceOnlyVisibility",
+				"value": "1 << 6",
+				"description": "Whether should only trace for objects that don't ignore visibility collision channel"
 			}
 		]
 	},
