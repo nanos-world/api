@@ -256,6 +256,11 @@
 				"key": "Vehicle",
 				"value": "1 << 22",
 				"description": "Vehicles Meshes"
+			},
+			{
+				"key": "All",
+				"value": "(1 << 32) - 1",
+				"description": "All Objects"
 			}
 		]
 	},
