@@ -256,6 +256,11 @@
 				"key": "Vehicle",
 				"value": "1 << 22",
 				"description": "Vehicles Meshes"
+			},
+			{
+				"key": "All",
+				"value": "(1 << 32) - 1",
+				"description": "All Objects"
 			}
 		]
 	},
@@ -1452,6 +1457,11 @@
 				"key": "ReturnUV",
 				"value": "1 << 5",
 				"description": "Whether want to trace and return UV information (adds <code>UV</code> to result)"
+			},
+			{
+				"key": "TraceOnlyVisibility",
+				"value": "1 << 6",
+				"description": "Whether should only trace for objects that don't ignore visibility collision channel"
 			}
 		]
 	},
@@ -1459,23 +1469,28 @@
 		"enums": [
 			{
 				"key": "FPS",
-				"value": "0"
+				"value": "0",
+				"description": "First Person View"
 			},
 			{
 				"key": "TPS1",
-				"value": "1"
+				"value": "1",
+				"description": "Third Person Close View"
 			},
 			{
 				"key": "TPS2",
-				"value": "2"
+				"value": "2",
+				"description": "Third Person Medium View"
 			},
 			{
 				"key": "TPS3",
-				"value": "3"
+				"value": "3",
+				"description": "Third Person Far View"
 			},
 			{
 				"key": "TopDown",
-				"value": "4"
+				"value": "4",
+				"description": "Top Down View"
 			}
 		]
 	},

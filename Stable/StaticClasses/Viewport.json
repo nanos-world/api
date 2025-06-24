@@ -50,6 +50,7 @@
 		{
 			"name": "SetHardwareCursor",
 			"description": "Loads and sets a hardware cursor in the game from a PNG image",
+			"description_long": "Loads and sets a hardware cursor in the game from a PNG image<br/>Note: due an engine limitation modifying an already set cursor image will not change the cursor until the game is restarted",
 			"authority": "client",
 			"parameters": [
 				{

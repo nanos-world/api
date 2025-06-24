@@ -414,7 +414,7 @@
 					"name": "return_base",
 					"type": "boolean",
 					"default": "false",
-					"description": "Whether to return the current (false) or base (true) value. The base is the same value set by SetCameraArmLength()."
+					"description": "Whether to return the current (false) or base (true) value. The base is the same value set by SetCameraArmLength(). Use base if you want to get the original value set by SetCameraArmLength() and not the current (interpolated) value."
 				}
 			],
 			"return": [

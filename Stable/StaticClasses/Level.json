@@ -69,15 +69,28 @@
 					"table_properties": [
 						{
 							"name": "name",
-							"type": "string"
+							"type": "string",
+							"description": "The short name of the Level"
+						},
+						{
+							"name": "path",
+							"type": "string",
+							"description": "The full path to the Level file"
 						},
 						{
 							"name": "is_loaded",
-							"type": "boolean"
+							"type": "boolean",
+							"description": "If the Level was marked to be loaded"
 						},
 						{
 							"name": "is_visible",
-							"type": "boolean"
+							"type": "boolean",
+							"description": "If the Level is currently visible"
+						},
+						{
+							"name": "is_temp",
+							"type": "boolean",
+							"description": "If the Level is temporary (an instance loaded, shouldn't be directly unloaded)"
 						}
 					]
 				}

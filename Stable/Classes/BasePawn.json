@@ -208,7 +208,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetAIAvoidanceSettings",
 			"description": "AI: Configures the RVO (Reciprocal Velocity Obstacles) Avoidance system used by the AIs when moving",
 			"parameters": [
@@ -226,10 +226,10 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "MoveTo",
 			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -253,10 +253,10 @@
 			}
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "Follow",
 			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -300,10 +300,10 @@
 			}
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='character#events-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
 			"relations": {
 				"functions": [
 					"Follow",
@@ -408,12 +408,12 @@
 			}
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "Jump",
 			"description": "Triggers this Character to jump"
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetJumpZVelocity",
 			"description": "Sets the velocity of the jump",
 			"parameters": [
@@ -464,7 +464,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetGravityScale",
 			"description": "Changes the Gravity Scale",
 			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
@@ -487,7 +487,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetCanJump",
 			"description": "Sets if this Character is allowed to Jump",
 			"parameters": [
@@ -498,7 +498,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetCanCrouch",
 			"description": "Sets if this Character is allowed to Crouch and to Prone",
 			"parameters": [
@@ -509,7 +509,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetBrakingSettings",
 			"description": "Sets the Movement Braking Settings of this Character",
 			"parameters": [

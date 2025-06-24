@@ -32,13 +32,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -61,19 +61,19 @@
 					"type": "float",
 					"name": "size",
 					"description": "",
-					"default_value" : "100"
+					"default" : "100"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -108,13 +108,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -153,13 +153,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -194,13 +194,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -229,13 +229,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -259,13 +259,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "size",
 					"description": "",
-					"default_value" : "10"
+					"default" : "10"
 				}
 			]
 		},
@@ -299,13 +299,13 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default_value" : "0"
+					"default" : "0"
 				}
 			]
 		},
@@ -334,19 +334,19 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default_value" : "5"
+					"default" : "5"
 				},
 				{
 					"type": "boolean",
 					"name": "draw_shadow",
 					"description": "",
-					"default_value" : "false"
+					"default" : "false"
 				},
 				{
 					"type": "float",
 					"name": "font_scale",
 					"description": "",
-					"default_value" : "1"
+					"default" : "1"
 				}
 			]
 		}

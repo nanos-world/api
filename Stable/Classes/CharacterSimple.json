@@ -119,7 +119,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetMaxAcceleration",
 			"description": "Sets the max acceleration",
 			"parameters": [
@@ -168,7 +168,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetRotationSettings",
 			"description": "Sets the Rotation Settings of this Character",
 			"parameters": [
@@ -187,7 +187,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetSpeedSettings",
 			"description": "Sets the Speed Settings of this Character",
 			"parameters": [
@@ -202,7 +202,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetPawnSettings",
 			"description": "Sets the Pawn Settings of this Character",
 			"parameters": [
@@ -221,7 +221,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetAirControl",
 			"description": "Sets the amount of movement control allowed when it is in air",
 			"parameters": [
@@ -246,7 +246,7 @@
 			]
 		},
 		{
-			"authority": "server",
+			"authority": "authority",
 			"name": "SetAnimationBlueprint",
 			"description": "Sets the Animation Blueprint of this Character",
 			"parameters": [
@@ -258,6 +258,7 @@
 		},
 		{
 			"name": "CallAnimationBlueprintEvent",
+			"authority": "both",
 			"return": [
 				{
 					"type": "any...",
@@ -266,7 +267,6 @@
 			],
 			"description": "Calls an Animation Blueprint Event or Function",
 			"description_long": "Calls an Animation Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong>",
-			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
