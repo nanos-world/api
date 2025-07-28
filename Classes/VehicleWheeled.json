@@ -194,6 +194,22 @@
 					"name": "rev_down_rate",
 					"default": "600",
 					"description": "Affects how fast the engine RPM slows down"
+				},
+				{
+					"type": "table",
+					"table_properties": [
+						{
+							"name": "X",
+							"type": "Key"
+						},
+						{
+							"name": "Y",
+							"type": "Value"
+						}
+					],
+					"name": "torque_curve",
+					"default": "{}",
+					"description": "Map defining the torque [Normalized 0..1] for a given RPM"
 				}
 			]
 		},
@@ -442,6 +458,29 @@
 					"name": "suspension_force_offset",
 					"default": "Vector(0, 0, 0)",
 					"description": "Vertical offset from where suspension forces are applied (along Z-axis)"
+				},
+				{
+					"type": "SuspensionSweepShape",
+					"name": "suspension_sweep_shape",
+					"default": "SuspensionSweepShape.Raycast",
+					"description": "Wheel suspension trace type, defaults to ray trace"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetDifferentialSetup",
+			"description": "Configures the type of Differential",
+			"parameters": [
+				{
+					"type": "DifferentialType",
+					"name": "differential_type",
+					"description": "Type of Differential"
+				},
+				{
+					"type": "float",
+					"name": "front_rear_split",
+					"description": "Ratio of torque split between front and rear (less than 0.5 means more to front, bigger than 0.5 means more to rear, works only with 4W type)"
 				}
 			]
 		},
@@ -453,11 +492,19 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "relative_location",
+					"description": "Relative location of the steering wheel from the vehicle's origin"
 				},
 				{
 					"type": "integer",
-					"name": "radius"
+					"name": "radius",
+					"description": "Radius of the steering wheel to align the hands properly"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": "Rotation of the steering wheel to align the hands properly",
+					"default": "Rotator(0, 0, 0)"
 				}
 			]
 		},
