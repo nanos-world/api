@@ -232,6 +232,42 @@
 					"description": "The orientation of the vector"
 				}
 			]
+		},
+		{
+			"name": "Dot",
+			"description": "Dot product of two vectors",
+			"description_long": "Returns the dot product between this vector and another vector",
+			"return": [
+				{
+					"type": "number",
+					"description": "the dot product"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "other",
+					"description": "The vector to dot with"
+				}
+			]
+		},
+		{
+			"name": "Cross",
+			"description": "Cross product of two vectors",
+			"description_long": "Returns the cross product between this vector and another vector",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "the cross product vector"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "other",
+					"description": "The vector to cross with"
+				}
+			]
 		}
 	]
 }
