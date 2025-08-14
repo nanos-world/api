@@ -432,6 +432,34 @@
 			"is_native": true,
 			"name": "format",
 			"description": "Returns a formatted version of its variable number of arguments following the description given in its first argument."
+		},
+		{
+			"name": "ToTable",
+			"description": "Split string into table of single characters",
+			"description_long": "Converts this string into a table where each element is a single-character substring of the original string.",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "Table of single-character strings"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "str",
+					"description": "The string to convert into a table"
+				}
+			],
+			"examples": [
+				{
+					"title": "Convert string to table of characters",
+					"content": [
+						"local str = \"hello\"",
+						"local tbl = str:ToTable()"
+					],
+					"output": "{'h', 'e', 'l', 'l', 'o'}"
+				}
+			]
 		}
 	]
 }

@@ -23,6 +23,12 @@
 			"name": "Benchmark",
 			"description": "Benchmarks a function performance",
 			"description_long": "Benchmarks a function performance, outputs in the console the elapsed time",
+			"return": [
+				{
+					"type": "number",
+					"description": "the elapsed time in milliseconds"
+				}
+			],
 			"parameters": [
 				{
 					"type": "string",

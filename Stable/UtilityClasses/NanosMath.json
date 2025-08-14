@@ -118,6 +118,38 @@
 			]
 		},
 		{
+			"name": "LocalToWorld",
+			"description": "Converts a local location and rotation to world coordinates based on an actor's transform",
+			"description_long": "Takes a local position and rotation relative to an actor, applies the actor's location, rotation, and scale to compute world-space location and rotation.",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "the location in world coordinates"
+				},
+				{
+					"type": "Rotator",
+					"description": "the rotation in world coordinates"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "local_location",
+					"description": "The local location to convert"
+				},
+				{
+					"type": "Rotator",
+					"name": "local_rotation",
+					"description": "The local rotation to convert"
+				},
+				{
+					"type": "Actor",
+					"name": "actor",
+					"description": "The actor whose transform defines the local space"
+				}
+			]
+		},
+		{
 			"name": "RandomFloat",
 			"description": "Returns a random float value",
 			"return": [

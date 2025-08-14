@@ -421,6 +421,26 @@
 			}
 		]
 	},
+	"DifferentialType": {
+		"enums": [
+			{
+				"key": "Undefined",
+				"value": "0"
+			},
+			{
+				"key": "AllWheelDrive",
+				"value": "1"
+			},
+			{
+				"key": "FrontWheelDrive",
+				"value": "2"
+			},
+			{
+				"key": "RearWheelDrive",
+				"value": "3"
+			}
+		]
+	},
 	"FallingMode": {
 		"enums": [
 			{
@@ -1310,6 +1330,25 @@
 			{
 				"key": "Air",
 				"value": "21"
+			}
+		]
+	},
+	"SuspensionSweepShape": {
+		"enums": [
+			{
+				"key": "Raycast",
+				"value": "0",
+				"description": "Use ray to determine suspension length to ground - fastest"
+			},
+			{
+				"key": "Spherecast",
+				"value": "1",
+				"description": "Use sphere to determine suspension length to ground"
+			},
+			{
+				"key": "Shapecast",
+				"value": "2",
+				 "description": "Use wheel collision shape to determine suspension length to ground - Slowest"
 			}
 		]
 	},

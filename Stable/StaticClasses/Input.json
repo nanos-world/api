@@ -80,12 +80,16 @@
 		{
 			"authority": "client",
 			"name": "Unregister",
-			"description": "Unregister a keybinding",
+			"description": "Unregisters a keybinding",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "binding_name",
 					"description": "The keybinding id"
+				},
+				{
+					"type": "string",
+					"name": "key_name"
 				}
 			]
 		},

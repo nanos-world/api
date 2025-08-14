@@ -379,6 +379,16 @@
 					"type": "boolean"
 				}
 			]
+		},
+		{
+			"name": "OpenDevTools",
+			"authority": "client",
+			"description": "Opens the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() was not disabled"
+		},
+		{
+			"name": "CloseDevTools",
+			"authority": "client",
+			"description": "Closes the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() not disabled"
 		}
 	],
 	"events": [
