@@ -209,7 +209,7 @@
 			"return": [
 				{
 					"type": "Player",
-					"description": "The local Player"
+					"description": "the local Player"
 				}
 			]
 		},
@@ -220,7 +220,7 @@
 			"return": [
 				{
 					"type": "float",
-					"description": "The Frame Time"
+					"description": "the Frame Time"
 				}
 			]
 		},
@@ -236,13 +236,24 @@
 			]
 		},
 		{
+			"name": "GetLogLevel",
+			"description": "Returns the current log level",
+			"authority": "client",
+			"return": [
+				{
+					"type": "integer",
+					"description": "the log level"
+				}
+			]
+		},
+		{
 			"name": "GetMap",
 			"description": "Returns the current Map",
 			"authority": "client",
 			"return": [
 				{
 					"type": "string",
-					"description": "The current Map"
+					"description": "the current Map"
 				}
 			]
 		},
@@ -253,7 +264,7 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "If the package is loaded"
+					"description": "if the package is loaded"
 				}
 			],
 			"parameters": [

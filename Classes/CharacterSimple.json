@@ -280,6 +280,95 @@
 					"description": "Sequence of arguments to pass to the event"
 				}
 			]
+		},
+		{
+			"name": "BindAnimationBlueprintEventDispatcher",
+			"description": "Assigns and Binds an Animation Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback function to call",
+					"function_parameters": [
+						{
+							"name": "self",
+							"type": "CharacterSimple"
+						},
+						{
+							"name": "params",
+							"type": "any..."
+						}
+					]
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "the callback itself"
+				}
+			]
+		},
+		{
+			"name": "UnbindAnimationBlueprintEventDispatcher",
+			"description": "Unbinds an Animation Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback?",
+					"description": "Optional callback to unbind"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"authority": "client",
+			"name": "Jump",
+			"description": "Event fired when the character has just started jumping"
+		},
+		{
+			"authority": "client",
+			"name": "StartCrouch",
+			"description": "Called when Character crouches"
+		},
+		{
+			"authority": "client",
+			"name": "EndCrouch",
+			"description": "Called when Character stops crouching"
+		},
+		{
+			"authority": "client",
+			"name": "Land",
+			"description": "Called upon landing when falling"
+		},
+		{
+			"authority": "client",
+			"name": "MovementModeChange",
+			"description": "Called when the Character movement mode changes",
+			"arguments": [
+				{
+					"type": "integer",
+					"name": "old_mode",
+					"description": "Previous movement mode"
+				},
+				{
+					"type": "integer",
+					"name": "new_mode",
+					"description": "New movement mode"
+				}
+			]
 		}
 	]
 }

@@ -146,6 +146,25 @@
 				}
 			]
 		}
+		,
+		{
+			"name": "Debug",
+			"description": "Logs a debug message in the console, with formatted arguments. Outputted only when the current log level is Debug or Verbose",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Message to print"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Other arguments to format with the message using string.format"
+				}
+			]
+		}
 	],
 	"events" : [
 		{
