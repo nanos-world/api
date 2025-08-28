@@ -30,6 +30,12 @@
 					"name": "use_base_leader_pose_component",
 					"description": "If true, this component will use the base leader pose component for copying it's animation",
 					"default": "true"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"description": "Optionally attaches this to another attached skeletal mesh (instead of attaching to the root component)",
+					"default": ""
 				}
 			],
 			"relations": {
