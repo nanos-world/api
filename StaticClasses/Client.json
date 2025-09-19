@@ -247,6 +247,23 @@
 			]
 		},
 		{
+			"name": "GetEntityByID",
+			"description": "Returns the entity with the specified ID",
+			"authority": "client",
+			"return": [
+				{
+					"type": "Entity?",
+					"description": "the entity"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "entity_id"
+				}
+			]
+		},
+		{
 			"name": "GetMap",
 			"description": "Returns the current Map",
 			"authority": "client",

@@ -54,8 +54,8 @@
 				},
 				{
 					"type": "float",
-					"name": "max_daw_distance",
-					"default": "5000",
+					"name": "max_draw_distance",
+					"default": "10000",
 					"description": "Max Draw Distance (Good for performance) - 0 for infinite"
 				},
 				{
@@ -73,6 +73,12 @@
 					"type": "boolean",
 					"name": "visible",
 					"default": "true"
+				},
+				{
+					"type": "float",
+					"name": "source_radius",
+					"default": "2",
+					"description": "Radius of light source shape. (Spot and Point types only)"
 				}
 			]
 		}

@@ -508,6 +508,23 @@
 			]
 		},
 		{
+			"name": "GetEntityByID",
+			"description": "Returns the entity with the specified ID",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Entity?",
+					"description": "the entity"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "entity_id"
+				}
+			]
+		},
+		{
 			"name": "GetQueryPort",
 			"description": "Returns the server QueryPort",
 			"authority": "server",
