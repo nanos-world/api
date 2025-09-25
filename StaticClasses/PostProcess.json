@@ -131,6 +131,50 @@
 		},
 		{
 			"authority": "client",
+			"name": "SetGlobalGain",
+			"description": "Set Post Process Global Gain",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "gain"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetGlobalGamma",
+			"description": "Set Post Process Global Gamma",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "gamma"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetGlobalContrast",
+			"description": "Set Post Process Global Contrast",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "contrast"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "SetGlobalOffset",
+			"description": "Set Post Process Global Offset",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "offset"
+				}
+			]
+		},
+		{
+			"authority": "client",
 			"name": "SetLookupTable",
 			"description": "Set Post Process Lookup Table (LUT) Texture",
 			"parameters": [
