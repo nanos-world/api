@@ -62,6 +62,17 @@
 		},
 		{
 			"authority": "authority",
+			"name": "SetPhysicsAsset",
+			"description": "Sets the Physics Asset for the Character",
+			"parameters": [
+				{
+					"type": "Other",
+					"name": "physics_asset"
+				}
+			]
+		},
+		{
+			"authority": "authority",
 			"name": "PlayAnimation",
 			"description": "Plays an Animation Montage on this character",
 			"parameters": [

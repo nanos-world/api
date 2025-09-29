@@ -33,6 +33,10 @@
 			{
 				"key": "UpperBody",
 				"value": "1"
+			},
+			{
+				"key": "Head",
+				"value": "2"
 			}
 		]
 	},

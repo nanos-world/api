@@ -155,7 +155,7 @@
 			}
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "PlayAnimation",
 			"description": "Plays an Animation Montage on this character",
 			"parameters": [
@@ -1221,6 +1221,17 @@
 				{
 					"type": "AimMode",
 					"name": "aim_mode"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetPhysicsAsset",
+			"description": "Sets the Physics Asset for the Character",
+			"parameters": [
+				{
+					"type": "Other",
+					"name": "physics_asset"
 				}
 			]
 		}

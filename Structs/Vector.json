@@ -166,6 +166,28 @@
 			"parameters": []
 		},
 		{
+			"name": "IsNear",
+			"description": "Efficiently checks whether vector is near to another vector within a specified radius",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the vector is near to the other vector"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "other",
+					"description": "The vector to compare to"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The radius to check"
+				}
+			]
+		},
+		{
 			"name": "IsNearlyZero",
 			"description": "Checks whether vector is near to zero within a specified tolerance",
 			"return": [
