@@ -257,6 +257,17 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "SetCanUse",
+			"description": "Sets if this Pickable can be used by the player when held",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_use"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "GetMesh",
 			"description": "Gets the name of the asset this Pickable uses",

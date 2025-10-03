@@ -148,7 +148,7 @@
 			]
 		},
 		{
-			"name": "SetCanvasLayout",
+			"name": "SetSlotCanvasLayout",
 			"authority": "client",
 			"description": "Sets the Layout as Canvas on Screen",
 			"description_long": "Sets the Layout as Canvas on Screen.<br/><br/>Note: This method only works if this Widget is child of a Canvas Panel.<br/><br/><strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
@@ -289,6 +289,63 @@
 				{
 					"type": "string",
 					"name": "property_name"
+				}
+			]
+		},
+		{
+			"name": "SetSlotAlignment",
+			"authority": "client",
+			"description": "Sets the slot alignment for horizontal and vertical positioning",
+			"parameters": [
+				{
+					"type": "WidgetHorizontalAlignment?",
+					"name": "horizontal_alignment",
+					"description": "Horizontal alignment for the slot",
+					"default": "WidgetHorizontalAlignment.Fill"
+				},
+				{
+					"type": "WidgetVerticalAlignment?",
+					"name": "vertical_alignment",
+					"description": "Vertical alignment for the slot",
+					"default": "WidgetVerticalAlignment.Fill"
+				}
+			]
+		},
+		{
+			"name": "SetSlotPadding",
+			"authority": "client",
+			"description": "Sets the slot padding for horizontal and vertical spacing",
+			"parameters": [
+				{
+					"type": "Vector2D?",
+					"name": "padding_horizontal",
+					"description": "Horizontal padding for the slot",
+					"default": "Vector2D(0, 0)"
+				},
+				{
+					"type": "Vector2D?",
+					"name": "padding_vertical",
+					"description": "Vertical padding for the slot",
+					"default": "Vector2D(0, 0)"
+				}
+			]
+		},
+		{
+			"name": "SetSlotSize",
+			"authority": "client",
+			"description": "Sets the slot size and size rule",
+			"parameters": [
+				{
+					"type": "float?",
+					"name": "size",
+					"description": "Size value for the slot",
+					"default": "0.0"
+				},
+				{
+					"type": "WidgetSizeRule?",
+					"name": "slate_size_rule",
+					"description": "Size rule for the slot",
+					"default": "WidgetSizeRule.Automatic"
 				}
 			]
 		}

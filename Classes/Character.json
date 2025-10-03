@@ -436,6 +436,17 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetCanUsePickables",
+			"description": "Sets if this Character is allowed to use Pickables (Weapon, Grenade, Melee...)",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_use"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetCanPunch",
 			"description": "Sets if this Character is allowed to Punch",
 			"parameters": [
@@ -1000,6 +1011,17 @@
 				{
 					"type": "boolean",
 					"name": "can_pickup"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetCanUsePickables",
+			"description": "Gets if can use Pickables (Weapons, Melee, Grenade...)",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "can_use"
 				}
 			]
 		},

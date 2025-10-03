@@ -1710,6 +1710,46 @@
 			}
 		]
 	},
+	"WidgetHorizontalAlignment": {
+		"enums": [
+			{
+				"key": "Fill",
+				"value": "0"
+			},
+			{
+				"key": "Left",
+				"value": "1"
+			},
+			{
+				"key": "Center",
+				"value": "2"
+			},
+			{
+				"key": "Right",
+				"value": "3"
+			}
+		]
+	},
+	"WidgetVerticalAlignment": {
+		"enums": [
+			{
+				"key": "Fill",
+				"value": "0"
+			},
+			{
+				"key": "Top",
+				"value": "1"
+			},
+			{
+				"key": "Center",
+				"value": "2"
+			},
+			{
+				"key": "Bottom",
+				"value": "3"
+			}
+		]
+	},
 	"WidgetVisibility": {
 		"enums": [
 			{
@@ -1723,6 +1763,18 @@
 			{
 				"key": "VisibleNotHitTestable",
 				"value": "2"
+			}
+		]
+	},
+	"WidgetSizeRule": {
+		"enums": [
+			{
+				"key": "Automatic",
+				"value": "0"
+			},
+			{
+				"key": "Fill",
+				"value": "1"
 			}
 		]
 	},

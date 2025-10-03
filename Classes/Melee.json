@@ -65,12 +65,14 @@
 					"description": "The Animation used when attacking"
 				},
 				{
-					"type": "float",
+					"type": "float?",
+					"default": "1.0",
 					"name": "play_rate",
 					"description": "The Animation Play Rate"
 				},
 				{
-					"type": "AnimationSlotType",
+					"type": "AnimationSlotType?",
+					"default": "AnimationSlotType.UpperBody",
 					"name": "slot_Type",
 					"description": "Whether to play it on upper body or full body"
 				}
