@@ -67,13 +67,13 @@
 					"description": "End location of the ray"
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -150,13 +150,13 @@
 					"description": "End location of the ray"
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -238,13 +238,13 @@
 					"description": "Radius of the sphere"
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -326,13 +326,13 @@
 					"description": "Radius of the sphere"
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -419,13 +419,13 @@
 					"description": "Orientation of the box"
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -512,13 +512,13 @@
 					"description": "Orientation of the box"
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -605,13 +605,13 @@
 					"description": "Distance from center of capsule to tip of hemisphere endcap."
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
@@ -698,13 +698,13 @@
 					"description": "Distance from center of capsule to tip of hemisphere endcap."
 				},
 				{
-					"type": "CollisionChannel",
+					"type": "CollisionChannel|integer",
 					"name": "collision_channel",
 					"description": "Supports several channels separating by <code>|</code> (using bit-wise operations)",
 					"default": "WorldStatic"
 				},
 				{
-					"type": "TraceMode",
+					"type": "TraceMode|integer",
 					"name": "trace_mode",
 					"description": "Trace Mode, pass all parameters separating by <code>|</code> (using bit-wise operations)<br/><br/>You need to explicitly pass the modes to return the values you want",
 					"default": "0"
