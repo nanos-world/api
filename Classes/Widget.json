@@ -296,6 +296,7 @@
 			"name": "SetSlotAlignment",
 			"authority": "client",
 			"description": "Sets the slot alignment for horizontal and vertical positioning",
+			"description_long": "Sets the slot alignment for horizontal and vertical positioning.<br/><br/>Note: This method only works if this Widget is child of one of: HorizontalBoxSlot, VerticalBoxSlot, OverlaySlot, SizeBoxSlot, ScrollBoxSlot, BackgroundBlurSlot, BorderSlot, ButtonSlot, ScaleBoxSlot, UniformGridSlot, GridSlot.",
 			"parameters": [
 				{
 					"type": "WidgetHorizontalAlignment?",
@@ -315,6 +316,7 @@
 			"name": "SetSlotPadding",
 			"authority": "client",
 			"description": "Sets the slot padding for horizontal and vertical spacing",
+			"description_long": "Sets the slot padding for horizontal and vertical spacing.<br/><br/>Note: This method only works if this Widget is child of one of: HorizontalBoxSlot, VerticalBoxSlot, OverlaySlot, SizeBoxSlot, ScrollBoxSlot, BackgroundBlurSlot, BorderSlot, ButtonSlot, GridSlot.",
 			"parameters": [
 				{
 					"type": "Vector2D?",
@@ -334,6 +336,7 @@
 			"name": "SetSlotSize",
 			"authority": "client",
 			"description": "Sets the slot size and size rule",
+			"description_long": "Sets the slot size and size rule.<br/><br/>Note: This method only works if this Widget is child of one of: HorizontalBoxSlot, VerticalBoxSlot, ScrollBoxSlot.",
 			"parameters": [
 				{
 					"type": "float?",

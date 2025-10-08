@@ -362,6 +362,17 @@
 			]
 		},
 		{
+			"authority": "network-authority",
+			"name": "SetControlRotation",
+			"description": "Sets the Control Rotation",
+			"parameters": [
+				{
+					"type": "Rotator",
+					"name": "control_rotation"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "HideBone",
 			"description": "Hides a bone of this Character",
