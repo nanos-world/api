@@ -2,6 +2,7 @@
 	"name": "Character",
 	"description": "Characters represents Actors which can be possessed, can move and interact with world. They are the default Skeletal Mesh Character built for nanos world.",
 	"authority": "server",
+	"network_distribution": "enabled",
 	"inheritance": [
 		"Entity",
 		"Actor",
@@ -155,7 +156,7 @@
 			}
 		},
 		{
-			"authority": "server",
+			"authority": "both",
 			"name": "PlayAnimation",
 			"description": "Plays an Animation Montage on this character",
 			"parameters": [
@@ -181,7 +182,8 @@
 				{
 					"type": "float",
 					"name": "blend_out_time",
-					"default": "0.25"
+					"default": "0.25",
+					"description": "Pass it -1 to disable auto blend out and keep the animation running in last pose forever"
 				},
 				{
 					"type": "float",
@@ -436,6 +438,17 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetCanUsePickables",
+			"description": "Sets if this Character is allowed to use Pickables (Weapon, Grenade, Melee...)",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_use"
+				}
+			]
+		},
+		{
+			"authority": "server",
 			"name": "SetCanPunch",
 			"description": "Sets if this Character is allowed to Punch",
 			"parameters": [
@@ -528,16 +541,37 @@
 					"name": "time",
 					"description": "Default is 1 second"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetRagdollOnHitEnabled"
+				]
+			}
 		},
 		{
 			"authority": "server",
-			"name": "SetHitReactionEnabled",
-			"description": "Sets if the character will react to damage by applying small dynamic ragdoll effect to local bones damaged",
+			"name": "SetRagdollOnHitEnabled",
+			"description": "Sets if the character will enter ragdoll mode when being hit by an object or falling from a high place",
 			"parameters": [
 				{
 					"type": "boolean",
 					"name": "is_enabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetHighFallingTime"
+				]
+			}
+		},
+		{
+			"authority": "server",
+			"name": "SetRagdollStandUpCooldown",
+			"description": "Sets the cooldown time (in seconds) before this Character can stand up from ragdoll",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "time"
 				}
 			]
 		},
@@ -563,7 +597,12 @@
 					"name": "impact_damage",
 					"description": "Default is 10"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetRagdollOnHitEnabled"
+				]
+			}
 		},
 		{
 			"authority": "server",
@@ -1005,6 +1044,17 @@
 		},
 		{
 			"authority": "both",
+			"name": "GetCanUsePickables",
+			"description": "Gets if can use Pickables (Weapons, Melee, Grenade...)",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "can_use"
+				}
+			]
+		},
+		{
+			"authority": "both",
 			"name": "GetDamageMultiplier",
 			"description": "Gets the Damage Multiplier of a bone",
 			"return": [
@@ -1221,6 +1271,17 @@
 				{
 					"type": "AimMode",
 					"name": "aim_mode"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetPhysicsAsset",
+			"description": "Sets the Physics Asset for the Character",
+			"parameters": [
+				{
+					"type": "Other",
+					"name": "physics_asset"
 				}
 			]
 		}

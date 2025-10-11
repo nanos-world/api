@@ -2,6 +2,7 @@
 	"name": "VehicleWheeled",
 	"description": "Vehicles are wheeled entities which Characters can possesses and drive.",
 	"authority": "server",
+	"network_distribution": "enabled",
 	"inheritance": [
 		"Entity",
 		"Actor",

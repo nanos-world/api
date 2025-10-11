@@ -319,34 +319,152 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetVOIPChannel",
-			"description": "Sets the VOIP Channel of this Player (will only communicate with other players in the same channel)",
+			"name": "SetVOIPGlobalChannelSetting",
+			"description": "Sets the VOIP setting for a specific global channel",
 			"parameters": [
 				{
 					"name": "channel",
-					"type": "integer"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "SetVOIPSetting",
-			"description": "Sets the VOIP Settings of this Player",
-			"parameters": [
+					"type": "integer",
+					"description": "0-31"
+				},
 				{
-					"name": "voip_setting",
+					"name": "setting",
 					"type": "VOIPSetting"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalAllChannelsSetting",
+					"GetVOIPListeningChannels",
+					"GetVOIPSpeakingChannels"
+				],
+				"events": [
+					"VOIPGlobalChannelSettingChange"
+				]
+			}
+		},
+		{
+			"authority": "server",
+			"name": "SetVOIPGlobalAllChannelsSetting",
+			"description": "Sets the VOIP setting for all global channels",
+			"parameters": [
+				{
+					"name": "setting",
+					"type": "VOIPSetting"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalChannelSetting",
+					"GetVOIPListeningChannels",
+					"GetVOIPSpeakingChannels"
+				],
+				"events": [
+					"VOIPGlobalChannelSettingChange"
+				]
+			}
+		},
+		{
+			"authority": "server",
+			"name": "SetVOIPLocalSetting",
+			"description": "Sets the VOIP setting for the local/proximity",
+			"parameters": [
+				{
+					"name": "setting",
+					"type": "VOIPSetting"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalVolume"
+				],
+				"events": [
+					"VOIPLocalSettingChange"
+				]
+			}
 		},
 		{
 			"authority": "both",
-			"name": "SetVOIPVolume",
-			"description": "Sets the VOIP Volume of this Player",
+			"name": "SetVOIPLocalVolume",
+			"description": "Sets the local/proximity VOIP input/output volume. It only affects the local/proximity channel",
 			"parameters": [
 				{
 					"name": "volume",
 					"type": "float"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalSetting"
+				],
+				"events": [
+					"VOIPLocalSettingChange"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPGlobalVolume",
+			"description": "Sets the global VOIP volume. It only affects the global channels",
+			"parameters": [
+				{
+					"name": "volume",
+					"type": "float"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPGlobalHighPassFilter",
+			"description": "Sets the global VOIP high-pass filter threshold frequency",
+			"description_long": "Sets the global VOIP high-pass filter threshold frequency. Set it to 0 to disable it",
+			"parameters": [
+				{
+					"name": "threshold",
+					"type": "integer"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalLowPassFilter"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPGlobalLowPassFilter",
+			"description": "Sets the global VOIP low-pass filter threshold frequency",
+			"description_long": "Sets the global VOIP low-pass filter threshold frequency. Set it to 0 to disable it",
+			"parameters": [
+				{
+					"name": "threshold",
+					"type": "integer"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalHighPassFilter"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPMuted",
+			"description": "Mutes or unmutes VOIP for this player",
+			"parameters": [
+				{
+					"name": "is_muted",
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "IsVOIPMuted",
+			"description": "Returns whether VOIP is muted for this player",
+			"return": [
+				{
+					"type": "boolean"
 				}
 			]
 		},
@@ -508,11 +626,23 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetVOIPChannel",
+			"name": "GetVOIPListeningChannels",
+			"description": "Returns a list of VOIP channels this player is listening to",
 			"return": [
 				{
-					"name": "channel",
-					"type": "integer"
+					"type": "integer[]",
+					"description": "list of channel indexes"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPSpeakingChannels",
+			"description": "Returns a list of VOIP channels this player is currently speaking to",
+			"return": [
+				{
+					"type": "integer[]",
+					"description": "list of channel indexes"
 				}
 			]
 		},
@@ -533,16 +663,6 @@
 				{
 					"type": "boolean",
 					"name": "is_local_player"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetVOIPSetting",
-			"return": [
-				{
-					"name": "voip_setting",
-					"type": "VOIPSetting"
 				}
 			]
 		}
@@ -644,6 +764,60 @@
 					"description": "When 'is_talking' is true, return false to prevent this voice stream from playing (on server will prevent for everyone, on client will prevent only for the client)"
 				}
 			]
+		}
+		,
+		{
+			"authority": "both",
+			"name": "VOIPGlobalChannelSettingChange",
+			"description": "Triggered when a global VOIP channel setting changes for this player",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				},
+				{
+					"name": "channel",
+					"type": "integer"
+				},
+				{
+					"name": "old_setting",
+					"type": "VOIPSetting"
+				},
+				{
+					"name": "new_setting",
+					"type": "VOIPSetting"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalChannelSetting",
+					"SetVOIPGlobalAllChannelsSetting"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "VOIPLocalSettingChange",
+			"description": "Triggered when the local VOIP setting changes for this player",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Player"
+				},
+				{
+					"name": "old_setting",
+					"type": "VOIPSetting"
+				},
+				{
+					"name": "new_setting",
+					"type": "VOIPSetting"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalSetting"
+				]
+			}
 		}
 	]
 }

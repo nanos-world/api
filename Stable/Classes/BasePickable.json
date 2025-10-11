@@ -7,7 +7,7 @@
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Spawns and attaches a SkeletalMesh to this Pickable, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -24,6 +24,18 @@
 					"name": "use_parent_bounds",
 					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
 					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "use_base_leader_pose_component",
+					"description": "If true, this component will use the base leader pose component for copying it's animation",
+					"default": "true"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"description": "Optionally attaches this to another attached skeletal mesh (instead of attaching to the root component)",
+					"default": ""
 				}
 			],
 			"relations": {
@@ -71,6 +83,12 @@
 					"name": "use_parent_bounds",
 					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
 					"default": "true"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"description": "Optionally attaches this to another attached static mesh (instead of attaching to the root component)",
+					"default": ""
 				}
 			],
 			"relations": {
@@ -235,6 +253,17 @@
 				{
 					"type": "boolean",
 					"name": "is_pickable"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetCanUse",
+			"description": "Sets if this Pickable can be used by the player when held",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "can_use"
 				}
 			]
 		},

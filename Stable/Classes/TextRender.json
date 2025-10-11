@@ -2,6 +2,7 @@
 	"name": "TextRender",
 	"description": "A Text Render class is useful for spawning Texts in 3D world, you can even attach it to other entities.",
 	"authority": "both",
+	"network_distribution": "none",
 	"inheritance": [
 		"Entity",
 		"Actor",

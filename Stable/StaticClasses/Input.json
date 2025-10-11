@@ -71,7 +71,7 @@
 					"description": "The Key to use by default if this wasn't set before"
 				},
 				{
-					"type": "string",
+					"type": "string?",
 					"name": "description",
 					"description": "Text to show on Key Bindings Settings"
 				}

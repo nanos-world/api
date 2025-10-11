@@ -2,6 +2,7 @@
 	"name": "Trigger",
 	"description": "A Trigger class is a utility class to trigger events when any Entity enters an Area.",
 	"authority": "both",
+	"network_distribution": "none",
 	"inheritance": [
 		"Entity",
 		"Actor"

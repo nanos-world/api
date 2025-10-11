@@ -497,6 +497,34 @@
 			]
 		},
 		{
+			"name": "GetLogLevel",
+			"description": "Returns the current log level",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer",
+					"description": "the log level"
+				}
+			]
+		},
+		{
+			"name": "GetEntityByID",
+			"description": "Returns the entity with the specified ID",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Entity?",
+					"description": "the entity"
+				}
+			],
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "entity_id"
+				}
+			]
+		},
+		{
 			"name": "GetQueryPort",
 			"description": "Returns the server QueryPort",
 			"authority": "server",

@@ -33,6 +33,10 @@
 			{
 				"key": "UpperBody",
 				"value": "1"
+			},
+			{
+				"key": "Head",
+				"value": "2"
 			}
 		]
 	},
@@ -1536,18 +1540,20 @@
 	"VOIPSetting": {
 		"enums": [
 			{
-				"key": "Local",
-				"value": "0",
-				"description": "3D Sound"
+				"key": "None",
+				"value": "0"
 			},
 			{
-				"key": "Global",
-				"value": "1",
-				"description": "2D Sound"
+				"key": "ListenOnly",
+				"value": "1"
 			},
 			{
-				"key": "Muted",
+				"key": "SpeakOnly",
 				"value": "2"
+			},
+			{
+				"key": "Both",
+				"value": "3"
 			}
 		]
 	},
@@ -1704,6 +1710,46 @@
 			}
 		]
 	},
+	"WidgetHorizontalAlignment": {
+		"enums": [
+			{
+				"key": "Fill",
+				"value": "0"
+			},
+			{
+				"key": "Left",
+				"value": "1"
+			},
+			{
+				"key": "Center",
+				"value": "2"
+			},
+			{
+				"key": "Right",
+				"value": "3"
+			}
+		]
+	},
+	"WidgetVerticalAlignment": {
+		"enums": [
+			{
+				"key": "Fill",
+				"value": "0"
+			},
+			{
+				"key": "Top",
+				"value": "1"
+			},
+			{
+				"key": "Center",
+				"value": "2"
+			},
+			{
+				"key": "Bottom",
+				"value": "3"
+			}
+		]
+	},
 	"WidgetVisibility": {
 		"enums": [
 			{
@@ -1717,6 +1763,18 @@
 			{
 				"key": "VisibleNotHitTestable",
 				"value": "2"
+			}
+		]
+	},
+	"WidgetSizeRule": {
+		"enums": [
+			{
+				"key": "Automatic",
+				"value": "0"
+			},
+			{
+				"key": "Fill",
+				"value": "1"
 			}
 		]
 	},

@@ -24,6 +24,18 @@
 					"name": "use_parent_bounds",
 					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
 					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "use_base_leader_pose_component",
+					"description": "If true, this component will use the base leader pose component for copying it's animation",
+					"default": "true"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"description": "Optionally attaches this to another attached skeletal mesh (instead of attaching to the root component)",
+					"default": ""
 				}
 			],
 			"relations": {
@@ -71,6 +83,12 @@
 					"name": "use_parent_bounds",
 					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
 					"default": "true"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"description": "Optionally attaches this to another attached static mesh (instead of attaching to the root component)",
+					"default": ""
 				}
 			],
 			"relations": {
@@ -174,7 +192,7 @@
 			"description": "Removes all SkeletalMeshes attached"
 		},
 		{
-			"authority": "authority",
+			"authority": "both",
 			"name": "StopAnimation",
 			"description": "Stops an Animation Montage on this character",
 			"parameters": [
@@ -340,6 +358,39 @@
 				{
 					"type": "Rotator",
 					"name": "control_rotation"
+				}
+			]
+		},
+		{
+			"authority": "network-authority",
+			"name": "SetControlRotation",
+			"description": "Sets the Control Rotation",
+			"parameters": [
+				{
+					"type": "Rotator",
+					"name": "control_rotation"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetHitReactionEnabled",
+			"description": "Sets if the character will react to damage by applying small dynamic ragdoll effect to local bones damaged",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetRagdollOnDeathEnabled",
+			"description": "Sets if the character will enter ragdoll mode when it dies. You can set it to false to apply custom Death animations",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
 				}
 			]
 		},
