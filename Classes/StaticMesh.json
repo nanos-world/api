@@ -2,6 +2,7 @@
 	"name": "StaticMesh",
 	"description": "A StaticMesh entity represents a Mesh which can be spawned in the world, can't move and is more optimized for using in decorating the world.",
 	"authority": "both",
+	"network_distribution": "disabled",
 	"inheritance": [
 		"Entity",
 		"Actor",

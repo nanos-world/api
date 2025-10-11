@@ -2,6 +2,7 @@
 	"name": "Particle",
 	"description": "Class to spawn Particle Systems used to create effects in the world.",
 	"authority": "both",
+	"network_distribution": "none",
 	"inheritance": [
 		"Entity",
 		"Actor"

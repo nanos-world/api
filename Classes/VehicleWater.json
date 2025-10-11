@@ -2,6 +2,7 @@
 	"name": "VehicleWater",
 	"description": "VehicleWater are entities which Characters can possesses and drive over the water with dynamic physics.",
 	"authority": "server",
+	"network_distribution": "enabled",
 	"inheritance": [
 		"Entity",
 		"Actor",

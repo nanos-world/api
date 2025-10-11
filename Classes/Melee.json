@@ -2,6 +2,7 @@
 	"name": "Melee",
 	"description": "A Melee represents an Entity which can be Pickable by a Character and can be used to melee attack, Charactes can hold it with hands with pre-defined handling modes.",
 	"authority": "server",
+	"network_distribution": "enabled",
 	"inheritance": [
 		"Entity",
 		"Actor",

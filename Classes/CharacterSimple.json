@@ -2,6 +2,7 @@
 	"name": "CharacterSimple",
 	"description": "CharacterSimple is a simpler Character implementation with basic Movement implementation. Aimed for custom NPCs or basic Pawns.",
 	"authority": "both",
+	"network_distribution": "enabled",
 	"inheritance": [
 		"Entity",
 		"Actor",
@@ -98,7 +99,8 @@
 				{
 					"type": "float",
 					"name": "blend_out_time",
-					"default": "0.25"
+					"default": "0.25",
+					"description": "Pass it -1 to disable auto blend out and keep the animation running in last pose forever"
 				},
 				{
 					"type": "float",

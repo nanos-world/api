@@ -2,6 +2,7 @@
 	"name": "Light",
 	"description": "A Light represents a Lighting source.",
 	"authority": "both",
+	"network_distribution": "none",
 	"inheritance": [
 		"Entity",
 		"Actor"
