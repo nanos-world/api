@@ -285,7 +285,13 @@
 					"default": "nil",
 					"description": "New player which will assume the Network Authority of this Actor"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthorityAutoDistributed",
+					"IsNetworkDistributed"
+				]
+			}
 		},
 		{
 			"name": "SetNetworkAuthorityAutoDistributed",
@@ -298,7 +304,13 @@
 					"name": "auto_distribute",
 					"description": "If this Actor will be auto network distributed"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthority",
+					"IsNetworkDistributed"
+				]
+			}
 		},
 		{
 			"name": "TranslateTo",
@@ -396,7 +408,13 @@
 				{
 					"type": "boolean"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthorityAutoDistributed",
+					"SetNetworkAuthority"
+				]
+			}
 		},
 		{
 			"name": "GetAttachedEntities",

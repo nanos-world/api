@@ -539,16 +539,37 @@
 					"name": "time",
 					"description": "Default is 1 second"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetRagdollOnHitEnabled"
+				]
+			}
 		},
 		{
 			"authority": "server",
-			"name": "SetHitReactionEnabled",
-			"description": "Sets if the character will react to damage by applying small dynamic ragdoll effect to local bones damaged",
+			"name": "SetRagdollOnHitEnabled",
+			"description": "Sets if the character will enter ragdoll mode when being hit by an object or falling from a high place",
 			"parameters": [
 				{
 					"type": "boolean",
 					"name": "is_enabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetHighFallingTime"
+				]
+			}
+		},
+		{
+			"authority": "server",
+			"name": "SetRagdollStandUpCooldown",
+			"description": "Sets the cooldown time (in seconds) before this Character can stand up from ragdoll",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "time"
 				}
 			]
 		},
@@ -574,7 +595,12 @@
 					"name": "impact_damage",
 					"description": "Default is 10"
 				}
-			]
+			],
+			"relations": {
+				"functions": [
+					"SetRagdollOnHitEnabled"
+				]
+			}
 		},
 		{
 			"authority": "server",

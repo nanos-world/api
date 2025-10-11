@@ -373,6 +373,28 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "SetHitReactionEnabled",
+			"description": "Sets if the character will react to damage by applying small dynamic ragdoll effect to local bones damaged",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			]
+		},
+		{
+			"authority": "server",
+			"name": "SetRagdollOnDeathEnabled",
+			"description": "Sets if the character will enter ragdoll mode when it dies. You can set it to false to apply custom Death animations",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "HideBone",
 			"description": "Hides a bone of this Character",
