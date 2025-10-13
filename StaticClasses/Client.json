@@ -90,6 +90,24 @@
 			]
 		},
 		{
+			"name": "SetSettingGammaOverride",
+			"description": "Overrides the gamma setting and prevents the client from changing it",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "override",
+					"description": "Whether to override the gamma setting"
+				},
+				{
+					"type": "float?",
+					"name": "new_gamma",
+					"description": "The new gamma value if overriding",
+					"default": "1.0"
+				}
+			]
+		},
+		{
 			"name": "SetHighlightColor",
 			"description": "Changes the Highlight Color for highlighted actors at a specific Index",
 			"description_long": "Changes the Highlight Color for highlighted actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 differents indexes (0, 1 or 2).",
