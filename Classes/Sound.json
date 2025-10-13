@@ -68,7 +68,7 @@
 				},
 				{
 					"type": "boolean",
-					"name": "keep_playig_when_silent",
+					"name": "keep_playing_when_silent",
 					"default": "false",
 					"description": "Only used if 3D sound - Use with caution, it may cause performance issues!"
 				},
@@ -77,6 +77,12 @@
 					"name": "loop_mode",
 					"default": "Default",
 					"description": "Whether should force sound to loop"
+				},
+				{
+					"type": "boolean",
+					"name": "auto_play",
+					"default": "true",
+					"description": "If should should immediately play when loaded"
 				}
 			]
 		}
@@ -161,7 +167,7 @@
 		{
 			"name": "SetLowPassFilter",
 			"authority": "client",
-			"description": "Sets lowpass filter frequency. Sets 0 to disable it.",
+			"description": "Sets low-pass filter frequency. Sets 0 to disable it.",
 			"parameters": [
 				{
 					"type": "float",
