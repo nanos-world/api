@@ -41,7 +41,7 @@
 					"description": ""
 				},
 				{
-					"type": "string",
+					"type": "boolean",
 					"name": "reset_time",
 					"description": "Whether or not to reset current activity elapsed time",
 					"default": "false"
