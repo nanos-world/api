@@ -360,17 +360,6 @@
 			]
 		},
 		{
-			"authority": "client",
-			"name": "SetCameraOffset",
-			"description": "Sets the Camera Offset (only affects TPS)",
-			"parameters": [
-				{
-					"type": "Vector",
-					"name": "camera_offset"
-				}
-			]
-		},
-		{
 			"authority": "server",
 			"name": "SetCanAim",
 			"description": "Sets if this Character is allowed to Aim",
