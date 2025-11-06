@@ -130,7 +130,7 @@
 		},
 		{
 			"name": "RunCommand",
-			"description": "Runs a Console Command programmatically",
+			"description": "Runs a Console Command programmatically (only scripting-registered commands can be triggered)",
 			"authority": "both",
 			"parameters": [
 				{
