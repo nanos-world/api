@@ -289,15 +289,15 @@
 			"return": [
 				{
 					"type": "integer",
-					"description": "hours"
+					"name": "hours"
 				},
 				{
 					"type": "integer",
-					"description": "minutes"
+					"name": "minutes"
 				},
 				{
 					"type": "integer",
-					"description": "seconds"
+					"name": "seconds"
 				}
 			]
 		},

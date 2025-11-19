@@ -249,9 +249,8 @@
 			"description": "Gets the Actor attached to Start",
 			"return": [
 				{
-					"type": "Actor",
-					"description": "the Actor or nil",
-					"name": "other"
+					"type": "Actor?",
+					"name": "attached_actor"
 				}
 			]
 		},
@@ -261,9 +260,8 @@
 			"description": "Gets the Actor attached to End",
 			"return": [
 				{
-					"type": "Actor",
-					"description": "the Actor or nil",
-					"name": "other"
+					"type": "Actor?",
+					"name": "attached_actor"
 				}
 			]
 		}
