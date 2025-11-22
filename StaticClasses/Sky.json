@@ -6,6 +6,12 @@
 		{
 			"authority": "client",
 			"name": "Spawn",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "true if an existing Ultra Dynamic Sky Actor was found in the map and its reference was used, false if a new one was spawned"
+				}
+			],
 			"description": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page",
 			"description_long": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page. Internally this calls <code>Sky.DestroyAllSky()</code> automatically",
 			"parameters": [
