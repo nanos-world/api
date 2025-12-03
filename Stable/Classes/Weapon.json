@@ -901,7 +901,7 @@
 	],
 	"events": [
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "Fire",
 			"description": "Triggered when Weapon fires (this will be triggered for each shot)",
 			"arguments": [
@@ -963,11 +963,11 @@
 					"type": "Weapon"
 				},
 				{
-					"name": "old_ammo_clip",
+					"name": "old_ammo_bag",
 					"type": "integer"
 				},
 				{
-					"name": "new_ammo_clip",
+					"name": "new_ammo_bag",
 					"type": "integer"
 				}
 			]

@@ -745,7 +745,7 @@
 			}
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "VOIP",
 			"description": "When a Player starts/ends using VOIP",
 			"arguments": [

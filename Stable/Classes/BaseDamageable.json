@@ -71,6 +71,17 @@
 			]
 		},
 		{
+			"authority": "both",
+			"name": "IsDead",
+			"description": "Returns if the entity is dead",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "is_dead"
+				}
+			]
+		},
+		{
 			"authority": "server",
 			"name": "Respawn",
 			"description": "Respawns the Entity, fullying it's Health and moving it to it's Initial Location",

@@ -1392,7 +1392,7 @@
 			]
 		},
 		{
-			"authority": "both",
+			"authority": "both-net-authority-first",
 			"name": "Fire",
 			"description": "When Character fires a Weapon",
 			"arguments": [

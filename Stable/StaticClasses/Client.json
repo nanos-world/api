@@ -58,6 +58,28 @@
 			]
 		},
 		{
+			"name": "ShowNotification",
+			"description": "Shows a notification using the built-in notification system.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text"
+				},
+				{
+					"type": "NotificationType",
+					"name": "notification_type",
+					"default": "NotificationType.Info"
+				},
+				{
+					"type": "boolean",
+					"name": "add_to_notification_list",
+					"description": "Whether to add this notification to the notification list (accessible from the bell icon on the top-right corner)",
+					"default": "true"
+				}
+			]
+		},
+		{
 			"name": "GetNearClipPlane",
 			"description": "Gets the Near Clip Plane value",
 			"authority": "client",
@@ -86,6 +108,24 @@
 					"type": "boolean",
 					"name": "enable_debug",
 					"description": ""
+				}
+			]
+		},
+		{
+			"name": "SetSettingGammaOverride",
+			"description": "Overrides the gamma setting and prevents the client from changing it",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "override",
+					"description": "Whether to override the gamma setting"
+				},
+				{
+					"type": "float?",
+					"name": "new_gamma",
+					"description": "The new gamma value if overriding",
+					"default": "1.0"
 				}
 			]
 		},
