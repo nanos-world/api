@@ -1117,6 +1117,30 @@
 			}
 		]
 	},
+	"NotificationType": {
+		"enums": [
+			{
+				"key": "Info",
+				"value": "0"
+			},
+			{
+				"key": "Warning",
+				"value": "1"
+			},
+			{
+				"key": "Error",
+				"value": "2"
+			},
+			{
+				"key": "Fatal",
+				"value": "3"
+			},
+			{
+				"key": "Success",
+				"value": "4"
+			}
+		]
+	},
 	"PackageType": {
 		"enums": [
 			{
