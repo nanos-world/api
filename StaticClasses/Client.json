@@ -76,6 +76,12 @@
 					"name": "add_to_notification_list",
 					"description": "Whether to add this notification to the notification list (accessible from the bell icon on the top-right corner)",
 					"default": "true"
+				},
+				{
+					"type": "float",
+					"name": "duration",
+					"description": "Duration in seconds to display the notification",
+					"default": "10"
 				}
 			]
 		},
