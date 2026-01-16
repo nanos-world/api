@@ -5,13 +5,31 @@
 	"functions": [
 		{
 			"name": "AddImpulse",
-			"description": "Applies a force in world world to this Actor",
-			"description_long": "Applies a force in world world to this Actor (the force is applied client side, by, in most cases, the player closest to this Actor)",
+			"description": "Add an impulse to this Actor. Good for one time instant burst",
 			"authority": "network-authority",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "force"
+					"name": "impulse",
+					"description": "Magnitude and direction of impulse to apply"
+				},
+				{
+					"type": "boolean",
+					"name": "velocity_change",
+					"default": "false",
+					"description": "Whether to ignore mass"
+				}
+			]
+		},
+		{
+			"name": "AddAngularImpulse",
+			"description": "Add an angular impulse to this Actor. Good for one time instant burst",
+			"authority": "network-authority",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "angular_impulse",
+					"description": "Magnitude and direction of impulse to apply. Direction is axis of rotation. In Radians"
 				},
 				{
 					"type": "boolean",

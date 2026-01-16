@@ -405,6 +405,11 @@
 					"type": "Vector",
 					"name": "velocity",
 					"description": "The Vehicle velocity at the moment it hits"
+				},
+				{
+					"type": "Actor?",
+					"name": "other_actor",
+					"description": "The other actor that hit this Vehicle"
 				}
 			]
 		},

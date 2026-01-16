@@ -126,6 +126,51 @@
 				}
 			],
 			"authority": "both"
+		},
+		{
+			"name": "SetMassOverride",
+			"description": "Override the mass (in Kg) of this Prop",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "mass",
+					"description": "Mass in KG to override. Pass -1 to reset to default"
+				}
+			],
+			"authority": "authority"
+		},
+		{
+			"name": "GetMassOverride",
+			"description": "Gets the overridden mass",
+			"return": [
+				{
+					"type": "float",
+					"description": "The overridden mass"
+				}
+			],
+			"authority": "both"
+		},
+		{
+			"name": "SetMassScale",
+			"description": "Change the mass scale used to calculate the mass of this Prop",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "scale"
+				}
+			],
+			"authority": "authority"
+		},
+		{
+			"name": "GetMassScale",
+			"description": "Gets the mass scale",
+			"return": [
+				{
+					"type": "float",
+					"description": "The mass scale"
+				}
+			],
+			"authority": "both"
 		}
 	],
 	"events": [
@@ -175,6 +220,11 @@
 					"type": "Vector",
 					"name": "velocity",
 					"description": "The Prop velocity at the moment it hits"
+				},
+				{
+					"type": "Actor?",
+					"name": "other_actor",
+					"description": "The other actor that hit this Prop"
 				}
 			]
 		},

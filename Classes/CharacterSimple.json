@@ -190,11 +190,18 @@
 			"parameters": [
 				{
 					"type": "integer",
+					"default": "600",
 					"name": "max_walk_speed"
 				},
 				{
 					"type": "integer",
+					"default": "300",
 					"name": "max_walk_speed_crouched"
+				},
+				{
+					"type": "integer",
+					"default": "600",
+					"name": "max_fly_speed"
 				}
 			]
 		},

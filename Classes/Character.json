@@ -499,17 +499,6 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetFlyingMode",
-			"description": "Sets the Flying Mode",
-			"parameters": [
-				{
-					"type": "boolean",
-					"name": "flying_mode"
-				}
-			]
-		},
-		{
-			"authority": "server",
 			"name": "SetFOVMultiplier",
 			"description": "Sets the Field of View multiplier",
 			"parameters": [
@@ -1078,17 +1067,6 @@
 			"return": [
 				{
 					"type": "FallingMode"
-				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetFlyingMode",
-			"description": "Gets if it's in Flying mode",
-			"return": [
-				{
-					"type": "boolean",
-					"name": "flying_mode"
 				}
 			]
 		},

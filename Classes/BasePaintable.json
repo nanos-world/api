@@ -218,6 +218,130 @@
 		},
 		{
 			"authority": "both",
+			"name": "GetMaterialColorParameter",
+			"description": "Gets a Color parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "or nil if parameter was not found"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialVectorParameter",
+			"description": "Gets a Vector parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"name": "vector",
+					"description": "or nil if parameter was not found"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialTextureParameter",
+			"description": "Gets a Texture parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "string",
+					"name": "texture",
+					"description": "or nil if parameter was not found"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialScalarParameter",
+			"description": "Gets a Scalar parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "float",
+					"name": "scalar",
+					"description": "or nil if parameter was not found"
+				}
+			]
+		},
+		{
+			"authority": "both",
 			"name": "SetPhysicalMaterial",
 			"description": "Overrides this Actor's Physical Material with a new one",
 			"parameters": [

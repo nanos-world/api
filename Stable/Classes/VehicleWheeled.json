@@ -481,6 +481,7 @@
 				{
 					"type": "float",
 					"name": "front_rear_split",
+					"default": "0.5",
 					"description": "Ratio of torque split between front and rear (less than 0.5 means more to front, bigger than 0.5 means more to rear, works only with 4W type)"
 				}
 			]

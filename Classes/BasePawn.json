@@ -214,6 +214,28 @@
 			]
 		},
 		{
+			"authority": "server",
+			"name": "SetFlyingMode",
+			"description": "Sets the Flying Mode",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "flying_mode"
+				}
+			]
+		},
+		{
+			"authority": "both",
+			"name": "GetFlyingMode",
+			"description": "Gets if it's in Flying mode",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "flying_mode"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "GetMovingTo",
 			"description": "Gets the Moving To location",

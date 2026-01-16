@@ -351,6 +351,11 @@
 					"type": "Vector",
 					"name": "velocity",
 					"description": "The Pickable's velocity at the moment it hit"
+				},
+				{
+					"type": "Actor?",
+					"name": "other_actor",
+					"description": "The other actor that hit this Pickable"
 				}
 			]
 		},
