@@ -24,12 +24,14 @@
 		{
 			"name": "Close",
 			"authority": "both",
-			"description": "Closes the file and destroys the entity"
+			"description": "Closes the file and destroys the entity",
+			"efficiency": "blocking"
 		},
 		{
 			"name": "Flush",
 			"authority": "both",
-			"description": "Flushes content to the file"
+			"description": "Flushes content to the file",
+			"efficiency": "blocking"
 		},
 		{
 			"return": [
@@ -40,7 +42,8 @@
 			],
 			"authority": "both",
 			"name": "IsEOF",
-			"description": "Checks if the file status is End of File"
+			"description": "Checks if the file status is End of File",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -51,7 +54,8 @@
 			],
 			"authority": "both",
 			"name": "IsBad",
-			"description": "Checks if the file status is Bad"
+			"description": "Checks if the file status is Bad",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -62,7 +66,8 @@
 			],
 			"authority": "both",
 			"name": "IsGood",
-			"description": "Checks if the file status is Good"
+			"description": "Checks if the file status is Good",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -73,7 +78,8 @@
 			],
 			"authority": "both",
 			"name": "HasFailed",
-			"description": "Checks if the last operation has Failed"
+			"description": "Checks if the last operation has Failed",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -92,7 +98,8 @@
 					"default": "0",
 					"description": "Length to be read from file, leave it empty (or 0) to read the whole file"
 				}
-			]
+			],
+			"efficiency": "blocking"
 		},
 		{
 			"authority": "both",
@@ -117,7 +124,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -128,7 +136,8 @@
 			],
 			"authority": "both",
 			"name": "ReadLine",
-			"description": "Reads and returns the next file line"
+			"description": "Reads and returns the next file line",
+			"efficiency": "blocking"
 		},
 		{
 			"return": [
@@ -139,7 +148,8 @@
 			],
 			"authority": "both",
 			"name": "ReadJSON",
-			"description": "Reads the whole file as a JSON and returns it."
+			"description": "Reads the whole file as a JSON and returns it.",
+			"efficiency": "blocking"
 		},
 		{
 			"authority": "both",
@@ -158,7 +168,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Seek",
@@ -170,7 +181,8 @@
 					"name": "position",
 					"description": "Position to offset the file pointer"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"return": [
@@ -181,7 +193,8 @@
 			],
 			"authority": "both",
 			"name": "Size",
-			"description": "Returns the size of the file"
+			"description": "Returns the size of the file",
+			"efficiency": "fast"
 		},
 		{
 			"name": "Skip",
@@ -193,7 +206,8 @@
 					"name": "amount",
 					"description": "Amount to offset the file pointer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -204,7 +218,8 @@
 			],
 			"authority": "both",
 			"name": "Tell",
-			"description": "Returns the current file pointer position"
+			"description": "Returns the current file pointer position",
+			"efficiency": "fast"
 		},
 		{
 			"name": "Write",
@@ -216,7 +231,8 @@
 					"name": "data",
 					"description": "Data to write to the file"
 				}
-			]
+			],
+			"efficiency": "slow"
 		}
 	],
 	"static_functions": [
@@ -237,7 +253,8 @@
 					"name": "path",
 					"description": "Path to file"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"type": "boolean",
@@ -256,7 +273,8 @@
 					"name": "path",
 					"description": "Path to folder"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "Remove",
@@ -274,7 +292,8 @@
 					"name": "path",
 					"description": "Path to file or folder"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "Exists",
@@ -292,7 +311,8 @@
 					"name": "path",
 					"description": "Path to file or folder"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "IsDirectory",
@@ -310,7 +330,8 @@
 					"name": "path",
 					"description": "Path to folder"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "IsRegularFile",
@@ -328,7 +349,8 @@
 					"name": "path",
 					"description": "Path to file"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetDirectories",
@@ -354,7 +376,8 @@
 					"type": "string[]",
 					"description": "List of directories"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetFiles",
@@ -386,7 +409,8 @@
 					"type": "string[]",
 					"description": "List of files"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetFullPath",
@@ -404,7 +428,8 @@
 					"name": "path",
 					"description": "Path to file or directory"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }
