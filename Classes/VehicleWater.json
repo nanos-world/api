@@ -50,7 +50,8 @@
 					"type": "Vector",
 					"name": "offset"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -62,7 +63,8 @@
 					"type": "integer",
 					"name": "force"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

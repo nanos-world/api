@@ -59,7 +59,8 @@
 					"name": "adjust_capsule_size",
 					"description": "Auto adjust the capsule size based on the Mesh size"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "authority",
@@ -70,7 +71,8 @@
 					"type": "Other",
 					"name": "physics_asset"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "authority",
@@ -113,7 +115,8 @@
 					"default": "false",
 					"description": "Stops all running Montages from the same Group"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "authority",
@@ -125,7 +128,8 @@
 					"name": "acceleration",
 					"description": "Default is 2048"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -162,7 +166,8 @@
 					"name": "camera_lag_max_distance",
 					"default": "1.0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -181,7 +186,8 @@
 					"type": "boolean",
 					"name": "orient_rotation_to_movement"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -203,7 +209,8 @@
 					"default": "600",
 					"name": "max_fly_speed"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -222,7 +229,8 @@
 					"type": "boolean",
 					"name": "use_controller_rotation_roll"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -247,7 +255,8 @@
 					"default": "25",
 					"description": "When falling, if lateral velocity magnitude is less than this value, air_control is multiplied by boost_multiplier. Setting this to zero will disable air control boosting"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -258,7 +267,8 @@
 					"type": "BlueprintPath",
 					"name": "custom_animation_blueprint"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "CallAnimationBlueprintEvent",
@@ -283,7 +293,8 @@
 					"default": "nil",
 					"description": "Sequence of arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "BindAnimationBlueprintEventDispatcher",
@@ -316,7 +327,8 @@
 					"type": "function",
 					"description": "the callback itself"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "UnbindAnimationBlueprintEventDispatcher",
@@ -333,7 +345,8 @@
 					"name": "callback?",
 					"description": "Optional callback to unbind"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

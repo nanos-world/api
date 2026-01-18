@@ -46,7 +46,8 @@
 					"default": "nil",
 					"description": "The object which caused the damage"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -57,7 +58,8 @@
 					"type": "integer",
 					"name": "health"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -68,7 +70,8 @@
 					"type": "integer",
 					"name": "max_health"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -79,7 +82,8 @@
 					"type": "boolean",
 					"name": "is_dead"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -97,7 +101,8 @@
 					"name": "rotation",
 					"default": "Rotator(0, 0, 0)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -109,7 +114,8 @@
 					"type": "integer",
 					"name": "new_health"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -120,7 +126,8 @@
 					"type": "integer",
 					"name": "max_health"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

@@ -54,7 +54,8 @@
 		{
 			"name": "ForceOverlapChecking",
 			"description": "Forces a Overlap checking to occur, will immediately trigger overlaps",
-			"authority": "authority"
+			"authority": "authority",
+			"efficiency": "slow"
 		},
 		{
 			"name": "SetExtent",
@@ -65,7 +66,8 @@
 					"type": "Vector|float",
 					"name": "extent"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetColor",
@@ -76,7 +78,8 @@
 					"type": "Color",
 					"name": "color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetOverlapOnlyClasses",
@@ -93,7 +96,8 @@
 					"title": "Sets to only overlap Characters",
 					"content": "my_trigger:SetOverlapOnlyClasses({ \"Character\", \"CharacterSimple\" })"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	],
 	"events": [

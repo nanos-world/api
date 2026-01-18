@@ -14,7 +14,8 @@
 					"name": "reason",
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -31,7 +32,8 @@
 					"default": "",
 					"description": "Server password"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -42,7 +44,8 @@
 					"name": "reason",
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -63,7 +66,8 @@
 					"type": "float",
 					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -103,7 +107,8 @@
 					"description": "True for fade to hold at the ToAlpha until explicitly stopped (e.g. with StopCameraFade)",
 					"default": false
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -124,12 +129,14 @@
 					"name": "in_fade_audio",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "StopCameraFade",
-			"description": "Stops camera fading."
+			"description": "Stops camera fading.",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -140,7 +147,8 @@
 					"name": "location",
 					"type": "Vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -151,7 +159,8 @@
 					"name": "rotation",
 					"type": "Rotator"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -172,7 +181,8 @@
 					"default": "0",
 					"description": "Exponential used to smooth interp, use 0 for linear movement"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -193,7 +203,8 @@
 					"default": "0",
 					"description": "Exponential used to smooth interp, use 0 for linear movement"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -204,7 +215,8 @@
 					"name": "socket_offset",
 					"type": "Vector"
 				}
-			]
+			],
+			"efficiency": "fat"
 		},
 		{
 			"authority": "both",
@@ -220,7 +232,8 @@
 					"type": "boolean",
 					"description": "Whether to bypass interpolation and set the target to its value directly"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -233,7 +246,8 @@
 					"default": "90",
 					"description": "Value must be between 5 and 170. Pass empty to reset to default."
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -264,7 +278,8 @@
 					"default": "8",
 					"description": "Setting affecting extra force applied when changing direction, making turns have less drift and become more responsive. Velocity magnitude is not allowed to increase, that only happens due to normal acceleration. It may decrease with large direction changes. Larger values apply extra force to reach the target direction more quickly, while a zero value disables any extra turn force."
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -283,12 +298,14 @@
 					"name": "blend_speed",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "ResetCamera",
-			"description": "Resets the Camera to default state (Unspectate and Detaches)"
+			"description": "Resets the Camera to default state (Unspectate and Detaches)",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -304,7 +321,8 @@
 					"type": "float",
 					"default": "0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -315,7 +333,8 @@
 					"name": "player_name",
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -341,7 +360,8 @@
 				"events": [
 					"VOIPGlobalChannelSettingChange"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -362,7 +382,8 @@
 				"events": [
 					"VOIPGlobalChannelSettingChange"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -381,7 +402,8 @@
 				"events": [
 					"VOIPLocalSettingChange"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -400,7 +422,8 @@
 				"events": [
 					"VOIPLocalSettingChange"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -411,7 +434,8 @@
 					"name": "volume",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -428,7 +452,8 @@
 				"functions": [
 					"SetVOIPGlobalLowPassFilter"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -445,7 +470,8 @@
 				"functions": [
 					"SetVOIPGlobalHighPassFilter"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -456,7 +482,8 @@
 					"name": "is_muted",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -466,12 +493,14 @@
 				{
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
 			"name": "UnPossess",
-			"description": "Release the Player from the Character"
+			"description": "Release the Player from the Character",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -481,7 +510,8 @@
 					"type": "string",
 					"name": "steam_id"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -491,7 +521,8 @@
 					"type": "string",
 					"name": "account_id"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -501,7 +532,8 @@
 					"type": "string",
 					"name": "account_name"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -512,7 +544,8 @@
 					"type": "string",
 					"name": "account_icon_url"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -522,7 +555,8 @@
 					"type": "Vector",
 					"name": "location"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -540,7 +574,8 @@
 					"type": "float",
 					"name": "length"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -550,7 +585,8 @@
 					"type": "Rotator",
 					"name": "rotation"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -560,7 +596,8 @@
 					"type": "Character?",
 					"name": "controlled_character"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -570,7 +607,8 @@
 					"type": "string",
 					"name": "ip"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetDimension",
@@ -586,7 +624,8 @@
 				"events": [
 					"DimensionChange"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetDimension",
@@ -602,7 +641,8 @@
 				"events": [
 					"DimensionChange"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -612,7 +652,8 @@
 					"type": "string",
 					"name": "player_name"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -622,7 +663,8 @@
 					"type": "integer",
 					"name": "ping"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -633,7 +675,8 @@
 					"type": "integer[]",
 					"description": "list of channel indexes"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -644,7 +687,8 @@
 					"type": "integer[]",
 					"description": "list of channel indexes"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -654,7 +698,8 @@
 					"type": "boolean",
 					"name": "is_host"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -664,7 +709,8 @@
 					"type": "boolean",
 					"name": "is_local_player"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
@@ -764,8 +810,7 @@
 					"description": "When 'is_talking' is true, return false to prevent this voice stream from playing (on server will prevent for everyone, on client will prevent only for the client)"
 				}
 			]
-		}
-		,
+		},
 		{
 			"authority": "both",
 			"name": "VOIPGlobalChannelSettingChange",

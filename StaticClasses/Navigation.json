@@ -25,7 +25,8 @@
 					"name": "radius",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetRandomPointInNavigableRadius",
@@ -49,7 +50,8 @@
 					"name": "radius",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "FindPathToLocation",
@@ -94,7 +96,8 @@
 					"name": "end_location",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

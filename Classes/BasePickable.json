@@ -42,7 +42,8 @@
 				"functions": [
 					"RemoveSkeletalMeshAttached"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -96,7 +97,8 @@
 					"SetStaticMeshAttachedTransform",
 					"RemoveStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -107,7 +109,8 @@
 					"type": "string[]",
 					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -118,7 +121,8 @@
 					"type": "string[]",
 					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -135,7 +139,8 @@
 				"functions": [
 					"AddSkeletalMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -162,7 +167,8 @@
 				"functions": [
 					"AddStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -179,17 +185,20 @@
 				"functions": [
 					"AddStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
+			"description": "Removes all StaticMeshes attached",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllSkeletalMeshesAttached",
-			"description": "Removes all SkeletalMeshes attached"
+			"description": "Removes all SkeletalMeshes attached",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -202,12 +211,14 @@
 					"default": "-1",
 					"description": "Time in seconds to automatically release the usage (-1 will not release, 0 will release one tick after)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
 			"name": "ReleaseUse",
-			"description": "Releases the usage of this Pickable (will stop firing if this is a weapon)"
+			"description": "Releases the usage of this Pickable (will stop firing if this is a weapon)",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -231,7 +242,8 @@
 					"default": "hand_r_socket",
 					"description": "Character Socket to attach to when picked up"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -243,7 +255,8 @@
 					"name": "material_asset",
 					"description": "Asset path to the crosshair material"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -254,7 +267,8 @@
 					"type": "boolean",
 					"name": "is_pickable"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -265,7 +279,8 @@
 					"type": "boolean",
 					"name": "can_use"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -276,7 +291,8 @@
 					"name": "asset",
 					"type": "SkeletalMeshPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -286,7 +302,8 @@
 				{
 					"type": "Character?"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -296,7 +313,8 @@
 				{
 					"type": "HandlingMode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

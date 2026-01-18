@@ -29,7 +29,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -53,7 +54,8 @@
 					"description": "The specific function to unbind",
 					"default": "nil"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -75,7 +77,8 @@
 					"name": "description",
 					"description": "Text to show on Key Bindings Settings"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -91,7 +94,8 @@
 					"type": "string",
 					"name": "key_name"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -112,7 +116,8 @@
 				{
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -128,7 +133,8 @@
 				{
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -148,7 +154,8 @@
 					],
 					"output": "true"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -166,12 +173,14 @@
 					"type": "string[]",
 					"description": "list of all keys"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
 			"name": "ResetBindings",
-			"description": "Resets all bound functions by this Package"
+			"description": "Resets all bound functions by this Package",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -182,7 +191,8 @@
 					"type": "table",
 					"table_properties_custom": "\n\t\"[BINDING_NAME_01]\" = {\n\t\t\"[KEY_01]\",\n\t\t\"[KEY_02]\",\n\t\t...\n\t},\n\t\"[BINDING_NAME_02]\" = {\n\t\t\"[KEY_03]\",\n\t\t\"[KEY_04]\",\n\t\t...\n\t},\n\t..."
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -193,7 +203,8 @@
 					"type": "table",
 					"table_properties_custom": "\n\t\"[BINDING_NAME_01]\" = {\n\t\t\"[KEY_01]\",\n\t\t\"[KEY_02]\",\n\t\t...\n\t},\n\t\"[BINDING_NAME_02]\" = {\n\t\t\"[KEY_03]\",\n\t\t\"[KEY_04]\",\n\t\t...\n\t},\n\t..."
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetInputEnabled",
@@ -205,7 +216,8 @@
 					"name": "enable_input",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetMouseEnabled",
@@ -217,7 +229,8 @@
 					"name": "is_enabled",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetMouseCursor",
@@ -229,7 +242,8 @@
 					"name": "cursor_type",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "InputKey",
@@ -253,7 +267,8 @@
 					"description": "The amount pressed",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "IsKeyDown",
@@ -271,7 +286,8 @@
 					"name": "key_name",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsMouseEnabled",
@@ -282,7 +298,8 @@
 					"type": "boolean",
 					"description": "if the mouse is visible"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsInputEnabled",
@@ -293,7 +310,8 @@
 					"type": "boolean",
 					"description": "if the input is visible"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

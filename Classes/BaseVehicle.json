@@ -42,7 +42,8 @@
 				"functions": [
 					"RemoveSkeletalMeshAttached"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -96,7 +97,8 @@
 					"SetStaticMeshAttachedTransform",
 					"RemoveStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -107,7 +109,8 @@
 					"type": "string[]",
 					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -118,7 +121,8 @@
 					"type": "string[]",
 					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -135,7 +139,8 @@
 				"functions": [
 					"AddSkeletalMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -162,7 +167,8 @@
 				"functions": [
 					"AddStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -179,17 +185,20 @@
 				"functions": [
 					"AddStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
+			"description": "Removes all StaticMeshes attached",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllSkeletalMeshesAttached",
-			"description": "Removes all SkeletalMeshes attached"
+			"description": "Removes all SkeletalMeshes attached",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -222,7 +231,8 @@
 					"name": "leave_lateral_offset",
 					"description": "It's where the Character will be ejected when leaving it (e.g. -150 for left door or 150 for right door)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -268,7 +278,8 @@
 					"default": "false",
 					"description": "Stops all running Montages from the same Group. This parameter is only used if the Vehicle has an Animation Blueprint"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -280,7 +291,8 @@
 					"description": "asset path",
 					"name": "asset"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -316,7 +328,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -334,7 +347,8 @@
 					"description": "or nil if no passenger in seat",
 					"name": "passenger"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -345,7 +359,8 @@
 					"type": "Character[]",
 					"name": "passengers"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -373,7 +388,8 @@
 					"title": "Vehicle Explosion Settings",
 					"content": "my_vehicle:SetExplosionSettings(Vector(-50, 0, 0), { 1, 2, 4 }, { 3 })"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

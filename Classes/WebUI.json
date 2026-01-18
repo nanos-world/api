@@ -56,7 +56,8 @@
 		{
 			"name": "BringToFront",
 			"authority": "client",
-			"description": "Puts this WebUI in the front of all WebUIs and Widgets"
+			"description": "Puts this WebUI in the front of all WebUIs and Widgets",
+			"efficiency": "fast"
 		},
 		{
 			"name": "CallEvent",
@@ -73,7 +74,8 @@
 					"name": "args...",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "LoadURL",
@@ -84,7 +86,8 @@
 					"type": "HTMLPath",
 					"name": "url"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "LoadHTML",
@@ -95,7 +98,8 @@
 					"type": "string",
 					"name": "html"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetName",
@@ -106,7 +110,8 @@
 					"name": "name",
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "ExecuteJavaScript",
@@ -118,19 +123,22 @@
 					"type": "string",
 					"name": "javascript_code"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
-			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one browser can have focus per time."
+			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one browser can have focus per time.",
+			"efficiency": "fast"
 		},
 		{
 			"name": "RemoveFocus",
 			"authority": "client",
 			"description": "Removes the focus from this WebUI (and sets it back to game viewport)",
-			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport)<br/>You MUST call this after you don't need keyboard input anymore"
+			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport)<br/>You MUST call this after you don't need keyboard input anymore",
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetLayout",
@@ -168,7 +176,8 @@
 					"description": "",
 					"default": "Vector(0.5, 0.5)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetFreeze",
@@ -179,7 +188,8 @@
 					"type": "boolean",
 					"name": "freeze"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetVisibility",
@@ -190,7 +200,8 @@
 					"type": "WidgetVisibility",
 					"name": "visibility"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SpawnSound",
@@ -232,12 +243,13 @@
 				{
 					"type": "Sound"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SendMouseWheelEvent",
 			"authority": "client",
-			"description": "Sends a Mouse Event into the WebUI programatically",
+			"description": "Sends a Mouse Event into the WebUI programmatically",
 			"parameters": [
 				{
 					"type": "integer",
@@ -257,12 +269,13 @@
 					"type": "float",
 					"name": "delta_y"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SendKeyEvent",
 			"authority": "client",
-			"description": "Sends a Key Event into the WebUI programatically",
+			"description": "Sends a Key Event into the WebUI programmatically",
 			"parameters": [
 				{
 					"type": "WebUIKeyType",
@@ -278,12 +291,13 @@
 					"default": "WebUIModifier.None",
 					"description": "Supports several modifiers separating by <code>|</code> (using bit-wise operations)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SendMouseMoveEvent",
 			"authority": "client",
-			"description": "Sends a Mouse Move Event into the WebUI programatically",
+			"description": "Sends a Mouse Move Event into the WebUI programmatically",
 			"parameters": [
 				{
 					"type": "integer",
@@ -306,12 +320,13 @@
 					"name": "mouse_leave",
 					"default": "false"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SendMouseClickEvent",
 			"authority": "client",
-			"description": "Sends a Mouse Click into the WebUI programatically",
+			"description": "Sends a Mouse Click into the WebUI programmatically",
 			"description_long": "You must send both Down and Up to make it work properly",
 			"parameters": [
 				{
@@ -346,7 +361,8 @@
 					"default": "1",
 					"description": "Use 2 for double click event"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetSize",
@@ -356,7 +372,8 @@
 				{
 					"type": "Vector2D"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetVisibility",
@@ -367,7 +384,8 @@
 					"name": "visibility",
 					"type": "WidgetVisibility"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsFrozen",
@@ -378,17 +396,20 @@
 					"name": "freeze",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "OpenDevTools",
 			"authority": "client",
-			"description": "Opens the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() was not disabled"
+			"description": "Opens the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() was not disabled",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "CloseDevTools",
 			"authority": "client",
-			"description": "Closes the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() not disabled"
+			"description": "Closes the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() not disabled",
+			"efficiency": "fast"
 		}
 	],
 	"events": [

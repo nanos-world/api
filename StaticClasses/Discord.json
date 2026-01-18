@@ -13,7 +13,8 @@
 					"name": "client_id",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetActivity",
@@ -46,7 +47,8 @@
 					"description": "Whether or not to reset current activity elapsed time",
 					"default": "false"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

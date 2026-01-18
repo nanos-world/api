@@ -96,13 +96,15 @@
 					"type": "boolean",
 					"name": "enable_horn"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
 			"name": "RecreatePhysics",
 			"description": "Recreate the Vehicle Physics",
-			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor"
+			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor",
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -113,7 +115,8 @@
 					"type": "Vector",
 					"name": "offset"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -124,7 +127,8 @@
 					"type": "boolean",
 					"name": "auto_start"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -136,7 +140,8 @@
 					"type": "boolean",
 					"name": "started"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -153,7 +158,8 @@
 					"default": "0.7",
 					"description": "Only applies when AngleRatio is selected"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -212,7 +218,8 @@
 					"default": "{}",
 					"description": "Map defining the torque [Normalized 0..1] for a given RPM"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -255,7 +262,8 @@
 					"default": "Vector(0, 0, 50)",
 					"description": "Overrides the center of mass. Good for curves stabilization. Ideally the Z should be the same as the wheels radius"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -292,7 +300,8 @@
 					"default": "0.9",
 					"description": "Mechanical frictional losses mean transmission might operate at 0.94 (94% efficiency)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -466,7 +475,8 @@
 					"default": "SuspensionSweepShape.Raycast",
 					"description": "Wheel suspension trace type, defaults to ray trace"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -484,7 +494,8 @@
 					"default": "0.5",
 					"description": "Ratio of torque split between front and rear (less than 0.5 means more to front, bigger than 0.5 means more to rear, works only with 4W type)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -508,7 +519,8 @@
 					"description": "Rotation of the steering wheel to align the hands properly",
 					"default": "Rotator(0, 0, 0)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -524,7 +536,8 @@
 					"name": "color",
 					"default": "Color(1, 0.86, 0.5)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -535,7 +548,8 @@
 					"type": "Vector",
 					"name": "location"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -550,7 +564,8 @@
 					"type": "boolean",
 					"name": "is_flat"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -561,7 +576,8 @@
 					"type": "integer",
 					"name": "rpm"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -572,7 +588,8 @@
 					"type": "integer",
 					"name": "gear"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -583,7 +600,8 @@
 					"type": "boolean",
 					"name": "is_in_air"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

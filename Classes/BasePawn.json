@@ -42,7 +42,8 @@
 				"functions": [
 					"RemoveSkeletalMeshAttached"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -96,7 +97,8 @@
 					"SetStaticMeshAttachedTransform",
 					"RemoveStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -107,7 +109,8 @@
 					"type": "string[]",
 					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -118,7 +121,8 @@
 					"type": "string[]",
 					"description": "the key as the Attached ID, and the value as the Asset Path"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -135,7 +139,8 @@
 				"functions": [
 					"AddSkeletalMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -162,7 +167,8 @@
 				"functions": [
 					"AddStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -179,17 +185,20 @@
 				"functions": [
 					"AddStaticMeshAttached"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllStaticMeshesAttached",
-			"description": "Removes all StaticMeshes attached"
+			"description": "Removes all StaticMeshes attached",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllSkeletalMeshesAttached",
-			"description": "Removes all SkeletalMeshes attached"
+			"description": "Removes all SkeletalMeshes attached",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -200,7 +209,8 @@
 					"type": "AnimationPath",
 					"name": "animation_asset"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -211,7 +221,8 @@
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_asset"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -222,7 +233,8 @@
 					"type": "boolean",
 					"name": "flying_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -233,7 +245,8 @@
 					"type": "boolean",
 					"name": "flying_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -245,7 +258,8 @@
 					"description": "the moving to location or Vector(0, 0, 0) if not moving",
 					"name": "location"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -263,7 +277,8 @@
 					"default": "300",
 					"description": "The radius of the circle used to determine the avoidance distance"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -290,7 +305,8 @@
 				"events": [
 					"MoveComplete"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -337,7 +353,8 @@
 				"events": [
 					"MoveComplete"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -353,7 +370,8 @@
 				"events": [
 					"MoveComplete"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -370,7 +388,8 @@
 					"Possess",
 					"UnPossess"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -381,7 +400,8 @@
 					"type": "Rotator",
 					"name": "control_rotation"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "network-authority",
@@ -392,7 +412,8 @@
 					"type": "Rotator",
 					"name": "control_rotation"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -403,7 +424,8 @@
 					"type": "boolean",
 					"name": "is_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -414,7 +436,8 @@
 					"type": "boolean",
 					"name": "is_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -434,7 +457,8 @@
 					"UnHideBone",
 					"IsBoneHidden"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -453,7 +477,8 @@
 					"HideBone",
 					"IsBoneHidden"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -462,7 +487,7 @@
 				{
 					"type": "boolean",
 					"description": "if the bone is hidden",
-					"name": "bone_name"
+					"name": "is_hidden"
 				}
 			],
 			"description": "Gets if a bone is hidden",
@@ -478,12 +503,14 @@
 					"UnHideBone",
 					"HideBone"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
 			"name": "Jump",
-			"description": "Triggers this Character to jump"
+			"description": "Triggers this Character to jump",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -495,7 +522,8 @@
 					"name": "jump_z_velocity",
 					"description": "Default is 450"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "authority",
@@ -513,7 +541,8 @@
 					"name": "half_height",
 					"description": "Default is 96"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -534,7 +563,8 @@
 					],
 					"name": "capsule_size"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -546,7 +576,8 @@
 					"type": "float",
 					"name": "gravity_scale"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -557,7 +588,8 @@
 					"type": "float",
 					"name": "gravity_scale"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -568,7 +600,8 @@
 					"type": "boolean",
 					"name": "can_jump"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -579,7 +612,8 @@
 					"type": "boolean",
 					"name": "can_crouch"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
@@ -616,7 +650,8 @@
 					"name": "braking_falling",
 					"default": "0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

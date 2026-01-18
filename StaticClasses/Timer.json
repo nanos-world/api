@@ -31,7 +31,8 @@
 					"type": "integer",
 					"description": "the timeout_id"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetInterval",
@@ -61,7 +62,8 @@
 					"type": "integer",
 					"description": "the interval_id"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "ClearTimeout",
@@ -73,7 +75,8 @@
 					"name": "timeout_id",
 					"description": "The ID value returned by SetTimeout() is used as the parameter for this method"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "ClearInterval",
@@ -85,7 +88,8 @@
 					"name": "interval_id",
 					"description": "The ID value returned by SetInterval() is used as the parameter for this method"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Bind",
@@ -103,7 +107,7 @@
 					"description": "Actor to be bound"
 				}
 			],
-			"examples" : [
+			"examples": [
 				{
 					"title": "Binding a Timer to an Entity",
 					"content": [
@@ -121,7 +125,8 @@
 						"Timer.Bind(my_timer, character)"
 					]
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsValid",
@@ -139,7 +144,8 @@
 					"type": "boolean",
 					"name": "is_valid"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetElapsedTime",
@@ -157,7 +163,8 @@
 					"type": "integer",
 					"name": "elapsed_time"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetRemainingTime",
@@ -175,7 +182,8 @@
 					"type": "integer",
 					"name": "remaining_time"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Pause",
@@ -187,7 +195,8 @@
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Resume",
@@ -199,7 +208,8 @@
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "ResetElapsedTime",
@@ -211,7 +221,8 @@
 					"name": "timer_id",
 					"description": "The Timer ID"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

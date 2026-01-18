@@ -18,7 +18,8 @@
 					"name": "value",
 					"description": "Value to be set in the global scope"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Require",
@@ -42,7 +43,8 @@
 					"type": "any",
 					"description": "Any return values from the included file"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "Subscribe",
@@ -65,7 +67,8 @@
 					"type": "function",
 					"description": "The function callback"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Unsubscribe",
@@ -83,7 +86,8 @@
 					"default": "nil",
 					"description": "Optional callback to specifically unsubscribe to"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetPersistentData",
@@ -100,7 +104,8 @@
 					"name": "value",
 					"description": "Value to set at the key"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetDirectories",
@@ -120,7 +125,8 @@
 					"type": "string[]",
 					"description": "List of directories"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetFiles",
@@ -146,7 +152,8 @@
 					"type": "string[]",
 					"description": "List of files"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetName",
@@ -157,7 +164,8 @@
 					"type": "string",
 					"description": "The package name/path"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetTitle",
@@ -168,7 +176,8 @@
 					"type": "string",
 					"description": "The package title"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetVersion",
@@ -179,7 +188,8 @@
 					"type": "string",
 					"description": "The package version"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetCompatibilityVersion",
@@ -190,7 +200,8 @@
 					"type": "string",
 					"description": "The package compatibility version"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetPersistentData",
@@ -210,13 +221,15 @@
 					"default": "",
 					"description": "The key to get the data"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "FlushPersistentData",
 			"description": "Flushes the Persistent Data pending changes to disk immediately",
 			"description_large": "Flushes the Persistent Data pending changes to disk immediately. Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
-			"authority": "both"
+			"authority": "both",
+			"efficiency": "slow"
 		}
 	],
 	"events": [

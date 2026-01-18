@@ -24,7 +24,8 @@
 					"default": "true",
 					"description": "If this should be visible automatically after loaded"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
@@ -41,7 +42,8 @@
 					"default": "false",
 					"description": "If this should be a blocking operation - the game will freeze"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -57,7 +59,8 @@
 					"name": "visibility",
 					"description": "If this level should be visible"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -94,7 +97,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "CallLevelBlueprintEvent",
@@ -118,7 +122,8 @@
 					"default": "nil",
 					"description": "Sequence of arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "slow"
 		}
 	],
 	"events": [

@@ -32,15 +32,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawCoordinateSystem",
@@ -61,21 +62,22 @@
 					"type": "float",
 					"name": "size",
 					"description": "",
-					"default" : "100"
+					"default": "100"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawCrosshairs",
@@ -108,15 +110,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawCylinder",
@@ -153,15 +156,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawDirectionalArrow",
@@ -194,15 +198,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawLine",
@@ -229,15 +234,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawPoint",
@@ -259,15 +265,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "size",
 					"description": "",
-					"default" : "10"
+					"default": "10"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawSphere",
@@ -299,15 +306,16 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
 					"description": "",
-					"default" : "0"
+					"default": "0"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DrawString",
@@ -334,21 +342,22 @@
 					"type": "float",
 					"name": "life_time",
 					"description": "",
-					"default" : "5"
+					"default": "5"
 				},
 				{
 					"type": "boolean",
 					"name": "draw_shadow",
 					"description": "",
-					"default" : "false"
+					"default": "false"
 				},
 				{
 					"type": "float",
 					"name": "font_scale",
 					"description": "",
-					"default" : "1"
+					"default": "1"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

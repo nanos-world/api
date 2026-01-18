@@ -46,7 +46,8 @@
 					"default": "",
 					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -68,17 +69,20 @@
 					"default": "",
 					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
 			"name": "DetachEnd",
-			"description": "Detaches the End of this Cable"
+			"description": "Detaches the End of this Cable",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
 			"name": "DetachStart",
-			"description": "Detaches the Start of this Cable"
+			"description": "Detaches the Start of this Cable",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -108,7 +112,8 @@
 					"description": "Add stiffness constraints to cable. Default is true",
 					"default": "true"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -126,7 +131,8 @@
 					"default": "1",
 					"description": "Scaling applied to world gravity affecting this cable. Default is 1"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -166,7 +172,8 @@
 					"default": "0",
 					"description": "Symmetric angle of roll along the X-axis"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -219,7 +226,8 @@
 					"default": "0",
 					"description": "Damping of the soft constraint. Only used when Soft Constraint is on"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -241,7 +249,8 @@
 					"name": "tile_material",
 					"description": "How many times to repeat the material along the length of the cable. Default is 1"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -252,7 +261,8 @@
 					"type": "Actor?",
 					"name": "attached_actor"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -263,7 +273,8 @@
 					"type": "Actor?",
 					"name": "attached_actor"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

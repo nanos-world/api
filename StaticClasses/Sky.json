@@ -27,17 +27,20 @@
 					"default": "true",
 					"description": "Whether or not to try to find existing Sky & Weather Actors spawned in the map, using their references instead"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
 			"name": "DestroyAllSky",
-			"description": "Destroys all Directional Lights, Sky Lights, Exponential Height Fogs, Volumetric Clouds, Sky Atmosphere, Ultra Dynamic Sky Actors and all Actors with the <code>Sun</code> Actor Tag from the Level"
+			"description": "Destroys all Directional Lights, Sky Lights, Exponential Height Fogs, Volumetric Clouds, Sky Atmosphere, Ultra Dynamic Sky Actors and all Actors with the <code>Sun</code> Actor Tag from the Level",
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
 			"name": "Reconstruct",
-			"description": "Reconstruct the Ultra Dynamic Sky Actor, forces most of the changes to be applied"
+			"description": "Reconstruct the Ultra Dynamic Sky Actor, forces most of the changes to be applied",
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
@@ -49,7 +52,8 @@
 					"type": "ImagePath",
 					"name": "texture"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
@@ -60,7 +64,8 @@
 					"type": "float",
 					"name": "rotation"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -71,7 +76,8 @@
 					"type": "float",
 					"name": "offset"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -82,7 +88,8 @@
 					"type": "float",
 					"name": "scale"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -97,7 +104,8 @@
 					"type": "float",
 					"name": "pitch"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -109,7 +117,8 @@
 					"name": "phase",
 					"description": "Ranges from 0-30"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -120,7 +129,8 @@
 					"type": "float",
 					"name": "glow_intensity"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -131,7 +141,8 @@
 					"type": "float",
 					"name": "intensity"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -146,7 +157,8 @@
 					"type": "float",
 					"name": "pitch"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -157,7 +169,8 @@
 					"type": "float",
 					"name": "radius"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -168,7 +181,8 @@
 					"type": "float",
 					"name": "intensity"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -180,7 +194,8 @@
 					"type": "SkyMode",
 					"name": "sky_mode"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -192,7 +207,8 @@
 					"type": "Color",
 					"name": "color"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -203,7 +219,8 @@
 					"type": "float",
 					"name": "cloud_coverage"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -214,7 +231,8 @@
 					"type": "float",
 					"name": "fog_percentage"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -225,7 +243,8 @@
 					"type": "float",
 					"name": "contrast"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -236,7 +255,8 @@
 					"type": "float",
 					"name": "intensity"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -247,7 +267,8 @@
 					"type": "float",
 					"name": "brightness"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -271,7 +292,8 @@
 					"default": "15.0",
 					"description": "The time (in minutes) from sunset to sunrise"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -286,7 +308,8 @@
 					"type": "integer",
 					"name": "minutes"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -305,7 +328,8 @@
 					"type": "integer",
 					"name": "seconds"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -322,7 +346,8 @@
 				{
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -332,7 +357,8 @@
 				{
 					"type": "WeatherType"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -349,7 +375,8 @@
 					"name": "transition_time",
 					"description": "fade time to completely change to new weather"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

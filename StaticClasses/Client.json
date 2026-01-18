@@ -6,7 +6,8 @@
 		{
 			"name": "Disconnect",
 			"description": "Disconnects from the server",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "slow"
 		},
 		{
 			"name": "CopyToClipboard",
@@ -17,7 +18,8 @@
 					"type": "string",
 					"name": "text"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetNearClipPlane",
@@ -29,7 +31,8 @@
 					"name": "near_clip_plane",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetEscapeMenuText",
@@ -55,7 +58,8 @@
 					"name": "text",
 					"description": "Supports using <code>&#60h1&#62</code>, <code>&#60h2&#62</code>, <code>&#60h3&#62</code> and <code>&#60strong&#62</code> tags in the text."
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "ShowNotification",
@@ -83,7 +87,8 @@
 					"description": "Duration in seconds to display the notification",
 					"default": "10"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetNearClipPlane",
@@ -93,7 +98,8 @@
 				{
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetConnectedServerIP",
@@ -103,7 +109,8 @@
 				{
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetDebugEnabled",
@@ -115,7 +122,8 @@
 					"name": "enable_debug",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetSettingGammaOverride",
@@ -133,12 +141,13 @@
 					"description": "The new gamma value if overriding",
 					"default": "1.0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetHighlightColor",
 			"description": "Changes the Highlight Color for highlighted actors at a specific Index",
-			"description_long": "Changes the Highlight Color for highlighted actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 differents indexes (0, 1 or 2).",
+			"description_long": "Changes the Highlight Color for highlighted actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2).",
 			"authority": "client",
 			"parameters": [
 				{
@@ -157,12 +166,13 @@
 					"description": "",
 					"default": "HighlightMode.Always"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetOutlineColor",
 			"description": "Changes the Outline Color for outlined actors at a specific Index",
-			"description_long": "Changes the Outline Color for outlined actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/>Note: You can only have 3 differents indexes (0, 1 or 2), and the default Outline color index used by the game is  <code>0</code> (when interacting with stuff).",
+			"description_long": "Changes the Outline Color for outlined actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2), and the default Outline color index used by the game is  <code>0</code> (when interacting with stuff).",
 			"authority": "client",
 			"parameters": [
 				{
@@ -182,7 +192,8 @@
 					"description": "",
 					"default": "2"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetValue",
@@ -205,7 +216,8 @@
 				"functions": [
 					"GetAllValuesKeys"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"name": "Subscribe",
@@ -228,7 +240,8 @@
 					"name": "callback",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Unsubscribe",
@@ -246,7 +259,8 @@
 					"description": "",
 					"default": "nil"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetLocalPlayer",
@@ -257,7 +271,8 @@
 					"type": "Player",
 					"description": "the local Player"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetFrameTime",
@@ -268,7 +283,8 @@
 					"type": "float",
 					"description": "the Frame Time"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetTime",
@@ -279,7 +295,8 @@
 					"type": "integer",
 					"description": "the unix timestamp"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetLogLevel",
@@ -290,7 +307,8 @@
 					"type": "integer",
 					"description": "the log level"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetEntityByID",
@@ -307,7 +325,8 @@
 					"type": "integer",
 					"name": "entity_id"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetMap",
@@ -318,7 +337,8 @@
 					"type": "string",
 					"description": "the current Map"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsPackageLoaded",
@@ -336,7 +356,8 @@
 					"name": "package_name",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetPackages",
@@ -377,7 +398,8 @@
 					"description": "Which Package type to return. Leave it default (-1) to return all types.",
 					"default": "-1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetValue",
@@ -405,7 +427,8 @@
 				"functions": [
 					"GetAllValuesKeys"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetAllValuesKeys",
@@ -422,7 +445,8 @@
 					"GetValue",
 					"SetValue"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		}
 	],
 	"events": [

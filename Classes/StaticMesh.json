@@ -43,7 +43,8 @@
 					"description": "asset"
 				}
 			],
-			"authority": "authority"
+			"authority": "authority",
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetMesh",
@@ -55,7 +56,8 @@
 					"name": "static_mesh_asset"
 				}
 			],
-			"authority": "both"
+			"authority": "both",
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsFromLevel",
@@ -67,7 +69,8 @@
 					"name": "is_from_level"
 				}
 			],
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		}
 	]
 }

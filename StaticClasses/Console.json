@@ -44,7 +44,8 @@
 					],
 					"output": "Player health: 50/100"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Warn",
@@ -63,7 +64,8 @@
 					"default": "nil",
 					"description": "Other arguments to format with the message using string.format"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Error",
@@ -82,7 +84,8 @@
 					"default": "nil",
 					"description": "Other arguments to format with the message using string.format"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "RegisterCommand",
@@ -126,7 +129,8 @@
 						"end, \"says a message to everyone\", { \"my_text\" })"
 					]
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "RunCommand",
@@ -144,9 +148,9 @@
 					"title": "Running a Console Command",
 					"content": "Console.RunCommand(\"hello\")"
 				}
-			]
-		}
-		,
+			],
+			"efficiency": "moderate"
+		},
 		{
 			"name": "Debug",
 			"description": "Logs a debug message in the console, with formatted arguments. Outputted only when the current log level is Debug or Verbose",
@@ -163,10 +167,11 @@
 					"default": "nil",
 					"description": "Other arguments to format with the message using string.format"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
-	"events" : [
+	"events": [
 		{
 			"name": "PlayerSubmit",
 			"description": "Called when a console command is submitted",

@@ -53,7 +53,8 @@
 					"Deactivate",
 					"IsActive"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "Deactivate",
@@ -64,7 +65,8 @@
 					"Activate",
 					"IsActive"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsActive",
@@ -81,7 +83,8 @@
 					"Activate",
 					"Deactivate"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetParameterFloat",
@@ -98,7 +101,8 @@
 					"name": "value",
 					"description": "The float value"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetParameterInt",
@@ -115,7 +119,8 @@
 					"name": "value",
 					"description": "The int value"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetParameterBool",
@@ -132,7 +137,8 @@
 					"name": "value",
 					"description": "The boolean value"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetParameterVector",
@@ -149,7 +155,8 @@
 					"name": "value",
 					"description": "The Vector value"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetParameterColor",
@@ -166,7 +173,8 @@
 					"name": "value",
 					"description": "The Color value"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetParameterMaterial",
@@ -183,7 +191,8 @@
 					"name": "value",
 					"description": "The Material value"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "SetParameterMaterialFromTexture",
@@ -201,7 +210,8 @@
 					"name": "value",
 					"description": "The Texture value"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "SetParameterMaterialFromCanvas",
@@ -219,7 +229,8 @@
 					"name": "value",
 					"description": "The Canvas value"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetParameterMaterialFromWebUI",
@@ -237,7 +248,8 @@
 					"name": "value",
 					"description": "The WebUI value"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

@@ -9,8 +9,7 @@
 	"constructors": [
 		{
 			"name": "Default Constructor",
-			"parameters": [
-			]
+			"parameters": []
 		}
 	],
 	"functions": [
@@ -31,12 +30,14 @@
 					"type": "Vector",
 					"name": "scale"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "Deactivate",
 			"description": "Disable the interaction",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "IsInteracting",
@@ -47,17 +48,20 @@
 					"type": "boolean",
 					"name": "is_interacting"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "PressPointer",
 			"authority": "client",
-			"description": "Triggers the press pointer event on it"
+			"description": "Triggers the press pointer event on it",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "ReleasePointer",
 			"authority": "client",
-			"description": "Triggers the release pointer event on it"
+			"description": "Triggers the release pointer event on it",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetTransformMode",
@@ -71,7 +75,8 @@
 					"type": "boolean",
 					"name": "combine_translate_rotate"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetAlignSpace",
@@ -81,7 +86,8 @@
 					"type": "GizmoAlignSpace",
 					"name": "align_space"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetSnapSettings",
@@ -99,7 +105,8 @@
 					"type": "float",
 					"name": "scale_grid_size"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	],
 	"events": [
