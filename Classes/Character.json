@@ -1192,7 +1192,7 @@
 					"name": "jump_z_velocity"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",

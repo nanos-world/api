@@ -1,12 +1,11 @@
 {
 	"name": "TextRender",
-	"description": "A Text Render class is useful for spawning Texts in 3D world, you can even attach it to other entities.",
+	"description": "A Text Render class is useful for spawning Texts in 3D world.",
 	"authority": "both",
 	"network_distribution": "none",
 	"inheritance": [
 		"Entity",
-		"Actor",
-		"Paintable"
+		"Actor"
 	],
 	"constructors": [
 		{
@@ -25,108 +24,131 @@
 					"name": "text"
 				},
 				{
-					"type": "Vector",
-					"name": "scale",
-					"default": "Vector(1, 1, 1)"
+					"type": "float",
+					"name": "word_size",
+					"default": "26",
+					"description": "Text size"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"default": "Color(1, 1, 1, 1)"
+					"default": "Color.WHITE"
 				},
 				{
-					"type": "FontType",
-					"name": "font_type",
-					"default": "FontType.Roboto"
+					"type": "TextRenderHorizontalAlignment",
+					"name": "horizontal_alignment",
+					"default": "TextRenderHorizontalAlignment.Center"
 				},
 				{
-					"type": "TextRenderAlignCamera",
-					"name": "align_camera",
-					"default": "TextRenderAlignCamera.Unaligned"
+					"type": "TextRenderVerticalAlignment",
+					"name": "vertical_alignment",
+					"default": "TextRenderVerticalAlignment.Center"
+				},
+				{
+					"type": "TextRenderRenderingType",
+					"name": "rendering_type",
+					"description": "To make it unlit, always face the camera or always visible through walls",
+					"default": "TextRenderRenderingType.Lit"
+				},
+				{
+					"type": "string",
+					"name": "font_asset",
+					"description": "The font asset to use for the text. Note the font must be a offline cached, distance field font",
+					"default": ""
+				},
+				{
+					"type": "boolean",
+					"name": "cast_shadow",
+					"description": "Controls whether it should cast shadow or not",
+					"default": "false"
 				}
 			]
 		}
 	],
 	"functions": [
 		{
+			"name": "GetText",
+			"authority": "both",
+			"description": "Gets the current Text",
+			"return": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "The current Text"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetTextColor",
+			"authority": "both",
+			"description": "Gets the current Text Color",
+			"return": [
+				{
+					"type": "Color",
+					"name": "text_color",
+					"description": "The current Text Color"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetWordSize",
+			"authority": "both",
+			"description": "Gets the current Word Size",
+			"return": [
+				{
+					"type": "float",
+					"name": "word_size",
+					"description": "The current Word Size"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "SetFont",
 			"authority": "both",
-			"description": "Sets the Font",
+			"description": "Sets the Font. The font must be pre-cooked as a offline cached, distance field font.",
+			"description_long": "Sets the Font. The font must be pre-cooked as a offline cached, distance field font.<br/><br/>Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
 			"parameters": [
 				{
-					"name": "font_type",
-					"type": "FontType"
+					"name": "font_asset",
+					"type": "string"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
 		},
 		{
-			"name": "SetFreeze",
+			"name": "SetAlignment",
 			"authority": "both",
-			"description": "Freeze mesh rebuild, to avoid unnecessary mesh rebuilds when setting a few properties together",
+			"description": "Sets the Text alignment",
 			"parameters": [
 				{
-					"name": "freeze",
-					"type": "boolean"
+					"name": "horizontal_alignment",
+					"type": "TextRenderHorizontalAlignment"
+				},
+				{
+					"name": "vertical_alignment",
+					"type": "TextRenderVerticalAlignment"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
 		},
 		{
-			"name": "SetGlyphSettings",
+			"name": "SetSpacingAdjust",
 			"authority": "both",
-			"description": "Sets the Glyph representation settings to generate the 3D Mesh for this text render",
+			"description": "Sets the horizontal and vertical spacing adjust values",
 			"parameters": [
 				{
-					"type": "float",
-					"name": "extrude",
-					"default": "0"
+					"name": "horizontal_spacing",
+					"type": "float"
 				},
 				{
-					"type": "float",
-					"name": "level",
-					"default": "0"
-				},
-				{
-					"type": "TextRenderBevelType",
-					"name": "bevel_type",
-					"default": "TextRenderBevelType.Convex"
-				},
-				{
-					"type": "integer",
-					"name": "bevel_segments",
-					"default": "8"
-				},
-				{
-					"type": "boolean",
-					"name": "outline",
-					"default": "false"
+					"name": "vertical_spacing",
+					"type": "float"
 				}
 			],
-			"efficiency": "fast"
-		},
-		{
-			"name": "SetMaxSize",
-			"authority": "both",
-			"description": "Sets the Max Size of the TextRender, optionally scaling it proportionally",
-			"parameters": [
-				{
-					"type": "integer",
-					"name": "max_width",
-					"default": "0"
-				},
-				{
-					"type": "integer",
-					"name": "max_height",
-					"default": "0"
-				},
-				{
-					"type": "boolean",
-					"name": "scale_proportionally",
-					"default": "true"
-				}
-			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetText",
@@ -141,37 +163,28 @@
 			"efficiency": "moderate"
 		},
 		{
-			"name": "SetTextSettings",
+			"name": "SetTextColor",
 			"authority": "both",
-			"description": "Sets the Text & Font settings for this text render",
+			"description": "Sets the Text Color",
 			"parameters": [
 				{
-					"type": "float",
-					"name": "kerning",
-					"default": "0"
-				},
-				{
-					"type": "float",
-					"name": "line_spacing",
-					"default": "0"
-				},
-				{
-					"type": "float",
-					"name": "word_spacing",
-					"default": "0"
-				},
-				{
-					"type": "TextRenderHorizontalAlignment",
-					"name": "horizontal_alignment",
-					"default": "TextRenderHorizontalAlignment.Center"
-				},
-				{
-					"type": "TextRenderVerticalAlignment",
-					"name": "vertical_alignment",
-					"default": "0TextRenderVerticalAlignment.Center"
+					"name": "text_color",
+					"type": "Color"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
+		},
+		{
+			"name": "SetWordSize",
+			"authority": "both",
+			"description": "Sets the Word Size",
+			"parameters": [
+				{
+					"name": "word_size",
+					"type": "float"
+				}
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

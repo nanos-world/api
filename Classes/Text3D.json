@@ -1,0 +1,177 @@
+{
+	"name": "Text3D",
+	"description": "Class to create 3D Text with advanced options",
+	"authority": "both",
+	"network_distribution": "none",
+	"inheritance": [
+		"Entity",
+		"Actor",
+		"Paintable"
+	],
+	"constructors": [
+		{
+			"name": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "string",
+					"name": "text"
+				},
+				{
+					"type": "Vector",
+					"name": "scale",
+					"default": "Vector(1, 1, 1)"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"default": "Color(1, 1, 1, 1)"
+				},
+				{
+					"type": "FontType",
+					"name": "font_type",
+					"default": "FontType.Roboto"
+				},
+				{
+					"type": "Text3DAlignCamera",
+					"name": "align_camera",
+					"default": "Text3DAlignCamera.Unaligned"
+				}
+			]
+		}
+	],
+	"functions": [
+		{
+			"name": "SetFont",
+			"authority": "both",
+			"description": "Sets the Font",
+			"parameters": [
+				{
+					"name": "font_type",
+					"type": "FontType"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetFreeze",
+			"authority": "both",
+			"description": "Freeze mesh rebuild, to avoid unnecessary mesh rebuilds when setting a few properties together",
+			"parameters": [
+				{
+					"name": "freeze",
+					"type": "boolean"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetGlyphSettings",
+			"authority": "both",
+			"description": "Sets the Glyph representation settings to generate the 3D Mesh for this text render",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "extrude",
+					"default": "0"
+				},
+				{
+					"type": "float",
+					"name": "level",
+					"default": "0"
+				},
+				{
+					"type": "Text3DBevelType",
+					"name": "bevel_type",
+					"default": "Text3DBevelType.Convex"
+				},
+				{
+					"type": "integer",
+					"name": "bevel_segments",
+					"default": "8"
+				},
+				{
+					"type": "boolean",
+					"name": "outline",
+					"default": "false"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetMaxSize",
+			"authority": "both",
+			"description": "Sets the Max Size of the Text3D, optionally scaling it proportionally",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "max_width",
+					"default": "0"
+				},
+				{
+					"type": "integer",
+					"name": "max_height",
+					"default": "0"
+				},
+				{
+					"type": "boolean",
+					"name": "scale_proportionally",
+					"default": "true"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetText",
+			"authority": "both",
+			"description": "Sets the Text",
+			"parameters": [
+				{
+					"name": "text",
+					"type": "string"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"name": "SetTextSettings",
+			"authority": "both",
+			"description": "Sets the Text & Font settings for this text render",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "kerning",
+					"default": "0"
+				},
+				{
+					"type": "float",
+					"name": "line_spacing",
+					"default": "0"
+				},
+				{
+					"type": "float",
+					"name": "word_spacing",
+					"default": "0"
+				},
+				{
+					"type": "Text3DHorizontalAlignment",
+					"name": "horizontal_alignment",
+					"default": "Text3DHorizontalAlignment.Center"
+				},
+				{
+					"type": "Text3DVerticalAlignment",
+					"name": "vertical_alignment",
+					"default": "Text3DVerticalAlignment.Center"
+				}
+			],
+			"efficiency": "fast"
+		}
+	]
+}

@@ -32,6 +32,7 @@ const APIData = {
 		StaticMesh: "StaticMesh.json",
 		Sound: "Sound.json",
 		TextRender: "TextRender.json",
+		Text3D: "Text3D.json",
 		Trigger: "Trigger.json",
 		VehicleWheeled: "VehicleWheeled.json",
 		VehicleWater: "VehicleWater.json",

@@ -134,6 +134,12 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "HasNodeFocus",
+			"authority": "client",
+			"description": "Returns if this WebUI has any DOM Node focused",
+			"efficiency": "fast"
+		},
+		{
 			"name": "RemoveFocus",
 			"authority": "client",
 			"description": "Removes the focus from this WebUI (and sets it back to game viewport)",
