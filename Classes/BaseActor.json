@@ -310,6 +310,31 @@
 			]
 		},
 		{
+			"name": "SetRenderCullDistance",
+			"description": "Sets this Actor's render cull distance",
+			"description_long": "Sets this Actor's render cull distance. Note: this will only affect the rendering distance, the entity will still be spawned and synced normally regardless of this distance",
+			"authority": "both",
+			"efficiency": "moderate",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "max_distance"
+				}
+			]
+		},
+		{
+			"name": "SetCastShadow",
+			"description": "Sets this Actor's to cast shadows or not",
+			"authority": "both",
+			"efficiency": "moderate",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "cast_shadow"
+				}
+			]
+		},
+		{
 			"name": "SetNetworkAuthority",
 			"description": "Sets the Player to have network authority over this Actor",
 			"description_long": "Sets the Player to have network authority over this Actor. This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
