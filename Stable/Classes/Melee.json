@@ -77,12 +77,14 @@
 					"name": "slot_Type",
 					"description": "Whether to play it on upper body or full body"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
 			"name": "ClearAnimationsCharacterUse",
-			"description": "Clears the Character Attack Animation list"
+			"description": "Clears the Character Attack Animation list",
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -108,7 +110,8 @@
 					"type": "float",
 					"name": "pitch"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -120,7 +123,8 @@
 					"name": "asset_path",
 					"description": "The Sound used when attacking"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -133,9 +137,9 @@
 					"default": "",
 					"description": "The Base Damage value"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
-
 		{
 			"authority": "server",
 			"name": "SetDamageSettings",
@@ -152,7 +156,8 @@
 					"name": "damage_duration_time",
 					"description": "The duration time to stop applying damage"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -163,7 +168,8 @@
 					"type": "float",
 					"name": "cooldown"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -173,7 +179,8 @@
 				{
 					"type": "AnimationPath[]"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -184,7 +191,8 @@
 					"type": "SoundPath",
 					"name": "asset_path"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -195,7 +203,8 @@
 					"type": "integer",
 					"name": "damage"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -206,7 +215,8 @@
 					"type": "float",
 					"name": "cooldown"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

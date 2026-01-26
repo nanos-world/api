@@ -18,7 +18,8 @@
 				{
 					"type": "Vector2D"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "DeprojectScreenToWorld",
@@ -45,7 +46,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetHardwareCursor",
@@ -69,7 +71,8 @@
 					"description": "",
 					"default": "Vector(0, 0)"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetViewportSize",
@@ -80,7 +83,8 @@
 					"type": "Vector2D",
 					"description": "The size of viewport"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetViewportScale",
@@ -91,7 +95,8 @@
 					"type": "float",
 					"description": "The scale of viewport"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetMousePosition",
@@ -103,7 +108,8 @@
 					"name": "new_position",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetMousePosition",
@@ -114,7 +120,8 @@
 					"type": "Vector2D",
 					"description": "The current mouse screen location"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetCrosshairEnabled",
@@ -126,7 +133,8 @@
 					"name": "is_enabled",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetBloodScreenEnabled",
@@ -138,7 +146,8 @@
 					"name": "is_enabled",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetBloodScreenIntensity",
@@ -151,7 +160,8 @@
 					"name": "intensity",
 					"description": "From 0.0 to 1.0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

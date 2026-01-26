@@ -58,7 +58,8 @@
 				"events": [
 					"Explode"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -87,7 +88,7 @@
 					"type": "integer",
 					"name": "damage_outer_radius",
 					"default": "1000",
-					"description": "Radius which damage will be interpoled through falloff"
+					"description": "Radius which damage will be interpolated through falloff"
 				},
 				{
 					"type": "float",
@@ -104,7 +105,8 @@
 					"GetDamageOuterRadius",
 					"GetMinimumDamage"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -116,7 +118,8 @@
 					"name": "time",
 					"description": "Time in seconds"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -127,7 +130,8 @@
 					"type": "integer",
 					"name": "throw_force"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -143,7 +147,8 @@
 				"functions": [
 					"SetDamage"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -159,7 +164,8 @@
 				"functions": [
 					"SetDamage"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -175,7 +181,8 @@
 				"functions": [
 					"SetDamage"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -191,7 +198,8 @@
 				"functions": [
 					"SetDamage"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -207,7 +215,8 @@
 				"functions": [
 					"SetDamage"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -218,7 +227,8 @@
 					"type": "float",
 					"name": "time"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -229,7 +239,8 @@
 					"type": "float",
 					"name": "throw_force"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

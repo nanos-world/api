@@ -29,7 +29,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetAssetPath",
@@ -52,7 +53,8 @@
 					"type": "string",
 					"description": "The file path defined in the Assets.toml"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetAnimations",
@@ -80,7 +82,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetBlueprints",
@@ -108,7 +111,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetMaps",
@@ -136,7 +140,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetMaterials",
@@ -164,7 +169,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetParticles",
@@ -192,7 +198,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetSounds",
@@ -220,7 +227,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetSkeletalMeshes",
@@ -248,7 +256,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetStaticMeshes",
@@ -276,7 +285,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetOthers",
@@ -304,7 +314,8 @@
 					"name": "asset_pack_path",
 					"description": "The Asset Pack path to get the assets"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "Precache",
@@ -327,7 +338,8 @@
 					"title": "Precaches a Static Mesh",
 					"content": "Assets.Precache(\"my-asset-pack::SM_MyStaticMesh\", AssetType.StaticMesh)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

@@ -1396,7 +1396,7 @@
 			}
 		]
 	},
-	"Text3DAlignCamera": {
+	"TextRenderAlignCamera": {
 		"enums": [
 			{
 				"key": "Unaligned",
@@ -1412,7 +1412,7 @@
 			}
 		]
 	},
-	"Text3DBevelType": {
+	"TextRenderBevelType": {
 		"enums": [
 			{
 				"key": "Linear",
@@ -1441,42 +1441,6 @@
 			{
 				"key": "Engraved",
 				"value": "6"
-			}
-		]
-	},
-	"Text3DHorizontalAlignment": {
-		"enums": [
-			{
-				"key": "Left",
-				"value": "0"
-			},
-			{
-				"key": "Center",
-				"value": "1"
-			},
-			{
-				"key": "Right",
-				"value": "2"
-			}
-		]
-	},
-	"Text3DVerticalAlignment": {
-		"enums": [
-			{
-				"key": "FirstLine",
-				"value": "0"
-			},
-			{
-				"key": "Top",
-				"value": "1"
-			},
-			{
-				"key": "Center",
-				"value": "2"
-			},
-			{
-				"key": "Bottom",
-				"value": "3"
 			}
 		]
 	},
@@ -1513,30 +1477,6 @@
 			{
 				"key": "QuadTop",
 				"value": "3"
-			}
-		]
-	},
-	"TextRenderRenderingType": {
-		"enums": [
-			{
-				"key": "Lit",
-				"value": "0",
-				"description": "Text is affected by scene lighting"
-			},
-			{
-				"key": "Unlit",
-				"value": "1",
-				"description": "Text is not affected by scene lighting"
-			},
-			{
-				"key": "UnlitCameraAligned",
-				"value": "2",
-				"description": "Text is not affected by scene lighting and always faces the camera"
-			},
-			{
-				"key": "UnlitCameraAlignedDepth",
-				"value": "3",
-				"description": "Text is not affected by scene lighting, always faces the camera, and is always visible through walls"
 			}
 		]
 	},

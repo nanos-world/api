@@ -87,7 +87,7 @@
 			]
 		}
 	],
-    "functions": [
+	"functions": [
 		{
 			"name": "FadeIn",
 			"authority": "client",
@@ -107,7 +107,8 @@
 					"name": "start_time",
 					"default": "0.0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "FadeOut",
@@ -128,7 +129,8 @@
 					"name": "destroy_after_fadeout",
 					"default": "false"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Play",
@@ -140,7 +142,8 @@
 					"name": "start_time",
 					"default": "0.0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetFalloffDistance",
@@ -151,7 +154,8 @@
 					"type": "float",
 					"name": "falloff_distance"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetInnerRadius",
@@ -162,7 +166,8 @@
 					"type": "float",
 					"name": "inner_radius"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetLowPassFilter",
@@ -173,7 +178,8 @@
 					"type": "float",
 					"name": "frequency"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetPaused",
@@ -185,7 +191,8 @@
 					"name": "pause",
 					"default": "true"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetPitch",
@@ -196,7 +203,8 @@
 					"type": "float",
 					"name": "new_pitch"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetVolume",
@@ -208,12 +216,14 @@
 					"name": "new_volume",
 					"description": "from 0.0 to 1.0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Stop",
 			"authority": "client",
-			"description": "Stops the sound"
+			"description": "Stops the sound",
+			"efficiency": "fast"
 		},
 		{
 			"name": "StopDelayed",
@@ -224,7 +234,8 @@
 					"type": "float",
 					"name": "delay"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -235,7 +246,8 @@
 			],
 			"name": "Is2D",
 			"authority": "client",
-			"description": "Gets if the sound is 2D"
+			"description": "Gets if the sound is 2D",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -246,7 +258,8 @@
 			],
 			"name": "IsPlaying",
 			"authority": "client",
-			"description": "Gets if the sound is playing"
+			"description": "Gets if the sound is playing",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -257,7 +270,8 @@
 			],
 			"name": "GetDuration",
 			"authority": "client",
-			"description": "Gets the duration of the Sound"
+			"description": "Gets the duration of the Sound",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -267,7 +281,8 @@
 				}
 			],
 			"name": "GetPitch",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -277,7 +292,8 @@
 				}
 			],
 			"name": "GetVolume",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -287,7 +303,8 @@
 				}
 			],
 			"name": "GetLowPassFilter",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -297,7 +314,8 @@
 				}
 			],
 			"name": "GetInnerRadius",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -307,7 +325,8 @@
 				}
 			],
 			"name": "GetFalloffDistance",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -317,7 +336,8 @@
 				}
 			],
 			"name": "GetSoundType",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		},
 		{
 			"return": [
@@ -327,7 +347,8 @@
 				}
 			],
 			"name": "GetPath",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "fast"
 		}
-    ]
+	]
 }

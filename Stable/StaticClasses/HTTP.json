@@ -68,7 +68,8 @@
 						}
 					]
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Request",
@@ -131,7 +132,8 @@
 					"default": "{}",
 					"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'>Headers</a> to be used"
 				}
-			]
+			],
+			"efficiency": "blocking"
 		},
 		{
 			"name": "SetConnectionTimeout",
@@ -143,7 +145,8 @@
 					"name": "connection_timeout",
 					"description": "The timeout in seconds"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetReadWriteTimeout",
@@ -155,7 +158,8 @@
 					"name": "read_write_timeout",
 					"description": "The timeout in seconds"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

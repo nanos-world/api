@@ -67,7 +67,8 @@
 					"GetPicked",
 					"PickUp"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -93,7 +94,8 @@
 					"EnterVehicle",
 					"AttemptEnterVehicle"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -109,7 +111,8 @@
 				"functions": [
 					"GetGrabbedProp"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -124,7 +127,8 @@
 					"LeaveVehicle",
 					"AttemptLeaveVehicle"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -136,7 +140,8 @@
 					"name": "location",
 					"description": "World location to look"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -153,7 +158,8 @@
 					"Drop",
 					"GetPicked"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -204,7 +210,8 @@
 						"url": "/docs/next/scripting-reference/classes/base-classes/pawn#function-stopanimation"
 					}
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -221,7 +228,8 @@
 					"name": "enable_turn_in_place",
 					"default": "false"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -237,7 +245,8 @@
 					"name": "enable_turn_in_place",
 					"default": "false"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -248,7 +257,8 @@
 					"type": "AnimationPath",
 					"name": "blend_space_path"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -263,7 +273,8 @@
 					"type": "AnimationPath",
 					"name": "crouching_to_standing"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -276,9 +287,10 @@
 				},
 				{
 					"type": "AnimationPath",
-					"name": "pronng_to_crouching"
+					"name": "proning_to_crouching"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -320,7 +332,8 @@
 					"name": "flying",
 					"default": "1024"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -345,7 +358,8 @@
 					"default": "25",
 					"description": "When falling, if lateral velocity magnitude is less than this value, air_control is multiplied by boost_multiplier. Setting this to zero will disable air control boosting"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -357,7 +371,8 @@
 					"type": "CameraMode",
 					"name": "camera_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -368,7 +383,8 @@
 					"type": "boolean",
 					"name": "can_aim"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -379,7 +395,8 @@
 					"type": "boolean",
 					"name": "can_drop"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -390,7 +407,8 @@
 					"type": "boolean",
 					"name": "can_dive"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -401,7 +419,8 @@
 					"type": "boolean",
 					"name": "can_sprint"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -412,7 +431,8 @@
 					"type": "boolean",
 					"name": "can_grab_props"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -423,7 +443,8 @@
 					"type": "boolean",
 					"name": "can_pickup"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -434,7 +455,8 @@
 					"type": "boolean",
 					"name": "can_use"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -445,7 +467,8 @@
 					"type": "boolean",
 					"name": "can_punch"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -456,7 +479,8 @@
 					"type": "boolean",
 					"name": "can_deploy_parachute"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -471,7 +495,8 @@
 					"type": "float",
 					"name": "multiplier"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -482,7 +507,8 @@
 					"type": "string",
 					"name": "sound_asset"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -495,18 +521,8 @@
 					"name": "damage",
 					"description": "Default is 10"
 				}
-			]
-		},
-		{
-			"authority": "server",
-			"name": "SetFlyingMode",
-			"description": "Sets the Flying Mode",
-			"parameters": [
-				{
-					"type": "boolean",
-					"name": "flying_mode"
-				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -517,7 +533,8 @@
 					"type": "float",
 					"name": "multiplier"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -535,7 +552,8 @@
 				"functions": [
 					"SetRagdollOnHitEnabled"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -551,7 +569,8 @@
 				"functions": [
 					"SetHighFallingTime"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -562,7 +581,8 @@
 					"type": "float",
 					"name": "time"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -573,7 +593,8 @@
 					"type": "GaitMode",
 					"name": "gait_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -591,7 +612,8 @@
 				"functions": [
 					"SetRagdollOnHitEnabled"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -604,7 +626,8 @@
 					"name": "damage",
 					"description": "Default is 50"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -615,7 +638,8 @@
 					"type": "float",
 					"name": "volume_multiplier"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -626,7 +650,8 @@
 					"type": "boolean",
 					"name": "is_invulnerable"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -637,7 +662,8 @@
 					"type": "SkeletalMeshPath",
 					"name": "skeletal_mesh_asset"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -660,7 +686,8 @@
 					"ClearMorphTargets",
 					"GetAllMorphTargetNames"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -686,7 +713,8 @@
 					"ClearMorphTargets",
 					"GetAllMorphTargetNames"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -698,7 +726,8 @@
 					"GetMorphTarget",
 					"GetAllMorphTargetNames"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -716,7 +745,8 @@
 					"GetMorphTarget",
 					"ClearMorphTargets"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -774,12 +804,14 @@
 					"default": "0",
 					"description": "The max force used to correct angular errors"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
 			"name": "ResetPhysicalAnimationSettings",
-			"description": "Resets all Physical Animation settings"
+			"description": "Resets all Physical Animation settings",
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -790,7 +822,8 @@
 					"type": "boolean",
 					"name": "is_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -801,7 +834,8 @@
 					"type": "ImagePath",
 					"name": "texture"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -812,7 +846,8 @@
 					"type": "SoundPath",
 					"name": "sound_asset"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -824,7 +859,8 @@
 					"name": "punch_damage",
 					"description": "Default is 15"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -835,7 +871,8 @@
 					"type": "boolean",
 					"name": "ragdoll_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -846,7 +883,8 @@
 					"type": "boolean",
 					"name": "simulate_physics"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -858,7 +896,8 @@
 					"name": "speed_multiplier",
 					"description": "1 is normal"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -869,7 +908,8 @@
 					"type": "StanceMode",
 					"name": "stance_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -881,7 +921,8 @@
 					"name": "team",
 					"description": "0 is neutral and default"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "network-authority",
@@ -892,7 +933,8 @@
 					"type": "ViewMode",
 					"name": "view_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "network-authority",
@@ -903,12 +945,14 @@
 					"type": "AimMode",
 					"name": "aim_mode"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
 			"name": "UnGrabProp",
-			"description": "UnGrabs/Drops the Prop the Character is holding"
+			"description": "UnGrabs/Drops the Prop the Character is holding",
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -919,7 +963,8 @@
 					"type": "boolean",
 					"name": "ragdoll_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -930,7 +975,8 @@
 					"type": "boolean",
 					"name": "is_invulnerable"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -941,7 +987,8 @@
 					"type": "boolean",
 					"name": "is_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -952,7 +999,8 @@
 					"type": "CameraMode",
 					"name": "camera_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -963,7 +1011,8 @@
 					"type": "boolean",
 					"name": "can_drop"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -974,7 +1023,8 @@
 					"type": "boolean",
 					"name": "can_punch"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -985,7 +1035,8 @@
 					"type": "boolean",
 					"name": "can_aim"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -996,7 +1047,8 @@
 					"type": "boolean",
 					"name": "can_crouch"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1007,7 +1059,8 @@
 					"type": "boolean",
 					"name": "can_sprint"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1018,7 +1071,8 @@
 					"type": "boolean",
 					"name": "can_grab_props"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1029,7 +1083,8 @@
 					"type": "boolean",
 					"name": "can_pickup"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1040,7 +1095,8 @@
 					"type": "boolean",
 					"name": "can_use"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1058,7 +1114,8 @@
 					"name": "bone_name",
 					"type": "string"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1069,7 +1126,8 @@
 					"type": "integer",
 					"name": "damage"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1079,18 +1137,8 @@
 				{
 					"type": "FallingMode"
 				}
-			]
-		},
-		{
-			"authority": "both",
-			"name": "GetFlyingMode",
-			"description": "Gets if it's in Flying mode",
-			"return": [
-				{
-					"type": "boolean",
-					"name": "flying_mode"
-				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1101,7 +1149,8 @@
 					"type": "GaitMode",
 					"name": "gait_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1118,7 +1167,8 @@
 					"GrabProp",
 					"UnGrabProp"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1129,7 +1179,8 @@
 					"type": "integer",
 					"name": "impact_damage"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1140,7 +1191,8 @@
 					"type": "integer",
 					"name": "jump_z_velocity"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1157,7 +1209,8 @@
 					"PickUp",
 					"Drop"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1168,7 +1221,8 @@
 					"type": "integer",
 					"name": "punch_damage"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1179,7 +1233,8 @@
 					"type": "float",
 					"name": "speed_multiplier"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1190,7 +1245,8 @@
 					"type": "StanceMode",
 					"name": "stance_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1201,7 +1257,8 @@
 					"type": "SwimmingMode",
 					"name": "swimming_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1212,7 +1269,8 @@
 					"type": "integer",
 					"name": "team"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1229,7 +1287,8 @@
 					"EnterVehicle",
 					"LeaveVehicle"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1239,7 +1298,8 @@
 				{
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1250,7 +1310,8 @@
 					"type": "ViewMode",
 					"name": "view_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -1261,7 +1322,8 @@
 					"type": "AimMode",
 					"name": "aim_mode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -1272,7 +1334,8 @@
 					"type": "Other",
 					"name": "physics_asset"
 				}
-			]
+			],
+			"efficiency": "slow"
 		}
 	],
 	"events": [

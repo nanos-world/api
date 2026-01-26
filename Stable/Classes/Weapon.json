@@ -43,7 +43,8 @@
 			"authority": "server",
 			"name": "Reload",
 			"description": "Forces this Weapon to reload",
-			"description_long": "Forces this Weapon to reload (only if being handled by a Character)"
+			"description_long": "Forces this Weapon to reload (only if being handled by a Character)",
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -54,7 +55,8 @@
 					"name": "new_ammo_bag",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -65,7 +67,8 @@
 					"name": "new_ammo_clip",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -90,7 +93,8 @@
 					"type": "integer",
 					"default": "ammo_clip"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -106,7 +110,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -122,7 +127,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -138,7 +144,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -149,7 +156,8 @@
 					"name": "reload_animation_path",
 					"type": "AnimationPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -161,7 +169,8 @@
 					"name": "auto_reload",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -173,7 +182,8 @@
 					"name": "bullet_color",
 					"type": "Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -198,7 +208,8 @@
 					"name": "bullet_color",
 					"type": "Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -210,7 +221,8 @@
 					"type": "float",
 					"description": "1 shot at each <code>cadence</code> second"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -221,7 +233,8 @@
 					"name": "clip",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -233,7 +246,8 @@
 					"name": "damage",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -244,7 +258,8 @@
 					"name": "handling_mode",
 					"type": "HandlingMode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -259,7 +274,8 @@
 					"name": "left_hand_rotation",
 					"type": "Rotator"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -277,7 +293,8 @@
 					"default": "b_gun_mag",
 					"description": "Weapon bone to hide when reloading it"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -323,7 +340,8 @@
 					"default": "false",
 					"description": "Stops all running Montages from the same Group. This parameter is only used if the Weapon has an Animation Blueprint"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -334,7 +352,8 @@
 					"name": "particle_bullet_trail_asset_path",
 					"type": "ParticlePath"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -345,7 +364,8 @@
 					"name": "particle_asset_path",
 					"type": "ParticlePath"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -356,7 +376,8 @@
 					"name": "particle_shells_asset_path",
 					"type": "ParticlePath"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -368,7 +389,8 @@
 					"name": "right_hand_offset",
 					"type": "Vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -379,7 +401,8 @@
 					"name": "sight_fov_multiplier",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -394,7 +417,8 @@
 					"name": "sight_rotation",
 					"type": "Rotator"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -415,7 +439,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -436,7 +461,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -457,7 +483,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -478,7 +505,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -499,7 +527,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -520,7 +549,8 @@
 					"type": "float",
 					"default": "1"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -538,7 +568,8 @@
 					"default": "1",
 					"description": "The amount of remaining bullet to start playing this sound"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "server",
@@ -550,7 +581,8 @@
 					"type": "float",
 					"description": "the higher the less precision - recommended value: 20"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -562,7 +594,8 @@
 					"type": "float",
 					"description": "0 means no Recoil, default is 1"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -577,7 +610,8 @@
 					"name": "hold_release_use",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -594,7 +628,8 @@
 					"type": "float",
 					"description": "Damage given if wallbangged"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -605,7 +640,8 @@
 					"name": "ammo_bag",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -616,7 +652,8 @@
 					"name": "ammo_clip",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -626,7 +663,8 @@
 					"name": "ammo_to_reload",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -636,7 +674,8 @@
 					"name": "handling_mode",
 					"type": "HandlingMode"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -646,7 +685,8 @@
 					"name": "animation_character_fire_path",
 					"type": "AnimationPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -656,7 +696,8 @@
 					"name": "animation_fire_path",
 					"type": "AnimationPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -666,7 +707,8 @@
 					"name": "magazine_mesh",
 					"type": "StaticMeshPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -676,7 +718,8 @@
 					"name": "particle_bullet_trail_asset_path",
 					"type": "ParticlePath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -686,7 +729,8 @@
 					"name": "particle_shells_asset_path",
 					"type": "ParticlePath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -696,7 +740,8 @@
 					"name": "sound_dry_asset_path",
 					"type": "SoundPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -706,7 +751,8 @@
 					"name": "sound_load_asset_path",
 					"type": "SoundPath"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -716,7 +762,8 @@
 					"name": "sound_unload_asset_path",
 					"type": "SoundPath"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -726,7 +773,8 @@
 					"name": "sound_zooming_asset_path",
 					"type": "SoundPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -736,7 +784,8 @@
 					"name": "sound_aim_asset_path",
 					"type": "SoundPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -746,7 +795,8 @@
 					"name": "sound_fire_asset_path",
 					"type": "SoundPath"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -756,7 +806,8 @@
 					"name": "can_hold_use",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -766,7 +817,8 @@
 					"type": "boolean",
 					"name": "hold_release_use"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -776,7 +828,8 @@
 					"type": "integer",
 					"name": "bullet_count"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -786,7 +839,8 @@
 					"type": "Color",
 					"name": "bullet_color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -796,7 +850,8 @@
 					"name": "cadence",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -806,7 +861,8 @@
 					"name": "clip",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -816,7 +872,8 @@
 					"name": "damage",
 					"type": "integer"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -826,7 +883,8 @@
 					"name": "right_hand_offset",
 					"type": "Vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -836,7 +894,8 @@
 					"name": "left_hand_location",
 					"type": "Vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -846,7 +905,8 @@
 					"name": "left_hand_rotation",
 					"type": "Rotator"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -856,7 +916,8 @@
 					"name": "sight_location",
 					"type": "Vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -866,7 +927,8 @@
 					"name": "sight_rotation",
 					"type": "Rotator"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -876,7 +938,8 @@
 					"name": "sight_fov_multiplier",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -886,7 +949,8 @@
 					"name": "spread",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -896,7 +960,8 @@
 					"name": "recoil",
 					"type": "float"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

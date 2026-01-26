@@ -78,7 +78,8 @@
 					"name": "pivot",
 					"default": "Vector2D(0.5, 0.5)"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "SetVisibility",
@@ -89,7 +90,8 @@
 					"type": "WidgetVisibility",
 					"name": "visibility"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetVisibility",
@@ -100,24 +102,28 @@
 					"name": "visibility",
 					"type": "WidgetVisibility"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events)",
-			"description_long": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one Widget can have focus per time."
+			"description_long": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one Widget can have focus per time.",
+			"efficiency": "fast"
 		},
 		{
 			"name": "BringToFront",
 			"authority": "client",
 			"description": "Puts this Widget in the front of all WebUIs and Widgets",
-			"description_long": "Puts this Widget in the front of all WebUIs and Widgets. Note: You can only call it if the Widget is parented to the Viewport!"
+			"description_long": "Puts this Widget in the front of all WebUIs and Widgets. Note: You can only call it if the Widget is parented to the Viewport!",
+			"efficiency": "fast"
 		},
 		{
 			"name": "AddToViewport",
 			"authority": "client",
-			"description": "Adds it to the game's viewport and fills the entire screen"
+			"description": "Adds it to the game's viewport and fills the entire screen",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "AddChild",
@@ -129,7 +135,8 @@
 					"name": "other",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetContentForSlot",
@@ -145,7 +152,8 @@
 					"name": "widget",
 					"description": "Pass it nil to remove it"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetSlotCanvasLayout",
@@ -183,7 +191,8 @@
 					"description": "",
 					"default": "Vector(0.5, 0.5)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "CallBlueprintEvent",
@@ -208,7 +217,8 @@
 					"default": "nil",
 					"description": "Sequence of arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "BindBlueprintEventDispatcher",
@@ -241,7 +251,8 @@
 					"type": "function",
 					"description": "the callback itself"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "UnbindBlueprintEventDispatcher",
@@ -258,7 +269,8 @@
 					"name": "callback?",
 					"description": "Optional callback to unbind"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetBlueprintPropertyValue",
@@ -273,7 +285,8 @@
 					"type": "any",
 					"name": "value"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetBlueprintPropertyValue",
@@ -290,7 +303,8 @@
 					"type": "string",
 					"name": "property_name"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "SetSlotAlignment",
@@ -310,7 +324,8 @@
 					"description": "Vertical alignment for the slot",
 					"default": "WidgetVerticalAlignment.Fill"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetSlotPadding",
@@ -330,7 +345,8 @@
 					"description": "Vertical padding for the slot",
 					"default": "Vector2D(0, 0)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetSlotSize",
@@ -350,7 +366,8 @@
 					"description": "Size rule for the slot",
 					"default": "WidgetSizeRule.Automatic"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	],
 	"events": []

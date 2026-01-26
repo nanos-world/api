@@ -29,7 +29,8 @@
 		{
 			"name": "Close",
 			"authority": "server",
-			"description": "Closes the Database"
+			"description": "Closes the Database",
+			"efficiency": "slow"
 		},
 		{
 			"name": "ExecuteAsync",
@@ -65,7 +66,8 @@
 					"default": "nil",
 					"description": "Sequence of parameters to escape into the Query"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Execute",
@@ -99,7 +101,8 @@
 					"title": "Inserts into database (SQLite)",
 					"content": "local affected_rows = my_database:Execute(\"INSERT INTO MyTable VALUES (:0, ':1')\", 123, \"MyValue\")"
 				}
-			]
+			],
+			"efficiency": "blocking"
 		},
 		{
 			"name": "SelectAsync",
@@ -141,7 +144,8 @@
 					"title": "Selects from a table asynchronously (SQLite)",
 					"content": "my_database:SelectAsync(\"SELECT * FROM MyTable WHERE name = :0 AND title = :1\", function(rows)\n\tConsole.log(NanosTable.Dump(rows))\nend, \"Val\", \"AnotherVal\")"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Select",
@@ -175,7 +179,8 @@
 					"title": "Selects from a table (SQLite)",
 					"content": "local rows = my_database:Select(\"SELECT * FROM MyTable WHERE name = :0 AND title = :1\", \"Val\", \"AnotherVal\")"
 				}
-			]
+			],
+			"efficiency": "blocking"
 		}
 	]
 }

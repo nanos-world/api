@@ -19,7 +19,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -37,7 +38,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -60,7 +62,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -78,7 +81,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -101,7 +105,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -124,7 +129,8 @@
 					"name": "callback",
 					"description": "The callback function to execute"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -147,7 +153,8 @@
 					"name": "callback",
 					"description": "The callback function to execute"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -165,7 +172,8 @@
 					"default": "nil",
 					"description": "The callback function to unsubscribe"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -183,7 +191,8 @@
 					"default": "nil",
 					"description": "The callback function to unsubscribe"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

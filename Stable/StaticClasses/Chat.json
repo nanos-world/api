@@ -13,7 +13,8 @@
 					"name": "message",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SendMessage",
@@ -30,7 +31,8 @@
 					"name": "message",
 					"description": "The message"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetConfiguration",
@@ -79,7 +81,8 @@
 					"description": "",
 					"default": "true"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetVisibility",
@@ -91,12 +94,14 @@
 					"name": "is_visible",
 					"description": ""
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Clear",
 			"description": "Clears all messages",
-			"authority": "client"
+			"authority": "client",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "BroadcastMessage",
@@ -114,10 +119,11 @@
 					"title": "Sends a message to everyone",
 					"content": "Chat.BroadcastMessage(\"Welcome to the server!\")"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	],
-	"events" : [
+	"events": [
 		{
 			"name": "PlayerSubmit",
 			"description": "Called when a player submits a message in the chat",

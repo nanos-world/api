@@ -78,7 +78,8 @@
 					"RemoveRenderActor",
 					"ClearRenderActors"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "RemoveRenderActor",
@@ -95,7 +96,8 @@
 					"AddRenderActor",
 					"ClearRenderActors"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "ClearRenderActors",
@@ -106,7 +108,8 @@
 					"AddRenderActor",
 					"RemoveRenderActor"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetFreeze",
@@ -117,7 +120,8 @@
 					"type": "boolean",
 					"name": "freeze"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "EncodeToBase64",
@@ -140,7 +144,8 @@
 				"functions": [
 					"EncodeToBase64Async"
 				]
-			}
+			},
+			"efficiency": "slow"
 		},
 		{
 			"name": "EncodeToBase64Async",
@@ -170,7 +175,8 @@
 				"functions": [
 					"EncodeToBase64"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetFOVAngle",
@@ -181,7 +187,8 @@
 					"type": "float",
 					"name": "angle"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetShowFlag",
@@ -197,7 +204,8 @@
 					"type": "boolean",
 					"name": "enable"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Resize",
@@ -212,7 +220,8 @@
 					"type": "integer",
 					"name": "height"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "SetRenderRate",
@@ -223,7 +232,8 @@
 					"type": "float",
 					"name": "render_rate"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetDistanceOptimizationEnabled",
@@ -234,7 +244,8 @@
 					"type": "boolean",
 					"name": "enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

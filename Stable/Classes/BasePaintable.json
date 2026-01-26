@@ -25,7 +25,8 @@
 					"default": "",
 					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material. Pass empty to set on main mesh only"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
@@ -43,7 +44,8 @@
 					"default": "-1",
 					"description": "The material index to apply (<code>-1</code> means all indices)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -61,7 +63,8 @@
 					"default": "-1",
 					"description": "The material index to apply (<code>-1</code> means all indices)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
@@ -79,7 +82,8 @@
 					"default": "-1",
 					"description": "The material index to apply (<code>-1</code> means all indices)"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -98,7 +102,8 @@
 					"default": "",
 					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to reset the material. Pass empty to reset on main mesh only"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -127,7 +132,8 @@
 					"default": "",
 					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -156,7 +162,8 @@
 					"default": "",
 					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -185,7 +192,8 @@
 					"default": "",
 					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "both",
@@ -214,7 +222,136 @@
 					"default": "",
 					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material parameter. Pass empty to set on main mesh only"
 				}
-			]
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialColorParameter",
+			"description": "Gets a Color parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "or nil if parameter was not found"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialVectorParameter",
+			"description": "Gets a Vector parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"name": "vector",
+					"description": "or nil if parameter was not found"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialTextureParameter",
+			"description": "Gets a Texture parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "string",
+					"name": "texture",
+					"description": "or nil if parameter was not found"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetMaterialScalarParameter",
+			"description": "Gets a Scalar parameter from this Actor's material",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "parameter_name",
+					"description": "The name of the material parameter"
+				},
+				{
+					"type": "integer",
+					"name": "index",
+					"default": "-1",
+					"description": "The material index to get"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to get the material parameter. Pass empty to get from main mesh only"
+				}
+			],
+			"return": [
+				{
+					"type": "float",
+					"name": "scalar",
+					"description": "or nil if parameter was not found"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -226,7 +363,8 @@
 					"name": "physical_material_path",
 					"description": "The Physical Material to override"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

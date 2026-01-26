@@ -12,7 +12,8 @@
 					"type": "Entity[]",
 					"description": "Copy of table containing all Entities"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetByIndex",
@@ -30,7 +31,8 @@
 					"type": "Entity",
 					"description": "Entity at index"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetCount",
@@ -41,7 +43,8 @@
 					"type": "integer",
 					"description": "Number of Entities of this class"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetPairs",
@@ -53,7 +56,8 @@
 					"type": "iterator",
 					"description": "Iterator with all Entities of this class"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Inherit",
@@ -77,7 +81,8 @@
 					"name": "class",
 					"description": "The new Class table"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetInheritedClasses",
@@ -96,7 +101,8 @@
 					"type": "table[]",
 					"description": "All children Classes"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "GetParentClass",
@@ -107,7 +113,8 @@
 					"type": "table?",
 					"description": "The parent class"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsChildOf",
@@ -124,7 +131,8 @@
 				{
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Subscribe",
@@ -147,7 +155,8 @@
 					"type": "function",
 					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SubscribeRemote",
@@ -170,7 +179,8 @@
 					"type": "function",
 					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Unsubscribe",
@@ -188,7 +198,8 @@
 					"default": "nil",
 					"description": "Optional callback to unsubscribe"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"functions": [
@@ -201,7 +212,8 @@
 					"type": "integer",
 					"name": "id"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetClass",
@@ -212,7 +224,8 @@
 					"type": "table",
 					"name": "class"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsA",
@@ -229,7 +242,8 @@
 				{
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "Subscribe",
@@ -252,7 +266,8 @@
 					"type": "function",
 					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SubscribeRemote",
@@ -275,7 +290,8 @@
 					"type": "function",
 					"description": "Callback that was passed (useful for unsubscribing later if your callback is an anonymous function)"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Unsubscribe",
@@ -293,7 +309,8 @@
 					"default": "nil",
 					"description": "Optional callback to unsubscribe"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetValue",
@@ -320,7 +337,8 @@
 				"functions": [
 					"GetAllValuesKeys"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetValue",
@@ -349,7 +367,8 @@
 				"functions": [
 					"GetAllValuesKeys"
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetAllValuesKeys",
@@ -366,12 +385,14 @@
 					"GetValue",
 					"SetValue"
 				]
-			}
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"name": "Destroy",
 			"description": "Destroys this Entity",
-			"authority": "authority"
+			"authority": "authority",
+			"efficiency": "moderate"
 		},
 		{
 			"name": "IsValid",
@@ -382,7 +403,8 @@
 					"name": "is_valid",
 					"type": "boolean"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "CallRemoteEvent",
@@ -405,7 +427,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "CallRemoteEvent",
@@ -423,7 +446,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "BroadcastRemoteEvent",
@@ -441,7 +465,8 @@
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [

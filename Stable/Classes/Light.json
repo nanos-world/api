@@ -95,7 +95,8 @@
 					"name": "color",
 					"description": "The light color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetTextureLightProfile",
@@ -115,7 +116,8 @@
 						"url": "#light-profiles"
 					}
 				]
-			}
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetCastShadows",
@@ -125,7 +127,8 @@
 					"type": "boolean",
 					"name": "is_shadows_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetIntensity",
@@ -135,7 +138,8 @@
 					"type": "float",
 					"name": "intensity"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetAttenuationRadius",
@@ -145,7 +149,8 @@
 					"type": "float",
 					"name": "attenuation_radius"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetCastShadows",
@@ -155,7 +160,8 @@
 					"type": "boolean",
 					"name": "is_shadows_enabled"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetIntensity",
@@ -165,7 +171,8 @@
 					"type": "float",
 					"name": "intensity"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetAttenuationRadius",
@@ -175,7 +182,8 @@
 					"type": "float",
 					"name": "attenuation_radius"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetColor",
@@ -185,7 +193,8 @@
 					"type": "Color",
 					"name": "color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

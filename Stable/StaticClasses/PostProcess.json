@@ -18,12 +18,13 @@
 					"name": "threshold",
 					"default": "-1"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
 			"name": "SetChromaticAberration",
-			"description": "Set Post Process Chromatic Abberation Settings",
+			"description": "Set Post Process Chromatic Aberration Settings",
 			"parameters": [
 				{
 					"type": "float",
@@ -35,7 +36,8 @@
 					"name": "start_offset",
 					"default": "0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -52,7 +54,8 @@
 					"name": "film_grain_intensity",
 					"default": "0"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -84,7 +87,8 @@
 					"name": "high_percent",
 					"default": "90"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -116,7 +120,8 @@
 					"name": "white_clip",
 					"default": "0.3"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -127,7 +132,8 @@
 					"type": "Color",
 					"name": "color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -138,7 +144,8 @@
 					"type": "Color",
 					"name": "gain"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -149,7 +156,8 @@
 					"type": "Color",
 					"name": "gamma"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -160,7 +168,8 @@
 					"type": "Color",
 					"name": "contrast"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -171,7 +180,8 @@
 					"type": "Color",
 					"name": "offset"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "client",
@@ -182,7 +192,8 @@
 					"type": "ImagePath",
 					"name": "texture_path"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
@@ -194,12 +205,14 @@
 					"name": "material_path",
 					"description": "The Material Asset to set as Post Process"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
 			"name": "RemoveMaterial",
-			"description": "Removes the current Post Process Material"
+			"description": "Removes the current Post Process Material",
+			"efficiency": "fast"
 		}
 	]
 }

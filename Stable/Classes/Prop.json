@@ -61,7 +61,8 @@
 					"description": "If the Prop will be able to be grabbable or not. Set to Auto to automatically define based on Prop's size."
 				}
 			],
-			"authority": "server"
+			"authority": "server",
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetPhysicsDamping",
@@ -78,7 +79,8 @@
 					"description": ""
 				}
 			],
-			"authority": "authority"
+			"authority": "authority",
+			"efficiency": "fast"
 		},
 		{
 			"name": "SetMesh",
@@ -90,7 +92,8 @@
 					"description": "asset"
 				}
 			],
-			"authority": "authority"
+			"authority": "authority",
+			"efficiency": "slow"
 		},
 		{
 			"name": "GetMesh",
@@ -102,7 +105,8 @@
 					"name": "asset"
 				}
 			],
-			"authority": "both"
+			"authority": "both",
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetHandler",
@@ -114,7 +118,8 @@
 					"name": "handler"
 				}
 			],
-			"authority": "both"
+			"authority": "both",
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetGrabMode",
@@ -125,7 +130,57 @@
 					"type": "GrabMode"
 				}
 			],
-			"authority": "both"
+			"authority": "both",
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetMassOverride",
+			"description": "Override the mass (in Kg) of this Prop",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "mass",
+					"description": "Mass in KG to override. Pass -1 to reset to default"
+				}
+			],
+			"authority": "authority",
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetMassOverride",
+			"description": "Gets the overridden mass",
+			"return": [
+				{
+					"type": "float",
+					"description": "The overridden mass"
+				}
+			],
+			"authority": "both",
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetMassScale",
+			"description": "Change the mass scale used to calculate the mass of this Prop",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "scale"
+				}
+			],
+			"authority": "authority",
+			"efficiency": "moderate"
+		},
+		{
+			"name": "GetMassScale",
+			"description": "Gets the mass scale",
+			"return": [
+				{
+					"type": "float",
+					"description": "The mass scale"
+				}
+			],
+			"authority": "both",
+			"efficiency": "moderate"
 		}
 	],
 	"events": [
@@ -175,6 +230,11 @@
 					"type": "Vector",
 					"name": "velocity",
 					"description": "The Prop velocity at the moment it hits"
+				},
+				{
+					"type": "Actor?",
+					"name": "other_actor",
+					"description": "The other actor that hit this Prop"
 				}
 			]
 		},
