@@ -130,8 +130,19 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled",
-					"description": ""
+					"name": "is_enabled"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetInteractionToolTipEnabled",
+			"description": "Enables/Disables the Interaction ToolTip",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
 				}
 			],
 			"efficiency": "fast"
