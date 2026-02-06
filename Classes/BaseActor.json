@@ -76,6 +76,13 @@
 					"default": "false",
 					"description": "Whether to force attached object to use absolute rotation (will not follow parent)"
 				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"name": "attached_successfully",
+					"description": "if it was attached successfully"
+				}
 			]
 		},
 		{
@@ -301,7 +308,7 @@
 			"name": "SetScale",
 			"description": "Sets this Actor's scale",
 			"authority": "authority",
-			"efficiency": "moderate",
+			"efficiency": "slow",
 			"parameters": [
 				{
 					"type": "Vector",

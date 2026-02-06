@@ -230,7 +230,8 @@
 				{
 					"name": "force",
 					"type": "boolean",
-					"description": "Whether to bypass interpolation and set the target to its value directly"
+					"description": "Whether to bypass interpolation and set the target to its value directly",
+					"default": "false"
 				}
 			],
 			"efficiency": "fast"
@@ -292,11 +293,13 @@
 				},
 				{
 					"name": "socket_offset",
-					"type": "Vector"
+					"type": "Vector",
+					"default": "Vector(0, 0, 0)"
 				},
 				{
 					"name": "blend_speed",
-					"type": "float"
+					"type": "float",
+					"default": "0.0"
 				}
 			],
 			"efficiency": "fast"

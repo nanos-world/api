@@ -29,7 +29,8 @@
 		{
 			"authority": "server",
 			"name": "AttachStartTo",
-			"description": "Attached the beginning of this cable to another Actor at a specific bone or relative location",
+			"description": "Attaches the beginning of this cable to another Actor at a specific bone or relative location",
+			"description_long": "Attaches the beginning of this cable to another Actor at a specific bone or relative location. For optimization, it is recommended attaching start first if you wish to attach both start and end, to avoid double calculations.",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -47,12 +48,20 @@
 					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "moderate",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "attached_successfully",
+					"description": "if it was attached successfully"
+				}
+			]
 		},
 		{
 			"authority": "server",
 			"name": "AttachEndTo",
-			"description": "Attached the end of this cable to another Actor at a specific bone or relative location",
+			"description": "Attaches the end of this cable to another Actor at a specific bone or relative location",
+			"description_long": "Attaches the end of this cable to another Actor at a specific bone or relative location. For optimization, it is recommended to be the last method to call when setting up the cable.<br/><br/>Note¹: You can attach the end only, and the start will fixed at the Cable's location.<br/><br/>Note²: If no linear limit is set, the entity will be snapped to the other actor. Alternatively you can keep a physics constraint offset by passing it as parameter.",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -68,9 +77,22 @@
 					"name": "bone_name",
 					"default": "",
 					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
+				},
+				{
+					"type": "Vector",
+					"name": "constraint_offset",
+					"default": "Vector(0, 0, 0)",
+					"description": "The physics constraint offset applied to the attached end, in the local space of the other Actor"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "slow",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "attached_successfully",
+					"description": "if it was attached successfully"
+				}
+			]
 		},
 		{
 			"authority": "server",
