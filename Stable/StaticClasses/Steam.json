@@ -15,12 +15,6 @@
 				}
 			],
 			"efficiency": "fast"
-		},
-		{
-			"name": "TriggerScreenshot",
-			"description": "Triggers a Steam screenshot",
-			"authority": "client",
-			"efficiency": "fast"
 		}
 	]
 }
