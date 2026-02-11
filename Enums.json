@@ -361,15 +361,18 @@
 		"enums": [
 			{
 				"key": "Free",
-				"value": "0"
+				"value": "0",
+				"Description": "No constraint around this axis."
 			},
 			{
 				"key": "Limited",
-				"value": "1"
+				"value": "1",
+				"Description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property."
 			},
 			{
 				"key": "Locked",
-				"value": "2"
+				"value": "2",
+				"Description": "Full constraint around this axis"
 			}
 		]
 	},
@@ -1457,6 +1460,26 @@
 			{
 				"key": "Right",
 				"value": "2"
+			}
+		]
+	},
+	"TextRenderRenderingType": {
+		"enums": [
+			{
+				"key": "Lit",
+				"value": "0"
+			},
+			{
+				"key": "Unlit",
+				"value": "1"
+			},
+			{
+				"key": "UnlitCameraAligned",
+				"value": "2"
+			},
+			{
+				"key": "UnlitCameraAlignedDepth",
+				"value": "3"
 			}
 		]
 	},

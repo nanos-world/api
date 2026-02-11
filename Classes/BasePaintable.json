@@ -168,7 +168,7 @@
 		{
 			"authority": "both",
 			"name": "SetMaterialTextureParameter",
-			"description": "Sets a texture parameter in this Actor's material to an image on disk",
+			"description": "Sets a texture parameter in this Actor's material to an image",
 			"parameters": [
 				{
 					"type": "string",
@@ -178,7 +178,7 @@
 				{
 					"type": "ImagePath",
 					"name": "texture_path",
-					"description": "The path to the texture"
+					"description": "The path to texture, a url or a base64"
 				},
 				{
 					"type": "integer",

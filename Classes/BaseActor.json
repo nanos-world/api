@@ -139,6 +139,18 @@
 			]
 		},
 		{
+			"name": "SetAngularForce",
+			"description": "Adds a permanent angular force to this Actor, set to Vector(0, 0, 0) to cancel",
+			"authority": "network-authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "angular_force"
+				}
+			]
+		},
+		{
 			"name": "SetGravityEnabled",
 			"description": "Sets whether gravity is enabled on this Actor",
 			"authority": "authority",
@@ -620,6 +632,18 @@
 				{
 					"type": "Vector",
 					"name": "force"
+				}
+			]
+		},
+		{
+			"name": "GetAngularForce",
+			"description": "Gets this Actor's angular force (set by <code>SetAngularForce()</code>)",
+			"authority": "both",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "Vector",
+					"name": "angular_force"
 				}
 			]
 		},

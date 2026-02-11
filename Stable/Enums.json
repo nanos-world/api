@@ -1463,6 +1463,26 @@
 			}
 		]
 	},
+	"TextRenderRenderingType": {
+		"enums": [
+			{
+				"key": "Lit",
+				"value": "0"
+			},
+			{
+				"key": "Unlit",
+				"value": "1"
+			},
+			{
+				"key": "UnlitCameraAligned",
+				"value": "2"
+			},
+			{
+				"key": "UnlitCameraAlignedDepth",
+				"value": "3"
+			}
+		]
+	},
 	"TextRenderVerticalAlignment": {
 		"enums": [
 			{
