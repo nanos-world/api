@@ -400,10 +400,30 @@
 			],
 			"relations": {
 				"functions": [
+					"SetVOIPLocalMaxDistance",
 					"SetVOIPLocalVolume"
 				],
 				"events": [
 					"VOIPLocalSettingChange"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalMaxDistance",
+			"description": "Sets the local/proximity VOIP max distance. This also affects networking usage",
+			"parameters": [
+				{
+					"name": "max_distance",
+					"type": "integer",
+					"description": "Falloff Distance. Default is 3600"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalSetting",
+					"SetVOIPLocalVolume"
 				]
 			},
 			"efficiency": "fast"
@@ -420,7 +440,8 @@
 			],
 			"relations": {
 				"functions": [
-					"SetVOIPLocalSetting"
+					"SetVOIPLocalSetting",
+					"SetVOIPLocalMaxDistance"
 				],
 				"events": [
 					"VOIPLocalSettingChange"
