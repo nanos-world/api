@@ -101,6 +101,70 @@
 					"description": "Inverse of this Quaternion"
 				}
 			]
+		},
+		{
+			"name": "RotateVector",
+			"description": "Rotates a vector by this Quaternion",
+			"parameters": [
+				{
+					"name": "vector",
+					"type": "Vector",
+					"description": "Vector to rotate"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"description": "Rotated vector"
+				}
+			]
+		},
+		{
+			"name": "UnrotateVector",
+			"description": "Unrotates a vector by this Quaternion",
+			"parameters": [
+				{
+					"name": "vector",
+					"type": "Vector",
+					"description": "Vector to unrotate"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"description": "Unrotated vector"
+				}
+			]
+		},
+		{
+			"name": "GetForwardVector",
+			"description": "Get the forward direction vector from this Quaternion",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "Forward vector"
+				}
+			]
+		},
+		{
+			"name": "GetRightVector",
+			"description": "Get the right direction vector from this Quaternion",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "Right vector"
+				}
+			]
+		},
+		{
+			"name": "GetUpVector",
+			"description": "Get the up direction vector from this Quaternion",
+			"return": [
+				{
+					"type": "Vector",
+					"description": "Up vector"
+				}
+			]
 		}
 	]
 }
