@@ -111,12 +111,14 @@
 				{
 					"type": "string",
 					"name": "description",
-					"description": "The command description to display in the console"
+					"description": "The command description to display in the console",
+					"default": ""
 				},
 				{
 					"type": "string[]",
 					"name": "parameters",
-					"description": "The list of supported parameters to display in the console"
+					"description": "The list of supported parameters to display in the console",
+					"default": "{}"
 				}
 			],
 			"examples": [

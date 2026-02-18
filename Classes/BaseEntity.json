@@ -70,9 +70,10 @@
 					"description": "The name of the new Class"
 				},
 				{
-					"type": "table?",
+					"type": "table",
 					"name": "custom_values",
-					"description": "An optional table with custom values to be set in the inherited class table"
+					"description": "An optional table with custom values to be set in the inherited class table",
+					"default": "{}"
 				}
 			],
 			"return": [

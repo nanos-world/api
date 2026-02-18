@@ -33,9 +33,10 @@
 					"description": "Path to the script file to require"
 				},
 				{
-					"type": "boolean?",
+					"type": "boolean",
 					"name": "force_load",
-					"description": "Whether to force loading this file even if it was already loaded"
+					"description": "Whether to force loading this file even if it was already loaded",
+					"default": "false"
 				}
 			],
 			"return": [
@@ -216,7 +217,7 @@
 			],
 			"parameters": [
 				{
-					"type": "string?",
+					"type": "string",
 					"name": "key",
 					"default": "",
 					"description": "The key to get the data"

@@ -105,8 +105,9 @@
 				},
 				{
 					"type": "function",
-					"name": "callback?",
-					"description": "Optional callback to unbind"
+					"name": "callback",
+					"description": "Optional callback to unbind",
+					"default": "nil"
 				}
 			],
 			"efficiency": "moderate"
