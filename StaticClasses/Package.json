@@ -93,12 +93,13 @@
 		{
 			"name": "SetPersistentData",
 			"description": "Sets a Persistent Value which will be saved to disk",
+			"description_long": "Sets a Persistent Value which will be saved to disk. Note the actual flush to disk is deferred and may not occur immediately",
 			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
 					"name": "key",
-					"description": "Key to index data into"
+					"description": "Key to index data into. It can be separated by '.' to set a child element."
 				},
 				{
 					"type": "any",
@@ -231,6 +232,17 @@
 			"description_large": "Flushes the Persistent Data pending changes to disk immediately. Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
 			"authority": "both",
 			"efficiency": "slow"
+		},
+		{
+			"name": "IsUnloading",
+			"description": "Returns whether this package is currently unloading",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
