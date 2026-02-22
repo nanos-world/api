@@ -441,18 +441,6 @@
 			]
 		},
 		{
-			"name": "IsBeingDestroyed",
-			"description": "Returns true if this Actor is being destroyed",
-			"description_long": "Returns true if this Actor is being destroyed.<br>You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
-			"authority": "both",
-			"efficiency": "fast",
-			"return": [
-				{
-					"type": "boolean"
-				}
-			]
-		},
-		{
 			"name": "IsVisible",
 			"description": "Returns true if this Actor is visible",
 			"authority": "both",
@@ -672,18 +660,6 @@
 			"return": [
 				{
 					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "HasAuthority",
-			"description": "Gets if this Actor was spawned by the client side",
-			"authority": "client",
-			"efficiency": "fast",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "false if it was spawned by the Server or true if it was spawned by the client"
 				}
 			]
 		},
