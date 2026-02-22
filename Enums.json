@@ -1552,6 +1552,11 @@
 				"key": "TraceOnlyVisibility",
 				"value": "1 << 6",
 				"description": "Whether should only trace for objects that don't ignore visibility collision channel"
+			},
+			{
+				"key": "ReturnItem",
+				"value": "1 << 7",
+				"description": "Whether should return extra data about item that was hit (hit primitive specific - usually the instanced index) (adds <code>Item</code> to result)"
 			}
 		]
 	},
