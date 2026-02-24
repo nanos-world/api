@@ -484,22 +484,6 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetDamageMultiplier",
-			"description": "Changes how much damage this character takes on specific bones",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name"
-				},
-				{
-					"type": "float",
-					"name": "multiplier"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "server",
 			"name": "SetDeathSound",
 			"description": "Changes the Death sound when Character dies",
 			"parameters": [
@@ -1094,25 +1078,6 @@
 				{
 					"type": "boolean",
 					"name": "can_use"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "GetDamageMultiplier",
-			"description": "Gets the Damage Multiplier of a bone",
-			"return": [
-				{
-					"type": "float",
-					"description": "the damage multiplier of the bone",
-					"name": "multiplier"
-				}
-			],
-			"parameters": [
-				{
-					"name": "bone_name",
-					"type": "string"
 				}
 			],
 			"efficiency": "fast"
