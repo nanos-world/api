@@ -173,6 +173,30 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"name": "SetBrandingBarSettings",
+			"description": "Sets the Branding Bar settings (the bar with 'nanos world - closed alpha ver...')",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "WidgetHorizontalAlignment",
+					"name": "horizontal_alignment",
+					"description": "Left, Center and Right supported"
+				},
+				{
+					"type": "WidgetVerticalAlignment",
+					"name": "vertical_alignment",
+					"description": "Bottom and Top supported"
+				},
+				{
+					"type": "boolean",
+					"name": "is_lean",
+					"default": "false",
+					"description": "Whether to show less information"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
