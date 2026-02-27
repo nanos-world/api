@@ -359,8 +359,16 @@
 		{
 			"authority": "authority",
 			"name": "StopMovement",
-			"description": "AI: Stops the movement",
-			"description_long": "AI: Stops the movement<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
+			"description": "AI: Stops the movement, optionally zeroing the velocity as well",
+			"description_long": "AI: Stops the movement, optionally zeroing the velocity as well (stops even for non AI)<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "stops_velocity",
+					"default": "false",
+					"description": "Also stops the Pawn's current velocity"
+				}
+			],
 			"relations": {
 				"functions": [
 					"Follow",
