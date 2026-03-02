@@ -231,7 +231,7 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 		class_data.inheritance_children = [];
 
 		for (const class_key in APIData.Class) {
-			if (ClassesData[version_key][class_key].inheritance && ClassesData[version_key][class_key].inheritance.includes(class_data.name)) {
+			if (!ClassesData[version_key][class_key].is_base && ClassesData[version_key][class_key].inheritance && ClassesData[version_key][class_key].inheritance.includes(class_data.name)) {
 				class_data.inheritance_children.push(class_key)
 			}
 		}

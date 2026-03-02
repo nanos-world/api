@@ -6,9 +6,9 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Pawn",
 		"Paintable",
-		"Damageable"
+		"Damageable",
+		"Pawn"
 	],
 	"constructors": [
 		{
