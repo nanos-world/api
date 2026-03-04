@@ -1,0 +1,214 @@
+{
+	"name": "InstancedStaticMesh",
+	"description": "An Instanced Static Mesh entity allows spawning a mesh that can have multiple instances efficiently rendered.",
+	"authority": "both",
+	"network_distribution": "none",
+	"inheritance": [
+		"Entity",
+		"Actor",
+		"Paintable"
+	],
+	"constructors": [
+		{
+			"name": "Default Constructor",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation"
+				},
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_asset"
+				},
+				{
+					"type": "CollisionType",
+					"name": "collision_type",
+					"default": "CollisionType.Auto"
+				},
+				{
+					"type": "table",
+					"name": "instances",
+					"description": "Array with initial instances",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector",
+							"description": "Relative location"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator",
+							"description": "Relative rotation (optional)"
+						},
+						{
+							"name": "Scale",
+							"type": "Vector",
+							"description": "Relative scale (optional)"
+						}
+					],
+					"default": "{}"
+				}
+			]
+		}
+	],
+	"functions": [
+		{
+			"name": "GetMesh",
+			"description": "Gets the Asset path mesh used",
+			"return": [
+				{
+					"type": "StaticMeshPath",
+					"name": "static_mesh_asset"
+				}
+			],
+			"authority": "both",
+			"efficiency": "fast"
+		},
+		{
+			"name": "AddInstance",
+			"description": "Add an instance to this component",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "relative_location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)"
+				},
+				{
+					"type": "Vector",
+					"name": "scale",
+					"default": "Vector(1, 1, 1)"
+				}
+			],
+			"return": [
+				{
+					"type": "integer",
+					"name": "index",
+					"description": "the index of the added instance"
+				}
+			],
+			"authority": "authority",
+			"efficiency": "moderate"
+		},
+		{
+			"name": "AddInstances",
+			"description": "Add multiple instances to this component. It is way efficient calling this once than AddInstance multiple times",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "instances",
+					"description": "Array with the instances",
+					"table_properties": [
+						{
+							"name": "Location",
+							"type": "Vector",
+							"description": "Relative location"
+						},
+						{
+							"name": "Rotation",
+							"type": "Rotator",
+							"description": "Relative rotation (optional)"
+						},
+						{
+							"name": "Scale",
+							"type": "Vector",
+							"description": "Relative scale (optional)"
+						}
+					]
+				}
+			],
+			"authority": "authority",
+			"efficiency": "slow"
+		},
+		{
+			"name": "RemoveInstance",
+			"description": "Removes the instance at the given index. This will move the last element to the provided index, reducing the count by 1",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "index"
+				}
+			],
+			"authority": "authority",
+			"efficiency": "moderate"
+		},
+		{
+			"name": "SetInstanceTransform",
+			"description": "Changes the transform of an existing instance. You can pass all other parameters as nil to modify only a single property",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "index"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "(current location)"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "(current rotation)"
+				},
+				{
+					"type": "Vector",
+					"name": "scale",
+					"default": "(current scale)"
+				}
+			],
+			"authority": "authority",
+			"efficiency": "moderate"
+		},
+		{
+			"name": "GetInstanceTransform",
+			"description": "Returns the current transform of the instance at the given index",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "index"
+				}
+			],
+			"return": [
+				{
+					"type": "Vector",
+					"name": "relative_location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation"
+				},
+				{
+					"type": "Vector",
+					"name": "scale"
+				}
+			],
+			"authority": "both",
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetInstanceCount",
+			"description": "Returns the number of instances currently stored",
+			"return": [
+				{
+					"type": "integer",
+					"name": "count"
+				}
+			],
+			"authority": "both",
+			"efficiency": "fast"
+		},
+		{
+			"name": "ClearInstances",
+			"description": "Removes all instances.",
+			"authority": "authority",
+			"efficiency": "moderate"
+		}
+	]
+}

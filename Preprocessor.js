@@ -23,6 +23,7 @@ const APIData = {
 		File: "File.json",
 		Gizmo: "Gizmo.json",
 		Grenade: "Grenade.json",
+		InstancedStaticMesh: "InstancedStaticMesh.json",
 		Light: "Light.json",
 		Melee: "Melee.json",
 		Particle: "Particle.json",
