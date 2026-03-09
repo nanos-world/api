@@ -6,9 +6,9 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Pawn",
 		"Paintable",
-		"Damageable"
+		"Damageable",
+		"Pawn"
 	],
 	"constructors": [
 		{
@@ -478,22 +478,6 @@
 				{
 					"type": "boolean",
 					"name": "can_deploy_parachute"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "server",
-			"name": "SetDamageMultiplier",
-			"description": "Changes how much damage this character takes on specific bones",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name"
-				},
-				{
-					"type": "float",
-					"name": "multiplier"
 				}
 			],
 			"efficiency": "fast"
@@ -1094,25 +1078,6 @@
 				{
 					"type": "boolean",
 					"name": "can_use"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "GetDamageMultiplier",
-			"description": "Gets the Damage Multiplier of a bone",
-			"return": [
-				{
-					"type": "float",
-					"description": "the damage multiplier of the bone",
-					"name": "multiplier"
-				}
-			],
-			"parameters": [
-				{
-					"name": "bone_name",
-					"type": "string"
 				}
 			],
 			"efficiency": "fast"

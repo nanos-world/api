@@ -65,6 +65,19 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "SetInteractionToolTipText",
+			"description": "Sets the interaction tooltip text shown when a Character interacts with this Prop",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "tool_tip_text",
+					"description": "Text to show in the interaction tooltip"
+				}
+			],
+			"authority": "client",
+			"efficiency": "fast"
+		},
+		{
 			"name": "SetPhysicsDamping",
 			"description": "Sets the Physics damping of this Prop",
 			"parameters": [

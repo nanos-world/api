@@ -2,6 +2,12 @@
 	"name": "Vehicle",
 	"description": "Base class for all Vehicle entities.",
 	"is_base": true,
+	"inheritance": [
+		"Entity",
+		"Actor",
+		"Paintable",
+		"Damageable"
+	],
 	"functions": [
 		{
 			"authority": "both",

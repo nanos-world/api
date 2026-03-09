@@ -6,9 +6,9 @@
 	"inheritance": [
 		"Entity",
 		"Actor",
-		"Pawn",
 		"Paintable",
-		"Damageable"
+		"Damageable",
+		"Pawn"
 	],
 	"constructors": [
 		{
@@ -342,8 +342,9 @@
 				},
 				{
 					"type": "function",
-					"name": "callback?",
-					"description": "Optional callback to unbind"
+					"name": "callback",
+					"description": "Optional callback to unbind",
+					"default": "nil"
 				}
 			],
 			"efficiency": "fast"

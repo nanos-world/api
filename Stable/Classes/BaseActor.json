@@ -2,6 +2,9 @@
 	"name": "Actor",
 	"description": "An <b>Actor</b> is an object which can be spawned and destroyed through Lua.<br>Actors support 3D transformations such as translation (location), rotation, and scale.<br><br>An <b>Actor</b> is the base for several entities, and all those entities share the same <b>Methods</b> and <b>Events</b> described in this page.",
 	"is_base": true,
+	"inheritance": [
+		"Entity"
+	],
 	"functions": [
 		{
 			"name": "AddImpulse",
@@ -76,6 +79,13 @@
 					"default": "false",
 					"description": "Whether to force attached object to use absolute rotation (will not follow parent)"
 				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"name": "attached_successfully",
+					"description": "if it was attached successfully"
+				}
 			]
 		},
 		{
@@ -128,6 +138,18 @@
 					"name": "is_local",
 					"default": "true",
 					"description": "Whether to apply the force in local space"
+				}
+			]
+		},
+		{
+			"name": "SetAngularForce",
+			"description": "Adds a permanent angular force to this Actor, set to Vector(0, 0, 0) to cancel",
+			"authority": "network-authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "angular_force"
 				}
 			]
 		},
@@ -301,7 +323,7 @@
 			"name": "SetScale",
 			"description": "Sets this Actor's scale",
 			"authority": "authority",
-			"efficiency": "moderate",
+			"efficiency": "slow",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -418,18 +440,6 @@
 					"name": "exp",
 					"default": "0",
 					"description": "Exponent used to smooth interpolation. Use <code>0</code> for linear movement"
-				}
-			]
-		},
-		{
-			"name": "IsBeingDestroyed",
-			"description": "Returns true if this Actor is being destroyed",
-			"description_long": "Returns true if this Actor is being destroyed.<br>You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
-			"authority": "both",
-			"efficiency": "fast",
-			"return": [
-				{
-					"type": "boolean"
 				}
 			]
 		},
@@ -617,6 +627,18 @@
 			]
 		},
 		{
+			"name": "GetAngularForce",
+			"description": "Gets this Actor's angular force (set by <code>SetAngularForce()</code>)",
+			"authority": "both",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "Vector",
+					"name": "angular_force"
+				}
+			]
+		},
+		{
 			"name": "GetDimension",
 			"description": "Gets this Actor's dimension",
 			"authority": "both",
@@ -641,18 +663,6 @@
 			"return": [
 				{
 					"type": "boolean"
-				}
-			]
-		},
-		{
-			"name": "HasAuthority",
-			"description": "Gets if this Actor was spawned by the client side",
-			"authority": "client",
-			"efficiency": "fast",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "false if it was spawned by the Server or true if it was spawned by the client"
 				}
 			]
 		},

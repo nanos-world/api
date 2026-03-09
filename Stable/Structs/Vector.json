@@ -246,11 +246,21 @@
 			]
 		},
 		{
-			"name": "Rotation",
-			"description": "Returns the orientation corresponding to the direction in which the vector points",
+			"name": "ToOrientationRotator",
+			"description": "Return the Rotator orientation corresponding to the direction in which the vector points",
 			"return": [
 				{
 					"type": "Rotator",
+					"description": "The orientation of the vector"
+				}
+			]
+		},
+		{
+			"name": "ToOrientationQuat",
+			"description": "Return the Quaternion orientation corresponding to the direction in which the vector points",
+			"return": [
+				{
+					"type": "Quat",
 					"description": "The orientation of the vector"
 				}
 			]

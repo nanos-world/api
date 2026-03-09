@@ -38,7 +38,7 @@
 					"type": "float",
 					"name": "render_rate",
 					"default": "0.033",
-					"description": "Render Rate (how frequent is the capture)"
+					"description": "Render Rate (how frequent is the capture) - pass it -1 to disable auto-rendering, 0 to capture every frame"
 				},
 				{
 					"type": "float",
@@ -225,7 +225,7 @@
 		},
 		{
 			"name": "SetRenderRate",
-			"description": "Set how frequent is the capture\nNote: Setting to 0 will make it capture every frame",
+			"description": "Set how frequent is the capture\nNote: Set to 0 to capture every frame, or -1 to disable auto-capturing",
 			"authority": "client",
 			"parameters": [
 				{
@@ -246,6 +246,20 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"name": "CaptureScene",
+			"description": "Captures the scene. If deferred is true, performs deferred capture and records the frame; otherwise captures immediately and triggers Capture event",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "deferred",
+					"default": "false",
+					"description": "If true, performs deferred capture (will capture and trigger Capture event later)"
+				}
+			],
+			"efficiency": "slow"
 		}
 	],
 	"events": [

@@ -45,7 +45,8 @@
 				{
 					"type": "boolean",
 					"name": "should_reset",
-					"description": "If should reset"
+					"description": "If should reset",
+					"default": "false"
 				}
 			],
 			"relations": {

@@ -70,9 +70,10 @@
 					"description": "The name of the new Class"
 				},
 				{
-					"type": "table?",
+					"type": "table",
 					"name": "custom_values",
-					"description": "An optional table with custom values to be set in the inherited class table"
+					"description": "An optional table with custom values to be set in the inherited class table",
+					"default": "{}"
 				}
 			],
 			"return": [
@@ -214,6 +215,30 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"name": "IsBeingDestroyed",
+			"description": "Returns true if this Entity is being destroyed",
+			"description_long": "Returns true if this Entity is being destroyed.<br>You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
+			"authority": "both",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			]
+		},
+		{
+			"name": "HasAuthority",
+			"description": "Gets if this Entity was spawned by the client side",
+			"authority": "client",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "false if it was spawned by the Server or true if it was spawned by the client"
+				}
+			]
 		},
 		{
 			"name": "GetClass",

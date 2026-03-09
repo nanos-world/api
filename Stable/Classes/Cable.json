@@ -29,7 +29,8 @@
 		{
 			"authority": "server",
 			"name": "AttachStartTo",
-			"description": "Attached the beginning of this cable to another Actor at a specific bone or relative location",
+			"description": "Attaches the beginning of this cable to another Actor at a specific bone or relative location",
+			"description_long": "Attaches the beginning of this cable to another Actor at a specific bone or relative location. For optimization, it is recommended attaching start first if you wish to attach both start and end, to avoid double calculations.",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -47,12 +48,20 @@
 					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "moderate",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "attached_successfully",
+					"description": "if it was attached successfully"
+				}
+			]
 		},
 		{
 			"authority": "server",
 			"name": "AttachEndTo",
-			"description": "Attached the end of this cable to another Actor at a specific bone or relative location",
+			"description": "Attaches the end of this cable to another Actor at a specific bone or relative location",
+			"description_long": "Attaches the end of this cable to another Actor at a specific bone or relative location. For optimization, it is recommended to be the last method to call when setting up the cable.<br/><br/>Note¹: You can attach the end only, and the start will fixed at the Cable's location.<br/><br/>Note²: If no linear limit is set, the entity will be snapped to the other actor. Alternatively you can keep a physics constraint offset by passing it as parameter.",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -68,9 +77,22 @@
 					"name": "bone_name",
 					"default": "",
 					"description": "Which bone to attach to. If empty it will be attached to the Actor, otherwise to the Mesh at the bone/socket"
+				},
+				{
+					"type": "Vector",
+					"name": "constraint_offset",
+					"default": "Vector(0, 0, 0)",
+					"description": "The physics constraint offset applied to the attached end, in the local space of the other Actor"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "slow",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "attached_successfully",
+					"description": "if it was attached successfully"
+				}
+			]
 		},
 		{
 			"authority": "server",
@@ -133,6 +155,19 @@
 				}
 			],
 			"efficiency": "moderate"
+		},
+		{
+			"authority": "server",
+			"name": "SetPhysicsConstraintSettings",
+			"description": "Set the Physics Constraint related settings for this cable",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "disable_collision",
+					"description": "If true, the collision between the two rigid bodies of the constraint will be disabled"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
@@ -225,6 +260,198 @@
 					"name": "damping",
 					"default": "0",
 					"description": "Damping of the soft constraint. Only used when Soft Constraint is on"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetLinearMotorPositionSettings",
+			"description": "Sets which linear position drives are enabled and the target position",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_drive_x",
+					"default": "false",
+					"description": "Enable the linear position drive on X"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_drive_y",
+					"default": "false",
+					"description": "Enable the linear position drive on Y"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_drive_z",
+					"default": "false",
+					"description": "Enable the linear position drive on Z"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"default": "0",
+					"description": "Positional strength for the drive (stiffness)"
+				},
+				{
+					"type": "Vector",
+					"name": "target",
+					"default": "Vector(0, 0, 0)",
+					"description": "Target position"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetLinearMotorVelocitySettings",
+			"description": "Sets which linear velocity drives are enabled and the target velocity",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_drive_x",
+					"default": "false",
+					"description": "Enable the linear velocity drive on X"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_drive_y",
+					"default": "false",
+					"description": "Enable the linear velocity drive on Y"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_drive_z",
+					"default": "false",
+					"description": "Enable the linear velocity drive on Z"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"default": "0",
+					"description": "Velocity strength of the drive (damping)"
+				},
+				{
+					"type": "Vector",
+					"name": "target",
+					"default": "Vector(0, 0, 0)",
+					"description": "Target velocity"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetAngularMotorSLERPOrientationSettings",
+			"description": "Sets whether the SLERP angular orientation drive is enabled and the target orientation",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_drive_slerp",
+					"default": "false",
+					"description": "Enable the SLERP angular orientation drive"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"default": "0",
+					"description": "Positional strength for the drive (stiffness)"
+				},
+				{
+					"type": "Rotator",
+					"name": "target",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Angular drive orientation target"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetAngularMotorSLERPVelocitySettings",
+			"description": "Sets whether the SLERP angular velocity drive is enabled and the target angular velocity",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_drive_slerp",
+					"default": "false",
+					"description": "Enable the SLERP angular velocity drive"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"default": "0",
+					"description": "Velocity strength of the drive (damping)"
+				},
+				{
+					"type": "Vector",
+					"name": "target",
+					"default": "Vector(0, 0, 0)",
+					"description": "Target angular velocity"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetAngularMotorTwistAndSwingOrientationSettings",
+			"description": "Sets which twist and swing angular orientation drives are enabled and the target orientation",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_drive_twist",
+					"default": "false",
+					"description": "Enable the twist angular orientation drive"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_drive_swing",
+					"default": "false",
+					"description": "Enable the swing angular orientation drive"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"default": "0",
+					"description": "Positional strength for the drive (stiffness)"
+				},
+				{
+					"type": "Rotator",
+					"name": "target",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Angular drive orientation target"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetAngularMotorTwistAndSwingVelocitySettings",
+			"description": "Sets which twist and swing angular velocity drives are enabled and the target angular velocity",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enable_drive_twist",
+					"default": "false",
+					"description": "Enable the twist angular velocity drive"
+				},
+				{
+					"type": "boolean",
+					"name": "enable_drive_swing",
+					"default": "false",
+					"description": "Enable the swing angular velocity drive"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"default": "0",
+					"description": "Velocity strength of the drive (damping)"
+				},
+				{
+					"type": "Vector",
+					"name": "target",
+					"default": "Vector(0, 0, 0)",
+					"description": "Target angular velocity"
 				}
 			],
 			"efficiency": "fast"

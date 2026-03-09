@@ -2,6 +2,10 @@
 	"name": "Damageable",
 	"description": "Base class for all Damageable entities. It provides Health and Damage related methods and events.",
 	"is_base": true,
+	"inheritance": [
+		"Entity",
+		"Actor"
+	],
 	"functions": [
 		{
 			"authority": "server",
@@ -125,6 +129,41 @@
 				{
 					"type": "integer",
 					"name": "max_health"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetDamageMultiplier",
+			"description": "Changes how much damage this entity takes on specific bones",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name"
+				},
+				{
+					"type": "float",
+					"name": "multiplier"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetDamageMultiplier",
+			"description": "Gets the Damage Multiplier of a bone",
+			"return": [
+				{
+					"type": "float",
+					"description": "the damage multiplier of the bone",
+					"name": "multiplier"
+				}
+			],
+			"parameters": [
+				{
+					"name": "bone_name",
+					"type": "string"
 				}
 			],
 			"efficiency": "fast"
