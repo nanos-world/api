@@ -419,7 +419,36 @@
 					]
 				}
 			],
-			"efficiency": "slow"
+			"relations": {
+				"static_functions": [
+					"AddMapSpawnPoint"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"name": "AddMapSpawnPoint",
+			"description": "Adds a spawn point to the current map's spawn points list",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "Spawn location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": "Spawn rotation",
+					"default": "Rotator()"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetMapSpawnPoints"
+				]
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsPackageLoaded",
