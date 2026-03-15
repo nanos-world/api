@@ -307,6 +307,11 @@
 				{
 					"type": "integer",
 					"name": "minutes"
+				},
+				{
+					"type": "float?",
+					"name": "transition_time",
+					"default": "0.0"
 				}
 			],
 			"efficiency": "moderate"

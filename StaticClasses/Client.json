@@ -447,6 +447,20 @@
 				]
 			},
 			"efficiency": "moderate"
+		},
+		{
+			"name": "OpenEscapeMenu",
+			"description": "Opens the escape menu",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "open_settings",
+					"description": "If true, opens the Settings tab directly",
+					"default": "false"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
