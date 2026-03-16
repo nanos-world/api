@@ -356,7 +356,8 @@
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.AlphaBlend",
+					"description": "AlphaBlend is recommended for textures with transparency. Otherwise you may use Opaque."
 				},
 				{
 					"type": "float",
