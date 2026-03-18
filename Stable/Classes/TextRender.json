@@ -35,6 +35,12 @@
 					"default": "Color.WHITE"
 				},
 				{
+					"type": "TextRenderRenderingType",
+					"name": "rendering_type",
+					"description": "To make it unlit, always face the camera or always visible through walls",
+					"default": "TextRenderRenderingType.Lit"
+				},
+				{
 					"type": "TextRenderHorizontalAlignment",
 					"name": "horizontal_alignment",
 					"default": "TextRenderHorizontalAlignment.Center"
@@ -43,12 +49,6 @@
 					"type": "TextRenderVerticalAlignment",
 					"name": "vertical_alignment",
 					"default": "TextRenderVerticalAlignment.Center"
-				},
-				{
-					"type": "TextRenderRenderingType",
-					"name": "rendering_type",
-					"description": "To make it unlit, always face the camera or always visible through walls",
-					"default": "TextRenderRenderingType.Lit"
 				},
 				{
 					"type": "string",
