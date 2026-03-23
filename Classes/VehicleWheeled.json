@@ -101,6 +101,18 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetHornSound",
+			"description": "Sets the sound asset used by the vehicle horn",
+			"parameters": [
+				{
+					"type": "SoundPath",
+					"name": "sound_asset"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
 			"name": "RecreatePhysics",
 			"description": "Recreate the Vehicle Physics",
 			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor",
