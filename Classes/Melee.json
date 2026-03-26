@@ -103,11 +103,13 @@
 				},
 				{
 					"type": "float",
-					"name": "volume"
+					"name": "volume",
+					"default": "1.0"
 				},
 				{
 					"type": "float",
-					"name": "pitch"
+					"name": "pitch",
+					"default": "1.0"
 				}
 			],
 			"efficiency": "slow"
