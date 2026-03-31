@@ -188,6 +188,53 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "SetDefaultPlayerDimension",
+			"description": "Sets the default server dimension that players will spawn in",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "default_dimension"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetDefaultEntityDimension",
+			"description": "Sets the default server dimension that entities will spawn in",
+			"description_long": "Sets the default server dimension that entities will spawn in. You can change it before spawning an entity and restore it afterwards to just spawn a specific entity directly on it",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "default_dimension"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetDefaultPlayerDimension",
+			"description": "Returns the default player dimension",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetDefaultEntityDimension",
+			"description": "Returns the default entity dimension",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
 			"authority": "server",
