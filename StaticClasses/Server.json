@@ -235,6 +235,17 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "GetConnectionCount",
+			"description": "Returns the number of connected players (including players in the process of connecting)",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
 			"authority": "server",
@@ -798,6 +809,46 @@
 				"functions": [
 					"KickByAccountID",
 					"BanByAccountID"
+				],
+				"events": [
+					"PlayerDisconnect"
+				]
+			}
+		},
+		{
+			"name": "PlayerDisconnect",
+			"description": "Called when a player is disconnecting from the server",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "IP",
+					"description": "IP of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_account_ID",
+					"description": "Account ID of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_name",
+					"description": "Player name"
+				},
+				{
+					"type": "string",
+					"name": "player_steam_ID",
+					"description": "SteamID of the player"
+				},
+				{
+					"type": "string",
+					"name": "disconnect_reason",
+					"description": "Reason for disconnection"
+				}
+			],
+			"relations": {
+				"events": [
+					"PlayerConnect"
 				]
 			}
 		},
