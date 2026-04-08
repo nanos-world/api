@@ -101,6 +101,18 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetHornSound",
+			"description": "Sets the sound asset used by the vehicle horn",
+			"parameters": [
+				{
+					"type": "SoundPath",
+					"name": "sound_asset"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
 			"name": "RecreatePhysics",
 			"description": "Recreate the Vehicle Physics",
 			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor",
@@ -150,13 +162,32 @@
 			"parameters": [
 				{
 					"type": "SteeringType",
-					"name": "steering_type"
+					"name": "steering_type",
+					"description": "Type of steering to use. Default is SteeringType.AngleRatio"
 				},
 				{
 					"type": "float",
 					"name": "angle_ratio",
 					"default": "0.7",
-					"description": "Only applies when AngleRatio is selected"
+					"description": "Only applies when SteeringType.AngleRatio is selected"
+				},
+				{
+					"type": "table",
+					"name": "steering_curve",
+					"table_properties": [
+						{
+							"name": "speed",
+							"type": "float",
+							"description": "Forward speed (MPH)"
+						},
+						{
+							"name": "maximum_steering",
+							"type": "float",
+							"description": "Maximum steering angle"
+						}
+					],
+					"default": "{ 0: 1.0, 20: 0.8, 60: 0.4, 120: 0.3 }",
+					"description": "Maximum steering versus forward speed (MPH)"
 				}
 			],
 			"efficiency": "moderate"
@@ -206,16 +237,16 @@
 					"type": "table",
 					"table_properties": [
 						{
-							"name": "X",
-							"type": "Key"
+							"name": "rpm",
+							"type": "float"
 						},
 						{
-							"name": "Y",
-							"type": "Value"
+							"name": "torque",
+							"type": "float"
 						}
 					],
 					"name": "torque_curve",
-					"default": "{}",
+					"default": "{ 0: 0.0, max_rpm * 0.2: 0.9, max_rpm * 0.4: 1.0, max_rpm * 0.8: 0.8, max_rpm: 0.0 }",
 					"description": "Map defining the torque [Normalized 0..1] for a given RPM"
 				}
 			],
@@ -299,6 +330,18 @@
 					"name": "transmission_efficiency",
 					"default": "0.9",
 					"description": "Mechanical frictional losses mean transmission might operate at 0.94 (94% efficiency)"
+				},
+				{
+					"type": "float[]",
+					"name": "forward_gear_ratios",
+					"default": "{ 2.85, 2.02, 1.35, 1.0 }",
+					"description": "List of forward gear ratios"
+				},
+				{
+					"type": "float[]",
+					"name": "reverse_gear_ratios",
+					"default": "{ 2.86 }",
+					"description": "List of reverse gear ratios"
 				}
 			],
 			"efficiency": "moderate"

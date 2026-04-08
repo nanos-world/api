@@ -139,7 +139,8 @@
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 144)"
+					"default": "Vector(0, 0, -1)",
+					"description": "Pass nil to use default as capsule height * 1.8"
 				},
 				{
 					"type": "float",

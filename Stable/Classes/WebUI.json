@@ -406,6 +406,18 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "IsReady",
+			"authority": "client",
+			"description": "Returns if this WebUI is ready",
+			"return": [
+				{
+					"name": "ready",
+					"type": "boolean"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "OpenDevTools",
 			"authority": "client",
 			"description": "Opens the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() was not disabled",

@@ -67,6 +67,30 @@
 		},
 		{
 			"authority": "server",
+			"name": "CallRemotePlayers",
+			"description": "Calls an Event if on Server which will be triggered in all Client's Packages of all specified Player. This is more efficient than calling CallRemote multiple times for each player",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "Player[]",
+					"name": "players",
+					"description": "The remote players to send this event"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "server",
 			"name": "BroadcastRemote",
 			"description": "Calls an Event on Server which will be triggered in all Client's Packages of all Players",
 			"parameters": [

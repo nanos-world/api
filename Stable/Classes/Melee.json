@@ -90,12 +90,11 @@
 			"authority": "both",
 			"name": "SetImpactSound",
 			"description": "Sets the Sound when hitting something",
-			"description_long": "Sets the Sound when hitting something<br/><br/>Note: Surfaces <b>Water</b> and <b>Flesh</b> already have default sounds and must be explicitly set to override",
 			"parameters": [
 				{
 					"type": "SurfaceType",
 					"name": "surface_type",
-					"description": "The surface to apply the sound. Use <code>SurfaceType.Default</code> to be the default to all hits"
+					"description": "The surface to apply the sound. Use <code>SurfaceType.Default</code> to be the default to all non defined surfaces. Note: Surfaces <b>Water</b> and <b>Flesh</b> already have default sounds and must be explicitly overridden"
 				},
 				{
 					"type": "SoundPath",
@@ -104,11 +103,13 @@
 				},
 				{
 					"type": "float",
-					"name": "volume"
+					"name": "volume",
+					"default": "1.0"
 				},
 				{
 					"type": "float",
-					"name": "pitch"
+					"name": "pitch",
+					"default": "1.0"
 				}
 			],
 			"efficiency": "slow"

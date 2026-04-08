@@ -188,6 +188,64 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "SetDefaultPlayerDimension",
+			"description": "Sets the default server dimension that players will spawn in",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "default_dimension"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetDefaultEntityDimension",
+			"description": "Sets the default server dimension that entities will spawn in",
+			"description_long": "Sets the default server dimension that entities will spawn in. You can change it before spawning an entity and restore it afterwards to just spawn a specific entity directly on it",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "default_dimension"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetDefaultPlayerDimension",
+			"description": "Returns the default player dimension",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetDefaultEntityDimension",
+			"description": "Returns the default entity dimension",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetConnectionCount",
+			"description": "Returns the number of connected players (including players in the process of connecting)",
+			"authority": "server",
+			"return": [
+				{
+					"type": "integer"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
 			"authority": "server",
@@ -419,7 +477,36 @@
 					]
 				}
 			],
-			"efficiency": "slow"
+			"relations": {
+				"static_functions": [
+					"AddMapSpawnPoint"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"name": "AddMapSpawnPoint",
+			"description": "Adds a spawn point to the current map's spawn points list",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "Spawn location"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": "Spawn rotation",
+					"default": "Rotator()"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetMapSpawnPoints"
+				]
+			},
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsPackageLoaded",
@@ -722,6 +809,46 @@
 				"functions": [
 					"KickByAccountID",
 					"BanByAccountID"
+				],
+				"events": [
+					"PlayerDisconnect"
+				]
+			}
+		},
+		{
+			"name": "PlayerDisconnect",
+			"description": "Called when a player is disconnecting from the server",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "IP",
+					"description": "IP of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_account_ID",
+					"description": "Account ID of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_name",
+					"description": "Player name"
+				},
+				{
+					"type": "string",
+					"name": "player_steam_ID",
+					"description": "SteamID of the player"
+				},
+				{
+					"type": "string",
+					"name": "disconnect_reason",
+					"description": "Reason for disconnection"
+				}
+			],
+			"relations": {
+				"events": [
+					"PlayerConnect"
 				]
 			}
 		},
