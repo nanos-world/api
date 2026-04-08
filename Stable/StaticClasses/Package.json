@@ -24,7 +24,7 @@
 		{
 			"name": "Require",
 			"description": "Includes new .lua files",
-			"description_long": "Includes new .lua files<br/><br/>We currently support 5 searchers, which are looked in the following order:<br/><ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code></li><li>Relative to <code>Packages/</code></li></ol>",
+			"description_long": "Includes new .lua files<br/><br/>We currently support 5 searchers, which are looked in the following order:<ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code> (server-side only, or if the file is available clientside)</li><li>Relative to <code>Packages/</code></li></ol><p>Note: Clients can only require files that are downloaded, meaning they must be available in the client's cache.</p>",
 			"authority": "both",
 			"parameters": [
 				{
