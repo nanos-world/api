@@ -44,5 +44,62 @@
 				}
 			]
 		}
+	],
+	"functions": [
+		{
+			"name": "SetSize",
+			"description": "Sets the size of this Decal.",
+			"authority": "authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "size",
+					"description": "New size of the Decal"
+				}
+			]
+		},
+		{
+			"name": "SetFadeIn",
+			"description": "Starts fading in this Decal after a delay.",
+			"authority": "authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "start_delay",
+					"description": "Seconds to wait before starting the fade-in"
+				},
+				{
+					"type": "float",
+					"name": "duration",
+					"description": "Duration of the fade-in in seconds"
+				}
+			]
+		},
+		{
+			"name": "SetFadeOut",
+			"description": "Starts fading out this Decal after a delay.",
+			"authority": "authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "start_delay",
+					"description": "Seconds to wait before starting the fade-out"
+				},
+				{
+					"type": "float",
+					"name": "duration",
+					"description": "Duration of the fade-out in seconds"
+				},
+				{
+					"type": "boolean",
+					"name": "destroy_after_fade_out",
+					"default": "true",
+					"description": "Whether to destroy the Decal after fade-out finishes"
+				}
+			]
+		}
 	]
 }
