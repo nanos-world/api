@@ -1211,6 +1211,10 @@
 			{
 				"key": "UI",
 				"value": "2"
+			},
+			{
+				"key": "Ambient",
+				"value": "3"
 			}
 		]
 	},
