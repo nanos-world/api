@@ -347,7 +347,7 @@
 				{
 					"name": "channel",
 					"type": "integer",
-					"description": "0-31"
+					"description": "0-63"
 				},
 				{
 					"name": "setting",
