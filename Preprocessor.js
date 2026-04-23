@@ -2,68 +2,7 @@
 
 const fs = require('fs');
 
-// List of all API Classes
-const APIData = {
-	Class: {
-		Entity: "BaseEntity.json",
-		Actor: "BaseActor.json",
-		Pickable: "BasePickable.json",
-		Paintable: "BasePaintable.json",
-		Damageable: "BaseDamageable.json",
-		Vehicle: "BaseVehicle.json",
-		Pawn: "BasePawn.json",
-		Billboard: "Billboard.json",
-		Blueprint: "Blueprint.json",
-		Cable: "Cable.json",
-		Canvas: "Canvas.json",
-		Character: "Character.json",
-		CharacterSimple: "CharacterSimple.json",
-		Database: "Database.json",
-		Decal: "Decal.json",
-		File: "File.json",
-		Gizmo: "Gizmo.json",
-		Grenade: "Grenade.json",
-		InstancedStaticMesh: "InstancedStaticMesh.json",
-		Light: "Light.json",
-		Melee: "Melee.json",
-		Particle: "Particle.json",
-		Player: "Player.json",
-		Prop: "Prop.json",
-		SceneCapture: "SceneCapture.json",
-		StaticMesh: "StaticMesh.json",
-		Sound: "Sound.json",
-		TextRender: "TextRender.json",
-		Text3D: "Text3D.json",
-		Trigger: "Trigger.json",
-		VehicleWheeled: "VehicleWheeled.json",
-		VehicleWater: "VehicleWater.json",
-		Weapon: "Weapon.json",
-		WebUI: "WebUI.json",
-		Widget: "Widget.json",
-		Widget3D: "Widget3D.json",
-	},
-	StaticClass: {
-		Assets: "Assets.json",
-		Chat: "Chat.json",
-		Client: "Client.json",
-		Console: "Console.json",
-		Debug: "Debug.json",
-		Discord: "Discord.json",
-		Events: "Events.json",
-		HTTP: "HTTP.json",
-		Input: "Input.json",
-		Level: "Level.json",
-		Navigation: "Navigation.json",
-		Package: "Package.json",
-		PostProcess: "PostProcess.json",
-		Server: "Server.json",
-		Sky: "Sky.json",
-		Steam: "Steam.json",
-		Timer: "Timer.json",
-		Trace: "Trace.json",
-		Viewport: "Viewport.json",
-	}
-};
+const APIFiles = require('./APIFiles.json');
 
 var EnumsData = {
 	Stable: LoadJSON("Stable/Enums.json"),
@@ -231,7 +170,7 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 	if (class_data.is_base) {
 		class_data.inheritance_children = [];
 
-		for (const class_key in APIData.Class) {
+		for (const class_key in APIFiles.Classes) {
 			if (!ClassesData[version_key][class_key].is_base && ClassesData[version_key][class_key].inheritance && ClassesData[version_key][class_key].inheritance.includes(class_data.name)) {
 				class_data.inheritance_children.push(class_key)
 			}
@@ -241,30 +180,30 @@ function ProcessClass(class_data, version_key, class_key, class_type) {
 
 function Run() {
 	// Create generated folders
-	fs.mkdirSync(__dirname + "/.generated/Classes/", { recursive: true });
-	fs.mkdirSync(__dirname + "/.generated/Stable/Classes/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/en/Classes/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/en/Stable/Classes/", { recursive: true });
 
-	fs.mkdirSync(__dirname + "/.generated/StaticClasses/", { recursive: true });
-	fs.mkdirSync(__dirname + "/.generated/Stable/StaticClasses/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/en/StaticClasses/", { recursive: true });
+	fs.mkdirSync(__dirname + "/.generated/en/Stable/StaticClasses/", { recursive: true });
 
 	// Loads all Classes
-	for (const class_key in APIData.Class) {
+	for (const class_key in APIFiles.Classes) {
 		console.log("Loading Class '%s'...", class_key);
 
-		ClassesData.Stable[class_key] = LoadJSON("Stable/Classes/" + APIData.Class[class_key]);
-		ClassesData.BleedingEdge[class_key] = LoadJSON("Classes/" + APIData.Class[class_key]);
+		ClassesData.Stable[class_key] = LoadJSON("Stable/Classes/" + APIFiles.Classes[class_key]);
+		ClassesData.BleedingEdge[class_key] = LoadJSON("Classes/" + APIFiles.Classes[class_key]);
 	}
 
 	// Loads all Static Classes
-	for (const class_key in APIData.StaticClass) {
+	for (const class_key in APIFiles.StaticClasses) {
 		console.log("Loading StaticClass '%s'...", class_key);
 
-		StaticClassesData.Stable[class_key] = LoadJSON("Stable/StaticClasses/" + APIData.StaticClass[class_key]);
-		StaticClassesData.BleedingEdge[class_key] = LoadJSON("StaticClasses/" + APIData.StaticClass[class_key]);
+		StaticClassesData.Stable[class_key] = LoadJSON("Stable/StaticClasses/" + APIFiles.StaticClasses[class_key]);
+		StaticClassesData.BleedingEdge[class_key] = LoadJSON("StaticClasses/" + APIFiles.StaticClasses[class_key]);
 	}
 
 	// Process Classes
-	for (const class_key in APIData.Class) {
+	for (const class_key in APIFiles.Classes) {
 		let data_stable = ClassesData.Stable[class_key];
 		if (data_stable)
 			ProcessClass(data_stable, "Stable", class_key, "Class");
@@ -275,7 +214,7 @@ function Run() {
 	}
 
 	// Process Static Classes
-	for (const class_key in APIData.StaticClass) {
+	for (const class_key in APIFiles.StaticClasses) {
 		let data_stable = StaticClassesData.Stable[class_key];
 		if (data_stable)
 			ProcessClass(data_stable, "Stable", class_key, "StaticClass");
@@ -286,30 +225,40 @@ function Run() {
 	}
 
 	// Save Classes
-	for (const class_key in APIData.Class) {
+	for (const class_key in APIFiles.Classes) {
 		let data_stable = ClassesData.Stable[class_key];
 		if (data_stable)
-			SaveJSON(".generated/Stable/Classes/" + APIData.Class[class_key], data_stable);
+			SaveJSON(".generated/en/Stable/Classes/" + APIFiles.Classes[class_key], data_stable);
 
 		let data_bleeding_edge = ClassesData.BleedingEdge[class_key];
 		if (data_bleeding_edge)
-			SaveJSON(".generated/Classes/" + APIData.Class[class_key], data_bleeding_edge);
+			SaveJSON(".generated/en/Classes/" + APIFiles.Classes[class_key], data_bleeding_edge);
 	}
 
 	// Save Static Classes
-	for (const class_key in APIData.StaticClass) {
+	for (const class_key in APIFiles.StaticClasses) {
 		let data_stable = StaticClassesData.Stable[class_key];
 		if (data_stable)
-			SaveJSON(".generated/Stable/StaticClasses/" + APIData.StaticClass[class_key], data_stable);
+			SaveJSON(".generated/en/Stable/StaticClasses/" + APIFiles.StaticClasses[class_key], data_stable);
 
 		let data_bleeding_edge = StaticClassesData.BleedingEdge[class_key];
 		if (data_bleeding_edge)
-			SaveJSON(".generated/StaticClasses/" + APIData.StaticClass[class_key], data_bleeding_edge);
+			SaveJSON(".generated/en/StaticClasses/" + APIFiles.StaticClasses[class_key], data_bleeding_edge);
 	}
 
 	// Saves updated Enums
-	SaveJSON(".generated/Enums.json", EnumsData.BleedingEdge);
-	SaveJSON(".generated/Stable/Enums.json", EnumsData.Stable);
+	SaveJSON(".generated/en/Enums.json", EnumsData.BleedingEdge);
+	SaveJSON(".generated/en/Stable/Enums.json", EnumsData.Stable);
+
+	// Copies all other files
+	fs.cpSync(__dirname + "/StandardLibraries/", __dirname + "/.generated/en/StandardLibraries/", { recursive: true });
+	fs.cpSync(__dirname + "/Stable/StandardLibraries/", __dirname + "/.generated/en/Stable/StandardLibraries/", { recursive: true });
+
+	fs.cpSync(__dirname + "/UtilityClasses/", __dirname + "/.generated/en/UtilityClasses/", { recursive: true });
+	fs.cpSync(__dirname + "/Stable/UtilityClasses/", __dirname + "/.generated/en/Stable/UtilityClasses/", { recursive: true });
+
+	fs.cpSync(__dirname + "/Structs/", __dirname + "/.generated/en/Structs/", { recursive: true });
+	fs.cpSync(__dirname + "/Stable/Structs/", __dirname + "/.generated/en/Stable/Structs/", { recursive: true });
 }
 
 Run();
