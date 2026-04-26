@@ -1145,22 +1145,31 @@
 		]
 	},
 	"PackageType": {
+		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "Script",
-				"value": "0"
-			},
-			{
-				"key": "GameMode",
 				"value": "1"
 			},
 			{
-				"key": "LoadingScreen",
+				"key": "GameMode",
 				"value": "2"
 			},
 			{
-				"key": "Map",
+				"key": "LoadingScreen",
 				"value": "4"
+			},
+			{
+				"key": "Map",
+				"value": "16"
+			},
+			{
+				"key": "CModule",
+				"value": "32"
+			},
+			{
+				"key": "All",
+				"value": "-1"
 			}
 		]
 	},

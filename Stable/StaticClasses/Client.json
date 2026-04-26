@@ -395,8 +395,8 @@
 				{
 					"type": "PackageType",
 					"name": "package_type_filter",
-					"description": "Which Package type to return. Leave it default (-1) to return all types.",
-					"default": "-1"
+					"description": "Which Package type to return. Leave it default to return all types.",
+					"default": "PackageType.All"
 				}
 			],
 			"efficiency": "slow"

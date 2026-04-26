@@ -395,8 +395,8 @@
 				{
 					"type": "PackageType",
 					"name": "package_type_filter",
-					"description": "Which Package type to return. Leave it default (-1) to return all types.",
-					"default": "-1"
+					"description": "Which Package type to return. Leave it default to return all types.",
+					"default": "PackageType.All"
 				}
 			],
 			"efficiency": "slow"
@@ -461,6 +461,18 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"name": "GetLanguage",
+			"description": "Gets the current language of the Client",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string",
+					"description": "the language code"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
@@ -497,6 +509,18 @@
 					"type": "boolean",
 					"name": "is_focused",
 					"description": "If it's focused"
+				}
+			]
+		},
+		{
+			"name": "LanguageChange",
+			"description": "Called when the Client language changes",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "language",
+					"description": "The new language code"
 				}
 			]
 		}
