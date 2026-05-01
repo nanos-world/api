@@ -205,6 +205,13 @@
 	],
 	"functions": [
 		{
+			"name": "FinishSpawn",
+			"description": "Finish the spawning process and send the entity to clients if it was spawned with <code>defer_spawn</code>",
+			"description_long": "Finish the spawning process and send the entity to clients if it was spawned with <code>defer_spawn</code>. Call this after configuring the entity for efficient spawning",
+			"authority": "server",
+			"efficiency": "moderate"
+		},
+		{
 			"name": "GetID",
 			"description": "Gets the universal network ID of this Entity (same on both client and server)",
 			"authority": "both",

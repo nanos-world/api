@@ -49,6 +49,12 @@
 					"type": "boolean",
 					"name": "can_use",
 					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "defer_spawn",
+					"default": "false",
+					"description": "Pass true to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
 				}
 			]
 		}
