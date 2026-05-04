@@ -34,7 +34,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"ReloadPackage",
 					"UnloadPackage"
 				]
@@ -59,7 +59,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"LoadPackage",
 					"UnloadPackage"
 				]
@@ -85,7 +85,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"LoadPackage",
 					"ReloadPackage"
 				]
@@ -264,12 +264,15 @@
 					"name": "sync_on_client",
 					"type": "boolean",
 					"default": "false",
-					"description": "If enabled will sync this value through all clients, accessible through Client.GetValue() static class."
+					"description": "If enabled will sync this value through all clients, accessible through <code>Client.GetValue()</code> static class"
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
+				],
+				"events": [
+					"ValueChange"
 				]
 			},
 			"efficiency": "moderate"
@@ -297,7 +300,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
 				]
 			},
@@ -314,7 +317,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetValue",
 					"SetValue"
 				]
@@ -806,7 +809,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"KickByAccountID",
 					"BanByAccountID"
 				],
@@ -869,6 +872,28 @@
 					"description": ""
 				}
 			]
+		},
+		{
+			"name": "ValueChange",
+			"description": "Triggered when a Value is changed with <code>Server.SetValue()</code>",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The key that changed"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "The new value"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"SetValue"
+				]
+			}
 		}
 	]
 }

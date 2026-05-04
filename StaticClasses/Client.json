@@ -204,17 +204,20 @@
 				{
 					"type": "string",
 					"name": "key",
-					"description": ""
+					"description": "Key"
 				},
 				{
 					"type": "any",
 					"name": "value",
-					"description": ""
+					"description": "Value"
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
+				],
+				"events": [
+					"ValueChange"
 				]
 			},
 			"efficiency": "moderate"
@@ -424,7 +427,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
 				]
 			},
@@ -441,7 +444,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetValue",
 					"SetValue"
 				]
@@ -523,6 +526,34 @@
 					"description": "The new language code"
 				}
 			]
+		},
+		{
+			"name": "ValueChange",
+			"description": "Triggered when a Value is changed with <code>Client.SetValue()</code> or <code>Server.SetValue()</code> (for synced values)",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The key that changed"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "The new value"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"SetValue"
+				],
+				"etc": [
+					{
+						"label": "Server.SetValue()",
+						"url": "/docs/scripting-reference/static-classes/server#static-function-setvalue"
+					}
+				]
+			}
 		}
 	]
 }
