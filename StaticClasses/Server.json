@@ -246,6 +246,72 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "GetPlayersInRadius",
+			"description": "Returns the players within the specified radius",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Player[]",
+					"description": "The players found in radius"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "The center location of the search"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The search radius"
+				},
+				{
+					"type": "integer",
+					"name": "dimension",
+					"description": "The dimension to search in",
+					"default": "0"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"name": "GetActorsInRadius",
+			"description": "Returns the actors within the specified radius",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Actor[]",
+					"description": "The actors found in radius"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "The center location of the search"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The search radius"
+				},
+				{
+					"type": "string[]",
+					"name": "only_classes",
+					"description": "Only actors of these classes will be returned (pass empty for all classes)",
+					"default": "[]"
+				},
+				{
+					"type": "integer",
+					"name": "dimension",
+					"description": "The dimension to search in (pass 0 for all dimensions)",
+					"default": "0"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
 			"authority": "server",

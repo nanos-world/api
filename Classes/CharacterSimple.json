@@ -278,6 +278,22 @@
 			"efficiency": "slow"
 		},
 		{
+			"name": "SetAnimationBlueprintPropertyValue",
+			"description": "Sets an Animation Blueprint Property/Variable value directly",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				},
+				{
+					"type": "any",
+					"name": "value"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
 			"name": "CallAnimationBlueprintEvent",
 			"authority": "both",
 			"return": [
