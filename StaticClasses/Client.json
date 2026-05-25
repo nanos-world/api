@@ -357,12 +357,6 @@
 					"name": "only_classes",
 					"description": "Only actors of these classes will be returned (pass empty for all classes)",
 					"default": "[]"
-				},
-				{
-					"type": "integer",
-					"name": "dimension",
-					"description": "The dimension to search in (pass 0 for all dimensions)",
-					"default": "0"
 				}
 			],
 			"efficiency": "moderate"
