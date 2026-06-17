@@ -442,6 +442,7 @@
 			"name": "CallRemoteEvent",
 			"description": "Calls a custom remote event directly on this entity to a specific Player",
 			"authority": "server",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
@@ -502,6 +503,7 @@
 			"name": "CallRemoteEvent",
 			"description": "Calls a custom remote event directly on this entity",
 			"authority": "client",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
@@ -527,6 +529,7 @@
 			"name": "BroadcastRemoteEvent",
 			"description": "Calls a custom remote event directly on this entity to all Players",
 			"authority": "server",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",

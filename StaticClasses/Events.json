@@ -33,6 +33,7 @@
 			"name": "CallRemote",
 			"description": "Triggers a remote custom Event from the Client to the Server (Client ➔ Server)",
 			"description_long": "Triggers a remote custom Event from the Client to the Server (Client ➔ Server)<br/>The receiving Server will implicitly receive the sender 'Player' as the very first argument before your custom args<br/>Must be caught using <code>Events.SubscribeRemote()</code>",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
@@ -64,6 +65,7 @@
 			"authority": "server",
 			"description": "Triggers a remote custom Event from the Server to the Client (Server ➔ Client)",
 			"description_long": "Triggers a remote custom Event from the Server to the Client (Server ➔ Client)<br/>Must be caught using <code>Events.SubscribeRemote()</code>",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
@@ -100,6 +102,7 @@
 			"authority": "server",
 			"description": "Triggers a remote custom Event from the Server to an array of specific Players (Server ➔ Clients)",
 			"description_long": "Triggers a remote custom Event from the Server to an array of specific Players (Server ➔ Clients)<br/>More network-efficient than looping CallRemote<br/>Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
@@ -136,6 +139,7 @@
 			"authority": "server",
 			"description": "Broadcasts a remote custom Event from the Server to ALL currently connected Players (Server ➔ Clients)",
 			"description_long": "Broadcasts a remote custom Event from the Server to ALL currently connected Players (Server ➔ Clients)<br/>Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
@@ -167,6 +171,7 @@
 			"authority": "server",
 			"description": "Broadcasts a remote custom Event from the Server to all Players currently residing in the specified Dimension (Server ➔ Clients)",
 			"description_long": "Broadcasts a remote custom Event from the Server to all Players currently residing in the specified Dimension (Server ➔ Clients)<br/>Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
 					"type": "string",
