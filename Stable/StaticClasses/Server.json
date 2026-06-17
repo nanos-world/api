@@ -34,7 +34,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"ReloadPackage",
 					"UnloadPackage"
 				]
@@ -59,7 +59,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"LoadPackage",
 					"UnloadPackage"
 				]
@@ -85,7 +85,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"LoadPackage",
 					"ReloadPackage"
 				]
@@ -246,6 +246,72 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "GetPlayersInRadius",
+			"description": "Returns the players within the specified radius",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Player[]",
+					"description": "The players found in radius"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "The center location of the search"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The search radius"
+				},
+				{
+					"type": "integer",
+					"name": "dimension",
+					"description": "The dimension to search in",
+					"default": "0"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"name": "GetActorsInRadius",
+			"description": "Returns the actors within the specified radius",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Actor[]",
+					"description": "The actors found in radius"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "The center location of the search"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The search radius"
+				},
+				{
+					"type": "string[]",
+					"name": "only_classes",
+					"description": "Only actors of these classes will be returned (pass empty for all classes)",
+					"default": "[]"
+				},
+				{
+					"type": "integer",
+					"name": "dimension",
+					"description": "The dimension to search in (pass 0 for all dimensions)",
+					"default": "0"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
 			"authority": "server",
@@ -264,12 +330,15 @@
 					"name": "sync_on_client",
 					"type": "boolean",
 					"default": "false",
-					"description": "If enabled will sync this value through all clients, accessible through Client.GetValue() static class."
+					"description": "If enabled will sync this value through all clients, accessible through <code>Client.GetValue()</code> static class"
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
+				],
+				"events": [
+					"ValueChange"
 				]
 			},
 			"efficiency": "moderate"
@@ -297,7 +366,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
 				]
 			},
@@ -314,7 +383,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetValue",
 					"SetValue"
 				]
@@ -806,7 +875,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"KickByAccountID",
 					"BanByAccountID"
 				],
@@ -869,6 +938,28 @@
 					"description": ""
 				}
 			]
+		},
+		{
+			"name": "ValueChange",
+			"description": "Triggered when a Value is changed with <code>Server.SetValue()</code>",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The key that changed"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "The new value"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"SetValue"
+				]
+			}
 		}
 	]
 }

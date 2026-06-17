@@ -50,7 +50,7 @@
 		{
 			"authority": "server",
 			"name": "Possess",
-			"description": "Makes a Player to possess and control a Pawn",
+			"description": "Makes a Player to possess and control a Pawn (Character)",
 			"parameters": [
 				{
 					"name": "new_pawn",
@@ -347,7 +347,7 @@
 				{
 					"name": "channel",
 					"type": "integer",
-					"description": "0-31"
+					"description": "0-63"
 				},
 				{
 					"name": "setting",
@@ -617,7 +617,7 @@
 			"name": "GetControlledCharacter",
 			"return": [
 				{
-					"type": "Character?",
+					"type": "Pawn?",
 					"name": "controlled_character"
 				}
 			],
@@ -766,15 +766,15 @@
 		{
 			"authority": "both",
 			"name": "Possess",
-			"description": "Trigerred when Player starts controlling a Character",
+			"description": "Triggered when Player starts controlling a Pawn (Character)",
 			"arguments": [
 				{
 					"name": "self",
 					"type": "Player"
 				},
 				{
-					"name": "character",
-					"type": "Character"
+					"name": "pawn",
+					"type": "Pawn"
 				}
 			],
 			"relations": {
@@ -797,15 +797,15 @@
 		{
 			"authority": "both",
 			"name": "UnPossess",
-			"description": "A Character was released from the Player",
+			"description": "A Pawn (Character) was unpossessed from the Player",
 			"arguments": [
 				{
 					"name": "self",
 					"type": "Player"
 				},
 				{
-					"name": "character",
-					"type": "Character"
+					"name": "pawn",
+					"type": "Pawn"
 				}
 			],
 			"relations": {

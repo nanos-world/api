@@ -38,12 +38,6 @@
 				},
 				{
 					"type": "boolean",
-					"name": "auto_create_physics",
-					"default": "true",
-					"description": "Can be disabled to improve performance when setting several configs. Must call <code>RecreatePhysics()</code> after all"
-				},
-				{
-					"type": "boolean",
 					"name": "auto_unflip",
 					"default": "true",
 					"description": "Auto rotates the vehicle if flipped"
@@ -82,6 +76,12 @@
 					"type": "BlueprintPath",
 					"name": "custom_animation_blueprint",
 					"default": ""
+				},
+				{
+					"type": "boolean",
+					"name": "defer_spawn",
+					"default": "false",
+					"description": "Pass true to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
 				}
 			]
 		}
@@ -110,13 +110,6 @@
 				}
 			],
 			"efficiency": "fast"
-		},
-		{
-			"authority": "server",
-			"name": "RecreatePhysics",
-			"description": "Recreate the Vehicle Physics",
-			"description_long": "Call this after configuring the vehicle if passed <code>auto_create_physics</code> to constructor",
-			"efficiency": "slow"
 		},
 		{
 			"authority": "both",

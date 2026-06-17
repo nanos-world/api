@@ -212,16 +212,6 @@
 					"description": "Type of the log"
 				}
 			]
-		},
-		{
-			"name": "Open",
-			"description": "When player opens the Console",
-			"authority": "client"
-		},
-		{
-			"name": "Close",
-			"description": "When player closes the Console",
-			"authority": "client"
 		}
 	]
 }

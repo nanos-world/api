@@ -46,6 +46,12 @@
 					"name": "ccd_mode",
 					"default": "CCDMode.Auto",
 					"description": "Whether or not the Prop should have CCD enabled (disabling it may cause Props passing through objects if it's kinda small). It's smart to force it disabled on 'visual only' props."
+				},
+				{
+					"type": "boolean",
+					"name": "defer_spawn",
+					"default": "false",
+					"description": "Pass true to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
 				}
 			]
 		}

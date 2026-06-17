@@ -40,6 +40,12 @@
 					"type": "boolean",
 					"name": "gravity_enabled",
 					"default": "true"
+				},
+				{
+					"type": "boolean",
+					"name": "defer_spawn",
+					"default": "false",
+					"description": "Pass true to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
 				}
 			]
 		}
@@ -267,6 +273,22 @@
 				{
 					"type": "BlueprintPath",
 					"name": "custom_animation_blueprint"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "SetAnimationBlueprintPropertyValue",
+			"description": "Sets an Animation Blueprint Property/Variable value directly",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				},
+				{
+					"type": "any",
+					"name": "value"
 				}
 			],
 			"efficiency": "slow"

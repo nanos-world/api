@@ -205,6 +205,13 @@
 	],
 	"functions": [
 		{
+			"name": "FinishSpawn",
+			"description": "Finish the spawning process and send the entity to clients if it was spawned with <code>defer_spawn</code>",
+			"description_long": "Finish the spawning process and send the entity to clients if it was spawned with <code>defer_spawn</code>. Call this after configuring the entity for efficient spawning",
+			"authority": "server",
+			"efficiency": "moderate"
+		},
+		{
 			"name": "GetID",
 			"description": "Gets the universal network ID of this Entity (same on both client and server)",
 			"authority": "both",
@@ -447,13 +454,49 @@
 					"description": "The remote player to send this event"
 				},
 				{
+					"type": "Reliability",
+					"name": "reliability",
+					"default": "Reliability.Reliable",
+					"description": "The network reliability rule"
+				},
+				{
 					"type": "any",
 					"name": "args...",
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
+		},
+		{
+			"name": "CallRemotePlayersEvent",
+			"description": "Calls a custom remote event directly on this entity to a list of Players",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "Player[]",
+					"name": "players",
+					"description": "The remote players to send this event"
+				},
+				{
+					"type": "Reliability",
+					"name": "reliability",
+					"default": "Reliability.Reliable",
+					"description": "The network reliability rule"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "CallRemoteEvent",
@@ -466,13 +509,19 @@
 					"description": "The Event Name to trigger the event"
 				},
 				{
+					"type": "Reliability",
+					"name": "reliability",
+					"default": "Reliability.Reliable",
+					"description": "The network reliability rule"
+				},
+				{
 					"type": "any",
 					"name": "args...",
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
 		},
 		{
 			"name": "BroadcastRemoteEvent",
@@ -485,13 +534,50 @@
 					"description": "The Event Name to trigger the event"
 				},
 				{
+					"type": "Reliability",
+					"name": "reliability",
+					"default": "Reliability.Reliable",
+					"description": "The network reliability rule"
+				},
+				{
 					"type": "any",
 					"name": "args...",
 					"default": "nil",
 					"description": "Arguments to pass to the event"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
+		}
+		,
+		{
+			"name": "BroadcastRemoteInRadiusEvent",
+			"description": "Calls a custom remote event directly on this entity to all Players in a radius",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "The Event Name to trigger the event"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The radius to send this event"
+				},
+				{
+					"type": "Reliability",
+					"name": "reliability",
+					"default": "Reliability.Reliable",
+					"description": "The network reliability rule"
+				},
+				{
+					"type": "any",
+					"name": "args...",
+					"default": "nil",
+					"description": "Arguments to pass to the event"
+				}
+			],
+			"efficiency": "moderate"
 		}
 	],
 	"events": [

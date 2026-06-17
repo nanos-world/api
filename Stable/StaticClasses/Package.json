@@ -23,14 +23,14 @@
 		},
 		{
 			"name": "Require",
-			"description": "Includes new .lua files",
-			"description_long": "Includes new .lua files<br/><br/>We currently support 5 searchers, which are looked in the following order:<ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code></li><li>Relative to <code>Packages/</code></li></ol><p>Note: Clients will only download and have access to <code>Client/</code> and <code>Shared/</code> folders.</p>",
+			"description": "Loads a .lua file",
+			"description_long": "Loads a .lua file. Note that this method caches the result, so further calls return the cached value.<br/><br/>We currently support 5 searchers, which are looked in the following order:<ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code></li><li>Relative to <code>Packages/</code></li></ol><p>Note: Clients will only download and have access to <code>Client/</code> and <code>Shared/</code> folders.</p>",
 			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
-					"name": "script_file",
-					"description": "Path to the script file to require"
+					"name": "file_path",
+					"description": "Path to the script file to load"
 				},
 				{
 					"type": "boolean",
@@ -42,10 +42,63 @@
 			"return": [
 				{
 					"type": "any",
-					"description": "Any return values from the included file"
+					"description": "any return values from the included file"
 				}
 			],
-			"efficiency": "slow"
+			"efficiency": "slow",
+			"relations": {
+				"static_functions": [
+					"LoadFile"
+				]
+			}
+		},
+		{
+			"name": "LoadFile",
+			"description": "Compiles a .lua file and returns a function to run it",
+			"description_long": "Compiles a .lua file and returns a function to run it. To be used for loading files in a sandboxed environment.<br/><br/>Supports the same searchers as <a href=\"#static-function-require\">Package.Require</a>.",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "file_path",
+					"description": "Path to the script file to compile"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"function_parameters": [
+						{
+							"name": "custom_env?",
+							"type": "table",
+							"description": "Custom environment to run the script with (defaults to the package's own _ENV)"
+						}
+					],
+					"description": "the compiled function to run the script, allowing you to pass a environment env table for the script"
+				}
+			],
+			"efficiency": "slow",
+			"examples": [
+				{
+					"title": "Loading a .lua file sandboxed",
+					"content": [
+						"local func = Package.LoadFile(\"MyScript.lua\")",
+						"",
+						"-- Only allows this file to access Console",
+						"local my_env = { Console = Console }",
+						"",
+						"local content = func(my_env)",
+						"",
+						"-- Access all global variables set by the script in my_env",
+						"my_env.GlobalVariableFromFile..."
+					]
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"Require"
+				]
+			}
 		},
 		{
 			"name": "Subscribe",

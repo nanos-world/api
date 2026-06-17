@@ -204,17 +204,20 @@
 				{
 					"type": "string",
 					"name": "key",
-					"description": ""
+					"description": "Key"
 				},
 				{
 					"type": "any",
 					"name": "value",
-					"description": ""
+					"description": "Value"
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
+				],
+				"events": [
+					"ValueChange"
 				]
 			},
 			"efficiency": "moderate"
@@ -329,6 +332,36 @@
 			"efficiency": "moderate"
 		},
 		{
+			"name": "GetActorsInRadius",
+			"description": "Returns the actors within the specified radius",
+			"authority": "server",
+			"return": [
+				{
+					"type": "Actor[]",
+					"description": "The actors found in radius"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "location",
+					"description": "The center location of the search"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The search radius"
+				},
+				{
+					"type": "string[]",
+					"name": "only_classes",
+					"description": "Only actors of these classes will be returned (pass empty for all classes)",
+					"default": "[]"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "GetMap",
 			"description": "Returns the current Map",
 			"authority": "client",
@@ -424,7 +457,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetAllValuesKeys"
 				]
 			},
@@ -441,7 +474,7 @@
 				}
 			],
 			"relations": {
-				"functions": [
+				"static_functions": [
 					"GetValue",
 					"SetValue"
 				]
@@ -458,6 +491,18 @@
 					"name": "open_settings",
 					"description": "If true, opens the Settings tab directly",
 					"default": "false"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetLanguage",
+			"description": "Gets the current language of the Client",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string",
+					"description": "the language code"
 				}
 			],
 			"efficiency": "fast"
@@ -499,6 +544,46 @@
 					"description": "If it's focused"
 				}
 			]
+		},
+		{
+			"name": "LanguageChange",
+			"description": "Called when the Client language changes",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "language",
+					"description": "The new language code"
+				}
+			]
+		},
+		{
+			"name": "ValueChange",
+			"description": "Triggered when a Value is changed with <code>Client.SetValue()</code> or <code>Server.SetValue()</code> (for synced values)",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "key",
+					"description": "The key that changed"
+				},
+				{
+					"type": "any",
+					"name": "value",
+					"description": "The new value"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"SetValue"
+				],
+				"etc": [
+					{
+						"label": "Server.SetValue()",
+						"url": "/docs/scripting-reference/static-classes/server#static-function-setvalue"
+					}
+				]
+			}
 		}
 	]
 }
