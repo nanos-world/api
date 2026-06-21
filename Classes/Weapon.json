@@ -987,6 +987,29 @@
 			]
 		},
 		{
+			"authority": "client",
+			"name": "BulletHit",
+			"description": "Triggered when bullets hit (this will be triggered for each bullet shot)",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Weapon"
+				},
+				{
+					"name": "location",
+					"type": "Vector"
+				},
+				{
+					"name": "damage",
+					"type": "integer"
+				},
+				{
+					"name": "actor_hit",
+					"type": "Actor?"
+				}
+			]
+		},
+		{
 			"authority": "both",
 			"name": "Reload",
 			"description": "When a Weapon is reloaded, optionally by a Character",

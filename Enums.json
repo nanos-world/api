@@ -695,6 +695,26 @@
 			}
 		]
 	},
+	"KeyboardLayout": {
+		"enums": [
+			{
+				"key": "Unknown",
+				"value": "0"
+			},
+			{
+				"key": "QWERTY",
+				"value": "1"
+			},
+			{
+				"key": "AZERTY",
+				"value": "2"
+			},
+			{
+				"key": "QWERTZ",
+				"value": "3"
+			}
+		]
+	},
 	"KeyModifier": {
 		"supports_bitwise": true,
 		"enums": [

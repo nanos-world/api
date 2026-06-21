@@ -99,6 +99,17 @@
 		},
 		{
 			"authority": "client",
+			"name": "GetKeyboardLayout",
+			"description": "Gets the keyboard layout of the user",
+			"return": [
+				{
+					"type": "KeyboardLayout"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "client",
 			"name": "GetKeyIcon",
 			"description": "Gets the icon path of a key",
 			"parameters": [
