@@ -997,15 +997,23 @@
 				},
 				{
 					"name": "location",
-					"type": "Vector"
+					"type": "Vector",
+					"description": "Location in world space of the bullet hit"
+				},
+				{
+					"name": "direction",
+					"type": "Vector",
+					"description": "Direction of the bullet hit"
 				},
 				{
 					"name": "damage",
-					"type": "integer"
+					"type": "integer",
+					"description": "Damage that was applied"
 				},
 				{
 					"name": "actor_hit",
-					"type": "Actor?"
+					"type": "Actor?",
+					"description": "Actor entity that was hit, if any"
 				}
 			]
 		},

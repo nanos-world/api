@@ -14,6 +14,7 @@
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
 			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
 					"type": "string",
@@ -26,6 +27,24 @@
 					"description": "Path to SkeletalMesh asset to attach"
 				},
 				{
+					"type": "string",
+					"name": "socket",
+					"default": "",
+					"description": "Bone socket to attach to. Pass empty string to attach to the root component (i.e. Capsule). Pass 'root' to attach to the root bone of the main skeletal mesh component"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "Vector(0, 0, 0)",
+					"description": "Relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relative rotation"
+				},
+				{
 					"type": "boolean",
 					"name": "use_parent_bounds",
 					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
@@ -36,6 +55,12 @@
 					"name": "use_base_leader_pose_component",
 					"description": "If true, this component will use the base leader pose component for copying it's animation",
 					"default": "true"
+				},
+				{
+					"type": "AnimationPath",
+					"name": "animation_path",
+					"description": "Path to Animation asset to play on the Skeletal Mesh attached",
+					"default": ""
 				},
 				{
 					"type": "string",
@@ -544,16 +569,25 @@
 			"name": "SetCapsuleSize",
 			"description": "Sets this Character's Capsule size",
 			"description_long": "Sets this Character's Capsule size (will affect Camera location and Character's collision)",
+			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
 					"type": "integer",
 					"name": "radius",
-					"description": "Default is 42"
+					"description": "Pass 0 to auto calculate the radius based on the mesh bounds",
+					"default": "0"
 				},
 				{
 					"type": "integer",
 					"name": "half_height",
-					"description": "Default is 96"
+					"description": "Pass 0 to auto calculate the half height based on the mesh bounds",
+					"default": "0"
+				},
+				{
+					"type": "integer",
+					"name": "crouched_half_height",
+					"description": "Pass 0 to auto calculate the crouched half height based on the mesh bounds",
+					"default": "0"
 				}
 			],
 			"efficiency": "fast"
@@ -573,9 +607,37 @@
 						{
 							"name": "HalfHeight",
 							"type": "integer"
+						},
+						{
+							"name": "CrouchedHalfHeight",
+							"type": "integer"
 						}
 					],
-					"name": "capsule_size"
+					"name": "capsule_sizes"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetMeshSettings",
+			"description": "Configures the mesh attachment settings and visibility",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "Vector(0, 0, 0)"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, -90, 0)"
+				},
+				{
+					"type": "bool",
+					"name": "is_visible",
+					"default": "true",
+					"description": "Whether the mesh is visible (useful for using retargeters using child meshes)"
 				}
 			],
 			"efficiency": "fast"
