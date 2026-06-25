@@ -996,14 +996,14 @@
 					"type": "Weapon"
 				},
 				{
-					"name": "location",
+					"name": "impact_point",
 					"type": "Vector",
 					"description": "Location in world space of the bullet hit"
 				},
 				{
-					"name": "direction",
+					"name": "impact_normal",
 					"type": "Vector",
-					"description": "Direction of the bullet hit"
+					"description": "Normal of the bullet hit in world space"
 				},
 				{
 					"name": "damage",
