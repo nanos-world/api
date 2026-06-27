@@ -130,7 +130,7 @@
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
-			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one browser can have focus per time.",
+			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)<br/>Note: Only one browser can have focus per time.",
 			"efficiency": "fast"
 		},
 		{
