@@ -277,8 +277,8 @@
 			],
 			"return": [
 				{
-					"type": "boolean",
-					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
+					"type": "number",
+					"description": "Return the multiplier to the final damage. Return <code>0</code> to cancel the damage (will still display animations, particles and apply impact forces). The default <code>1.0</code>."
 				}
 			]
 		}
