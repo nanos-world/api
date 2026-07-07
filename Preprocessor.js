@@ -24,7 +24,7 @@ function LoadJSON(path) {
 	const file_path = __dirname + "/" + path;
 
 	if (!fs.existsSync(file_path))
-		return false;
+		return {};
 
 	return JSON.parse(fs.readFileSync(file_path));
 }

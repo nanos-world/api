@@ -4,6 +4,26 @@
 	"inheritance": [
 		"Entity"
 	],
+	"static_functions": [
+		{
+			"name": "GetBySteamID",
+			"description": "Retrieves a player by their Steam ID",
+			"authority": "server",
+			"parameters": [
+				{
+					"name": "steam_id",
+					"type": "string"
+				}
+			],
+			"return": [
+				{
+					"type": "Player?",
+					"name": "player"
+				}
+			],
+			"efficiency": "slow"
+		}
+	],
 	"functions": [
 		{
 			"authority": "server",
