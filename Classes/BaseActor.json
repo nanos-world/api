@@ -124,6 +124,19 @@
 			}
 		},
 		{
+			"name": "SetDistanceOptimizationMultiplier",
+			"description": "Sets this Actor's distance optimization multiplier",
+			"description_long": "Sets this Actor's distance optimization multiplier.<br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"authority": "server",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "multiplier"
+				}
+			]
+		},
+		{
 			"name": "SetForce",
 			"description": "Adds a permanent force to this Actor, set to Vector(0, 0, 0) to cancel",
 			"authority": "network-authority",

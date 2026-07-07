@@ -128,6 +128,16 @@
 	],
 	"events": [
 		{
+			"name": "StreamLevelBeginPause",
+			"authority": "client",
+			"description": "Called when streaming pause begins"
+		},
+		{
+			"name": "StreamLevelEndPause",
+			"authority": "client",
+			"description": "Called when streaming pause ends"
+		},
+		{
 			"name": "StreamLevelLoad",
 			"authority": "client",
 			"description": "Called when a Stream Level is loaded",
