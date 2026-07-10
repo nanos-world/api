@@ -1,6 +1,6 @@
 {
 	"name": "Melee",
-	"description": "A Melee represents an Entity which can be Pickable by a Character and can be used to melee attack, Charactes can hold it with hands with pre-defined handling modes.",
+	"description": "A Melee represents an Entity which can be Pickable by a Character and can be used to melee attack, Characters can hold it with hands with pre-defined handling modes.",
 	"authority": "server",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -38,7 +38,7 @@
 				{
 					"type": "HandlingMode",
 					"name": "handling_mode",
-					"default": "HandlingMode.Torch"
+					"default": "HandlingMode.SingleHandedMelee"
 				},
 				{
 					"type": "MaterialPath",

@@ -236,7 +236,7 @@
 					"type": "Vector"
 				}
 			],
-			"efficiency": "fat"
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -774,7 +774,7 @@
 		{
 			"authority": "server",
 			"name": "DimensionChange",
-			"description": "Triggered when a Player changes it's dimension",
+			"description": "Triggered when a Player changes its dimension",
 			"arguments": [
 				{
 					"name": "self",

@@ -231,7 +231,7 @@
 			"return": [
 				{
 					"type": "number",
-					"description": "The lenght of the vector"
+					"description": "The length of the vector"
 				}
 			]
 		},

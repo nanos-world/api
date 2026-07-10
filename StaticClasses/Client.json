@@ -334,7 +334,7 @@
 		{
 			"name": "GetActorsInRadius",
 			"description": "Returns the actors within the specified radius",
-			"authority": "server",
+			"authority": "client",
 			"return": [
 				{
 					"type": "Actor[]",

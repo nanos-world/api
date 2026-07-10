@@ -487,7 +487,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "in_water"
 				}
 			]
 		},
@@ -675,7 +676,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"name": "has_network_authority"
 				}
 			]
 		},
@@ -794,7 +796,7 @@
 		{
 			"authority": "server",
 			"name": "DimensionChange",
-			"description": "Triggered when an Actor changes it's dimension",
+			"description": "Triggered when an Actor changes its dimension",
 			"arguments": [
 				{
 					"name": "self",

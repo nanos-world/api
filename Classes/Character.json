@@ -494,7 +494,7 @@
 			"description": "Changes the Death sound when Character dies",
 			"parameters": [
 				{
-					"type": "string",
+					"type": "SoundPath",
 					"name": "sound_asset"
 				}
 			],
@@ -589,8 +589,8 @@
 		{
 			"authority": "server",
 			"name": "SetImpactDamageTaken",
-			"description": "Set the Impact Damage taken when being roamed by things",
-			"description_long": "Set the Impact Damage taken when being roamed by things.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
+			"description": "Set the Impact Damage taken when being run over by things",
+			"description_long": "Set the Impact Damage taken when being run over by things.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
 			"parameters": [
 				{
 					"type": "integer",
@@ -1302,7 +1302,7 @@
 			"description": "Sets the Physics Asset for the Character",
 			"parameters": [
 				{
-					"type": "Other",
+					"type": "PhysicsAssetPath",
 					"name": "physics_asset"
 				}
 			],
@@ -1713,7 +1713,7 @@
 		{
 			"authority": "both-net-authority-first",
 			"name": "ViewModeChange",
-			"description": "When Character changes it's View Mode",
+			"description": "When Character changes its View Mode",
 			"arguments": [
 				{
 					"type": "Character",
