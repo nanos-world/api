@@ -6,7 +6,6 @@
 		"Entity",
 		"Actor"
 	],
-	"network_distribution": "enabled",
 	"functions": [
 		{
 			"authority": "server",

@@ -8,7 +8,6 @@
 		"Paintable",
 		"Damageable"
 	],
-	"network_distribution": "enabled",
 	"functions": [
 		{
 			"authority": "both",

@@ -7,7 +7,6 @@
 		"Actor",
 		"Paintable"
 	],
-	"network_distribution": "enabled",
 	"functions": [
 		{
 			"authority": "both",

@@ -70,7 +70,7 @@
 			"description": "Sets the Physics Asset for the Character",
 			"parameters": [
 				{
-					"type": "PhysicsAssetPath",
+					"type": "Other",
 					"name": "physics_asset"
 				}
 			],

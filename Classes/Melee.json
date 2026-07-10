@@ -38,7 +38,7 @@
 				{
 					"type": "HandlingMode",
 					"name": "handling_mode",
-					"default": "HandlingMode.SingleHandedMelee"
+					"default": "HandlingMode.Torch"
 				},
 				{
 					"type": "MaterialPath",
