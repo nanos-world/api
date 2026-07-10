@@ -44,39 +44,39 @@
 		"enums": [
 			{
 				"key": "Map",
-				"value": 2
+				"value": "2"
 			},
 			{
 				"key": "StaticMesh",
-				"value": 4
+				"value": "4"
 			},
 			{
 				"key": "SkeletalMesh",
-				"value": 8
+				"value": "8"
 			},
 			{
 				"key": "Sound",
-				"value": 16
+				"value": "16"
 			},
 			{
 				"key": "Animation",
-				"value": 32
+				"value": "32"
 			},
 			{
 				"key": "Particle",
-				"value": 64
+				"value": "64"
 			},
 			{
 				"key": "Material",
-				"value": 128
+				"value": "128"
 			},
 			{
 				"key": "Blueprint",
-				"value": 256
+				"value": "256"
 			},
 			{
 				"key": "Other",
-				"value": 32768
+				"value": "32768"
 			}
 		]
 	},
@@ -263,7 +263,7 @@
 			},
 			{
 				"key": "All",
-				"value": "(1 << 32) - 1",
+				"value": "(1 << 23) - 1",
 				"description": "All Objects"
 			}
 		]
@@ -362,17 +362,17 @@
 			{
 				"key": "Free",
 				"value": "0",
-				"Description": "No constraint around this axis."
+				"description": "No constraint around this axis."
 			},
 			{
 				"key": "Limited",
 				"value": "1",
-				"Description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property."
+				"description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property."
 			},
 			{
 				"key": "Locked",
 				"value": "2",
-				"Description": "Full constraint around this axis"
+				"description": "Full constraint around this axis"
 			}
 		]
 	},
@@ -1031,7 +1031,7 @@
 				"value": "1"
 			},
 			{
-				"key": "React",
+				"key": "Rect",
 				"value": "2"
 			}
 		]

@@ -237,13 +237,13 @@
 		},
 		{
 			"name": "HasAuthority",
-			"description": "Gets if this Entity was spawned by the client side",
+			"description": "Gets if the local context has authority over this Entity (true if spawned by the client, false if spawned by the server)",
 			"authority": "client",
 			"efficiency": "fast",
 			"return": [
 				{
 					"type": "boolean",
-					"description": "false if it was spawned by the Server or true if it was spawned by the client"
+					"description": "true if spawned by the client, false if spawned by the server"
 				}
 			]
 		},
@@ -550,8 +550,7 @@
 				}
 			],
 			"efficiency": "moderate"
-		}
-		,
+		},
 		{
 			"name": "BroadcastRemoteInRadiusEvent",
 			"description": "Calls a custom remote event directly on this entity to all Players in a radius",
@@ -563,7 +562,7 @@
 					"description": "The Event Name to trigger the event"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "radius",
 					"description": "The radius to send this event"
 				},

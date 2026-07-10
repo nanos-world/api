@@ -53,7 +53,7 @@
 				{
 					"type": "boolean",
 					"name": "use_base_leader_pose_component",
-					"description": "If true, this component will use the base leader pose component for copying it's animation",
+					"description": "If true, this component will use the base leader pose component for copying its animation",
 					"default": "true"
 				},
 				{
@@ -204,7 +204,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if it exists, a StaticMesh from this enitity given its custom ID",
+			"description": "Removes, if it exists, a StaticMesh from this entity given its custom ID",
 			"parameters": [
 				{
 					"type": "string",
@@ -830,7 +830,7 @@
 		{
 			"authority": "both",
 			"name": "MoveComplete",
-			"description": "Called when AI reaches it's destination, or when it fails",
+			"description": "Called when AI reaches its destination, or when it fails",
 			"arguments": [
 				{
 					"type": "Pawn",

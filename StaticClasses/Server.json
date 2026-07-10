@@ -393,7 +393,7 @@
 		{
 			"authority": "server",
 			"name": "KickByAccountID",
-			"description": "Kicks the player from the server by it's Account ID, ideal for kicking from inside PlayerConnect event",
+			"description": "Kicks the player from the server by its Account ID, ideal for kicking from inside PlayerConnect event",
 			"parameters": [
 				{
 					"name": "player_account_id",
@@ -409,7 +409,7 @@
 		{
 			"authority": "server",
 			"name": "BanByAccountID",
-			"description": "Ban the player from the server by it's Account ID, ideal for banning from inside PlayerConnect event",
+			"description": "Ban the player from the server by its Account ID, ideal for banning from inside PlayerConnect event",
 			"parameters": [
 				{
 					"name": "player_account_id",
@@ -424,7 +424,7 @@
 		},
 		{
 			"name": "Unban",
-			"description": "Unbans a Player by it's account ID",
+			"description": "Unbans a Player by its account ID",
 			"authority": "server",
 			"parameters": [
 				{

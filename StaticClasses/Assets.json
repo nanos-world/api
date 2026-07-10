@@ -73,7 +73,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -102,7 +102,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -131,7 +131,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -160,7 +160,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -189,7 +189,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -218,7 +218,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -247,7 +247,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -276,7 +276,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [
@@ -305,7 +305,7 @@
 							"type": "any"
 						}
 					],
-					"description": "array of tables containing all assets and it's metadata"
+					"description": "array of tables containing all assets and its metadata"
 				}
 			],
 			"parameters": [

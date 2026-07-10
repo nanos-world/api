@@ -664,6 +664,7 @@
 		{
 			"authority": "both",
 			"name": "GetAmmoToReload",
+			"description": "Gets the amount of ammo needed to fully reload",
 			"return": [
 				{
 					"name": "ammo_to_reload",
@@ -807,6 +808,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanHoldUse",
+			"description": "Gets if the weapon can be used continuously by holding the use button",
 			"return": [
 				{
 					"name": "can_hold_use",
@@ -818,6 +820,7 @@
 		{
 			"authority": "both",
 			"name": "GetHoldReleaseUse",
+			"description": "Gets if the weapon is triggered/fired when releasing the use button",
 			"return": [
 				{
 					"type": "boolean",

@@ -35,7 +35,7 @@
 					"type": "boolean",
 					"name": "auto_resize",
 					"default": "true",
-					"description": "if should auto resize when screen changes it's size (useful OFF when you are painting meshes with WebUI)"
+					"description": "if should auto resize when screen changes its size (useful OFF when you are painting meshes with WebUI)"
 				},
 				{
 					"type": "integer",

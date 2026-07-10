@@ -92,7 +92,7 @@
 		{
 			"authority": "server",
 			"name": "Respawn",
-			"description": "Respawns the Entity, fullying it's Health and moving it to it's Initial Location",
+			"description": "Respawns the Entity, filling its Health and moving it to its Initial Location",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -173,7 +173,7 @@
 		{
 			"authority": "both",
 			"name": "HealthChange",
-			"description": "When Entity has it's Health changed, or because took damage or manually set through scripting or respawning",
+			"description": "When Entity has its Health changed, or because took damage or manually set through scripting or respawning",
 			"arguments": [
 				{
 					"type": "Damageable",
