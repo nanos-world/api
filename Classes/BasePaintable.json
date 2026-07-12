@@ -15,7 +15,7 @@
 				{
 					"type": "MaterialPath",
 					"name": "material_path",
-					"description": "The new Material to apply"
+					"description": "The new Material to apply.<br/><br/>Note: depending on the entity you are applying, the material needs to be configured to be \"Used with Skeletal Mesh\" or \"Used with Particles\", etc. in the material settings, otherwise it may not be applied correctly"
 				},
 				{
 					"type": "integer",
