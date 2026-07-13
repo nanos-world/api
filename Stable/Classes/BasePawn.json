@@ -233,6 +233,70 @@
 		},
 		{
 			"authority": "both",
+			"name": "HideBone",
+			"description": "Hides a bone of this Character",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name",
+					"description": "Bone to hide"
+				}
+			],
+			"relations": {
+				"functions": [
+					"UnHideBone",
+					"IsBoneHidden"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "UnHideBone",
+			"description": "UnHide a bone of this Character",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name",
+					"description": "Bone to unhide"
+				}
+			],
+			"relations": {
+				"functions": [
+					"HideBone",
+					"IsBoneHidden"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "IsBoneHidden",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if the bone is hidden",
+					"name": "is_hidden"
+				}
+			],
+			"description": "Gets if a bone is hidden",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "bone_name",
+					"description": "Bone to check"
+				}
+			],
+			"relations": {
+				"functions": [
+					"UnHideBone",
+					"HideBone"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
 			"name": "StopAnimation",
 			"description": "Stops an Animation Montage on this character",
 			"parameters": [
@@ -476,73 +540,6 @@
 					"name": "is_enabled"
 				}
 			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "HideBone",
-			"description": "Hides a bone of this Character",
-			"description_long": "Hides a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"default": "",
-					"description": "Bone to hide"
-				}
-			],
-			"relations": {
-				"functions": [
-					"UnHideBone",
-					"IsBoneHidden"
-				]
-			},
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "UnHideBone",
-			"description": "UnHide a bone of this Character",
-			"description_long": "UnHide a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to unhide"
-				}
-			],
-			"relations": {
-				"functions": [
-					"HideBone",
-					"IsBoneHidden"
-				]
-			},
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "IsBoneHidden",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "if the bone is hidden",
-					"name": "is_hidden"
-				}
-			],
-			"description": "Gets if a bone is hidden",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to check"
-				}
-			],
-			"relations": {
-				"functions": [
-					"UnHideBone",
-					"HideBone"
-				]
-			},
 			"efficiency": "fast"
 		},
 		{
