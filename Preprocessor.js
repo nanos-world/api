@@ -34,7 +34,7 @@ function SaveJSON(path, object) {
 	return fs.writeFileSync(__dirname + "/" + path, JSON.stringify(object));
 }
 
-function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
+function AddUsedEnum(type, table, version_key, class_key, class_type, name, is_base_class) {
 	let _enum = EnumsData[version_key][type];
 
 	if (!_enum)
@@ -50,10 +50,17 @@ function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
 	let base_url;
 	let label;
 
+	base_url = "/docs/" + (version_key == "BleedingEdge" ? "next/" : "");
+
 	if (class_type == "Class")
-		base_url = "/docs/next/scripting-reference/classes";
+	{
+		base_url += "scripting-reference/classes";
+
+		if (is_base_class)
+			base_url += "/base-classes";
+	}
 	else if (class_type == "StaticClass")
-		base_url = "/docs/next/scripting-reference/static-classes";
+		base_url += "scripting-reference/static-classes";
 
 	if (table == "functions") {
 		url = `${base_url}/${class_key.toLowerCase()}#function-${name.toLowerCase()}`;
@@ -75,31 +82,31 @@ function AddUsedEnum(type, table, version_key, class_key, class_type, name) {
 	_enum.relations.etc.push({ url, label });
 }
 
-function CheckUsedEnum(func, name, table, version_key, class_key, class_type) {
+function CheckUsedEnum(func, name, table, version_key, class_key, class_type, is_base_class) {
 	if (func.parameters) {
 		for (const parameterKey in func.parameters) {
 			const parameter = func.parameters[parameterKey];
-			AddUsedEnum(parameter.type, table, version_key, class_key, class_type, name);
+			AddUsedEnum(parameter.type, table, version_key, class_key, class_type, name, is_base_class);
 		}
 	}
 
 	if (func.arguments) {
 		for (const argumentKey in func.arguments) {
 			const argument = func.arguments[argumentKey];
-			AddUsedEnum(argument.type, table, version_key, class_key, class_type, name);
+			AddUsedEnum(argument.type, table, version_key, class_key, class_type, name, is_base_class);
 		}
 	}
 
 	if (func.return) {
 		for (const returnKey in func.return) {
 			const ret = func.return[returnKey];
-			AddUsedEnum(ret.type, table, version_key, class_key, class_type, name);
+			AddUsedEnum(ret.type, table, version_key, class_key, class_type, name, is_base_class);
 		}
 	}
 }
 
 // Finds relations automatically
-function FindsGetSetRelationsAutomatically(functions, table, version_key, class_key, class_type) {
+function FindsGetSetRelationsAutomatically(functions, table, version_key, class_key, class_type, is_base_class) {
 	// TODO: This algorithm is O(n²) BOOM
 	// Which doesn't matter as the page build is static, I guess
 	for (const functionKey in functions) {
@@ -109,9 +116,8 @@ function FindsGetSetRelationsAutomatically(functions, table, version_key, class_
 		const isGetter = _function.name.startsWith("Get");
 		const isSetter = _function.name.startsWith("Set");
 
-		// Only gets enum once
-		if (version_key == "BleedingEdge")
-			CheckUsedEnum(_function, _function.name, table, version_key, class_key, class_type);
+		// Check used Enums
+		CheckUsedEnum(_function, _function.name, table, version_key, class_key, class_type, is_base_class);
 
 		if (isSetter || isGetter || isIs) {
 			const pattern = isGetter ? "Get" : (isSetter ? "Set" : (isIs ? "Is" : ""));
@@ -140,27 +146,24 @@ function FindsGetSetRelationsAutomatically(functions, table, version_key, class_
 function ProcessClass(class_data, version_key, class_key, class_type) {
 	if (class_data.functions) {
 		class_data.functions.sort((a, b) => a.name.localeCompare(b.name));
-		FindsGetSetRelationsAutomatically(class_data.functions, "functions", version_key, class_key, class_type);
+		FindsGetSetRelationsAutomatically(class_data.functions, "functions", version_key, class_key, class_type, class_data.is_base);
 	}
 
 	if (class_data.static_functions) {
 		class_data.static_functions.sort((a, b) => a.name.localeCompare(b.name));
-		FindsGetSetRelationsAutomatically(class_data.static_functions, "static_functions", version_key, class_key, class_type);
+		FindsGetSetRelationsAutomatically(class_data.static_functions, "static_functions", version_key, class_key, class_type, class_data.is_base);
 	}
 
-	// Only gets enum once
-	if (version_key == "BleedingEdge") {
-		// Check for constructors
-		if (class_data.constructors) {
-			for (const constructorKey in class_data.constructors)
-				CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].name, "constructors", version_key, class_key, class_type);
-		}
+	// Check for constructors
+	if (class_data.constructors) {
+		for (const constructorKey in class_data.constructors)
+			CheckUsedEnum(class_data.constructors[constructorKey], class_data.constructors[constructorKey].name, "constructors", version_key, class_key, class_type, class_data.is_base);
+	}
 
-		// Check for events
-		if (class_data.events) {
-			for (const eventKey in class_data.events)
-				CheckUsedEnum(class_data.events[eventKey], class_data.events[eventKey].name, "events", version_key, class_key, class_type);
-		}
+	// Check for events
+	if (class_data.events) {
+		for (const eventKey in class_data.events)
+			CheckUsedEnum(class_data.events[eventKey], class_data.events[eventKey].name, "events", version_key, class_key, class_type, class_data.is_base);
 	}
 
 	if (class_data.events)
