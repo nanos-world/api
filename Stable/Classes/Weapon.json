@@ -664,6 +664,7 @@
 		{
 			"authority": "both",
 			"name": "GetAmmoToReload",
+			"description": "Gets the amount of ammo needed to fully reload",
 			"return": [
 				{
 					"name": "ammo_to_reload",
@@ -807,6 +808,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanHoldUse",
+			"description": "Gets if the weapon can be used continuously by holding the use button",
 			"return": [
 				{
 					"name": "can_hold_use",
@@ -818,6 +820,7 @@
 		{
 			"authority": "both",
 			"name": "GetHoldReleaseUse",
+			"description": "Gets if the weapon is triggered/fired when releasing the use button",
 			"return": [
 				{
 					"type": "boolean",
@@ -983,6 +986,37 @@
 				{
 					"name": "shooter",
 					"type": "Character"
+				}
+			]
+		},
+		{
+			"authority": "client",
+			"name": "BulletHit",
+			"description": "Triggered when bullets hit (this will be triggered for each bullet shot)",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Weapon"
+				},
+				{
+					"name": "impact_point",
+					"type": "Vector",
+					"description": "Location in world space of the bullet hit"
+				},
+				{
+					"name": "impact_normal",
+					"type": "Vector",
+					"description": "Normal of the bullet hit in world space"
+				},
+				{
+					"name": "damage",
+					"type": "integer",
+					"description": "Damage that was applied"
+				},
+				{
+					"name": "actor_hit",
+					"type": "Actor?",
+					"description": "Actor entity that was hit, if any"
 				}
 			]
 		},

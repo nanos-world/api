@@ -90,12 +90,12 @@
 				{
 					"type": "float",
 					"name": "linear_damping",
-					"description": ""
+					"description": "Linear damping value"
 				},
 				{
 					"type": "float",
 					"name": "angular_damping",
-					"description": ""
+					"description": "Angular damping value"
 				}
 			],
 			"authority": "authority",

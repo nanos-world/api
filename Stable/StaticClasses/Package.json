@@ -101,6 +101,25 @@
 			}
 		},
 		{
+			"name": "ReloadClientFile",
+			"description": "Reloads a file from <code>Client/</code> or <code>Shared/</code> folder and sends the updated version to clients, triggering the <a href=\"#event-filereload\">FileReload</a> event on them",
+			"description_long": "Reloads a file from <code>Client/</code> or <code>Shared/</code> folder and sends the updated version to clients, triggering the <a href=\"#event-filereload\">FileReload</a> event on them<br/><br/>The reloaded file will be re-cached and downloaded normally by new connecting clients<br/><br/>Note that this method does use the main network lane, so it is not recommended to be used frequently or with large files in production environments as it may cause network congestion and lag spikes. It is mostly intended for development purposes to allow faster iteration on client files without needing to reload the whole package",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "file_path",
+					"description": "The file path relative to the package root"
+				}
+			],
+			"efficiency": "slow",
+			"relations": {
+				"events": [
+					"FileReload"
+				]
+			}
+		},
+		{
 			"name": "Subscribe",
 			"description": "Subscribes to an Event",
 			"authority": "both",
@@ -309,6 +328,24 @@
 			"name": "Unload",
 			"authority": "both",
 			"description": "Called when this package is unloaded"
+		},
+		{
+			"name": "FileReload",
+			"authority": "client",
+			"description": "Called when a file is directly reloaded from the server using <a href=\"#static-function-reloadclientfile\">Package.ReloadClientFile()</a>",
+			"description_long": "Called when a file is directly reloaded from the server using <a href=\"#static-function-reloadclientfile\">Package.ReloadClientFile()</a><br/><br/>You can use the path to reload the file in runtime with <a href=\"#static-function-require\">Package.Require(path, true)</a>",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "file_path",
+					"description": "The file path"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"ReloadClientFile"
+				]
+			}
 		}
 	]
 }

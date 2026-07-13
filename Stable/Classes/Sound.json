@@ -6,6 +6,7 @@
 		"Entity",
 		"Actor"
 	],
+	"network_distribution": "none",
 	"constructors": [
 		{
 			"name": "Default Constructor",
@@ -332,7 +333,7 @@
 			"return": [
 				{
 					"name": "sound_type",
-					"type": "float"
+					"type": "SoundType"
 				}
 			],
 			"name": "GetSoundType",

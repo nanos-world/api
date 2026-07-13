@@ -55,15 +55,11 @@
 			"authority": "authority",
 			"name": "SetMesh",
 			"description": "Changes the Character Mesh on the fly",
+			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
 					"type": "SkeletalMeshPath|StaticMeshPath",
 					"name": "mesh_asset"
-				},
-				{
-					"type": "boolean",
-					"name": "adjust_capsule_size",
-					"description": "Auto adjust the capsule size based on the Mesh size"
 				}
 			],
 			"efficiency": "slow"

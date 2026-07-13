@@ -113,7 +113,7 @@
 		{
 			"name": "Transform",
 			"authority": "client",
-			"description": "Triggered when the Gizmo has it's transform updated",
+			"description": "Triggered when the Gizmo has its transform updated",
 			"arguments": [
 				{
 					"name": "self",

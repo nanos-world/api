@@ -186,6 +186,24 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "SetRemainingTime",
+			"authority": "both",
+			"description": "Sets the time remaining to the next tick",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				},
+				{
+					"type": "integer",
+					"name": "time",
+					"description": "The time remaining in milliseconds"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "Pause",
 			"authority": "both",
 			"description": "Pauses the Timer",

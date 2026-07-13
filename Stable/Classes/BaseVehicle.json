@@ -14,6 +14,7 @@
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
 			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
 					"type": "string",
@@ -26,6 +27,24 @@
 					"description": "Path to SkeletalMesh asset to attach"
 				},
 				{
+					"type": "string",
+					"name": "socket",
+					"default": "",
+					"description": "Bone socket to attach to"
+				},
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"default": "Vector(0, 0, 0)",
+					"description": "Relative location"
+				},
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"default": "Rotator(0, 0, 0)",
+					"description": "Relative rotation"
+				},
+				{
 					"type": "boolean",
 					"name": "use_parent_bounds",
 					"description": "If true, this component uses its parents bounds when attached. This can be a significant optimization with many components attached together",
@@ -34,8 +53,14 @@
 				{
 					"type": "boolean",
 					"name": "use_base_leader_pose_component",
-					"description": "If true, this component will use the base leader pose component for copying it's animation",
+					"description": "If true, this component will use the base leader pose component for copying its animation",
 					"default": "true"
+				},
+				{
+					"type": "AnimationPath",
+					"name": "animation_path",
+					"description": "Path to Animation asset to play on the Skeletal Mesh attached",
+					"default": ""
 				},
 				{
 					"type": "string",
@@ -55,7 +80,7 @@
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Spawns and attaches a StaticMesh to this Vehicle in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -133,7 +158,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveSkeletalMeshAttached",
-			"description": "Removes, if it exists, a SkeletalMesh from this Pickable given its custom ID",
+			"description": "Removes, if it exists, a SkeletalMesh from this Vehicle given its custom ID",
 			"parameters": [
 				{
 					"type": "string",
@@ -179,7 +204,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveStaticMeshAttached",
-			"description": "Removes, if it exists, a StaticMesh from this Pickable given its custom ID",
+			"description": "Removes, if it exists, a StaticMesh from this Vehicle given its custom ID",
 			"parameters": [
 				{
 					"type": "string",
@@ -514,52 +539,6 @@
 				{
 					"type": "boolean",
 					"description": "Return false to prevent it"
-				}
-			]
-		},
-		{
-			"name": "TakeDamage",
-			"authority": "server",
-			"description": "Triggered when this Vehicle takes damage",
-			"arguments": [
-				{
-					"type": "Vehicle",
-					"name": "self"
-				},
-				{
-					"type": "integer",
-					"name": "damage"
-				},
-				{
-					"type": "string",
-					"name": "bone",
-					"description": "Damaged bone"
-				},
-				{
-					"type": "DamageType",
-					"name": "type",
-					"description": "Damage Type"
-				},
-				{
-					"type": "Vector",
-					"name": "from_direction",
-					"description": "Direction of the damage relative to the damaged actor"
-				},
-				{
-					"type": "Player",
-					"name": "instigator",
-					"description": "The player which caused the damage"
-				},
-				{
-					"type": "any",
-					"name": "causer",
-					"description": "The object which caused the damage"
-				}
-			],
-			"return": [
-				{
-					"type": "boolean",
-					"description": "Return <code>false</code> to cancel the damage (will still display animations, particles and apply impact forces)"
 				}
 			]
 		}

@@ -4,6 +4,26 @@
 	"inheritance": [
 		"Entity"
 	],
+	"static_functions": [
+		{
+			"name": "GetBySteamID",
+			"description": "Retrieves a player by their Steam ID",
+			"authority": "server",
+			"parameters": [
+				{
+					"name": "steam_id",
+					"type": "string"
+				}
+			],
+			"return": [
+				{
+					"type": "Player?",
+					"name": "player"
+				}
+			],
+			"efficiency": "slow"
+		}
+	],
 	"functions": [
 		{
 			"authority": "server",
@@ -216,7 +236,7 @@
 					"type": "Vector"
 				}
 			],
-			"efficiency": "fat"
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -652,6 +672,19 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "SetDistanceOptimizationMultiplier",
+			"description": "Sets this Player's distance optimization multiplier",
+			"description_long": "Sets this Player's distance optimization multiplier.<br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"authority": "server",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "multiplier"
+				}
+			]
+		},
+		{
 			"name": "SetDimension",
 			"description": "Sets this Player's dimension",
 			"authority": "server",
@@ -741,7 +774,7 @@
 		{
 			"authority": "server",
 			"name": "DimensionChange",
-			"description": "Triggered when a Player changes it's dimension",
+			"description": "Triggered when a Player changes its dimension",
 			"arguments": [
 				{
 					"name": "self",
