@@ -179,7 +179,7 @@
 							"description": "Maximum steering angle"
 						}
 					],
-					"default": "{ 0: 1.0, 20: 0.8, 60: 0.4, 120: 0.3 }",
+					"default": "{\n\t0: 1.0,\n\t20: 0.8,\n\t60: 0.4,\n\t120: 0.3\n}",
 					"description": "Maximum steering versus forward speed (MPH)"
 				}
 			],
@@ -239,7 +239,7 @@
 						}
 					],
 					"name": "torque_curve",
-					"default": "{ 0: 0.0, max_rpm * 0.2: 0.9, max_rpm * 0.4: 1.0, max_rpm * 0.8: 0.8, max_rpm: 0.0 }",
+					"default": "{\n\t0: 0.0,\n\tmax_rpm * 0.2: 0.9,\n\tmax_rpm * 0.4: 1.0,\n\tmax_rpm * 0.8: 0.8,\n\tmax_rpm: 0.0\n}",
 					"description": "Map defining the torque [Normalized 0..1] for a given RPM"
 				}
 			],
@@ -327,7 +327,7 @@
 				{
 					"type": "float[]",
 					"name": "forward_gear_ratios",
-					"default": "{ 2.85, 2.02, 1.35, 1.0 }",
+					"default": "{\n\t2.85,\n\t2.02,\n\t1.35,\n\t1.0\n}",
 					"description": "List of forward gear ratios"
 				},
 				{

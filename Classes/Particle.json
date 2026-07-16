@@ -196,7 +196,7 @@
 				{
 					"type": "MaterialPath",
 					"name": "value",
-					"description": "The Material value"
+					"description": "The Material to apply.<br/><br/>Note: the material needs to be configured to be \"Used with Niagara\" or \"Used with Particles\" in the material asset settings, otherwise it may not be applied correctly"
 				}
 			],
 			"efficiency": "slow"
