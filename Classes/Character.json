@@ -1267,7 +1267,9 @@
 			"description": "Gets the entered Vehicle seat",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "seat_index",
+					"description": "The seat index the Character is sitting in the Vehicle. -1 if not in a Vehicle"
 				}
 			],
 			"efficiency": "fast"

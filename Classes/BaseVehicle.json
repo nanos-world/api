@@ -421,6 +421,18 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "IsEngineStarted",
+			"description": "Checks if the engine is started",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "is_started"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
@@ -457,6 +469,28 @@
 					"type": "Actor?",
 					"name": "other_actor",
 					"description": "The other actor that hit this Vehicle"
+				}
+			]
+		},
+		{
+			"name": "EngineStart",
+			"description": "Triggered when the engine starts",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "Vehicle",
+					"name": "self"
+				}
+			]
+		},
+		{
+			"name": "EngineStop",
+			"description": "Triggered when the engine stops",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "Vehicle",
+					"name": "self"
 				}
 			]
 		},

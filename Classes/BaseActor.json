@@ -7,6 +7,30 @@
 	],
 	"functions": [
 		{
+			"name": "GetMass",
+			"description": "Returns the mass of this Actor",
+			"authority": "client",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "float",
+					"name": "mass"
+				}
+			]
+		},
+		{
+			"name": "GetAngularVelocity",
+			"description": "Returns the angular velocity of this Actor",
+			"authority": "client",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "float",
+					"name": "angular_velocity"
+				}
+			]
+		},
+		{
 			"name": "AddImpulse",
 			"description": "Add an impulse to this Actor. Good for one time instant burst",
 			"authority": "network-authority",
@@ -387,6 +411,9 @@
 				"functions": [
 					"SetNetworkAuthorityAutoDistributed",
 					"IsNetworkDistributed"
+				],
+				"events": [
+					"NetworkAuthorityChange"
 				]
 			}
 		},
@@ -815,6 +842,55 @@
 				"functions": [
 					"SetDimension",
 					"GetDimension"
+				]
+			}
+		},
+		{
+			"authority": "server",
+			"name": "NetworkAuthorityChange",
+			"description": "Triggered when an Actor changes its network authority Player",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				},
+				{
+					"name": "old_network_authority",
+					"type": "Player?",
+					"description": "The old Network Authority Player, if any"
+				},
+				{
+					"name": "new_network_authority",
+					"type": "Player?",
+					"description": "The new Network Authority Player, if any"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthority",
+					"GetNetworkAuthority"
+				]
+			}
+		},
+		{
+			"authority": "client",
+			"name": "NetworkAuthorityChange",
+			"description": "Triggered when the local Player gets/loses network authority over this actor",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				},
+				{
+					"name": "is_network_authority",
+					"type": "boolean",
+					"description": "Whether the local Player is now the Network Authority of this Actor"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthority",
+					"GetNetworkAuthority"
 				]
 			}
 		}

@@ -556,7 +556,7 @@
 					"default": "Rotator(0, 0, 0)"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -573,7 +573,7 @@
 					"default": "Color(1, 0.86, 0.5)"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
@@ -585,7 +585,31 @@
 					"name": "location"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "server",
+			"name": "SetHeadlightsEnabled",
+			"description": "Enables or disables the headlights",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "server",
+			"name": "SetTaillightsEnabled",
+			"description": "Enables or disables the taillights",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_enabled"
+				}
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
