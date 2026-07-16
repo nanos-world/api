@@ -119,13 +119,13 @@
 					"name": "should_fade_audio",
 					"type": "boolean",
 					"description": "True to fade audio volume along with the alpha of the solid color.",
-					"default": false
+					"default": "false"
 				},
 				{
 					"name": "hold_when_finished",
 					"type": "boolean",
 					"description": "True for fade to hold at the ToAlpha until explicitly stopped (e.g. with StopCameraFade)",
-					"default": false
+					"default": "false"
 				}
 			],
 			"efficiency": "moderate"
