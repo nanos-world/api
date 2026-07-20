@@ -1030,18 +1030,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetCanCrouch",
-			"description": "Gets if can crouch",
-			"return": [
-				{
-					"type": "boolean",
-					"name": "can_crouch"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
 			"name": "GetCanSprint",
 			"description": "Gets if can sprint",
 			"return": [

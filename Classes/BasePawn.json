@@ -682,11 +682,35 @@
 		{
 			"authority": "authority",
 			"name": "SetCanCrouch",
-			"description": "Sets if this Character is allowed to Crouch and to Prone",
+			"description": "Sets if this Character is allowed to Crouch",
 			"parameters": [
 				{
 					"type": "boolean",
 					"name": "can_crouch"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetCanCrouch",
+			"description": "Gets if this Character is allowed to Crouch",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "can_crouch"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetCanJump",
+			"description": "Gets if this Character is allowed to Jump",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "can_jump"
 				}
 			],
 			"efficiency": "fast"

@@ -367,6 +367,36 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetCrouching",
+			"description": "Sets if this Character is crouching",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_crouching"
+				}
+			],
+			"relations": {
+				"events": [
+					"StartCrouch",
+					"EndCrouch"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "IsCrouching",
+			"description": "Gets if this Character is crouching",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "is_crouching"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
