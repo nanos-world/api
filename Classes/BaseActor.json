@@ -542,6 +542,14 @@
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
 			"efficiency": "moderate",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "recursively",
+					"description": "Also returns the Actors attached to the attached Actors",
+					"default": "false"
+				}
+			],
 			"return": [
 				{
 					"type": "Actor[]"

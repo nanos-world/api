@@ -314,6 +314,20 @@
 		},
 		{
 			"authority": "both",
+			"name": "StopAnimation",
+			"description": "Stops an Animation Montage on this Vehicle",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_asset",
+					"default": "",
+					"description": "Leave empty to stop all Montages"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
 			"name": "GetMesh",
 			"description": "Gets the Asset name",
 			"return": [
@@ -430,6 +444,148 @@
 				{
 					"type": "boolean",
 					"name": "is_started"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetCameraArmLength",
+			"description": "Sets how far the camera stays from this Vehicle while driving it",
+			"description_long": "Sets how far the camera stays from this Vehicle while driving it, in centimeters.<br><br>This overrides the Player's own <a href='/docs/scripting-reference/classes/player#function-setcameraarmlength'>Camera Arm Length</a> for as long as they are driving it. Set it to <code>0</code> to use the Player's value instead, which is the default.",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "arm_length",
+					"description": "The distance in centimeters, or 0 to use the Player's own value"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraOffset",
+			"description": "Sets the Vehicle Camera Offset",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "offset"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetAnimationBlueprintPropertyValue",
+			"description": "Sets an Animation Blueprint Property/Variable value directly",
+			"description_long": "Sets an Animation Blueprint Property/Variable value directly on the Animation Blueprint passed in the constructor.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				},
+				{
+					"type": "any",
+					"name": "value"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "GetAnimationBlueprintPropertyValue",
+			"description": "Gets an Animation Blueprint Property/Variable value directly",
+			"description_long": "Gets an Animation Blueprint Property/Variable value directly.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this returns <code>nil</code>.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				}
+			],
+			"return": [
+				{
+					"type": "any",
+					"description": "the property value"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "CallAnimationBlueprintEvent",
+			"authority": "both",
+			"return": [
+				{
+					"type": "any...",
+					"description": "the function return values"
+				}
+			],
+			"description": "Calls an Animation Blueprint Event or Function",
+			"description_long": "Calls an Animation Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong><br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "BindAnimationBlueprintEventDispatcher",
+			"description": "Assigns and Binds an Animation Blueprint Event Dispatcher",
+			"description_long": "Assigns and Binds an Animation Blueprint Event Dispatcher.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback function to call",
+					"function_parameters": [
+						{
+							"name": "self",
+							"type": "Vehicle"
+						},
+						{
+							"name": "params",
+							"type": "any..."
+						}
+					]
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "the callback itself"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "UnbindAnimationBlueprintEventDispatcher",
+			"description": "Unbinds an Animation Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Optional callback to unbind",
+					"default": "nil"
 				}
 			],
 			"efficiency": "fast"

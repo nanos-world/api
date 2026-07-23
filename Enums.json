@@ -1280,6 +1280,26 @@
 			}
 		]
 	},
+	"SpawnMode": {
+		"description": "Used when spawning Entities to control when they finish spawning and are sent to clients, so several configs can be set at once without wasting networking and performance on partially spawned Entities",
+		"enums": [
+			{
+				"key": "Immediate",
+				"value": "0",
+				"description": "Finishes spawning right away when calling the constructor"
+			},
+			{
+				"key": "AfterConstructor",
+				"value": "1",
+				"description": "Keeps the spawn deferred. An Inherited Class finishes it automatically when its Constructor returns, otherwise it behaves like <code>SpawnMode.Manual</code> for non-inherited classes"
+			},
+			{
+				"key": "Manual",
+				"value": "2",
+				"description": "Keeps the spawn deferred until you call <code>FinishSpawn()</code> yourself"
+			}
+		]
+	},
 	"StanceMode": {
 		"enums": [
 			{
