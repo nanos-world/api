@@ -112,7 +112,7 @@
 			"return": [
 				{
 					"type": "number",
-					"description": "The distance betweem the vectors"
+					"description": "The distance between the vectors"
 				}
 			],
 			"parameters": [
@@ -130,7 +130,7 @@
 			"return": [
 				{
 					"type": "number",
-					"description": "The squared distance betweem the vectors"
+					"description": "The squared distance between the vectors"
 				}
 			],
 			"parameters": [

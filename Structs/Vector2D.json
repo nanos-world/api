@@ -61,5 +61,144 @@
 			"type": "number",
 			"description": "Y Coordinate"
 		}
+	],
+	"functions": [
+		{
+			"name": "Distance",
+			"description": "Distance between two points",
+			"description_long": "Returns the distance of 2 vectors",
+			"return": [
+				{
+					"type": "number",
+					"description": "The distance between the vectors"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to get the distance to"
+				}
+			]
+		},
+		{
+			"name": "DistanceSquared",
+			"description": "Squared distance between two points",
+			"description_long": "Return the squared distance of 2 vectors",
+			"return": [
+				{
+					"type": "number",
+					"description": "The squared distance between the vectors"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to get the squared distance to"
+				}
+			]
+		},
+		{
+			"name": "IsNear",
+			"description": "Efficiently checks whether vector is near to another vector within a specified radius",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the vector is near to the other vector"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to compare to"
+				},
+				{
+					"type": "number",
+					"name": "radius",
+					"description": "The radius to check"
+				}
+			]
+		},
+		{
+			"name": "Size",
+			"description": "Get the length (magnitude) of this vector",
+			"return": [
+				{
+					"type": "number",
+					"description": "The length of the vector"
+				}
+			]
+		},
+		{
+			"name": "SizeSquared",
+			"description": "Get the squared length of this vector",
+			"return": [
+				{
+					"type": "number",
+					"description": "The squared length of the vector"
+				}
+			]
+		},
+		{
+			"name": "Dot",
+			"description": "Dot product of two vectors",
+			"description_long": "Returns the dot product between this vector and another vector",
+			"return": [
+				{
+					"type": "number",
+					"description": "the dot product"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to dot with"
+				}
+			]
+		},
+		{
+			"name": "Cross",
+			"description": "Cross product of two vectors",
+			"description_long": "Returns the cross product between this vector and another vector, which for 2D vectors is a scalar value",
+			"return": [
+				{
+					"type": "number",
+					"description": "the cross product"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to cross with"
+				}
+			]
+		},
+		{
+			"name": "Lerp",
+			"description": "Linearly interpolates between this vector and another vector",
+			"description_long": "Returns the linear interpolation between this vector and another vector by the given alpha",
+			"return": [
+				{
+					"type": "Vector2D",
+					"description": "the interpolated vector"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to interpolate to"
+				},
+				{
+					"type": "number",
+					"name": "alpha",
+					"description": "The interpolation alpha, where 0 returns this vector and 1 returns the other vector"
+				}
+			]
+		}
 	]
 }
