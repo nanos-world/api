@@ -61,18 +61,6 @@
 			"efficiency": "fast"
 		},
 		{
-			"name": "SetFreeze",
-			"authority": "both",
-			"description": "Freeze mesh rebuild, to avoid unnecessary mesh rebuilds when setting a few properties together",
-			"parameters": [
-				{
-					"name": "freeze",
-					"type": "boolean"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
 			"name": "SetGlyphSettings",
 			"authority": "both",
 			"description": "Sets the Glyph representation settings to generate the 3D Mesh for this text render",

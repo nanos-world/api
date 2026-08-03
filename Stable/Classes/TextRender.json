@@ -80,13 +80,13 @@
 			"efficiency": "fast"
 		},
 		{
-			"name": "GetTextColor",
+			"name": "GetColor",
 			"authority": "both",
 			"description": "Gets the current Text Color",
 			"return": [
 				{
 					"type": "Color",
-					"name": "text_color",
+					"name": "color",
 					"description": "The current Text Color"
 				}
 			],
@@ -163,12 +163,12 @@
 			"efficiency": "moderate"
 		},
 		{
-			"name": "SetTextColor",
+			"name": "SetColor",
 			"authority": "both",
 			"description": "Sets the Text Color",
 			"parameters": [
 				{
-					"name": "text_color",
+					"name": "color",
 					"type": "Color"
 				}
 			],
