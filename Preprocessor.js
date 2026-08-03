@@ -75,7 +75,7 @@ function AddUsedEnum(type, table, version_key, class_key, class_type, name, is_b
 		label = `${class_key} ${name} Event`;
 	}
 	else if (table == "constructors") {
-		url = `${base_url}/${class_key.toLowerCase()}#constructor-${name.toLowerCase().replace(' ', '-')}`;
+		url = `${base_url}/${class_key.toLowerCase()}#constructor-${name.toLowerCase().replaceAll(' ', '-')}`;
 		label = `${class_key} ${name}`;
 	}
 
