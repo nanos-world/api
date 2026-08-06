@@ -355,7 +355,7 @@
 		{
 			"name": "GetDirectories",
 			"description": "Gets a list of all directories given a path",
-			"description_long": "Gets a list of all directories given a path, optionally with filters",
+			"description_long": "Gets a list of all directories given a path, optionally with filters. Note that the results may differ between Linux and Windows due to the way the file system works",
 			"authority": "both",
 			"parameters": [
 				{
@@ -382,7 +382,7 @@
 		{
 			"name": "GetFiles",
 			"description": "Gets a list of all files in a directory",
-			"description_long": "Gets a list of all files in a directory, optionally with filters",
+			"description_long": "Gets a list of all files in a directory, optionally with filters. Note that the results may differ between Linux and Windows due to the way the file system works",
 			"authority": "both",
 			"parameters": [
 				{
