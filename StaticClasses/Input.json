@@ -89,10 +89,6 @@
 					"type": "string",
 					"name": "binding_name",
 					"description": "The keybinding id"
-				},
-				{
-					"type": "string",
-					"name": "key_name"
 				}
 			],
 			"efficiency": "fast"
