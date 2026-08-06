@@ -121,6 +121,49 @@
 				}
 			],
 			"efficiency": "moderate"
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes to an Event",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback to run on the event occurring"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "The function callback"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event to unsubscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "Optional callback to specifically unsubscribe to"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
