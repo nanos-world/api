@@ -539,8 +539,7 @@
 				},
 				{
 					"type": "integer",
-					"name": "seat",
-					"description": "The seat index"
+					"name": "seat_index"
 				}
 			]
 		},
@@ -556,6 +555,10 @@
 				{
 					"type": "Character",
 					"name": "character"
+				},
+				{
+					"type": "integer",
+					"name": "seat_index"
 				}
 			]
 		},

@@ -1527,6 +1527,10 @@
 				{
 					"type": "Vehicle",
 					"name": "vehicle"
+				},
+				{
+					"type": "integer",
+					"name": "seat_index"
 				}
 			],
 			"relations": {
