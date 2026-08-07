@@ -65,6 +65,11 @@
 							"name": "data",
 							"type": "string",
 							"description": "The response data"
+						},
+						{
+							"name": "headers",
+							"type": "table",
+							"description": "The <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers'>Headers</a> the response came with"
 						}
 					]
 				}
@@ -73,9 +78,10 @@
 				{
 					"title": "Makes an asynchronous HTTP Request",
 					"content": [
-						"HTTP.RequestAsync(\"127.0.0.1:7777\", \"/\", HTTPMethod.GET, \"\", \"application/json\", false, {}, function(status, data)",
+						"HTTP.RequestAsync(\"127.0.0.1:7777\", \"/\", HTTPMethod.GET, \"\", \"application/json\", false, {}, function(status, data, headers)",
 						"    Console.Log(status) -- 200",
 						"    Console.Log(data) -- \"{\"players_count\":0,\"server_name\":\"nanos world server\"}\"",
+						"    Console.Log(headers[\"Content-Type\"]) -- \"application/json\"",
 						"",
 						"    -- TIP: You can parse it if it's a json return as well",
 						"    local json_ret = JSON.parse(data)",
@@ -98,6 +104,10 @@
 						{
 							"name": "Data",
 							"type": "string"
+						},
+						{
+							"name": "Headers",
+							"type": "table"
 						}
 					]
 				}
@@ -155,7 +165,8 @@
 						"local ret = HTTP.Request(\"127.0.0.1:7777\", \"/\", HTTPMethod.GET, \"\", \"application/json\", false, {})",
 						"",
 						"Console.Log(ret.Status) -- 200",
-						"Console.Log(ret.Data) -- \"{\"players_count\":0,\"server_name\":\"nanos world server\"}\""
+						"Console.Log(ret.Data) -- \"{\"players_count\":0,\"server_name\":\"nanos world server\"}\"",
+						"Console.Log(ret.Headers[\"Content-Type\"]) -- \"application/json\""
 					]
 				}
 			],

@@ -345,6 +345,66 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetBuoyancyPontoons",
+			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
+			"description_long": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "pontoons",
+					"default": "nil",
+					"description": "Array with the Pontoons, or nil to restore the automatically calculated ones",
+					"table_properties": [
+						{
+							"name": "Offset",
+							"type": "Vector",
+							"description": "Location relative to the entity"
+						},
+						{
+							"name": "Radius",
+							"type": "float",
+							"description": "Radius of the Pontoon sphere, must be greater than 0"
+						}
+					]
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "authority",
+			"name": "SetBuoyancySettings",
+			"description": "Sets how this entity behaves on Water",
+			"description_long": "Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"default": "true",
+					"description": "Whether Buoyancy forces are applied at all"
+				},
+				{
+					"type": "float",
+					"name": "buoyancy_coefficient",
+					"default": "0.1",
+					"description": "How much it floats, the higher the more"
+				},
+				{
+					"type": "float",
+					"name": "buoyancy_damp",
+					"default": "1000",
+					"description": "First order damping on the vertical velocity, reduces bobbing"
+				},
+				{
+					"type": "float",
+					"name": "max_buoyant_force",
+					"default": "5000000",
+					"description": "Clamp on the upwards force, stops light objects being launched out of the water"
+				}
+			],
+			"efficiency": "moderate"
 		}
 	],
 	"events": [
