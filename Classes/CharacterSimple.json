@@ -421,28 +421,61 @@
 		{
 			"authority": "client",
 			"name": "Jump",
-			"description": "Event fired when the character has just started jumping"
+			"description": "Event fired when the character has just started jumping",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that jumped"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "StartCrouch",
-			"description": "Called when Character crouches"
+			"description": "Called when Character crouches",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that started crouching"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "EndCrouch",
-			"description": "Called when Character stops crouching"
+			"description": "Called when Character stops crouching",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that stopped crouching"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "Land",
-			"description": "Called upon landing when falling"
+			"description": "Called upon landing when falling",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that landed"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "MovementModeChange",
 			"description": "Called when the Character movement mode changes",
 			"arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that changed movement mode"
+                },
 				{
 					"type": "integer",
 					"name": "old_mode",
