@@ -902,6 +902,40 @@
 					"GetNetworkAuthority"
 				]
 			}
+		},
+		{
+			"authority": "both",
+			"name": "EnterWater",
+			"description": "Triggered when an Actor enters a water body",
+			"description_long": "Triggered when an Actor enters a water body. Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				}
+			],
+			"relations": {
+				"functions": [
+					"IsInWater"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "LeaveWater",
+			"description": "Triggered when an Actor leaves a water body",
+			"description_long": "Triggered when an Actor leaves a water body. Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				}
+			],
+			"relations": {
+				"functions": [
+					"IsInWater"
+				]
+			}
 		}
 	]
 }
