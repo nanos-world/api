@@ -510,6 +510,7 @@
 		{
 			"name": "IsInWater",
 			"description": "Returns true if this Actor is in water",
+			"description_long": "Returns true if this Actor is in water. Only Actors that simulate physics work for this function, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
 			"authority": "both",
 			"efficiency": "fast",
 			"return": [

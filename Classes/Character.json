@@ -1520,8 +1520,7 @@
 				},
 				{
 					"type": "integer",
-					"name": "seat",
-					"description": "The seat index"
+					"name": "seat_index"
 				}
 			],
 			"relations": {
