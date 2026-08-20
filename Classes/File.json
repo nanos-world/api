@@ -296,6 +296,30 @@
 			"efficiency": "slow"
 		},
 		{
+			"name": "Rename",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "if it was successfully renamed"
+				}
+			],
+			"description": "Renames or moves a folder or file",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "old_path",
+					"description": "Path to the existing file or folder"
+				},
+				{
+					"type": "string",
+					"name": "new_path",
+					"description": "New path of the file or folder"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
 			"name": "Exists",
 			"return": [
 				{
