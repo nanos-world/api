@@ -1143,18 +1143,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetJumpZVelocity",
-			"description": "Gets the Jump Z Velocity",
-			"return": [
-				{
-					"type": "integer",
-					"name": "jump_z_velocity"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
 			"name": "GetPicked",
 			"description": "Gets the Pickable if picking up",
 			"return": [

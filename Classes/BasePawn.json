@@ -559,10 +559,22 @@
 				{
 					"type": "integer",
 					"name": "jump_z_velocity",
-					"description": "Default is 450"
+					"description": "Default is 420"
 				}
 			],
 			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "GetJumpZVelocity",
+			"description": "Gets the Jump Z Velocity",
+			"return": [
+				{
+					"type": "integer",
+					"name": "jump_z_velocity"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
