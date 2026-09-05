@@ -238,6 +238,12 @@
 				{
 					"name": "socket_name",
 					"type": "string"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to read the Socket from. Pass empty to read from the main mesh"
 				}
 			]
 		},

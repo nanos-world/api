@@ -1280,7 +1280,7 @@
 			"description": "Sets the Physics Asset for the Character",
 			"parameters": [
 				{
-					"type": "Other",
+					"type": "OtherPath",
 					"name": "physics_asset"
 				}
 			],

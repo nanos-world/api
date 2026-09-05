@@ -29,9 +29,62 @@ function LoadJSON(path) {
 	return JSON.parse(fs.readFileSync(file_path));
 }
 
+// Collections stored as arrays internally, but written keyed by entry name so Crowdin identifies strings by name instead of by array index
+const KeyedCollections = ["constructors", "functions", "static_functions", "events", "operators", "properties", "static_properties"];
+
+// Converts arrays of named entries into objects keyed by name, keeping the array order as the object key order
+function KeyCollectionsByName(object) {
+	for (const collection_key of KeyedCollections) {
+		const list = object[collection_key];
+
+		if (!Array.isArray(list) || list.length == 0)
+			continue;
+
+		// Anything without a usable name stays an array, as there is nothing stable to key it by
+		if (!list.every((entry) => entry && typeof entry.name === "string" && entry.name.length > 0))
+			continue;
+
+		// Overloads share a name, so every entry of a duplicated name gets disambiguated the same way
+		const name_counts = {};
+
+		for (const entry of list)
+			name_counts[entry.name] = (name_counts[entry.name] || 0) + 1;
+
+		const keyed = {};
+
+		for (const entry of list) {
+			let key = name_counts[entry.name] > 1 && entry.authority ? `${entry.name}@${entry.authority}` : entry.name;
+
+			// Last resort for entries that authority alone cannot tell apart
+			for (let ordinal = 2; keyed[key] != null; ordinal++)
+				key = `${entry.name}#${ordinal}`;
+
+			keyed[key] = entry;
+		}
+
+		object[collection_key] = keyed;
+	}
+
+	return object;
+}
+
 // Saves JSON to disk stringified
 function SaveJSON(path, object) {
-	return fs.writeFileSync(__dirname + "/" + path, JSON.stringify(object));
+	return fs.writeFileSync(__dirname + "/" + path, JSON.stringify(KeyCollectionsByName(object)));
+}
+
+// Copies a folder into the generated output, keying the collections of every JSON file on the way
+function CopyAPIFolder(source, destination) {
+	fs.mkdirSync(__dirname + "/" + destination, { recursive: true });
+
+	for (const entry of fs.readdirSync(__dirname + "/" + source, { withFileTypes: true })) {
+		if (entry.isDirectory())
+			CopyAPIFolder(source + "/" + entry.name, destination + "/" + entry.name);
+		else if (entry.name.endsWith(".json"))
+			SaveJSON(destination + "/" + entry.name, LoadJSON(source + "/" + entry.name));
+		else
+			fs.copyFileSync(`${__dirname}/${source}/${entry.name}`, `${__dirname}/${destination}/${entry.name}`);
+	}
 }
 
 function AddUsedEnum(type, table, version_key, class_key, class_type, name, is_base_class) {
@@ -254,14 +307,14 @@ function Run() {
 	SaveJSON(".generated/en/Stable/Enums.json", EnumsData.Stable);
 
 	// Copies all other files
-	fs.cpSync(__dirname + "/StandardLibraries/", __dirname + "/.generated/en/StandardLibraries/", { recursive: true });
-	fs.cpSync(__dirname + "/Stable/StandardLibraries/", __dirname + "/.generated/en/Stable/StandardLibraries/", { recursive: true });
+	CopyAPIFolder("StandardLibraries", ".generated/en/StandardLibraries");
+	CopyAPIFolder("Stable/StandardLibraries", ".generated/en/Stable/StandardLibraries");
 
-	fs.cpSync(__dirname + "/UtilityClasses/", __dirname + "/.generated/en/UtilityClasses/", { recursive: true });
-	fs.cpSync(__dirname + "/Stable/UtilityClasses/", __dirname + "/.generated/en/Stable/UtilityClasses/", { recursive: true });
+	CopyAPIFolder("UtilityClasses", ".generated/en/UtilityClasses");
+	CopyAPIFolder("Stable/UtilityClasses", ".generated/en/Stable/UtilityClasses");
 
-	fs.cpSync(__dirname + "/Structs/", __dirname + "/.generated/en/Structs/", { recursive: true });
-	fs.cpSync(__dirname + "/Stable/Structs/", __dirname + "/.generated/en/Stable/Structs/", { recursive: true });
+	CopyAPIFolder("Structs", ".generated/en/Structs");
+	CopyAPIFolder("Stable/Structs", ".generated/en/Stable/Structs");
 }
 
 Run();
