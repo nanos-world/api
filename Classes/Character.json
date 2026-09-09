@@ -454,6 +454,18 @@
 		},
 		{
 			"authority": "server",
+			"name": "SetWeaponShooterMode",
+			"description": "Sets if this Character is in Shooter Mode, in which a held Weapon is always aimed while idle or walking, is lowered while sprinting, and the aim input aims down sights instead of raising the Weapon",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "weapon_shooter_mode"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
 			"name": "SetCanUsePickables",
 			"description": "Sets if this Character is allowed to use Pickables (Weapon, Grenade, Melee...)",
 			"parameters": [
@@ -1060,6 +1072,18 @@
 				{
 					"type": "boolean",
 					"name": "can_pickup"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetWeaponShooterMode",
+			"description": "Gets if this Character is in Shooter Mode",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "weapon_shooter_mode"
 				}
 			],
 			"efficiency": "fast"
