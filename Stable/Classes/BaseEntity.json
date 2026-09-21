@@ -206,10 +206,37 @@
 	"functions": [
 		{
 			"name": "FinishSpawn",
-			"description": "Finish the spawning process and send the entity to clients if it was spawned with <code>defer_spawn</code>",
-			"description_long": "Finish the spawning process and send the entity to clients if it was spawned with <code>defer_spawn</code>. Call this after configuring the entity for efficient spawning",
-			"authority": "server",
+			"description": "Finish the spawning process and send the entity to clients if it was spawned with a deferred <code>spawn_mode</code>",
+			"description_long": "Finish the spawning process and send the entity to clients if it was spawned with <code>SpawnMode.AfterConstructor</code> or <code>SpawnMode.Manual</code>. Call this after configuring the entity for efficient spawning.<br><br>Note: an Entity of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a> constructed with <code>SpawnMode.AfterConstructor</code> finishes spawning automatically when its Constructor returns.",
+			"authority": "both",
 			"efficiency": "moderate"
+		},
+		{
+			"name": "SetSpawnMode",
+			"description": "Overrides when this Entity finishes spawning, from the Constructor of an Inherited Class",
+			"description_long": "Overrides when this Entity finishes spawning, from the Constructor of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a>.<br><br>Only <code>SpawnMode.AfterConstructor</code> and <code>SpawnMode.Manual</code> are accepted, and only while the Entity has not finished spawning yet.",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "SpawnMode",
+					"name": "spawn_mode",
+					"description": "Only <code>SpawnMode.AfterConstructor</code> and <code>SpawnMode.Manual</code> are accepted"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "IsSpawned",
+			"description": "Gets if this Entity finished spawning",
+			"description_long": "Gets if this Entity finished spawning.<br><br>An Entity spawned with a deferred <code>SpawnMode</code> is only spawned after <code>FinishSpawn()</code> is called on it or when the Inherited Class constructor returns, everything else is spawned right away.",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the Entity finished spawning"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetID",

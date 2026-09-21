@@ -506,6 +506,300 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"name": "GetSettings",
+			"description": "Gets the local player's game Settings",
+			"authority": "client",
+			"return": [
+				{
+					"type": "table",
+					"description": "the current Settings",
+					"table_properties": [
+						{
+							"name": "ToggleSprint",
+							"type": "boolean",
+							"description": "Whether Sprint is a toggle instead of hold"
+						},
+						{
+							"name": "ToggleCrouch",
+							"type": "boolean",
+							"description": "Whether Crouch is a toggle instead of hold"
+						},
+						{
+							"name": "ToggleAim",
+							"type": "boolean",
+							"description": "Whether Aim is a toggle instead of hold"
+						},
+						{
+							"name": "ToggleWalk",
+							"type": "boolean",
+							"description": "Whether Walk is a toggle instead of hold"
+						},
+						{
+							"name": "MouseSensitivity",
+							"type": "float",
+							"description": "Mouse sensitivity multiplier"
+						},
+						{
+							"name": "AutoReAlignCamera",
+							"type": "boolean",
+							"description": "Whether the camera automatically re-aligns behind the Character"
+						},
+						{
+							"name": "FOVCanChange",
+							"type": "boolean",
+							"description": "Whether the FOV is allowed to change while aiming or sprinting"
+						},
+						{
+							"name": "CameraBending",
+							"type": "integer",
+							"description": "Camera bending intensity (0-100)"
+						},
+						{
+							"name": "EnableCustomLoadingScreen",
+							"type": "boolean",
+							"description": "Whether Packages are allowed to display a custom loading screen"
+						},
+						{
+							"name": "VolumeMusic",
+							"type": "integer",
+							"description": "In-game music volume (0-100)"
+						},
+						{
+							"name": "VolumeMenuMusic",
+							"type": "integer",
+							"description": "Main menu music volume (0-100)"
+						},
+						{
+							"name": "VolumeUI",
+							"type": "integer",
+							"description": "UI sounds volume (0-100)"
+						},
+						{
+							"name": "VolumeSFX",
+							"type": "integer",
+							"description": "Sound effects volume (0-100)"
+						},
+						{
+							"name": "VolumeAmbient",
+							"type": "integer",
+							"description": "Ambient sounds volume (0-100)"
+						},
+						{
+							"name": "VolumeOverall",
+							"type": "integer",
+							"description": "Master volume (0-100)"
+						},
+						{
+							"name": "VolumeVoice",
+							"type": "integer",
+							"description": "Voice chat volume (0-100)"
+						},
+						{
+							"name": "PlaySoundInDesktop",
+							"type": "boolean",
+							"description": "Whether the game keeps playing sound while unfocused"
+						},
+						{
+							"name": "Gamma",
+							"type": "integer",
+							"description": "Screen gamma (0-100)"
+						},
+						{
+							"name": "MotionBlur",
+							"type": "integer",
+							"description": "Motion blur amount (0-100)"
+						},
+						{
+							"name": "FOV",
+							"type": "integer",
+							"description": "Field of View (0-100)"
+						},
+						{
+							"name": "GameMaxFPS",
+							"type": "integer",
+							"description": "FPS limit, or 0 for uncapped"
+						},
+						{
+							"name": "RayTracing",
+							"type": "boolean",
+							"description": "Whether Ray Tracing is enabled"
+						},
+						{
+							"name": "HardwareRayTracing",
+							"type": "boolean",
+							"description": "Whether hardware Ray Tracing is enabled"
+						},
+						{
+							"name": "RHI",
+							"type": "integer",
+							"description": "Rendering API: 0 = DX11, 1 = DX12, 2 = Vulkan"
+						},
+						{
+							"name": "BloodDecalQualityLevel",
+							"type": "integer",
+							"description": "Blood decals: 0 = None, 1 = Simple Decals, 2 = Vehicle Supported"
+						},
+						{
+							"name": "AntiAliasingMethod",
+							"type": "integer",
+							"description": "Anti-Aliasing: 0 = OFF, 1 = FXAA, 2 = TAA, 3 = MSAA, 4 = TSR, 5 = SMAA"
+						},
+						{
+							"name": "ShadowMapMethod",
+							"type": "integer",
+							"description": "Shadows: 0 = Shadow Maps, 1 = Virtual Shadow Maps"
+						},
+						{
+							"name": "MegaLights",
+							"type": "boolean",
+							"description": "Whether MegaLights is enabled"
+						},
+						{
+							"name": "UpscalingMethod",
+							"type": "integer",
+							"description": "Upscaling: 0 = OFF, 1 = TSR, 2 = AMD FSR, 3 = NVIDIA DLSS"
+						},
+						{
+							"name": "UpscalingQuality",
+							"type": "integer",
+							"description": "Upscaling quality: 0 = Native/DLAA, 1 = Quality, 2 = Balanced, 3 = Performance, 4 = Ultra Performance"
+						},
+						{
+							"name": "UpscalingSharpness",
+							"type": "integer",
+							"description": "Upscaling sharpness (0-100)"
+						},
+						{
+							"name": "FrameGenerationMethod",
+							"type": "integer",
+							"description": "Frame Generation: 0 = OFF, 1 = AMD FSR FG, 2 = NVIDIA DLSS FG"
+						},
+						{
+							"name": "LatencyReductionMethod",
+							"type": "integer",
+							"description": "Latency Reduction: 0 = OFF, 1 = AMD Anti Lag 2, 2 = NVIDIA Reflex, 3 = NVIDIA Reflex + Boost"
+						},
+						{
+							"name": "DLSSFrameGenerationMode",
+							"type": "integer",
+							"description": "DLSS Frame Generation: 0 = Auto, 1 = Dynamic, 2 = 2X, 3 = 3X, 4 = 4X, 5 = 5X, 6 = 6X"
+						},
+						{
+							"name": "DLSSRayReconstruction",
+							"type": "boolean",
+							"description": "Whether DLSS Ray Reconstruction is enabled"
+						},
+						{
+							"name": "CEFSharedTexture",
+							"type": "boolean",
+							"description": "Whether WebUIs use a shared texture (experimental)"
+						},
+						{
+							"name": "CEFUseHardwareAcceleration",
+							"type": "boolean",
+							"description": "Whether WebUIs use hardware acceleration (experimental)"
+						},
+						{
+							"name": "CEFUseMessageLoopSchedule",
+							"type": "boolean",
+							"description": "Whether WebUIs use a scheduled message loop"
+						},
+						{
+							"name": "CEFUseExternalBeginFrame",
+							"type": "boolean",
+							"description": "Whether WebUIs use an external begin frame"
+						},
+						{
+							"name": "CEFMaxFrameRate",
+							"type": "integer",
+							"description": "WebUI frame rate limit"
+						},
+						{
+							"name": "CEFMaxResolution",
+							"type": "integer",
+							"description": "WebUI resolution limit, or 0 for unlimited"
+						},
+						{
+							"name": "ScreenResolution",
+							"type": "Vector2D",
+							"description": "Screen resolution in pixels"
+						},
+						{
+							"name": "FullscreenMode",
+							"type": "integer",
+							"description": "Window mode: 0 = Fullscreen, 1 = Windowed Fullscreen, 2 = Windowed"
+						},
+						{
+							"name": "VSync",
+							"type": "boolean",
+							"description": "Whether VSync is enabled"
+						},
+						{
+							"name": "ResolutionScale",
+							"type": "float",
+							"description": "Normalized 3D resolution scale (0-1)"
+						},
+						{
+							"name": "OverallQuality",
+							"type": "integer",
+							"description": "Overall quality preset: 0 = Low, 1 = Medium, 2 = High, 3 = Epic, 4 = Cinematic, or -1 when the individual quality levels do not all match"
+						},
+						{
+							"name": "ViewDistanceQuality",
+							"type": "integer",
+							"description": "View Distance quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "ShadowQuality",
+							"type": "integer",
+							"description": "Shadow quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "GlobalIlluminationQuality",
+							"type": "integer",
+							"description": "Global Illumination quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "ReflectionQuality",
+							"type": "integer",
+							"description": "Reflection quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "AntiAliasingQuality",
+							"type": "integer",
+							"description": "Anti-Aliasing quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "TextureQuality",
+							"type": "integer",
+							"description": "Texture quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "VisualEffectQuality",
+							"type": "integer",
+							"description": "Visual Effects quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "PostProcessingQuality",
+							"type": "integer",
+							"description": "Post Processing quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "FoliageQuality",
+							"type": "integer",
+							"description": "Foliage quality (0 = Low to 4 = Cinematic)"
+						},
+						{
+							"name": "ShadingQuality",
+							"type": "integer",
+							"description": "Shading quality (0 = Low to 4 = Cinematic)"
+						}
+					]
+				}
+			],
+			"efficiency": "slow"
 		}
 	],
 	"events": [

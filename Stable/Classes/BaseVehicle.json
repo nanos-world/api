@@ -232,70 +232,6 @@
 			"efficiency": "fast"
 		},
 		{
-			"authority": "both",
-			"name": "HideBone",
-			"description": "Hides a bone of this Vehicle",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to hide"
-				}
-			],
-			"relations": {
-				"functions": [
-					"UnHideBone",
-					"IsBoneHidden"
-				]
-			},
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "UnHideBone",
-			"description": "UnHide a bone of this Vehicle",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to unhide"
-				}
-			],
-			"relations": {
-				"functions": [
-					"HideBone",
-					"IsBoneHidden"
-				]
-			},
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "IsBoneHidden",
-			"return": [
-				{
-					"type": "boolean",
-					"description": "if the bone is hidden",
-					"name": "is_hidden"
-				}
-			],
-			"description": "Gets if a bone is hidden",
-			"parameters": [
-				{
-					"type": "string",
-					"name": "bone_name",
-					"description": "Bone to check"
-				}
-			],
-			"relations": {
-				"functions": [
-					"UnHideBone",
-					"HideBone"
-				]
-			},
-			"efficiency": "fast"
-		},
-		{
 			"authority": "server",
 			"name": "SetDoor",
 			"description": "Adds a Door to the Vehicle",
@@ -375,6 +311,20 @@
 				}
 			],
 			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "StopAnimation",
+			"description": "Stops an Animation Montage on this Vehicle",
+			"parameters": [
+				{
+					"type": "AnimationPath",
+					"name": "animation_asset",
+					"default": "",
+					"description": "Leave empty to stop all Montages"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
@@ -485,6 +435,220 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "IsEngineStarted",
+			"description": "Checks if the engine is started",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "is_started"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetCameraArmLength",
+			"description": "Sets how far the camera stays from this Vehicle while driving it",
+			"description_long": "Sets how far the camera stays from this Vehicle while driving it, in centimeters.<br><br>This overrides the Player's own <a href='/docs/scripting-reference/classes/player#function-setcameraarmlength'>Camera Arm Length</a> for as long as they are driving it. Set it to <code>0</code> to use the Player's value instead, which is the default.",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "arm_length",
+					"description": "The distance in centimeters, or 0 to use the Player's own value"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "SetCameraOffset",
+			"description": "Sets the Vehicle Camera Offset",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "offset"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "SetAnimationBlueprintPropertyValue",
+			"description": "Sets an Animation Blueprint Property/Variable value directly",
+			"description_long": "Sets an Animation Blueprint Property/Variable value directly on the Animation Blueprint passed in the constructor.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				},
+				{
+					"type": "any",
+					"name": "value"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "GetAnimationBlueprintPropertyValue",
+			"description": "Gets an Animation Blueprint Property/Variable value directly",
+			"description_long": "Gets an Animation Blueprint Property/Variable value directly.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this returns <code>nil</code>.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				}
+			],
+			"return": [
+				{
+					"type": "any",
+					"description": "the property value"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "CallAnimationBlueprintEvent",
+			"authority": "both",
+			"return": [
+				{
+					"type": "any...",
+					"description": "the function return values"
+				}
+			],
+			"description": "Calls an Animation Blueprint Event or Function",
+			"description_long": "Calls an Animation Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong><br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event or Function name"
+				},
+				{
+					"type": "any",
+					"name": "arguments...",
+					"default": "nil",
+					"description": "Sequence of arguments to pass to the event"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "BindAnimationBlueprintEventDispatcher",
+			"description": "Assigns and Binds an Animation Blueprint Event Dispatcher",
+			"description_long": "Assigns and Binds an Animation Blueprint Event Dispatcher.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback function to call",
+					"function_parameters": [
+						{
+							"name": "self",
+							"type": "Vehicle"
+						},
+						{
+							"name": "params",
+							"type": "any..."
+						}
+					]
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "the callback itself"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
+			"name": "UnbindAnimationBlueprintEventDispatcher",
+			"description": "Unbinds an Animation Blueprint Event Dispatcher",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "dispatcher_name",
+					"description": "Event Dispatcher name"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Optional callback to unbind",
+					"default": "nil"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetBuoyancyPontoons",
+			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
+			"description_long": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
+			"parameters": [
+				{
+					"type": "table",
+					"name": "pontoons",
+					"default": "nil",
+					"description": "Array with the Pontoons, or nil to restore the automatically calculated ones",
+					"table_properties": [
+						{
+							"name": "Offset",
+							"type": "Vector",
+							"description": "Location relative to the entity"
+						},
+						{
+							"name": "Radius",
+							"type": "float",
+							"description": "Radius of the Pontoon sphere, must be greater than 0"
+						}
+					]
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "authority",
+			"name": "SetBuoyancySettings",
+			"description": "Sets how this entity behaves on Water",
+			"description_long": "Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"default": "true",
+					"description": "Whether Buoyancy forces are applied at all"
+				},
+				{
+					"type": "float",
+					"name": "buoyancy_coefficient",
+					"default": "0.1",
+					"description": "How much it floats, the higher the more"
+				},
+				{
+					"type": "float",
+					"name": "buoyancy_damp",
+					"default": "1000",
+					"description": "First order damping on the vertical velocity, reduces bobbing"
+				},
+				{
+					"type": "float",
+					"name": "max_buoyant_force",
+					"default": "5000000",
+					"description": "Clamp on the upwards force, stops light objects being launched out of the water"
+				}
+			],
+			"efficiency": "moderate"
 		}
 	],
 	"events": [
@@ -521,6 +685,28 @@
 					"type": "Actor?",
 					"name": "other_actor",
 					"description": "The other actor that hit this Vehicle"
+				}
+			]
+		},
+		{
+			"name": "EngineStart",
+			"description": "Triggered when the engine starts",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "Vehicle",
+					"name": "self"
+				}
+			]
+		},
+		{
+			"name": "EngineStop",
+			"description": "Triggered when the engine stops",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "Vehicle",
+					"name": "self"
 				}
 			]
 		},

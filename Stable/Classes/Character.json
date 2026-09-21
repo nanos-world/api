@@ -55,10 +55,10 @@
 					"description": "Played when Character takes damage"
 				},
 				{
-					"type": "boolean",
-					"name": "defer_spawn",
-					"default": "false",
-					"description": "Pass true to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
+					"type": "SpawnMode",
+					"name": "spawn_mode",
+					"default": "SpawnMode.Immediate",
+					"description": "Pass <code>SpawnMode.AfterConstructor</code> or <code>SpawnMode.Manual</code> to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
 				}
 			]
 		}
@@ -448,6 +448,18 @@
 				{
 					"type": "boolean",
 					"name": "can_pickup"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "server",
+			"name": "SetWeaponShooterMode",
+			"description": "Sets if this Character is in Shooter Mode, in which a held Weapon is always aimed while idle or walking, is lowered while sprinting, and the aim input aims down sights instead of raising the Weapon",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "weapon_shooter_mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1030,18 +1042,6 @@
 		},
 		{
 			"authority": "both",
-			"name": "GetCanCrouch",
-			"description": "Gets if can crouch",
-			"return": [
-				{
-					"type": "boolean",
-					"name": "can_crouch"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
 			"name": "GetCanSprint",
 			"description": "Gets if can sprint",
 			"return": [
@@ -1072,6 +1072,18 @@
 				{
 					"type": "boolean",
 					"name": "can_pickup"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetWeaponShooterMode",
+			"description": "Gets if this Character is in Shooter Mode",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "weapon_shooter_mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1149,18 +1161,6 @@
 				{
 					"type": "integer",
 					"name": "impact_damage"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
-			"authority": "both",
-			"name": "GetJumpZVelocity",
-			"description": "Gets the Jump Z Velocity",
-			"return": [
-				{
-					"type": "integer",
-					"name": "jump_z_velocity"
 				}
 			],
 			"efficiency": "fast"
@@ -1267,7 +1267,9 @@
 			"description": "Gets the entered Vehicle seat",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"name": "seat_index",
+					"description": "The seat index the Character is sitting in the Vehicle. -1 if not in a Vehicle"
 				}
 			],
 			"efficiency": "fast"

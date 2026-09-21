@@ -7,6 +7,30 @@
 	],
 	"functions": [
 		{
+			"name": "GetMass",
+			"description": "Returns the mass of this Actor",
+			"authority": "client",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "float",
+					"name": "mass"
+				}
+			]
+		},
+		{
+			"name": "GetAngularVelocity",
+			"description": "Returns the angular velocity of this Actor",
+			"authority": "client",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "float",
+					"name": "angular_velocity"
+				}
+			]
+		},
+		{
 			"name": "AddImpulse",
 			"description": "Add an impulse to this Actor. Good for one time instant burst",
 			"authority": "network-authority",
@@ -214,6 +238,12 @@
 				{
 					"name": "socket_name",
 					"type": "string"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to read the Socket from. Pass empty to read from the main mesh"
 				}
 			]
 		},
@@ -387,6 +417,9 @@
 				"functions": [
 					"SetNetworkAuthorityAutoDistributed",
 					"IsNetworkDistributed"
+				],
+				"events": [
+					"NetworkAuthorityChange"
 				]
 			}
 		},
@@ -483,6 +516,7 @@
 		{
 			"name": "IsInWater",
 			"description": "Returns true if this Actor is in water",
+			"description_long": "Returns true if this Actor is in water. Only Actors that simulate physics work for this function, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
 			"authority": "both",
 			"efficiency": "fast",
 			"return": [
@@ -515,6 +549,14 @@
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
 			"efficiency": "moderate",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "recursively",
+					"description": "Also returns the Actors attached to the attached Actors",
+					"default": "false"
+				}
+			],
 			"return": [
 				{
 					"type": "Actor[]"
@@ -815,6 +857,89 @@
 				"functions": [
 					"SetDimension",
 					"GetDimension"
+				]
+			}
+		},
+		{
+			"authority": "server",
+			"name": "NetworkAuthorityChange",
+			"description": "Triggered when an Actor changes its network authority Player",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				},
+				{
+					"name": "old_network_authority",
+					"type": "Player?",
+					"description": "The old Network Authority Player, if any"
+				},
+				{
+					"name": "new_network_authority",
+					"type": "Player?",
+					"description": "The new Network Authority Player, if any"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthority",
+					"GetNetworkAuthority"
+				]
+			}
+		},
+		{
+			"authority": "client",
+			"name": "NetworkAuthorityChange",
+			"description": "Triggered when the local Player gets/loses network authority over this actor",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				},
+				{
+					"name": "is_network_authority",
+					"type": "boolean",
+					"description": "Whether the local Player is now the Network Authority of this Actor"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetNetworkAuthority",
+					"GetNetworkAuthority"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "EnterWater",
+			"description": "Triggered when an Actor enters a water body",
+			"description_long": "Triggered when an Actor enters a water body. Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				}
+			],
+			"relations": {
+				"functions": [
+					"IsInWater"
+				]
+			}
+		},
+		{
+			"authority": "both",
+			"name": "LeaveWater",
+			"description": "Triggered when an Actor leaves a water body",
+			"description_long": "Triggered when an Actor leaves a water body. Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"arguments": [
+				{
+					"name": "self",
+					"type": "Actor"
+				}
+			],
+			"relations": {
+				"functions": [
+					"IsInWater"
 				]
 			}
 		}

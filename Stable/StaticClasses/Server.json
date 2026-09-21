@@ -235,6 +235,17 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "IsUnsafeLibsEnabled",
+			"description": "Returns if the server was started with --enable_unsafe_libs",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "GetConnectionCount",
 			"description": "Returns the number of connected players (including players in the process of connecting)",
 			"authority": "server",

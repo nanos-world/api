@@ -26,7 +26,13 @@
 				"static_functions": [
 					"Subscribe"
 				]
-			}
+			},
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Returns false if any of the event listeners returned false, otherwise returns true"
+				}
+			]
 		},
 		{
 			"authority": "client",

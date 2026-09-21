@@ -42,10 +42,10 @@
 					"default": "true"
 				},
 				{
-					"type": "boolean",
-					"name": "defer_spawn",
-					"default": "false",
-					"description": "Pass true to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
+					"type": "SpawnMode",
+					"name": "spawn_mode",
+					"default": "SpawnMode.Immediate",
+					"description": "Pass <code>SpawnMode.AfterConstructor</code> or <code>SpawnMode.Manual</code> to avoid immediately sending the entity to clients and improve performance when you want to configure it by setting several configs. Must call <code>FinishSpawn()</code> after all"
 				}
 			]
 		}
@@ -290,6 +290,24 @@
 			"efficiency": "slow"
 		},
 		{
+			"name": "GetAnimationBlueprintPropertyValue",
+			"description": "Gets an Animation Blueprint Property/Variable value directly",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "property_name"
+				}
+			],
+			"return": [
+				{
+					"type": "any",
+					"description": "the property value"
+				}
+			],
+			"efficiency": "slow"
+		},
+		{
 			"name": "CallAnimationBlueprintEvent",
 			"authority": "both",
 			"return": [
@@ -367,34 +385,97 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetCrouching",
+			"description": "Sets if this Character is crouching",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_crouching"
+				}
+			],
+			"relations": {
+				"events": [
+					"StartCrouch",
+					"EndCrouch"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "IsCrouching",
+			"description": "Gets if this Character is crouching",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "is_crouching"
+				}
+			],
+			"efficiency": "fast"
 		}
 	],
 	"events": [
 		{
 			"authority": "client",
 			"name": "Jump",
-			"description": "Event fired when the character has just started jumping"
+			"description": "Event fired when the character has just started jumping",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that jumped"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "StartCrouch",
-			"description": "Called when Character crouches"
+			"description": "Called when Character crouches",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that started crouching"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "EndCrouch",
-			"description": "Called when Character stops crouching"
+			"description": "Called when Character stops crouching",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that stopped crouching"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "Land",
-			"description": "Called upon landing when falling"
+			"description": "Called upon landing when falling",
+            "arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that landed"
+                }
+            ]
 		},
 		{
 			"authority": "client",
 			"name": "MovementModeChange",
 			"description": "Called when the Character movement mode changes",
 			"arguments": [
+                {
+                    "type": "CharacterSimple",
+                    "name": "self",
+                    "description": "The CharacterSimple that changed movement mode"
+                },
 				{
 					"type": "integer",
 					"name": "old_mode",
