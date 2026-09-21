@@ -2,6 +2,9 @@
 	"name": "Canvas",
 	"description": "Canvas is an entity which you can draw onto it.",
 	"authority": "client",
+	"inheritance": [
+		"Entity"
+	],
 	"constructors": [
 		{
 			"name": "Default Constructor",
@@ -66,25 +69,30 @@
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size"
+					"name": "screen_size",
+					"description": "Size on the Canvas, in pixels"
 				},
 				{
 					"type": "float",
-					"name": "thickness"
+					"name": "thickness",
+					"description": "Line thickness"
 				},
 				{
 					"type": "Color",
 					"name": "render_color",
-					"default": "Color.WHITE"
+					"default": "Color.WHITE",
+					"description": "Color to tint the drawing with"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -97,24 +105,29 @@
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_position_a"
+					"name": "screen_position_a",
+					"description": "Start position of the line, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position_b"
+					"name": "screen_position_b",
+					"description": "End position of the line, in pixels"
 				},
 				{
 					"type": "float",
-					"name": "thickness"
+					"name": "thickness",
+					"description": "Line thickness"
 				},
 				{
 					"type": "Color",
-					"name": "render_color"
+					"name": "render_color",
+					"description": "Color to tint the drawing with"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -127,39 +140,47 @@
 			"parameters": [
 				{
 					"type": "MaterialPath",
-					"name": "material_path"
+					"name": "material_path",
+					"description": "The Material asset to use"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size"
+					"name": "screen_size",
+					"description": "Size on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "coordinate_position"
+					"name": "coordinate_position",
+					"description": "Top-left UV coordinate of the source to draw (0 to 1)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "coordinate_size",
-					"default": "Vector2D(1, 1)"
+					"default": "Vector2D(1, 1)",
+					"description": "UV size of the source to draw (0 to 1), use (1, 1) for the whole source"
 				},
 				{
 					"type": "float",
 					"name": "rotation",
-					"default": "0"
+					"default": "0",
+					"description": "Rotation in degrees"
 				},
 				{
 					"type": "Vector2D",
 					"name": "pivot_point",
-					"default": "Vector2D(0.5, 0.5)"
+					"default": "Vector2D(0.5, 0.5)",
+					"description": "Pivot of the rotation, relative to the drawing size (0.5, 0.5 is the center)"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -172,39 +193,47 @@
 			"parameters": [
 				{
 					"type": "WebUI",
-					"name": "webui_entity"
+					"name": "webui_entity",
+					"description": "The WebUI to draw"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size"
+					"name": "screen_size",
+					"description": "Size on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "coordinate_position"
+					"name": "coordinate_position",
+					"description": "Top-left UV coordinate of the source to draw (0 to 1)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "coordinate_size",
-					"default": "Vector2D(1, 1)"
+					"default": "Vector2D(1, 1)",
+					"description": "UV size of the source to draw (0 to 1), use (1, 1) for the whole source"
 				},
 				{
 					"type": "float",
 					"name": "rotation",
-					"default": "0"
+					"default": "0",
+					"description": "Rotation in degrees"
 				},
 				{
 					"type": "Vector2D",
 					"name": "pivot_point",
-					"default": "Vector2D(0.5, 0.5)"
+					"default": "Vector2D(0.5, 0.5)",
+					"description": "Pivot of the rotation, relative to the drawing size (0.5, 0.5 is the center)"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -217,39 +246,47 @@
 			"parameters": [
 				{
 					"type": "SceneCapture",
-					"name": "scenecapture_entity"
+					"name": "scenecapture_entity",
+					"description": "The SceneCapture to draw"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size"
+					"name": "screen_size",
+					"description": "Size on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "coordinate_position"
+					"name": "coordinate_position",
+					"description": "Top-left UV coordinate of the source to draw (0 to 1)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "coordinate_size",
-					"default": "Vector2D(1, 1)"
+					"default": "Vector2D(1, 1)",
+					"description": "UV size of the source to draw (0 to 1), use (1, 1) for the whole source"
 				},
 				{
 					"type": "float",
 					"name": "rotation",
-					"default": "0"
+					"default": "0",
+					"description": "Rotation in degrees"
 				},
 				{
 					"type": "Vector2D",
 					"name": "pivot_point",
-					"default": "Vector2D(0.5, 0.5)"
+					"default": "Vector2D(0.5, 0.5)",
+					"description": "Pivot of the rotation, relative to the drawing size (0.5, 0.5 is the center)"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -262,61 +299,73 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "text"
+					"name": "text",
+					"description": "The text to draw"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "FontType",
 					"name": "font_type",
-					"default": "FontType.Roboto"
+					"default": "FontType.Roboto",
+					"description": "Font to use"
 				},
 				{
 					"type": "integer",
 					"name": "font_size",
-					"default": "12"
+					"default": "12",
+					"description": "Font size"
 				},
 				{
 					"type": "Color",
 					"name": "text_color",
-					"default": "Color.WHITE"
+					"default": "Color.WHITE",
+					"description": "Color of the text"
 				},
 				{
 					"type": "float",
 					"name": "kerning",
-					"default": "0"
+					"default": "0",
+					"description": "Extra spacing between characters"
 				},
 				{
 					"type": "boolean",
 					"name": "center_x",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to center the text horizontally on the position"
 				},
 				{
 					"type": "boolean",
 					"name": "center_y",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to center the text vertically on the position"
 				},
 				{
 					"type": "Color",
 					"name": "shadow_color",
-					"default": "Color.TRANSPARENT"
+					"default": "Color.TRANSPARENT",
+					"description": "Color of the text shadow, transparent to disable it"
 				},
 				{
 					"type": "Vector2D",
 					"name": "shadow_offset",
-					"default": "Vector2D(1, 1)"
+					"default": "Vector2D(1, 1)",
+					"description": "Offset of the shadow, in pixels"
 				},
 				{
 					"type": "boolean",
 					"name": "outlined",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to draw an outline around the text"
 				},
 				{
 					"type": "Color",
 					"name": "outline_color",
-					"default": "Color.BLACK"
+					"default": "Color.BLACK",
+					"description": "Color of the outline"
 				}
 			],
 			"efficiency": "moderate"
@@ -329,29 +378,35 @@
 			"parameters": [
 				{
 					"type": "ImagePath",
-					"name": "texture_path"
+					"name": "texture_path",
+					"description": "The image to draw"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size"
+					"name": "screen_size",
+					"description": "Size on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "coordinate_position"
+					"name": "coordinate_position",
+					"description": "Top-left UV coordinate of the source to draw (0 to 1)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "coordinate_size",
-					"default": "Vector2D(1, 1)"
+					"default": "Vector2D(1, 1)",
+					"description": "UV size of the source to draw (0 to 1), use (1, 1) for the whole source"
 				},
 				{
 					"type": "Color",
 					"name": "render_color",
-					"default": "Color.WHITE"
+					"default": "Color.WHITE",
+					"description": "Color to tint the drawing with"
 				},
 				{
 					"type": "BlendMode",
@@ -362,12 +417,14 @@
 				{
 					"type": "float",
 					"name": "rotation",
-					"default": "0"
+					"default": "0",
+					"description": "Rotation in degrees"
 				},
 				{
 					"type": "Vector2D",
 					"name": "pivot_point",
-					"default": "Vector2D(0.5, 0.5)"
+					"default": "Vector2D(0.5, 0.5)",
+					"description": "Pivot of the rotation, relative to the drawing size (0.5, 0.5 is the center)"
 				}
 			],
 			"efficiency": "moderate"
@@ -385,27 +442,32 @@
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
 					"name": "radius",
-					"default": "Vector2D(1, 1)"
+					"default": "Vector2D(1, 1)",
+					"description": "Radius of the polygon on each axis, in pixels"
 				},
 				{
 					"type": "integer",
 					"name": "number_of_sides",
-					"default": "3"
+					"default": "3",
+					"description": "How many sides the polygon has"
 				},
 				{
 					"type": "Color",
 					"name": "render_color",
-					"default": "Color.WHITE"
+					"default": "Color.WHITE",
+					"description": "Color to tint the drawing with"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -423,21 +485,25 @@
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "Position on the Canvas, in pixels"
 				},
 				{
 					"type": "Vector2D",
-					"name": "screen_size"
+					"name": "screen_size",
+					"description": "Size on the Canvas, in pixels"
 				},
 				{
 					"type": "Color",
 					"name": "render_color",
-					"default": "Color.WHITE"
+					"default": "Color.WHITE",
+					"description": "Color to tint the drawing with"
 				},
 				{
 					"type": "BlendMode",
 					"name": "blend_mode",
-					"default": "BlendMode.Opaque"
+					"default": "BlendMode.Opaque",
+					"description": "How it blends with what is already drawn"
 				}
 			],
 			"efficiency": "moderate"
@@ -449,8 +515,9 @@
 			"description_long": "Sets it to -1 to stop auto repainting or 0 to repaint every frame",
 			"parameters": [
 				{
-					"type": "boolean",
-					"name": "auto_repaint_rate"
+					"type": "float",
+					"name": "auto_repaint_rate",
+					"description": "Repaint interval in seconds, 0 to repaint every frame or -1 to stop auto repainting"
 				}
 			],
 			"efficiency": "fast"
@@ -475,11 +542,13 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "width"
+					"name": "width",
+					"description": "Width in pixels"
 				},
 				{
 					"type": "integer",
-					"name": "height"
+					"name": "height",
+					"description": "Height in pixels"
 				}
 			],
 			"efficiency": "moderate"
@@ -491,7 +560,8 @@
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_position"
+					"name": "screen_position",
+					"description": "The new Canvas Screen Position offset"
 				}
 			],
 			"efficiency": "fast"
@@ -503,7 +573,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "auto_resize"
+					"name": "auto_resize",
+					"description": "Whether the canvas should auto resize to screen size"
 				}
 			],
 			"efficiency": "fast"
@@ -515,7 +586,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "visible"
+					"name": "visible",
+					"description": "Whether it's visible on screen"
 				}
 			],
 			"efficiency": "fast"
@@ -534,7 +606,8 @@
 			"parameters": [
 				{
 					"type": "Color",
-					"name": "clear_color"
+					"name": "clear_color",
+					"description": "The color to fill the Canvas with"
 				}
 			],
 			"efficiency": "fast"
@@ -548,15 +621,18 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Canvas"
+					"type": "Canvas",
+					"description": "The Canvas that triggered the event"
 				},
 				{
 					"name": "width",
-					"type": "integer"
+					"type": "integer",
+					"description": "Width in pixels"
 				},
 				{
 					"name": "height",
-					"type": "integer"
+					"type": "integer",
+					"description": "Height in pixels"
 				}
 			]
 		}

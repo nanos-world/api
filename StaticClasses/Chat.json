@@ -11,7 +11,7 @@
 				{
 					"type": "string",
 					"name": "message",
-					"description": ""
+					"description": "The message, supports the same rich text tags as the chat"
 				}
 			],
 			"efficiency": "moderate"
@@ -42,43 +42,43 @@
 				{
 					"type": "Vector2D",
 					"name": "screen_location",
-					"description": "",
+					"description": "Screen location, or the left and top offsets when the anchors are stretched",
 					"default": "Vector2D(-25, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "size",
-					"description": "",
+					"description": "Size, or the right and bottom offsets when the anchors are stretched",
 					"default": "Vector2D(600, 250)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_min",
-					"description": "",
+					"description": "Min anchor, from (0, 0) top-left to (1, 1) bottom-right",
 					"default": "Vector2D(1, 0.5)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_max",
-					"description": "",
+					"description": "Max anchor, from (0, 0) top-left to (1, 1) bottom-right",
 					"default": "Vector2D(1, 0.5)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "alignment",
-					"description": "",
+					"description": "Pivot of the chat, (0.5, 0.5) is the center",
 					"default": "Vector2D(1, 0.5)"
 				},
 				{
 					"type": "boolean",
 					"name": "justify",
-					"description": "",
+					"description": "Whether the text is justified",
 					"default": "true"
 				},
 				{
 					"type": "boolean",
 					"name": "show_scrollbar",
-					"description": "",
+					"description": "Whether to show the scrollbar",
 					"default": "true"
 				}
 			],
@@ -92,7 +92,7 @@
 				{
 					"type": "boolean",
 					"name": "is_visible",
-					"description": ""
+					"description": "Whether the Chat is visible or not"
 				}
 			],
 			"efficiency": "fast"

@@ -99,7 +99,8 @@
 			"description": "Gets the keyboard layout of the user",
 			"return": [
 				{
-					"type": "KeyboardLayout"
+					"type": "KeyboardLayout",
+					"description": "Keyboard layout of the user"
 				}
 			],
 			"efficiency": "fast"
@@ -111,17 +112,20 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "key_name"
+					"name": "key_name",
+					"description": "The key name, e.g. <code>E</code> or <code>LeftMouseButton</code>"
 				},
 				{
 					"type": "boolean",
 					"name": "dark_mode",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to return the dark version of the icon"
 				}
 			],
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"description": "Icon path of a key"
 				}
 			],
 			"efficiency": "fast"
@@ -133,12 +137,14 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "key_name"
+					"name": "key_name",
+					"description": "The key name, e.g. <code>E</code> or <code>LeftMouseButton</code>"
 				}
 			],
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"description": "Key code of a key"
 				}
 			],
 			"efficiency": "fast"
@@ -149,7 +155,8 @@
 			"description": "Gets the currently pressed modifier keys",
 			"return": [
 				{
-					"type": "KeyModifier"
+					"type": "KeyModifier",
+					"description": "Currently pressed modifier keys"
 				}
 			],
 			"examples": [
@@ -196,7 +203,8 @@
 			"return": [
 				{
 					"type": "table",
-					"table_properties_custom": "\n\t\"[BINDING_NAME_01]\" = {\n\t\t\"[KEY_01]\",\n\t\t\"[KEY_02]\",\n\t\t...\n\t},\n\t\"[BINDING_NAME_02]\" = {\n\t\t\"[KEY_03]\",\n\t\t\"[KEY_04]\",\n\t\t...\n\t},\n\t..."
+					"table_properties_custom": "\n\t\"[BINDING_NAME_01]\" = {\n\t\t\"[KEY_01]\",\n\t\t\"[KEY_02]\",\n\t\t...\n\t},\n\t\"[BINDING_NAME_02]\" = {\n\t\t\"[KEY_03]\",\n\t\t\"[KEY_04]\",\n\t\t...\n\t},\n\t...",
+					"description": "Table with all Scripting KeyBindings"
 				}
 			],
 			"efficiency": "moderate"
@@ -208,7 +216,8 @@
 			"return": [
 				{
 					"type": "table",
-					"table_properties_custom": "\n\t\"[BINDING_NAME_01]\" = {\n\t\t\"[KEY_01]\",\n\t\t\"[KEY_02]\",\n\t\t...\n\t},\n\t\"[BINDING_NAME_02]\" = {\n\t\t\"[KEY_03]\",\n\t\t\"[KEY_04]\",\n\t\t...\n\t},\n\t..."
+					"table_properties_custom": "\n\t\"[BINDING_NAME_01]\" = {\n\t\t\"[KEY_01]\",\n\t\t\"[KEY_02]\",\n\t\t...\n\t},\n\t\"[BINDING_NAME_02]\" = {\n\t\t\"[KEY_03]\",\n\t\t\"[KEY_04]\",\n\t\t...\n\t},\n\t...",
+					"description": "Table with all Game KeyBindings"
 				}
 			],
 			"efficiency": "moderate"
@@ -221,20 +230,20 @@
 				{
 					"type": "boolean",
 					"name": "enable_input",
-					"description": ""
+					"description": "Whether to enable Local Player input"
 				}
 			],
 			"efficiency": "fast"
 		},
 		{
 			"name": "SetMouseEnabled",
-			"description": "Displays/Hides Mouse Cursor",
+			"description": "Shows or hides the mouse cursor",
 			"authority": "client",
 			"parameters": [
 				{
 					"type": "boolean",
 					"name": "is_enabled",
-					"description": ""
+					"description": "Whether the mouse cursor is enabled"
 				}
 			],
 			"efficiency": "fast"
@@ -247,7 +256,7 @@
 				{
 					"type": "CursorType",
 					"name": "cursor_type",
-					"description": ""
+					"description": "The new current Mouse Cursor type"
 				}
 			],
 			"efficiency": "fast"
@@ -302,7 +311,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "key_name"
+					"name": "key_name",
+					"description": "The key name, e.g. <code>E</code> or <code>LeftMouseButton</code>"
 				}
 			],
 			"efficiency": "fast"
@@ -321,14 +331,15 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "binding_name"
+					"name": "binding_name",
+					"description": "The name of the Key Binding"
 				}
 			],
 			"efficiency": "fast"
 		},
 		{
 			"name": "IsMouseEnabled",
-			"description": "",
+			"description": "Gets if the mouse cursor is enabled",
 			"authority": "client",
 			"return": [
 				{
@@ -340,7 +351,7 @@
 		},
 		{
 			"name": "IsInputEnabled",
-			"description": "",
+			"description": "Gets if the game input is enabled",
 			"authority": "client",
 			"return": [
 				{
@@ -500,17 +511,17 @@
 				{
 					"type": "string",
 					"name": "key_name",
-					"description": ""
+					"description": "The key name, e.g. <code>E</code> or <code>LeftMouseButton</code>"
 				},
 				{
 					"type": "float",
 					"name": "mouse_x",
-					"description": ""
+					"description": "Mouse X position on screen, in pixels"
 				},
 				{
 					"type": "float",
 					"name": "mouse_y",
-					"description": ""
+					"description": "Mouse Y position on screen, in pixels"
 				}
 			]
 		},
@@ -528,17 +539,17 @@
 				{
 					"type": "string",
 					"name": "key_name",
-					"description": ""
+					"description": "The key name, e.g. <code>E</code> or <code>LeftMouseButton</code>"
 				},
 				{
 					"type": "float",
 					"name": "mouse_x",
-					"description": ""
+					"description": "Mouse X position on screen, in pixels"
 				},
 				{
 					"type": "float",
 					"name": "mouse_y",
-					"description": ""
+					"description": "Mouse Y position on screen, in pixels"
 				}
 			]
 		},
@@ -550,7 +561,7 @@
 				{
 					"type": "boolean",
 					"name": "is_enabled",
-					"description": ""
+					"description": "Whether the cursor is now displayed"
 				}
 			]
 		},
@@ -568,22 +579,22 @@
 				{
 					"type": "float",
 					"name": "cursor_delta_x",
-					"description": ""
+					"description": "Horizontal movement since the last event"
 				},
 				{
 					"type": "float",
 					"name": "cursor_delta_y",
-					"description": ""
+					"description": "Vertical movement since the last event"
 				},
 				{
 					"type": "float",
 					"name": "mouse_x",
-					"description": ""
+					"description": "Mouse X position on screen, in pixels"
 				},
 				{
 					"type": "float",
 					"name": "mouse_y",
-					"description": ""
+					"description": "Mouse Y position on screen, in pixels"
 				}
 			]
 		},
@@ -601,17 +612,17 @@
 				{
 					"type": "float",
 					"name": "mouse_x",
-					"description": ""
+					"description": "Mouse X position on screen, in pixels"
 				},
 				{
 					"type": "float",
 					"name": "mouse_y",
-					"description": ""
+					"description": "Mouse Y position on screen, in pixels"
 				},
 				{
 					"type": "float",
 					"name": "delta",
-					"description": ""
+					"description": "Scroll amount, positive when scrolling up and negative when scrolling down"
 				}
 			]
 		}

@@ -295,7 +295,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_pickable"
+					"name": "is_pickable",
+					"description": "Whether this Pickable can be picked up from ground by the player"
 				}
 			],
 			"efficiency": "fast"
@@ -307,7 +308,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_use"
+					"name": "can_use",
+					"description": "Whether this Pickable can be used by the player when held"
 				}
 			],
 			"efficiency": "fast"
@@ -319,7 +321,8 @@
 			"return": [
 				{
 					"name": "asset",
-					"type": "SkeletalMeshPath"
+					"type": "SkeletalMeshPath",
+					"description": "Name of the asset this Pickable uses"
 				}
 			],
 			"efficiency": "fast"
@@ -330,7 +333,8 @@
 			"description": "Gets the Character, if it exists, that's holding this Pickable",
 			"return": [
 				{
-					"type": "Character?"
+					"type": "Character?",
+					"description": "Character, if it exists, that's holding this Pickable"
 				}
 			],
 			"efficiency": "fast"
@@ -341,7 +345,8 @@
 			"description": "Gets the Handling Mode of this Pickable",
 			"return": [
 				{
-					"type": "HandlingMode"
+					"type": "HandlingMode",
+					"description": "Handling Mode of this Pickable"
 				}
 			],
 			"efficiency": "fast"

@@ -1,6 +1,6 @@
 {
 	"name": "Matrix",
-	"description": "A Matrix is an array of numbers this can be used for geometric and positional calculations. This is mainly used internally.",
+	"description": "A 4x4 transformation Matrix built from a rotation and an origin, which can be used for geometric and positional calculations. This is mainly used internally.",
 	"constructors": [
 		{
 			"name": "Default Constructor",
@@ -21,7 +21,7 @@
 	"functions": [
 		{
 			"name": "TransformVector",
-			"description": "Transform the vector with the matrix",
+			"description": "Rotates the Vector by this Matrix rotation (the origin is not applied)",
 			"return": [
 				{
 					"type": "Vector",
@@ -32,9 +32,10 @@
 				{
 					"type": "Vector",
 					"name": "vector",
-					"description": "The vector who will be transformed"
+					"description": "The Vector to be transformed"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetTransposed",
@@ -42,9 +43,19 @@
 			"return": [
 				{
 					"type": "Matrix",
-					"description": "The matrix transpoosed"
+					"description": "The transposed matrix"
 				}
-			]
+			],
+			"efficiency": "fast"
+		}
+	],
+	"operators": [
+		{
+			"name": "tostring",
+			"operator": "tostring",
+			"lhs": "Matrix",
+			"return": "string",
+			"description": "Gets a string representation of this struct"
 		}
 	]
 }

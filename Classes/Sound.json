@@ -23,7 +23,7 @@
 				},
 				{
 					"type": "boolean",
-					"name": "is_2D_sound",
+					"name": "is_2d_sound",
 					"default": "false",
 					"description": "Whether to spawn it as 2D or 3D"
 				},
@@ -42,12 +42,14 @@
 				{
 					"type": "float",
 					"name": "volume",
-					"default": "1"
+					"default": "1",
+					"description": "Volume multiplier"
 				},
 				{
 					"type": "float",
 					"name": "pitch",
-					"default": "1"
+					"default": "1",
+					"description": "Pitch multiplier"
 				},
 				{
 					"type": "float",
@@ -64,7 +66,7 @@
 				{
 					"type": "AttenuationFunction",
 					"name": "attenuation_function",
-					"default": "Linear",
+					"default": "AttenuationFunction.Linear",
 					"description": "Only used if 3D sound"
 				},
 				{
@@ -76,14 +78,14 @@
 				{
 					"type": "SoundLoopMode",
 					"name": "loop_mode",
-					"default": "Default",
+					"default": "SoundLoopMode.Default",
 					"description": "Whether should force sound to loop"
 				},
 				{
 					"type": "boolean",
 					"name": "auto_play",
 					"default": "true",
-					"description": "If should should immediately play when loaded"
+					"description": "Whether it should immediately play when loaded"
 				}
 			]
 		}
@@ -96,17 +98,20 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "fade_in_duration"
+					"name": "fade_in_duration",
+					"description": "Seconds to fade in"
 				},
 				{
 					"type": "float",
 					"name": "fade_volume_level",
-					"default": "1.0"
+					"default": "1.0",
+					"description": "Volume multiplier to fade to"
 				},
 				{
 					"type": "float",
 					"name": "start_time",
-					"default": "0.0"
+					"default": "0.0",
+					"description": "Seconds into the sound to start playing from"
 				}
 			],
 			"efficiency": "fast"
@@ -118,17 +123,20 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "fade_out_duration"
+					"name": "fade_out_duration",
+					"description": "Seconds to fade out"
 				},
 				{
 					"type": "float",
 					"name": "fade_volume_level",
-					"default": "0.0"
+					"default": "0.0",
+					"description": "Volume multiplier to fade to"
 				},
 				{
 					"type": "boolean",
 					"name": "destroy_after_fadeout",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to destroy the Sound after fading out"
 				}
 			],
 			"efficiency": "fast"
@@ -141,7 +149,8 @@
 				{
 					"type": "float",
 					"name": "start_time",
-					"default": "0.0"
+					"default": "0.0",
+					"description": "Seconds into the sound to start playing from"
 				}
 			],
 			"efficiency": "fast"
@@ -153,7 +162,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "falloff_distance"
+					"name": "falloff_distance",
+					"description": "Distance from the inner radius at which the sound becomes inaudible"
 				}
 			],
 			"efficiency": "fast"
@@ -161,11 +171,12 @@
 		{
 			"name": "SetInnerRadius",
 			"authority": "client",
-			"description": "If a 3D Sound, sets the distance within the volume is 100%",
+			"description": "If a 3D Sound, sets the radius within which the volume is 100%",
 			"parameters": [
 				{
 					"type": "float",
-					"name": "inner_radius"
+					"name": "inner_radius",
+					"description": "Radius within which the volume is 100%"
 				}
 			],
 			"efficiency": "fast"
@@ -177,7 +188,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "frequency"
+					"name": "frequency",
+					"description": "The new low-pass filter frequency. Sets 0 to disable it"
 				}
 			],
 			"efficiency": "fast"
@@ -185,12 +197,13 @@
 		{
 			"name": "SetPaused",
 			"authority": "client",
-			"description": "Pauses the sound",
+			"description": "Pauses or resumes the sound",
 			"parameters": [
 				{
 					"type": "boolean",
 					"name": "pause",
-					"default": "true"
+					"default": "true",
+					"description": "Whether to pause (true) or resume (false)"
 				}
 			],
 			"efficiency": "fast"
@@ -202,7 +215,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "new_pitch"
+					"name": "new_pitch",
+					"description": "The new Sound's pitch"
 				}
 			],
 			"efficiency": "fast"
@@ -215,7 +229,7 @@
 				{
 					"type": "float",
 					"name": "new_volume",
-					"description": "from 0.0 to 1.0"
+					"description": "Volume multiplier, 1 is the original volume"
 				}
 			],
 			"efficiency": "fast"
@@ -233,7 +247,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "delay"
+					"name": "delay",
+					"description": "Seconds to wait before stopping"
 				}
 			],
 			"efficiency": "fast"
@@ -241,8 +256,9 @@
 		{
 			"return": [
 				{
-					"name": "is_2D_sound",
-					"type": "boolean"
+					"name": "is_2d_sound",
+					"type": "boolean",
+					"description": "Whether the sound is 2D"
 				}
 			],
 			"name": "Is2D",
@@ -254,7 +270,8 @@
 			"return": [
 				{
 					"name": "is_playing",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether the sound is playing"
 				}
 			],
 			"name": "IsPlaying",
@@ -266,7 +283,8 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "duration"
+					"name": "duration",
+					"description": "Duration of the Sound"
 				}
 			],
 			"name": "GetDuration",
@@ -278,78 +296,92 @@
 			"return": [
 				{
 					"name": "pitch",
-					"type": "float"
+					"type": "float",
+					"description": "The pitch multiplier"
 				}
 			],
 			"name": "GetPitch",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the pitch multiplier"
 		},
 		{
 			"return": [
 				{
 					"name": "volume",
-					"type": "float"
+					"type": "float",
+					"description": "The volume multiplier"
 				}
 			],
 			"name": "GetVolume",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the volume multiplier"
 		},
 		{
 			"return": [
 				{
 					"name": "frequency",
-					"type": "float"
+					"type": "float",
+					"description": "The low pass filter frequency"
 				}
 			],
 			"name": "GetLowPassFilter",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the low pass filter frequency"
 		},
 		{
 			"return": [
 				{
 					"type": "float",
-					"name": "inner_radius"
+					"name": "inner_radius",
+					"description": "The inner radius"
 				}
 			],
 			"name": "GetInnerRadius",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the radius within which the volume is 100%"
 		},
 		{
 			"return": [
 				{
 					"type": "float",
-					"name": "falloff_distance"
+					"name": "falloff_distance",
+					"description": "The falloff distance"
 				}
 			],
 			"name": "GetFalloffDistance",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the distance at which the sound becomes inaudible"
 		},
 		{
 			"return": [
 				{
 					"name": "sound_type",
-					"type": "SoundType"
+					"type": "SoundType",
+					"description": "The Sound Type"
 				}
 			],
 			"name": "GetSoundType",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Sound Type, used to apply the user's volume settings"
 		},
 		{
 			"return": [
 				{
 					"name": "path",
-					"type": "string"
+					"type": "string",
+					"description": "The asset path"
 				}
 			],
 			"name": "GetPath",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the asset path of this Sound"
 		}
 	]
 }

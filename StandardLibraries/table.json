@@ -22,11 +22,6 @@
 					"default": ""
 				}
 			],
-			"return": [
-				{
-					"type": "number"
-				}
-			],
 			"is_native": true,
 			"description": "Inserts element value at <code>position</code> in <code>tbl</code>",
 			"description_long": "Inserts element value at <code>position</code> in <code>tbl</code>, shifting up the elements <code>tbl[position], tbl[position + 1], ···, tbl[#tbl]</code>",
@@ -81,7 +76,8 @@
 			],
 			"return": [
 				{
-					"type": "table"
+					"type": "table",
+					"description": "The destination table"
 				}
 			],
 			"is_native": true,
@@ -104,7 +100,8 @@
 			],
 			"return": [
 				{
-					"type": "any"
+					"type": "any",
+					"description": "The removed value"
 				}
 			],
 			"is_native": true,
@@ -140,7 +137,8 @@
 			],
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"description": "The concatenated string"
 				}
 			],
 			"is_native": true,

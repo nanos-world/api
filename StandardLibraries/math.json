@@ -22,11 +22,12 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The rounded up integer"
 				}
 			],
 			"is_native": true,
-			"description": "Return the integer no greater than the given value (even for negatives)",
+			"description": "Returns the smallest integer greater than or equal to the given value",
 			"name": "ceil"
 		},
 		{
@@ -39,7 +40,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The tangent"
 				}
 			],
 			"is_native": true,
@@ -56,7 +58,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The smallest value"
 				}
 			],
 			"is_native": true,
@@ -78,7 +81,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The remainder"
 				}
 			],
 			"is_native": true,
@@ -95,7 +99,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "e raised to the given power"
 				}
 			],
 			"is_native": true,
@@ -117,7 +122,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "A random float between 0 and 1 when called without parameters, otherwise a random integer in the given range"
 				}
 			],
 			"is_native": true,
@@ -134,7 +140,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The angle in radians"
 				}
 			],
 			"is_native": true,
@@ -151,7 +158,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The sine"
 				}
 			],
 			"is_native": true,
@@ -168,7 +176,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The cosine"
 				}
 			],
 			"is_native": true,
@@ -185,7 +194,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The angle in radians"
 				}
 			],
 			"is_native": true,
@@ -214,11 +224,12 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The rounded down integer"
 				}
 			],
 			"is_native": true,
-			"description": "Return the integer no less than the given value (even for negatives)",
+			"description": "Returns the largest integer less than or equal to the given value",
 			"name": "floor"
 		},
 		{
@@ -231,7 +242,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The largest value"
 				}
 			],
 			"is_native": true,
@@ -248,11 +260,12 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The angle in radians"
 				}
 			],
 			"is_native": true,
-			"description": "Return the inverse tangent in radians. We can do this by supplying y/x ourselves or we can pass y and x to math.atan to do this for us",
+			"description": "Returns the arc tangent in radians. Pass <code>y</code> and <code>x</code> to get the angle of the point (x, y), using the signs of both to find the quadrant",
 			"name": "atan"
 		},
 		{
@@ -265,7 +278,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The angle in radians"
 				}
 			],
 			"is_native": true,
@@ -282,7 +296,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The absolute value"
 				}
 			],
 			"is_native": true,
@@ -304,11 +319,12 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The logarithm"
 				}
 			],
 			"is_native": true,
-			"description": "Returns the inverse of this. <code>math.exp(1)</code> returns <code>e</code>",
+			"description": "Returns the logarithm of <code>x</code> in the given base. The default base is <code>e</code> (natural logarithm)",
 			"name": "log"
 		},
 		{
@@ -321,10 +337,12 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The integral part"
 				},
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The fractional part"
 				}
 			],
 			"is_native": true,
@@ -341,7 +359,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The angle in degrees"
 				}
 			],
 			"is_native": true,
@@ -358,7 +377,8 @@
 			],
 			"return": [
 				{
-					"type": "number"
+					"type": "number",
+					"description": "The square root"
 				}
 			],
 			"is_native": true,

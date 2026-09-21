@@ -1,6 +1,6 @@
 {
 	"name": "Pawn",
-	"description": "Base class for all Character entities.",
+	"description": "Base class for all Pawn entities (Character and CharacterSimple).",
 	"is_base": true,
 	"inheritance": [
 		"Entity",
@@ -238,7 +238,8 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "animation_asset"
+					"name": "animation_asset",
+					"description": "The Animation asset to stop"
 				}
 			],
 			"efficiency": "fast"
@@ -250,7 +251,8 @@
 			"return": [
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh_asset"
+					"name": "skeletal_mesh_asset",
+					"description": "Base Mesh Asset"
 				}
 			],
 			"efficiency": "fast"
@@ -258,11 +260,12 @@
 		{
 			"authority": "server",
 			"name": "SetFlyingMode",
-			"description": "Sets the Flying Mode",
+			"description": "Enables or disables the Flying Mode, which removes gravity and allows moving in all directions",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "flying_mode"
+					"name": "flying_mode",
+					"description": "Whether the Flying Mode is enabled"
 				}
 			],
 			"efficiency": "fast"
@@ -274,7 +277,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "flying_mode"
+					"name": "flying_mode",
+					"description": "Whether it's in Flying mode"
 				}
 			],
 			"efficiency": "fast"
@@ -314,17 +318,19 @@
 		{
 			"authority": "authority",
 			"name": "MoveTo",
-			"description": "AI: Makes this Character to walk to the Location",
-			"description_long": "AI: Makes this Character to walk to the Location<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
+			"description": "AI: Makes this Pawn walk to the Location",
+			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "The destination"
 				},
 				{
 					"type": "float",
 					"name": "acceptance_radius",
-					"default": "50"
+					"default": "50",
+					"description": "Distance from the destination considered as arrived"
 				}
 			],
 			"relations": {
@@ -342,8 +348,8 @@
 		{
 			"authority": "authority",
 			"name": "Follow",
-			"description": "AI: Makes this Character to follow another actor",
-			"description_long": "AI: Makes this Character to follow another actor<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
+			"description": "AI: Makes this Pawn follow another actor",
+			"description_long": "AI: Makes this Pawn follow another actor<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -391,7 +397,7 @@
 			"authority": "authority",
 			"name": "StopMovement",
 			"description": "AI: Stops the movement, optionally zeroing the velocity as well",
-			"description_long": "AI: Stops the movement, optionally zeroing the velocity as well (stops even for non AI)<br/><br/>Triggers event <a href='pawn#event-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Stops the movement, optionally zeroing the velocity as well (stops even for non AI)<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "boolean",
@@ -419,7 +425,8 @@
 			"return": [
 				{
 					"type": "Player?",
-					"name": "possesser"
+					"name": "possesser",
+					"description": "Possessing Player"
 				}
 			],
 			"relations": {
@@ -433,11 +440,12 @@
 		{
 			"authority": "both",
 			"name": "GetControlRotation",
-			"description": "Gets the Control Rotation",
+			"description": "Gets the Control Rotation, which is where this Pawn is looking or aiming",
 			"return": [
 				{
 					"type": "Rotator",
-					"name": "control_rotation"
+					"name": "control_rotation",
+					"description": "Control Rotation"
 				}
 			],
 			"efficiency": "fast"
@@ -445,11 +453,12 @@
 		{
 			"authority": "network-authority",
 			"name": "SetControlRotation",
-			"description": "Sets the Control Rotation",
+			"description": "Sets the Control Rotation, which is where this Pawn is looking or aiming",
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "control_rotation"
+					"name": "control_rotation",
+					"description": "The new Control Rotation"
 				}
 			],
 			"efficiency": "fast"
@@ -461,7 +470,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the character will react to damage by applying small dynamic ragdoll effect to local bones damaged"
 				}
 			],
 			"efficiency": "fast"
@@ -473,7 +483,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the character will enter ragdoll mode when it dies. You can set it to false to apply custom Death animations"
 				}
 			],
 			"efficiency": "fast"
@@ -481,8 +492,8 @@
 		{
 			"authority": "both",
 			"name": "HideBone",
-			"description": "Hides a bone of this Character",
-			"description_long": "Hides a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
+			"description": "Hides a bone of this Pawn",
+			"description_long": "Hides a bone of this Pawn.<br/><br/>Check <a href='/docs/scripting-reference/classes/character#characters-skeleton-bone-names'>Bone Names List</a>",
 			"parameters": [
 				{
 					"type": "string",
@@ -502,8 +513,8 @@
 		{
 			"authority": "both",
 			"name": "UnHideBone",
-			"description": "UnHide a bone of this Character",
-			"description_long": "UnHide a bone of this Character.<br/><br/>Check <a href='character.mdx#characters-skeleton-bone-names'>Bone Names List</a>",
+			"description": "Unhides a bone of this Pawn",
+			"description_long": "Unhides a bone of this Pawn.<br/><br/>Check <a href='/docs/scripting-reference/classes/character#characters-skeleton-bone-names'>Bone Names List</a>",
 			"parameters": [
 				{
 					"type": "string",
@@ -548,7 +559,7 @@
 		{
 			"authority": "authority",
 			"name": "Jump",
-			"description": "Triggers this Character to jump",
+			"description": "Triggers this Pawn to jump",
 			"efficiency": "fast"
 		},
 		{
@@ -567,11 +578,12 @@
 		{
 			"authority": "both",
 			"name": "GetJumpZVelocity",
-			"description": "Gets the Jump Z Velocity",
+			"description": "Gets the initial vertical velocity when jumping, which defines the jump height",
 			"return": [
 				{
 					"type": "integer",
-					"name": "jump_z_velocity"
+					"name": "jump_z_velocity",
+					"description": "Jump Z Velocity"
 				}
 			],
 			"efficiency": "fast"
@@ -579,8 +591,8 @@
 		{
 			"authority": "authority",
 			"name": "SetCapsuleSize",
-			"description": "Sets this Character's Capsule size",
-			"description_long": "Sets this Character's Capsule size (will affect Camera location and Character's collision)",
+			"description": "Sets this Pawn's Capsule size",
+			"description_long": "Sets this Pawn's Capsule size (will affect Camera location and the Pawn's collision)",
 			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
@@ -625,7 +637,8 @@
 							"type": "integer"
 						}
 					],
-					"name": "capsule_sizes"
+					"name": "capsule_sizes",
+					"description": "Capsule Size"
 				}
 			],
 			"efficiency": "fast"
@@ -638,15 +651,17 @@
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Location of the mesh relative to the capsule"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
-					"default": "Rotator(0, -90, 0)"
+					"default": "Rotator(0, -90, 0)",
+					"description": "Rotation of the mesh relative to the capsule"
 				},
 				{
-					"type": "bool",
+					"type": "boolean",
 					"name": "is_visible",
 					"default": "true",
 					"description": "Whether the mesh is visible (useful for using retargeters using child meshes)"
@@ -658,11 +673,12 @@
 			"authority": "authority",
 			"name": "SetGravityScale",
 			"description": "Changes the Gravity Scale",
-			"description_long": "Changes the Gravity Scale of this Character (can be negative)",
+			"description_long": "Changes the Gravity Scale of this Pawn (can be negative)",
 			"parameters": [
 				{
 					"type": "float",
-					"name": "gravity_scale"
+					"name": "gravity_scale",
+					"description": "The new Gravity Scale"
 				}
 			],
 			"efficiency": "fast"
@@ -674,7 +690,8 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "gravity_scale"
+					"name": "gravity_scale",
+					"description": "Gravity scale"
 				}
 			],
 			"efficiency": "fast"
@@ -682,11 +699,12 @@
 		{
 			"authority": "authority",
 			"name": "SetCanJump",
-			"description": "Sets if this Character is allowed to Jump",
+			"description": "Sets if this Pawn is allowed to Jump",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_jump"
+					"name": "can_jump",
+					"description": "Whether this Pawn is allowed to Jump"
 				}
 			],
 			"efficiency": "fast"
@@ -694,11 +712,12 @@
 		{
 			"authority": "authority",
 			"name": "SetCanCrouch",
-			"description": "Sets if this Character is allowed to Crouch",
+			"description": "Sets if this Pawn is allowed to Crouch",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_crouch"
+					"name": "can_crouch",
+					"description": "Whether this Pawn is allowed to Crouch"
 				}
 			],
 			"efficiency": "fast"
@@ -706,11 +725,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanCrouch",
-			"description": "Gets if this Character is allowed to Crouch",
+			"description": "Gets if this Pawn is allowed to Crouch",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_crouch"
+					"name": "can_crouch",
+					"description": "Whether this Pawn is allowed to Crouch"
 				}
 			],
 			"efficiency": "fast"
@@ -718,11 +738,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanJump",
-			"description": "Gets if this Character is allowed to Jump",
+			"description": "Gets if this Pawn is allowed to Jump",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_jump"
+					"name": "can_jump",
+					"description": "Whether this Pawn is allowed to Jump"
 				}
 			],
 			"efficiency": "fast"
@@ -730,37 +751,43 @@
 		{
 			"authority": "authority",
 			"name": "SetBrakingSettings",
-			"description": "Sets the Movement Braking Settings of this Character",
+			"description": "Sets the Movement Braking Settings of this Pawn",
 			"parameters": [
 				{
 					"type": "float",
 					"name": "ground_friction",
-					"default": "2"
+					"default": "2",
+					"description": "Friction applied when walking on the ground"
 				},
 				{
 					"type": "float",
 					"name": "braking_friction_factor",
-					"default": "2"
+					"default": "2",
+					"description": "Multiplier of the friction applied when braking"
 				},
 				{
 					"type": "integer",
 					"name": "braking_walking",
-					"default": "96"
+					"default": "96",
+					"description": "Deceleration when walking without input"
 				},
 				{
 					"type": "integer",
 					"name": "braking_flying",
-					"default": "3000"
+					"default": "3000",
+					"description": "Deceleration when flying without input"
 				},
 				{
 					"type": "integer",
 					"name": "braking_swimming",
-					"default": "10"
+					"default": "10",
+					"description": "Deceleration when swimming without input"
 				},
 				{
 					"type": "integer",
 					"name": "braking_falling",
-					"default": "0"
+					"default": "0",
+					"description": "Horizontal deceleration when falling without input"
 				}
 			],
 			"efficiency": "fast"
@@ -773,24 +800,29 @@
 			"description": "When an Animation Montage Notify begins",
 			"arguments": [
 				{
-					"type": "Character",
-					"name": "self"
+					"type": "Pawn",
+					"name": "self",
+					"description": "The Pawn that triggered the event"
 				},
 				{
 					"type": "string",
-					"name": "notify_name"
+					"name": "notify_name",
+					"description": "Name of the Animation Notify"
 				},
 				{
 					"type": "string",
-					"name": "animation_name"
+					"name": "animation_name",
+					"description": "Name of the Animation Montage that fired the notify"
 				},
 				{
 					"type": "number",
-					"name": "trigger_begin_time"
+					"name": "trigger_begin_time",
+					"description": "Time in the animation when the notify begins, in seconds"
 				},
 				{
 					"type": "number",
-					"name": "trigger_end_time"
+					"name": "trigger_end_time",
+					"description": "Time in the animation when the notify ends, in seconds"
 				}
 			]
 		},
@@ -800,39 +832,46 @@
 			"description": "When an Animation Montage Notify ends",
 			"arguments": [
 				{
-					"type": "Character",
-					"name": "self"
+					"type": "Pawn",
+					"name": "self",
+					"description": "The Pawn that triggered the event"
 				},
 				{
 					"type": "string",
-					"name": "notify_name"
+					"name": "notify_name",
+					"description": "Name of the Animation Notify"
 				},
 				{
 					"type": "string",
-					"name": "animation_name"
+					"name": "animation_name",
+					"description": "Name of the Animation Montage that fired the notify"
 				},
 				{
 					"type": "number",
-					"name": "trigger_begin_time"
+					"name": "trigger_begin_time",
+					"description": "Time in the animation when the notify begins, in seconds"
 				},
 				{
 					"type": "number",
-					"name": "trigger_end_time"
+					"name": "trigger_end_time",
+					"description": "Time in the animation when the notify ends, in seconds"
 				}
 			]
 		},
 		{
 			"authority": "both",
 			"name": "Possess",
-			"description": "When Character is possessed by a Player",
+			"description": "When this Pawn is possessed by a Player",
 			"arguments": [
 				{
 					"type": "Pawn",
-					"name": "self"
+					"name": "self",
+					"description": "The Pawn that triggered the event"
 				},
 				{
 					"type": "Player",
-					"name": "player"
+					"name": "player",
+					"description": "The Player"
 				}
 			],
 			"relations": {
@@ -845,15 +884,17 @@
 		{
 			"authority": "both",
 			"name": "UnPossess",
-			"description": "When Character is unpossessed by a Player",
+			"description": "When this Pawn is unpossessed by a Player",
 			"arguments": [
 				{
 					"type": "Pawn",
-					"name": "self"
+					"name": "self",
+					"description": "The Pawn that triggered the event"
 				},
 				{
 					"type": "Player",
-					"name": "old_player"
+					"name": "old_player",
+					"description": "The Player that was possessing this Pawn"
 				}
 			],
 			"relations": {
@@ -870,11 +911,13 @@
 			"arguments": [
 				{
 					"type": "Pawn",
-					"name": "self"
+					"name": "self",
+					"description": "The Pawn that triggered the event"
 				},
 				{
 					"type": "boolean",
-					"name": "succeeded"
+					"name": "succeeded",
+					"description": "Whether it reached the destination"
 				}
 			],
 			"relations": {

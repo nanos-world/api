@@ -29,6 +29,28 @@
 			"lhs": "Vector2D",
 			"rhs": "Vector2D|number",
 			"return": "Vector2D"
+		},
+		{
+			"name": "==",
+			"operator": "__eq",
+			"lhs": "Vector2D",
+			"rhs": "Vector2D",
+			"return": "boolean",
+			"description": "Checks if two Vector2Ds have the same values"
+		},
+		{
+			"name": "-",
+			"operator": "__unm",
+			"lhs": "Vector2D",
+			"return": "Vector2D",
+			"description": "Negates all components of this Vector2D"
+		},
+		{
+			"name": "tostring",
+			"operator": "tostring",
+			"lhs": "Vector2D",
+			"return": "string",
+			"description": "Gets a string representation of this struct"
 		}
 	],
 	"constructors": [
@@ -37,13 +59,13 @@
 			"parameters": [
 				{
 					"name": "X",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "X Coordinate"
 				},
 				{
 					"name": "Y",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "Y Coordinate"
 				}
@@ -53,12 +75,12 @@
 	"properties": [
 		{
 			"name": "X",
-			"type": "number",
+			"type": "float",
 			"description": "X Coordinate"
 		},
 		{
 			"name": "Y",
-			"type": "number",
+			"type": "float",
 			"description": "Y Coordinate"
 		}
 	],
@@ -69,7 +91,7 @@
 			"description_long": "Returns the distance of 2 vectors",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The distance between the vectors"
 				}
 			],
@@ -79,7 +101,8 @@
 					"name": "other",
 					"description": "The vector to get the distance to"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "DistanceSquared",
@@ -87,7 +110,7 @@
 			"description_long": "Return the squared distance of 2 vectors",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The squared distance between the vectors"
 				}
 			],
@@ -97,7 +120,8 @@
 					"name": "other",
 					"description": "The vector to get the squared distance to"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsNear",
@@ -115,31 +139,34 @@
 					"description": "The vector to compare to"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "radius",
 					"description": "The radius to check"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Size",
 			"description": "Get the length (magnitude) of this vector",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The length of the vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SizeSquared",
 			"description": "Get the squared length of this vector",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The squared length of the vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Dot",
@@ -147,7 +174,7 @@
 			"description_long": "Returns the dot product between this vector and another vector",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "the dot product"
 				}
 			],
@@ -157,7 +184,8 @@
 					"name": "other",
 					"description": "The vector to dot with"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Cross",
@@ -165,7 +193,7 @@
 			"description_long": "Returns the cross product between this vector and another vector, which for 2D vectors is a scalar value",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "the cross product"
 				}
 			],
@@ -175,7 +203,8 @@
 					"name": "other",
 					"description": "The vector to cross with"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Lerp",
@@ -194,11 +223,12 @@
 					"description": "The vector to interpolate to"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "alpha",
 					"description": "The interpolation alpha, where 0 returns this vector and 1 returns the other vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

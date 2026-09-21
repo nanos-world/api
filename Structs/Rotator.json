@@ -22,6 +22,13 @@
 			"lhs": "Rotator|number",
 			"rhs": "Rotator|number",
 			"return": "Rotator"
+		},
+		{
+			"name": "tostring",
+			"operator": "tostring",
+			"lhs": "Rotator",
+			"return": "string",
+			"description": "Gets a string representation of this struct"
 		}
 	],
 	"constructors": [
@@ -30,19 +37,19 @@
 			"parameters": [
 				{
 					"name": "pitch",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Pitch"
 				},
 				{
 					"name": "yaw",
-					"type": "number",
+					"type": "float",
 					"default": "pitch",
 					"description": "Yaw"
 				},
 				{
 					"name": "roll",
-					"type": "number",
+					"type": "float",
 					"default": "pitch",
 					"description": "Roll"
 				}
@@ -52,21 +59,45 @@
 	"properties": [
 		{
 			"name": "Pitch",
-			"type": "number",
+			"type": "float",
 			"description": "Rotation around the right axis (around Y axis), Looking up and down (0=Straight Ahead, +Up, -Down)"
 		},
 		{
 			"name": "Yaw",
-			"type": "number",
+			"type": "float",
 			"description": "Rotation around the up axis (around Z axis), Running in circles 0=East, +North, -South."
 		},
 		{
 			"name": "Roll",
-			"type": "number",
+			"type": "float",
 			"description": "Rotation around the forward axis (around X axis), Tilting your head, 0=Straight, +Clockwise, -CCW."
 		}
 	],
 	"functions": [
+		{
+			"name": "Equals",
+			"description": "Checks against another Rotator for equality, within a tolerance",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Whether the Rotators are equal"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Rotator",
+					"name": "other",
+					"description": "The Rotator to compare to"
+				},
+				{
+					"type": "float",
+					"name": "tolerance",
+					"default": "0.000001",
+					"description": "Max difference allowed per axis, in degrees"
+				}
+			],
+			"efficiency": "fast"
+		},
 		{
 			"name": "GetForwardVector",
 			"description": "Get the forward (X) unit direction vector from this component, in world space.",
@@ -75,7 +106,8 @@
 					"type": "Vector",
 					"description": "the forward direction"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetRightVector",
@@ -85,7 +117,8 @@
 					"type": "Vector",
 					"description": "the right direction"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetUpVector",
@@ -95,7 +128,8 @@
 					"type": "Vector",
 					"description": "the up direction"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "RotateVector",
@@ -112,11 +146,13 @@
 					"type": "Vector",
 					"description": "the rotated vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Normalize",
-			"description": "In-place normalize, removes all winding and creates the “shortest route” rotation."
+			"description": "In-place normalize, removes all winding and creates the “shortest route” rotation.",
+			"efficiency": "fast"
 		},
 		{
 			"name": "UnrotateVector",
@@ -133,7 +169,8 @@
 					"type": "Vector",
 					"description": "the unrotated vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Quaternion",
@@ -143,7 +180,8 @@
 					"type": "Quat",
 					"description": "the rotation as a quaternion"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetNormalized",
@@ -153,14 +191,15 @@
 					"type": "Rotator",
 					"description": "the normalized Rotator"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsNearlyZero",
 			"description": "Checks whether rotator is near to zero within a specified tolerance",
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "tolerance",
 					"description": "Tolerance to check",
 					"default": "0.000001"
@@ -171,7 +210,8 @@
 					"type": "boolean",
 					"description": "whether the rotator is nearly zero"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsZero",
@@ -181,7 +221,8 @@
 					"type": "boolean",
 					"description": "whether the rotator is exactly zero"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"static_functions": [
@@ -213,7 +254,8 @@
 					"type": "Rotator",
 					"description": "the random rotation"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

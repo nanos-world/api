@@ -24,7 +24,8 @@
 					"content": "local encoded_value = JSON.stringify({ 1, 2, 3, { x = 10, y = Vector(1, 2, 3) }, \"he\" })",
 					"output": "[1,2,3,{\"x\":10,\"y\":\"Vector(1.0, 2.0, 3.0)\"},\"he\"]"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		},
 		{
 			"name": "parse",
@@ -48,7 +49,8 @@
 					"content": "local decoded_value = JSON.parse('[1,2,3,{\"x\":10,\"y\":\"Vector(1.0, 2.0, 3.0)\"},\"he\"]')",
 					"output": "the table { 1, 2, 3, { x = 10, y = Vector(1, 2, 3) }, \"he\" }"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

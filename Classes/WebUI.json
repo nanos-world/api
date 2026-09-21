@@ -84,7 +84,8 @@
 			"parameters": [
 				{
 					"type": "HTMLPath",
-					"name": "url"
+					"name": "url",
+					"description": "The URL or package file to load, e.g. <code>file://UI/index.html</code> or <code>https://...</code>"
 				}
 			],
 			"efficiency": "fast"
@@ -96,7 +97,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "html"
+					"name": "html",
+					"description": "The HTML content to load"
 				}
 			],
 			"efficiency": "fast"
@@ -108,7 +110,8 @@
 			"return": [
 				{
 					"name": "name",
-					"type": "string"
+					"type": "string",
+					"description": "This WebUI name"
 				}
 			],
 			"efficiency": "fast"
@@ -121,7 +124,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "javascript_code"
+					"name": "javascript_code",
+					"description": "The JavaScript code to run"
 				}
 			],
 			"efficiency": "fast"
@@ -137,7 +141,13 @@
 			"name": "HasNodeFocus",
 			"authority": "client",
 			"description": "Returns if this WebUI has any DOM Node focused",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Whether any DOM node is focused"
+				}
+			]
 		},
 		{
 			"name": "RemoveFocus",
@@ -154,33 +164,33 @@
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_location/offset_left_top",
-					"description": "",
-					"default": "Vector(0, 0)"
+					"name": "location",
+					"description": "Screen location, or the left and top offsets when the anchors are stretched",
+					"default": "Vector2D(0, 0)"
 				},
 				{
 					"type": "Vector2D",
-					"name": "size/offset_right_bottom",
-					"description": "",
-					"default": "Vector(0, 0)"
+					"name": "size",
+					"description": "Size, or the right and bottom offsets when the anchors are stretched",
+					"default": "Vector2D(0, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_min",
-					"description": "",
-					"default": "Vector(0, 0)"
+					"description": "Min anchor, from (0, 0) top-left to (1, 1) bottom-right",
+					"default": "Vector2D(0, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_max",
-					"description": "",
-					"default": "Vector(1, 1)"
+					"description": "Max anchor, from (0, 0) top-left to (1, 1) bottom-right",
+					"default": "Vector2D(1, 1)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "alignment",
-					"description": "",
-					"default": "Vector(0.5, 0.5)"
+					"description": "Pivot of the WebUI, (0.5, 0.5) is the center",
+					"default": "Vector2D(0.5, 0.5)"
 				}
 			],
 			"efficiency": "fast"
@@ -188,11 +198,12 @@
 		{
 			"name": "SetFreeze",
 			"authority": "client",
-			"description": "Freezes the WebUI Rendering to the surface (it will still execute the JS under the hood)",
+			"description": "Freezes the WebUI rendering to the surface (JavaScript keeps running)",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "freeze"
+					"name": "freeze",
+					"description": "Whether to freeze the rendering"
 				}
 			],
 			"efficiency": "fast"
@@ -204,7 +215,8 @@
 			"parameters": [
 				{
 					"type": "WidgetVisibility",
-					"name": "visibility"
+					"name": "visibility",
+					"description": "The new visibility in screen"
 				}
 			],
 			"efficiency": "fast"
@@ -212,42 +224,49 @@
 		{
 			"name": "SpawnSound",
 			"authority": "client",
-			"description": "Spawns a Sound entity to plays this WebUI sound",
+			"description": "Spawns a Sound entity that plays this WebUI audio",
 			"parameters": [
 				{
 					"type": "Vector",
 					"name": "location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "World location of the Sound, if 3D"
 				},
 				{
 					"type": "boolean",
 					"name": "is_2d",
-					"default": "true"
+					"default": "true",
+					"description": "Whether the Sound is 2D"
 				},
 				{
 					"type": "float",
 					"name": "volume",
-					"default": "1.0"
+					"default": "1.0",
+					"description": "Volume multiplier"
 				},
 				{
 					"type": "integer",
 					"name": "inner_radius",
-					"default": "400"
+					"default": "400",
+					"description": "Radius within which the volume is 100%, if 3D"
 				},
 				{
 					"type": "integer",
 					"name": "falloff_distance",
-					"default": "3600"
+					"default": "3600",
+					"description": "Distance at which the sound becomes inaudible, if 3D"
 				},
 				{
 					"type": "AttenuationFunction",
 					"name": "attenuation_function",
-					"default": "AttenuationFunction.Linear"
+					"default": "AttenuationFunction.Linear",
+					"description": "How the volume fades with distance, if 3D"
 				}
 			],
 			"return": [
 				{
-					"type": "Sound"
+					"type": "Sound",
+					"description": "The spawned Sound"
 				}
 			],
 			"efficiency": "fast"
@@ -269,11 +288,13 @@
 				},
 				{
 					"type": "float",
-					"name": "delta_x"
+					"name": "delta_x",
+					"description": "Horizontal scroll amount"
 				},
 				{
 					"type": "float",
-					"name": "delta_y"
+					"name": "delta_y",
+					"description": "Vertical scroll amount"
 				}
 			],
 			"efficiency": "fast"
@@ -285,11 +306,13 @@
 			"parameters": [
 				{
 					"type": "WebUIKeyType",
-					"name": "key_type"
+					"name": "key_type",
+					"description": "Whether it is a key down, key up or char event"
 				},
 				{
 					"type": "integer",
-					"name": "key_code"
+					"name": "key_code",
+					"description": "The JavaScript key code"
 				},
 				{
 					"type": "WebUIModifier",
@@ -324,7 +347,8 @@
 				{
 					"type": "boolean",
 					"name": "mouse_leave",
-					"default": "false"
+					"default": "false",
+					"description": "Whether the mouse left the WebUI"
 				}
 			],
 			"efficiency": "fast"
@@ -376,7 +400,8 @@
 			"description": "Gets the current size of this WebUI",
 			"return": [
 				{
-					"type": "Vector2D"
+					"type": "Vector2D",
+					"description": "Current size of this WebUI"
 				}
 			],
 			"efficiency": "fast"
@@ -388,7 +413,8 @@
 			"return": [
 				{
 					"name": "visibility",
-					"type": "WidgetVisibility"
+					"type": "WidgetVisibility",
+					"description": "Current WebUI visibility"
 				}
 			],
 			"efficiency": "fast"
@@ -400,7 +426,8 @@
 			"return": [
 				{
 					"name": "freeze",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this WebUI is currently frozen"
 				}
 			],
 			"efficiency": "fast"
@@ -412,7 +439,8 @@
 			"return": [
 				{
 					"name": "ready",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this WebUI is ready"
 				}
 			],
 			"efficiency": "fast"
@@ -437,19 +465,33 @@
 			"description": "Triggered when this page fails to load",
 			"arguments": [
 				{
+					"type": "WebUI",
+					"name": "self",
+					"description": "The Web UI that triggered the event"
+				},
+				{
 					"type": "integer",
-					"name": "error_code"
+					"name": "error_code",
+					"description": "The CEF error code"
 				},
 				{
 					"type": "string",
-					"name": "message"
+					"name": "message",
+					"description": "The error message"
 				}
 			]
 		},
 		{
 			"name": "Ready",
 			"authority": "client",
-			"description": "Triggered when this page is fully loaded"
+			"description": "Triggered when this page is fully loaded",
+			"arguments": [
+				{
+					"type": "WebUI",
+					"name": "self",
+					"description": "The Web UI that triggered the event"
+				}
+			]
 		}
 	]
 }

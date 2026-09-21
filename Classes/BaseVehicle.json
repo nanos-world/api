@@ -239,23 +239,28 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "seat_index"
+					"name": "seat_index",
+					"description": "Index of the seat, 0 is the driver"
 				},
 				{
 					"type": "Vector",
-					"name": "offset_location"
+					"name": "offset_location",
+					"description": "Location of the door trigger relative to the vehicle"
 				},
 				{
 					"type": "Vector",
-					"name": "seat_location"
+					"name": "seat_location",
+					"description": "Location of the seat relative to the vehicle"
 				},
 				{
 					"type": "Rotator",
-					"name": "seat_rotation"
+					"name": "seat_rotation",
+					"description": "Rotation of the seat relative to the vehicle"
 				},
 				{
 					"type": "integer",
-					"name": "trigger_radius"
+					"name": "trigger_radius",
+					"description": "Radius of the trigger used to enter through this door"
 				},
 				{
 					"type": "integer",
@@ -272,12 +277,14 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "animation_path"
+					"name": "animation_path",
+					"description": "The Animation asset to play"
 				},
 				{
 					"type": "string",
 					"name": "slot_name",
-					"default": "DefaultSlot"
+					"default": "DefaultSlot",
+					"description": "The Animation Slot to play it on"
 				},
 				{
 					"type": "boolean",
@@ -371,7 +378,8 @@
 							"name": "sphere_radius",
 							"type": "integer"
 						}
-					]
+					],
+					"description": "All configured Doors"
 				}
 			],
 			"efficiency": "moderate"
@@ -383,7 +391,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "seat"
+					"name": "seat",
+					"description": "Index of the seat, 0 is the driver"
 				}
 			],
 			"return": [
@@ -402,7 +411,8 @@
 			"return": [
 				{
 					"type": "Character[]",
-					"name": "passengers"
+					"name": "passengers",
+					"description": "All passengers"
 				}
 			],
 			"efficiency": "moderate"
@@ -443,7 +453,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_started"
+					"name": "is_started",
+					"description": "Whether the engine is started"
 				}
 			],
 			"efficiency": "fast"
@@ -469,7 +480,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "offset"
+					"name": "offset",
+					"description": "The new Vehicle Camera Offset"
 				}
 			],
 			"efficiency": "fast"
@@ -482,11 +494,13 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "property_name"
+					"name": "property_name",
+					"description": "Name of the Animation Blueprint variable"
 				},
 				{
 					"type": "any",
-					"name": "value"
+					"name": "value",
+					"description": "The value to set"
 				}
 			],
 			"efficiency": "slow"
@@ -499,7 +513,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "property_name"
+					"name": "property_name",
+					"description": "Name of the Animation Blueprint variable"
 				}
 			],
 			"return": [
@@ -659,10 +674,11 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				},
 				{
-					"type": "integer",
+					"type": "float",
 					"name": "impact_force",
 					"description": "The intensity of the Hit normalized by the Vehicle's weight"
 				},
@@ -695,7 +711,8 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				}
 			]
 		},
@@ -706,7 +723,8 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				}
 			]
 		},
@@ -717,15 +735,18 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				},
 				{
 					"type": "Character",
-					"name": "character"
+					"name": "character",
+					"description": "The Character"
 				},
 				{
 					"type": "integer",
-					"name": "seat_index"
+					"name": "seat_index",
+					"description": "The seat entered, 0 is the driver"
 				}
 			]
 		},
@@ -736,15 +757,18 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				},
 				{
 					"type": "Character",
-					"name": "character"
+					"name": "character",
+					"description": "The Character"
 				},
 				{
 					"type": "integer",
-					"name": "seat_index"
+					"name": "seat_index",
+					"description": "The seat left, 0 is the driver"
 				}
 			]
 		},
@@ -755,11 +779,13 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				},
 				{
 					"type": "Character",
-					"name": "character"
+					"name": "character",
+					"description": "The Character"
 				},
 				{
 					"type": "integer",
@@ -781,11 +807,13 @@
 			"arguments": [
 				{
 					"type": "Vehicle",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle that triggered the event"
 				},
 				{
 					"type": "Character",
-					"name": "character"
+					"name": "character",
+					"description": "The Character"
 				}
 			],
 			"return": [

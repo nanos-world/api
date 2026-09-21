@@ -10,7 +10,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				},
 				{
 					"type": "boolean",
@@ -34,7 +35,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				},
 				{
 					"type": "boolean",
@@ -52,7 +54,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				},
 				{
 					"type": "boolean",
@@ -95,7 +98,8 @@
 							"type": "boolean",
 							"description": "If the Level is temporary (an instance loaded, shouldn't be directly unloaded)"
 						}
-					]
+					],
+					"description": "List of all Stream Levels"
 				}
 			],
 			"efficiency": "moderate"
@@ -187,7 +191,8 @@
 			"arguments": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				}
 			]
 		},
@@ -198,7 +203,8 @@
 			"arguments": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				}
 			]
 		},
@@ -209,7 +215,8 @@
 			"arguments": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				}
 			]
 		},
@@ -220,7 +227,8 @@
 			"arguments": [
 				{
 					"type": "string",
-					"name": "level_name"
+					"name": "level_name",
+					"description": "Name of the Stream Level"
 				}
 			]
 		}

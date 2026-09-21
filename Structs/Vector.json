@@ -36,6 +36,28 @@
 			"lhs": "Vector",
 			"rhs": "Vector|number",
 			"return": "Vector"
+		},
+		{
+			"name": "==",
+			"operator": "__eq",
+			"lhs": "Vector",
+			"rhs": "Vector",
+			"return": "boolean",
+			"description": "Checks if two Vectors have the same values"
+		},
+		{
+			"name": "-",
+			"operator": "__unm",
+			"lhs": "Vector",
+			"return": "Vector",
+			"description": "Negates all components of this Vector"
+		},
+		{
+			"name": "tostring",
+			"operator": "tostring",
+			"lhs": "Vector",
+			"return": "string",
+			"description": "Gets a string representation of this struct"
 		}
 	],
 	"constructors": [
@@ -44,19 +66,19 @@
 			"parameters": [
 				{
 					"name": "X",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "X Coordinate"
 				},
 				{
 					"name": "Y",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "Y Coordinate"
 				},
 				{
 					"name": "Z",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "Z Coordinate"
 				}
@@ -66,17 +88,17 @@
 	"properties": [
 		{
 			"name": "X",
-			"type": "number",
+			"type": "float",
 			"description": "X Coordinate"
 		},
 		{
 			"name": "Y",
-			"type": "number",
+			"type": "float",
 			"description": "Y Coordinate"
 		},
 		{
 			"name": "Z",
-			"type": "number",
+			"type": "float",
 			"description": "Z Coordinate"
 		}
 	],
@@ -98,12 +120,13 @@
 					"description": "The vector to compare to"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "tolerance",
 					"default": "0.000001",
 					"description": "The error limits"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Distance",
@@ -111,7 +134,7 @@
 			"description_long": "Returns the distance of 2 vectors",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The distance between the vectors"
 				}
 			],
@@ -121,7 +144,8 @@
 					"name": "other",
 					"description": "The vector to get the distance to"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "DistanceSquared",
@@ -129,7 +153,7 @@
 			"description_long": "Return the squared distance of 2 vectors",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The squared distance between the vectors"
 				}
 			],
@@ -139,7 +163,8 @@
 					"name": "other",
 					"description": "The vector to get the squared distance to"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetUnsafeNormal",
@@ -151,7 +176,8 @@
 					"description": "The unsafe normal"
 				}
 			],
-			"parameters": []
+			"parameters": [],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetSafeNormal",
@@ -163,7 +189,15 @@
 					"description": "The safe normal"
 				}
 			],
-			"parameters": []
+			"parameters": [
+				{
+					"type": "float",
+					"name": "tolerance",
+					"default": "0.000001",
+					"description": "Minimum squared size to consider it non-zero"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsNear",
@@ -181,11 +215,12 @@
 					"description": "The vector to compare to"
 				},
 				{
-					"type": "number",
+					"type": "float",
 					"name": "radius",
 					"description": "The radius to check"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsNearlyZero",
@@ -198,12 +233,13 @@
 			],
 			"parameters": [
 				{
-					"type": "number",
+					"type": "float",
 					"name": "tolerance",
 					"default": "0.000001",
 					"description": "The error limits"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "IsZero",
@@ -213,7 +249,8 @@
 					"type": "boolean",
 					"description": "If all components of the vector are exactly zero"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Normalize",
@@ -223,27 +260,38 @@
 					"type": "boolean",
 					"description": "If the vector has been modified"
 				}
-			]
+			],
+			"parameters": [
+				{
+					"type": "float",
+					"name": "tolerance",
+					"default": "0.000001",
+					"description": "Minimum squared size to consider it non-zero"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Size",
 			"description": "Get the length (magnitude) of this vector",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The length of the vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "SizeSquared",
 			"description": "Get the squared length of this vector",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "The squared length of the vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "ToOrientationRotator",
@@ -253,7 +301,8 @@
 					"type": "Rotator",
 					"description": "The orientation of the vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "ToOrientationQuat",
@@ -263,7 +312,8 @@
 					"type": "Quat",
 					"description": "The orientation of the vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Dot",
@@ -271,7 +321,7 @@
 			"description_long": "Returns the dot product between this vector and another vector",
 			"return": [
 				{
-					"type": "number",
+					"type": "float",
 					"description": "the dot product"
 				}
 			],
@@ -281,7 +331,8 @@
 					"name": "other",
 					"description": "The vector to dot with"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Cross",
@@ -299,7 +350,8 @@
 					"name": "other",
 					"description": "The vector to cross with"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

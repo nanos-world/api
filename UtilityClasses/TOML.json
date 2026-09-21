@@ -24,7 +24,8 @@
 					"content": "local encoded_value = TOML.Dump({ 1, 2, 3, { x = 10, y = Vector(1, 2, 3) }, \"he\" })",
 					"output": "[ 1, 2, 3, { y = \"Vector(1.000000, 2.000000, 3.000000)\", x = 10 }, \"he\" ]"
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "Parse",
@@ -48,7 +49,8 @@
 					"content": "local decoded_value = TOML.Parse(\"my_table = [ 1, 2, 3 ]\")",
 					"output": "the table { [\"my_table\"] = { [1] = 1, [2] = 2, [3] = 3 } }"
 				}
-			]
+			],
+			"efficiency": "moderate"
 		}
 	]
 }

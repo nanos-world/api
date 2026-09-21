@@ -40,7 +40,8 @@
 						"--]]"
 					]
 				}
-			]
+			],
+			"efficiency": "slow"
 		},
 		{
 			"name": "ShallowCopy",
@@ -57,7 +58,8 @@
 					"name": "table",
 					"description": "The table to shallow copy"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

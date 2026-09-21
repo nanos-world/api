@@ -13,15 +13,18 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "string",
-					"name": "text"
+					"name": "text",
+					"description": "The text to display"
 				},
 				{
 					"type": "float",
@@ -32,7 +35,8 @@
 				{
 					"type": "Color",
 					"name": "color",
-					"default": "Color.WHITE"
+					"default": "Color.WHITE",
+					"description": "Color of the text"
 				},
 				{
 					"type": "TextRenderRenderingType",
@@ -43,17 +47,19 @@
 				{
 					"type": "TextRenderHorizontalAlignment",
 					"name": "horizontal_alignment",
-					"default": "TextRenderHorizontalAlignment.Center"
+					"default": "TextRenderHorizontalAlignment.Center",
+					"description": "Horizontal alignment of the text"
 				},
 				{
 					"type": "TextRenderVerticalAlignment",
 					"name": "vertical_alignment",
-					"default": "TextRenderVerticalAlignment.Center"
+					"default": "TextRenderVerticalAlignment.Center",
+					"description": "Vertical alignment of the text"
 				},
 				{
 					"type": "string",
 					"name": "font_asset",
-					"description": "The font asset to use for the text. Note the font must be a offline cached, distance field font",
+					"description": "The font asset to use for the text. Note the font must be an offline cached, distance field font",
 					"default": ""
 				},
 				{
@@ -108,12 +114,13 @@
 		{
 			"name": "SetFont",
 			"authority": "both",
-			"description": "Sets the Font. The font must be pre-cooked as a offline cached, distance field font.",
-			"description_long": "Sets the Font. The font must be pre-cooked as a offline cached, distance field font.<br/><br/>Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
+			"description": "Sets the Font. The font must be pre-cooked as an offline cached, distance field font.",
+			"description_long": "Sets the Font. The font must be pre-cooked as an offline cached, distance field font.<br/><br/>Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
 			"parameters": [
 				{
 					"name": "font_asset",
-					"type": "string"
+					"type": "string",
+					"description": "The new Font. The font must be pre-cooked as an offline cached, distance field font"
 				}
 			],
 			"efficiency": "moderate"
@@ -125,11 +132,13 @@
 			"parameters": [
 				{
 					"name": "horizontal_alignment",
-					"type": "TextRenderHorizontalAlignment"
+					"type": "TextRenderHorizontalAlignment",
+					"description": "Horizontal alignment of the text"
 				},
 				{
 					"name": "vertical_alignment",
-					"type": "TextRenderVerticalAlignment"
+					"type": "TextRenderVerticalAlignment",
+					"description": "Vertical alignment of the text"
 				}
 			],
 			"efficiency": "moderate"
@@ -141,11 +150,13 @@
 			"parameters": [
 				{
 					"name": "horizontal_spacing",
-					"type": "float"
+					"type": "float",
+					"description": "Extra horizontal spacing between characters"
 				},
 				{
 					"name": "vertical_spacing",
-					"type": "float"
+					"type": "float",
+					"description": "Extra vertical spacing between lines"
 				}
 			],
 			"efficiency": "moderate"
@@ -157,7 +168,8 @@
 			"parameters": [
 				{
 					"name": "text",
-					"type": "string"
+					"type": "string",
+					"description": "The new Text"
 				}
 			],
 			"efficiency": "moderate"
@@ -169,7 +181,8 @@
 			"parameters": [
 				{
 					"name": "color",
-					"type": "Color"
+					"type": "Color",
+					"description": "The new Text Color"
 				}
 			],
 			"efficiency": "moderate"
@@ -181,7 +194,8 @@
 			"parameters": [
 				{
 					"name": "word_size",
-					"type": "float"
+					"type": "float",
+					"description": "The new Word Size"
 				}
 			],
 			"efficiency": "moderate"

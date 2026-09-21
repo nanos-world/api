@@ -14,7 +14,8 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "mass"
+					"name": "mass",
+					"description": "Mass of this Actor"
 				}
 			]
 		},
@@ -26,7 +27,8 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "angular_velocity"
+					"name": "angular_velocity",
+					"description": "Angular velocity of this Actor"
 				}
 			]
 		},
@@ -82,7 +84,7 @@
 				{
 					"type": "AttachmentRule",
 					"name": "attachment_rule",
-					"default": "SnapToTarget",
+					"default": "AttachmentRule.SnapToTarget",
 					"description": "How to attach"
 				},
 				{
@@ -126,19 +128,21 @@
 			"parameters": [
 				{
 					"type": "CollisionType",
-					"name": "collision_type"
+					"name": "collision_type",
+					"description": "The new collision type"
 				}
 			]
 		},
 		{
 			"name": "SetDimension",
-			"description": "Sets this Actor's Dimension",
+			"description": "Sets this Actor's Dimension. Actors only see and interact with entities in the same Dimension",
 			"authority": "server",
 			"efficiency": "moderate",
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "dimension"
+					"name": "dimension",
+					"description": "The new Dimension"
 				}
 			],
 			"relations": {
@@ -156,7 +160,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "multiplier"
+					"name": "multiplier",
+					"description": "The new distance optimization multiplier"
 				}
 			]
 		},
@@ -168,7 +173,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "force"
+					"name": "force",
+					"description": "The force to apply every frame"
 				},
 				{
 					"type": "boolean",
@@ -186,7 +192,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "angular_force"
+					"name": "angular_force",
+					"description": "The angular force to apply every frame"
 				}
 			]
 		},
@@ -198,7 +205,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "gravity_enabled"
+					"name": "gravity_enabled",
+					"description": "Whether gravity is enabled on this Actor"
 				}
 			]
 		},
@@ -210,7 +218,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_visible"
+					"name": "is_visible",
+					"description": "Whether the actor is visible or not"
 				}
 			]
 		},
@@ -231,13 +240,15 @@
 							"name": "Rotation",
 							"type": "Rotator"
 						}
-					]
+					],
+					"description": "Socket Transform in world space given a bone or socket name"
 				}
 			],
 			"parameters": [
 				{
 					"name": "socket_name",
-					"type": "string"
+					"type": "string",
+					"description": "Name of the socket"
 				},
 				{
 					"type": "string",
@@ -256,7 +267,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the highlight is enabled"
 				},
 				{
 					"type": "integer",
@@ -283,7 +295,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the outline is enabled"
 				},
 				{
 					"type": "integer",
@@ -315,6 +328,18 @@
 			]
 		},
 		{
+			"name": "GetLifeSpan",
+			"description": "Gets the time (in seconds) left before this Actor is destroyed",
+			"authority": "authority",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "float",
+					"description": "Seconds before being destroyed"
+				}
+			]
+		},
+		{
 			"name": "SetLocation",
 			"description": "Sets this Actor's location in the game world",
 			"authority": "authority",
@@ -322,7 +347,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "The new location in the game world"
 				}
 			]
 		},
@@ -334,7 +360,8 @@
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "The new rotation in the game world"
 				}
 			]
 		},
@@ -346,7 +373,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "relative_location"
+					"name": "relative_location",
+					"description": "The new relative location in local space"
 				}
 			]
 		},
@@ -358,7 +386,8 @@
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "relative_rotation"
+					"name": "relative_rotation",
+					"description": "The new relative rotation in local space"
 				}
 			]
 		},
@@ -370,7 +399,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "scale"
+					"name": "scale",
+					"description": "The new scale"
 				}
 			]
 		},
@@ -383,7 +413,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "max_distance"
+					"name": "max_distance",
+					"description": "The new render cull distance"
 				}
 			]
 		},
@@ -395,7 +426,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "cast_shadow"
+					"name": "cast_shadow",
+					"description": "The new to cast shadows or not"
 				}
 			]
 		},
@@ -451,7 +483,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "The target location"
 				},
 				{
 					"type": "float",
@@ -474,7 +507,8 @@
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "The target rotation"
 				},
 				{
 					"type": "float",
@@ -497,7 +531,8 @@
 			"return": [
 				{
 					"name": "is_visible",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this Actor is visible"
 				}
 			]
 		},
@@ -509,7 +544,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "gravity_enabled"
+					"name": "gravity_enabled",
+					"description": "Whether gravity is enabled on this Actor"
 				}
 			]
 		},
@@ -522,7 +558,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "in_water"
+					"name": "in_water",
+					"description": "Whether this Actor is in water"
 				}
 			]
 		},
@@ -534,7 +571,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this Actor is currently network distributed"
 				}
 			],
 			"relations": {
@@ -559,7 +597,8 @@
 			],
 			"return": [
 				{
-					"type": "Actor[]"
+					"type": "Actor[]",
+					"description": "All Actors attached to this Actor"
 				}
 			]
 		},
@@ -570,13 +609,26 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "Actor?"
+					"type": "Actor?",
+					"description": "Actor this Actor is attached to"
+				}
+			]
+		},
+		{
+			"name": "GetAttachedToSocket",
+			"description": "Gets the bone or socket name this Actor is attached to",
+			"authority": "both",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "string",
+					"description": "The bone or socket name, or an empty string if not attached to a bone"
 				}
 			]
 		},
 		{
 			"name": "GetBounds",
-			"description": "Gets this Actor's bounds",
+			"description": "Gets this Actor's bounds, useful to know its size in the world",
 			"authority": "client",
 			"efficiency": "moderate",
 			"return": [
@@ -595,7 +647,8 @@
 							"name": "SphereRadius",
 							"type": "float"
 						}
-					]
+					],
+					"description": "This Actor's bounds"
 				}
 			]
 		},
@@ -607,7 +660,8 @@
 			"return": [
 				{
 					"type": "CollisionType",
-					"name": "collision_type"
+					"name": "collision_type",
+					"description": "This Actor's collision type"
 				}
 			]
 		},
@@ -619,7 +673,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "This Actor's location in the game world"
 				}
 			]
 		},
@@ -631,7 +686,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "relative_location"
+					"name": "relative_location",
+					"description": "This Actor's Relative Location if it's attached"
 				}
 			]
 		},
@@ -642,7 +698,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "Player?"
+					"type": "Player?",
+					"description": "This Actor's Network Authority Player"
 				}
 			]
 		},
@@ -654,7 +711,8 @@
 			"return": [
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "This Actor's angle in the game world"
 				}
 			]
 		},
@@ -666,7 +724,8 @@
 			"return": [
 				{
 					"type": "Rotator",
-					"name": "relative_rotation"
+					"name": "relative_rotation",
+					"description": "This Actor's Relative Rotation if it's attached"
 				}
 			]
 		},
@@ -678,7 +737,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "force"
+					"name": "force",
+					"description": "This Actor's force"
 				}
 			]
 		},
@@ -690,7 +750,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "angular_force"
+					"name": "angular_force",
+					"description": "This Actor's angular force"
 				}
 			]
 		},
@@ -702,7 +763,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "dimension"
+					"name": "dimension",
+					"description": "This Actor's dimension"
 				}
 			],
 			"relations": {
@@ -719,7 +781,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "has_network_authority"
+					"name": "has_network_authority",
+					"description": "Whether the local Player is currently the Network Authority of this Actor"
 				}
 			]
 		},
@@ -731,7 +794,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "scale"
+					"name": "scale",
+					"description": "This Actor's scale"
 				}
 			]
 		},
@@ -743,7 +807,8 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "velocity"
+					"name": "velocity",
+					"description": "This Actor's current velocity"
 				}
 			]
 		},
@@ -755,7 +820,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "tag"
+					"name": "tag",
+					"description": "The tag to add"
 				}
 			],
 			"relations": {
@@ -773,7 +839,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "tag"
+					"name": "tag",
+					"description": "The tag to remove"
 				}
 			],
 			"relations": {
@@ -790,7 +857,8 @@
 			"efficiency": "moderate",
 			"return": [
 				{
-					"type": "string[]"
+					"type": "string[]",
+					"description": "All Unreal Actor Tags on this Actor"
 				}
 			],
 			"relations": {
@@ -807,7 +875,8 @@
 			"efficiency": "moderate",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this Actor was recently rendered on screen"
 				}
 			]
 		},
@@ -818,7 +887,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"description": "Distance of this Actor from the Camera"
 				}
 			]
 		},
@@ -829,7 +899,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"description": "Percentage of this Actor size in the screen"
 				}
 			]
 		}
@@ -842,15 +913,18 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Actor"
+					"type": "Actor",
+					"description": "The Actor that triggered the event"
 				},
 				{
 					"name": "old_dimension",
-					"type": "integer"
+					"type": "integer",
+					"description": "The previous dimension"
 				},
 				{
 					"name": "new_dimension",
-					"type": "integer"
+					"type": "integer",
+					"description": "The new dimension"
 				}
 			],
 			"relations": {
@@ -867,7 +941,8 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Actor"
+					"type": "Actor",
+					"description": "The Actor that triggered the event"
 				},
 				{
 					"name": "old_network_authority",
@@ -894,7 +969,8 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Actor"
+					"type": "Actor",
+					"description": "The Actor that triggered the event"
 				},
 				{
 					"name": "is_network_authority",
@@ -917,7 +993,8 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Actor"
+					"type": "Actor",
+					"description": "The Actor that triggered the event"
 				}
 			],
 			"relations": {
@@ -934,7 +1011,8 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Actor"
+					"type": "Actor",
+					"description": "The Actor that triggered the event"
 				}
 			],
 			"relations": {

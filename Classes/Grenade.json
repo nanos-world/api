@@ -15,36 +15,43 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "StaticMeshPath",
 					"name": "static_mesh_asset",
-					"default": "nanos-world::SM_Grenade_G67"
+					"default": "nanos-world::SM_Grenade_G67",
+					"description": "The Static Mesh asset to use"
 				},
 				{
 					"type": "ParticlePath",
 					"name": "explosion_particles",
-					"default": "nanos-world::P_Grenade_Special"
+					"default": "nanos-world::P_Grenade_Special",
+					"description": "Particle spawned when exploding"
 				},
 				{
 					"type": "SoundPath",
 					"name": "explosion_sound",
-					"default": "nanos-world::A_Explosion_Large"
+					"default": "nanos-world::A_Explosion_Large",
+					"description": "Sound played when exploding"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Auto"
+					"default": "CollisionType.Auto",
+					"description": "Collision profile of this Actor"
 				},
 				{
 					"type": "boolean",
 					"name": "gravity_enabled",
-					"default": "true"
+					"default": "true",
+					"description": "Whether gravity affects this Actor"
 				},
 				{
 					"type": "SpawnMode",
@@ -134,7 +141,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "throw_force"
+					"name": "throw_force",
+					"description": "The new Impulse applied when throwing"
 				}
 			],
 			"efficiency": "moderate"
@@ -142,11 +150,12 @@
 		{
 			"authority": "both",
 			"name": "GetBaseDamage",
-			"description": "Damage at Inner Radius",
+			"description": "Gets the max damage, applied within the inner radius",
 			"return": [
 				{
 					"type": "float",
-					"name": "base_damage"
+					"name": "base_damage",
+					"description": "The base damage"
 				}
 			],
 			"relations": {
@@ -159,11 +168,12 @@
 		{
 			"authority": "both",
 			"name": "GetDamageFalloff",
-			"description": "Radius which BaseDamage will apply proportionally",
+			"description": "Gets the falloff exponent used to interpolate between the base and the minimum damage",
 			"return": [
 				{
 					"type": "float",
-					"name": "damage_falloff"
+					"name": "damage_falloff",
+					"description": "The damage falloff"
 				}
 			],
 			"relations": {
@@ -176,11 +186,12 @@
 		{
 			"authority": "both",
 			"name": "GetDamageInnerRadius",
-			"description": "Radius which MinimumDamage will apply",
+			"description": "Gets the radius within which the base damage is fully applied",
 			"return": [
 				{
 					"type": "float",
-					"name": "damage_inner_radius"
+					"name": "damage_inner_radius",
+					"description": "The inner radius"
 				}
 			],
 			"relations": {
@@ -193,11 +204,12 @@
 		{
 			"authority": "both",
 			"name": "GetDamageOuterRadius",
-			"description": "Radius which BaseDamage will apply",
+			"description": "Gets the radius at which the damage reaches the minimum damage",
 			"return": [
 				{
 					"type": "float",
-					"name": "damage_outer_radius"
+					"name": "damage_outer_radius",
+					"description": "The outer radius"
 				}
 			],
 			"relations": {
@@ -210,11 +222,12 @@
 		{
 			"authority": "both",
 			"name": "GetMinimumDamage",
-			"description": "Damage at Outer Radius",
+			"description": "Gets the min damage, applied at the outer radius",
 			"return": [
 				{
 					"type": "float",
-					"name": "minimum_damage"
+					"name": "minimum_damage",
+					"description": "The minimum damage"
 				}
 			],
 			"relations": {
@@ -227,11 +240,12 @@
 		{
 			"authority": "both",
 			"name": "GetTimeToExplode",
-			"description": "Time until Explosion",
+			"description": "Gets the time until the explosion after throwing",
 			"return": [
 				{
 					"type": "float",
-					"name": "time"
+					"name": "time",
+					"description": "Seconds until the explosion"
 				}
 			],
 			"efficiency": "fast"
@@ -239,11 +253,12 @@
 		{
 			"authority": "both",
 			"name": "GetThrowForce",
-			"description": "Impulse applied when throwing",
+			"description": "Gets the impulse applied when throwing",
 			"return": [
 				{
 					"type": "float",
-					"name": "throw_force"
+					"name": "throw_force",
+					"description": "The throw force"
 				}
 			],
 			"efficiency": "fast"

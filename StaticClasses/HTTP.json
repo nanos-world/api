@@ -109,7 +109,8 @@
 							"name": "Headers",
 							"type": "table"
 						}
-					]
+					],
+					"description": "Table with the response <code>Status</code>, <code>Data</code> and <code>Headers</code>"
 				}
 			],
 			"description": "Makes a synchronous HTTP Request",
@@ -160,7 +161,7 @@
 			],
 			"examples": [
 				{
-					"title": "Makes an asynchronous HTTP Request",
+					"title": "Makes a synchronous HTTP Request",
 					"content": [
 						"local ret = HTTP.Request(\"127.0.0.1:7777\", \"/\", HTTPMethod.GET, \"\", \"application/json\", false, {})",
 						"",

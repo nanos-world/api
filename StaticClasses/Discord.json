@@ -11,7 +11,7 @@
 				{
 					"type": "integer",
 					"name": "client_id",
-					"description": ""
+					"description": "Your Discord application client ID"
 				}
 			],
 			"efficiency": "moderate"
@@ -24,22 +24,22 @@
 				{
 					"type": "string",
 					"name": "state",
-					"description": ""
+					"description": "First line of the status"
 				},
 				{
 					"type": "string",
 					"name": "details",
-					"description": ""
+					"description": "Second line of the status"
 				},
 				{
 					"type": "string",
 					"name": "large_image",
-					"description": ""
+					"description": "Asset key of the large image, configured in your Discord application"
 				},
 				{
 					"type": "string",
 					"name": "large_text",
-					"description": ""
+					"description": "Tooltip of the large image"
 				},
 				{
 					"type": "boolean",

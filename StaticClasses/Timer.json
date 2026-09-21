@@ -142,7 +142,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_valid"
+					"name": "is_valid",
+					"description": "Whether a Timer is currently active or waiting to be triggered"
 				}
 			],
 			"efficiency": "fast"
@@ -161,7 +162,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "elapsed_time"
+					"name": "elapsed_time",
+					"description": "Time elapsed since the last tick"
 				}
 			],
 			"efficiency": "fast"
@@ -180,7 +182,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "remaining_time"
+					"name": "remaining_time",
+					"description": "Time remaining to the next tick"
 				}
 			],
 			"efficiency": "fast"

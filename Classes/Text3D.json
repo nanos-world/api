@@ -14,35 +14,42 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "string",
-					"name": "text"
+					"name": "text",
+					"description": "The text to display"
 				},
 				{
 					"type": "Vector",
 					"name": "scale",
-					"default": "Vector(1, 1, 1)"
+					"default": "Vector(1, 1, 1)",
+					"description": "Scale of the text"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"default": "Color(1, 1, 1, 1)"
+					"default": "Color(1, 1, 1, 1)",
+					"description": "Color of the text"
 				},
 				{
 					"type": "FontType",
 					"name": "font_type",
-					"default": "FontType.Roboto"
+					"default": "FontType.Roboto",
+					"description": "Font to use"
 				},
 				{
 					"type": "Text3DAlignCamera",
 					"name": "align_camera",
-					"default": "Text3DAlignCamera.Unaligned"
+					"default": "Text3DAlignCamera.Unaligned",
+					"description": "Whether and how the text rotates to face the camera"
 				}
 			]
 		}
@@ -55,7 +62,8 @@
 			"parameters": [
 				{
 					"name": "font_type",
-					"type": "FontType"
+					"type": "FontType",
+					"description": "The new Font"
 				}
 			],
 			"efficiency": "fast"
@@ -68,27 +76,32 @@
 				{
 					"type": "float",
 					"name": "extrude",
-					"default": "0"
+					"default": "0",
+					"description": "Depth of the 3D letters"
 				},
 				{
 					"type": "float",
 					"name": "level",
-					"default": "0"
+					"default": "0",
+					"description": "Size of the bevel"
 				},
 				{
 					"type": "Text3DBevelType",
 					"name": "bevel_type",
-					"default": "Text3DBevelType.Convex"
+					"default": "Text3DBevelType.Convex",
+					"description": "Shape of the bevel"
 				},
 				{
 					"type": "integer",
 					"name": "bevel_segments",
-					"default": "8"
+					"default": "8",
+					"description": "Number of segments of the bevel, more looks smoother"
 				},
 				{
 					"type": "boolean",
 					"name": "outline",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to only generate the outline of the letters"
 				}
 			],
 			"efficiency": "fast"
@@ -101,17 +114,20 @@
 				{
 					"type": "integer",
 					"name": "max_width",
-					"default": "0"
+					"default": "0",
+					"description": "Max width of the text, 0 for no limit"
 				},
 				{
 					"type": "integer",
 					"name": "max_height",
-					"default": "0"
+					"default": "0",
+					"description": "Max height of the text, 0 for no limit"
 				},
 				{
 					"type": "boolean",
 					"name": "scale_proportionally",
-					"default": "true"
+					"default": "true",
+					"description": "Whether to keep the aspect ratio when scaling down"
 				}
 			],
 			"efficiency": "fast"
@@ -123,7 +139,8 @@
 			"parameters": [
 				{
 					"name": "text",
-					"type": "string"
+					"type": "string",
+					"description": "The new Text"
 				}
 			],
 			"efficiency": "moderate"
@@ -136,27 +153,32 @@
 				{
 					"type": "float",
 					"name": "kerning",
-					"default": "0"
+					"default": "0",
+					"description": "Extra spacing between characters"
 				},
 				{
 					"type": "float",
 					"name": "line_spacing",
-					"default": "0"
+					"default": "0",
+					"description": "Extra spacing between lines"
 				},
 				{
 					"type": "float",
 					"name": "word_spacing",
-					"default": "0"
+					"default": "0",
+					"description": "Extra spacing between words"
 				},
 				{
 					"type": "Text3DHorizontalAlignment",
 					"name": "horizontal_alignment",
-					"default": "Text3DHorizontalAlignment.Center"
+					"default": "Text3DHorizontalAlignment.Center",
+					"description": "Horizontal alignment of the text"
 				},
 				{
 					"type": "Text3DVerticalAlignment",
 					"name": "vertical_alignment",
-					"default": "Text3DVerticalAlignment.Center"
+					"default": "Text3DVerticalAlignment.Center",
+					"description": "Vertical alignment of the text"
 				}
 			],
 			"efficiency": "fast"

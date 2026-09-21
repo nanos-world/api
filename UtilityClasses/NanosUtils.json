@@ -17,7 +17,8 @@
 					"name": "entity",
 					"description": "Entity to verify"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Benchmark",
@@ -66,7 +67,8 @@
 					],
 					"output": "Benchmark 'My Heavy Operation' (x1000) took 1.5ms"
 				}
-			]
+			],
+			"efficiency": "slow"
 		}
 	]
 }

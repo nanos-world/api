@@ -11,7 +11,7 @@
 				{
 					"type": "string",
 					"name": "text",
-					"description": ""
+					"description": "The new Steam Rich Presence text"
 				}
 			],
 			"efficiency": "fast"

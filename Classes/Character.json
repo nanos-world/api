@@ -16,25 +16,30 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh_asset"
+					"name": "skeletal_mesh_asset",
+					"description": "The Skeletal Mesh asset to use"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Auto"
+					"default": "CollisionType.Auto",
+					"description": "Collision profile of this Actor"
 				},
 				{
 					"type": "boolean",
 					"name": "gravity_enabled",
-					"default": "true"
+					"default": "true",
+					"description": "Whether gravity affects this Actor"
 				},
 				{
 					"type": "integer",
@@ -83,12 +88,14 @@
 			"parameters": [
 				{
 					"type": "Vehicle",
-					"name": "vehicle"
+					"name": "vehicle",
+					"description": "The Vehicle"
 				},
 				{
 					"type": "integer",
 					"name": "seat",
-					"default": "0"
+					"default": "0",
+					"description": "Seat index to enter, 0 is the driver seat"
 				}
 			],
 			"relations": {
@@ -110,7 +117,8 @@
 			"parameters": [
 				{
 					"type": "Prop",
-					"name": "prop"
+					"name": "prop",
+					"description": "The Prop"
 				}
 			],
 			"relations": {
@@ -156,7 +164,8 @@
 			"parameters": [
 				{
 					"type": "Pickable",
-					"name": "pickable"
+					"name": "pickable",
+					"description": "The Weapon, Melee or Grenade to give to this Character"
 				}
 			],
 			"relations": {
@@ -174,22 +183,26 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "animation_path"
+					"name": "animation_path",
+					"description": "The Animation asset to play"
 				},
 				{
 					"type": "AnimationSlotType",
 					"name": "slot_type",
-					"default": "AnimationSlotType.FullBody"
+					"default": "AnimationSlotType.FullBody",
+					"description": "Which part of the body plays the animation"
 				},
 				{
 					"type": "boolean",
 					"name": "loop_indefinitely",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to keep looping until stopped"
 				},
 				{
 					"type": "float",
 					"name": "blend_in_time",
-					"default": "0.25"
+					"default": "0.25",
+					"description": "Seconds to blend into the animation"
 				},
 				{
 					"type": "float",
@@ -200,7 +213,8 @@
 				{
 					"type": "float",
 					"name": "play_rate",
-					"default": "1.0"
+					"default": "1.0",
+					"description": "Speed multiplier of the animation"
 				},
 				{
 					"type": "boolean",
@@ -213,7 +227,7 @@
 				"etc": [
 					{
 						"label": "StopAnimation",
-						"url": "/docs/next/scripting-reference/classes/base-classes/pawn#function-stopanimation"
+						"url": "/docs/scripting-reference/classes/base-classes/pawn#function-stopanimation"
 					}
 				]
 			},
@@ -227,12 +241,14 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "blend_space_path"
+					"name": "blend_space_path",
+					"description": "The Blend Space (2D) asset"
 				},
 				{
 					"type": "boolean",
 					"name": "enable_turn_in_place",
-					"default": "false"
+					"default": "false",
+					"description": "Whether the Character plays turn-in-place animations when rotating while idle"
 				}
 			],
 			"efficiency": "slow"
@@ -244,12 +260,14 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "blend_space_path"
+					"name": "blend_space_path",
+					"description": "The Blend Space (2D) asset"
 				},
 				{
 					"type": "boolean",
 					"name": "enable_turn_in_place",
-					"default": "false"
+					"default": "false",
+					"description": "Whether the Character plays turn-in-place animations when rotating while idle"
 				}
 			],
 			"efficiency": "slow"
@@ -261,7 +279,8 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "blend_space_path"
+					"name": "blend_space_path",
+					"description": "The new Blend Space (2D) Animation for Proning"
 				}
 			],
 			"efficiency": "slow"
@@ -273,11 +292,13 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "standing_to_crouching"
+					"name": "standing_to_crouching",
+					"description": "Animation played when crouching"
 				},
 				{
 					"type": "AnimationPath",
-					"name": "crouching_to_standing"
+					"name": "crouching_to_standing",
+					"description": "Animation played when standing up"
 				}
 			],
 			"efficiency": "slow"
@@ -289,11 +310,13 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "crouching_to_proning"
+					"name": "crouching_to_proning",
+					"description": "Animation played when going prone"
 				},
 				{
 					"type": "AnimationPath",
-					"name": "proning_to_crouching"
+					"name": "proning_to_crouching",
+					"description": "Animation played when getting up from prone"
 				}
 			],
 			"efficiency": "slow"
@@ -306,37 +329,44 @@
 				{
 					"type": "integer",
 					"name": "walking",
-					"default": "768"
+					"default": "768",
+					"description": "Max acceleration while walking"
 				},
 				{
 					"type": "integer",
 					"name": "parachuting",
-					"default": "512"
+					"default": "512",
+					"description": "Max acceleration while parachuting"
 				},
 				{
 					"type": "integer",
 					"name": "skydiving",
-					"default": "768"
+					"default": "768",
+					"description": "Max acceleration while skydiving"
 				},
 				{
 					"type": "integer",
 					"name": "falling",
-					"default": "128"
+					"default": "128",
+					"description": "Max air control acceleration while falling"
 				},
 				{
 					"type": "integer",
 					"name": "swimming",
-					"default": "256"
+					"default": "256",
+					"description": "Max acceleration while swimming underwater"
 				},
 				{
 					"type": "integer",
 					"name": "swimming_surface",
-					"default": "256"
+					"default": "256",
+					"description": "Max acceleration while swimming on the surface"
 				},
 				{
 					"type": "integer",
 					"name": "flying",
-					"default": "1024"
+					"default": "1024",
+					"description": "Max acceleration while flying"
 				}
 			],
 			"efficiency": "fast"
@@ -375,7 +405,8 @@
 			"parameters": [
 				{
 					"type": "CameraMode",
-					"name": "camera_mode"
+					"name": "camera_mode",
+					"description": "The new Camera Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -387,7 +418,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_aim"
+					"name": "can_aim",
+					"description": "Whether this Character is allowed to Aim"
 				}
 			],
 			"efficiency": "fast"
@@ -399,7 +431,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_drop"
+					"name": "can_drop",
+					"description": "Whether this Character is allowed to Drop the Picked up item"
 				}
 			],
 			"efficiency": "fast"
@@ -411,7 +444,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_dive"
+					"name": "can_dive",
+					"description": "Whether this Character is allowed to Dive"
 				}
 			],
 			"efficiency": "fast"
@@ -423,7 +457,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_sprint"
+					"name": "can_sprint",
+					"description": "Whether this Character is allowed to Sprint"
 				}
 			],
 			"efficiency": "fast"
@@ -435,7 +470,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_grab_props"
+					"name": "can_grab_props",
+					"description": "Whether this Character is allowed to Grab any Prop"
 				}
 			],
 			"efficiency": "fast"
@@ -447,7 +483,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_pickup"
+					"name": "can_pickup",
+					"description": "Whether this Character is allowed to Pick up any Pickable"
 				}
 			],
 			"efficiency": "fast"
@@ -459,7 +496,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "weapon_shooter_mode"
+					"name": "weapon_shooter_mode",
+					"description": "Whether this Character is in Shooter Mode, in which a held Weapon is always aimed while idle or walking, is lowered while sprinting, and the aim input aims down sights instead of raising the Weapon"
 				}
 			],
 			"efficiency": "fast"
@@ -471,7 +509,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_use"
+					"name": "can_use",
+					"description": "Whether this Character is allowed to use Pickables"
 				}
 			],
 			"efficiency": "fast"
@@ -483,7 +522,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_punch"
+					"name": "can_punch",
+					"description": "Whether this Character is allowed to Punch"
 				}
 			],
 			"efficiency": "fast"
@@ -495,7 +535,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "can_deploy_parachute"
+					"name": "can_deploy_parachute",
+					"description": "Whether this Character is allowed to deploy the Parachute"
 				}
 			],
 			"efficiency": "fast"
@@ -507,7 +548,8 @@
 			"parameters": [
 				{
 					"type": "SoundPath",
-					"name": "sound_asset"
+					"name": "sound_asset",
+					"description": "The new Death sound when Character dies"
 				}
 			],
 			"efficiency": "slow"
@@ -516,7 +558,7 @@
 			"authority": "server",
 			"name": "SetFallDamageTaken",
 			"description": "Set the Fall Damage multiplier taken when falling from High places",
-			"description_long": "Set the Fall Damage multiplier taken when falling from High places.<br/><br/>Setting to 0 will make the Character to do not take any damage",
+			"description_long": "Set the Fall Damage multiplier taken when falling from High places.<br/><br/>Setting to 0 will make the Character not take any damage",
 			"parameters": [
 				{
 					"type": "integer",
@@ -533,7 +575,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "multiplier"
+					"name": "multiplier",
+					"description": "The new Field of View multiplier"
 				}
 			],
 			"efficiency": "fast"
@@ -564,7 +607,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the character will enter ragdoll mode when being hit by an object or falling from a high place"
 				}
 			],
 			"relations": {
@@ -581,7 +625,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "time"
+					"name": "time",
+					"description": "The new cooldown time (in seconds) before this Character can stand up from ragdoll"
 				}
 			],
 			"efficiency": "fast"
@@ -589,11 +634,12 @@
 		{
 			"authority": "server",
 			"name": "SetGaitMode",
-			"description": "Sets the Gait Mode",
+			"description": "Sets the Gait Mode (walking or sprinting)",
 			"parameters": [
 				{
 					"type": "GaitMode",
-					"name": "gait_mode"
+					"name": "gait_mode",
+					"description": "The new Gait Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -602,7 +648,7 @@
 			"authority": "server",
 			"name": "SetImpactDamageTaken",
 			"description": "Set the Impact Damage taken when being run over by things",
-			"description_long": "Set the Impact Damage taken when being run over by things.<br/><br/>Setting to 0 will make the Character to do not take damage or enter ragdoll mode",
+			"description_long": "Set the Impact Damage taken when being run over by things.<br/><br/>Setting to 0 will make the Character not take damage or enter ragdoll mode",
 			"parameters": [
 				{
 					"type": "integer",
@@ -621,7 +667,7 @@
 			"authority": "server",
 			"name": "SetRadialDamageToRagdoll",
 			"description": "Set the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
-			"description_long": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character to do not enter ragdoll mode when getting radial damage",
+			"description_long": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character never enter ragdoll mode when getting radial damage",
 			"parameters": [
 				{
 					"type": "integer",
@@ -638,7 +684,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "volume_multiplier"
+					"name": "volume_multiplier",
+					"description": "The new Footstep Volume multiplier"
 				}
 			],
 			"efficiency": "fast"
@@ -650,7 +697,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_invulnerable"
+					"name": "is_invulnerable",
+					"description": "Whether the Character can receive any damage"
 				}
 			],
 			"efficiency": "fast"
@@ -658,11 +706,12 @@
 		{
 			"authority": "server",
 			"name": "SetMesh",
-			"description": "Changes the Character Mesh on the fly",
+			"description": "Changes the Character Mesh at runtime",
 			"parameters": [
 				{
 					"type": "SkeletalMeshPath",
-					"name": "skeletal_mesh_asset"
+					"name": "skeletal_mesh_asset",
+					"description": "The new Skeletal Mesh asset"
 				}
 			],
 			"efficiency": "slow"
@@ -670,7 +719,7 @@
 		{
 			"authority": "both",
 			"name": "SetMorphTarget",
-			"description": "Set Morph Target with Name and Value",
+			"description": "Sets the value of a Morph Target",
 			"parameters": [
 				{
 					"type": "string",
@@ -679,7 +728,8 @@
 				},
 				{
 					"type": "float",
-					"name": "value"
+					"name": "value",
+					"description": "The Morph Target weight, usually from 0 to 1"
 				}
 			],
 			"relations": {
@@ -822,7 +872,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether to enable Character's Input"
 				}
 			],
 			"efficiency": "fast"
@@ -830,11 +881,12 @@
 		{
 			"authority": "server",
 			"name": "SetParachuteTexture",
-			"description": "Changes the Parachute Texture",
+			"description": "Changes the texture of the Character's parachute",
 			"parameters": [
 				{
 					"type": "ImagePath",
-					"name": "texture"
+					"name": "texture",
+					"description": "The new Parachute Texture"
 				}
 			],
 			"efficiency": "slow"
@@ -846,7 +898,8 @@
 			"parameters": [
 				{
 					"type": "SoundPath",
-					"name": "sound_asset"
+					"name": "sound_asset",
+					"description": "The new Pain sound when Character takes damage"
 				}
 			],
 			"efficiency": "slow"
@@ -867,11 +920,12 @@
 		{
 			"authority": "server",
 			"name": "SetRagdollMode",
-			"description": "Sets Character Ragdoll Mode",
+			"description": "Enables or disables the Ragdoll Mode, making the Character fall as a physics body",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "ragdoll_enabled"
+					"name": "ragdoll_enabled",
+					"description": "Whether the Ragdoll Mode is enabled"
 				}
 			],
 			"efficiency": "fast"
@@ -883,7 +937,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "simulate_physics"
+					"name": "simulate_physics",
+					"description": "The new Character Capsule to simulate physics"
 				}
 			],
 			"efficiency": "fast"
@@ -891,7 +946,7 @@
 		{
 			"authority": "server",
 			"name": "SetSpeedMultiplier",
-			"description": "Sets all speed multiplier",
+			"description": "Sets the multiplier applied to all movement speeds",
 			"parameters": [
 				{
 					"type": "float",
@@ -904,11 +959,12 @@
 		{
 			"authority": "server",
 			"name": "SetStanceMode",
-			"description": "Sets the Stance Mode",
+			"description": "Sets the Stance Mode (standing, crouching or proning)",
 			"parameters": [
 				{
 					"type": "StanceMode",
-					"name": "stance_mode"
+					"name": "stance_mode",
+					"description": "The new Stance Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -929,11 +985,12 @@
 		{
 			"authority": "network-authority",
 			"name": "SetViewMode",
-			"description": "Sets the View Mode",
+			"description": "Sets the View Mode (first person, third person or top down)",
 			"parameters": [
 				{
 					"type": "ViewMode",
-					"name": "view_mode"
+					"name": "view_mode",
+					"description": "The new View Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -945,7 +1002,8 @@
 			"parameters": [
 				{
 					"type": "AimMode",
-					"name": "aim_mode"
+					"name": "aim_mode",
+					"description": "The new Weapon's Aim Mode"
 				}
 			],
 			"efficiency": "moderate"
@@ -963,7 +1021,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "ragdoll_enabled"
+					"name": "ragdoll_enabled",
+					"description": "Whether Character is in ragdoll mode"
 				}
 			],
 			"efficiency": "fast"
@@ -971,11 +1030,12 @@
 		{
 			"authority": "both",
 			"name": "IsInvulnerable",
-			"description": "Gets if is invulnerable",
+			"description": "Gets if this Character is invulnerable",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_invulnerable"
+					"name": "is_invulnerable",
+					"description": "Whether this Character is invulnerable"
 				}
 			],
 			"efficiency": "fast"
@@ -983,11 +1043,12 @@
 		{
 			"authority": "both",
 			"name": "IsInputEnabled",
-			"description": "Gets if has input enabled",
+			"description": "Gets if this Character has input enabled",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether input is enabled"
 				}
 			],
 			"efficiency": "fast"
@@ -999,7 +1060,8 @@
 			"return": [
 				{
 					"type": "CameraMode",
-					"name": "camera_mode"
+					"name": "camera_mode",
+					"description": "Camera mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1007,11 +1069,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanDrop",
-			"description": "Gets if can drop",
+			"description": "Gets if this Character is allowed to drop the picked up item",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_drop"
+					"name": "can_drop",
+					"description": "Whether it is allowed to drop"
 				}
 			],
 			"efficiency": "fast"
@@ -1019,11 +1082,64 @@
 		{
 			"authority": "both",
 			"name": "GetCanPunch",
-			"description": "Gets if can punch",
+			"description": "Gets if this Character is allowed to punch",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_punch"
+					"name": "can_punch",
+					"description": "Whether it is allowed to punch"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetCanDeployParachute",
+			"description": "Gets if this Character is allowed to deploy the Parachute",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "can_deploy_parachute",
+					"description": "Whether this Character is allowed to deploy the Parachute"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetCanDive",
+			"description": "Gets if this Character is allowed to Dive",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "can_dive",
+					"description": "Whether this Character is allowed to Dive"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetFootstepVolumeMultiplier",
+			"description": "Gets the Footstep Volume multiplier",
+			"return": [
+				{
+					"type": "float",
+					"name": "volume_multiplier",
+					"description": "Footstep Volume multiplier"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetRadialDamageToRagdoll",
+			"description": "Gets the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
+			"return": [
+				{
+					"type": "integer",
+					"name": "damage",
+					"description": "-1 if the Character never enters ragdoll mode from radial damage"
 				}
 			],
 			"efficiency": "fast"
@@ -1031,11 +1147,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanAim",
-			"description": "Gets if can aim",
+			"description": "Gets if this Character is allowed to aim",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_aim"
+					"name": "can_aim",
+					"description": "Whether it is allowed to aim"
 				}
 			],
 			"efficiency": "fast"
@@ -1043,11 +1160,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanSprint",
-			"description": "Gets if can sprint",
+			"description": "Gets if this Character is allowed to sprint",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_sprint"
+					"name": "can_sprint",
+					"description": "Whether it is allowed to sprint"
 				}
 			],
 			"efficiency": "fast"
@@ -1055,11 +1173,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanGrabProps",
-			"description": "Gets if can grab props",
+			"description": "Gets if this Character is allowed to grab Props",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_grab_props"
+					"name": "can_grab_props",
+					"description": "Whether it is allowed to grab Props"
 				}
 			],
 			"efficiency": "fast"
@@ -1067,11 +1186,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanPickupPickables",
-			"description": "Gets if can pickup Pickables (Weapons, Melee, Grenade...)",
+			"description": "Gets if this Character is allowed to pick up Pickables (Weapon, Grenade, Melee...)",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_pickup"
+					"name": "can_pickup",
+					"description": "Whether it is allowed to pick up Pickables"
 				}
 			],
 			"efficiency": "fast"
@@ -1083,7 +1203,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "weapon_shooter_mode"
+					"name": "weapon_shooter_mode",
+					"description": "Whether this Character is in Shooter Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1091,11 +1212,12 @@
 		{
 			"authority": "both",
 			"name": "GetCanUsePickables",
-			"description": "Gets if can use Pickables (Weapons, Melee, Grenade...)",
+			"description": "Gets if this Character is allowed to use Pickables (Weapon, Grenade, Melee...)",
 			"return": [
 				{
 					"type": "boolean",
-					"name": "can_use"
+					"name": "can_use",
+					"description": "Whether it is allowed to use Pickables"
 				}
 			],
 			"efficiency": "fast"
@@ -1103,11 +1225,12 @@
 		{
 			"authority": "both",
 			"name": "GetFallDamageTaken",
-			"description": "Gets the Fall Damage",
+			"description": "Gets the Fall Damage multiplier",
 			"return": [
 				{
 					"type": "integer",
-					"name": "damage"
+					"name": "damage",
+					"description": "The Fall Damage multiplier"
 				}
 			],
 			"efficiency": "fast"
@@ -1115,10 +1238,11 @@
 		{
 			"authority": "both",
 			"name": "GetFallingMode",
-			"description": "Gets the FallingMode",
+			"description": "Gets the current Falling Mode",
 			"return": [
 				{
-					"type": "FallingMode"
+					"type": "FallingMode",
+					"description": "The current Falling Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1126,11 +1250,12 @@
 		{
 			"authority": "both",
 			"name": "GetGaitMode",
-			"description": "Gets the GaitMode",
+			"description": "Gets the current Gait Mode",
 			"return": [
 				{
 					"type": "GaitMode",
-					"name": "gait_mode"
+					"name": "gait_mode",
+					"description": "The current Gait Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1142,7 +1267,8 @@
 			"return": [
 				{
 					"type": "Prop?",
-					"name": "prop"
+					"name": "prop",
+					"description": "Grabbed Prop"
 				}
 			],
 			"relations": {
@@ -1156,11 +1282,12 @@
 		{
 			"authority": "both",
 			"name": "GetImpactDamageTaken",
-			"description": "Gets the impact damage taken",
+			"description": "Gets the Impact Damage taken when being run over",
 			"return": [
 				{
 					"type": "integer",
-					"name": "impact_damage"
+					"name": "impact_damage",
+					"description": "The Impact Damage"
 				}
 			],
 			"efficiency": "fast"
@@ -1172,7 +1299,8 @@
 			"return": [
 				{
 					"type": "Pickable?",
-					"name": "object"
+					"name": "object",
+					"description": "Pickable if picking up"
 				}
 			],
 			"relations": {
@@ -1186,11 +1314,12 @@
 		{
 			"authority": "both",
 			"name": "GetPunchDamage",
-			"description": "Gets the punch damage",
+			"description": "Gets the damage dealt by this Character's punches",
 			"return": [
 				{
 					"type": "integer",
-					"name": "punch_damage"
+					"name": "punch_damage",
+					"description": "The punch damage"
 				}
 			],
 			"efficiency": "fast"
@@ -1198,11 +1327,12 @@
 		{
 			"authority": "both",
 			"name": "GetSpeedMultiplier",
-			"description": "Gets the speed multiplier",
+			"description": "Gets the movement speed multiplier",
 			"return": [
 				{
 					"type": "float",
-					"name": "speed_multiplier"
+					"name": "speed_multiplier",
+					"description": "The speed multiplier"
 				}
 			],
 			"efficiency": "fast"
@@ -1214,7 +1344,8 @@
 			"return": [
 				{
 					"type": "StanceMode",
-					"name": "stance_mode"
+					"name": "stance_mode",
+					"description": "Stance Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1226,7 +1357,8 @@
 			"return": [
 				{
 					"type": "SwimmingMode",
-					"name": "swimming_mode"
+					"name": "swimming_mode",
+					"description": "Swimming Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1234,11 +1366,12 @@
 		{
 			"authority": "both",
 			"name": "GetTeam",
-			"description": "Gets the Team",
+			"description": "Gets the Team of this Character",
 			"return": [
 				{
 					"type": "integer",
-					"name": "team"
+					"name": "team",
+					"description": "The Team, 0 means no team"
 				}
 			],
 			"efficiency": "fast"
@@ -1250,7 +1383,8 @@
 			"return": [
 				{
 					"type": "Vehicle?",
-					"name": "vehicle"
+					"name": "vehicle",
+					"description": "Entered Vehicle"
 				}
 			],
 			"relations": {
@@ -1281,7 +1415,8 @@
 			"return": [
 				{
 					"type": "ViewMode",
-					"name": "view_mode"
+					"name": "view_mode",
+					"description": "View Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1293,7 +1428,8 @@
 			"return": [
 				{
 					"type": "AimMode",
-					"name": "aim_mode"
+					"name": "aim_mode",
+					"description": "Weapon Aim Mode"
 				}
 			],
 			"efficiency": "fast"
@@ -1305,7 +1441,8 @@
 			"parameters": [
 				{
 					"type": "OtherPath",
-					"name": "physics_asset"
+					"name": "physics_asset",
+					"description": "The new Physics Asset for the Character"
 				}
 			],
 			"efficiency": "slow"
@@ -1319,11 +1456,13 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Character"
+					"type": "Character",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"name": "melee",
-					"type": "Melee"
+					"type": "Melee",
+					"description": "The Melee"
 				}
 			]
 		},
@@ -1334,15 +1473,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Pickable",
-					"name": "object"
+					"name": "object",
+					"description": "The Pickable being dropped"
 				},
 				{
 					"type": "boolean",
-					"name": "triggered_by_player"
+					"name": "triggered_by_player",
+					"description": "Whether the Player dropped it by input, instead of by scripting"
 				}
 			]
 		},
@@ -1353,15 +1495,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle"
+					"name": "vehicle",
+					"description": "The Vehicle"
 				},
 				{
 					"type": "integer",
-					"name": "seat_index"
+					"name": "seat_index",
+					"description": "The seat entered, 0 is the driver seat"
 				}
 			],
 			"relations": {
@@ -1381,15 +1526,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle"
+					"name": "vehicle",
+					"description": "The Vehicle"
 				},
 				{
 					"type": "integer",
-					"name": "seat_index"
+					"name": "seat_index",
+					"description": "The seat it is trying to enter, 0 is the driver seat"
 				}
 			],
 			"return": [
@@ -1415,15 +1563,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "FallingMode",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous Falling Mode"
 				},
 				{
 					"type": "FallingMode",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new Falling Mode"
 				}
 			]
 		},
@@ -1434,11 +1585,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Weapon",
-					"name": "weapon"
+					"name": "weapon",
+					"description": "The Weapon"
 				}
 			]
 		},
@@ -1449,15 +1602,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "GaitMode",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous Gait Mode"
 				},
 				{
 					"type": "GaitMode",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new Gait Mode"
 				}
 			]
 		},
@@ -1468,11 +1624,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Prop",
-					"name": "prop"
+					"name": "prop",
+					"description": "The Prop"
 				}
 			]
 		},
@@ -1483,7 +1641,8 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "boolean",
@@ -1492,7 +1651,8 @@
 				},
 				{
 					"type": "Prop|Pickable",
-					"name": "object"
+					"name": "object",
+					"description": "The Prop or Pickable being highlighted"
 				}
 			]
 		},
@@ -1503,11 +1663,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Prop|Pickable",
-					"name": "object"
+					"name": "object",
+					"description": "The Prop or Pickable being interacted with"
 				}
 			],
 			"return": [
@@ -1524,15 +1686,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle"
+					"name": "vehicle",
+					"description": "The Vehicle"
 				},
 				{
 					"type": "integer",
-					"name": "seat_index"
+					"name": "seat_index",
+					"description": "The seat it left, 0 is the driver seat"
 				}
 			],
 			"relations": {
@@ -1551,11 +1716,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Vehicle",
-					"name": "vehicle"
+					"name": "vehicle",
+					"description": "The Vehicle"
 				}
 			],
 			"return": [
@@ -1580,11 +1747,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Pickable",
-					"name": "object"
+					"name": "object",
+					"description": "The Pickable being picked up"
 				}
 			],
 			"relations": {
@@ -1600,7 +1769,8 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				}
 			]
 		},
@@ -1611,15 +1781,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "boolean",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous boolean"
 				},
 				{
 					"type": "boolean",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new boolean"
 				}
 			]
 		},
@@ -1630,11 +1803,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Weapon",
-					"name": "weapon"
+					"name": "weapon",
+					"description": "The Weapon"
 				}
 			],
 			"return": [
@@ -1651,15 +1826,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Weapon",
-					"name": "weapon"
+					"name": "weapon",
+					"description": "The Weapon"
 				},
 				{
 					"type": "integer",
-					"name": "ammo_to_reload"
+					"name": "ammo_to_reload",
+					"description": "How many bullets are being reloaded"
 				}
 			]
 		},
@@ -1670,15 +1848,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "StanceMode",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous Stance Mode"
 				},
 				{
 					"type": "StanceMode",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new Stance Mode"
 				}
 			]
 		},
@@ -1689,15 +1870,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "SwimmingMode",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous Swimming Mode"
 				},
 				{
 					"type": "SwimmingMode",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new Swimming Mode"
 				}
 			]
 		},
@@ -1708,11 +1892,13 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "Prop",
-					"name": "prop"
+					"name": "prop",
+					"description": "The Prop"
 				}
 			]
 		},
@@ -1723,15 +1909,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "ViewMode",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous View Mode"
 				},
 				{
 					"type": "ViewMode",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new View Mode"
 				}
 			]
 		},
@@ -1742,15 +1931,18 @@
 			"arguments": [
 				{
 					"type": "Character",
-					"name": "self"
+					"name": "self",
+					"description": "The Character that triggered the event"
 				},
 				{
 					"type": "AimMode",
-					"name": "old_state"
+					"name": "old_state",
+					"description": "The previous Aim Mode"
 				},
 				{
 					"type": "AimMode",
-					"name": "new_state"
+					"name": "new_state",
+					"description": "The new Aim Mode"
 				}
 			]
 		},

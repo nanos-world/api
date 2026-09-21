@@ -13,25 +13,30 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "ParticlePath",
-					"name": "asset"
+					"name": "asset",
+					"description": "The asset to use"
 				},
 				{
 					"type": "boolean",
 					"name": "auto_destroy",
-					"default": "true"
+					"default": "true",
+					"description": "Whether to destroy it after it finishes playing"
 				},
 				{
 					"type": "boolean",
 					"name": "auto_activate",
-					"default": "true"
+					"default": "true",
+					"description": "Whether to start playing immediately"
 				},
 				{
 					"type": "SpawnMode",
@@ -82,7 +87,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_active"
+					"name": "is_active",
+					"description": "Whether this Particle is active"
 				}
 			],
 			"relations": {

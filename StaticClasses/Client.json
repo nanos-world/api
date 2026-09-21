@@ -16,7 +16,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "text"
+					"name": "text",
+					"description": "The text to copy"
 				}
 			],
 			"efficiency": "fast"
@@ -29,7 +30,7 @@
 				{
 					"type": "float",
 					"name": "near_clip_plane",
-					"description": ""
+					"description": "The new Near Clip Plane"
 				}
 			],
 			"efficiency": "fast"
@@ -68,12 +69,14 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "text"
+					"name": "text",
+					"description": "The text of the notification"
 				},
 				{
 					"type": "NotificationType",
 					"name": "notification_type",
-					"default": "NotificationType.Info"
+					"default": "NotificationType.Info",
+					"description": "The notification style"
 				},
 				{
 					"type": "boolean",
@@ -96,7 +99,8 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "float"
+					"type": "float",
+					"description": "Near Clip Plane value"
 				}
 			],
 			"efficiency": "fast"
@@ -107,7 +111,8 @@
 			"authority": "client",
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"description": "Current connected server IP:Port"
 				}
 			],
 			"efficiency": "fast"
@@ -120,7 +125,7 @@
 				{
 					"type": "boolean",
 					"name": "enable_debug",
-					"description": ""
+					"description": "Whether to enable Debug settings and Client Console to be used"
 				}
 			],
 			"efficiency": "moderate"
@@ -153,17 +158,17 @@
 				{
 					"type": "Color",
 					"name": "highlight_color",
-					"description": ""
+					"description": "The color to use"
 				},
 				{
 					"type": "integer",
 					"name": "index",
-					"description": ""
+					"description": "Highlight slot index (0 to 2)"
 				},
 				{
 					"type": "HighlightMode",
 					"name": "mode",
-					"description": "",
+					"description": "When the highlight is visible",
 					"default": "HighlightMode.Always"
 				}
 			],
@@ -178,18 +183,18 @@
 				{
 					"type": "Color",
 					"name": "outline_color",
-					"description": ""
+					"description": "The color to use"
 				},
 				{
 					"type": "integer",
 					"name": "index",
-					"description": "",
+					"description": "Outline slot index (0 to 2)",
 					"default": "0"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "2"
 				}
 			],
@@ -236,12 +241,12 @@
 				{
 					"type": "string",
 					"name": "event_name",
-					"description": ""
+					"description": "The name of the event"
 				},
 				{
 					"type": "function",
 					"name": "callback",
-					"description": ""
+					"description": "The function to be called"
 				}
 			],
 			"efficiency": "fast"
@@ -254,12 +259,12 @@
 				{
 					"type": "string",
 					"name": "event_name",
-					"description": ""
+					"description": "The name of the event"
 				},
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "",
+					"description": "The function to be called",
 					"default": "nil"
 				}
 			],
@@ -326,7 +331,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "entity_id"
+					"name": "entity_id",
+					"description": "The entity ID"
 				}
 			],
 			"efficiency": "moderate"
@@ -363,7 +369,7 @@
 		},
 		{
 			"name": "GetMap",
-			"description": "Returns the current Map",
+			"description": "Returns the current map package name",
 			"authority": "client",
 			"return": [
 				{
@@ -387,7 +393,7 @@
 				{
 					"type": "string",
 					"name": "package_name",
-					"description": ""
+					"description": "The package folder name"
 				}
 			],
 			"efficiency": "moderate"
@@ -448,12 +454,12 @@
 				{
 					"type": "string",
 					"name": "key",
-					"description": ""
+					"description": "The key"
 				},
 				{
 					"type": "any",
 					"name": "fallback",
-					"description": ""
+					"description": "Value returned if the key doesn't exist"
 				}
 			],
 			"relations": {
@@ -811,7 +817,7 @@
 				{
 					"type": "float",
 					"name": "delta_time",
-					"description": ""
+					"description": "Seconds since the last frame"
 				}
 			]
 		},
@@ -823,7 +829,7 @@
 				{
 					"type": "Player",
 					"name": "local_player",
-					"description": ""
+					"description": "The local Player"
 				}
 			]
 		},

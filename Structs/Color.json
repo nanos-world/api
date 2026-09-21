@@ -7,25 +7,25 @@
 			"parameters": [
 				{
 					"name": "R",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Red color percentage (0-1)"
 				},
 				{
 					"name": "G",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "Green color percentage (0-1)"
 				},
 				{
 					"name": "B",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "Blue color percentage (0-1)"
 				},
 				{
 					"name": "A",
-					"type": "number",
+					"type": "float",
 					"default": "1",
 					"description": "Alpha transparency percentage (0-1)"
 				}
@@ -84,22 +84,22 @@
 	"properties": [
 		{
 			"name": "R",
-			"type": "number",
+			"type": "float",
 			"description": "Red color percentage (0-1)"
 		},
 		{
 			"name": "G",
-			"type": "number",
+			"type": "float",
 			"description": "Green color percentage (0-1)"
 		},
 		{
 			"name": "B",
-			"type": "number",
+			"type": "float",
 			"description": "Blue color percentage (0-1)"
 		},
 		{
 			"name": "A",
-			"type": "number",
+			"type": "float",
 			"description": "Alpha transparency percentage (0-1)"
 		}
 	],
@@ -182,7 +182,8 @@
 					"type": "string",
 					"description": "Hexadecimal representation of this Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	],
 	"static_functions": [
@@ -202,7 +203,8 @@
 					"type": "Color",
 					"description": "Random color from Color Palette"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Random",
@@ -212,7 +214,8 @@
 					"type": "Color",
 					"description": "Random color from all color scope"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "FromRGBA",
@@ -220,25 +223,25 @@
 			"parameters": [
 				{
 					"name": "r",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Red"
 				},
 				{
 					"name": "g",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Green"
 				},
 				{
 					"name": "b",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Blue"
 				},
 				{
 					"name": "a",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Alpha"
 				}
@@ -248,7 +251,8 @@
 					"type": "Color",
 					"description": "Final Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "FromCYMK",
@@ -256,31 +260,31 @@
 			"parameters": [
 				{
 					"name": "c",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Cyan"
 				},
 				{
 					"name": "y",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Yellow"
 				},
 				{
 					"name": "m",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Magenta"
 				},
 				{
 					"name": "k",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Black"
 				},
 				{
 					"name": "a",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Alpha"
 				}
@@ -290,7 +294,8 @@
 					"type": "Color",
 					"description": "Final Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "FromHSL",
@@ -298,19 +303,19 @@
 			"parameters": [
 				{
 					"name": "h",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Hue"
 				},
 				{
 					"name": "s",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Saturation"
 				},
 				{
 					"name": "l",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Lightness"
 				}
@@ -320,7 +325,8 @@
 					"type": "Color",
 					"description": "Final Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "FromHSV",
@@ -328,19 +334,19 @@
 			"parameters": [
 				{
 					"name": "h",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Hue"
 				},
 				{
 					"name": "s",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Saturation"
 				},
 				{
 					"name": "v",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "Value"
 				}
@@ -350,7 +356,8 @@
 					"type": "Color",
 					"description": "Final Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "FromHEX",
@@ -367,7 +374,8 @@
 					"type": "Color",
 					"description": "Final Color"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

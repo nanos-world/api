@@ -130,7 +130,8 @@
 			],
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this Class is child of another class if this Class was created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>"
 				}
 			],
 			"efficiency": "fast"
@@ -245,7 +246,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "id"
+					"name": "id",
+					"description": "Universal network ID of this Entity"
 				}
 			],
 			"efficiency": "fast"
@@ -258,7 +260,8 @@
 			"efficiency": "fast",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this Entity is being destroyed"
 				}
 			]
 		},
@@ -281,7 +284,8 @@
 			"return": [
 				{
 					"type": "table",
-					"name": "class"
+					"name": "class",
+					"description": "Class of this entity"
 				}
 			],
 			"efficiency": "fast"
@@ -299,7 +303,8 @@
 			],
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this entity is of that class or inherits from it"
 				}
 			],
 			"efficiency": "moderate"
@@ -379,11 +384,13 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "key"
+					"name": "key",
+					"description": "The key"
 				},
 				{
 					"type": "any",
-					"name": "value"
+					"name": "value",
+					"description": "The value, can be any serializable type (not functions)"
 				},
 				{
 					"type": "boolean",
@@ -407,7 +414,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "key"
+					"name": "key",
+					"description": "The key"
 				},
 				{
 					"type": "any",
@@ -460,7 +468,8 @@
 			"return": [
 				{
 					"name": "is_valid",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this Entity is valid"
 				}
 			],
 			"efficiency": "fast"

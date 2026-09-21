@@ -27,7 +27,8 @@
 							"name": "Version",
 							"type": "string"
 						}
-					]
+					],
+					"description": "List containing information about all loaded Asset Packs"
 				}
 			],
 			"efficiency": "slow"

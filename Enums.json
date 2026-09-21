@@ -4,43 +4,54 @@
 		"enums": [
 			{
 				"key": "None",
-				"value": "0"
+				"value": "0",
+				"description": "Not aiming"
 			},
 			{
 				"key": "ADS",
-				"value": "1"
+				"value": "1",
+				"description": "Aiming down sights"
 			},
 			{
 				"key": "ZoomedZoom",
-				"value": "2"
+				"value": "2",
+				"description": "Aiming through a scope, zoomed in"
 			},
 			{
 				"key": "Zoomed",
-				"value": "3"
+				"value": "3",
+				"description": "Third person zoomed aim"
 			},
 			{
 				"key": "ZoomedFar",
-				"value": "4"
+				"value": "4",
+				"description": "Third person zoomed aim, farther away"
 			}
 		]
 	},
 	"AnimationSlotType": {
+		"description": "Which part of the Character body plays an Animation",
 		"enums": [
 			{
 				"key": "FullBody",
-				"value": "0"
+				"value": "0",
+				"description": "The whole body"
 			},
 			{
 				"key": "UpperBody",
-				"value": "1"
+				"value": "1",
+				"description": "From the waist up, keeping the legs animation"
 			},
 			{
 				"key": "Head",
-				"value": "2"
+				"value": "2",
+				"description": "Only the head"
 			}
 		]
 	},
 	"AssetType": {
+		"description": "Types of assets, used to filter assets from Asset Packs",
+		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "Map",
@@ -81,6 +92,7 @@
 		]
 	},
 	"AttachmentRule": {
+		"description": "How an Actor transform is handled when attaching it to another Actor",
 		"enums": [
 			{
 				"key": "KeepRelative",
@@ -100,50 +112,62 @@
 		]
 	},
 	"AttenuationFunction": {
+		"description": "How a 3D Sound volume fades with distance",
 		"enums": [
 			{
 				"key": "Linear",
-				"value": "0"
+				"value": "0",
+				"description": "Fades evenly with distance"
 			},
 			{
 				"key": "Logarithmic",
-				"value": "1"
+				"value": "1",
+				"description": "Fades quickly when close and slowly when far"
 			},
 			{
 				"key": "Inverse",
-				"value": "2"
+				"value": "2",
+				"description": "Fades very quickly near the source"
 			},
 			{
 				"key": "LogReverse",
-				"value": "3"
+				"value": "3",
+				"description": "Fades slowly when close and quickly when far"
 			},
 			{
 				"key": "NaturalSound",
-				"value": "4"
+				"value": "4",
+				"description": "Physically based falloff, the most realistic"
 			}
 		]
 	},
 	"BlendMode": {
+		"description": "How a drawing blends with what is already drawn",
 		"enums": [
 			{
 				"key": "Opaque",
-				"value": "0"
+				"value": "0",
+				"description": "Fully replaces the pixels, ignoring alpha"
 			},
 			{
 				"key": "Masked",
-				"value": "1"
+				"value": "1",
+				"description": "Pixels are either fully visible or fully hidden"
 			},
 			{
 				"key": "Translucent",
-				"value": "2"
+				"value": "2",
+				"description": "Blends using the alpha"
 			},
 			{
 				"key": "Additive",
-				"value": "3"
+				"value": "3",
+				"description": "Adds its color to the existing pixels"
 			},
 			{
 				"key": "Modulate",
-				"value": "4"
+				"value": "4",
+				"description": "Multiplies its color with the existing pixels"
 			},
 			{
 				"key": "MaskedDistanceField",
@@ -171,7 +195,8 @@
 			},
 			{
 				"key": "AlphaBlend",
-				"value": "11"
+				"value": "11",
+				"description": "Standard alpha blending, recommended for images with transparency"
 			},
 			{
 				"key": "TranslucentAlphaOnly",
@@ -184,22 +209,27 @@
 		]
 	},
 	"CameraMode": {
+		"description": "Which camera views a Player can switch between",
 		"enums": [
 			{
 				"key": "FPSTPS",
-				"value": "0"
+				"value": "0",
+				"description": "Can switch between first and third person"
 			},
 			{
 				"key": "FPSOnly",
-				"value": "1"
+				"value": "1",
+				"description": "First person only"
 			},
 			{
 				"key": "TPSOnly",
-				"value": "2"
+				"value": "2",
+				"description": "Third person only"
 			}
 		]
 	},
 	"CCDMode": {
+		"description": "Continuous Collision Detection mode, which prevents fast objects from passing through others",
 		"enums": [
 			{
 				"key": "Auto",
@@ -219,6 +249,7 @@
 		]
 	},
 	"CollisionChannel": {
+		"description": "Collision channels, used to filter what traces and collisions hit",
 		"supports_bitwise": true,
 		"enums": [
 			{
@@ -242,6 +273,11 @@
 				"description": "Pickables and Props Meshes"
 			},
 			{
+				"key": "TracePrimitive",
+				"value": "1 << 16",
+				"description": "Primitive components used for traces"
+			},
+			{
 				"key": "Mesh",
 				"value": "1 << 17",
 				"description": "Character Mesh"
@@ -263,12 +299,13 @@
 			},
 			{
 				"key": "All",
-				"value": "(1 << 23) - 1",
+				"value": "(1 << 32) - 1",
 				"description": "All Objects"
 			}
 		]
 	},
 	"CollisionType": {
+		"description": "Collision profiles of an Actor",
 		"enums": [
 			{
 				"key": "Normal",
@@ -297,7 +334,28 @@
 			}
 		]
 	},
+	"ConstraintMotion": {
+		"description": "How a physics constraint axis can move",
+		"enums": [
+			{
+				"key": "Free",
+				"value": "0",
+				"description": "No constraint around this axis."
+			},
+			{
+				"key": "Limited",
+				"value": "1",
+				"description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property."
+			},
+			{
+				"key": "Locked",
+				"value": "2",
+				"description": "Full constraint around this axis"
+			}
+		]
+	},
 	"CursorType": {
+		"description": "Mouse cursor shapes",
 		"enums": [
 			{
 				"key": "None",
@@ -357,62 +415,53 @@
 			}
 		]
 	},
-	"ConstraintMotion": {
-		"enums": [
-			{
-				"key": "Free",
-				"value": "0",
-				"description": "No constraint around this axis."
-			},
-			{
-				"key": "Limited",
-				"value": "1",
-				"description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property."
-			},
-			{
-				"key": "Locked",
-				"value": "2",
-				"description": "Full constraint around this axis"
-			}
-		]
-	},
 	"DamageType": {
+		"description": "What caused some damage",
 		"enums": [
 			{
 				"key": "Shot",
-				"value": "0"
+				"value": "0",
+				"description": "Shot by a Weapon"
 			},
 			{
 				"key": "Explosion",
-				"value": "1"
+				"value": "1",
+				"description": "An explosion, such as a Grenade"
 			},
 			{
 				"key": "Punch",
-				"value": "2"
+				"value": "2",
+				"description": "A punch"
 			},
 			{
 				"key": "Fall",
-				"value": "3"
+				"value": "3",
+				"description": "Falling from a high place"
 			},
 			{
 				"key": "RunOverProp",
-				"value": "4"
+				"value": "4",
+				"description": "Hit by a Prop"
 			},
 			{
 				"key": "RunOverVehicle",
-				"value": "5"
+				"value": "5",
+				"description": "Run over by a Vehicle"
 			},
 			{
 				"key": "Melee",
-				"value": "6"
+				"value": "6",
+				"description": "Hit by a Melee"
 			},
 			{
 				"key": "Unknown",
-				"value": "7"
+				"value": "7",
+				"description": "Anything else, such as scripted damage"
 			}
 		]
 	},
 	"DatabaseEngine": {
+		"description": "Database engines supported by the Database class",
 		"enums": [
 			{
 				"key": "SQLite",
@@ -429,62 +478,67 @@
 		]
 	},
 	"DifferentialType": {
+		"description": "Which wheels receive the engine torque",
 		"enums": [
 			{
 				"key": "Undefined",
-				"value": "0"
+				"value": "0",
+				"description": "Not configured"
 			},
 			{
 				"key": "AllWheelDrive",
-				"value": "1"
+				"value": "1",
+				"description": "All wheels"
 			},
 			{
 				"key": "FrontWheelDrive",
-				"value": "2"
+				"value": "2",
+				"description": "Only the front wheels"
 			},
 			{
 				"key": "RearWheelDrive",
-				"value": "3"
+				"value": "3",
+				"description": "Only the rear wheels"
 			}
 		]
 	},
 	"FallingMode": {
+		"description": "The airborne state of a Character",
 		"enums": [
 			{
 				"key": "None",
-				"value": "0"
+				"value": "0",
+				"description": "Not falling"
 			},
 			{
 				"key": "Jumping",
-				"value": "1"
-			},
-			{
-				"key": "Climbing",
-				"value": "2"
-			},
-			{
-				"key": "Vaulting",
-				"value": "3"
+				"value": "1",
+				"description": "Going up after a jump"
 			},
 			{
 				"key": "Falling",
-				"value": "4"
+				"value": "4",
+				"description": "Falling"
 			},
 			{
 				"key": "HighFalling",
-				"value": "5"
+				"value": "5",
+				"description": "Falling from a height that will cause damage"
 			},
 			{
 				"key": "Parachuting",
-				"value": "6"
+				"value": "6",
+				"description": "Parachute deployed"
 			},
 			{
 				"key": "SkyDiving",
-				"value": "7"
+				"value": "7",
+				"description": "Skydiving before opening the parachute"
 			}
 		]
 	},
 	"FontType": {
+		"description": "Built-in fonts",
 		"enums": [
 			{
 				"key": "Roboto",
@@ -503,7 +557,7 @@
 				"value": "3"
 			},
 			{
-				"key": "RobotoMono",
+				"key": "Roboto_Mono",
 				"value": "4"
 			},
 			{
@@ -513,22 +567,42 @@
 		]
 	},
 	"GaitMode": {
+		"description": "The movement speed state of a Character",
 		"enums": [
 			{
 				"key": "None",
-				"value": "0"
+				"value": "0",
+				"description": "Not moving"
 			},
 			{
 				"key": "Walking",
-				"value": "1"
+				"value": "1",
+				"description": "Walking or running"
 			},
 			{
 				"key": "Sprinting",
-				"value": "2"
+				"value": "2",
+				"description": "Sprinting"
+			}
+		]
+	},
+	"GizmoAlignSpace": {
+		"description": "Which space a Gizmo is aligned to",
+		"enums": [
+			{
+				"key": "Local",
+				"value": "0",
+				"description": "Aligned to the object rotation"
+			},
+			{
+				"key": "World",
+				"value": "1",
+				"description": "Aligned to the world axes"
 			}
 		]
 	},
 	"GizmoTransformMode": {
+		"description": "Which transformation a Gizmo edits",
 		"enums": [
 			{
 				"key": "Translation",
@@ -544,19 +618,8 @@
 			}
 		]
 	},
-	"GizmoAlignSpace": {
-		"enums": [
-			{
-				"key": "Local",
-				"value": "0"
-			},
-			{
-				"key": "World",
-				"value": "1"
-			}
-		]
-	},
 	"GrabMode": {
+		"description": "Whether a Prop can be grabbed by Characters",
 		"enums": [
 			{
 				"key": "Disabled",
@@ -576,6 +639,7 @@
 		]
 	},
 	"HandlingMode": {
+		"description": "How a Character holds a Pickable, which defines the animations used",
 		"enums": [
 			{
 				"key": "SingleHandedWeapon",
@@ -595,35 +659,43 @@
 			},
 			{
 				"key": "Throwable",
-				"value": "4"
+				"value": "4",
+				"description": "Grenades and other throwables"
 			},
 			{
 				"key": "Torch",
-				"value": "5"
+				"value": "5",
+				"description": "A light source held in one hand"
 			},
 			{
 				"key": "Barrel",
-				"value": "6"
+				"value": "6",
+				"description": "Heavy objects carried in front with both hands"
 			},
 			{
 				"key": "Box",
-				"value": "7"
+				"value": "7",
+				"description": "Boxes carried with both hands"
 			}
 		]
 	},
 	"HighlightMode": {
+		"description": "When an Actor highlight is visible",
 		"enums": [
 			{
 				"key": "Always",
-				"value": "0"
+				"value": "0",
+				"description": "Always visible"
 			},
 			{
 				"key": "OnlyHidden",
-				"value": "1"
+				"value": "1",
+				"description": "Only when occluded by other objects (x-ray)"
 			},
 			{
 				"key": "OnlyVisible",
-				"value": "2"
+				"value": "2",
+				"description": "Only when not occluded"
 			}
 		]
 	},
@@ -668,6 +740,7 @@
 		]
 	},
 	"ImageFormat": {
+		"description": "Image file formats",
 		"enums": [
 			{
 				"key": "JPEG",
@@ -684,6 +757,7 @@
 		]
 	},
 	"InputEvent": {
+		"description": "Whether a key was pressed or released",
 		"enums": [
 			{
 				"key": "Pressed",
@@ -696,6 +770,7 @@
 		]
 	},
 	"KeyboardLayout": {
+		"description": "Keyboard layouts",
 		"enums": [
 			{
 				"key": "Unknown",
@@ -716,6 +791,7 @@
 		]
 	},
 	"KeyModifier": {
+		"description": "Modifier keys held during a key event",
 		"supports_bitwise": true,
 		"enums": [
 			{
@@ -761,6 +837,7 @@
 		]
 	},
 	"LightProfile": {
+		"description": "IES light profiles, shaping how a Light spreads",
 		"enums": [
 			{
 				"key": "None",
@@ -968,7 +1045,25 @@
 			}
 		]
 	},
+	"LightType": {
+		"description": "Shapes of a Light",
+		"enums": [
+			{
+				"key": "Point",
+				"value": "0"
+			},
+			{
+				"key": "Spot",
+				"value": "1"
+			},
+			{
+				"key": "Rect",
+				"value": "2"
+			}
+		]
+	},
 	"LogType": {
+		"description": "Types of log messages, which define their color and filter",
 		"enums": [
 			{
 				"key": "Display",
@@ -992,23 +1087,28 @@
 			},
 			{
 				"key": "Scripting",
-				"value": "5"
+				"value": "5",
+				"description": "Messages printed by scripts"
 			},
 			{
 				"key": "ScriptingWarn",
-				"value": "6"
+				"value": "6",
+				"description": "Warnings printed by scripts"
 			},
 			{
 				"key": "ScriptingError",
-				"value": "7"
+				"value": "7",
+				"description": "Errors raised by scripts"
 			},
 			{
 				"key": "Chat",
-				"value": "8"
+				"value": "8",
+				"description": "Chat messages"
 			},
 			{
 				"key": "WebUI",
-				"value": "9"
+				"value": "9",
+				"description": "Messages logged from WebUI JavaScript"
 			},
 			{
 				"key": "Success",
@@ -1020,23 +1120,8 @@
 			}
 		]
 	},
-	"LightType": {
-		"enums": [
-			{
-				"key": "Point",
-				"value": "0"
-			},
-			{
-				"key": "Spot",
-				"value": "1"
-			},
-			{
-				"key": "Rect",
-				"value": "2"
-			}
-		]
-	},
 	"NativeWidget": {
+		"description": "Unreal UMG widget types that can be spawned with the Widget class",
 		"enums": [
 			{
 				"key": "Border",
@@ -1141,6 +1226,7 @@
 		]
 	},
 	"NotificationType": {
+		"description": "Styles of the built-in notifications",
 		"enums": [
 			{
 				"key": "Info",
@@ -1165,35 +1251,43 @@
 		]
 	},
 	"PackageType": {
+		"description": "Types of packages",
 		"supports_bitwise": true,
 		"enums": [
 			{
 				"key": "Script",
-				"value": "1"
+				"value": "1",
+				"description": "Script package"
 			},
 			{
 				"key": "GameMode",
-				"value": "2"
+				"value": "2",
+				"description": "Game-mode package, only one can be loaded"
 			},
 			{
 				"key": "LoadingScreen",
-				"value": "4"
+				"value": "4",
+				"description": "Loading screen package"
 			},
 			{
 				"key": "Map",
-				"value": "16"
+				"value": "16",
+				"description": "Map package"
 			},
 			{
 				"key": "CModule",
-				"value": "32"
+				"value": "32",
+				"description": "C Module package"
 			},
 			{
 				"key": "All",
-				"value": "-1"
+				"value": "-1",
+				"description": "All types"
 			}
 		]
 	},
 	"Reliability": {
+		"description": "Delivery guarantee of a network message",
 		"enums": [
 			{
 				"key": "Unreliable",
@@ -1208,6 +1302,7 @@
 		]
 	},
 	"SkyMode": {
+		"description": "Cloud and sky rendering presets",
 		"enums": [
 			{
 				"key": "VolumetricClouds",
@@ -1241,27 +1336,8 @@
 			}
 		]
 	},
-	"SoundType": {
-		"enums": [
-			{
-				"key": "SFX",
-				"value": "0"
-			},
-			{
-				"key": "Music",
-				"value": "1"
-			},
-			{
-				"key": "UI",
-				"value": "2"
-			},
-			{
-				"key": "Ambient",
-				"value": "3"
-			}
-		]
-	},
 	"SoundLoopMode": {
+		"description": "Whether a Sound loops",
 		"enums": [
 			{
 				"key": "Default",
@@ -1277,6 +1353,31 @@
 				"key": "Never",
 				"value": "2",
 				"description": "Overrides it to make it play once"
+			}
+		]
+	},
+	"SoundType": {
+		"description": "Categories of Sounds, used to apply the user's volume settings",
+		"enums": [
+			{
+				"key": "SFX",
+				"value": "0",
+				"description": "Sound effects"
+			},
+			{
+				"key": "Music",
+				"value": "1",
+				"description": "Music"
+			},
+			{
+				"key": "UI",
+				"value": "2",
+				"description": "User interface sounds"
+			},
+			{
+				"key": "Ambient",
+				"value": "3",
+				"description": "Ambient sounds"
 			}
 		]
 	},
@@ -1301,22 +1402,32 @@
 		]
 	},
 	"StanceMode": {
+		"description": "The posture of a Character",
 		"enums": [
 			{
 				"key": "None",
-				"value": "0"
+				"value": "0",
+				"description": "No stance"
 			},
 			{
 				"key": "Standing",
-				"value": "1"
+				"value": "1",
+				"description": "Standing"
 			},
 			{
 				"key": "Crouching",
-				"value": "2"
+				"value": "2",
+				"description": "Crouching"
+			},
+			{
+				"key": "Proning",
+				"value": "3",
+				"description": "Lying prone"
 			}
 		]
 	},
 	"SteeringType": {
+		"description": "How the front wheels steer",
 		"enums": [
 			{
 				"key": "SingleAngle",
@@ -1336,6 +1447,7 @@
 		]
 	},
 	"SurfaceType": {
+		"description": "Physical surface types, used for footsteps, impacts and particles",
 		"enums": [
 			{
 				"key": "Default",
@@ -1428,6 +1540,7 @@
 		]
 	},
 	"SuspensionSweepShape": {
+		"description": "Shape used to detect the ground under each wheel",
 		"enums": [
 			{
 				"key": "Raycast",
@@ -1442,43 +1555,52 @@
 			{
 				"key": "Shapecast",
 				"value": "2",
-				 "description": "Use wheel collision shape to determine suspension length to ground - Slowest"
+				"description": "Use wheel collision shape to determine suspension length to ground - Slowest"
 			}
 		]
 	},
 	"SwimmingMode": {
+		"description": "The swimming state of a Character",
 		"enums": [
 			{
 				"key": "None",
-				"value": "0"
+				"value": "0",
+				"description": "Not swimming"
 			},
 			{
 				"key": "Surface",
-				"value": "1"
+				"value": "1",
+				"description": "Swimming on the surface"
 			},
 			{
 				"key": "Underwater",
-				"value": "2"
+				"value": "2",
+				"description": "Diving underwater"
 			}
 		]
 	},
-	"TextRenderAlignCamera": {
+	"Text3DAlignCamera": {
+		"description": "How a Text3D rotates relative to the camera",
 		"enums": [
 			{
 				"key": "Unaligned",
-				"value": "0"
+				"value": "0",
+				"description": "Keeps its own rotation"
 			},
 			{
 				"key": "AlignCameraRotation",
-				"value": "1"
+				"value": "1",
+				"description": "Rotates to match the camera rotation"
 			},
 			{
 				"key": "FaceCamera",
-				"value": "2"
+				"value": "2",
+				"description": "Always faces the camera location"
 			}
 		]
 	},
-	"TextRenderBevelType": {
+	"Text3DBevelType": {
+		"description": "Shapes of the bevel of the Text3D letters",
 		"enums": [
 			{
 				"key": "Linear",
@@ -1510,7 +1632,47 @@
 			}
 		]
 	},
+	"Text3DHorizontalAlignment": {
+		"description": "Horizontal alignment of a Text3D",
+		"enums": [
+			{
+				"key": "Left",
+				"value": "0"
+			},
+			{
+				"key": "Center",
+				"value": "1"
+			},
+			{
+				"key": "Right",
+				"value": "2"
+			}
+		]
+	},
+	"Text3DVerticalAlignment": {
+		"description": "Vertical alignment of a Text3D",
+		"enums": [
+			{
+				"key": "FirstLine",
+				"value": "0",
+				"description": "Aligned to the first line of text"
+			},
+			{
+				"key": "Top",
+				"value": "1"
+			},
+			{
+				"key": "Center",
+				"value": "2"
+			},
+			{
+				"key": "Bottom",
+				"value": "3"
+			}
+		]
+	},
 	"TextRenderHorizontalAlignment": {
+		"description": "Horizontal alignment of a TextRender",
 		"enums": [
 			{
 				"key": "Left",
@@ -1527,26 +1689,32 @@
 		]
 	},
 	"TextRenderRenderingType": {
+		"description": "How a TextRender is rendered",
 		"enums": [
 			{
 				"key": "Lit",
-				"value": "0"
+				"value": "0",
+				"description": "Affected by the scene lighting"
 			},
 			{
 				"key": "Unlit",
-				"value": "1"
+				"value": "1",
+				"description": "Ignores lighting, always fully bright"
 			},
 			{
 				"key": "UnlitCameraAligned",
-				"value": "2"
+				"value": "2",
+				"description": "Unlit and always facing the camera"
 			},
 			{
 				"key": "UnlitCameraAlignedDepth",
-				"value": "3"
+				"value": "3",
+				"description": "Unlit, facing the camera and occluded by the scene"
 			}
 		]
 	},
 	"TextRenderVerticalAlignment": {
+		"description": "Vertical alignment of a TextRender",
 		"enums": [
 			{
 				"key": "Top",
@@ -1562,23 +1730,13 @@
 			},
 			{
 				"key": "QuadTop",
-				"value": "3"
-			}
-		]
-	},
-	"TriggerType": {
-		"enums": [
-			{
-				"key": "Sphere",
-				"value": "0"
-			},
-			{
-				"key": "Box",
-				"value": "1"
+				"value": "3",
+				"description": "Aligned to the top of the text quad"
 			}
 		]
 	},
 	"TraceMode": {
+		"description": "Options of a Trace, which define what it returns and how it is performed",
 		"supports_bitwise": true,
 		"enums": [
 			{
@@ -1623,7 +1781,21 @@
 			}
 		]
 	},
+	"TriggerType": {
+		"description": "Shapes of a Trigger",
+		"enums": [
+			{
+				"key": "Sphere",
+				"value": "0"
+			},
+			{
+				"key": "Box",
+				"value": "1"
+			}
+		]
+	},
 	"ViewMode": {
+		"description": "Camera views of a Character",
 		"enums": [
 			{
 				"key": "FPS",
@@ -1653,26 +1825,32 @@
 		]
 	},
 	"VOIPSetting": {
+		"description": "Whether a Player can talk and listen on a VOIP channel",
 		"enums": [
 			{
 				"key": "None",
-				"value": "0"
+				"value": "0",
+				"description": "Can neither talk nor listen"
 			},
 			{
 				"key": "ListenOnly",
-				"value": "1"
+				"value": "1",
+				"description": "Can only listen"
 			},
 			{
 				"key": "SpeakOnly",
-				"value": "2"
+				"value": "2",
+				"description": "Can only talk"
 			},
 			{
 				"key": "Both",
-				"value": "3"
+				"value": "3",
+				"description": "Can talk and listen"
 			}
 		]
 	},
 	"WeatherType": {
+		"description": "Weather presets of the Sky",
 		"enums": [
 			{
 				"key": "ClearSkies",
@@ -1728,7 +1906,28 @@
 			}
 		]
 	},
+	"WebUIKeyType": {
+		"description": "Types of keyboard events sent to a WebUI",
+		"enums": [
+			{
+				"key": "Down",
+				"value": "0",
+				"description": "Key pressed"
+			},
+			{
+				"key": "Up",
+				"value": "1",
+				"description": "Key released"
+			},
+			{
+				"key": "Char",
+				"value": "2",
+				"description": "Character typed"
+			}
+		]
+	},
 	"WebUIModifier": {
+		"description": "Modifier keys and flags of a WebUI input event",
 		"supports_bitwise": true,
 		"enums": [
 			{
@@ -1793,23 +1992,8 @@
 			}
 		]
 	},
-	"WebUIKeyType": {
-		"enums": [
-			{
-				"key": "Down",
-				"value": "0"
-			},
-			{
-				"key": "Up",
-				"value": "1"
-			},
-			{
-				"key": "Char",
-				"value": "2"
-			}
-		]
-	},
 	"WebUIMouseType": {
+		"description": "Mouse buttons for WebUI input events",
 		"enums": [
 			{
 				"key": "Left",
@@ -1826,6 +2010,7 @@
 		]
 	},
 	"WidgetHorizontalAlignment": {
+		"description": "Horizontal alignment of a Widget in its slot",
 		"enums": [
 			{
 				"key": "Fill",
@@ -1845,7 +2030,38 @@
 			}
 		]
 	},
+	"WidgetSizeRule": {
+		"description": "How a Widget is sized in a Box container slot",
+		"enums": [
+			{
+				"key": "Automatic",
+				"value": "0",
+				"description": "Uses the widget desired size"
+			},
+			{
+				"key": "Fill",
+				"value": "1",
+				"description": "Fills the available space"
+			}
+		]
+	},
+	"WidgetSpace": {
+		"description": "Whether a Widget3D is rendered in the world or on the screen",
+		"enums": [
+			{
+				"key": "World",
+				"value": "0",
+				"description": "The widget is rendered in the world as mesh, it can be occluded like any other mesh in the world"
+			},
+			{
+				"key": "Screen",
+				"value": "1",
+				"description": "The widget is rendered in the screen, completely outside of the world, never occluded"
+			}
+		]
+	},
 	"WidgetVerticalAlignment": {
+		"description": "Vertical alignment of a Widget in its slot",
 		"enums": [
 			{
 				"key": "Fill",
@@ -1866,44 +2082,22 @@
 		]
 	},
 	"WidgetVisibility": {
+		"description": "Visibility of a WebUI or Widget",
 		"enums": [
 			{
 				"key": "Hidden",
-				"value": "0"
+				"value": "0",
+				"description": "Not rendered and not interactable"
 			},
 			{
 				"key": "Visible",
-				"value": "1"
+				"value": "1",
+				"description": "Rendered and interactable"
 			},
 			{
 				"key": "VisibleNotHitTestable",
-				"value": "2"
-			}
-		]
-	},
-	"WidgetSizeRule": {
-		"enums": [
-			{
-				"key": "Automatic",
-				"value": "0"
-			},
-			{
-				"key": "Fill",
-				"value": "1"
-			}
-		]
-	},
-	"WidgetSpace": {
-		"enums": [
-			{
-				"key": "World",
-				"value": "0",
-				"description": "The widget is rendered in the world as mesh, it can be occluded like any other mesh in the world"
-			},
-			{
-				"key": "Screen",
-				"value": "1",
-				"description": "The widget is rendered in the screen, completely outside of the world, never occluded"
+				"value": "2",
+				"description": "Rendered but ignores the mouse"
 			}
 		]
 	}

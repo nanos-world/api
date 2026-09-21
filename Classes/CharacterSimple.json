@@ -16,30 +16,36 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "SkeletalMeshPath|StaticMeshPath",
-					"name": "mesh"
+					"name": "mesh",
+					"description": "The Skeletal or Static Mesh asset"
 				},
 				{
 					"type": "BlueprintPath",
 					"name": "custom_animation_blueprint",
-					"default": ""
+					"default": "",
+					"description": "Animation Blueprint to drive the Skeletal Mesh animations"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Auto"
+					"default": "CollisionType.Auto",
+					"description": "Collision profile of this Actor"
 				},
 				{
 					"type": "boolean",
 					"name": "gravity_enabled",
-					"default": "true"
+					"default": "true",
+					"description": "Whether gravity affects this Actor"
 				},
 				{
 					"type": "SpawnMode",
@@ -54,12 +60,13 @@
 		{
 			"authority": "authority",
 			"name": "SetMesh",
-			"description": "Changes the Character Mesh on the fly",
+			"description": "Changes the Character Mesh at runtime",
 			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
 					"type": "SkeletalMeshPath|StaticMeshPath",
-					"name": "mesh_asset"
+					"name": "mesh_asset",
+					"description": "The new Skeletal or Static Mesh asset"
 				}
 			],
 			"efficiency": "slow"
@@ -71,7 +78,8 @@
 			"parameters": [
 				{
 					"type": "OtherPath",
-					"name": "physics_asset"
+					"name": "physics_asset",
+					"description": "The new Physics Asset for the Character"
 				}
 			],
 			"efficiency": "slow"
@@ -83,22 +91,26 @@
 			"parameters": [
 				{
 					"type": "AnimationPath",
-					"name": "animation_path"
+					"name": "animation_path",
+					"description": "The Animation asset to play"
 				},
 				{
 					"type": "string",
 					"name": "slot_name",
-					"default": ""
+					"default": "",
+					"description": "The Animation Slot to play it on"
 				},
 				{
 					"type": "boolean",
 					"name": "loop_indefinitely",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to keep looping until stopped"
 				},
 				{
 					"type": "float",
 					"name": "blend_in_time",
-					"default": "0.25"
+					"default": "0.25",
+					"description": "Seconds to blend into the animation"
 				},
 				{
 					"type": "float",
@@ -109,7 +121,8 @@
 				{
 					"type": "float",
 					"name": "play_rate",
-					"default": "1.0"
+					"default": "1.0",
+					"description": "Speed multiplier of the animation"
 				},
 				{
 					"type": "boolean",
@@ -123,7 +136,7 @@
 		{
 			"authority": "authority",
 			"name": "SetMaxAcceleration",
-			"description": "Sets the max acceleration",
+			"description": "Sets the max acceleration of the movement",
 			"parameters": [
 				{
 					"type": "integer",
@@ -147,27 +160,32 @@
 				{
 					"type": "float",
 					"name": "target_arm_length",
-					"default": "300.0"
+					"default": "300.0",
+					"description": "Distance from the camera to the Character, in units"
 				},
 				{
 					"type": "Vector",
 					"name": "socket_offset",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Offset of the camera at the end of the arm"
 				},
 				{
 					"type": "boolean",
 					"name": "enable_camera_lag",
-					"default": "true"
+					"default": "true",
+					"description": "Whether the camera smoothly lags behind the Character"
 				},
 				{
 					"type": "float",
 					"name": "camera_lag_speed",
-					"default": "15.0"
+					"default": "15.0",
+					"description": "How fast the camera catches up when lagging"
 				},
 				{
 					"type": "float",
 					"name": "camera_lag_max_distance",
-					"default": "1.0"
+					"default": "1.0",
+					"description": "Max distance the camera can lag behind"
 				}
 			],
 			"efficiency": "fast"
@@ -179,15 +197,18 @@
 			"parameters": [
 				{
 					"type": "Rotator",
-					"name": "rotation_rate"
+					"name": "rotation_rate",
+					"description": "Max rotation speed, in degrees per second"
 				},
 				{
 					"type": "boolean",
-					"name": "use_controller_desired_rotation"
+					"name": "use_controller_desired_rotation",
+					"description": "Whether to smoothly rotate towards the controller rotation"
 				},
 				{
 					"type": "boolean",
-					"name": "orient_rotation_to_movement"
+					"name": "orient_rotation_to_movement",
+					"description": "Whether to rotate towards the movement direction"
 				}
 			],
 			"efficiency": "fast"
@@ -200,17 +221,20 @@
 				{
 					"type": "integer",
 					"default": "600",
-					"name": "max_walk_speed"
+					"name": "max_walk_speed",
+					"description": "Max speed while walking"
 				},
 				{
 					"type": "integer",
 					"default": "300",
-					"name": "max_walk_speed_crouched"
+					"name": "max_walk_speed_crouched",
+					"description": "Max speed while crouched"
 				},
 				{
 					"type": "integer",
 					"default": "600",
-					"name": "max_fly_speed"
+					"name": "max_fly_speed",
+					"description": "Max speed while flying"
 				}
 			],
 			"efficiency": "fast"
@@ -222,15 +246,18 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "use_controller_rotation_pitch"
+					"name": "use_controller_rotation_pitch",
+					"description": "Whether the Pawn follows the controller Pitch"
 				},
 				{
 					"type": "boolean",
-					"name": "use_controller_rotation_yaw"
+					"name": "use_controller_rotation_yaw",
+					"description": "Whether the Pawn follows the controller Yaw"
 				},
 				{
 					"type": "boolean",
-					"name": "use_controller_rotation_roll"
+					"name": "use_controller_rotation_roll",
+					"description": "Whether the Pawn follows the controller Roll"
 				}
 			],
 			"efficiency": "fast"
@@ -268,7 +295,8 @@
 			"parameters": [
 				{
 					"type": "BlueprintPath",
-					"name": "custom_animation_blueprint"
+					"name": "custom_animation_blueprint",
+					"description": "The new Animation Blueprint of this Character"
 				}
 			],
 			"efficiency": "slow"
@@ -280,11 +308,13 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "property_name"
+					"name": "property_name",
+					"description": "Name of the Animation Blueprint variable"
 				},
 				{
 					"type": "any",
-					"name": "value"
+					"name": "value",
+					"description": "The value to set"
 				}
 			],
 			"efficiency": "slow"
@@ -296,7 +326,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "property_name"
+					"name": "property_name",
+					"description": "Name of the Animation Blueprint variable"
 				}
 			],
 			"return": [
@@ -393,7 +424,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_crouching"
+					"name": "is_crouching",
+					"description": "Whether this Character is crouching"
 				}
 			],
 			"relations": {
@@ -411,7 +443,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_crouching"
+					"name": "is_crouching",
+					"description": "Whether this Character is crouching"
 				}
 			],
 			"efficiency": "fast"
@@ -422,60 +455,60 @@
 			"authority": "client",
 			"name": "Jump",
 			"description": "Event fired when the character has just started jumping",
-            "arguments": [
-                {
-                    "type": "CharacterSimple",
-                    "name": "self",
-                    "description": "The CharacterSimple that jumped"
-                }
-            ]
+			"arguments": [
+				{
+					"type": "CharacterSimple",
+					"name": "self",
+					"description": "The CharacterSimple that jumped"
+				}
+			]
 		},
 		{
 			"authority": "client",
 			"name": "StartCrouch",
 			"description": "Called when Character crouches",
-            "arguments": [
-                {
-                    "type": "CharacterSimple",
-                    "name": "self",
-                    "description": "The CharacterSimple that started crouching"
-                }
-            ]
+			"arguments": [
+				{
+					"type": "CharacterSimple",
+					"name": "self",
+					"description": "The CharacterSimple that started crouching"
+				}
+			]
 		},
 		{
 			"authority": "client",
 			"name": "EndCrouch",
 			"description": "Called when Character stops crouching",
-            "arguments": [
-                {
-                    "type": "CharacterSimple",
-                    "name": "self",
-                    "description": "The CharacterSimple that stopped crouching"
-                }
-            ]
+			"arguments": [
+				{
+					"type": "CharacterSimple",
+					"name": "self",
+					"description": "The CharacterSimple that stopped crouching"
+				}
+			]
 		},
 		{
 			"authority": "client",
 			"name": "Land",
 			"description": "Called upon landing when falling",
-            "arguments": [
-                {
-                    "type": "CharacterSimple",
-                    "name": "self",
-                    "description": "The CharacterSimple that landed"
-                }
-            ]
+			"arguments": [
+				{
+					"type": "CharacterSimple",
+					"name": "self",
+					"description": "The CharacterSimple that landed"
+				}
+			]
 		},
 		{
 			"authority": "client",
 			"name": "MovementModeChange",
 			"description": "Called when the Character movement mode changes",
 			"arguments": [
-                {
-                    "type": "CharacterSimple",
-                    "name": "self",
-                    "description": "The CharacterSimple that changed movement mode"
-                },
+				{
+					"type": "CharacterSimple",
+					"name": "self",
+					"description": "The CharacterSimple that changed movement mode"
+				},
 				{
 					"type": "integer",
 					"name": "old_mode",
