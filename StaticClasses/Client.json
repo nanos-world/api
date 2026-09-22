@@ -57,7 +57,7 @@
 				{
 					"type": "string",
 					"name": "text",
-					"description": "Supports using <code>&#60h1&#62</code>, <code>&#60h2&#62</code>, <code>&#60h3&#62</code> and <code>&#60strong&#62</code> tags in the text."
+					"description": "Supports using <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> and <code>&lt;strong&gt;</code> tags in the text."
 				}
 			],
 			"efficiency": "moderate"
