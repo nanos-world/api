@@ -14,20 +14,24 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "StaticMeshPath",
-					"name": "static_mesh_asset"
+					"name": "static_mesh_asset",
+					"description": "The Static Mesh asset to use"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Auto"
+					"default": "CollisionType.Auto",
+					"description": "Collision profile of this Actor"
 				},
 				{
 					"type": "table",
@@ -68,7 +72,8 @@
 			"return": [
 				{
 					"type": "StaticMeshPath",
-					"name": "static_mesh_asset"
+					"name": "static_mesh_asset",
+					"description": "Asset path mesh used"
 				}
 			],
 			"authority": "both",
@@ -80,17 +85,20 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "relative_location"
+					"name": "relative_location",
+					"description": "Location relative to this component"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
-					"default": "Rotator(0, 0, 0)"
+					"default": "Rotator(0, 0, 0)",
+					"description": "Rotation relative to this component"
 				},
 				{
 					"type": "Vector",
 					"name": "scale",
-					"default": "Vector(1, 1, 1)"
+					"default": "Vector(1, 1, 1)",
+					"description": "Scale of the instance"
 				}
 			],
 			"return": [
@@ -139,7 +147,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "index"
+					"name": "index",
+					"description": "Index of the instance"
 				}
 			],
 			"authority": "authority",
@@ -151,22 +160,26 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "index"
+					"name": "index",
+					"description": "Index of the instance"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "(current location)"
+					"default": "(current location)",
+					"description": "Location relative to this component"
 				},
 				{
 					"type": "Rotator",
 					"name": "relative_rotation",
-					"default": "(current rotation)"
+					"default": "(current rotation)",
+					"description": "Rotation relative to this component"
 				},
 				{
 					"type": "Vector",
 					"name": "scale",
-					"default": "(current scale)"
+					"default": "(current scale)",
+					"description": "Scale of the instance"
 				}
 			],
 			"authority": "authority",
@@ -178,21 +191,25 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "index"
+					"name": "index",
+					"description": "Index of the instance"
 				}
 			],
 			"return": [
 				{
 					"type": "Vector",
-					"name": "relative_location"
+					"name": "relative_location",
+					"description": "The instance relative location"
 				},
 				{
 					"type": "Rotator",
-					"name": "relative_rotation"
+					"name": "relative_rotation",
+					"description": "The instance relative rotation"
 				},
 				{
 					"type": "Vector",
-					"name": "scale"
+					"name": "scale",
+					"description": "The instance scale"
 				}
 			],
 			"authority": "both",
@@ -204,7 +221,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "count"
+					"name": "count",
+					"description": "Number of instances currently stored"
 				}
 			],
 			"authority": "both",

@@ -70,7 +70,8 @@
 			"parameters": [
 				{
 					"type": "Actor",
-					"name": "actor"
+					"name": "actor",
+					"description": "The Actor to render"
 				}
 			],
 			"relations": {
@@ -88,7 +89,8 @@
 			"parameters": [
 				{
 					"type": "Actor",
-					"name": "actor"
+					"name": "actor",
+					"description": "The Actor to stop rendering"
 				}
 			],
 			"relations": {
@@ -113,12 +115,13 @@
 		},
 		{
 			"name": "SetFreeze",
-			"description": "Stops or Restore Capturing",
+			"description": "Stops or resumes capturing",
 			"authority": "client",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "freeze"
+					"name": "freeze",
+					"description": "Whether to stop capturing"
 				}
 			],
 			"efficiency": "fast"
@@ -137,7 +140,8 @@
 			],
 			"return": [
 				{
-					"type": "string"
+					"type": "string",
+					"description": "The snapshot as a Base64 string"
 				}
 			],
 			"relations": {
@@ -185,7 +189,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "angle"
+					"name": "angle",
+					"description": "The new FOV"
 				}
 			],
 			"efficiency": "fast"
@@ -193,16 +198,18 @@
 		{
 			"name": "SetShowFlag",
 			"description": "Enables/Disables rendering features from being captured",
-			"description_long": "Enables/Disables rendering features from being captured<br/>A complete list of available flags can be found in the <a href='https://docs.unrealengine.com/5.0/en-US/API/Runtime/Engine/FEngineShowFlags/'>Official Unreal Documentation</a>",
+			"description_long": "Enables/Disables rendering features from being captured<br/>A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
 			"authority": "client",
 			"parameters": [
 				{
 					"type": "string",
-					"name": "flag"
+					"name": "flag",
+					"description": "Name of the Unreal Show Flag, e.g. <code>Fog</code>"
 				},
 				{
 					"type": "boolean",
-					"name": "enable"
+					"name": "enable",
+					"description": "Whether it is rendered"
 				}
 			],
 			"efficiency": "fast"
@@ -214,11 +221,13 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "width"
+					"name": "width",
+					"description": "Width in pixels"
 				},
 				{
 					"type": "integer",
-					"name": "height"
+					"name": "height",
+					"description": "Height in pixels"
 				}
 			],
 			"efficiency": "moderate"
@@ -230,7 +239,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "render_rate"
+					"name": "render_rate",
+					"description": "Seconds between captures, 0 for every frame or -1 to disable automatic capture"
 				}
 			],
 			"efficiency": "fast"
@@ -242,7 +252,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "enabled"
+					"name": "enabled",
+					"description": "Whether to enable or not the rendering frequency optimization if the entities with this Material are too far"
 				}
 			],
 			"efficiency": "fast"
@@ -270,7 +281,8 @@
 			"arguments": [
 				{
 					"type": "SceneCapture",
-					"name": "self"
+					"name": "self",
+					"description": "The Scene Capture that triggered the event"
 				}
 			]
 		}

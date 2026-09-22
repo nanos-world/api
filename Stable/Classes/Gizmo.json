@@ -15,20 +15,23 @@
 	"functions": [
 		{
 			"name": "Activate",
-			"description": "Enable the interaction",
+			"description": "Enables the interaction, placing the Gizmo at the given transform",
 			"authority": "client",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location of the Gizmo"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation of the Gizmo"
 				},
 				{
 					"type": "Vector",
-					"name": "scale"
+					"name": "scale",
+					"description": "Scale of the Gizmo"
 				}
 			],
 			"efficiency": "moderate"
@@ -46,7 +49,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_interacting"
+					"name": "is_interacting",
+					"description": "Whether it's currently interacting"
 				}
 			],
 			"efficiency": "moderate"
@@ -69,14 +73,17 @@
 			"parameters": [
 				{
 					"type": "GizmoTransformMode",
-					"name": "transform_mode"
+					"name": "transform_mode",
+					"description": "The transform mode"
 				},
 				{
 					"type": "boolean",
-					"name": "combine_translate_rotate"
+					"name": "combine_translate_rotate",
+					"description": "Whether to show the translation and rotation handles together"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "moderate",
+			"description": "Sets whether the Gizmo translates, rotates or scales"
 		},
 		{
 			"name": "SetAlignSpace",
@@ -84,10 +91,12 @@
 			"parameters": [
 				{
 					"type": "GizmoAlignSpace",
-					"name": "align_space"
+					"name": "align_space",
+					"description": "The align space"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "moderate",
+			"description": "Sets whether the Gizmo is aligned to the local or the world space"
 		},
 		{
 			"name": "SetSnapSettings",
@@ -95,18 +104,22 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "location_grid_size"
+					"name": "location_grid_size",
+					"description": "Translation snap size, in units"
 				},
 				{
 					"type": "float",
-					"name": "rotation_grid_size"
+					"name": "rotation_grid_size",
+					"description": "Rotation snap size, in degrees"
 				},
 				{
 					"type": "float",
-					"name": "scale_grid_size"
+					"name": "scale_grid_size",
+					"description": "Scale snap size"
 				}
 			],
-			"efficiency": "moderate"
+			"efficiency": "moderate",
+			"description": "Sets the snapping grid sizes, 0 to disable snapping"
 		}
 	],
 	"events": [

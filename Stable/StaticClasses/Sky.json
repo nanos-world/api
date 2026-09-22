@@ -50,7 +50,8 @@
 			"parameters": [
 				{
 					"type": "ImagePath",
-					"name": "texture"
+					"name": "texture",
+					"description": "The new Moon Texture"
 				}
 			],
 			"efficiency": "slow"
@@ -62,7 +63,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "The new Moon Texture Rotation"
 				}
 			],
 			"efficiency": "moderate"
@@ -74,7 +76,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "offset"
+					"name": "offset",
+					"description": "The new Moon Vertical Offset"
 				}
 			],
 			"efficiency": "moderate"
@@ -86,7 +89,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "scale"
+					"name": "scale",
+					"description": "The new Moon Scale"
 				}
 			],
 			"efficiency": "moderate"
@@ -98,11 +102,13 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "yaw"
+					"name": "yaw",
+					"description": "Yaw angle, in degrees"
 				},
 				{
 					"type": "float",
-					"name": "pitch"
+					"name": "pitch",
+					"description": "Pitch angle, in degrees"
 				}
 			],
 			"efficiency": "moderate"
@@ -110,7 +116,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonPhase",
-			"description": "Sets the Moon Phase",
+			"description": "Sets the Moon Phase, from new moon to full moon and back",
 			"parameters": [
 				{
 					"type": "float",
@@ -127,7 +133,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "glow_intensity"
+					"name": "glow_intensity",
+					"description": "The new Moon Glow Intensity"
 				}
 			],
 			"efficiency": "moderate"
@@ -139,7 +146,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "intensity"
+					"name": "intensity",
+					"description": "The new Moon Light Intensity"
 				}
 			],
 			"efficiency": "moderate"
@@ -151,11 +159,13 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "yaw"
+					"name": "yaw",
+					"description": "Yaw angle, in degrees"
 				},
 				{
 					"type": "float",
-					"name": "pitch"
+					"name": "pitch",
+					"description": "Pitch angle, in degrees"
 				}
 			],
 			"efficiency": "moderate"
@@ -167,7 +177,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "radius"
+					"name": "radius",
+					"description": "The new Sun Scale"
 				}
 			],
 			"efficiency": "moderate"
@@ -179,7 +190,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "intensity"
+					"name": "intensity",
+					"description": "The new Sun Light Intensity"
 				}
 			],
 			"efficiency": "moderate"
@@ -192,7 +204,8 @@
 			"parameters": [
 				{
 					"type": "SkyMode",
-					"name": "sky_mode"
+					"name": "sky_mode",
+					"description": "The new Sky Mode"
 				}
 			],
 			"efficiency": "moderate"
@@ -205,7 +218,8 @@
 			"parameters": [
 				{
 					"type": "Color",
-					"name": "color"
+					"name": "color",
+					"description": "The new Volumetric Cloud Color"
 				}
 			],
 			"efficiency": "moderate"
@@ -217,7 +231,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "cloud_coverage"
+					"name": "cloud_coverage",
+					"description": "From 0 (clear sky) to 10 (overcast)"
 				}
 			],
 			"efficiency": "moderate"
@@ -229,7 +244,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "fog_percentage"
+					"name": "fog_percentage",
+					"description": "Fog amount, from 0 to 100"
 				}
 			],
 			"efficiency": "moderate"
@@ -241,7 +257,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "contrast"
+					"name": "contrast",
+					"description": "Contrast multiplier of the sky"
 				}
 			],
 			"efficiency": "moderate"
@@ -253,7 +270,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "intensity"
+					"name": "intensity",
+					"description": "Brightness multiplier of the sky"
 				}
 			],
 			"efficiency": "moderate"
@@ -265,7 +283,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "brightness"
+					"name": "brightness",
+					"description": "Brightness multiplier at night"
 				}
 			],
 			"efficiency": "moderate"
@@ -302,16 +321,19 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "hours"
+					"name": "hours",
+					"description": "Hour of the day (0-23)"
 				},
 				{
 					"type": "integer",
-					"name": "minutes"
+					"name": "minutes",
+					"description": "Minutes (0-59)"
 				},
 				{
 					"type": "float?",
 					"name": "transition_time",
-					"default": "0.0"
+					"default": "0.0",
+					"description": "Seconds to smoothly transition to the new time, 0 to change immediately"
 				}
 			],
 			"efficiency": "moderate"
@@ -323,15 +345,18 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "hours"
+					"name": "hours",
+					"description": "Hour of the day (0-23)"
 				},
 				{
 					"type": "integer",
-					"name": "minutes"
+					"name": "minutes",
+					"description": "Minutes (0-59)"
 				},
 				{
 					"type": "integer",
-					"name": "seconds"
+					"name": "seconds",
+					"description": "Seconds (0-59)"
 				}
 			],
 			"efficiency": "moderate"
@@ -349,7 +374,8 @@
 			],
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether the Ultra Dynamic Sky was spawned"
 				}
 			],
 			"efficiency": "fast"
@@ -360,7 +386,8 @@
 			"description": "Gets the current weather",
 			"return": [
 				{
-					"type": "WeatherType"
+					"type": "WeatherType",
+					"description": "Current weather"
 				}
 			],
 			"efficiency": "moderate"

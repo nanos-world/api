@@ -21,22 +21,26 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "damage"
+					"name": "damage",
+					"description": "Amount of damage"
 				},
 				{
 					"type": "string",
 					"name": "bone_name",
-					"default": ""
+					"default": "",
+					"description": "Name of the bone or socket"
 				},
 				{
 					"type": "DamageType",
 					"name": "damage_type",
-					"default": "DamageType.Shot"
+					"default": "DamageType.Shot",
+					"description": "Type of the damage, used for effects and in the damage events"
 				},
 				{
 					"type": "Vector",
 					"name": "from_direction",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Direction the damage came from"
 				},
 				{
 					"type": "Player",
@@ -60,7 +64,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "health"
+					"name": "health",
+					"description": "Current health"
 				}
 			],
 			"efficiency": "fast"
@@ -72,7 +77,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "max_health"
+					"name": "max_health",
+					"description": "Max Health"
 				}
 			],
 			"efficiency": "fast"
@@ -84,7 +90,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_dead"
+					"name": "is_dead",
+					"description": "Whether the entity is dead"
 				}
 			],
 			"efficiency": "fast"
@@ -103,7 +110,8 @@
 				{
 					"type": "Rotator",
 					"name": "rotation",
-					"default": "Rotator(0, 0, 0)"
+					"default": "Rotator(0, 0, 0)",
+					"description": "Rotation to respawn with"
 				}
 			],
 			"efficiency": "moderate"
@@ -116,7 +124,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "new_health"
+					"name": "new_health",
+					"description": "The new Health of this Entity"
 				}
 			],
 			"efficiency": "fast"
@@ -128,7 +137,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "max_health"
+					"name": "max_health",
+					"description": "The new MaxHealth of this Entity"
 				}
 			],
 			"efficiency": "fast"
@@ -140,11 +150,13 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "bone_name"
+					"name": "bone_name",
+					"description": "Name of the bone or socket"
 				},
 				{
 					"type": "float",
-					"name": "multiplier"
+					"name": "multiplier",
+					"description": "Damage multiplier for that bone, 1 is the default"
 				}
 			],
 			"efficiency": "fast"
@@ -163,7 +175,8 @@
 			"parameters": [
 				{
 					"name": "bone_name",
-					"type": "string"
+					"type": "string",
+					"description": "Name of the bone or socket"
 				}
 			],
 			"efficiency": "fast"
@@ -177,15 +190,18 @@
 			"arguments": [
 				{
 					"type": "Damageable",
-					"name": "self"
+					"name": "self",
+					"description": "The Damageable that triggered the event"
 				},
 				{
 					"type": "integer",
-					"name": "old_health"
+					"name": "old_health",
+					"description": "Health before the change"
 				},
 				{
 					"type": "integer",
-					"name": "new_health"
+					"name": "new_health",
+					"description": "Health after the change"
 				}
 			]
 		},
@@ -196,7 +212,8 @@
 			"arguments": [
 				{
 					"type": "Damageable",
-					"name": "self"
+					"name": "self",
+					"description": "The Damageable that triggered the event"
 				}
 			]
 		},
@@ -207,27 +224,33 @@
 			"arguments": [
 				{
 					"type": "Damageable",
-					"name": "self"
+					"name": "self",
+					"description": "The Damageable that triggered the event"
 				},
 				{
 					"type": "integer",
-					"name": "last_damage_taken"
+					"name": "last_damage_taken",
+					"description": "Damage of the hit that killed it"
 				},
 				{
 					"type": "string",
-					"name": "last_bone_damaged"
+					"name": "last_bone_damaged",
+					"description": "Bone hit by the last damage"
 				},
 				{
 					"type": "DamageType",
-					"name": "damage_type_reason"
+					"name": "damage_type_reason",
+					"description": "Type of the damage that killed it"
 				},
 				{
 					"type": "Vector",
-					"name": "hit_from_direction"
+					"name": "hit_from_direction",
+					"description": "Direction the last damage came from"
 				},
 				{
 					"type": "Player?",
-					"name": "instigator"
+					"name": "instigator",
+					"description": "The Player responsible for the death, if any"
 				},
 				{
 					"type": "Actor?",
@@ -243,11 +266,13 @@
 			"arguments": [
 				{
 					"type": "Damageable",
-					"name": "self"
+					"name": "self",
+					"description": "The Damageable that triggered the event"
 				},
 				{
 					"type": "integer",
-					"name": "damage"
+					"name": "damage",
+					"description": "Amount of damage taken"
 				},
 				{
 					"type": "string",

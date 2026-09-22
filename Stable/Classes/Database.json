@@ -72,7 +72,7 @@
 		{
 			"name": "Execute",
 			"authority": "server",
-			"description": "Execute a query synchronously",
+			"description": "Executes a query synchronously, blocking until it finishes. Prefer <code>ExecuteAsync</code> to avoid freezing the server",
 			"parameters": [
 				{
 					"type": "string",
@@ -99,7 +99,7 @@
 			"examples": [
 				{
 					"title": "Inserts into database (SQLite)",
-					"content": "local affected_rows = my_database:Execute(\"INSERT INTO MyTable VALUES (:0, ':1')\", 123, \"MyValue\")"
+					"content": "local affected_rows = my_database:Execute(\"INSERT INTO MyTable VALUES (:0, :1)\", 123, \"MyValue\")"
 				}
 			],
 			"efficiency": "blocking"
@@ -142,7 +142,7 @@
 			"examples": [
 				{
 					"title": "Selects from a table asynchronously (SQLite)",
-					"content": "my_database:SelectAsync(\"SELECT * FROM MyTable WHERE name = :0 AND title = :1\", function(rows)\n\tConsole.log(NanosTable.Dump(rows))\nend, \"Val\", \"AnotherVal\")"
+					"content": "my_database:SelectAsync(\"SELECT * FROM MyTable WHERE name = :0 AND title = :1\", function(rows)\n\tConsole.Log(NanosTable.Dump(rows))\nend, \"Val\", \"AnotherVal\")"
 				}
 			],
 			"efficiency": "fast"
@@ -150,7 +150,7 @@
 		{
 			"name": "Select",
 			"authority": "server",
-			"description": "Selects a query synchronously",
+			"description": "Runs a SELECT query synchronously, blocking until it finishes. Prefer <code>SelectAsync</code> to avoid freezing the server",
 			"parameters": [
 				{
 					"type": "string",

@@ -22,6 +22,13 @@
 			"lhs": "Quat|number",
 			"rhs": "Quat|number",
 			"return": "Quat"
+		},
+		{
+			"name": "tostring",
+			"operator": "tostring",
+			"lhs": "Quat",
+			"return": "string",
+			"description": "Gets a string representation of this struct"
 		}
 	],
 	"constructors": [
@@ -30,25 +37,25 @@
 			"parameters": [
 				{
 					"name": "X",
-					"type": "number",
+					"type": "float",
 					"default": "0",
 					"description": "The quaternion's X-component"
 				},
 				{
 					"name": "Y",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "The quaternion's Y-component"
 				},
 				{
 					"name": "Z",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "The quaternion's Z-component"
 				},
 				{
 					"name": "W",
-					"type": "number",
+					"type": "float",
 					"default": "X",
 					"description": "The quaternion's W-component"
 				}
@@ -58,29 +65,38 @@
 	"properties": [
 		{
 			"name": "X",
-			"type": "number",
+			"type": "float",
 			"description": "The quaternion's X-component"
 		},
 		{
 			"name": "Y",
-			"type": "number",
+			"type": "float",
 			"description": "The quaternion's Y-component"
 		},
 		{
 			"name": "Z",
-			"type": "number",
+			"type": "float",
 			"description": "The quaternion's Z-component"
 		},
 		{
 			"name": "W",
-			"type": "number",
+			"type": "float",
 			"description": "The quaternion's W-component"
 		}
 	],
 	"functions": [
 		{
 			"name": "Normalize",
-			"description": "In place normalize this Quaternion"
+			"description": "In place normalize this Quaternion",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "tolerance",
+					"default": "0.000001",
+					"description": "Minimum squared size to consider it non-zero"
+				}
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Rotator",
@@ -90,7 +106,8 @@
 					"type": "Rotator",
 					"description": "Rotator representation of this Quaternion"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "Inverse",
@@ -100,7 +117,8 @@
 					"type": "Quat",
 					"description": "Inverse of this Quaternion"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "RotateVector",
@@ -117,7 +135,8 @@
 					"type": "Vector",
 					"description": "Rotated vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "UnrotateVector",
@@ -134,7 +153,8 @@
 					"type": "Vector",
 					"description": "Unrotated vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetForwardVector",
@@ -144,7 +164,8 @@
 					"type": "Vector",
 					"description": "Forward vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetRightVector",
@@ -154,7 +175,8 @@
 					"type": "Vector",
 					"description": "Right vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		},
 		{
 			"name": "GetUpVector",
@@ -164,7 +186,8 @@
 					"type": "Vector",
 					"description": "Up vector"
 				}
-			]
+			],
+			"efficiency": "fast"
 		}
 	]
 }

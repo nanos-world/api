@@ -14,7 +14,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "boolean",
@@ -40,12 +41,14 @@
 			"parameters": [
 				{
 					"type": "Actor",
-					"name": "other"
+					"name": "other",
+					"description": "The Actor to attach to"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Offset relative to the Actor or bone"
 				},
 				{
 					"type": "string",
@@ -71,12 +74,14 @@
 			"parameters": [
 				{
 					"type": "Actor",
-					"name": "other"
+					"name": "other",
+					"description": "The Actor to attach to"
 				},
 				{
 					"type": "Vector",
 					"name": "relative_location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Offset relative to the Actor or bone"
 				},
 				{
 					"type": "string",
@@ -241,7 +246,7 @@
 					"type": "float",
 					"name": "limit",
 					"default": "0",
-					"description": "The distance allowed between between the two joint reference frames. Distance applies on all axes enabled (one axis means line, two axes implies circle, three axes implies sphere)"
+					"description": "The distance allowed between the two joint reference frames. Distance applies on all axes enabled (one axis means line, two axes implies circle, three axes implies sphere)"
 				},
 				{
 					"type": "float",
@@ -492,7 +497,8 @@
 			"return": [
 				{
 					"type": "Actor?",
-					"name": "attached_actor"
+					"name": "attached_actor",
+					"description": "Actor attached to Start"
 				}
 			],
 			"efficiency": "fast"
@@ -504,7 +510,8 @@
 			"return": [
 				{
 					"type": "Actor?",
-					"name": "attached_actor"
+					"name": "attached_actor",
+					"description": "Actor attached to End"
 				}
 			],
 			"efficiency": "fast"

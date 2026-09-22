@@ -1,6 +1,6 @@
 {
 	"name": "VehicleWater",
-	"description": "VehicleWater are entities which Characters can possesses and drive over the water with dynamic physics.",
+	"description": "VehicleWater are entities which Characters can possess and drive over the water with dynamic physics.",
 	"authority": "server",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -16,25 +16,30 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "SkeletalMeshPath",
-					"name": "asset"
+					"name": "asset",
+					"description": "The asset to use"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Auto"
+					"default": "CollisionType.Auto",
+					"description": "Collision profile of this Actor"
 				},
 				{
 					"type": "boolean",
 					"name": "gravity_enabled",
-					"default": "true"
+					"default": "true",
+					"description": "Whether gravity affects this Actor"
 				},
 				{
 					"type": "SpawnMode",
@@ -54,7 +59,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "offset"
+					"name": "offset",
+					"description": "The new relative location of the Engine"
 				}
 			],
 			"efficiency": "fast"
@@ -67,7 +73,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "force"
+					"name": "force",
+					"description": "The new force of the Engine/Thruster"
 				}
 			],
 			"efficiency": "fast"

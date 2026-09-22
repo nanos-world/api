@@ -237,7 +237,6 @@
 	],
 	"static_functions": [
 		{
-			"type": "integer",
 			"name": "Time",
 			"return": [
 				{
@@ -257,7 +256,6 @@
 			"efficiency": "slow"
 		},
 		{
-			"type": "boolean",
 			"name": "CreateDirectory",
 			"return": [
 				{
@@ -327,7 +325,7 @@
 					"description": "if exists"
 				}
 			],
-			"description": "Verifies if a entry exists in the file system",
+			"description": "Verifies if an entry exists in the file system",
 			"authority": "both",
 			"parameters": [
 				{
@@ -343,7 +341,7 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "if is a directory"
+					"description": "Whether the path is a directory"
 				}
 			],
 			"description": "Checks if a path is a directory",
@@ -362,7 +360,7 @@
 			"return": [
 				{
 					"type": "boolean",
-					"description": "if is a regular file"
+					"description": "Whether the path is a regular file"
 				}
 			],
 			"description": "Checks if a path is a file",

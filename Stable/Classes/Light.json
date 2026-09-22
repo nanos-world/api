@@ -13,7 +13,8 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
@@ -24,22 +25,26 @@
 				{
 					"type": "Color",
 					"name": "color",
-					"default": "Color(1, 1, 1)"
+					"default": "Color(1, 1, 1)",
+					"description": "Color of the light"
 				},
 				{
 					"type": "LightType",
 					"name": "light_type",
-					"default": "LightType.Point"
+					"default": "LightType.Point",
+					"description": "Point, Spot or Rect"
 				},
 				{
 					"type": "float",
 					"name": "intensity",
-					"default": "30"
+					"default": "30",
+					"description": "Brightness of the light"
 				},
 				{
 					"type": "float",
 					"name": "attenuation_radius",
-					"default": "250"
+					"default": "250",
+					"description": "Distance the light reaches"
 				},
 				{
 					"type": "float",
@@ -68,12 +73,14 @@
 				{
 					"type": "boolean",
 					"name": "cast_shadows",
-					"default": "true"
+					"default": "true",
+					"description": "Whether the light casts shadows"
 				},
 				{
 					"type": "boolean",
 					"name": "visible",
-					"default": "true"
+					"default": "true",
+					"description": "Whether the light starts visible"
 				},
 				{
 					"type": "float",
@@ -131,10 +138,12 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_shadows_enabled"
+					"name": "is_shadows_enabled",
+					"description": "Whether it casts shadows"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Sets if this Light casts shadows"
 		},
 		{
 			"name": "SetIntensity",
@@ -142,10 +151,12 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "intensity"
+					"name": "intensity",
+					"description": "The new brightness"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Sets the brightness of this Light"
 		},
 		{
 			"name": "SetAttenuationRadius",
@@ -153,10 +164,12 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "attenuation_radius"
+					"name": "attenuation_radius",
+					"description": "The new attenuation radius"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Sets the distance this Light reaches"
 		},
 		{
 			"name": "GetCastShadows",
@@ -164,10 +177,12 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_shadows_enabled"
+					"name": "is_shadows_enabled",
+					"description": "Whether it casts shadows"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets if this Light casts shadows"
 		},
 		{
 			"name": "GetIntensity",
@@ -175,10 +190,12 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "intensity"
+					"name": "intensity",
+					"description": "The brightness"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the brightness of this Light"
 		},
 		{
 			"name": "GetAttenuationRadius",
@@ -186,10 +203,12 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "attenuation_radius"
+					"name": "attenuation_radius",
+					"description": "The attenuation radius"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the distance this Light reaches"
 		},
 		{
 			"name": "GetColor",
@@ -197,10 +216,12 @@
 			"return": [
 				{
 					"type": "Color",
-					"name": "color"
+					"name": "color",
+					"description": "The light color"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the color of this Light"
 		}
 	]
 }

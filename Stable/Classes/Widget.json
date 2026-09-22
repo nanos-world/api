@@ -37,29 +37,34 @@
 			"return": [
 				{
 					"type": "Widget3D",
-					"name": "widget_3D"
+					"name": "widget_3D",
+					"description": "The spawned Widget3D"
 				}
 			],
 			"parameters": [
 				{
 					"type": "Vector",
 					"name": "location",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "World location"
 				},
 				{
 					"type": "Rotator",
 					"name": "rotation",
-					"default": "Rotator(0, 0, 0)"
+					"default": "Rotator(0, 0, 0)",
+					"description": "World rotation"
 				},
 				{
 					"type": "WidgetSpace",
 					"name": "widget_space",
-					"default": "WidgetSpace.World"
+					"default": "WidgetSpace.World",
+					"description": "Whether it renders in the world or always facing the screen"
 				},
 				{
-					"type": "bool",
+					"type": "boolean",
 					"name": "auto_size",
-					"default": "false"
+					"default": "false",
+					"description": "Whether to size it automatically based on its content"
 				},
 				{
 					"type": "Vector2D",
@@ -76,7 +81,8 @@
 				{
 					"type": "Vector2D",
 					"name": "pivot",
-					"default": "Vector2D(0.5, 0.5)"
+					"default": "Vector2D(0.5, 0.5)",
+					"description": "Pivot of the widget, (0.5, 0.5) is the center"
 				}
 			],
 			"efficiency": "slow"
@@ -88,7 +94,8 @@
 			"parameters": [
 				{
 					"type": "WidgetVisibility",
-					"name": "visibility"
+					"name": "visibility",
+					"description": "The new visibility in screen"
 				}
 			],
 			"efficiency": "moderate"
@@ -100,7 +107,8 @@
 			"return": [
 				{
 					"name": "visibility",
-					"type": "WidgetVisibility"
+					"type": "WidgetVisibility",
+					"description": "Current WebUI visibility"
 				}
 			],
 			"efficiency": "fast"
@@ -128,12 +136,12 @@
 		{
 			"name": "AddChild",
 			"authority": "client",
-			"description": "Adds a new child widget to this Widget container, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Components/UPanelWidget/'>Panel</a>",
+			"description": "Adds a new child widget to this Widget container, if this is a <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/UMG/UPanelWidget'>Panel</a>",
 			"parameters": [
 				{
 					"type": "WebUI|Widget",
 					"name": "other",
-					"description": ""
+					"description": "The WebUI or Widget to add"
 				}
 			],
 			"efficiency": "moderate"
@@ -141,11 +149,12 @@
 		{
 			"name": "SetContentForSlot",
 			"authority": "client",
-			"description": "Sets the widget for a given <a href='https://docs.unrealengine.com/5.0/en-US/using-named-slots-in-umg-for-unreal-engine/'>slot</a> by name, if this is a <a href='https://docs.unrealengine.com/5.1/en-US/API/Runtime/UMG/Blueprint/UUserWidget/'>UserWidget</a>",
+			"description": "Sets the widget for a given <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/UMG/UNamedSlot'>slot</a> by name, if this is a <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/UMG/UUserWidget'>UserWidget</a>",
 			"parameters": [
 				{
 					"type": "string",
-					"name": "slot_name"
+					"name": "slot_name",
+					"description": "Name of the Named Slot"
 				},
 				{
 					"type": "Widget",
@@ -164,32 +173,32 @@
 			"parameters": [
 				{
 					"type": "Vector2D",
-					"name": "screen_location/offset_left_top",
-					"description": "",
+					"name": "location",
+					"description": "Screen location, or the left and top offsets when the anchors are stretched",
 					"default": "Vector(0, 0)"
 				},
 				{
 					"type": "Vector2D",
-					"name": "size/offset_right_bottom",
-					"description": "",
+					"name": "size",
+					"description": "Size, or the right and bottom offsets when the anchors are stretched",
 					"default": "Vector(0, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_min",
-					"description": "",
+					"description": "Min anchor, from (0, 0) top-left to (1, 1) bottom-right",
 					"default": "Vector(0, 0)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "anchors_max",
-					"description": "",
+					"description": "Max anchor, from (0, 0) top-left to (1, 1) bottom-right",
 					"default": "Vector(1, 1)"
 				},
 				{
 					"type": "Vector2D",
 					"name": "alignment",
-					"description": "",
+					"description": "Pivot of the Widget, (0.5, 0.5) is the center",
 					"default": "Vector(0.5, 0.5)"
 				}
 			],
@@ -281,11 +290,13 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "property_name"
+					"name": "property_name",
+					"description": "Name of the Blueprint variable"
 				},
 				{
 					"type": "any",
-					"name": "value"
+					"name": "value",
+					"description": "The value to set"
 				}
 			],
 			"efficiency": "slow"
@@ -303,7 +314,8 @@
 			"parameters": [
 				{
 					"type": "string",
-					"name": "property_name"
+					"name": "property_name",
+					"description": "Name of the Blueprint variable"
 				}
 			],
 			"efficiency": "slow"

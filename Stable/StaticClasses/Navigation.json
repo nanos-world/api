@@ -18,12 +18,12 @@
 				{
 					"type": "Vector",
 					"name": "origin",
-					"description": ""
+					"description": "Center of the search"
 				},
 				{
 					"type": "float",
 					"name": "radius",
-					"description": ""
+					"description": "Search radius"
 				}
 			],
 			"efficiency": "moderate"
@@ -43,12 +43,12 @@
 				{
 					"type": "Vector",
 					"name": "origin",
-					"description": ""
+					"description": "Center of the search"
 				},
 				{
 					"type": "float",
 					"name": "radius",
-					"description": ""
+					"description": "Search radius"
 				}
 			],
 			"efficiency": "moderate"
@@ -82,19 +82,20 @@
 							"name": "PathPoints",
 							"type": "Vector[]"
 						}
-					]
+					],
+					"description": "Table with the path points and whether a path was found"
 				}
 			],
 			"parameters": [
 				{
 					"type": "Vector",
 					"name": "start_location",
-					"description": ""
+					"description": "World start location"
 				},
 				{
 					"type": "Vector",
 					"name": "end_location",
-					"description": ""
+					"description": "World end location"
 				}
 			],
 			"efficiency": "moderate"

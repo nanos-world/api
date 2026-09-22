@@ -16,7 +16,8 @@
 			],
 			"return": [
 				{
-					"type": "Vector2D"
+					"type": "Vector2D",
+					"description": "The screen position, in pixels"
 				}
 			],
 			"efficiency": "moderate"
@@ -44,7 +45,8 @@
 							"name": "Direction",
 							"type": "Vector"
 						}
-					]
+					],
+					"description": "Table with the world <code>Position</code> and the <code>Direction</code> the screen point looks at"
 				}
 			],
 			"efficiency": "moderate"
@@ -58,7 +60,7 @@
 				{
 					"type": "CursorType",
 					"name": "cursor_shape",
-					"description": ""
+					"description": "Which cursor shape to replace"
 				},
 				{
 					"type": "ImagePath",
@@ -68,7 +70,7 @@
 				{
 					"type": "Vector2D",
 					"name": "hotspot",
-					"description": "",
+					"description": "Click point of the cursor image, in pixels",
 					"default": "Vector(0, 0)"
 				}
 			],
@@ -106,7 +108,7 @@
 				{
 					"type": "Vector2D",
 					"name": "new_position",
-					"description": ""
+					"description": "The new mouse position"
 				}
 			],
 			"efficiency": "fast"
@@ -130,7 +132,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether to enable the Crosshair"
 				}
 			],
 			"efficiency": "fast"
@@ -142,7 +145,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether to enable the Interaction ToolTip"
 				}
 			],
 			"efficiency": "fast"
@@ -155,7 +159,7 @@
 				{
 					"type": "boolean",
 					"name": "is_enabled",
-					"description": ""
+					"description": "Whether to enable the Blood Screen effect"
 				}
 			],
 			"efficiency": "fast"
@@ -163,7 +167,7 @@
 		{
 			"name": "SetBloodScreenIntensity",
 			"description": "Manually sets the Blood Screen intensity",
-			"description_long": "If you want the Blood Screen to do not be overridden, disable it with <code>Client.SetBloodScreenEnabled(false)</code> before",
+			"description_long": "If you don't want the Blood Screen to be overridden by the default damage effect, disable it first with <code>Viewport.SetBloodScreenEnabled(false)</code>",
 			"authority": "client",
 			"parameters": [
 				{
@@ -251,7 +255,7 @@
 				{
 					"type": "Vector2D",
 					"name": "new_size",
-					"description": "New new screen size"
+					"description": "The new screen size"
 				}
 			]
 		}

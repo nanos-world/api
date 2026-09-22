@@ -14,7 +14,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "rate"
+					"name": "rate",
+					"description": "The new auto repaint rate"
 				}
 			],
 			"efficiency": "fast"
@@ -29,12 +30,14 @@
 			"return": [
 				{
 					"name": "widget",
-					"type": "Widget"
+					"type": "Widget",
+					"description": "The Widget"
 				}
 			],
 			"name": "GetWidget",
 			"authority": "client",
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Widget rendered by this Widget3D"
 		}
 	],
 	"events": []

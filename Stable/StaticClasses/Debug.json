@@ -11,33 +11,33 @@
 				{
 					"type": "Vector",
 					"name": "location",
-					"description": ""
+					"description": "World location"
 				},
 				{
 					"type": "Vector",
 					"name": "extent",
-					"description": ""
+					"description": "Half size of the box on each axis"
 				},
 				{
 					"type": "Rotator",
 					"name": "rotation",
-					"description": ""
+					"description": "World rotation"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": ""
+					"description": "The color to use"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
 				}
 			],
@@ -51,29 +51,29 @@
 				{
 					"type": "Vector",
 					"name": "location",
-					"description": ""
+					"description": "World location"
 				},
 				{
 					"type": "Rotator",
 					"name": "rotation",
-					"description": ""
+					"description": "World rotation"
 				},
 				{
 					"type": "float",
 					"name": "size",
-					"description": "",
+					"description": "Size of the drawing",
 					"default": "100"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
 				}
 			],
@@ -87,35 +87,35 @@
 				{
 					"type": "Vector",
 					"name": "location",
-					"description": ""
+					"description": "World location"
 				},
 				{
 					"type": "Rotator",
 					"name": "rotation",
-					"description": ""
+					"description": "World rotation"
 				},
 				{
 					"type": "float",
 					"name": "size",
-					"description": "",
+					"description": "Size of the drawing",
 					"default": "100"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
 				}
 			],
@@ -129,39 +129,39 @@
 				{
 					"type": "Vector",
 					"name": "start_location",
-					"description": ""
+					"description": "World start location"
 				},
 				{
 					"type": "Vector",
 					"name": "end_location",
-					"description": ""
+					"description": "World end location"
 				},
 				{
 					"type": "float",
 					"name": "radius",
-					"description": ""
+					"description": "Radius"
 				},
 				{
 					"type": "integer",
 					"name": "segments",
-					"description": ""
+					"description": "Number of segments used to draw it, more segments look smoother"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
 				}
 			],
@@ -175,35 +175,35 @@
 				{
 					"type": "Vector",
 					"name": "start_location",
-					"description": ""
+					"description": "World start location"
 				},
 				{
 					"type": "Vector",
 					"name": "end_location",
-					"description": ""
+					"description": "World end location"
 				},
 				{
 					"type": "float",
 					"name": "arrow_size",
-					"description": "",
+					"description": "Size of the arrow head",
 					"default": "100"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
 				}
 			],
@@ -217,29 +217,29 @@
 				{
 					"type": "Vector",
 					"name": "start_position",
-					"description": ""
+					"description": "World start location"
 				},
 				{
 					"type": "Vector",
 					"name": "end_position",
-					"description": ""
+					"description": "World end location"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
 				}
 			],
@@ -253,24 +253,24 @@
 				{
 					"type": "Vector",
 					"name": "start_position",
-					"description": ""
+					"description": "World start location"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "size",
-					"description": "",
+					"description": "Size of the drawing",
 					"default": "10"
 				}
 			],
@@ -284,35 +284,81 @@
 				{
 					"type": "Vector",
 					"name": "start_location",
-					"description": ""
+					"description": "World start location"
 				},
 				{
 					"type": "float",
 					"name": "radius",
-					"description": ""
+					"description": "Radius"
 				},
 				{
 					"type": "integer",
 					"name": "segments",
-					"description": ""
+					"description": "Number of segments used to draw it, more segments look smoother"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "float",
 					"name": "thickness",
-					"description": "",
+					"description": "Line thickness",
 					"default": "0"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"name": "DrawCapsule",
+			"description": "Draws a Debug capsule in the World",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "center",
+					"description": "Center of the capsule"
+				},
+				{
+					"type": "float",
+					"name": "half_height",
+					"description": "Half of the capsule height"
+				},
+				{
+					"type": "float",
+					"name": "radius",
+					"description": "Radius of the capsule"
+				},
+				{
+					"type": "Rotator",
+					"name": "rotation",
+					"description": "Rotation of the capsule"
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"default": "Color.RED",
+					"description": "The color to use"
+				},
+				{
+					"type": "float",
+					"name": "life_time",
+					"description": "Seconds before the debug drawing disappears",
+					"default": "5"
+				},
+				{
+					"type": "float",
+					"name": "thickness",
+					"default": "0",
+					"description": "Line thickness"
 				}
 			],
 			"efficiency": "moderate"
@@ -325,35 +371,35 @@
 				{
 					"type": "Vector",
 					"name": "location",
-					"description": ""
+					"description": "World location"
 				},
 				{
 					"type": "string",
 					"name": "text",
-					"description": ""
+					"description": "The text to draw"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"description": "",
+					"description": "The color to use",
 					"default": "Color.RED"
 				},
 				{
 					"type": "float",
 					"name": "life_time",
-					"description": "",
+					"description": "Seconds before the drawing disappears",
 					"default": "5"
 				},
 				{
 					"type": "boolean",
 					"name": "draw_shadow",
-					"description": "",
+					"description": "Whether to draw a shadow behind the text",
 					"default": "false"
 				},
 				{
 					"type": "float",
 					"name": "font_scale",
-					"description": "",
+					"description": "Scale of the text",
 					"default": "1"
 				}
 			],

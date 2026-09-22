@@ -12,13 +12,15 @@
 			"parameters": [
 				{
 					"name": "steam_id",
-					"type": "string"
+					"type": "string",
+					"description": "The Steam ID (SteamID64) to look for"
 				}
 			],
 			"return": [
 				{
 					"type": "Player?",
-					"name": "player"
+					"name": "player",
+					"description": "Player by their Steam ID"
 				}
 			],
 			"efficiency": "slow"
@@ -32,7 +34,8 @@
 			"parameters": [
 				{
 					"name": "reason",
-					"type": "string"
+					"type": "string",
+					"description": "The reason shown to the Player"
 				}
 			],
 			"efficiency": "slow"
@@ -43,8 +46,9 @@
 			"description": "Redirects the player to another server",
 			"parameters": [
 				{
-					"name": "IP",
-					"type": "string"
+					"name": "ip",
+					"type": "string",
+					"description": "The server address to connect to, in the format <code>IP:PORT</code>"
 				},
 				{
 					"name": "password",
@@ -62,7 +66,8 @@
 			"parameters": [
 				{
 					"name": "reason",
-					"type": "string"
+					"type": "string",
+					"description": "The reason shown to the Player"
 				}
 			],
 			"efficiency": "moderate"
@@ -70,21 +75,24 @@
 		{
 			"authority": "server",
 			"name": "Possess",
-			"description": "Makes a Player to possess and control a Pawn (Character)",
+			"description": "Makes this Player possess and control a Pawn (Character)",
 			"parameters": [
 				{
 					"name": "new_pawn",
-					"type": "Pawn"
+					"type": "Pawn",
+					"description": "The Pawn to possess"
 				},
 				{
 					"name": "blend_time",
 					"type": "float",
-					"default": "0"
+					"default": "0",
+					"description": "Seconds to smoothly blend the camera to the new Pawn"
 				},
 				{
 					"name": "exp",
 					"type": "float",
-					"default": "0"
+					"default": "0",
+					"description": "Exponent used to smooth the blend, use 0 for linear"
 				}
 			],
 			"efficiency": "moderate"
@@ -143,11 +151,13 @@
 				},
 				{
 					"name": "color",
-					"type": "Color"
+					"type": "Color",
+					"description": "The color to use"
 				},
 				{
 					"name": "in_fade_audio",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether to fade the audio as well"
 				}
 			],
 			"efficiency": "fast"
@@ -165,7 +175,8 @@
 			"parameters": [
 				{
 					"name": "location",
-					"type": "Vector"
+					"type": "Vector",
+					"description": "The new Player's Camera Location"
 				}
 			],
 			"efficiency": "fast"
@@ -177,7 +188,8 @@
 			"parameters": [
 				{
 					"name": "rotation",
-					"type": "Rotator"
+					"type": "Rotator",
+					"description": "The new Player's Camera Rotation"
 				}
 			],
 			"efficiency": "fast"
@@ -189,11 +201,13 @@
 			"parameters": [
 				{
 					"name": "location",
-					"type": "Vector"
+					"type": "Vector",
+					"description": "The target camera location"
 				},
 				{
 					"name": "time",
-					"type": "float"
+					"type": "float",
+					"description": "Seconds to reach the target"
 				},
 				{
 					"name": "exp",
@@ -211,11 +225,13 @@
 			"parameters": [
 				{
 					"name": "rotation",
-					"type": "Rotator"
+					"type": "Rotator",
+					"description": "The target camera rotation"
 				},
 				{
 					"name": "time",
-					"type": "float"
+					"type": "float",
+					"description": "Seconds to reach the target"
 				},
 				{
 					"name": "exp",
@@ -233,7 +249,8 @@
 			"parameters": [
 				{
 					"name": "socket_offset",
-					"type": "Vector"
+					"type": "Vector",
+					"description": "The new Player's Camera Socket Offset"
 				}
 			],
 			"efficiency": "fast"
@@ -245,7 +262,8 @@
 			"parameters": [
 				{
 					"name": "length",
-					"type": "float"
+					"type": "float",
+					"description": "Length of the camera spring arm, in units"
 				},
 				{
 					"name": "force",
@@ -305,21 +323,24 @@
 		{
 			"authority": "both",
 			"name": "AttachCameraTo",
-			"description": "Attaches the Player`s Camera to an Actor",
+			"description": "Attaches the Player's Camera to an Actor",
 			"parameters": [
 				{
 					"name": "actor",
-					"type": "Actor"
+					"type": "Actor",
+					"description": "The Actor to attach the camera to"
 				},
 				{
 					"name": "socket_offset",
 					"type": "Vector",
-					"default": "Vector(0, 0, 0)"
+					"default": "Vector(0, 0, 0)",
+					"description": "Offset of the camera relative to the Actor"
 				},
 				{
 					"name": "blend_speed",
 					"type": "float",
-					"default": "0.0"
+					"default": "0.0",
+					"description": "Speed of the camera blend, 0 to snap immediately"
 				}
 			],
 			"efficiency": "fast"
@@ -333,16 +354,18 @@
 		{
 			"authority": "both",
 			"name": "Spectate",
-			"description": "Spectates other Player",
+			"description": "Makes this Player spectate another Player",
 			"parameters": [
 				{
 					"name": "player",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player"
 				},
 				{
 					"name": "blend_speed",
 					"type": "float",
-					"default": "0"
+					"default": "0",
+					"description": "Speed of the camera blend, 0 to snap immediately"
 				}
 			],
 			"efficiency": "fast"
@@ -354,7 +377,8 @@
 			"parameters": [
 				{
 					"name": "player_name",
-					"type": "string"
+					"type": "string",
+					"description": "The new player's name"
 				}
 			],
 			"efficiency": "fast"
@@ -367,11 +391,12 @@
 				{
 					"name": "channel",
 					"type": "integer",
-					"description": "0-63"
+					"description": "Channel number, from 1 to 63"
 				},
 				{
 					"name": "setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "Whether this Player listens, speaks, both or none on this channel"
 				}
 			],
 			"relations": {
@@ -393,7 +418,8 @@
 			"parameters": [
 				{
 					"name": "setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "The new VOIP setting for all global channels"
 				}
 			],
 			"relations": {
@@ -415,7 +441,8 @@
 			"parameters": [
 				{
 					"name": "setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "The new VOIP setting for the local/proximity"
 				}
 			],
 			"relations": {
@@ -455,7 +482,8 @@
 			"parameters": [
 				{
 					"name": "volume",
-					"type": "float"
+					"type": "float",
+					"description": "The new local/proximity VOIP input/output volume. It only affects the local/proximity channel"
 				}
 			],
 			"relations": {
@@ -476,7 +504,8 @@
 			"parameters": [
 				{
 					"name": "volume",
-					"type": "float"
+					"type": "float",
+					"description": "The new global VOIP volume. It only affects the global channels"
 				}
 			],
 			"efficiency": "fast"
@@ -489,7 +518,8 @@
 			"parameters": [
 				{
 					"name": "threshold",
-					"type": "integer"
+					"type": "integer",
+					"description": "The new global VOIP high-pass filter threshold frequency"
 				}
 			],
 			"relations": {
@@ -507,7 +537,8 @@
 			"parameters": [
 				{
 					"name": "threshold",
-					"type": "integer"
+					"type": "integer",
+					"description": "The new global VOIP low-pass filter threshold frequency"
 				}
 			],
 			"relations": {
@@ -524,7 +555,8 @@
 			"parameters": [
 				{
 					"name": "is_muted",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether VOIP is muted"
 				}
 			],
 			"efficiency": "fast"
@@ -535,7 +567,8 @@
 			"description": "Returns whether VOIP is muted for this player",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether VOIP is muted for this player"
 				}
 			],
 			"efficiency": "fast"
@@ -552,10 +585,12 @@
 			"return": [
 				{
 					"type": "string",
-					"name": "steam_id"
+					"name": "steam_id",
+					"description": "The Steam ID (SteamID64)"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's Steam ID"
 		},
 		{
 			"authority": "both",
@@ -563,10 +598,12 @@
 			"return": [
 				{
 					"type": "string",
-					"name": "account_id"
+					"name": "account_id",
+					"description": "The nanos world account ID"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's nanos world account ID"
 		},
 		{
 			"authority": "both",
@@ -574,10 +611,12 @@
 			"return": [
 				{
 					"type": "string",
-					"name": "account_name"
+					"name": "account_name",
+					"description": "The account name"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's nanos world account name"
 		},
 		{
 			"authority": "both",
@@ -586,7 +625,8 @@
 			"return": [
 				{
 					"type": "string",
-					"name": "account_icon_url"
+					"name": "account_icon_url",
+					"description": "URL of the Steam avatar image"
 				}
 			],
 			"efficiency": "fast"
@@ -597,10 +637,12 @@
 			"return": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "The camera location"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the location of the Player's camera"
 		},
 		{
 			"authority": "client",
@@ -616,10 +658,12 @@
 			"return": [
 				{
 					"type": "float",
-					"name": "length"
+					"name": "length",
+					"description": "The camera arm length, in units"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's camera arm (spring arm) length"
 		},
 		{
 			"authority": "client",
@@ -627,10 +671,12 @@
 			"return": [
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "The camera rotation"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the rotation of the Player's camera"
 		},
 		{
 			"authority": "both",
@@ -638,10 +684,12 @@
 			"return": [
 				{
 					"type": "Pawn?",
-					"name": "controlled_character"
+					"name": "controlled_character",
+					"description": "The possessed Pawn, or nil if not possessing any"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Pawn (Character) this Player is currently possessing"
 		},
 		{
 			"authority": "server",
@@ -649,10 +697,12 @@
 			"return": [
 				{
 					"type": "string",
-					"name": "ip"
+					"name": "ip",
+					"description": "The IP address"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's IP address"
 		},
 		{
 			"name": "GetDimension",
@@ -661,7 +711,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "dimension"
+					"name": "dimension",
+					"description": "This Player's dimension"
 				}
 			],
 			"relations": {
@@ -680,7 +731,8 @@
 			"parameters": [
 				{
 					"type": "float",
-					"name": "multiplier"
+					"name": "multiplier",
+					"description": "The new multiplier for how much this Player's is affected by distance optimization from other actors"
 				}
 			]
 		},
@@ -691,7 +743,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "dimension"
+					"name": "dimension",
+					"description": "The new dimension"
 				}
 			],
 			"relations": {
@@ -707,10 +760,12 @@
 			"return": [
 				{
 					"type": "string",
-					"name": "player_name"
+					"name": "player_name",
+					"description": "The Player's name"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's name"
 		},
 		{
 			"authority": "both",
@@ -718,10 +773,12 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "ping"
+					"name": "ping",
+					"description": "The ping, in milliseconds"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets the Player's ping"
 		},
 		{
 			"authority": "both",
@@ -753,10 +810,12 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_host"
+					"name": "is_host",
+					"description": "Whether this Player is the host"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets if this Player is the host of a P2P (listen) server"
 		},
 		{
 			"authority": "client",
@@ -764,10 +823,12 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_local_player"
+					"name": "is_local_player",
+					"description": "Whether this is the local Player"
 				}
 			],
-			"efficiency": "fast"
+			"efficiency": "fast",
+			"description": "Gets if this Player is the local Player (the one running this client)"
 		}
 	],
 	"events": [
@@ -778,15 +839,18 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				},
 				{
 					"name": "old_dimension",
-					"type": "integer"
+					"type": "integer",
+					"description": "The previous dimension"
 				},
 				{
 					"name": "new_dimension",
-					"type": "integer"
+					"type": "integer",
+					"description": "The new dimension"
 				}
 			],
 			"relations": {
@@ -803,11 +867,13 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				},
 				{
 					"name": "pawn",
-					"type": "Pawn"
+					"type": "Pawn",
+					"description": "The Pawn being possessed"
 				}
 			],
 			"relations": {
@@ -823,7 +889,8 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				}
 			]
 		},
@@ -834,11 +901,13 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				},
 				{
 					"name": "pawn",
-					"type": "Pawn"
+					"type": "Pawn",
+					"description": "The Pawn being unpossessed"
 				}
 			],
 			"relations": {
@@ -854,11 +923,13 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				},
 				{
 					"name": "is_talking",
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether the Player started (true) or stopped (false) talking"
 				}
 			],
 			"return": [
@@ -875,19 +946,23 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				},
 				{
 					"name": "channel",
-					"type": "integer"
+					"type": "integer",
+					"description": "The channel that changed (1-63)"
 				},
 				{
 					"name": "old_setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "The previous setting"
 				},
 				{
 					"name": "new_setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "The new setting"
 				}
 			],
 			"relations": {
@@ -904,15 +979,18 @@
 			"arguments": [
 				{
 					"name": "self",
-					"type": "Player"
+					"type": "Player",
+					"description": "The Player that triggered the event"
 				},
 				{
 					"name": "old_setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "The previous setting"
 				},
 				{
 					"name": "new_setting",
-					"type": "VOIPSetting"
+					"type": "VOIPSetting",
+					"description": "The new setting"
 				}
 			],
 			"relations": {

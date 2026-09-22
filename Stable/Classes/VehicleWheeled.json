@@ -1,6 +1,6 @@
 {
 	"name": "VehicleWheeled",
-	"description": "Vehicles are wheeled entities which Characters can possesses and drive.",
+	"description": "Vehicles are wheeled entities which Characters can possess and drive.",
 	"authority": "server",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -16,25 +16,30 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "SkeletalMeshPath",
-					"name": "asset"
+					"name": "asset",
+					"description": "The asset to use"
 				},
 				{
 					"type": "CollisionType",
 					"name": "collision_type",
-					"default": "CollisionType.Auto"
+					"default": "CollisionType.Auto",
+					"description": "Collision profile of this Actor"
 				},
 				{
 					"type": "boolean",
 					"name": "gravity_enabled",
-					"default": "true"
+					"default": "true",
+					"description": "Whether gravity affects this Actor"
 				},
 				{
 					"type": "boolean",
@@ -45,37 +50,44 @@
 				{
 					"type": "SoundPath",
 					"name": "engine_sound",
-					"default": "nanos-world::A_Vehicle_Engine_01"
+					"default": "nanos-world::A_Vehicle_Engine_01",
+					"description": "Sound played while the engine runs"
 				},
 				{
 					"type": "SoundPath",
 					"name": "horn_sound",
-					"default": "nanos-world::A_Vehicle_Horn_Toyota"
+					"default": "nanos-world::A_Vehicle_Horn_Toyota",
+					"description": "Sound played when honking"
 				},
 				{
 					"type": "SoundPath",
 					"name": "brake_sound",
-					"default": "nanos-world::A_Vehicle_Brake"
+					"default": "nanos-world::A_Vehicle_Brake",
+					"description": "Sound played when braking"
 				},
 				{
 					"type": "SoundPath",
 					"name": "engine_start_sound",
-					"default": "nanos-world::A_Car_Engine_Start"
+					"default": "nanos-world::A_Car_Engine_Start",
+					"description": "Sound played when starting the engine"
 				},
 				{
 					"type": "SoundPath",
 					"name": "vehicle_door_sound",
-					"default": "nanos-world::A_Vehicle_Door"
+					"default": "nanos-world::A_Vehicle_Door",
+					"description": "Sound played when entering or leaving"
 				},
 				{
 					"type": "boolean",
 					"name": "auto_start_engine",
-					"default": "true"
+					"default": "true",
+					"description": "Whether the engine starts when a driver enters"
 				},
 				{
 					"type": "BlueprintPath",
 					"name": "custom_animation_blueprint",
-					"default": ""
+					"default": "",
+					"description": "Animation Blueprint to drive the vehicle mesh"
 				},
 				{
 					"type": "SpawnMode",
@@ -90,11 +102,12 @@
 		{
 			"authority": "server",
 			"name": "Horn",
-			"description": "Starts or stops the vehicles horn",
+			"description": "Starts or stops the vehicle horn",
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "enable_horn"
+					"name": "enable_horn",
+					"description": "Whether to honk"
 				}
 			],
 			"efficiency": "moderate"
@@ -106,7 +119,8 @@
 			"parameters": [
 				{
 					"type": "SoundPath",
-					"name": "sound_asset"
+					"name": "sound_asset",
+					"description": "The new sound asset used by the vehicle horn"
 				}
 			],
 			"efficiency": "fast"
@@ -118,7 +132,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "auto_start"
+					"name": "auto_start",
+					"description": "Whether the Engine auto starts when the driver enters the Vehicle"
 				}
 			],
 			"efficiency": "fast"
@@ -131,7 +146,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "started"
+					"name": "started",
+					"description": "Whether the Engine is turned off/on"
 				}
 			],
 			"efficiency": "fast"
@@ -549,16 +565,18 @@
 		{
 			"authority": "server",
 			"name": "SetHeadlightsSetup",
-			"description": "Configures the Headlights Offset and Color.",
+			"description": "Configures the Headlights offset and color",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "Offset of the headlights relative to the vehicle"
 				},
 				{
 					"type": "Color",
 					"name": "color",
-					"default": "Color(1, 0.86, 0.5)"
+					"default": "Color(1, 0.86, 0.5)",
+					"description": "The color to use"
 				}
 			],
 			"efficiency": "moderate"
@@ -566,11 +584,12 @@
 		{
 			"authority": "server",
 			"name": "SetTaillightsSetup",
-			"description": "Configures the Taillights Offset.",
+			"description": "Configures the Taillights offset",
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "Offset of the taillights relative to the vehicle"
 				}
 			],
 			"efficiency": "moderate"
@@ -582,7 +601,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the headlights are on"
 				}
 			],
 			"efficiency": "moderate"
@@ -594,7 +614,8 @@
 			"parameters": [
 				{
 					"type": "boolean",
-					"name": "is_enabled"
+					"name": "is_enabled",
+					"description": "Whether the taillights are on"
 				}
 			],
 			"efficiency": "moderate"
@@ -606,11 +627,13 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "wheel_index"
+					"name": "wheel_index",
+					"description": "Index of the wheel"
 				},
 				{
 					"type": "boolean",
-					"name": "is_flat"
+					"name": "is_flat",
+					"description": "Whether the tire is flat"
 				}
 			],
 			"efficiency": "moderate"
@@ -622,7 +645,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "rpm"
+					"name": "rpm",
+					"description": "Current RPM"
 				}
 			],
 			"efficiency": "fast"
@@ -634,7 +658,8 @@
 			"return": [
 				{
 					"type": "integer",
-					"name": "gear"
+					"name": "gear",
+					"description": "Current Gear"
 				}
 			],
 			"efficiency": "fast"
@@ -646,7 +671,8 @@
 			"return": [
 				{
 					"type": "boolean",
-					"name": "is_in_air"
+					"name": "is_in_air",
+					"description": "Whether the vehicle is in the air"
 				}
 			],
 			"efficiency": "fast"
@@ -660,11 +686,13 @@
 			"arguments": [
 				{
 					"type": "VehicleWheeled",
-					"name": "self"
+					"name": "self",
+					"description": "The Vehicle Wheeled that triggered the event"
 				},
 				{
 					"type": "boolean",
-					"name": "is_honking"
+					"name": "is_honking",
+					"description": "Whether it started (true) or stopped (false) honking"
 				}
 			]
 		}

@@ -74,7 +74,7 @@
 							"description": "Custom environment to run the script with (defaults to the package's own _ENV)"
 						}
 					],
-					"description": "the compiled function to run the script, allowing you to pass a environment env table for the script"
+					"description": "the compiled function to run the script, allowing you to pass an environment table for the script"
 				}
 			],
 			"efficiency": "slow",
@@ -231,7 +231,7 @@
 		},
 		{
 			"name": "GetName",
-			"description": "Returns the package name/path",
+			"description": "Returns the package folder name",
 			"authority": "both",
 			"return": [
 				{
@@ -280,7 +280,7 @@
 		{
 			"name": "GetPersistentData",
 			"description": "Gets the Persistent Value from the disk",
-			"description_large": "Gets a Persistent Value from the disk<br/>Pass no parameter to return the whole table, or a key to get a specific value",
+			"description_long": "Gets a Persistent Value from the disk<br/>Pass no parameter to return the whole table, or a key to get a specific value",
 			"authority": "both",
 			"return": [
 				{
@@ -301,7 +301,7 @@
 		{
 			"name": "FlushPersistentData",
 			"description": "Flushes the Persistent Data pending changes to disk immediately",
-			"description_large": "Flushes the Persistent Data pending changes to disk immediately. Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
+			"description_long": "Flushes the Persistent Data pending changes to disk immediately. Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
 			"authority": "both",
 			"efficiency": "slow"
 		},
@@ -311,7 +311,8 @@
 			"authority": "both",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether this package is currently unloading"
 				}
 			],
 			"efficiency": "fast"

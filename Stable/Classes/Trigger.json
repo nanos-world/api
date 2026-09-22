@@ -13,11 +13,13 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "Rotator",
-					"name": "rotation"
+					"name": "rotation",
+					"description": "World rotation to spawn with"
 				},
 				{
 					"type": "Vector|float",
@@ -27,7 +29,8 @@
 				{
 					"type": "TriggerType",
 					"name": "trigger_type",
-					"default": "TriggerType.Sphere"
+					"default": "TriggerType.Sphere",
+					"description": "Shape of the Trigger, sphere or box"
 				},
 				{
 					"type": "boolean",
@@ -53,7 +56,7 @@
 	"functions": [
 		{
 			"name": "ForceOverlapChecking",
-			"description": "Forces a Overlap checking to occur, will immediately trigger overlaps",
+			"description": "Forces an Overlap check to occur, will immediately trigger overlaps",
 			"authority": "authority",
 			"efficiency": "slow"
 		},
@@ -64,7 +67,8 @@
 			"parameters": [
 				{
 					"type": "Vector|float",
-					"name": "extent"
+					"name": "extent",
+					"description": "The new extent size of this trigger"
 				}
 			],
 			"efficiency": "fast"
@@ -76,7 +80,8 @@
 			"parameters": [
 				{
 					"type": "Color",
-					"name": "color"
+					"name": "color",
+					"description": "The new Trigger color"
 				}
 			],
 			"efficiency": "fast"
@@ -88,7 +93,8 @@
 			"parameters": [
 				{
 					"type": "string[]",
-					"name": "overlap_only_classes"
+					"name": "overlap_only_classes",
+					"description": "The new filter to Trigger to only overlap specific Classes. Leave it empty for all Classes"
 				}
 			],
 			"examples": [

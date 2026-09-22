@@ -64,7 +64,8 @@
 					"UnloadPackage"
 				]
 			},
-			"efficiency": "slow"
+			"efficiency": "slow",
+			"description": "Reloads a Package on the next server tick"
 		},
 		{
 			"name": "UnloadPackage",
@@ -194,7 +195,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "default_dimension"
+					"name": "default_dimension",
+					"description": "The new default server dimension that players will spawn in"
 				}
 			],
 			"efficiency": "fast"
@@ -207,7 +209,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "default_dimension"
+					"name": "default_dimension",
+					"description": "The new default server dimension that entities will spawn in"
 				}
 			],
 			"efficiency": "fast"
@@ -218,7 +221,8 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"description": "Default player dimension"
 				}
 			],
 			"efficiency": "fast"
@@ -229,7 +233,8 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"description": "Default entity dimension"
 				}
 			],
 			"efficiency": "fast"
@@ -240,7 +245,8 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "boolean"
+					"type": "boolean",
+					"description": "Whether the server was started with --enable_unsafe_libs"
 				}
 			],
 			"efficiency": "fast"
@@ -251,7 +257,8 @@
 			"authority": "server",
 			"return": [
 				{
-					"type": "integer"
+					"type": "integer",
+					"description": "Number of connected players"
 				}
 			],
 			"efficiency": "fast"
@@ -408,11 +415,13 @@
 			"parameters": [
 				{
 					"name": "player_account_id",
-					"type": "string"
+					"type": "string",
+					"description": "The Player's nanos world account ID"
 				},
 				{
 					"name": "reason",
-					"type": "string"
+					"type": "string",
+					"description": "The reason shown to the Player"
 				}
 			],
 			"efficiency": "moderate"
@@ -424,11 +433,13 @@
 			"parameters": [
 				{
 					"name": "player_account_id",
-					"type": "string"
+					"type": "string",
+					"description": "The Player's nanos world account ID"
 				},
 				{
 					"name": "reason",
-					"type": "string"
+					"type": "string",
+					"description": "The reason shown to the Player"
 				}
 			],
 			"efficiency": "moderate"
@@ -476,7 +487,7 @@
 				},
 				{
 					"type": "function",
-					"name": "function",
+					"name": "callback",
 					"description": "Callback function"
 				}
 			],
@@ -494,7 +505,7 @@
 				},
 				{
 					"type": "function",
-					"name": "function",
+					"name": "callback",
 					"description": "Callback function",
 					"default": "nil"
 				}
@@ -527,7 +538,7 @@
 		},
 		{
 			"name": "GetMapConfig",
-			"description": "Returns a list of the Custom Config of the current map (stored in the MAP_NAME.toml)",
+			"description": "Returns a list of the Custom Config of the current map (defined in the map package's Package.toml)",
 			"authority": "server",
 			"return": [
 				{
@@ -539,7 +550,7 @@
 		},
 		{
 			"name": "GetMapSpawnPoints",
-			"description": "Returns a list of the Spawn Points of the current map (stored in the MAP_NAME.toml)",
+			"description": "Returns a list of the Spawn Points of the current map (defined in the map package's Package.toml)",
 			"authority": "server",
 			"return": [
 				{
@@ -602,7 +613,7 @@
 				{
 					"type": "string",
 					"name": "package_name",
-					"description": ""
+					"description": "The package folder name"
 				}
 			],
 			"efficiency": "fast"
@@ -716,7 +727,8 @@
 			"parameters": [
 				{
 					"type": "integer",
-					"name": "entity_id"
+					"name": "entity_id",
+					"description": "The entity ID"
 				}
 			],
 			"efficiency": "moderate"
@@ -834,12 +846,12 @@
 	"events": [
 		{
 			"name": "Start",
-			"description": "Server has been started",
+			"description": "Triggered once when the server has started and all packages are loaded",
 			"authority": "server"
 		},
 		{
 			"name": "Restart",
-			"description": "Server has been restarted",
+			"description": "Triggered when the server is restarting",
 			"authority": "server"
 		},
 		{
@@ -850,28 +862,30 @@
 			"arguments": [
 				{
 					"type": "string",
-					"name": "old_map"
+					"name": "old_map",
+					"description": "The previous map"
 				},
 				{
 					"type": "string",
-					"name": "new_map"
+					"name": "new_map",
+					"description": "The new map"
 				}
 			]
 		},
 		{
 			"name": "PlayerConnect",
 			"description": "Called when a player is attempting to connect to the server",
-			"description_long": "Called when a player is attempting to connect to the server<br/><br/>Use Server.KickByAccountID() or Server.BanByAccountID() to kick or ban the player from inside this event.",
+			"description_long": "Called when a player is attempting to connect to the server, before the Player entity is created.<br/><br/>To refuse the connection, call <code>Server.KickByAccountID()</code> or <code>Server.BanByAccountID()</code> with the <code>player_account_id</code> (returning <code>false</code> is deprecated).",
 			"authority": "server",
 			"arguments": [
 				{
 					"type": "string",
-					"name": "IP",
+					"name": "ip",
 					"description": "IP of the player"
 				},
 				{
 					"type": "string",
-					"name": "player_account_ID",
+					"name": "player_account_id",
 					"description": "Account ID of the player"
 				},
 				{
@@ -881,7 +895,7 @@
 				},
 				{
 					"type": "string",
-					"name": "player_steam_ID",
+					"name": "player_steam_id",
 					"description": "SteamID of the player"
 				}
 			],
@@ -902,12 +916,12 @@
 			"arguments": [
 				{
 					"type": "string",
-					"name": "IP",
+					"name": "ip",
 					"description": "IP of the player"
 				},
 				{
 					"type": "string",
-					"name": "player_account_ID",
+					"name": "player_account_id",
 					"description": "Account ID of the player"
 				},
 				{
@@ -917,7 +931,7 @@
 				},
 				{
 					"type": "string",
-					"name": "player_steam_ID",
+					"name": "player_steam_id",
 					"description": "SteamID of the player"
 				},
 				{
@@ -934,7 +948,7 @@
 		},
 		{
 			"name": "Stop",
-			"description": "Server has been stopped",
+			"description": "Triggered when the server is stopping",
 			"authority": "server"
 		},
 		{
@@ -946,7 +960,7 @@
 				{
 					"type": "float",
 					"name": "delta_time",
-					"description": ""
+					"description": "Seconds since the last tick"
 				}
 			]
 		},

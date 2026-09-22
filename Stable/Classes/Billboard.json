@@ -13,16 +13,19 @@
 			"parameters": [
 				{
 					"type": "Vector",
-					"name": "location"
+					"name": "location",
+					"description": "World location to spawn at"
 				},
 				{
 					"type": "MaterialPath",
-					"name": "material_asset"
+					"name": "material_asset",
+					"description": "The Material to render"
 				},
 				{
 					"type": "Vector2D",
 					"name": "size",
-					"default": "Vector2D(32, 32)"
+					"default": "Vector2D(32, 32)",
+					"description": "Size in pixels"
 				},
 				{
 					"type": "boolean",
