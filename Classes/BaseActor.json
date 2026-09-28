@@ -239,6 +239,10 @@
 						{
 							"name": "Rotation",
 							"type": "Rotator"
+						},
+						{
+							"name": "Scale",
+							"type": "Vector"
 						}
 					],
 					"description": "Socket Transform in world space given a bone or socket name"
