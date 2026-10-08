@@ -552,6 +552,7 @@
 			"authority": "both",
 			"name": "SetVOIPMuted",
 			"description": "Mutes or unmutes VOIP for this player",
+			"description_long": "Mutes or unmutes VOIP for this player.<br/><br/>On server side, the player is muted for everyone. On client side, it is a local mute only.",
 			"parameters": [
 				{
 					"name": "is_muted",
