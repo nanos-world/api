@@ -840,6 +840,42 @@
 			]
 		},
 		{
+			"name": "PackageLoad",
+			"description": "Triggered when any package is loaded",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "The package name (its folder name)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetPackages",
+					"IsPackageLoaded"
+				]
+			}
+		},
+		{
+			"name": "PackageUnload",
+			"description": "Triggered when any package is unloaded",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "The package name (its folder name)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetPackages",
+					"IsPackageLoaded"
+				]
+			}
+		},
+		{
 			"name": "SpawnLocalPlayer",
 			"description": "Called when the local player spawns (just after the game has loaded)",
 			"authority": "client",

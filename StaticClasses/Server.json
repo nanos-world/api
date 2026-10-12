@@ -746,18 +746,6 @@
 			"efficiency": "fast"
 		},
 		{
-			"name": "GetCompressionLevel",
-			"description": "Returns the server Compression Level being used",
-			"authority": "server",
-			"return": [
-				{
-					"type": "integer",
-					"description": "the server Compression Level"
-				}
-			],
-			"efficiency": "fast"
-		},
-		{
 			"name": "GetMaxPlayers",
 			"description": "Returns the Max Players configured",
 			"authority": "server",
@@ -963,6 +951,48 @@
 					"description": "Seconds since the last tick"
 				}
 			]
+		},
+		{
+			"name": "PackageLoad",
+			"description": "Triggered when any package is loaded",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "The package name (its folder name)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetPackages",
+					"IsPackageLoaded",
+					"LoadPackage",
+					"UnloadPackage",
+					"ReloadPackage"
+				]
+			}
+		},
+		{
+			"name": "PackageUnload",
+			"description": "Triggered when any package is unloaded",
+			"authority": "server",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "The package name (its folder name)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetPackages",
+					"IsPackageLoaded",
+					"LoadPackage",
+					"UnloadPackage",
+					"ReloadPackage"
+				]
+			}
 		},
 		{
 			"name": "ValueChange",
