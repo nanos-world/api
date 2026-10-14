@@ -129,6 +129,30 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "Unbind",
+			"authority": "both",
+			"description": "Unbinds a Timer from an Actor it was bound to with Timer.Bind, without clearing or resetting the Timer",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "timer_id",
+					"description": "The Timer ID"
+				},
+				{
+					"type": "Actor",
+					"name": "actor",
+					"description": "Actor to be unbound"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "true if the Timer was bound to this Actor and got unbound"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "IsValid",
 			"authority": "both",
 			"description": "Checks if a Timer is currently active or waiting to be triggered",

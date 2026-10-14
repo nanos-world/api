@@ -235,6 +235,12 @@
 					"default": "600",
 					"name": "max_fly_speed",
 					"description": "Max speed while flying"
+				},
+				{
+					"type": "integer",
+					"default": "300",
+					"name": "max_swim_speed",
+					"description": "Max speed while swimming"
 				}
 			],
 			"efficiency": "fast"
