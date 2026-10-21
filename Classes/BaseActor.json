@@ -436,6 +436,20 @@
 			]
 		},
 		{
+			"name": "SetImpulseOnDamage",
+			"description": "Sets whether taking damage (shots, melee, explosions) pushes this Actor's physics body",
+			"description_long": "Useful for things that should react to shots without being knocked around, like a shooting target that still falls with gravity and can be moved by other means. Enabled by default",
+			"authority": "both",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "impulse_on_damage",
+					"description": "Whether taking damage pushes this Actor"
+				}
+			]
+		},
+		{
 			"name": "SetNetworkAuthority",
 			"description": "Sets the Player to have network authority over this Actor",
 			"description_long": "Sets the Player to have network authority over this Actor. This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
@@ -482,6 +496,7 @@
 		{
 			"name": "TranslateTo",
 			"description": "Smoothly moves this actor to a location over a certain time",
+			"description_long": "It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>TranslateRelativeTo</code> for attached actors",
 			"authority": "network-authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -506,6 +521,7 @@
 		{
 			"name": "RotateTo",
 			"description": "Smoothly rotates this actor to an angle over a certain time",
+			"description_long": "It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>RotateRelativeTo</code> for attached actors",
 			"authority": "network-authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -513,6 +529,56 @@
 					"type": "Rotator",
 					"name": "rotation",
 					"description": "The target rotation"
+				},
+				{
+					"type": "float",
+					"name": "time",
+					"description": "Time to interpolate from current location to target location"
+				},
+				{
+					"type": "float",
+					"name": "exp",
+					"default": "0",
+					"description": "Exponent used to smooth interpolation. Use <code>0</code> for linear movement"
+				}
+			]
+		},
+		{
+			"name": "TranslateRelativeTo",
+			"description": "Smoothly moves this attached actor to a location relative to its parent over a certain time",
+			"description_long": "Like <code>SetRelativeLocation</code>, it keeps following the parent while it moves. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
+			"authority": "network-authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "Vector",
+					"name": "relative_location",
+					"description": "The target location, relative to the parent"
+				},
+				{
+					"type": "float",
+					"name": "time",
+					"description": "Time to interpolate from current location to target location"
+				},
+				{
+					"type": "float",
+					"name": "exp",
+					"default": "0",
+					"description": "Exponent used to smooth interpolation. Use <code>0</code> for linear movement"
+				}
+			]
+		},
+		{
+			"name": "RotateRelativeTo",
+			"description": "Smoothly rotates this attached actor to an angle relative to its parent over a certain time",
+			"description_long": "Like <code>SetRelativeRotation</code>, it keeps following the parent while it rotates. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
+			"authority": "network-authority",
+			"efficiency": "fast",
+			"parameters": [
+				{
+					"type": "Rotator",
+					"name": "relative_rotation",
+					"description": "The target rotation, relative to the parent"
 				},
 				{
 					"type": "float",
@@ -550,6 +616,19 @@
 					"type": "boolean",
 					"name": "gravity_enabled",
 					"description": "Whether gravity is enabled on this Actor"
+				}
+			]
+		},
+		{
+			"name": "IsImpulseOnDamage",
+			"description": "Returns true if taking damage pushes this Actor's physics body",
+			"authority": "both",
+			"efficiency": "fast",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "impulse_on_damage",
+					"description": "Whether taking damage pushes this Actor"
 				}
 			]
 		},
