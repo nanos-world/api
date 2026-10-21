@@ -79,7 +79,8 @@
 				{
 					"type": "OtherPath",
 					"name": "physics_asset",
-					"description": "The new Physics Asset for the Character"
+					"default": "nil",
+					"description": "The new Physics Asset for the Character, pass nil or an empty string to restore the Mesh's own Physics Asset"
 				}
 			],
 			"efficiency": "slow"

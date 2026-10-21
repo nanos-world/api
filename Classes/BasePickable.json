@@ -283,7 +283,8 @@
 				{
 					"type": "MaterialPath",
 					"name": "material_asset",
-					"description": "Asset path to the crosshair material"
+					"default": "nil",
+					"description": "Asset path to the crosshair material, pass nil or an empty string for no crosshair"
 				}
 			],
 			"efficiency": "fast"

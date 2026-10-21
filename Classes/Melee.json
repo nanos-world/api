@@ -113,7 +113,8 @@
 				{
 					"type": "SoundPath",
 					"name": "asset_path",
-					"description": "The Sound used when attacking"
+					"default": "nil",
+					"description": "The Sound used when attacking, pass nil or an empty string for no sound"
 				},
 				{
 					"type": "float",
@@ -138,7 +139,8 @@
 				{
 					"type": "SoundPath",
 					"name": "asset_path",
-					"description": "The Sound used when attacking"
+					"default": "nil",
+					"description": "The Sound used when attacking, pass nil or an empty string for no sound"
 				}
 			],
 			"efficiency": "slow"

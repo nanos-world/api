@@ -120,7 +120,8 @@
 				{
 					"type": "SoundPath",
 					"name": "sound_asset",
-					"description": "The new sound asset used by the vehicle horn"
+					"default": "nil",
+					"description": "The new sound asset used by the vehicle horn, pass nil or an empty string for no sound"
 				}
 			],
 			"efficiency": "fast"
