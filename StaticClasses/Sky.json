@@ -84,6 +84,33 @@
 		},
 		{
 			"authority": "client",
+			"name": "SetMoonMaterialColor",
+			"description": "Sets the Moon Material Color, which tints the moon texture",
+			"description_long": "Sets the Moon Material Color, which tints the moon texture<br /><br />Call <code>Reconstruct()</code> afterwards to apply it",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "The new Moon Material Color"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "client",
+			"name": "SetMoonLightColor",
+			"description": "Sets the Moon Light Color, the color of the light the moon casts at night",
+			"parameters": [
+				{
+					"type": "Color",
+					"name": "color",
+					"description": "The new Moon Light Color"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "client",
 			"name": "SetMoonScale",
 			"description": "Sets the Moon Scale",
 			"parameters": [
@@ -240,12 +267,13 @@
 		{
 			"authority": "client",
 			"name": "SetFog",
-			"description": "The fogginess of the scene. The impact this has on fog density is scaled from the Fog Density category",
+			"description": "The fogginess of the scene. The impact this has on fog density is scaled from the Fog Density category. With weather spawned it also pins the weather's fog to this value, so later weather changes keep it, until called with nil",
 			"parameters": [
 				{
-					"type": "float",
+					"type": "float?",
 					"name": "fog_percentage",
-					"description": "Fog amount, from 0 to 100"
+					"default": "nil",
+					"description": "Fog amount, from 0 to 100, or nil to hand the fog back to the weather"
 				}
 			],
 			"efficiency": "moderate"
