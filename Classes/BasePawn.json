@@ -319,7 +319,7 @@
 			"authority": "authority",
 			"name": "MoveTo",
 			"description": "AI: Makes this Pawn walk to the Location",
-			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>While in flying mode (see SetFlyingMode) it flies there in a straight line instead of following the navmesh, so the Location can be in the air<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
