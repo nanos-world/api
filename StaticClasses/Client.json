@@ -626,6 +626,11 @@
 							"description": "Whether the game keeps playing sound while unfocused"
 						},
 						{
+							"name": "PlayTypingSounds",
+							"type": "boolean",
+							"description": "Whether typing in text inputs plays key sounds"
+						},
+						{
 							"name": "Gamma",
 							"type": "integer",
 							"description": "Screen gamma (0-100)"
