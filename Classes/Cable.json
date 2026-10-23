@@ -492,6 +492,32 @@
 		},
 		{
 			"authority": "both",
+			"name": "SetVisibility",
+			"description": "Sets whether the cable is visible or not (visuals only, the constraint keeps working)",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "is_visible",
+					"description": "Whether the cable is visible or not"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "IsVisible",
+			"description": "Returns true if this cable is visible",
+			"return": [
+				{
+					"name": "is_visible",
+					"type": "boolean",
+					"description": "Whether this cable is visible"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
 			"name": "GetAttachedStartTo",
 			"description": "Gets the Actor attached to Start",
 			"return": [
