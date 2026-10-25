@@ -317,6 +317,20 @@
 		},
 		{
 			"authority": "authority",
+			"name": "SetAIStopWithBraking",
+			"description": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly",
+			"description_long": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly<br/><br/>When enabled, the Pawn keeps its velocity when it reaches the destination and slows down using its own braking settings (see Character:SetBrakingSettings and CharacterSimple:SetBrakingSettings), so it may stop slightly past the acceptance radius. Disabled by default",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"description": "Whether to brake to a stop"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
 			"name": "MoveTo",
 			"description": "AI: Makes this Pawn walk to the Location",
 			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>While in flying mode (see SetFlyingMode) it flies there in a straight line instead of following the navmesh, so the Location can be in the air<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
