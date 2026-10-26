@@ -25,7 +25,7 @@
 					"type": "Vector2D",
 					"name": "size",
 					"default": "Vector2D(32, 32)",
-					"description": "Size in pixels"
+					"description": "Half size of the Billboard, X is the width and Y the height (before 1.166.0 they were swapped). In units, or in screen space if size_in_screen_space is true"
 				},
 				{
 					"type": "boolean",
