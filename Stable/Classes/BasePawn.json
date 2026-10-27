@@ -317,9 +317,23 @@
 		},
 		{
 			"authority": "authority",
+			"name": "SetAIStopWithBraking",
+			"description": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly",
+			"description_long": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly<br/><br/>When enabled, the Pawn keeps its velocity when it reaches the destination and slows down using its own braking settings (see Character:SetBrakingSettings and CharacterSimple:SetBrakingSettings), so it may stop slightly past the acceptance radius. Disabled by default",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"description": "Whether to brake to a stop"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
 			"name": "MoveTo",
 			"description": "AI: Makes this Pawn walk to the Location",
-			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>While in flying mode (see SetFlyingMode) it flies there in a straight line instead of following the navmesh, so the Location can be in the air<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -667,6 +681,117 @@
 					"description": "Whether the mesh is visible (useful for using retargeters using child meshes)"
 				}
 			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetTeam",
+			"description": "Gets the Team of this Pawn",
+			"return": [
+				{
+					"type": "integer",
+					"name": "team",
+					"description": "The Team, 0 means no team"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "authority",
+			"name": "SetTeam",
+			"description": "Sets a Team which will disable damaging same Team Members",
+			"parameters": [
+				{
+					"type": "integer",
+					"name": "team",
+					"description": "0 is neutral and default"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "SetMorphTarget",
+			"description": "Sets the value of a Morph Target",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "Morph Target Name"
+				},
+				{
+					"type": "float",
+					"name": "value",
+					"description": "The Morph Target weight, usually from 0 to 1"
+				}
+			],
+			"relations": {
+				"functions": [
+					"GetMorphTarget",
+					"ClearMorphTargets",
+					"GetAllMorphTargetNames"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "GetMorphTarget",
+			"description": "Returns the value of a Morph Target",
+			"return": [
+				{
+					"type": "float",
+					"description": "value of the Morph Target",
+					"name": "value"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "Morph Target Name"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetMorphTarget",
+					"ClearMorphTargets",
+					"GetAllMorphTargetNames"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "ClearMorphTargets",
+			"description": "Clears all Morph Targets set on this Pawn's Mesh",
+			"relations": {
+				"functions": [
+					"SetMorphTarget",
+					"GetMorphTarget",
+					"GetAllMorphTargetNames"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "client",
+			"name": "GetAllMorphTargetNames",
+			"description": "Returns a table with all morph targets available",
+			"description_long": "Returns an empty table if the mesh is not a Skeletal Mesh (CharacterSimple may use a Static Mesh)",
+			"return": [
+				{
+					"type": "string[]",
+					"description": "table with all morph targets available"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetMorphTarget",
+					"GetMorphTarget",
+					"ClearMorphTargets"
+				]
+			},
 			"efficiency": "fast"
 		},
 		{

@@ -47,6 +47,12 @@
 					"name": "index",
 					"default": "-1",
 					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material. Pass empty to set on main mesh only"
 				}
 			],
 			"efficiency": "moderate"
@@ -66,6 +72,12 @@
 					"name": "index",
 					"default": "-1",
 					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material. Pass empty to set on main mesh only"
 				}
 			],
 			"efficiency": "moderate"
@@ -85,6 +97,12 @@
 					"name": "index",
 					"default": "-1",
 					"description": "The material index to apply (<code>-1</code> means all indices)"
+				},
+				{
+					"type": "string",
+					"name": "attachable_id",
+					"default": "",
+					"description": "The attachable ID (set with <code>AddSkeletalMeshAttached</code> or <code>AddStaticMeshAttached</code>) to apply the material. Pass empty to set on main mesh only"
 				}
 			],
 			"efficiency": "moderate"
@@ -182,7 +200,7 @@
 				{
 					"type": "ImagePath",
 					"name": "texture_path",
-					"description": "The path to texture, a url or a base64"
+					"description": "The path to texture, a url or a base64. Files on disk are reloaded if overwritten since the last load"
 				},
 				{
 					"type": "integer",

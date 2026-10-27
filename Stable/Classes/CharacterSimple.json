@@ -79,7 +79,8 @@
 				{
 					"type": "OtherPath",
 					"name": "physics_asset",
-					"description": "The new Physics Asset for the Character"
+					"default": "nil",
+					"description": "The new Physics Asset for the Character, pass nil or an empty string to restore the Mesh's own Physics Asset"
 				}
 			],
 			"efficiency": "slow"
@@ -235,6 +236,12 @@
 					"default": "600",
 					"name": "max_fly_speed",
 					"description": "Max speed while flying"
+				},
+				{
+					"type": "integer",
+					"default": "300",
+					"name": "max_swim_speed",
+					"description": "Max speed while swimming"
 				}
 			],
 			"efficiency": "fast"

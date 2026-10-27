@@ -502,6 +502,19 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "IsVOIPSelfMuted",
+			"description": "Gets whether the local player has muted their own microphone",
+			"description_long": "Gets whether the local player has muted their own microphone. Only the player can change it, with the VOIP key when the Open Mic setting is on, or from the escape menu.",
+			"authority": "client",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Whether the microphone is muted by the player"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "GetLanguage",
 			"description": "Gets the current language of the Client",
 			"authority": "client",
@@ -603,9 +616,19 @@
 							"description": "Voice chat volume (0-100)"
 						},
 						{
+							"name": "VoicePushToTalk",
+							"type": "boolean",
+							"description": "Whether voice chat uses push to talk (false means open mic)"
+						},
+						{
 							"name": "PlaySoundInDesktop",
 							"type": "boolean",
 							"description": "Whether the game keeps playing sound while unfocused"
+						},
+						{
+							"name": "PlayTypingSounds",
+							"type": "boolean",
+							"description": "Whether typing in text inputs plays key sounds"
 						},
 						{
 							"name": "Gamma",
@@ -822,6 +845,42 @@
 			]
 		},
 		{
+			"name": "PackageLoad",
+			"description": "Triggered when any package is loaded",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "The package name (its folder name)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetPackages",
+					"IsPackageLoaded"
+				]
+			}
+		},
+		{
+			"name": "PackageUnload",
+			"description": "Triggered when any package is unloaded",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "package_name",
+					"description": "The package name (its folder name)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"GetPackages",
+					"IsPackageLoaded"
+				]
+			}
+		},
+		{
 			"name": "SpawnLocalPlayer",
 			"description": "Called when the local player spawns (just after the game has loaded)",
 			"authority": "client",
@@ -854,6 +913,18 @@
 					"type": "string",
 					"name": "language",
 					"description": "The new language code"
+				}
+			]
+		},
+		{
+			"name": "VOIPSelfMuteChange",
+			"description": "Called when the local player mutes or unmutes their own microphone, either with the VOIP key (on Open Mic) or from the escape menu",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "boolean",
+					"name": "is_muted",
+					"description": "Whether the microphone is now muted"
 				}
 			]
 		},

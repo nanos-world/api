@@ -401,7 +401,8 @@
 				{
 					"name": "particle_bullet_trail_asset_path",
 					"type": "ParticlePath",
-					"description": "The Particle asset to spawn for each bullet"
+					"default": "nil",
+					"description": "The Particle asset to spawn for each bullet, pass nil or an empty string for no particle"
 				}
 			],
 			"efficiency": "slow"
@@ -414,7 +415,8 @@
 				{
 					"name": "particle_asset_path",
 					"type": "ParticlePath",
-					"description": "The Particle asset to spawn at the muzzle when firing"
+					"default": "nil",
+					"description": "The Particle asset to spawn at the muzzle when firing, pass nil or an empty string for no particle"
 				}
 			],
 			"efficiency": "slow"
@@ -427,7 +429,8 @@
 				{
 					"name": "particle_shells_asset_path",
 					"type": "ParticlePath",
-					"description": "The Particle asset to spawn when ejecting a shell"
+					"default": "nil",
+					"description": "The Particle asset to spawn when ejecting a shell, pass nil or an empty string for no particle"
 				}
 			],
 			"efficiency": "slow"
@@ -485,7 +488,8 @@
 				{
 					"name": "sound_dry_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "volume",
@@ -510,7 +514,8 @@
 				{
 					"name": "sound_load_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "volume",
@@ -535,7 +540,8 @@
 				{
 					"name": "sound_unload_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "volume",
@@ -560,7 +566,8 @@
 				{
 					"name": "sound_zooming_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "volume",
@@ -585,7 +592,8 @@
 				{
 					"name": "sound_fire_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "volume",
@@ -610,7 +618,8 @@
 				{
 					"name": "sound_aim_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "volume",
@@ -636,7 +645,8 @@
 				{
 					"name": "sound_asset_path",
 					"type": "SoundPath",
-					"description": "The Sound asset to play"
+					"default": "nil",
+					"description": "The Sound asset to play, pass nil or an empty string for no sound"
 				},
 				{
 					"name": "remaining_bullets_count",

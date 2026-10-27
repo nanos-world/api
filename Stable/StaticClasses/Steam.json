@@ -21,6 +21,66 @@
 			"description": "Triggers a Steam screenshot",
 			"authority": "client",
 			"efficiency": "fast"
+		},
+		{
+			"name": "OpenInviteDialog",
+			"description": "Opens the Steam Overlay invite dialog, so the player can invite Friends to the current server",
+			"description_long": "Opens the Steam Overlay invite dialog, so the player can invite Friends to the current server.<br/><br/>When a Friend accepts, they join this server and <code>Steam.GetJoinedFromFriend()</code> returns this player's SteamID on their side. If they were already on this server, the <code>FriendJoin</code> event is called instead",
+			"authority": "client",
+			"efficiency": "fast"
+		},
+		{
+			"name": "InviteFriend",
+			"description": "Invites a Steam Friend to the current server",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "steam_id",
+					"description": "The SteamID of the Friend to invite"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the invite was sent"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetJoinedFromFriend",
+			"description": "Gets the SteamID of the Friend whose invite or \"Join Game\" brought this player to the current server",
+			"description_long": "Gets the SteamID of the Friend whose invite or \"Join Game\" brought this player to the current server, or <code>nil</code> if they connected any other way.<br/><br/>This value is reported by the client, so a server should not trust it blindly (e.g. ask the Friend to accept before adding the player to a private group).",
+			"authority": "client",
+			"return": [
+				{
+					"type": "string?",
+					"description": "The Friend's SteamID, or <code>nil</code>"
+				}
+			],
+			"examples": [
+				{
+					"title": "Puts a player in the party of the Friend who invited them",
+					"content": "-- Client side\nlocal function JoinFriendParty(friend_steam_id)\n\tEvents.CallRemote(\"JoinFriendParty\", friend_steam_id)\nend\n\n-- If we connected through an invite or \"Join Game\"\nlocal friend_steam_id = Steam.GetJoinedFromFriend()\nif (friend_steam_id) then\n\tJoinFriendParty(friend_steam_id)\nend\n\n-- If we accepted an invite to the server we are already on\nSteam.Subscribe(\"FriendJoin\", JoinFriendParty)\n\n-- Server side\nEvents.SubscribeRemote(\"JoinFriendParty\", function(player, friend_steam_id)\n\tfor _, other in pairs(Player.GetAll()) do\n\t\tif (other:GetSteamID() == friend_steam_id) then\n\t\t\t-- Adds player to other's party\n\t\t\tbreak\n\t\tend\n\tend\nend)"
+				}
+			],
+			"efficiency": "fast"
+		}
+	],
+	"events": [
+		{
+			"name": "FriendJoin",
+			"description": "Called when this player accepts a Friend's invite or \"Join Game\" to the server they are already on",
+			"description_long": "Called when this player accepts a Friend's invite or \"Join Game\" to the server they are already on. In this case the player does not reconnect.<br/><br/>When the player connects from another server or from the menus, use <code>Steam.GetJoinedFromFriend()</code> instead.",
+			"authority": "client",
+			"arguments": [
+				{
+					"type": "string",
+					"name": "friend_steam_id",
+					"description": "The SteamID of the Friend"
+				}
+			]
 		}
 	]
 }

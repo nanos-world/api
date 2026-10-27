@@ -208,6 +208,29 @@
 			"efficiency": "moderate"
 		},
 		{
+			"name": "SetOneWayInteraction",
+			"description": "Sets whether this Prop treats every physics body without it as infinitely heavy, so they push it around but never get pushed back",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "one_way_interaction"
+				}
+			],
+			"authority": "authority",
+			"efficiency": "fast"
+		},
+		{
+			"name": "IsOneWayInteraction",
+			"description": "Gets whether one-way interaction is enabled on this Prop",
+			"return": [
+				{
+					"type": "boolean"
+				}
+			],
+			"authority": "both",
+			"efficiency": "fast"
+		},
+		{
 			"authority": "authority",
 			"name": "SetBuoyancyPontoons",
 			"description": "Sets the Buoyancy Pontoons used by the Water simulation",

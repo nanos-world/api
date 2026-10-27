@@ -123,6 +123,37 @@
 			"efficiency": "moderate"
 		},
 		{
+			"name": "Submit",
+			"description": "Submits a chat message as if the Player had typed it in the chat",
+			"description_long": "Submits a chat message as if the Player had typed it in the chat, also triggering the PlayerSubmit event",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who is sending the message"
+				},
+				{
+					"type": "string",
+					"name": "message",
+					"description": "The message"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "false if a PlayerSubmit handler cancelled the message, true if it was broadcast"
+				}
+			],
+			"examples": [
+				{
+					"title": "Forwards a message from a custom chat interface",
+					"content": "Events.SubscribeRemote(\"MyChatSubmit\", function(player, message)\n\tif (not Chat.Submit(player, message)) then\n\t\tChat.SendMessage(player, \"Your message was not sent\")\n\tend\nend)"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "Subscribe",
 			"description": "Subscribes to an Event",
 			"authority": "both",
