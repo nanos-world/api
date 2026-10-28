@@ -69,12 +69,12 @@
 			"authority": "server",
 			"name": "SetThrustStrength",
 			"description": "Sets the force of the Engine/Thruster",
-			"description_long": "Sets the force of the Engine/Thruster. Default is 1000",
+			"description_long": "Sets the force of the Engine/Thruster, in Newtons. Default is 3000, up to 65535.<br/><br/>Scale it with the boat's mass: the default suits a ~400 kg boat",
 			"parameters": [
 				{
 					"type": "integer",
 					"name": "force",
-					"description": "The new force of the Engine/Thruster"
+					"description": "The new force of the Engine/Thruster, in Newtons"
 				}
 			],
 			"efficiency": "fast"
