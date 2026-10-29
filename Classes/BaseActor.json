@@ -883,6 +883,13 @@
 			]
 		},
 		{
+			"name": "ResetVelocity",
+			"description": "Resets this Actor's linear and angular velocities to zero",
+			"description_long": "Resets this Actor's linear and angular velocities to zero.<br/>For Pawns, also resets the character movement velocity.",
+			"authority": "authority",
+			"efficiency": "fast"
+		},
+		{
 			"name": "GetVelocity",
 			"description": "Gets this Actor's current velocity",
 			"authority": "both",
