@@ -1418,11 +1418,6 @@
 				"key": "Crouching",
 				"value": "2",
 				"description": "Crouching"
-			},
-			{
-				"key": "Proning",
-				"value": "3",
-				"description": "Lying prone"
 			}
 		]
 	},

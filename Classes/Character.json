@@ -274,19 +274,6 @@
 		},
 		{
 			"authority": "server",
-			"name": "SetAnimationIdleWalkRunProning",
-			"description": "Sets the Blend Space (2D) Animation for Proning<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
-			"parameters": [
-				{
-					"type": "AnimationPath",
-					"name": "blend_space_path",
-					"description": "The new Blend Space (2D) Animation for Proning"
-				}
-			],
-			"efficiency": "slow"
-		},
-		{
-			"authority": "server",
 			"name": "SetAnimationsTransitionStandingCrouching",
 			"description": "Sets the Transition Animation between Standing and Crouching",
 			"parameters": [
@@ -299,24 +286,6 @@
 					"type": "AnimationPath",
 					"name": "crouching_to_standing",
 					"description": "Animation played when standing up"
-				}
-			],
-			"efficiency": "slow"
-		},
-		{
-			"authority": "server",
-			"name": "SetAnimationsTransitionCrouchingProning",
-			"description": "Sets the Transition Animation between Crouching and Proning",
-			"parameters": [
-				{
-					"type": "AnimationPath",
-					"name": "crouching_to_proning",
-					"description": "Animation played when going prone"
-				},
-				{
-					"type": "AnimationPath",
-					"name": "proning_to_crouching",
-					"description": "Animation played when getting up from prone"
 				}
 			],
 			"efficiency": "slow"
@@ -878,7 +847,7 @@
 		{
 			"authority": "server",
 			"name": "SetStanceMode",
-			"description": "Sets the Stance Mode (standing, crouching or proning)",
+			"description": "Sets the Stance Mode (standing or crouching)",
 			"parameters": [
 				{
 					"type": "StanceMode",
