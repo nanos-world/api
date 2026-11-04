@@ -696,6 +696,29 @@
 					"description": "Whether it started (true) or stopped (false) honking"
 				}
 			]
+		},
+		{
+			"name": "TireFlat",
+			"description": "Triggered when a Tire goes flat or is restored",
+			"description_long": "Triggered when a Tire goes flat or is restored<br/><br/>Fires when the flat state of a tire actually changes, by damage or by <code>SetTireFlat</code>. Note that \"Respawn\" event restores all tires",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "VehicleWheeled",
+					"name": "self",
+					"description": "The Vehicle Wheeled that triggered the event"
+				},
+				{
+					"type": "integer",
+					"name": "wheel_index",
+					"description": "Index of the wheel, as given to SetWheel"
+				},
+				{
+					"type": "boolean",
+					"name": "is_flat",
+					"description": "Whether the tire went flat (true) or was restored (false)"
+				}
+			]
 		}
 	]
 }

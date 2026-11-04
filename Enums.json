@@ -1101,22 +1101,42 @@
 				"description": "Errors raised by scripts"
 			},
 			{
-				"key": "Chat",
+				"key": "ScriptingDebug",
 				"value": "8",
+				"description": "Debug messages printed by scripts"
+			},
+			{
+				"key": "Chat",
+				"value": "9",
 				"description": "Chat messages"
 			},
 			{
 				"key": "WebUI",
-				"value": "9",
+				"value": "10",
 				"description": "Messages logged from WebUI JavaScript"
 			},
 			{
 				"key": "Success",
-				"value": "10"
+				"value": "11"
 			},
 			{
 				"key": "Fatal",
-				"value": "11"
+				"value": "12"
+			},
+			{
+				"key": "WarningRed",
+				"value": "13",
+				"description": "Warnings highlighted in red"
+			},
+			{
+				"key": "Profiling",
+				"value": "14",
+				"description": "Profiling output"
+			},
+			{
+				"key": "ProfilingWarning",
+				"value": "15",
+				"description": "Profiling warnings"
 			}
 		]
 	},
