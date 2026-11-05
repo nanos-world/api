@@ -152,7 +152,7 @@
 		{
 			"name": "SetHighlightColor",
 			"description": "Changes the Highlight Color for highlighted actors at a specific Index",
-			"description_long": "Changes the Highlight Color for highlighted actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2).",
+			"description_long": "Changes the Highlight Color for highlighted actors at a specific Index.<br/><br/>Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2).",
 			"authority": "client",
 			"parameters": [
 				{
@@ -177,7 +177,7 @@
 		{
 			"name": "SetOutlineColor",
 			"description": "Changes the Outline Color for outlined actors at a specific Index",
-			"description_long": "Changes the Outline Color for outlined actors at a specific Index. Multiply it by 5 (or more) for having a glowing effect.<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2), and the default Outline color index used by the game is  <code>0</code> (when interacting with stuff).",
+			"description_long": "Changes the Outline Color for outlined actors at a specific Index.<br/><br/>Multiply it by 5 (or more) for having a glowing effect.<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2), and the default Outline color index used by the game is  <code>0</code> (when interacting with stuff).",
 			"authority": "client",
 			"parameters": [
 				{
@@ -203,7 +203,7 @@
 		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Client, which can be accessed from anywhere (client side)",
-			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side)<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description_long": "Sets a global value in the Client, which can be accessed from anywhere (client side).<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "client",
 			"parameters": [
 				{
@@ -504,7 +504,7 @@
 		{
 			"name": "IsVOIPSelfMuted",
 			"description": "Gets whether the local player has muted their own microphone",
-			"description_long": "Gets whether the local player has muted their own microphone. Only the player can change it, with the VOIP key when the Open Mic setting is on, or from the escape menu.",
+			"description_long": "Gets whether the local player has muted their own microphone.<br/><br/>Only the player can change it, with the VOIP key when the Open Mic setting is on, or from the escape menu.",
 			"authority": "client",
 			"return": [
 				{

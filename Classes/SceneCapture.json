@@ -65,7 +65,7 @@
 		{
 			"name": "AddRenderActor",
 			"description": "Adds an Actor to the Render Only list",
-			"description_long": "Adds an Actor to the Render Only list<br/><br/>Note: adding one actor to this will make the SceneCapture only to render those Actors.",
+			"description_long": "Adds an Actor to the Render Only list.<br/><br/>Note: adding one actor to this will make the SceneCapture only to render those Actors.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -238,7 +238,7 @@
 		{
 			"name": "SetShowFlag",
 			"description": "Enables/Disables rendering features from being captured",
-			"description_long": "Enables/Disables rendering features from being captured<br/>A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
+			"description_long": "Enables/Disables rendering features from being captured.<br/><br/>A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
 			"authority": "client",
 			"parameters": [
 				{

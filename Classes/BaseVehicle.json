@@ -13,7 +13,7 @@
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Attaches a Skeletal Mesh as master pose to this entity.<br/><br/>Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
@@ -80,7 +80,7 @@
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Spawns and attaches a StaticMesh to this Vehicle in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Attaches a Static Mesh to this entity.<br/><br/>Spawns and attaches a StaticMesh to this Vehicle in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -299,7 +299,7 @@
 			"authority": "server",
 			"name": "SetDoor",
 			"description": "Adds a Door to the Vehicle",
-			"description_long": "Adds a Door at offset_location from root which will pose the Character at seat_location with seat_rotation rotation.",
+			"description_long": "Adds a Door to the Vehicle.<br/><br/>Adds a Door at offset_location from root which will pose the Character at seat_location with seat_rotation rotation.",
 			"parameters": [
 				{
 					"type": "integer",
@@ -527,7 +527,7 @@
 			"authority": "authority",
 			"name": "SetCameraArmLength",
 			"description": "Sets how far the camera stays from this Vehicle while driving it",
-			"description_long": "Sets how far the camera stays from this Vehicle while driving it, in centimeters.<br><br>This overrides the Player's own <a href='/docs/scripting-reference/classes/player#function-setcameraarmlength'>Camera Arm Length</a> for as long as they are driving it. Set it to <code>0</code> to use the Player's value instead, which is the default.",
+			"description_long": "Sets how far the camera stays from this Vehicle while driving it.<br/><br/>The length is in centimeters. This overrides the Player's own <a href='/docs/scripting-reference/classes/player#function-setcameraarmlength'>Camera Arm Length</a> for as long as they are driving it. Set it to <code>0</code> to use the Player's value instead, which is the default.",
 			"parameters": [
 				{
 					"type": "integer",
@@ -553,7 +553,7 @@
 		{
 			"name": "SetAnimationBlueprintPropertyValue",
 			"description": "Sets an Animation Blueprint Property/Variable value directly",
-			"description_long": "Sets an Animation Blueprint Property/Variable value directly on the Animation Blueprint passed in the constructor.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"description_long": "Sets an Animation Blueprint Property/Variable value directly.<br/><br/>It is set on the Animation Blueprint passed in the constructor.<br/><br/><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -572,7 +572,7 @@
 		{
 			"name": "GetAnimationBlueprintPropertyValue",
 			"description": "Gets an Animation Blueprint Property/Variable value directly",
-			"description_long": "Gets an Animation Blueprint Property/Variable value directly.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this returns <code>nil</code>.",
+			"description_long": "Gets an Animation Blueprint Property/Variable value directly.<br/><br/><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this returns <code>nil</code>.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -599,7 +599,7 @@
 				}
 			],
 			"description": "Calls an Animation Blueprint Event or Function",
-			"description_long": "Calls an Animation Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong><br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"description_long": "Calls an Animation Blueprint Event or Function.<br/><br/>Returns all Function return values on <strong>Client Side</strong><br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
 			"parameters": [
 				{
 					"type": "string",
@@ -618,7 +618,7 @@
 		{
 			"name": "BindAnimationBlueprintEventDispatcher",
 			"description": "Assigns and Binds an Animation Blueprint Event Dispatcher",
-			"description_long": "Assigns and Binds an Animation Blueprint Event Dispatcher.<br><br><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
+			"description_long": "Assigns and Binds an Animation Blueprint Event Dispatcher.<br/><br/><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -673,7 +673,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancyPontoons",
 			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
-			"description_long": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
+			"description_long": "Sets the Buoyancy Pontoons used by the Water simulation.<br/><br/>Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
 			"parameters": [
 				{
 					"type": "table",
@@ -700,7 +700,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancySettings",
 			"description": "Sets how this entity behaves on Water",
-			"description_long": "Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
+			"description_long": "Sets how this entity behaves on Water.<br/><br/>Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
 			"parameters": [
 				{
 					"type": "boolean",

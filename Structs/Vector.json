@@ -106,7 +106,7 @@
 		{
 			"name": "Equals",
 			"description": "Check against another vector for equality, within specified error limits",
-			"description_long": "Check if the vector is equal to another vector, within specified error limits",
+			"description_long": "Check against another vector for equality, within specified error limits.<br/><br/>Check if the vector is equal to another vector, within specified error limits",
 			"return": [
 				{
 					"type": "boolean",
@@ -131,7 +131,7 @@
 		{
 			"name": "Distance",
 			"description": "Distance between two points",
-			"description_long": "Returns the distance of 2 vectors",
+			"description_long": "Distance between two points.<br/><br/>Returns the distance of 2 vectors",
 			"return": [
 				{
 					"type": "float",
@@ -150,7 +150,7 @@
 		{
 			"name": "DistanceSquared",
 			"description": "Squared distance between two points",
-			"description_long": "Return the squared distance of 2 vectors",
+			"description_long": "Squared distance between two points.<br/><br/>Return the squared distance of 2 vectors",
 			"return": [
 				{
 					"type": "float",
@@ -169,7 +169,7 @@
 		{
 			"name": "GetUnsafeNormal",
 			"description": "Calculates normalized version of vector without checking for zero length",
-			"description_long": "Returns the normalized version of vector without checking for zero length",
+			"description_long": "Calculates normalized version of vector without checking for zero length.<br/><br/>Returns the normalized version of vector without checking for zero length",
 			"return": [
 				{
 					"type": "Vector",
@@ -182,7 +182,7 @@
 		{
 			"name": "GetSafeNormal",
 			"description": "Gets a normalized copy of the vector, checking it is safe to do so based on the length",
-			"description_long": "Returns a normalized copy of the vector, checking it is safe to do so based on the length",
+			"description_long": "Gets a normalized copy of the vector, checking it is safe to do so based on the length.<br/><br/>Returns a normalized copy of the vector, checking it is safe to do so based on the length",
 			"return": [
 				{
 					"type": "Vector",
@@ -318,7 +318,7 @@
 		{
 			"name": "Dot",
 			"description": "Dot product of two vectors",
-			"description_long": "Returns the dot product between this vector and another vector",
+			"description_long": "Dot product of two vectors.<br/><br/>Returns the dot product between this vector and another vector",
 			"return": [
 				{
 					"type": "float",
@@ -337,7 +337,7 @@
 		{
 			"name": "Cross",
 			"description": "Cross product of two vectors",
-			"description_long": "Returns the cross product between this vector and another vector",
+			"description_long": "Cross product of two vectors.<br/><br/>Returns the cross product between this vector and another vector",
 			"return": [
 				{
 					"type": "Vector",

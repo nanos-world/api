@@ -101,7 +101,7 @@
 			"authority": "both",
 			"name": "StartCameraFade",
 			"description": "Does a camera fade to/from a solid color",
-			"description_long": "Does a camera fade to/from a solid color. Animates automatically",
+			"description_long": "Does a camera fade to/from a solid color.<br/><br/>Animates automatically",
 			"parameters": [
 				{
 					"name": "from_alpha",
@@ -142,7 +142,7 @@
 			"authority": "both",
 			"name": "SetManualCameraFade",
 			"description": "Turns on camera fading at the given opacity",
-			"description_long": "Turns on camera fading at the given opacity. Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off.",
+			"description_long": "Turns on camera fading at the given opacity.<br/><br/>Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off.",
 			"parameters": [
 				{
 					"name": "in_fade_amount",
@@ -514,7 +514,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalHighPassFilter",
 			"description": "Sets the global VOIP high-pass filter threshold frequency",
-			"description_long": "Sets the global VOIP high-pass filter threshold frequency. Set it to 0 to disable it",
+			"description_long": "Sets the global VOIP high-pass filter threshold frequency.<br/><br/>Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -533,7 +533,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalLowPassFilter",
 			"description": "Sets the global VOIP low-pass filter threshold frequency",
-			"description_long": "Sets the global VOIP low-pass filter threshold frequency. Set it to 0 to disable it",
+			"description_long": "Sets the global VOIP low-pass filter threshold frequency.<br/><br/>Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -726,7 +726,7 @@
 		{
 			"name": "SetDistanceOptimizationMultiplier",
 			"description": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors",
-			"description_long": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors.<br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"description_long": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors.<br/><br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
 			"efficiency": "fast",
 			"parameters": [

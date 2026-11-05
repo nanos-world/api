@@ -46,7 +46,7 @@
 				}
 			],
 			"description": "Calls a Blueprint Event or Function",
-			"description_long": "Calls a Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong>",
+			"description_long": "Calls a Blueprint Event or Function.<br/><br/>Returns all Function return values on <strong>Client Side</strong>",
 			"authority": "both",
 			"parameters": [
 				{

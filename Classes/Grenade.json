@@ -67,7 +67,7 @@
 			"authority": "server",
 			"name": "Explode",
 			"description": "Forces this grenade to Explode",
-			"description_long": "Forces this grenade to Explode.</br></br>Without an instigator, the explosion belongs to the last Player who held this grenade, or to nobody if it was never picked up. An explosion with no owner damages everyone, ignoring Teams.",
+			"description_long": "Forces this grenade to Explode.<br/><br/></br></br>Without an instigator, the explosion belongs to the last Player who held this grenade, or to nobody if it was never picked up. An explosion with no owner damages everyone, ignoring Teams.",
 			"parameters": [
 				{
 					"type": "Player",

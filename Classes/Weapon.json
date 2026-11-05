@@ -54,7 +54,7 @@
 			"authority": "server",
 			"name": "Reload",
 			"description": "Forces this Weapon to reload",
-			"description_long": "Forces this Weapon to reload (only if being handled by a Character)",
+			"description_long": "Forces this Weapon to reload.<br/><br/>It only works while a Character is handling the Weapon",
 			"efficiency": "moderate"
 		},
 		{
@@ -187,7 +187,7 @@
 			"authority": "server",
 			"name": "SetAutoReload",
 			"description": "Sets if the Character will reload automatically when the clip is empty",
-			"description_long": "If the Character will reload automatically when ammo empties. Default is true",
+			"description_long": "Sets if the Character will reload automatically when the clip is empty.<br/><br/>If the Character will reload automatically when ammo empties. Default is true",
 			"parameters": [
 				{
 					"name": "auto_reload",
@@ -201,7 +201,7 @@
 			"authority": "server",
 			"name": "SetBulletColor",
 			"description": "Set the Bullet Color",
-			"description_long": "Set the Bullet Color<br/><br/>Only has effect if using Bullet Trail particle P_Bullet_Trail or if you particle has the Color parameter",
+			"description_long": "Set the Bullet Color.<br/><br/>Only has effect if using Bullet Trail particle P_Bullet_Trail or if you particle has the Color parameter",
 			"parameters": [
 				{
 					"name": "bullet_color",
@@ -269,7 +269,7 @@
 			"authority": "server",
 			"name": "SetDamage",
 			"description": "Set the Base Weapon's Damage",
-			"description_long": "Base Weapon's Damage<br/><br/>This will be multiplied by multiplier factors when hitting specific bones",
+			"description_long": "Set the Base Weapon's Damage.<br/><br/>Base Weapon's Damage<br/><br/>This will be multiplied by multiplier factors when hitting specific bones",
 			"parameters": [
 				{
 					"name": "damage",
@@ -439,7 +439,7 @@
 			"authority": "server",
 			"name": "SetRightHandOffset",
 			"description": "Set the offset of Right Hand",
-			"description_long": "Set the Offset of Right Hand. To position relative to the camera.",
+			"description_long": "Set the offset of Right Hand.<br/><br/>Set the Offset of Right Hand. To position relative to the camera.",
 			"parameters": [
 				{
 					"name": "right_hand_offset",
@@ -640,7 +640,7 @@
 			"authority": "server",
 			"name": "SetSoundFireLastBullets",
 			"description": "Sound when firing with only having X remaining bullets in the magazine",
-			"description_long": "Sound when firing with only having X remaining bullets in the magazine, useful for last shot 'ping' or sound when low on bullets",
+			"description_long": "Sound when firing with only having X remaining bullets in the magazine.<br/><br/>Useful for a last shot 'ping' or a sound when low on bullets",
 			"parameters": [
 				{
 					"name": "sound_asset_path",

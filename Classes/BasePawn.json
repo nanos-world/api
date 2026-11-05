@@ -13,7 +13,7 @@
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Attaches a Skeletal Mesh as master pose to this entity.<br/><br/>Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
@@ -80,7 +80,7 @@
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Spawns and attaches a StaticMesh to this entity in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Attaches a Static Mesh to this entity.<br/><br/>Spawns and attaches a StaticMesh to this entity in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -319,7 +319,7 @@
 			"authority": "authority",
 			"name": "SetAIStopWithBraking",
 			"description": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly",
-			"description_long": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly<br/><br/>When enabled, the Pawn keeps its velocity when it reaches the destination and slows down using its own braking settings (see Character:SetBrakingSettings and CharacterSimple:SetBrakingSettings), so it may stop slightly past the acceptance radius. Disabled by default",
+			"description_long": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly.<br/><br/>When enabled, the Pawn keeps its velocity when it reaches the destination and slows down using its own braking settings (see Character:SetBrakingSettings and CharacterSimple:SetBrakingSettings), so it may stop slightly past the acceptance radius. Disabled by default",
 			"parameters": [
 				{
 					"type": "boolean",
@@ -333,7 +333,7 @@
 			"authority": "authority",
 			"name": "MoveTo",
 			"description": "AI: Makes this Pawn walk to the Location",
-			"description_long": "AI: Makes this Pawn walk to the Location<br/><br/>While in flying mode (see SetFlyingMode) it flies there in a straight line instead of following the navmesh, so the Location can be in the air<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Pawn walk to the Location.<br/><br/>While in flying mode (see SetFlyingMode) it flies there in a straight line instead of following the navmesh, so the Location can be in the air<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -363,7 +363,7 @@
 			"authority": "authority",
 			"name": "Follow",
 			"description": "AI: Makes this Pawn follow another actor",
-			"description_long": "AI: Makes this Pawn follow another actor<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
+			"description_long": "AI: Makes this Pawn follow another actor.<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -598,7 +598,7 @@
 			"authority": "authority",
 			"name": "SetCapsuleSize",
 			"description": "Sets this Pawn's Capsule size",
-			"description_long": "Sets this Pawn's Capsule size (will affect Camera location and the Pawn's collision)",
+			"description_long": "Sets this Pawn's Capsule size.<br/><br/>It affects the Camera location and the Pawn's collision",
 			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
@@ -770,7 +770,7 @@
 			"authority": "client",
 			"name": "GetAllMorphTargetNames",
 			"description": "Returns a table with all morph targets available",
-			"description_long": "Returns an empty table if the mesh is not a Skeletal Mesh (CharacterSimple may use a Static Mesh)",
+			"description_long": "Returns a table with all morph targets available.<br/><br/>Returns an empty table if the mesh is not a Skeletal Mesh (CharacterSimple may use a Static Mesh)",
 			"return": [
 				{
 					"type": "string[]",
@@ -790,7 +790,7 @@
 			"authority": "authority",
 			"name": "SetGravityScale",
 			"description": "Changes the Gravity Scale",
-			"description_long": "Changes the Gravity Scale of this Pawn (can be negative)",
+			"description_long": "Changes the Gravity Scale.<br/><br/>It can be negative",
 			"parameters": [
 				{
 					"type": "float",

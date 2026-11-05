@@ -6,7 +6,7 @@
 		{
 			"name": "LineSingle",
 			"description": "Trace a ray against the world and returns a table with the first blocking hit information",
-			"description_long": "Trace a ray against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"description_long": "Trace a ray against the world and returns a table with the first blocking hit information.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
 			"authority": "client",
 			"return": [
 				{
@@ -95,7 +95,7 @@
 		{
 			"name": "LineMulti",
 			"description": "Trace a ray against the world using object types and return overlapping hits and then first blocking hit",
-			"description_long": "Trace a ray against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"description_long": "Trace a ray against the world using object types and return overlapping hits and then first blocking hit.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
 			"authority": "client",
 			"return": [
 				{
@@ -184,7 +184,7 @@
 		{
 			"name": "SphereSingle",
 			"description": "Trace a sphere against the world and returns a table with the first blocking hit information",
-			"description_long": "Trace a sphere against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"description_long": "Trace a sphere against the world and returns a table with the first blocking hit information.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
 			"authority": "client",
 			"return": [
 				{
@@ -278,7 +278,7 @@
 		{
 			"name": "SphereMulti",
 			"description": "Trace a sphere against the world using object types and return overlapping hits and then first blocking hit",
-			"description_long": "Trace a sphere against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"description_long": "Trace a sphere against the world using object types and return overlapping hits and then first blocking hit.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
 			"authority": "client",
 			"return": [
 				{
@@ -372,7 +372,7 @@
 		{
 			"name": "BoxSingle",
 			"description": "Trace a box against the world and returns a table with the first blocking hit information",
-			"description_long": "Trace a box against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"description_long": "Trace a box against the world and returns a table with the first blocking hit information.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
 			"authority": "client",
 			"return": [
 				{
@@ -471,7 +471,7 @@
 		{
 			"name": "BoxMulti",
 			"description": "Trace a box against the world using object types and return overlapping hits and then first blocking hit",
-			"description_long": "Trace a box against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"description_long": "Trace a box against the world using object types and return overlapping hits and then first blocking hit.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
 			"authority": "client",
 			"return": [
 				{
@@ -570,7 +570,7 @@
 		{
 			"name": "CapsuleSingle",
 			"description": "Trace a capsule against the world and returns a table with the first blocking hit information",
-			"description_long": "Trace a capsule against the world and returns a table with the first blocking hit information<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
+			"description_long": "Trace a capsule against the world and returns a table with the first blocking hit information.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.",
 			"authority": "client",
 			"return": [
 				{
@@ -669,7 +669,7 @@
 		{
 			"name": "CapsuleMulti",
 			"description": "Trace a capsule against the world using object types and return overlapping hits and then first blocking hit",
-			"description_long": "Trace a capsule against the world using object types and return overlapping hits and then first blocking hit<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
+			"description_long": "Trace a capsule against the world using object types and return overlapping hits and then first blocking hit.<br/><br/>Note: The Trace will collide with the ObjectType (in the Collision Settings), even if the channel is ignored below.<br/><br/>Results are sorted, so a blocking hit (if found) will be the last element of the array<br/><br/>Only the single closest blocking result will be generated, no tests will be done after that",
 			"authority": "client",
 			"return": [
 				{

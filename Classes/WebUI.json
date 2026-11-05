@@ -120,7 +120,7 @@
 			"name": "ExecuteJavaScript",
 			"authority": "client",
 			"description": "Executes a JavaScript code in the Browser",
-			"description_long": "Executes a JavaScript code in the Browser<br/>Note: This method is experimental and should be used cautiously. Events are still the preferred way of communicating between Packages and WebUI.",
+			"description_long": "Executes a JavaScript code in the Browser.<br/><br/>Note: This method is experimental and should be used cautiously. Events are still the preferred way of communicating between Packages and WebUI.",
 			"parameters": [
 				{
 					"type": "string",
@@ -134,7 +134,7 @@
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
-			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)<br/>Note: Only one browser can have focus per time.",
+			"description_long": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events).<br/><br/>Note: Only one browser can have focus per time.",
 			"efficiency": "fast"
 		},
 		{
@@ -153,14 +153,14 @@
 			"name": "RemoveFocus",
 			"authority": "client",
 			"description": "Removes the focus from this WebUI (and sets it back to game viewport)",
-			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport)<br/>You MUST call this after you don't need keyboard input anymore",
+			"description_long": "Removes the focus from this WebUI (and sets it back to game viewport).<br/><br/>You MUST call this after you don't need keyboard input anymore",
 			"efficiency": "fast"
 		},
 		{
 			"name": "SetLayout",
 			"authority": "client",
 			"description": "Sets the Layout as Canvas on Screen",
-			"description_long": "Sets the Layout as Canvas on Screen. <strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
+			"description_long": "Sets the Layout as Canvas on Screen.<br/><br/><strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
 			"parameters": [
 				{
 					"type": "Vector2D",
@@ -357,7 +357,7 @@
 			"name": "SendMouseClickEvent",
 			"authority": "client",
 			"description": "Sends a Mouse Click into the WebUI programmatically",
-			"description_long": "You must send both Down and Up to make it work properly",
+			"description_long": "Sends a Mouse Click into the WebUI programmatically.<br/><br/>You must send both Down and Up to make it work properly",
 			"parameters": [
 				{
 					"type": "integer",

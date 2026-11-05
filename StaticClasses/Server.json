@@ -43,7 +43,7 @@
 		},
 		{
 			"name": "ReloadPackage",
-			"description_long": "Reloads a Package<br/>Note: the package is effectively reloaded in the next server tick",
+			"description_long": "Reloads a Package on the next server tick.<br/><br/>Reloads a Package<br/>Note: the package is effectively reloaded in the next server tick",
 			"authority": "server",
 			"parameters": [
 				{
@@ -70,7 +70,7 @@
 		{
 			"name": "UnloadPackage",
 			"description": "Unloads a Package",
-			"description_long": "Unloads a Package<br/>Note: the package is effectively unloaded in the next server tick",
+			"description_long": "Unloads a Package.<br/><br/>Note: the package is effectively unloaded in the next server tick",
 			"authority": "server",
 			"parameters": [
 				{
@@ -204,7 +204,7 @@
 		{
 			"name": "SetDefaultEntityDimension",
 			"description": "Sets the default server dimension that entities will spawn in",
-			"description_long": "Sets the default server dimension that entities will spawn in. You can change it before spawning an entity and restore it afterwards to just spawn a specific entity directly on it",
+			"description_long": "Sets the default server dimension that entities will spawn in.<br/><br/>You can change it before spawning an entity and restore it afterwards to just spawn a specific entity directly on it",
 			"authority": "server",
 			"parameters": [
 				{
@@ -845,7 +845,7 @@
 		{
 			"name": "ChangeMap",
 			"description": "Called when the map changes",
-			"description_long": "Called when the map changes. This is always called just before Restart event",
+			"description_long": "Called when the map changes.<br/><br/>This is always called just before Restart event",
 			"authority": "server",
 			"arguments": [
 				{
@@ -863,7 +863,7 @@
 		{
 			"name": "PlayerConnect",
 			"description": "Called when a player is attempting to connect to the server",
-			"description_long": "Called when a player is attempting to connect to the server, before the Player entity is created.<br/><br/>To refuse the connection, call <code>Server.KickByAccountID()</code> or <code>Server.BanByAccountID()</code> with the <code>player_account_id</code> (returning <code>false</code> is deprecated).",
+			"description_long": "Called when a player is attempting to connect to the server.<br/><br/>It is called before the Player entity is created.<br/><br/>To refuse the connection, call <code>Server.KickByAccountID()</code> or <code>Server.BanByAccountID()</code> with the <code>player_account_id</code> (returning <code>false</code> is deprecated).",
 			"authority": "server",
 			"arguments": [
 				{
@@ -942,7 +942,7 @@
 		{
 			"name": "Tick",
 			"description": "Triggered every 33ms by default",
-			"description_long": "Triggered every 33ms by default<br/><br/>Caution: Only small operations should be performed here, otherwise this can lead to server lag and delays",
+			"description_long": "Triggered every 33ms by default.<br/><br/>Caution: Only small operations should be performed here, otherwise this can lead to server lag and delays",
 			"authority": "server",
 			"arguments": [
 				{

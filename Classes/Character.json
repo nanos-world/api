@@ -237,7 +237,7 @@
 			"authority": "server",
 			"name": "SetAnimationIdleWalkRunStanding",
 			"description": "Sets the Blend Space (2D) Animation for Standing",
-			"description_long": "Sets the Blend Space (2D) Animation for Standing<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"description_long": "Sets the Blend Space (2D) Animation for Standing.<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
 				{
 					"type": "AnimationPath",
@@ -370,7 +370,7 @@
 			"authority": "server",
 			"name": "SetCameraMode",
 			"description": "Sets the Camera Mode",
-			"description_long": "Sets the Camera Mode (i.e. Only TPS, FPS or if allow both)<br/><br/>Using FPSOnly CameraMode on AI will lock his body rotation (when using LookAt)",
+			"description_long": "Sets the Camera Mode.<br/><br/>It can allow only TPS, only FPS or both.<br/><br/>Using FPSOnly CameraMode on AI will lock his body rotation (when using LookAt)",
 			"parameters": [
 				{
 					"type": "CameraMode",
@@ -555,7 +555,7 @@
 			"authority": "server",
 			"name": "SetHighFallingTime",
 			"description": "Sets time to transition to HighFalling state",
-			"description_long": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
+			"description_long": "Sets time to transition to HighFalling state.<br/><br/>Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
 			"parameters": [
 				{
 					"type": "float",
@@ -637,7 +637,7 @@
 			"authority": "server",
 			"name": "SetRadialDamageToRagdoll",
 			"description": "Set the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
-			"description_long": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character never enter ragdoll mode when getting radial damage",
+			"description_long": "Set the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode.<br/><br/>Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character never enter ragdoll mode when getting radial damage",
 			"parameters": [
 				{
 					"type": "integer",

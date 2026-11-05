@@ -116,15 +116,15 @@
 		{
 			"name": "SetFocus",
 			"authority": "client",
-			"description": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events)",
-			"description_long": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one Widget can have focus per time.",
+			"description": "Enables the focus on this Widget",
+			"description_long": "Enables the focus on this Widget.<br/><br/>Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one Widget can have focus per time.",
 			"efficiency": "fast"
 		},
 		{
 			"name": "BringToFront",
 			"authority": "client",
 			"description": "Puts this Widget in the front of all WebUIs and Widgets",
-			"description_long": "Puts this Widget in the front of all WebUIs and Widgets. Note: You can only call it if the Widget is parented to the Viewport!",
+			"description_long": "Puts this Widget in the front of all WebUIs and Widgets.<br/><br/>Note: You can only call it if the Widget is parented to the Viewport!",
 			"efficiency": "fast"
 		},
 		{
@@ -213,7 +213,7 @@
 				}
 			],
 			"description": "Calls a Blueprint Event or Function",
-			"description_long": "Calls a Blueprint Event or Function<br/>Returns all Function return values on <strong>Client Side</strong>",
+			"description_long": "Calls a Blueprint Event or Function.<br/><br/>Returns all Function return values on <strong>Client Side</strong>",
 			"authority": "client",
 			"parameters": [
 				{
