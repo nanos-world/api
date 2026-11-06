@@ -117,7 +117,7 @@
 			"name": "SetFocus",
 			"authority": "client",
 			"description": "Enables the focus on this Widget",
-			"description_long": "Enables the focus on this Widget.<br/><br/>Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events<br/>Note: Only one Widget can have focus per time.",
+			"description_long": "Enables the focus on this Widget.<br/><br/>Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events)<br/>Note: Only one Widget can have focus per time.",
 			"efficiency": "fast"
 		},
 		{
