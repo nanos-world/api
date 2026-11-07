@@ -49,7 +49,7 @@
 		{
 			"name": "GetPairs",
 			"description": "Returns an iterator with all Entities of this class to be used with <code>pairs()</code>",
-			"description_long": "Returns an iterator with all Entities of this class to be used with <code>pairs()</code>. This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Entities directly instead of creating and returning a copy of the Entities table.<br><br><b>Note:</b> Destroying Entities from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
+			"description_long": "Returns an iterator with all Entities of this class to be used with <code>pairs()</code>.<br/><br/>This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Entities directly instead of creating and returning a copy of the Entities table.<br><br><b>Note:</b> Destroying Entities from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>.",
 			"authority": "both",
 			"return": [
 				{
@@ -208,14 +208,14 @@
 		{
 			"name": "FinishSpawn",
 			"description": "Finish the spawning process and send the entity to clients if it was spawned with a deferred <code>spawn_mode</code>",
-			"description_long": "Finish the spawning process and send the entity to clients if it was spawned with <code>SpawnMode.AfterConstructor</code> or <code>SpawnMode.Manual</code>. Call this after configuring the entity for efficient spawning.<br><br>Note: an Entity of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a> constructed with <code>SpawnMode.AfterConstructor</code> finishes spawning automatically when its Constructor returns.",
+			"description_long": "Finish the spawning process and send the entity to clients if it was spawned with a deferred <code>spawn_mode</code>.<br/><br/>Finish the spawning process and send the entity to clients if it was spawned with <code>SpawnMode.AfterConstructor</code> or <code>SpawnMode.Manual</code>. Call this after configuring the entity for efficient spawning.<br><br>Note: an Entity of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a> constructed with <code>SpawnMode.AfterConstructor</code> finishes spawning automatically when its Constructor returns.",
 			"authority": "both",
 			"efficiency": "moderate"
 		},
 		{
 			"name": "SetSpawnMode",
 			"description": "Overrides when this Entity finishes spawning, from the Constructor of an Inherited Class",
-			"description_long": "Overrides when this Entity finishes spawning, from the Constructor of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a>.<br><br>Only <code>SpawnMode.AfterConstructor</code> and <code>SpawnMode.Manual</code> are accepted, and only while the Entity has not finished spawning yet.",
+			"description_long": "Overrides when this Entity finishes spawning, from the Constructor of an Inherited Class.<br/><br/>Overrides when this Entity finishes spawning, from the Constructor of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a>.<br><br>Only <code>SpawnMode.AfterConstructor</code> and <code>SpawnMode.Manual</code> are accepted, and only while the Entity has not finished spawning yet.",
 			"authority": "both",
 			"parameters": [
 				{
@@ -229,7 +229,7 @@
 		{
 			"name": "IsSpawned",
 			"description": "Gets if this Entity finished spawning",
-			"description_long": "Gets if this Entity finished spawning.<br><br>An Entity spawned with a deferred <code>SpawnMode</code> is only spawned after <code>FinishSpawn()</code> is called on it or when the Inherited Class constructor returns, everything else is spawned right away.",
+			"description_long": "Gets if this Entity finished spawning.<br/><br/>An Entity spawned with a deferred <code>SpawnMode</code> is only spawned after <code>FinishSpawn()</code> is called on it or when the Inherited Class constructor returns, everything else is spawned right away.",
 			"authority": "both",
 			"return": [
 				{
@@ -255,7 +255,7 @@
 		{
 			"name": "IsBeingDestroyed",
 			"description": "Returns true if this Entity is being destroyed",
-			"description_long": "Returns true if this Entity is being destroyed.<br>You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
+			"description_long": "Returns true if this Entity is being destroyed.<br/><br/>You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
 			"authority": "both",
 			"efficiency": "fast",
 			"return": [
@@ -379,7 +379,7 @@
 		{
 			"name": "SetValue",
 			"description": "Sets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> in this Entity",
-			"description_long": "Sets a value in this Entity, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description_long": "Sets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> in this Entity.<br/><br/>Sets a value in this Entity, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
 			"parameters": [
 				{
@@ -409,7 +409,7 @@
 		{
 			"name": "GetValue",
 			"description": "Gets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key",
-			"description_long": "Gets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key. Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
+			"description_long": "Gets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key.<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
 			"parameters": [
 				{

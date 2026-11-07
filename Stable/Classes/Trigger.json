@@ -61,6 +61,26 @@
 			"efficiency": "slow"
 		},
 		{
+			"name": "IsOverlapping",
+			"description": "Returns if an Actor is inside this Trigger right now",
+			"description_long": "Returns if an Actor is inside this Trigger right now.<br/><br/>Tests the Actor's location against the Trigger's shape at the moment of the call",
+			"authority": "authority",
+			"parameters": [
+				{
+					"type": "Actor",
+					"name": "actor",
+					"description": "The Actor to test"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Whether the Actor is inside"
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "SetExtent",
 			"description": "Sets the extent size of this trigger (sphere triggers can receive as float for radius)",
 			"authority": "authority",

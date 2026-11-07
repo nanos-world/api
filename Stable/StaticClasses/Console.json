@@ -6,7 +6,7 @@
 		{
 			"name": "Log",
 			"description": "Logs and formats a message in the console",
-			"description_long": "Logs and formats a message in the console, with formatted arguments",
+			"description_long": "Logs and formats a message in the console.<br/><br/>The message is formatted with the given arguments",
 			"authority": "both",
 			"parameters": [
 				{
@@ -50,7 +50,7 @@
 		{
 			"name": "Warn",
 			"description": "Logs an orange warning in the console with stack information",
-			"description_long": "Logs an orange warning in the console with stack information, with formatted arguments",
+			"description_long": "Logs an orange warning in the console with stack information.<br/><br/>The message is formatted with the given arguments",
 			"authority": "both",
 			"parameters": [
 				{
@@ -70,7 +70,7 @@
 		{
 			"name": "Error",
 			"description": "Logs a red error in the console with stack information",
-			"description_long": "Logs a red error in the console with stack information, with formatted arguments",
+			"description_long": "Logs a red error in the console with stack information.<br/><br/>The message is formatted with the given arguments",
 			"authority": "both",
 			"parameters": [
 				{

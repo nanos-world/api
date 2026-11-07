@@ -13,7 +13,7 @@
 				}
 			],
 			"description": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page",
-			"description_long": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page. Internally this calls <code>Sky.DestroyAllSky()</code> automatically",
+			"description_long": "Replaces all Sky/Sun actors with the Ultra Dynamic Sky Actor, to be able to use the functions from this page.<br/><br/>Internally this calls <code>Sky.DestroyAllSky()</code> automatically",
 			"parameters": [
 				{
 					"type": "boolean",
@@ -46,7 +46,7 @@
 			"authority": "client",
 			"name": "SetMoonTexture",
 			"description": "Sets the Moon Texture",
-			"description_long": "Sets the Moon Texture<br /><br />Set it to empty to restore the default. After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
+			"description_long": "Sets the Moon Texture.<br/><br/>Set it to empty to restore the default. After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
 			"parameters": [
 				{
 					"type": "ImagePath",
@@ -86,7 +86,7 @@
 			"authority": "client",
 			"name": "SetMoonMaterialColor",
 			"description": "Sets the Moon Material Color, which tints the moon texture",
-			"description_long": "Sets the Moon Material Color, which tints the moon texture<br /><br />Call <code>Reconstruct()</code> afterwards to apply it",
+			"description_long": "Sets the Moon Material Color, which tints the moon texture.<br/><br/>Call <code>Reconstruct()</code> afterwards to apply it",
 			"parameters": [
 				{
 					"type": "Color",
@@ -227,7 +227,7 @@
 			"authority": "client",
 			"name": "SetSkyMode",
 			"description": "Sets the Sky Mode",
-			"description_long": "Sets the Sky Mode<br /><br />After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
+			"description_long": "Sets the Sky Mode.<br/><br/>After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
 			"parameters": [
 				{
 					"type": "SkyMode",
@@ -241,7 +241,7 @@
 			"authority": "client",
 			"name": "SetVolumetricCloudColor",
 			"description": "Sets the Volumetric Cloud Color",
-			"description_long": "Sets the Volumetric Cloud Color<br /><br />This is only applied if <code>SetSkyMode(SkyMode.VolumetricClouds)</code> is set",
+			"description_long": "Sets the Volumetric Cloud Color.<br/><br/>This is only applied if <code>SetSkyMode(SkyMode.VolumetricClouds)</code> is set",
 			"parameters": [
 				{
 					"type": "Color",

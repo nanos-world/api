@@ -210,7 +210,7 @@
 		{
 			"name": "SetParameterMaterialFromTexture",
 			"description": "Sets a Material from a Texture parameter in this Particle System",
-			"description_long": "This will create a Material and set this Texture as it's parameter internally, then set the Material into the Particle parameter",
+			"description_long": "Sets a Material from a Texture parameter in this Particle System.<br/><br/>This will create a Material and set this Texture as it's parameter internally, then set the Material into the Particle parameter",
 			"authority": "client",
 			"parameters": [
 				{
@@ -229,7 +229,7 @@
 		{
 			"name": "SetParameterMaterialFromCanvas",
 			"description": "Sets a Material from a Canvas parameter in this Particle System",
-			"description_long": "This will create a Material and set this Canvas as it's parameter internally, then set the Material into the Particle parameter",
+			"description_long": "Sets a Material from a Canvas parameter in this Particle System.<br/><br/>This will create a Material and set this Canvas as it's parameter internally, then set the Material into the Particle parameter",
 			"authority": "client",
 			"parameters": [
 				{
@@ -248,7 +248,7 @@
 		{
 			"name": "SetParameterMaterialFromWebUI",
 			"description": "Sets a Material from a Canvas parameter in this Particle System",
-			"description_long": "This will create a Material and set this WebUI as it's parameter internally, then set the Material into the Particle parameter",
+			"description_long": "Sets a Material from a Canvas parameter in this Particle System.<br/><br/>This will create a Material and set this WebUI as it's parameter internally, then set the Material into the Particle parameter",
 			"authority": "client",
 			"parameters": [
 				{

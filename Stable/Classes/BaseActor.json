@@ -154,7 +154,7 @@
 		{
 			"name": "SetDistanceOptimizationMultiplier",
 			"description": "Sets this Actor's distance optimization multiplier",
-			"description_long": "Sets this Actor's distance optimization multiplier.<br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"description_long": "Sets this Actor's distance optimization multiplier.<br/><br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
 			"efficiency": "fast",
 			"parameters": [
@@ -265,7 +265,7 @@
 		{
 			"name": "SetHighlightEnabled",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
-			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use. This will apply the highlight on every attached entity too",
+			"description_long": "Sets whether the highlight is enabled on this Actor, and which highlight index to use.<br/><br/>This will apply the highlight on every attached entity too",
 			"authority": "client",
 			"efficiency": "fast",
 			"parameters": [
@@ -293,7 +293,7 @@
 		{
 			"name": "SetOutlineEnabled",
 			"description": "Sets whether the outline is enabled on this Actor, and which outline index to use",
-			"description_long": "Sets whether the outline is enabled on this Actor, and which outline index to use. This will apply the outline on every attached entity too",
+			"description_long": "Sets whether the outline is enabled on this Actor, and which outline index to use.<br/><br/>This will apply the outline on every attached entity too",
 			"authority": "client",
 			"efficiency": "fast",
 			"parameters": [
@@ -411,7 +411,7 @@
 		{
 			"name": "SetRenderCullDistance",
 			"description": "Sets this Actor's render cull distance",
-			"description_long": "Sets this Actor's render cull distance. Note: this will only affect the rendering distance, the entity will still be spawned and synced normally regardless of this distance",
+			"description_long": "Sets this Actor's render cull distance.<br/><br/>Note: this will only affect the rendering distance, the entity will still be spawned and synced normally regardless of this distance",
 			"authority": "both",
 			"efficiency": "moderate",
 			"parameters": [
@@ -438,7 +438,7 @@
 		{
 			"name": "SetImpulseOnDamage",
 			"description": "Sets whether taking damage (shots, melee, explosions) pushes this Actor's physics body",
-			"description_long": "Useful for things that should react to shots without being knocked around, like a shooting target that still falls with gravity and can be moved by other means. Enabled by default",
+			"description_long": "Sets whether taking damage (shots, melee, explosions) pushes this Actor's physics body.<br/><br/>Useful for things that should react to shots without being knocked around, like a shooting target that still falls with gravity and can be moved by other means. Enabled by default",
 			"authority": "both",
 			"efficiency": "fast",
 			"parameters": [
@@ -452,7 +452,7 @@
 		{
 			"name": "SetNetworkAuthority",
 			"description": "Sets the Player to have network authority over this Actor",
-			"description_long": "Sets the Player to have network authority over this Actor. This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
+			"description_long": "Sets the Player to have network authority over this Actor.<br/><br/>This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
 			"authority": "server",
 			"efficiency": "moderate",
 			"parameters": [
@@ -476,7 +476,7 @@
 		{
 			"name": "SetNetworkAuthorityAutoDistributed",
 			"description": "Sets if this Actor will auto distribute the network authority between players",
-			"description_long": "Sets if this Actor will auto distribute the network authority between players when idle<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
+			"description_long": "Sets if this Actor will auto distribute the network authority between players.<br/><br/>It only happens while the Actor is idle.<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
 			"authority": "server",
 			"efficiency": "fast",
 			"parameters": [
@@ -496,7 +496,7 @@
 		{
 			"name": "TranslateTo",
 			"description": "Smoothly moves this actor to a location over a certain time",
-			"description_long": "It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>TranslateRelativeTo</code> for attached actors",
+			"description_long": "Smoothly moves this actor to a location over a certain time.<br/><br/>It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>TranslateRelativeTo</code> for attached actors",
 			"authority": "network-authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -521,7 +521,7 @@
 		{
 			"name": "RotateTo",
 			"description": "Smoothly rotates this actor to an angle over a certain time",
-			"description_long": "It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>RotateRelativeTo</code> for attached actors",
+			"description_long": "Smoothly rotates this actor to an angle over a certain time.<br/><br/>It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>RotateRelativeTo</code> for attached actors",
 			"authority": "network-authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -546,7 +546,7 @@
 		{
 			"name": "TranslateRelativeTo",
 			"description": "Smoothly moves this attached actor to a location relative to its parent over a certain time",
-			"description_long": "Like <code>SetRelativeLocation</code>, it keeps following the parent while it moves. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
+			"description_long": "Smoothly moves this attached actor to a location relative to its parent over a certain time.<br/><br/>Like <code>SetRelativeLocation</code>, it keeps following the parent while it moves. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
 			"authority": "network-authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -571,7 +571,7 @@
 		{
 			"name": "RotateRelativeTo",
 			"description": "Smoothly rotates this attached actor to an angle relative to its parent over a certain time",
-			"description_long": "Like <code>SetRelativeRotation</code>, it keeps following the parent while it rotates. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
+			"description_long": "Smoothly rotates this attached actor to an angle relative to its parent over a certain time.<br/><br/>Like <code>SetRelativeRotation</code>, it keeps following the parent while it rotates. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
 			"authority": "network-authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -635,7 +635,7 @@
 		{
 			"name": "IsInWater",
 			"description": "Returns true if this Actor is in water",
-			"description_long": "Returns true if this Actor is in water. Only Actors that simulate physics work for this function, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"description_long": "Returns true if this Actor is in water.<br/><br/>Only Actors that simulate physics work for this function, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
 			"authority": "both",
 			"efficiency": "fast",
 			"return": [
@@ -649,7 +649,7 @@
 		{
 			"name": "IsNetworkDistributed",
 			"description": "Returns true if this Actor is currently network distributed",
-			"description_long": "Returns true if this Actor is currently network distributed. Only actors being network distributed can have their network authority set<br>Entities have NetworkDistributed automatically disabled when: Attached, Possessed, Grabbed, Picked Up or Driving",
+			"description_long": "Returns true if this Actor is currently network distributed.<br/><br/>Only actors being network distributed can have their network authority set<br>Entities have NetworkDistributed automatically disabled when: Attached, Possessed, Grabbed, Picked Up or Driving",
 			"authority": "both",
 			"efficiency": "fast",
 			"return": [
@@ -883,6 +883,13 @@
 			]
 		},
 		{
+			"name": "ResetVelocity",
+			"description": "Resets this Actor's linear and angular velocities to zero",
+			"description_long": "Resets this Actor's linear and angular velocities to zero.<br/><br/>For Pawns, also resets the character movement velocity.",
+			"authority": "authority",
+			"efficiency": "fast"
+		},
+		{
 			"name": "GetVelocity",
 			"description": "Gets this Actor's current velocity",
 			"authority": "both",
@@ -1072,7 +1079,7 @@
 			"authority": "both",
 			"name": "EnterWater",
 			"description": "Triggered when an Actor enters a water body",
-			"description_long": "Triggered when an Actor enters a water body. Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"description_long": "Triggered when an Actor enters a water body.<br/><br/>Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
 			"arguments": [
 				{
 					"name": "self",
@@ -1090,7 +1097,7 @@
 			"authority": "both",
 			"name": "LeaveWater",
 			"description": "Triggered when an Actor leaves a water body",
-			"description_long": "Triggered when an Actor leaves a water body. Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
+			"description_long": "Triggered when an Actor leaves a water body.<br/><br/>Only Actors that simulate physics trigger this event, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only.",
 			"arguments": [
 				{
 					"name": "self",

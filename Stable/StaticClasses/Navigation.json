@@ -6,7 +6,7 @@
 		{
 			"name": "GetRandomReachablePointInRadius",
 			"description": "Finds random, reachable point in navigable space restricted to radius around origin",
-			"description_long": "Finds random, reachable point in navigable space restricted to radius around origin (only if map has a NavMesh)",
+			"description_long": "Finds random, reachable point in navigable space restricted to radius around origin.<br/><br/>It only works if the map has a NavMesh",
 			"authority": "client",
 			"return": [
 				{
@@ -31,7 +31,7 @@
 		{
 			"name": "GetRandomPointInNavigableRadius",
 			"description": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin",
-			"description_long": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin (only if map has a NavMesh)",
+			"description_long": "Finds random, point in navigable space restricted to Radius around Origin. Resulting location is not tested for reachability from the Origin.<br/><br/>It only works if the map has a NavMesh",
 			"authority": "client",
 			"return": [
 				{
@@ -56,7 +56,7 @@
 		{
 			"name": "FindPathToLocation",
 			"description": "Finds a Path given Start and End location",
-			"description_long": "Finds a Path given Start and End location (only if map has a NavMesh)",
+			"description_long": "Finds a Path given Start and End location.<br/><br/>It only works if the map has a NavMesh",
 			"authority": "client",
 			"return": [
 				{

@@ -37,7 +37,7 @@
 			"authority": "server",
 			"name": "AttachStartTo",
 			"description": "Attaches the beginning of this cable to another Actor at a specific bone or relative location",
-			"description_long": "Attaches the beginning of this cable to another Actor at a specific bone or relative location. For optimization, it is recommended attaching start first if you wish to attach both start and end, to avoid double calculations.",
+			"description_long": "Attaches the beginning of this cable to another Actor at a specific bone or relative location.<br/><br/>For optimization, it is recommended attaching start first if you wish to attach both start and end, to avoid double calculations.",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -70,7 +70,7 @@
 			"authority": "server",
 			"name": "AttachEndTo",
 			"description": "Attaches the end of this cable to another Actor at a specific bone or relative location",
-			"description_long": "Attaches the end of this cable to another Actor at a specific bone or relative location. For optimization, it is recommended to be the last method to call when setting up the cable.<br/><br/>Note¹: You can attach the end only, and the start will fixed at the Cable's location.<br/><br/>Note²: If no linear limit is set, the entity will be snapped to the other actor. Alternatively you can keep a physics constraint offset by passing it as parameter.",
+			"description_long": "Attaches the end of this cable to another Actor at a specific bone or relative location.<br/><br/>For optimization, it is recommended to be the last method to call when setting up the cable.<br/><br/>Note¹: You can attach the end only, and the start will fixed at the Cable's location.<br/><br/>Note²: If no linear limit is set, the entity will be snapped to the other actor. Alternatively you can keep a physics constraint offset by passing it as parameter.",
 			"parameters": [
 				{
 					"type": "Actor",
@@ -225,7 +225,7 @@
 			"authority": "server",
 			"name": "SetLinearLimits",
 			"description": "Sets the Physics Linear Limits of this cable",
-			"description_long": "Sets the Physics Linear Limits of this cable. If use_soft_constraint is enabled, then stiffness and damping will be used, otherwise restitution will be used.<br/><br/>Note: this method must be called before attaching any cable end.",
+			"description_long": "Sets the Physics Linear Limits of this cable.<br/><br/>If use_soft_constraint is enabled, then stiffness and damping will be used, otherwise restitution will be used.<br/><br/>Note: this method must be called before attaching any cable end.",
 			"parameters": [
 				{
 					"type": "ConstraintMotion",

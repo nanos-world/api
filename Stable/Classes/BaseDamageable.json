@@ -17,7 +17,7 @@
 				}
 			],
 			"description": "Do damage to this entity",
-			"description_long": "Do damage to this entity, will trigger all related events and apply modified damage based on bone. Also will apply impulse if it's a heavy explosion",
+			"description_long": "Do damage to this entity.<br/><br/>It triggers all the related events and modifies the damage based on the bone. A heavy explosion also applies an impulse",
 			"parameters": [
 				{
 					"type": "integer",
@@ -120,7 +120,7 @@
 			"authority": "server",
 			"name": "SetHealth",
 			"description": "Sets the Health of this Entity",
-			"description_long": "Sets the Health of this Entity. You can only call it on alive Entities (call Respawn first)",
+			"description_long": "Sets the Health of this Entity.<br/><br/>You can only call it on alive Entities (call Respawn first)",
 			"parameters": [
 				{
 					"type": "integer",

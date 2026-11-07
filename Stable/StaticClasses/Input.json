@@ -36,7 +36,7 @@
 			"authority": "client",
 			"name": "Unbind",
 			"description": "Unbinds an Input function",
-			"description_long": "Unbinds all Input functions related to the given binding_name and input_event",
+			"description_long": "Unbinds an Input function.<br/><br/>Unbinds all Input functions related to the given binding_name and input_event",
 			"parameters": [
 				{
 					"type": "string",
@@ -276,7 +276,7 @@
 		{
 			"name": "InputKey",
 			"description": "Forces an Input Key event on Local Player",
-			"description_long": "Forces an Input Key event on Local Player<br/><br/>This won't trigger any Scripting event as it bypass internal validations",
+			"description_long": "Forces an Input Key event on Local Player.<br/><br/>This won't trigger any Scripting event as it bypass internal validations",
 			"authority": "client",
 			"parameters": [
 				{
@@ -320,7 +320,7 @@
 		{
 			"name": "IsBindingDown",
 			"description": "Returns if a Key Binding is being pressed",
-			"description_long": "Returns if a Key Binding is being pressed.<br><br>A Binding can be mapped to more than one Key, any of them being pressed is enough for this to return <code>true</code>.",
+			"description_long": "Returns if a Key Binding is being pressed.<br/><br/>A Binding can be mapped to more than one Key, any of them being pressed is enough for this to return <code>true</code>.",
 			"authority": "client",
 			"return": [
 				{

@@ -125,7 +125,7 @@
 		{
 			"name": "Submit",
 			"description": "Submits a chat message as if the Player had typed it in the chat",
-			"description_long": "Submits a chat message as if the Player had typed it in the chat, also triggering the PlayerSubmit event",
+			"description_long": "Submits a chat message as if the Player had typed it in the chat.<br/><br/>It also triggers the PlayerSubmit event",
 			"authority": "server",
 			"parameters": [
 				{
@@ -224,7 +224,7 @@
 		{
 			"name": "ChatEntry",
 			"description": "Called when a new Chat Message is received, this is also triggered when new messages are sent programatically",
-			"description_long": "Called when a new Chat Message is received, this is also triggered when new messages are sent programatically<br/><br/>This is useful for creating your own Chat interface while still use the built-in system",
+			"description_long": "Called when a new Chat Message is received, this is also triggered when new messages are sent programatically.<br/><br/>This is useful for creating your own Chat interface while still use the built-in system",
 			"authority": "client",
 			"arguments": [
 				{

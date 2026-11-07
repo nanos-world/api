@@ -24,7 +24,7 @@
 		{
 			"name": "Require",
 			"description": "Loads a .lua file",
-			"description_long": "Loads a .lua file. Note that this method caches the result, so further calls return the cached value.<br/><br/>We currently support 5 searchers, which are looked in the following order:<ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code></li><li>Relative to <code>Packages/</code></li></ol><p>Note: Clients will only download and have access to <code>Client/</code> and <code>Shared/</code> folders.</p>",
+			"description_long": "Loads a .lua file.<br/><br/>Note that this method caches the result, so further calls return the cached value.<br/><br/>We currently support 5 searchers, which are looked in the following order:<ol><li>Relative to <code>current-file-path/</code></li><li>Relative to <code>current-package/Client/</code> or <code>current-package/Server/</code> (depending on your side)</li><li>Relative to <code>current-package/Shared/</code></li><li>Relative to <code>current-package/</code></li><li>Relative to <code>Packages/</code></li></ol><p>Note: Clients will only download and have access to <code>Client/</code> and <code>Shared/</code> folders.</p>",
 			"authority": "both",
 			"parameters": [
 				{
@@ -55,7 +55,7 @@
 		{
 			"name": "LoadFile",
 			"description": "Compiles a .lua file and returns a function to run it",
-			"description_long": "Compiles a .lua file and returns a function to run it. To be used for loading files in a sandboxed environment.<br/><br/>Supports the same searchers as <a href=\"#static-function-require\">Package.Require</a>.",
+			"description_long": "Compiles a .lua file and returns a function to run it.<br/><br/>To be used for loading files in a sandboxed environment.<br/><br/>Supports the same searchers as <a href=\"#static-function-require\">Package.Require</a>.",
 			"authority": "both",
 			"parameters": [
 				{
@@ -103,7 +103,7 @@
 		{
 			"name": "ReloadClientFile",
 			"description": "Reloads a file from <code>Client/</code> or <code>Shared/</code> folder and sends the updated version to clients, triggering the <a href=\"#event-filereload\">FileReload</a> event on them",
-			"description_long": "Reloads a file from <code>Client/</code> or <code>Shared/</code> folder and sends the updated version to clients, triggering the <a href=\"#event-filereload\">FileReload</a> event on them<br/><br/>The reloaded file will be re-cached and downloaded normally by new connecting clients<br/><br/>Note that this method does use the main network lane, so it is not recommended to be used frequently or with large files in production environments as it may cause network congestion and lag spikes. It is mostly intended for development purposes to allow faster iteration on client files without needing to reload the whole package",
+			"description_long": "Reloads a file from <code>Client/</code> or <code>Shared/</code> folder and sends the updated version to clients, triggering the <a href=\"#event-filereload\">FileReload</a> event on them.<br/><br/>The reloaded file will be re-cached and downloaded normally by new connecting clients<br/><br/>Note that this method does use the main network lane, so it is not recommended to be used frequently or with large files in production environments as it may cause network congestion and lag spikes. It is mostly intended for development purposes to allow faster iteration on client files without needing to reload the whole package",
 			"authority": "server",
 			"parameters": [
 				{
@@ -165,7 +165,7 @@
 		{
 			"name": "SetPersistentData",
 			"description": "Sets a Persistent Value which will be saved to disk",
-			"description_long": "Sets a Persistent Value which will be saved to disk. Note the actual flush to disk is deferred and may not occur immediately",
+			"description_long": "Sets a Persistent Value which will be saved to disk.<br/><br/>Note the actual flush to disk is deferred and may not occur immediately",
 			"authority": "both",
 			"parameters": [
 				{
@@ -184,7 +184,7 @@
 		{
 			"name": "GetDirectories",
 			"description": "Gets a list of all directories in this package",
-			"description_long": "Gets a list of all files in this package, optionally with filters",
+			"description_long": "Gets a list of all directories in this package.<br/><br/>Gets a list of all files in this package, optionally with filters",
 			"authority": "both",
 			"parameters": [
 				{
@@ -205,7 +205,7 @@
 		{
 			"name": "GetFiles",
 			"description": "Gets a list of all files in this package",
-			"description_long": "Gets a list of all files in this package, optionally with filters",
+			"description_long": "Gets a list of all files in this package.<br/><br/>Filters are optional",
 			"authority": "both",
 			"parameters": [
 				{
@@ -280,7 +280,7 @@
 		{
 			"name": "GetPersistentData",
 			"description": "Gets the Persistent Value from the disk",
-			"description_long": "Gets a Persistent Value from the disk<br/>Pass no parameter to return the whole table, or a key to get a specific value",
+			"description_long": "Gets the Persistent Value from the disk.<br/><br/>Gets a Persistent Value from the disk<br/>Pass no parameter to return the whole table, or a key to get a specific value",
 			"authority": "both",
 			"return": [
 				{
@@ -301,7 +301,7 @@
 		{
 			"name": "FlushPersistentData",
 			"description": "Flushes the Persistent Data pending changes to disk immediately",
-			"description_long": "Flushes the Persistent Data pending changes to disk immediately. Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
+			"description_long": "Flushes the Persistent Data pending changes to disk immediately.<br/><br/>Note: this operation is already performed automatically under the hood, it is not necessary to keep always flushing and should only be used when really needed, as disk writing is a slow operation",
 			"authority": "both",
 			"efficiency": "slow"
 		},
@@ -323,7 +323,7 @@
 			"name": "Load",
 			"authority": "both",
 			"description": "Called when this package is loaded",
-			"description_long": "Called when this package is loaded<br/><br/>This event is triggered differently depending on the situation:<br/><ul><li>When the <b>server starts</b> or you run <code>package reload all</code> the event triggers only after ALL packages are loaded.</li><li>In all other cases (<code>package load/reload</code> or <code>Package.Load/Reload</code>) the event is triggered immediately after the package is loaded/reloaded.</li></ul>"
+			"description_long": "Called when this package is loaded.<br/><br/>This event is triggered differently depending on the situation:<br/><ul><li>When the <b>server starts</b> or you run <code>package reload all</code> the event triggers only after ALL packages are loaded.</li><li>In all other cases (<code>package load/reload</code> or <code>Package.Load/Reload</code>) the event is triggered immediately after the package is loaded/reloaded.</li></ul>"
 		},
 		{
 			"name": "Unload",
@@ -334,7 +334,7 @@
 			"name": "FileReload",
 			"authority": "client",
 			"description": "Called when a file is directly reloaded from the server using <a href=\"#static-function-reloadclientfile\">Package.ReloadClientFile()</a>",
-			"description_long": "Called when a file is directly reloaded from the server using <a href=\"#static-function-reloadclientfile\">Package.ReloadClientFile()</a><br/><br/>You can use the path to reload the file in runtime with <a href=\"#static-function-require\">Package.Require(path, true)</a>",
+			"description_long": "Called when a file is directly reloaded from the server using <a href=\"#static-function-reloadclientfile\">Package.ReloadClientFile()</a>.<br/><br/>You can use the path to reload the file in runtime with <a href=\"#static-function-require\">Package.Require(path, true)</a>",
 			"arguments": [
 				{
 					"type": "string",

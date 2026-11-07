@@ -143,7 +143,7 @@
 			"authority": "server",
 			"name": "SetEngineStarted",
 			"description": "Sets if the Engine is turned off/on",
-			"description_long": "Sets if the Engine is turned off/on (this will affect Lights, Sounds and ability to Throttle)",
+			"description_long": "Sets if the Engine is turned off/on.<br/><br/>This affects the Lights, the Sounds and the ability to Throttle",
 			"parameters": [
 				{
 					"type": "boolean",
@@ -348,7 +348,7 @@
 			"authority": "server",
 			"name": "SetWheel",
 			"description": "Configures a Vehicle Wheel",
-			"description_long": "Wheels can be updated in runtime by calling SetWheel again, you can for example change the suspension high or disable a wheel totally by toggling affected_by_engine off or setting radius to 0.",
+			"description_long": "Configures a Vehicle Wheel.<br/><br/>Wheels can be updated in runtime by calling SetWheel again, you can for example change the suspension high or disable a wheel totally by toggling affected_by_engine off or setting radius to 0.",
 			"parameters": [
 				{
 					"type": "integer",
@@ -542,7 +542,7 @@
 			"authority": "server",
 			"name": "SetSteeringWheelSetup",
 			"description": "Configures where the Steering Wheel is located",
-			"description_long": "Configures where the Steering Wheel is located, so Characters can grab it procedurally properly",
+			"description_long": "Configures where the Steering Wheel is located.<br/><br/>Characters use it to grab the Steering Wheel procedurally",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -694,6 +694,29 @@
 					"type": "boolean",
 					"name": "is_honking",
 					"description": "Whether it started (true) or stopped (false) honking"
+				}
+			]
+		},
+		{
+			"name": "TireFlat",
+			"description": "Triggered when a Tire goes flat or is restored",
+			"description_long": "Triggered when a Tire goes flat or is restored.<br/><br/>Fires when the flat state of a tire actually changes, by damage or by <code>SetTireFlat</code>. Note that \"Respawn\" event restores all tires",
+			"authority": "both",
+			"arguments": [
+				{
+					"type": "VehicleWheeled",
+					"name": "self",
+					"description": "The Vehicle Wheeled that triggered the event"
+				},
+				{
+					"type": "integer",
+					"name": "wheel_index",
+					"description": "Index of the wheel, as given to SetWheel"
+				},
+				{
+					"type": "boolean",
+					"name": "is_flat",
+					"description": "Whether the tire went flat (true) or was restored (false)"
 				}
 			]
 		}

@@ -12,7 +12,7 @@
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
-			"description_long": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Attaches a Skeletal Mesh as master pose to this entity.<br/><br/>Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"last_compatibility_version": "1.144",
 			"parameters": [
 				{
@@ -79,7 +79,7 @@
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
 			"description": "Attaches a Static Mesh to this entity",
-			"description_long": "Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
+			"description_long": "Attaches a Static Mesh to this entity.<br/><br/>Spawns and attaches a StaticMesh to this Pickable in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
 				{
 					"type": "string",
@@ -356,7 +356,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancyPontoons",
 			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
-			"description_long": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
+			"description_long": "Sets the Buoyancy Pontoons used by the Water simulation.<br/><br/>Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
 			"parameters": [
 				{
 					"type": "table",
@@ -383,7 +383,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancySettings",
 			"description": "Sets how this entity behaves on Water",
-			"description_long": "Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
+			"description_long": "Sets how this entity behaves on Water.<br/><br/>Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
 			"parameters": [
 				{
 					"type": "boolean",

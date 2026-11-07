@@ -65,7 +65,7 @@
 		{
 			"name": "AddRenderActor",
 			"description": "Adds an Actor to the Render Only list",
-			"description_long": "Adds an Actor to the Render Only list<br/><br/>Note: adding one actor to this will make the SceneCapture only to render those Actors.",
+			"description_long": "Adds an Actor to the Render Only list.<br/><br/>Note: adding one actor to this will make the SceneCapture only to render those Actors.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -129,6 +129,7 @@
 		{
 			"name": "EncodeToBase64",
 			"description": "Takes a snapshot of the SceneCapture and returns a Base64 of it",
+			"description_long": "Takes a snapshot of the SceneCapture and returns a Base64 of it.<br/><br/>Optional output dimensions resize only the encoded image using a smooth, gamma-correct filter. PNG and BMP resizing weights colors by alpha to preserve transparent edges. The capture texture is unchanged. Each omitted dimension keeps its capture size; aspect ratio is not adjusted automatically. Capture at a higher resolution and export at a smaller size for supersampling.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -136,6 +137,18 @@
 					"name": "image_format",
 					"default": "ImageFormat.JPEG",
 					"description": "Which format to generate - JPEG is fastest but discards Alpha channel"
+				},
+				{
+					"type": "integer",
+					"name": "output_width",
+					"default": "nil",
+					"description": "Encoded image width in pixels (1 to 4096). If omitted, uses the capture texture width"
+				},
+				{
+					"type": "integer",
+					"name": "output_height",
+					"default": "nil",
+					"description": "Encoded image height in pixels (1 to 4096). If omitted, uses the capture texture height"
 				}
 			],
 			"return": [
@@ -154,6 +167,7 @@
 		{
 			"name": "EncodeToBase64Async",
 			"description": "Takes a snapshot of the SceneCapture and returns a Base64 of it (asynchronously)",
+			"description_long": "Takes a snapshot of the SceneCapture and returns a Base64 of it (asynchronously).<br/><br/>Optional output dimensions resize only the encoded image using a smooth, gamma-correct filter. PNG and BMP resizing weights colors by alpha to preserve transparent edges. The capture texture is unchanged. Each omitted dimension keeps its capture size; aspect ratio is not adjusted automatically. Capture at a higher resolution and export at a smaller size for supersampling.",
 			"authority": "client",
 			"parameters": [
 				{
@@ -173,6 +187,18 @@
 							"description": "The base 64 content"
 						}
 					]
+				},
+				{
+					"type": "integer",
+					"name": "output_width",
+					"default": "nil",
+					"description": "Encoded image width in pixels (1 to 4096). If omitted, uses the capture texture width"
+				},
+				{
+					"type": "integer",
+					"name": "output_height",
+					"default": "nil",
+					"description": "Encoded image height in pixels (1 to 4096). If omitted, uses the capture texture height"
 				}
 			],
 			"relations": {
@@ -196,9 +222,23 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "SetLODDistanceFactor",
+			"description": "Sets the distance scale used to select mesh detail in this SceneCapture",
+			"description_long": "Sets the distance scale used to select mesh detail in this SceneCapture.<br/><br/>The default is 2. Values below 1 favor more detail; values above 1 favor less detail. This also affects Nanite detail selection, but does not force a specific LOD or load higher-resolution texture mips. Only this SceneCapture is affected.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "float",
+					"name": "factor",
+					"description": "Finite LOD distance factor between 0.01 and 100"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "SetShowFlag",
 			"description": "Enables/Disables rendering features from being captured",
-			"description_long": "Enables/Disables rendering features from being captured<br/>A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
+			"description_long": "Enables/Disables rendering features from being captured.<br/><br/>A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
 			"authority": "client",
 			"parameters": [
 				{

@@ -55,7 +55,7 @@
 			"authority": "server",
 			"name": "SetEngineOffset",
 			"description": "Sets the relative location of the Engine (where the Physics Thruster, sounds and effects are attached)",
-			"description_long": "Sets the relative location of the Engine (where the Physics Thruster, sounds and effects are attached). Default is Vector(-200, 0, 0)",
+			"description_long": "Sets the relative location of the Engine (where the Physics Thruster, sounds and effects are attached).<br/><br/>Default is Vector(-200, 0, 0)",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -69,12 +69,12 @@
 			"authority": "server",
 			"name": "SetThrustStrength",
 			"description": "Sets the force of the Engine/Thruster",
-			"description_long": "Sets the force of the Engine/Thruster. Default is 1000",
+			"description_long": "Sets the force of the Engine/Thruster.<br/><br/>The force is in Newtons. Default is 3000, up to 65535.<br/><br/>Scale it with the boat's mass: the default suits a ~400 kg boat",
 			"parameters": [
 				{
 					"type": "integer",
 					"name": "force",
-					"description": "The new force of the Engine/Thruster"
+					"description": "The new force of the Engine/Thruster, in Newtons"
 				}
 			],
 			"efficiency": "fast"

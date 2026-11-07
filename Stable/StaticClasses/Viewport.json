@@ -54,7 +54,7 @@
 		{
 			"name": "SetHardwareCursor",
 			"description": "Loads and sets a hardware cursor in the game from a PNG image",
-			"description_long": "Loads and sets a hardware cursor in the game from a PNG image<br/>Note: due an engine limitation modifying an already set cursor image will not change the cursor until the game is restarted",
+			"description_long": "Loads and sets a hardware cursor in the game from a PNG image.<br/><br/>Note: due an engine limitation modifying an already set cursor image will not change the cursor until the game is restarted",
 			"authority": "client",
 			"parameters": [
 				{
@@ -167,7 +167,7 @@
 		{
 			"name": "SetBloodScreenIntensity",
 			"description": "Manually sets the Blood Screen intensity",
-			"description_long": "If you don't want the Blood Screen to be overridden by the default damage effect, disable it first with <code>Viewport.SetBloodScreenEnabled(false)</code>",
+			"description_long": "Manually sets the Blood Screen intensity.<br/><br/>If you don't want the Blood Screen to be overridden by the default damage effect, disable it first with <code>Viewport.SetBloodScreenEnabled(false)</code>",
 			"authority": "client",
 			"parameters": [
 				{

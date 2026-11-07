@@ -72,7 +72,7 @@
 			"authority": "server",
 			"name": "AddAnimationCharacterUse",
 			"description": "Sets an Animation when attacking",
-			"description_long": "Sets an Animation when attacking<br/><br/>You can add more than one animation, which will be selected randomly when attacking",
+			"description_long": "Sets an Animation when attacking.<br/><br/>You can add more than one animation, which will be selected randomly when attacking",
 			"parameters": [
 				{
 					"type": "AnimationPath",
@@ -162,7 +162,7 @@
 			"authority": "server",
 			"name": "SetDamageSettings",
 			"description": "Sets the times when to start applying damage and when to end",
-			"description_long": "Sets the times when to start applying damage and when to end. During this time the collision of the melee will be enabled and the damage will be applied if it hits something",
+			"description_long": "Sets the times when to start applying damage and when to end.<br/><br/>During this time the collision of the melee will be enabled and the damage will be applied if it hits something",
 			"parameters": [
 				{
 					"type": "float",
