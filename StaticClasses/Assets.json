@@ -319,6 +319,69 @@
 			"efficiency": "slow"
 		},
 		{
+			"name": "IsLoaded",
+			"description": "Returns if an Asset is already loaded and cached",
+			"description_long": "Returns if an Asset is already loaded and cached.<br/><br/>An Asset counts as loaded once an entity, an attached mesh or <code>Assets.LoadAsync</code> loaded it during this session, as the type it was loaded as.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "asset_path",
+					"description": "The asset reference in the format <code>asset-pack::AssetKey</code>"
+				},
+				{
+					"type": "AssetType",
+					"name": "asset_type",
+					"description": "The Asset Type"
+				}
+			],
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the asset is loaded"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "LoadAsync",
+			"description": "Loads an Asset in the background, so spawning or attaching it later does not freeze the game",
+			"description_long": "Loads an Asset in the background, so spawning or attaching it later does not freeze the game.<br/><br/>Entities and attached meshes load their assets right away when created, which can freeze the game for a moment when the asset is big or many are created at once (e.g. dressing several Characters with AddSkeletalMeshAttached).<br/><br/>The asset stays loaded and cached afterwards. Loading the same asset again while it is still loading waits for the same request. The callback always runs on a later tick, never inside this call, even when the asset was already loaded.",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "asset_path",
+					"description": "The asset reference in the format <code>asset-pack::AssetKey</code>"
+				},
+				{
+					"type": "AssetType",
+					"name": "asset_type",
+					"description": "The Asset Type"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "Called when the asset finished loading",
+					"function_parameters": [
+						{
+							"name": "success",
+							"type": "boolean",
+							"description": "If the asset was loaded"
+						}
+					]
+				}
+			],
+			"examples": [
+				{
+					"title": "Loads a Skeletal Mesh before attaching it",
+					"content": "Assets.LoadAsync(\"my-asset-pack::SK_MyHair\", AssetType.SkeletalMesh, function(success)\n\tif (success and character:IsValid()) then\n\t\tcharacter:AddSkeletalMeshAttached(\"hair\", \"my-asset-pack::SK_MyHair\")\n\tend\nend)"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "Precache",
 			"description": "Manually adds an Asset to be loaded during the Player's loading screen",
 			"authority": "server",
