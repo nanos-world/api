@@ -1,8 +1,72 @@
 {
 	"name": "Debug",
-	"description": "Draws Debug shapes in the world.",
-	"authority": "client",
+	"description": "Debugging tools: profiling for scripts, and drawing Debug shapes in the world.",
+	"authority": "both",
 	"static_functions": [
+		{
+			"name": "ProfileZone",
+			"description": "Runs a function and measures it as a zone in Tracy and in the native profiling",
+			"description_long": "Runs a function and measures it as a zone in Tracy and in the native profiling.<br/><br/>The zone is named '[package] name' and always closes when the function returns.<br/><br/>Use fixed names: each different name stays stored until the game or server closes, up to 256 names in total.",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "Name of the zone"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Function to run and measure"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "ProfilePlot",
+			"description": "Records a value in a graph in Tracy",
+			"description_long": "Records a value in a graph in Tracy.<br/><br/>The graph is named '[package] name'. Use fixed names: each different name stays stored until the game or server closes, up to 256 names in total. Does nothing while Tracy is not connected.",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "name",
+					"description": "Name of the graph"
+				},
+				{
+					"type": "number",
+					"name": "value",
+					"description": "Value to record"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "ProfileMessage",
+			"description": "Marks an event with a text in the Tracy timeline",
+			"description_long": "Marks an event with a text in the Tracy timeline.<br/><br/>The text is prefixed with '[package]'. Does nothing while Tracy is not connected.",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "text",
+					"description": "Text of the event"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "IsProfilerConnected",
+			"description": "Returns if a Tracy profiler is connected right now. Useful for skipping debugging logic",
+			"authority": "both",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If Tracy is connected"
+				}
+			],
+			"efficiency": "fast"
+		},
 		{
 			"name": "DrawBox",
 			"description": "Draws a Debug box in the world",
