@@ -383,7 +383,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancySettings",
 			"description": "Sets how this entity behaves on Water",
-			"description_long": "Sets how this entity behaves on Water.<br/><br/>Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it.",
+			"description_long": "Sets how this entity behaves on Water.<br/><br/>Any value passed as nil restores that setting's default.<br/><br/>The automatically calculated Pontoons are sized for the default buoyancy_coefficient, so a higher one makes the entity float higher.",
 			"parameters": [
 				{
 					"type": "boolean",
@@ -400,13 +400,13 @@
 				{
 					"type": "float",
 					"name": "buoyancy_damp",
-					"default": "1000",
-					"description": "First order damping on the vertical velocity, reduces bobbing"
+					"default": "nil",
+					"description": "First order damping on the vertical velocity, reduces bobbing. When nil (or negative) it is calculated from the mass and Pontoons"
 				},
 				{
 					"type": "float",
 					"name": "max_buoyant_force",
-					"default": "5000000",
+					"default": "1000000000",
 					"description": "Clamp on the upwards force, stops light objects being launched out of the water"
 				}
 			],
