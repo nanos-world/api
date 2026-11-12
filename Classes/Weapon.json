@@ -54,8 +54,15 @@
 			"authority": "server",
 			"name": "Reload",
 			"description": "Forces this Weapon to reload",
-			"description_long": "Forces this Weapon to reload.<br/><br/>It only works while a Character is handling the Weapon",
-			"efficiency": "moderate"
+			"description_long": "Forces this Weapon to reload.<br/><br/>It only works while a Character is handling the Weapon, the Ammo Bag is not empty and the Clip is not full. Returning true means the reload was requested, it can still be cancelled by the Character's AttemptReload event or interrupted. Use the Reload event to know how many bullets were actually reloaded",
+			"efficiency": "moderate",
+			"return": [
+				{
+					"name": "reload_requested",
+					"type": "boolean",
+					"description": "Whether the reload was requested"
+				}
+			]
 		},
 		{
 			"authority": "server",
