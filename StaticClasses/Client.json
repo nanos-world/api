@@ -38,17 +38,19 @@
 		{
 			"name": "SetEscapeMenuText",
 			"description": "Sets the Escape Menu text",
+			"description_long": "Sets the Escape Menu text as Markdown.",
 			"authority": "client",
 			"examples": [
 				{
 					"title": "Adding customized texts",
 					"content": [
 						"Client.SetEscapeMenuText([[",
-						"    <h1>Header 1</>",
-						"    <h2>Header 2</>",
-						"    <h3>Header 3</>",
-						"    <strong>Strong</>",
-						"    Normal Text",
+						"# Welcome to the server",
+						"",
+						"Read the **rules** before playing!",
+						"",
+						"- Be respectful",
+						"- Have fun",
 						"]])"
 					]
 				}
@@ -57,7 +59,7 @@
 				{
 					"type": "string",
 					"name": "text",
-					"description": "Supports using <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> and <code>&lt;strong&gt;</code> tags in the text."
+					"description": "The text to display, supports Markdown formatting"
 				}
 			],
 			"efficiency": "moderate"
