@@ -470,7 +470,8 @@
 			"relations": {
 				"functions": [
 					"SetVOIPLocalSetting",
-					"SetVOIPLocalVolume"
+					"SetVOIPLocalVolume",
+					"SetVOIPLocalAttenuation"
 				]
 			},
 			"efficiency": "fast"
@@ -496,6 +497,103 @@
 				]
 			},
 			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalHighPassFilter",
+			"description": "Sets the local/proximity VOIP high-pass filter threshold frequency",
+			"description_long": "Sets the local/proximity VOIP high-pass filter threshold frequency.<br/><br/>Set it to 0 to disable it. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener.",
+			"parameters": [
+				{
+					"name": "threshold",
+					"type": "integer",
+					"description": "The new local/proximity VOIP high-pass filter threshold frequency, in Hz"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalLowPassFilter",
+					"SetVOIPLocalOcclusion"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalLowPassFilter",
+			"description": "Sets the local/proximity VOIP low-pass filter threshold frequency",
+			"description_long": "Sets the local/proximity VOIP low-pass filter threshold frequency.<br/><br/>Set it to 0 to disable it. Useful to muffle a voice, like a player behind a wall, inside a vehicle or wearing a mask. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener.",
+			"parameters": [
+				{
+					"name": "threshold",
+					"type": "integer",
+					"description": "The new local/proximity VOIP low-pass filter threshold frequency, in Hz"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalHighPassFilter",
+					"SetVOIPLocalOcclusion"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalOcclusion",
+			"description": "Configures the automatic occlusion of the local/proximity VOIP",
+			"description_long": "Configures the automatic occlusion of the local/proximity VOIP.<br/><br/>When something blocks the line between the listener and this player, the voice gets a low-pass filter and a volume multiplier. It is enabled by default. Disable it to control the muffling from a script, with SetVOIPLocalLowPassFilter and SetVOIPLocalVolume.",
+			"parameters": [
+				{
+					"name": "enabled",
+					"type": "boolean",
+					"description": "If the voice is automatically occluded"
+				},
+				{
+					"name": "low_pass_frequency",
+					"type": "integer",
+					"default": "3500",
+					"description": "The low-pass filter threshold frequency applied when occluded, in Hz"
+				},
+				{
+					"name": "volume_multiplier",
+					"type": "float",
+					"default": "0.85",
+					"description": "The volume multiplier applied when occluded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalLowPassFilter",
+					"SetVOIPLocalVolume"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalAttenuation",
+			"description": "Sets how the local/proximity VOIP fades with distance",
+			"description_long": "Sets how the local/proximity VOIP fades with distance.<br/><br/>The voice plays at full volume inside the inner radius, then fades to silence at the max distance set with SetVOIPLocalMaxDistance.",
+			"parameters": [
+				{
+					"name": "inner_radius",
+					"type": "integer",
+					"description": "Distance where the voice plays at full volume. Default is 800. It is clamped to half of the max distance"
+				},
+				{
+					"name": "falloff_function",
+					"type": "AttenuationFunction",
+					"default": "AttenuationFunction.Logarithmic",
+					"description": "How the volume fades between the inner radius and the max distance"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalMaxDistance"
+				]
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
@@ -573,6 +671,24 @@
 				}
 			],
 			"efficiency": "fast"
+		},
+		{
+			"authority": "client",
+			"name": "GetVOIPAmplitude",
+			"description": "Returns how loud this player is talking right now",
+			"description_long": "Returns how loud this player is talking right now.<br/><br/>It is the RMS of the last voice data received from this player, before distance attenuation, occlusion and filters. Normal speech stays low in the scale, usually between 0.05 and 0.3. It only works for players the local player is receiving voice from, and for the local player while the voice is being transmitted. The local player's voice is only measured while this method keeps being called, so the first call returns 0.",
+			"return": [
+				{
+					"type": "float",
+					"description": "The voice amplitude from 0 to 1, or 0 if the player is not talking"
+				}
+			],
+			"relations": {
+				"events": [
+					"VOIP"
+				]
+			},
+			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
