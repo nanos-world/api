@@ -1724,7 +1724,7 @@
 			{
 				"key": "UnlitCameraAlignedDepth",
 				"value": "3",
-				"description": "Unlit, facing the camera and occluded by the scene"
+				"description": "Unlit, facing the camera and always visible through the scene (ignores depth)"
 			}
 		]
 	},
