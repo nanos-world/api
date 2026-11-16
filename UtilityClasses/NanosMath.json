@@ -102,10 +102,12 @@
 			"return": [
 				{
 					"type": "Vector",
+					"name": "relative_location",
 					"description": "the location relative to the actor"
 				},
 				{
 					"type": "Rotator",
+					"name": "relative_rotation",
 					"description": "the rotation relative to the actor"
 				}
 			],
@@ -135,10 +137,12 @@
 			"return": [
 				{
 					"type": "Vector",
+					"name": "world_location",
 					"description": "the location in world coordinates"
 				},
 				{
 					"type": "Rotator",
+					"name": "world_rotation",
 					"description": "the rotation in world coordinates"
 				}
 			],
