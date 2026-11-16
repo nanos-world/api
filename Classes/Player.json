@@ -579,7 +579,7 @@
 				{
 					"name": "inner_radius",
 					"type": "integer",
-					"description": "Distance where the voice plays at full volume. Default is 800. It is clamped to half of the max distance"
+					"description": "Distance where the voice plays at full volume. Default is 800. It is clamped to the max distance"
 				},
 				{
 					"name": "falloff_function",
@@ -670,6 +670,176 @@
 					"description": "Whether VOIP is muted for this player"
 				}
 			],
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalVolume",
+			"description": "Returns the local/proximity VOIP volume",
+			"return": [
+				{
+					"type": "float",
+					"description": "The local/proximity VOIP volume"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalVolume"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalMaxDistance",
+			"description": "Returns the local/proximity VOIP max distance",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The local/proximity VOIP max distance"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalMaxDistance"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalHighPassFilter",
+			"description": "Returns the local/proximity VOIP high-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalHighPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalLowPassFilter",
+			"description": "Returns the local/proximity VOIP low-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalLowPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalOcclusion",
+			"description": "Returns the automatic occlusion settings of the local/proximity VOIP",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"description": "If the voice is automatically occluded"
+				},
+				{
+					"type": "integer",
+					"name": "low_pass_frequency",
+					"description": "The low-pass filter threshold frequency applied when occluded, in Hz"
+				},
+				{
+					"type": "float",
+					"name": "volume_multiplier",
+					"description": "The volume multiplier applied when occluded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalOcclusion"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalAttenuation",
+			"description": "Returns how the local/proximity VOIP fades with distance",
+			"return": [
+				{
+					"type": "integer",
+					"name": "inner_radius",
+					"description": "The inner radius, where the voice plays at full volume"
+				},
+				{
+					"type": "AttenuationFunction",
+					"name": "falloff_function",
+					"description": "How the volume fades between the inner radius and the max distance"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalAttenuation"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPGlobalVolume",
+			"description": "Returns the global VOIP volume",
+			"return": [
+				{
+					"type": "float",
+					"description": "The global VOIP volume"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalVolume"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPGlobalHighPassFilter",
+			"description": "Returns the global VOIP high-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalHighPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPGlobalLowPassFilter",
+			"description": "Returns the global VOIP low-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalLowPassFilter"
+				]
+			},
 			"efficiency": "fast"
 		},
 		{
