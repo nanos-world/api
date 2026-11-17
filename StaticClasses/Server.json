@@ -332,6 +332,7 @@
 		{
 			"name": "SetValue",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
+			"description_long": "Sets a global value in the Server, which can be accessed from anywhere (server side).<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "server",
 			"parameters": [
 				{
@@ -342,7 +343,7 @@
 				{
 					"type": "any",
 					"name": "value",
-					"description": "Value"
+					"description": "The value, can be any serializable type (not functions)"
 				},
 				{
 					"name": "sync_on_client",

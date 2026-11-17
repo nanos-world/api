@@ -216,7 +216,7 @@
 				{
 					"type": "any",
 					"name": "value",
-					"description": "Value"
+					"description": "The value, can be any serializable type (not functions)"
 				}
 			],
 			"relations": {
