@@ -1,0 +1,159 @@
+{
+	"name": "Tebex",
+	"description": "Sell packages from your Tebex store in game and deliver them to your players.",
+	"authority": "server",
+	"static_functions": [
+		{
+			"name": "OpenCheckoutOverlay",
+			"description": "Opens the Tebex checkout of a package for a player, over the in-game menu",
+			"description_long": "Opens the Tebex checkout of a package for a player, over the in-game menu.<br/><br/>The server creates a basket with the package for the player's Steam ID, so the purchase is linked to that player without any login. Once Tebex answers, the player's in-game menu opens with the checkout popup, the same one the in-game store shows, and the player decides whether to pay.",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who will buy the package"
+				},
+				{
+					"type": "integer",
+					"name": "package_id",
+					"description": "The ID of the package in your Tebex store"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "Subscribe",
+			"description": "Subscribes to an Event",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event to subscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Callback to run on the event occurring"
+				}
+			],
+			"return": [
+				{
+					"type": "function",
+					"description": "The function callback"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "Unsubscribe",
+			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
+			"authority": "server",
+			"parameters": [
+				{
+					"type": "string",
+					"name": "event_name",
+					"description": "Event to unsubscribe to"
+				},
+				{
+					"type": "function",
+					"name": "callback",
+					"default": "nil",
+					"description": "Optional callback to specifically unsubscribe to"
+				}
+			],
+			"efficiency": "fast"
+		}
+	],
+	"events": [
+		{
+			"name": "OnlineCommand",
+			"description": "Called when an online command of a purchase is about to run for a connected player",
+			"description_long": "Called when an online command of a purchase is about to run for a connected player.<br/><br/>Online commands only run while their player is on the server. The <code>{id}</code>, <code>{steamid}</code>, <code>{username}</code> and <code>{name}</code> placeholders are already replaced in <code>command</code>.<br/><br/>Return <code>false</code> to handle the purchase in your script instead of running <code>command</code> in the server console. A handled command is removed from the Tebex queue. If you don't return <code>false</code> and no Package handles <code>command</code> in the console, it stays in the queue and this event is called again on the next fetch.",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to prevent the command from running in the server console"
+				}
+			],
+			"arguments": [
+				{
+					"type": "integer",
+					"name": "command_id",
+					"description": "The ID of this command in the Tebex queue"
+				},
+				{
+					"type": "integer",
+					"name": "package_id",
+					"description": "The ID of the package bought"
+				},
+				{
+					"type": "integer",
+					"name": "payment_id",
+					"description": "The ID of the payment"
+				},
+				{
+					"type": "string",
+					"name": "command",
+					"description": "The command configured in the Tebex package, with its placeholders replaced"
+				},
+				{
+					"type": "Player",
+					"name": "player",
+					"description": "The player who receives the purchase"
+				}
+			]
+		},
+		{
+			"name": "OfflineCommand",
+			"description": "Called when an offline command of a purchase is about to run",
+			"description_long": "Called when an offline command of a purchase is about to run.<br/><br/>Offline commands run whether or not their player is on the server, so the player is given by their Steam ID and name. The <code>{id}</code>, <code>{steamid}</code>, <code>{username}</code> and <code>{name}</code> placeholders are already replaced in <code>command</code>.<br/><br/>Return <code>false</code> to handle the purchase in your script instead of running <code>command</code> in the server console. A handled command is removed from the Tebex queue. If you don't return <code>false</code> and no Package handles <code>command</code> in the console, it stays in the queue and this event is called again on the next fetch.",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Return false to prevent the command from running in the server console"
+				}
+			],
+			"arguments": [
+				{
+					"type": "integer",
+					"name": "command_id",
+					"description": "The ID of this command in the Tebex queue"
+				},
+				{
+					"type": "integer",
+					"name": "package_id",
+					"description": "The ID of the package bought"
+				},
+				{
+					"type": "integer",
+					"name": "payment_id",
+					"description": "The ID of the payment"
+				},
+				{
+					"type": "string",
+					"name": "command",
+					"description": "The command configured in the Tebex package, with its placeholders replaced"
+				},
+				{
+					"type": "string",
+					"name": "tebex_player_id",
+					"description": "The internal Tebex ID of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_name",
+					"description": "The name of the player"
+				},
+				{
+					"type": "string",
+					"name": "player_steam_id",
+					"description": "The Steam ID of the player"
+				}
+			]
+		}
+	]
+}

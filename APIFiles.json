@@ -54,6 +54,7 @@
 		"Server": "Server.json",
 		"Sky": "Sky.json",
 		"Steam": "Steam.json",
+		"Tebex": "Tebex.json",
 		"Timer": "Timer.json",
 		"Trace": "Trace.json",
 		"Viewport": "Viewport.json"
