@@ -440,7 +440,7 @@
 		{
 			"name": "GetAllValuesKeys",
 			"description": "Gets a list of all values keys",
-			"authority": "server",
+			"authority": "both",
 			"return": [
 				{
 					"type": "string[]",
