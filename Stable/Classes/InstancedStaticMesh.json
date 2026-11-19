@@ -1,6 +1,6 @@
 {
 	"name": "InstancedStaticMesh",
-	"description": "An Instanced Static Mesh entity allows spawning a mesh that can have multiple instances efficiently rendered.",
+	"description": "An Instanced Static Mesh entity allows spawning a mesh that can have multiple instances efficiently rendered",
 	"authority": "both",
 	"network_distribution": "none",
 	"inheritance": [
@@ -230,7 +230,7 @@
 		},
 		{
 			"name": "ClearInstances",
-			"description": "Removes all instances.",
+			"description": "Removes all instances",
 			"authority": "authority",
 			"efficiency": "moderate"
 		}

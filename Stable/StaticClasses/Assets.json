@@ -1,6 +1,6 @@
 {
 	"name": "Assets",
-	"description": "Retrieve Assets Data from Asset Packs.",
+	"description": "Retrieve Assets Data from Asset Packs",
 	"authority": "both",
 	"static_functions": [
 		{

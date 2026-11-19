@@ -1,6 +1,6 @@
 {
 	"name": "string",
-	"description": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on.",
+	"description": "This library provides generic functions for string manipulation, such as finding and extracting substrings, and pattern matching. When indexing a string in Lua, the first character is at position 1 (not at 0, as in C). Indices are allowed to be negative and are interpreted as indexing backwards, from the end of the string. Thus, the last character is at position -1, and so on",
 	"functions": [
 		{
 			"name": "StartsWith",
@@ -137,17 +137,17 @@
 				{
 					"type": "string",
 					"name": "needle",
-					"description": "The string to find, can contain patterns if enabled."
+					"description": "The string to find, can contain patterns if enabled"
 				},
 				{
 					"type": "number",
 					"name": "start_position",
-					"description": "The position to start the search from, can be negative start position will be relative to the end position."
+					"description": "The position to start the search from, can be negative start position will be relative to the end position"
 				},
 				{
 					"type": "boolean",
 					"name": "plain",
-					"description": "Disable patterns."
+					"description": "Disable patterns"
 				}
 			],
 			"return": [
@@ -166,19 +166,19 @@
 			],
 			"is_native": true,
 			"name": "find",
-			"description": "Looks for the first match of <code>pattern</code> in the string."
+			"description": "Looks for the first match of <code>pattern</code> in the string"
 		},
 		{
 			"parameters": [
 				{
 					"type": "number",
 					"name": "repetitions",
-					"description": "Times to repeat, this values gets rounded internally."
+					"description": "Times to repeat, this values gets rounded internally"
 				},
 				{
 					"type": "string",
 					"name": "separator",
-					"description": "String that will separate the repeated piece. Notice that it doesn't add this string to the start or the end of the result, only between the repeated parts."
+					"description": "String that will separate the repeated piece. Notice that it doesn't add this string to the start or the end of the result, only between the repeated parts"
 				}
 			],
 			"return": [
@@ -189,7 +189,7 @@
 			],
 			"is_native": true,
 			"name": "rep",
-			"description": "Returns a string that is the concatenation of <code>n</code> copies of the string <code>s</code> separated by the string <code>sep</code>."
+			"description": "Returns a string that is the concatenation of <code>n</code> copies of the string <code>s</code> separated by the string <code>sep</code>"
 		},
 		{
 			"return": [
@@ -200,7 +200,7 @@
 			],
 			"is_native": true,
 			"name": "lower",
-			"description": "Returns a copy of this string with all uppercase letters changed to lowercase."
+			"description": "Returns a copy of this string with all uppercase letters changed to lowercase"
 		},
 		{
 			"return": [
@@ -211,19 +211,19 @@
 			],
 			"is_native": true,
 			"name": "upper",
-			"description": "Returns a copy of this string with all lowercase letters changed to uppercase."
+			"description": "Returns a copy of this string with all lowercase letters changed to uppercase"
 		},
 		{
 			"parameters": [
 				{
 					"type": "string",
 					"name": "pattern",
-					"description": "The pattern that defines what should be matched."
+					"description": "The pattern that defines what should be matched"
 				},
 				{
 					"type": "number",
 					"name": "start_position",
-					"description": "The start index to start the matching from, can be negative to start the match from a position relative to the end."
+					"description": "The start index to start the matching from, can be negative to start the match from a position relative to the end"
 				}
 			],
 			"return": [
@@ -234,7 +234,7 @@
 			],
 			"is_native": true,
 			"name": "match",
-			"description": "Looks for the first match of <code>pattern</code> in the string."
+			"description": "Looks for the first match of <code>pattern</code> in the string"
 		},
 		{
 			"return": [
@@ -245,19 +245,19 @@
 			],
 			"is_native": true,
 			"name": "reverse",
-			"description": "Returns a string that is the string <code>s</code> reversed."
+			"description": "Returns a string that is the string <code>s</code> reversed"
 		},
 		{
 			"parameters": [
 				{
 					"type": "number",
 					"name": "start_position",
-					"description": "The position of the first character that will be included in the sub-string."
+					"description": "The position of the first character that will be included in the sub-string"
 				},
 				{
 					"type": "number",
 					"name": "end_position",
-					"description": "The position of the last character to be included in the sub-string. It can be negative to count from the end."
+					"description": "The position of the last character to be included in the sub-string. It can be negative to count from the end"
 				}
 			],
 			"return": [
@@ -268,7 +268,7 @@
 			],
 			"is_native": true,
 			"name": "sub",
-			"description": "Returns the substring of the string that starts at <code>i</code> and continues until <code>j</code>."
+			"description": "Returns the substring of the string that starts at <code>i</code> and continues until <code>j</code>"
 		},
 		{
 			"parameters": [
@@ -286,7 +286,7 @@
 			],
 			"is_native": true,
 			"name": "gmatch",
-			"description": "Returns an iterator function that, each time it is called, returns the next captures from <code>pattern</code> over the string s. "
+			"description": "Returns an iterator function that, each time it is called, returns the next captures from <code>pattern</code> over the string s"
 		},
 		{
 			"return": [
@@ -297,24 +297,24 @@
 			],
 			"is_native": true,
 			"name": "len",
-			"description": "Returns its length."
+			"description": "Returns its length"
 		},
 		{
 			"parameters": [
 				{
 					"type": "string",
 					"name": "pattern",
-					"description": "The pattern that defines what should be matched and eventually be replaced."
+					"description": "The pattern that defines what should be matched and eventually be replaced"
 				},
 				{
 					"type": "string",
 					"name": "replacement",
-					"description": "In case of a string the matched sequence will be replaced with it. In case of a table, the matched sequence will be used as key and the table will be tested for the key, if a value exists it will be used as replacement.  In case of a function all matches will be passed as parameters to the function, the return value(s) of the function will then be used as replacement."
+					"description": "In case of a string the matched sequence will be replaced with it. In case of a table, the matched sequence will be used as key and the table will be tested for the key, if a value exists it will be used as replacement.  In case of a function all matches will be passed as parameters to the function, the return value(s) of the function will then be used as replacement"
 				},
 				{
 					"type": "number",
 					"name": "max_replacements",
-					"description": "Maximum number of replacements to be made."
+					"description": "Maximum number of replacements to be made"
 				}
 			],
 			"return": [
@@ -329,14 +329,14 @@
 			],
 			"is_native": true,
 			"name": "gsub",
-			"description": "Returns a copy of s in which all (or the first <code>n</code>, if given) occurrences of the <code>pattern</code> have been replaced by a replacement string specified by <code>repl</code>."
+			"description": "Returns a copy of s in which all (or the first <code>n</code>, if given) occurrences of the <code>pattern</code> have been replaced by a replacement string specified by <code>repl</code>"
 		},
 		{
 			"parameters": [
 				{
 					"type": "any...",
 					"name": "format_parameters",
-					"description": "Values to be formatted into the string."
+					"description": "Values to be formatted into the string"
 				}
 			],
 			"return": [
@@ -347,13 +347,13 @@
 			],
 			"is_native": true,
 			"name": "format",
-			"description": "Returns a formatted version of its variable number of arguments following the description given in its first argument."
+			"description": "Returns a formatted version of its variable number of arguments following the description given in its first argument"
 		},
 		{
 			"name": "ToTable",
 			"is_native": false,
 			"description": "Split string into table of single characters",
-			"description_long": "Split string into table of single characters.<br/><br/>Converts this string into a table where each element is a single-character substring of the original string.",
+			"description_long": "Converts this string into a table where each element is a single-character substring of the original string",
 			"return": [
 				{
 					"type": "string[]",
@@ -412,7 +412,7 @@
 			],
 			"is_native": true,
 			"name": "dump",
-			"description": "Returns a string containing a binary representation (a *binary chunk*) of the given function."
+			"description": "Returns a string containing a binary representation (a *binary chunk*) of the given function"
 		}
 	]
 }

@@ -1,6 +1,6 @@
 {
 	"name": "Steam",
-	"description": "Interact with Steam APIs.",
+	"description": "Interact with Steam APIs",
 	"authority": "client",
 	"static_functions": [
 		{
@@ -25,7 +25,7 @@
 		{
 			"name": "OpenInviteDialog",
 			"description": "Opens the Steam Overlay invite dialog, so the player can invite Friends to the current server",
-			"description_long": "Opens the Steam Overlay invite dialog, so the player can invite Friends to the current server.<br/><br/>When a Friend accepts, they join this server and <code>Steam.GetJoinedFromFriend()</code> returns this player's SteamID on their side. If they were already on this server, the <code>FriendJoin</code> event is called instead",
+			"description_long": "When a Friend accepts, they join this server and <code>Steam.GetJoinedFromFriend()</code> returns this player's SteamID on their side. If they were already on this server, the <code>FriendJoin</code> event is called instead",
 			"authority": "client",
 			"efficiency": "fast"
 		},
@@ -51,7 +51,7 @@
 		{
 			"name": "GetJoinedFromFriend",
 			"description": "Gets the SteamID of the Friend whose invite or \"Join Game\" brought this player to the current server",
-			"description_long": "Gets the SteamID of the Friend whose invite or \"Join Game\" brought this player to the current server.<br/><br/>It is <code>nil</code> if they connected any other way.<br/><br/>This value is reported by the client, so a server should not trust it blindly (e.g. ask the Friend to accept before adding the player to a private group).",
+			"description_long": "It is <code>nil</code> if they connected any other way.<br/><br/>This value is reported by the client, so a server should not trust it blindly (e.g. ask the Friend to accept before adding the player to a private group)",
 			"authority": "client",
 			"return": [
 				{
@@ -72,7 +72,7 @@
 		{
 			"name": "FriendJoin",
 			"description": "Called when this player accepts a Friend's invite or \"Join Game\" to the server they are already on",
-			"description_long": "Called when this player accepts a Friend's invite or \"Join Game\" to the server they are already on.<br/><br/>In this case the player does not reconnect.<br/><br/>When the player connects from another server or from the menus, use <code>Steam.GetJoinedFromFriend()</code> instead.",
+			"description_long": "In this case the player does not reconnect.<br/><br/>When the player connects from another server or from the menus, use <code>Steam.GetJoinedFromFriend()</code> instead",
 			"authority": "client",
 			"arguments": [
 				{

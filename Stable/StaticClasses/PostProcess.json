@@ -1,7 +1,7 @@
 {
 	"name": "PostProcess",
 	"authority": "client",
-	"description": "Interaction with Post Process effects.",
+	"description": "Interaction with Post Process effects",
 	"static_functions": [
 		{
 			"authority": "client",

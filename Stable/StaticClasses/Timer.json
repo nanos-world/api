@@ -1,6 +1,6 @@
 {
 	"name": "Timer",
-	"description": "Execute code at specified time intervals.",
+	"description": "Execute code at specified time intervals",
 	"authority": "both",
 	"static_functions": [
 		{
@@ -42,7 +42,7 @@
 				{
 					"type": "function",
 					"name": "callback",
-					"description": "The callback that will be executed.<br/>Return false to stop it from being called."
+					"description": "The callback that will be executed.<br/>Return false to stop it from being called"
 				},
 				{
 					"type": "integer",

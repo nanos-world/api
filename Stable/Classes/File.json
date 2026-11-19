@@ -1,6 +1,6 @@
 {
 	"name": "File",
-	"description": "A File represents an entry to a system file.",
+	"description": "A File represents an entry to a system file",
 	"authority": "both",
 	"constructors": [
 		{
@@ -104,7 +104,7 @@
 		{
 			"authority": "both",
 			"name": "ReadAsync",
-			"description": "Reads characters from the File asynchronously.",
+			"description": "Reads characters from the File asynchronously",
 			"parameters": [
 				{
 					"type": "integer",
@@ -148,13 +148,13 @@
 			],
 			"authority": "both",
 			"name": "ReadJSON",
-			"description": "Reads the whole file as a JSON and returns it.",
+			"description": "Reads the whole file as a JSON and returns it",
 			"efficiency": "blocking"
 		},
 		{
 			"authority": "both",
 			"name": "ReadJSONAsync",
-			"description": "Reads the whole file as a JSON and returns it asynchronously.",
+			"description": "Reads the whole file as a JSON and returns it asynchronously",
 			"parameters": [
 				{
 					"type": "function",
@@ -377,7 +377,7 @@
 		{
 			"name": "GetDirectories",
 			"description": "Gets a list of all directories given a path",
-			"description_long": "Gets a list of all directories given a path.<br/><br/>Filters are optional. Note that the results may differ between Linux and Windows due to the way the file system works",
+			"description_long": "Filters are optional. Note that the results may differ between Linux and Windows due to the way the file system works",
 			"authority": "both",
 			"parameters": [
 				{
@@ -404,7 +404,7 @@
 		{
 			"name": "GetFiles",
 			"description": "Gets a list of all files in a directory",
-			"description_long": "Gets a list of all files in a directory.<br/><br/>Filters are optional. Note that the results may differ between Linux and Windows due to the way the file system works",
+			"description_long": "Filters are optional. Note that the results may differ between Linux and Windows due to the way the file system works",
 			"authority": "both",
 			"parameters": [
 				{

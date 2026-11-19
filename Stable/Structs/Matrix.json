@@ -1,6 +1,6 @@
 {
 	"name": "Matrix",
-	"description": "A 4x4 transformation Matrix built from a rotation and an origin, which can be used for geometric and positional calculations. This is mainly used internally.",
+	"description": "A 4x4 transformation Matrix built from a rotation and an origin, which can be used for geometric and positional calculations. This is mainly used internally",
 	"constructors": [
 		{
 			"name": "Default Constructor",

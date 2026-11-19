@@ -1,6 +1,6 @@
 {
 	"name": "NanosTable",
-	"description": "A table containing useful and aux table functions.",
+	"description": "A table containing useful and aux table functions",
 	"static_functions": [
 		{
 			"name": "Dump",

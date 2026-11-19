@@ -1,6 +1,6 @@
 {
 	"name": "Color",
-	"description": "A color composed of components (R, G, B, A) with floating point precision.",
+	"description": "A color composed of components (R, G, B, A) with floating point precision",
 	"constructors": [
 		{
 			"name": "Default Constructor",

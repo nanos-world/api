@@ -1,6 +1,6 @@
 {
 	"name": "CharacterSimple",
-	"description": "CharacterSimple is a simpler Character implementation with basic Movement implementation. Aimed for custom NPCs or basic Pawns.",
+	"description": "CharacterSimple is a simpler Character implementation with basic Movement implementation. Aimed for custom NPCs or basic Pawns",
 	"authority": "both",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -355,7 +355,7 @@
 				}
 			],
 			"description": "Calls an Animation Blueprint Event or Function",
-			"description_long": "Calls an Animation Blueprint Event or Function.<br/><br/>Returns all Function return values on <strong>Client Side</strong>",
+			"description_long": "Returns all Function return values on <strong>Client Side</strong>",
 			"parameters": [
 				{
 					"type": "string",

@@ -1,6 +1,6 @@
 {
 	"name": "Level",
-	"description": "Work with Unreal level in runtime.",
+	"description": "Work with Unreal level in runtime",
 	"authority": "client",
 	"static_functions": [
 		{

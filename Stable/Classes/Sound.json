@@ -1,6 +1,6 @@
 {
 	"name": "Sound",
-	"description": "Class for playing in-game 2D and 3D sounds.",
+	"description": "Class for playing in-game 2D and 3D sounds",
 	"authority": "client",
 	"inheritance": [
 		"Entity",
@@ -184,7 +184,7 @@
 		{
 			"name": "SetLowPassFilter",
 			"authority": "client",
-			"description": "Sets low-pass filter frequency. Sets 0 to disable it.",
+			"description": "Sets low-pass filter frequency. Sets 0 to disable it",
 			"parameters": [
 				{
 					"type": "float",

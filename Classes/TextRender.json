@@ -1,6 +1,6 @@
 {
 	"name": "TextRender",
-	"description": "A Text Render class is useful for spawning Texts in 3D world.",
+	"description": "A Text Render class is useful for spawning Texts in 3D world",
 	"authority": "both",
 	"network_distribution": "none",
 	"inheritance": [
@@ -114,8 +114,8 @@
 		{
 			"name": "SetFont",
 			"authority": "both",
-			"description": "Sets the Font. The font must be pre-cooked as an offline cached, distance field font.",
-			"description_long": "Sets the Font. The font must be pre-cooked as an offline cached, distance field font.<br/><br/>Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
+			"description": "Sets the Font. The font must be pre-cooked as an offline cached, distance field font",
+			"description_long": "Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
 			"parameters": [
 				{
 					"name": "font_asset",

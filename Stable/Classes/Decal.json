@@ -1,6 +1,6 @@
 {
 	"name": "Decal",
-	"description": "Decals are Materials that are projected onto meshes in your level, including Static Meshes and Skeletal Meshes.",
+	"description": "Decals are Materials that are projected onto meshes in your level, including Static Meshes and Skeletal Meshes",
 	"authority": "client",
 	"inheritance": [
 		"Entity",
@@ -50,7 +50,7 @@
 	"functions": [
 		{
 			"name": "SetSize",
-			"description": "Sets the size of this Decal.",
+			"description": "Sets the size of this Decal",
 			"authority": "authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -63,7 +63,7 @@
 		},
 		{
 			"name": "SetFadeIn",
-			"description": "Starts fading in this Decal after a delay.",
+			"description": "Starts fading in this Decal after a delay",
 			"authority": "authority",
 			"efficiency": "fast",
 			"parameters": [
@@ -81,7 +81,7 @@
 		},
 		{
 			"name": "SetFadeOut",
-			"description": "Starts fading out this Decal after a delay.",
+			"description": "Starts fading out this Decal after a delay",
 			"authority": "authority",
 			"efficiency": "fast",
 			"parameters": [

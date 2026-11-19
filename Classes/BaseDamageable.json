@@ -1,6 +1,6 @@
 {
 	"name": "Damageable",
-	"description": "Base class for all Damageable entities. It provides Health and Damage related methods and events.",
+	"description": "Base class for all Damageable entities. It provides Health and Damage related methods and events",
 	"is_base": true,
 	"inheritance": [
 		"Entity",
@@ -17,7 +17,7 @@
 				}
 			],
 			"description": "Do damage to this entity",
-			"description_long": "Do damage to this entity.<br/><br/>It triggers all the related events and modifies the damage based on the bone. A heavy explosion also applies an impulse",
+			"description_long": "It triggers all the related events and modifies the damage based on the bone. A heavy explosion also applies an impulse",
 			"parameters": [
 				{
 					"type": "integer",
@@ -120,7 +120,7 @@
 			"authority": "server",
 			"name": "SetHealth",
 			"description": "Sets the Health of this Entity",
-			"description_long": "Sets the Health of this Entity.<br/><br/>You can only call it on alive Entities (call Respawn first)",
+			"description_long": "You can only call it on alive Entities (call Respawn first)",
 			"parameters": [
 				{
 					"type": "integer",
@@ -303,7 +303,7 @@
 			"return": [
 				{
 					"type": "number",
-					"description": "Return the multiplier to the final damage. Return <code>0</code> to cancel the damage (will still display animations, particles and apply impact forces). The default <code>1.0</code>."
+					"description": "Return the multiplier to the final damage. Return <code>0</code> to cancel the damage (will still display animations, particles and apply impact forces). The default <code>1.0</code>"
 				}
 			]
 		}

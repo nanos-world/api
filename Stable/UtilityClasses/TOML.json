@@ -1,6 +1,6 @@
 {
 	"name": "TOML",
-	"description": "TOML library.",
+	"description": "TOML library",
 	"static_functions": [
 		{
 			"name": "Dump",

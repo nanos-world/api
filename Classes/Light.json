@@ -1,6 +1,6 @@
 {
 	"name": "Light",
-	"description": "A Light represents a Lighting source.",
+	"description": "A Light represents a Lighting source",
 	"authority": "both",
 	"network_distribution": "none",
 	"inheritance": [

@@ -97,17 +97,17 @@
 			{
 				"key": "KeepRelative",
 				"value": "0",
-				"description": "Will keep the current relative position/rotation if already attached."
+				"description": "Will keep the current relative position/rotation if already attached"
 			},
 			{
 				"key": "KeepWorld",
 				"value": "1",
-				"description": "Will calculate the new relative position/rotation so the Actor stays at the same position after being attached."
+				"description": "Will calculate the new relative position/rotation so the Actor stays at the same position after being attached"
 			},
 			{
 				"key": "SnapToTarget",
 				"value": "2",
-				"description": "Will set the Actor to the same position/rotation as the parent actor (or at the bone location) and reset its relative position/rotation to zero."
+				"description": "Will set the Actor to the same position/rotation as the parent actor (or at the bone location) and reset its relative position/rotation to zero"
 			}
 		]
 	},
@@ -340,12 +340,12 @@
 			{
 				"key": "Free",
 				"value": "0",
-				"description": "No constraint around this axis."
+				"description": "No constraint around this axis"
 			},
 			{
 				"key": "Limited",
 				"value": "1",
-				"description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property."
+				"description": "Limited freedom around this axis. The limit for each Motion is controlled individually by a correspondingly named Limit property"
 			},
 			{
 				"key": "Locked",
@@ -700,42 +700,42 @@
 		]
 	},
 	"HTTPMethod": {
-		"description": "HTTP defines a set of request methods to indicate the desired action to be performed for a given resource. Read more <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>here</a>.",
+		"description": "HTTP defines a set of request methods to indicate the desired action to be performed for a given resource. Read more <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods'>here</a>",
 		"enums": [
 			{
 				"key": "GET",
 				"value": "0",
-				"description": "The GET method requests a representation of the specified resource. Requests using GET should only retrieve data."
+				"description": "The GET method requests a representation of the specified resource. Requests using GET should only retrieve data"
 			},
 			{
 				"key": "POST",
 				"value": "1",
-				"description": "The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server."
+				"description": "The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server"
 			},
 			{
 				"key": "PUT",
 				"value": "2",
-				"description": "The PUT method replaces all current representations of the target resource with the request payload."
+				"description": "The PUT method replaces all current representations of the target resource with the request payload"
 			},
 			{
 				"key": "HEAD",
 				"value": "3",
-				"description": "The HEAD method asks for a response identical to a GET request, but without the response body."
+				"description": "The HEAD method asks for a response identical to a GET request, but without the response body"
 			},
 			{
 				"key": "DELETE",
 				"value": "4",
-				"description": "The DELETE method deletes the specified resource."
+				"description": "The DELETE method deletes the specified resource"
 			},
 			{
 				"key": "PATCH",
 				"value": "5",
-				"description": "The PATCH method applies partial modifications to a resource."
+				"description": "The PATCH method applies partial modifications to a resource"
 			},
 			{
 				"key": "OPTIONS",
 				"value": "6",
-				"description": "The OPTIONS method describes the communication options for the target resource."
+				"description": "The OPTIONS method describes the communication options for the target resource"
 			}
 		]
 	},
@@ -1332,7 +1332,7 @@
 			{
 				"key": "StaticClouds",
 				"value": "1",
-				"description": "Designed to mimic the look of the volumetric clouds but as a static cloud texture. Much lower performance cost than volumetric clouds."
+				"description": "Designed to mimic the look of the volumetric clouds but as a static cloud texture. Much lower performance cost than volumetric clouds"
 			},
 			{
 				"key": "DynamicClouds2D",
@@ -1347,12 +1347,12 @@
 			{
 				"key": "VolumetricAurora",
 				"value": "4",
-				"description": "Trades clouds for a full 3D volumetric aurora, much more convincing than the 2D effect."
+				"description": "Trades clouds for a full 3D volumetric aurora, much more convincing than the 2D effect"
 			},
 			{
 				"key": "Space",
 				"value": "5",
-				"description": "Turns off all sky color, atmospheric scattering, clouds, etc. Specifically for environments which are set in outer space with no planet/ground beneath the camera."
+				"description": "Turns off all sky color, atmospheric scattering, clouds, etc. Specifically for environments which are set in outer space with no planet/ground beneath the camera"
 			}
 		]
 	},

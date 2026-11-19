@@ -1,6 +1,6 @@
 {
 	"name": "Rotator",
-	"description": "A container for rotation information (Pitch, Yaw, Roll). All rotation values are stored in degrees.",
+	"description": "A container for rotation information (Pitch, Yaw, Roll). All rotation values are stored in degrees",
 	"operators": [
 		{
 			"name": "+",
@@ -65,12 +65,12 @@
 		{
 			"name": "Yaw",
 			"type": "float",
-			"description": "Rotation around the up axis (around Z axis), Running in circles 0=East, +North, -South."
+			"description": "Rotation around the up axis (around Z axis), Running in circles 0=East, +North, -South"
 		},
 		{
 			"name": "Roll",
 			"type": "float",
-			"description": "Rotation around the forward axis (around X axis), Tilting your head, 0=Straight, +Clockwise, -CCW."
+			"description": "Rotation around the forward axis (around X axis), Tilting your head, 0=Straight, +Clockwise, -CCW"
 		}
 	],
 	"functions": [
@@ -100,7 +100,7 @@
 		},
 		{
 			"name": "GetForwardVector",
-			"description": "Get the forward (X) unit direction vector from this component, in world space.",
+			"description": "Get the forward (X) unit direction vector from this component, in world space",
 			"return": [
 				{
 					"type": "Vector",
@@ -111,7 +111,7 @@
 		},
 		{
 			"name": "GetRightVector",
-			"description": "Get the right (Y) unit direction vector from this component, in world space.",
+			"description": "Get the right (Y) unit direction vector from this component, in world space",
 			"return": [
 				{
 					"type": "Vector",
@@ -122,7 +122,7 @@
 		},
 		{
 			"name": "GetUpVector",
-			"description": "Get the up (Z) unit direction vector from this component, in world space.",
+			"description": "Get the up (Z) unit direction vector from this component, in world space",
 			"return": [
 				{
 					"type": "Vector",
@@ -133,7 +133,7 @@
 		},
 		{
 			"name": "RotateVector",
-			"description": "Rotate a vector rotated by this rotator.",
+			"description": "Rotate a vector rotated by this rotator",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -151,12 +151,12 @@
 		},
 		{
 			"name": "Normalize",
-			"description": "In-place normalize, removes all winding and creates the “shortest route” rotation.",
+			"description": "In-place normalize, removes all winding and creates the “shortest route” rotation",
 			"efficiency": "fast"
 		},
 		{
 			"name": "UnrotateVector",
-			"description": "Returns the vector rotated by the inverse of this rotator.",
+			"description": "Returns the vector rotated by the inverse of this rotator",
 			"parameters": [
 				{
 					"type": "Vector",
@@ -174,7 +174,7 @@
 		},
 		{
 			"name": "Quaternion",
-			"description": "Get Rotation as a quaternion.",
+			"description": "Get Rotation as a quaternion",
 			"return": [
 				{
 					"type": "Quat",
@@ -185,7 +185,7 @@
 		},
 		{
 			"name": "GetNormalized",
-			"description": "Returns a new Rotator normalized.",
+			"description": "Returns a new Rotator normalized",
 			"return": [
 				{
 					"type": "Rotator",

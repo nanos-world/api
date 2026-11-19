@@ -1,6 +1,6 @@
 {
 	"name": "Gizmo",
-	"description": "A tool to transform objects at runtime.",
+	"description": "A tool to transform objects at runtime",
 	"authority": "client",
 	"inheritance": [
 		"Entity",

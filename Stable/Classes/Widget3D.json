@@ -1,6 +1,6 @@
 {
 	"name": "Widget3D",
-	"description": "The Widget3D class is the 3D representation of a Widget class spawned in the world.",
+	"description": "The Widget3D class is the 3D representation of a Widget class spawned in the world",
 	"authority": "client",
 	"inheritance": [
 		"Entity",

@@ -1,6 +1,6 @@
 {
 	"name": "Blueprint",
-	"description": "A Blueprint Class allows spawning any Unreal Blueprint Actor in nanos world.",
+	"description": "A Blueprint Class allows spawning any Unreal Blueprint Actor in nanos world",
 	"authority": "both",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -46,7 +46,7 @@
 				}
 			],
 			"description": "Calls a Blueprint Event or Function",
-			"description_long": "Calls a Blueprint Event or Function.<br/><br/>Returns all Function return values on <strong>Client Side</strong>",
+			"description_long": "Returns all Function return values on <strong>Client Side</strong>",
 			"authority": "both",
 			"parameters": [
 				{

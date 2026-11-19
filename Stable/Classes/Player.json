@@ -1,6 +1,6 @@
 {
 	"name": "Player",
-	"description": "Players are Entities that represents the individual behind the mouse and keyboard. Players are spawned automatically when connected to the server.",
+	"description": "Players are Entities that represents the individual behind the mouse and keyboard. Players are spawned automatically when connected to the server",
 	"inheritance": [
 		"Entity"
 	],
@@ -101,32 +101,32 @@
 			"authority": "both",
 			"name": "StartCameraFade",
 			"description": "Does a camera fade to/from a solid color",
-			"description_long": "Does a camera fade to/from a solid color.<br/><br/>Animates automatically",
+			"description_long": "Animates automatically",
 			"parameters": [
 				{
 					"name": "from_alpha",
 					"type": "float",
-					"description": "Alpha at which to begin the fade. Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color."
+					"description": "Alpha at which to begin the fade. Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color"
 				},
 				{
 					"name": "to_alpha",
 					"type": "float",
-					"description": "Alpha at which to finish the fade."
+					"description": "Alpha at which to finish the fade"
 				},
 				{
 					"name": "duration",
 					"type": "float",
-					"description": "How long the fade should take, in seconds."
+					"description": "How long the fade should take, in seconds"
 				},
 				{
 					"name": "to_color",
 					"type": "Color",
-					"description": "Color to fade to/from."
+					"description": "Color to fade to/from"
 				},
 				{
 					"name": "should_fade_audio",
 					"type": "boolean",
-					"description": "True to fade audio volume along with the alpha of the solid color.",
+					"description": "True to fade audio volume along with the alpha of the solid color",
 					"default": "false"
 				},
 				{
@@ -142,12 +142,12 @@
 			"authority": "both",
 			"name": "SetManualCameraFade",
 			"description": "Turns on camera fading at the given opacity",
-			"description_long": "Turns on camera fading at the given opacity.<br/><br/>Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off.",
+			"description_long": "Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off",
 			"parameters": [
 				{
 					"name": "in_fade_amount",
 					"type": "float",
-					"description": "Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color."
+					"description": "Range [0..1], where 0 is fully transparent and 1 is fully opaque solid color"
 				},
 				{
 					"name": "color",
@@ -165,7 +165,7 @@
 		{
 			"authority": "both",
 			"name": "StopCameraFade",
-			"description": "Stops camera fading.",
+			"description": "Stops camera fading",
 			"efficiency": "fast"
 		},
 		{
@@ -283,7 +283,7 @@
 					"name": "fov",
 					"type": "float",
 					"default": "90",
-					"description": "Value must be between 5 and 170. Pass empty to reset to default."
+					"description": "Value must be between 5 and 170. Pass empty to reset to default"
 				}
 			],
 			"efficiency": "fast"
@@ -315,7 +315,7 @@
 					"name": "turning_boost",
 					"type": "float",
 					"default": "8",
-					"description": "Setting affecting extra force applied when changing direction, making turns have less drift and become more responsive. Velocity magnitude is not allowed to increase, that only happens due to normal acceleration. It may decrease with large direction changes. Larger values apply extra force to reach the target direction more quickly, while a zero value disables any extra turn force."
+					"description": "Setting affecting extra force applied when changing direction, making turns have less drift and become more responsive. Velocity magnitude is not allowed to increase, that only happens due to normal acceleration. It may decrease with large direction changes. Larger values apply extra force to reach the target direction more quickly, while a zero value disables any extra turn force"
 				}
 			],
 			"efficiency": "fast"
@@ -514,7 +514,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalHighPassFilter",
 			"description": "Sets the global VOIP high-pass filter threshold frequency",
-			"description_long": "Sets the global VOIP high-pass filter threshold frequency.<br/><br/>Set it to 0 to disable it",
+			"description_long": "Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -533,7 +533,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalLowPassFilter",
 			"description": "Sets the global VOIP low-pass filter threshold frequency",
-			"description_long": "Sets the global VOIP low-pass filter threshold frequency.<br/><br/>Set it to 0 to disable it",
+			"description_long": "Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -552,7 +552,7 @@
 			"authority": "both",
 			"name": "SetVOIPMuted",
 			"description": "Mutes or unmutes VOIP for this player",
-			"description_long": "Mutes or unmutes VOIP for this player.<br/><br/>On server side, the player is muted for everyone. On client side, it is a local mute only.",
+			"description_long": "On server side, the player is muted for everyone. On client side, it is a local mute only",
 			"parameters": [
 				{
 					"name": "is_muted",
@@ -653,7 +653,7 @@
 					"name": "return_base",
 					"type": "boolean",
 					"default": "false",
-					"description": "Whether to return the current (false) or base (true) value. The base is the same value set by SetCameraArmLength(). Use base if you want to get the original value set by SetCameraArmLength() and not the current (interpolated) value."
+					"description": "Whether to return the current (false) or base (true) value. The base is the same value set by SetCameraArmLength(). Use base if you want to get the original value set by SetCameraArmLength() and not the current (interpolated) value"
 				}
 			],
 			"return": [
@@ -726,7 +726,7 @@
 		{
 			"name": "SetDistanceOptimizationMultiplier",
 			"description": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors",
-			"description_long": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors.<br/><br/>A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"description_long": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
 			"efficiency": "fast",
 			"parameters": [

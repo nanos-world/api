@@ -1,6 +1,6 @@
 {
 	"name": "Prop",
-	"description": "A Prop represents a Dynamic Mesh which can be spawned in the world, can be grabbed around by characters and have physics.",
+	"description": "A Prop represents a Dynamic Mesh which can be spawned in the world, can be grabbed around by characters and have physics",
 	"authority": "both",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -31,7 +31,7 @@
 					"type": "CollisionType",
 					"name": "collision_type",
 					"default": "CollisionType.Auto",
-					"description": "Setting <code>CollisionType.Auto</code> will make it automatically switch between <b>Normal</b> and <b>IgnoreOnlyPawn</b> if they are smaller than radius <b>40</b> units."
+					"description": "Setting <code>CollisionType.Auto</code> will make it automatically switch between <b>Normal</b> and <b>IgnoreOnlyPawn</b> if they are smaller than radius <b>40</b> units"
 				},
 				{
 					"type": "boolean",
@@ -49,7 +49,7 @@
 					"type": "CCDMode",
 					"name": "ccd_mode",
 					"default": "CCDMode.Auto",
-					"description": "Whether or not the Prop should have CCD enabled (disabling it may cause Props passing through objects if it's kinda small). It's smart to force it disabled on 'visual only' props."
+					"description": "Whether or not the Prop should have CCD enabled (disabling it may cause Props passing through objects if it's kinda small). It's smart to force it disabled on 'visual only' props"
 				},
 				{
 					"type": "SpawnMode",
@@ -68,7 +68,7 @@
 				{
 					"type": "GrabMode",
 					"name": "grab_mode",
-					"description": "If the Prop will be able to be grabbable or not. Set to Auto to automatically define based on Prop's size."
+					"description": "If the Prop will be able to be grabbable or not. Set to Auto to automatically define based on Prop's size"
 				}
 			],
 			"authority": "server",
@@ -234,7 +234,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancyPontoons",
 			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
-			"description_long": "Sets the Buoyancy Pontoons used by the Water simulation.<br/><br/>Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
+			"description_long": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
 			"parameters": [
 				{
 					"type": "table",
@@ -261,7 +261,7 @@
 			"authority": "authority",
 			"name": "SetBuoyancySettings",
 			"description": "Sets how this entity behaves on Water",
-			"description_long": "Sets how this entity behaves on Water.<br/><br/>Any value passed as nil restores that setting's default.<br/><br/>The automatically calculated Pontoons are sized for the default buoyancy_coefficient, so a higher one makes the entity float higher.",
+			"description_long": "Any value passed as nil restores that setting's default.<br/><br/>The automatically calculated Pontoons are sized for the default buoyancy_coefficient, so a higher one makes the entity float higher",
 			"parameters": [
 				{
 					"type": "boolean",

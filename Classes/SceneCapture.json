@@ -1,6 +1,6 @@
 {
 	"name": "SceneCapture",
-	"description": "Scene Capture is an Actor which captures a fully dynamic image of the scene into a Texture. It captures the scene from its view frustum, stores that view as an image, which is then used within a Material.",
+	"description": "Scene Capture is an Actor which captures a fully dynamic image of the scene into a Texture. It captures the scene from its view frustum, stores that view as an image, which is then used within a Material",
 	"authority": "client",
 	"inheritance": [
 		"Entity",
@@ -65,7 +65,7 @@
 		{
 			"name": "AddRenderActor",
 			"description": "Adds an Actor to the Render Only list",
-			"description_long": "Adds an Actor to the Render Only list.<br/><br/>Note: adding one actor to this will make the SceneCapture only to render those Actors.",
+			"description_long": "Note: adding one actor to this will make the SceneCapture only to render those Actors",
 			"authority": "client",
 			"parameters": [
 				{
@@ -129,7 +129,7 @@
 		{
 			"name": "EncodeToBase64",
 			"description": "Takes a snapshot of the SceneCapture and returns a Base64 of it",
-			"description_long": "Takes a snapshot of the SceneCapture and returns a Base64 of it.<br/><br/>Optional output dimensions resize only the encoded image using a smooth, gamma-correct filter. PNG and BMP resizing weights colors by alpha to preserve transparent edges. The capture texture is unchanged. Each omitted dimension keeps its capture size; aspect ratio is not adjusted automatically. Capture at a higher resolution and export at a smaller size for supersampling.",
+			"description_long": "Optional output dimensions resize only the encoded image using a smooth, gamma-correct filter. PNG and BMP resizing weights colors by alpha to preserve transparent edges. The capture texture is unchanged. Each omitted dimension keeps its capture size; aspect ratio is not adjusted automatically. Capture at a higher resolution and export at a smaller size for supersampling",
 			"authority": "client",
 			"parameters": [
 				{
@@ -167,7 +167,7 @@
 		{
 			"name": "EncodeToBase64Async",
 			"description": "Takes a snapshot of the SceneCapture and returns a Base64 of it (asynchronously)",
-			"description_long": "Takes a snapshot of the SceneCapture and returns a Base64 of it (asynchronously).<br/><br/>Optional output dimensions resize only the encoded image using a smooth, gamma-correct filter. PNG and BMP resizing weights colors by alpha to preserve transparent edges. The capture texture is unchanged. Each omitted dimension keeps its capture size; aspect ratio is not adjusted automatically. Capture at a higher resolution and export at a smaller size for supersampling.",
+			"description_long": "Optional output dimensions resize only the encoded image using a smooth, gamma-correct filter. PNG and BMP resizing weights colors by alpha to preserve transparent edges. The capture texture is unchanged. Each omitted dimension keeps its capture size; aspect ratio is not adjusted automatically. Capture at a higher resolution and export at a smaller size for supersampling",
 			"authority": "client",
 			"parameters": [
 				{
@@ -224,7 +224,7 @@
 		{
 			"name": "SetLODDistanceFactor",
 			"description": "Sets the distance scale used to select mesh detail in this SceneCapture",
-			"description_long": "Sets the distance scale used to select mesh detail in this SceneCapture.<br/><br/>The default is 2. Values below 1 favor more detail; values above 1 favor less detail. This also affects Nanite detail selection, but does not force a specific LOD or load higher-resolution texture mips. Only this SceneCapture is affected.",
+			"description_long": "The default is 2. Values below 1 favor more detail; values above 1 favor less detail. This also affects Nanite detail selection, but does not force a specific LOD or load higher-resolution texture mips. Only this SceneCapture is affected",
 			"authority": "client",
 			"parameters": [
 				{
@@ -238,7 +238,7 @@
 		{
 			"name": "SetShowFlag",
 			"description": "Enables/Disables rendering features from being captured",
-			"description_long": "Enables/Disables rendering features from being captured.<br/><br/>A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
+			"description_long": "A complete list of available flags can be found in the <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/FEngineShowFlags'>Official Unreal Documentation</a>",
 			"authority": "client",
 			"parameters": [
 				{

@@ -1,6 +1,6 @@
 {
 	"name": "Debug",
-	"description": "Draws Debug shapes in the world.",
+	"description": "Draws Debug shapes in the world",
 	"authority": "client",
 	"static_functions": [
 		{

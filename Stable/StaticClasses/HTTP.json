@@ -1,12 +1,12 @@
 {
 	"name": "HTTP",
-	"description": "HTTP Requests Interface.",
+	"description": "HTTP Requests Interface",
 	"authority": "both",
 	"static_functions": [
 		{
 			"name": "RequestAsync",
 			"description": "Makes an asynchronous HTTP Request",
-			"description_long": "Makes an asynchronous HTTP Request.<br/><br/>The request will be made asynchronously and returned safely in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload.",
+			"description_long": "The request will be made asynchronously and returned safely in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload",
 			"authority": "both",
 			"parameters": [
 				{
@@ -114,7 +114,7 @@
 				}
 			],
 			"description": "Makes a synchronous HTTP Request",
-			"description_long": "Makes a synchronous HTTP Request.<br/><br/>The request will be made synchronously and will freeze the server until it's done.",
+			"description_long": "The request will be made synchronously and will freeze the server until it's done",
 			"authority": "server",
 			"parameters": [
 				{

@@ -1,6 +1,6 @@
 {
 	"name": "Melee",
-	"description": "A Melee represents an Entity which can be Pickable by a Character and can be used to melee attack, Characters can hold it with hands with pre-defined handling modes.",
+	"description": "A Melee represents an Entity which can be Pickable by a Character and can be used to melee attack, Characters can hold it with hands with pre-defined handling modes",
 	"authority": "server",
 	"network_distribution": "enabled",
 	"inheritance": [
@@ -72,7 +72,7 @@
 			"authority": "server",
 			"name": "AddAnimationCharacterUse",
 			"description": "Sets an Animation when attacking",
-			"description_long": "Sets an Animation when attacking.<br/><br/>You can add more than one animation, which will be selected randomly when attacking",
+			"description_long": "You can add more than one animation, which will be selected randomly when attacking",
 			"parameters": [
 				{
 					"type": "AnimationPath",
@@ -162,7 +162,7 @@
 			"authority": "server",
 			"name": "SetDamageSettings",
 			"description": "Sets the times when to start applying damage and when to end",
-			"description_long": "Sets the times when to start applying damage and when to end.<br/><br/>During this time the collision of the melee will be enabled and the damage will be applied if it hits something",
+			"description_long": "During this time the collision of the melee will be enabled and the damage will be applied if it hits something",
 			"parameters": [
 				{
 					"type": "float",

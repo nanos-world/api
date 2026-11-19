@@ -1,6 +1,6 @@
 {
 	"name": "Discord",
-	"description": "Initialize and set Discord activity.",
+	"description": "Initialize and set Discord activity",
 	"authority": "client",
 	"static_functions": [
 		{

@@ -1,6 +1,6 @@
 {
 	"name": "JSON",
-	"description": "JSON library.",
+	"description": "JSON library",
 	"static_functions": [
 		{
 			"name": "stringify",

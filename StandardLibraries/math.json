@@ -1,6 +1,6 @@
 {
 	"name": "math",
-	"description": "This library provides basic mathematical functions. It provides all its functions and constants inside the table <code>math</code>.",
+	"description": "This library provides basic mathematical functions. It provides all its functions and constants inside the table <code>math</code>",
 	"static_properties": [
 		{
 			"name": "pi",
@@ -17,7 +17,7 @@
 				{
 					"type": "number",
 					"name": "number",
-					"description": "The number to be rounded up."
+					"description": "The number to be rounded up"
 				}
 			],
 			"return": [
@@ -45,7 +45,7 @@
 				}
 			],
 			"is_native": true,
-			"description": "Return the tangent value for a given value in radians.",
+			"description": "Return the tangent value for a given value in radians",
 			"name": "tan"
 		},
 		{
@@ -53,7 +53,7 @@
 				{
 					"type": "number...",
 					"name": "numbers",
-					"description": "Numbers to get the smallest from."
+					"description": "Numbers to get the smallest from"
 				}
 			],
 			"return": [
@@ -71,12 +71,12 @@
 				{
 					"type": "number",
 					"name": "base",
-					"description": "The base value."
+					"description": "The base value"
 				},
 				{
 					"type": "number",
 					"name": "modulator",
-					"description": "The modulator."
+					"description": "The modulator"
 				}
 			],
 			"return": [
@@ -94,7 +94,7 @@
 				{
 					"type": "number",
 					"name": "exponent",
-					"description": "The exponent for the function."
+					"description": "The exponent for the function"
 				}
 			],
 			"return": [
@@ -112,12 +112,12 @@
 				{
 					"type": "number",
 					"name": "m",
-					"description": "If m is the only parameter: upper limit.\r\n\r\nIf n is also provided: lower limit.\r\n\r\nIf provided, this must be an integer."
+					"description": "If m is the only parameter: upper limit.\r\n\r\nIf n is also provided: lower limit.\r\n\r\nIf provided, this must be an integer"
 				},
 				{
 					"type": "number",
 					"name": "n",
-					"description": "Upper limit.\r\n\r\nIf provided, this must be an integer."
+					"description": "Upper limit.\r\n\r\nIf provided, this must be an integer"
 				}
 			],
 			"return": [
@@ -135,7 +135,7 @@
 				{
 					"type": "number",
 					"name": "degrees",
-					"description": "The angle measured in degrees."
+					"description": "The angle measured in degrees"
 				}
 			],
 			"return": [
@@ -163,7 +163,7 @@
 				}
 			],
 			"is_native": true,
-			"description": "Return the sine value for a given value in radians.",
+			"description": "Return the sine value for a given value in radians",
 			"name": "sin"
 		},
 		{
@@ -181,7 +181,7 @@
 				}
 			],
 			"is_native": true,
-			"description": "Return the cosine value for a given value in radians.",
+			"description": "Return the cosine value for a given value in radians",
 			"name": "cos"
 		},
 		{
@@ -189,7 +189,7 @@
 				{
 					"type": "number",
 					"name": "normal",
-					"description": "Sine value in the range of -1 to 1."
+					"description": "Sine value in the range of -1 to 1"
 				}
 			],
 			"return": [
@@ -199,7 +199,7 @@
 				}
 			],
 			"is_native": true,
-			"description": "Return the inverse sine in radians of the given value.",
+			"description": "Return the inverse sine in radians of the given value",
 			"name": "asin"
 		},
 		{
@@ -219,7 +219,7 @@
 				{
 					"type": "number",
 					"name": "number",
-					"description": "The number to be rounded down."
+					"description": "The number to be rounded down"
 				}
 			],
 			"return": [
@@ -255,7 +255,7 @@
 				{
 					"type": "number",
 					"name": "normal",
-					"description": "Tangent value."
+					"description": "Tangent value"
 				}
 			],
 			"return": [
@@ -273,7 +273,7 @@
 				{
 					"type": "number",
 					"name": "cos",
-					"description": "Cosine value in range of -1 to 1."
+					"description": "Cosine value in range of -1 to 1"
 				}
 			],
 			"return": [
@@ -283,7 +283,7 @@
 				}
 			],
 			"is_native": true,
-			"description": "Return the inverse cosine in radians of the given value.",
+			"description": "Return the inverse cosine in radians of the given value",
 			"name": "acos"
 		},
 		{
@@ -291,7 +291,7 @@
 				{
 					"type": "number",
 					"name": "x",
-					"description": "The number to get the absolute value of."
+					"description": "The number to get the absolute value of"
 				}
 			],
 			"return": [
@@ -309,12 +309,12 @@
 				{
 					"type": "number",
 					"name": "x",
-					"description": "The value to get the base from exponent from."
+					"description": "The value to get the base from exponent from"
 				},
 				{
 					"type": "number",
 					"name": "base",
-					"description": "The logarithmic base."
+					"description": "The logarithmic base"
 				}
 			],
 			"return": [
@@ -332,7 +332,7 @@
 				{
 					"type": "number",
 					"name": "base",
-					"description": "The base value."
+					"description": "The base value"
 				}
 			],
 			"return": [
@@ -356,7 +356,7 @@
 				{
 					"type": "number",
 					"name": "radians",
-					"description": "Value to be converted to degrees."
+					"description": "Value to be converted to degrees"
 				}
 			],
 			"return": [
@@ -374,7 +374,7 @@
 				{
 					"type": "number",
 					"name": "value",
-					"description": "Value to get the square root of."
+					"description": "Value to get the square root of"
 				}
 			],
 			"return": [
