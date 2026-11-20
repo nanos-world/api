@@ -12,6 +12,7 @@
 		{
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
+			"category": "Attachments",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
 			"description_details": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"last_compatibility_version": "1.144",
@@ -79,6 +80,7 @@
 		{
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
+			"category": "Attachments",
 			"description": "Attaches a Static Mesh to this entity",
 			"description_details": "Spawns and attaches a StaticMesh to this Vehicle in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
@@ -134,6 +136,7 @@
 		{
 			"authority": "both",
 			"name": "GetAllStaticMeshAttached",
+			"category": "Attachments",
 			"description": "Gets all Static Meshes attached to this entity",
 			"return": [
 				{
@@ -146,6 +149,7 @@
 		{
 			"authority": "both",
 			"name": "GetAllSkeletalMeshAttached",
+			"category": "Attachments",
 			"description": "Gets all Skeletal Meshes attached to this entity",
 			"return": [
 				{
@@ -158,6 +162,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveSkeletalMeshAttached",
+			"category": "Attachments",
 			"description": "Removes, if it exists, a SkeletalMesh from this Vehicle given its custom ID",
 			"parameters": [
 				{
@@ -176,6 +181,7 @@
 		{
 			"authority": "both",
 			"name": "SetStaticMeshAttachedTransform",
+			"category": "Attachments",
 			"description": "Sets a Static Mesh Attached location and rotation",
 			"parameters": [
 				{
@@ -204,6 +210,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveStaticMeshAttached",
+			"category": "Attachments",
 			"description": "Removes, if it exists, a StaticMesh from this Vehicle given its custom ID",
 			"parameters": [
 				{
@@ -222,18 +229,21 @@
 		{
 			"authority": "both",
 			"name": "RemoveAllStaticMeshesAttached",
+			"category": "Attachments",
 			"description": "Removes all StaticMeshes attached",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllSkeletalMeshesAttached",
+			"category": "Attachments",
 			"description": "Removes all SkeletalMeshes attached",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "HideBone",
+			"category": "Appearance",
 			"description": "Hides a bone of this Vehicle",
 			"parameters": [
 				{
@@ -253,6 +263,7 @@
 		{
 			"authority": "both",
 			"name": "UnHideBone",
+			"category": "Appearance",
 			"description": "UnHide a bone of this Vehicle",
 			"parameters": [
 				{
@@ -272,6 +283,7 @@
 		{
 			"authority": "both",
 			"name": "IsBoneHidden",
+			"category": "Appearance",
 			"return": [
 				{
 					"type": "boolean",
@@ -298,6 +310,7 @@
 		{
 			"authority": "server",
 			"name": "SetDoor",
+			"category": "Passengers",
 			"description": "Adds a Door to the Vehicle",
 			"description_details": "Adds a Door at offset_location from root which will pose the Character at seat_location with seat_rotation rotation",
 			"parameters": [
@@ -337,6 +350,7 @@
 		{
 			"authority": "both",
 			"name": "PlayAnimation",
+			"category": "Animation",
 			"description": "Plays an Animation on this Vehicle",
 			"parameters": [
 				{
@@ -386,6 +400,7 @@
 		{
 			"authority": "both",
 			"name": "StopAnimation",
+			"category": "Animation",
 			"description": "Stops an Animation Montage on this Vehicle",
 			"parameters": [
 				{
@@ -400,6 +415,7 @@
 		{
 			"authority": "both",
 			"name": "GetMesh",
+			"category": "Appearance",
 			"description": "Gets the Asset name",
 			"return": [
 				{
@@ -413,6 +429,7 @@
 		{
 			"authority": "both",
 			"name": "GetDoors",
+			"category": "Passengers",
 			"description": "Gets all configured Doors",
 			"return": [
 				{
@@ -451,6 +468,7 @@
 		{
 			"authority": "both",
 			"name": "GetPassenger",
+			"category": "Passengers",
 			"description": "Gets a passenger from a seat",
 			"parameters": [
 				{
@@ -471,6 +489,7 @@
 		{
 			"authority": "both",
 			"name": "GetPassengers",
+			"category": "Passengers",
 			"description": "Gets all passengers",
 			"return": [
 				{
@@ -484,6 +503,7 @@
 		{
 			"authority": "server",
 			"name": "SetExplosionSettings",
+			"category": "Physics",
 			"description": "Configures the Explosion Settings when health reaches zero",
 			"parameters": [
 				{
@@ -513,6 +533,7 @@
 		{
 			"authority": "both",
 			"name": "IsEngineStarted",
+			"category": "Handling",
 			"description": "Checks if the engine is started",
 			"return": [
 				{
@@ -526,6 +547,7 @@
 		{
 			"authority": "authority",
 			"name": "SetCameraArmLength",
+			"category": "Handling",
 			"description": "Sets how far the camera stays from this Vehicle while driving it",
 			"description_details": "The length is in centimeters. This overrides the Player's own <a href='/docs/scripting-reference/classes/player#function-setcameraarmlength'>Camera Arm Length</a> for as long as they are driving it. Set it to <code>0</code> to use the Player's value instead, which is the default",
 			"parameters": [
@@ -540,6 +562,7 @@
 		{
 			"authority": "both",
 			"name": "SetCameraOffset",
+			"category": "Handling",
 			"description": "Sets the Vehicle Camera Offset",
 			"parameters": [
 				{
@@ -552,6 +575,7 @@
 		},
 		{
 			"name": "SetAnimationBlueprintPropertyValue",
+			"category": "Animation",
 			"description": "Sets an Animation Blueprint Property/Variable value directly",
 			"description_details": "It is set on the Animation Blueprint passed in the constructor.<br/><br/><b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing",
 			"authority": "client",
@@ -571,6 +595,7 @@
 		},
 		{
 			"name": "GetAnimationBlueprintPropertyValue",
+			"category": "Animation",
 			"description": "Gets an Animation Blueprint Property/Variable value directly",
 			"description_details": "<b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this returns <code>nil</code>",
 			"authority": "client",
@@ -591,6 +616,7 @@
 		},
 		{
 			"name": "CallAnimationBlueprintEvent",
+			"category": "Animation",
 			"authority": "both",
 			"return": [
 				{
@@ -617,6 +643,7 @@
 		},
 		{
 			"name": "BindAnimationBlueprintEventDispatcher",
+			"category": "Animation",
 			"description": "Assigns and Binds an Animation Blueprint Event Dispatcher",
 			"description_details": "<b>Note:</b> only <a href='/docs/scripting-reference/classes/vehiclewheeled'>VehicleWheeled</a> has an Animation Blueprint, on any other Vehicle type this does nothing",
 			"authority": "client",
@@ -652,6 +679,7 @@
 		},
 		{
 			"name": "UnbindAnimationBlueprintEventDispatcher",
+			"category": "Animation",
 			"description": "Unbinds an Animation Blueprint Event Dispatcher",
 			"authority": "client",
 			"parameters": [
@@ -672,6 +700,7 @@
 		{
 			"authority": "authority",
 			"name": "SetBuoyancyPontoons",
+			"category": "Physics",
 			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
 			"description_details": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
 			"parameters": [
@@ -699,6 +728,7 @@
 		{
 			"authority": "authority",
 			"name": "SetBuoyancySettings",
+			"category": "Physics",
 			"description": "Sets how this entity behaves on Water",
 			"description_details": "Any value passed as nil restores that setting's default.<br/><br/>The automatically calculated Pontoons are sized for the default buoyancy_coefficient, so a higher one makes the entity float higher",
 			"parameters": [

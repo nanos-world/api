@@ -5,6 +5,7 @@
 	"static_functions": [
 		{
 			"name": "ChangeMap",
+			"category": "World",
 			"description": "Restarts the server in a new Map, restarts all packages and reconnects all players",
 			"authority": "server",
 			"parameters": [
@@ -18,6 +19,7 @@
 		},
 		{
 			"name": "LoadPackage",
+			"category": "Packages",
 			"description": "Loads a Package",
 			"authority": "server",
 			"parameters": [
@@ -43,6 +45,7 @@
 		},
 		{
 			"name": "ReloadPackage",
+			"category": "Packages",
 			"description_details": "Reloads a Package<br/>Note: the package is effectively reloaded in the next server tick",
 			"authority": "server",
 			"parameters": [
@@ -69,6 +72,7 @@
 		},
 		{
 			"name": "UnloadPackage",
+			"category": "Packages",
 			"description": "Unloads a Package",
 			"description_details": "Note: the package is effectively unloaded in the next server tick",
 			"authority": "server",
@@ -95,6 +99,7 @@
 		},
 		{
 			"name": "SetDescription",
+			"category": "Settings",
 			"description": "Sets the description of the server, optionally overrides Config.toml",
 			"authority": "server",
 			"parameters": [
@@ -114,6 +119,7 @@
 		},
 		{
 			"name": "SetLogo",
+			"category": "Settings",
 			"description": "Sets the logo of the server, optionally overrides Config.toml",
 			"authority": "server",
 			"parameters": [
@@ -133,6 +139,7 @@
 		},
 		{
 			"name": "SetMaxPlayers",
+			"category": "Settings",
 			"description": "Sets the maximum player slots of the server, optionally overrides Config.toml",
 			"authority": "server",
 			"parameters": [
@@ -152,6 +159,7 @@
 		},
 		{
 			"name": "SetName",
+			"category": "Settings",
 			"description": "Sets the name of the server, optionally overrides Config.toml",
 			"authority": "server",
 			"parameters": [
@@ -171,6 +179,7 @@
 		},
 		{
 			"name": "SetPassword",
+			"category": "Settings",
 			"description": "Sets the password of the server, optionally overrides Config.toml",
 			"authority": "server",
 			"parameters": [
@@ -190,6 +199,7 @@
 		},
 		{
 			"name": "SetDefaultPlayerDimension",
+			"category": "Settings",
 			"description": "Sets the default server dimension that players will spawn in",
 			"authority": "server",
 			"parameters": [
@@ -203,6 +213,7 @@
 		},
 		{
 			"name": "SetDefaultEntityDimension",
+			"category": "Settings",
 			"description": "Sets the default server dimension that entities will spawn in",
 			"description_details": "You can change it before spawning an entity and restore it afterwards to just spawn a specific entity directly on it",
 			"authority": "server",
@@ -217,6 +228,7 @@
 		},
 		{
 			"name": "GetDefaultPlayerDimension",
+			"category": "Settings",
 			"description": "Returns the default player dimension",
 			"authority": "server",
 			"return": [
@@ -229,6 +241,7 @@
 		},
 		{
 			"name": "GetDefaultEntityDimension",
+			"category": "Settings",
 			"description": "Returns the default entity dimension",
 			"authority": "server",
 			"return": [
@@ -241,6 +254,7 @@
 		},
 		{
 			"name": "IsUnsafeLibsEnabled",
+			"category": "Settings",
 			"description": "Returns if the server was started with --enable_unsafe_libs",
 			"authority": "server",
 			"return": [
@@ -253,6 +267,7 @@
 		},
 		{
 			"name": "GetConnectionCount",
+			"category": "Network",
 			"description": "Returns the number of connected players (including players in the process of connecting)",
 			"authority": "server",
 			"return": [
@@ -265,6 +280,7 @@
 		},
 		{
 			"name": "GetPlayersInRadius",
+			"category": "World",
 			"description": "Returns the players within the specified radius",
 			"authority": "server",
 			"return": [
@@ -295,6 +311,7 @@
 		},
 		{
 			"name": "GetActorsInRadius",
+			"category": "World",
 			"description": "Returns the actors within the specified radius",
 			"authority": "server",
 			"return": [
@@ -331,6 +348,7 @@
 		},
 		{
 			"name": "SetValue",
+			"category": "Data",
 			"description": "Sets a global value in the Server, which can be accessed from anywhere (server side)",
 			"description_details": "Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "server",
@@ -364,6 +382,7 @@
 		},
 		{
 			"name": "GetValue",
+			"category": "Data",
 			"description": "Gets a value given a key",
 			"authority": "server",
 			"return": [
@@ -393,6 +412,7 @@
 		},
 		{
 			"name": "GetAllValuesKeys",
+			"category": "Data",
 			"description": "Gets a list of all values keys",
 			"authority": "server",
 			"return": [
@@ -412,6 +432,7 @@
 		{
 			"authority": "server",
 			"name": "KickByAccountID",
+			"category": "Moderation",
 			"description": "Kicks the player from the server by its Account ID, ideal for kicking from inside PlayerConnect event",
 			"parameters": [
 				{
@@ -430,6 +451,7 @@
 		{
 			"authority": "server",
 			"name": "BanByAccountID",
+			"category": "Moderation",
 			"description": "Ban the player from the server by its Account ID, ideal for banning from inside PlayerConnect event",
 			"parameters": [
 				{
@@ -447,6 +469,7 @@
 		},
 		{
 			"name": "Unban",
+			"category": "Moderation",
 			"description": "Unbans a Player by its account ID",
 			"authority": "server",
 			"parameters": [
@@ -460,18 +483,21 @@
 		},
 		{
 			"name": "Stop",
+			"category": "Lifecycle",
 			"description": "Stops the server",
 			"authority": "server",
 			"efficiency": "slow"
 		},
 		{
 			"name": "Restart",
+			"category": "Lifecycle",
 			"description": "Restarts the server, reloading all Packages and reconnecting all Players",
 			"authority": "server",
 			"efficiency": "slow"
 		},
 		{
 			"name": "Subscribe",
+			"category": "Lifecycle",
 			"description": "Subscribes for an Event",
 			"authority": "server",
 			"return": [
@@ -496,6 +522,7 @@
 		},
 		{
 			"name": "Unsubscribe",
+			"category": "Lifecycle",
 			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
 			"authority": "server",
 			"parameters": [
@@ -515,6 +542,7 @@
 		},
 		{
 			"name": "GetMap",
+			"category": "World",
 			"description": "Returns the current Map Package name",
 			"authority": "server",
 			"return": [
@@ -527,6 +555,7 @@
 		},
 		{
 			"name": "GetMapAsset",
+			"category": "World",
 			"description": "Returns the current Map Asset reference",
 			"authority": "server",
 			"return": [
@@ -539,6 +568,7 @@
 		},
 		{
 			"name": "GetMapConfig",
+			"category": "World",
 			"description": "Returns a list of the Custom Config of the current map (defined in the map package's Package.toml)",
 			"authority": "server",
 			"return": [
@@ -551,6 +581,7 @@
 		},
 		{
 			"name": "GetMapSpawnPoints",
+			"category": "World",
 			"description": "Returns a list of the Spawn Points of the current map (defined in the map package's Package.toml)",
 			"authority": "server",
 			"return": [
@@ -578,6 +609,7 @@
 		},
 		{
 			"name": "AddMapSpawnPoint",
+			"category": "World",
 			"description": "Adds a spawn point to the current map's spawn points list",
 			"authority": "server",
 			"parameters": [
@@ -602,6 +634,7 @@
 		},
 		{
 			"name": "IsPackageLoaded",
+			"category": "Packages",
 			"description": "Returns if a Package is currently loaded",
 			"authority": "server",
 			"return": [
@@ -621,6 +654,7 @@
 		},
 		{
 			"name": "GetPackages",
+			"category": "Packages",
 			"description": "Returns a list of Packages running, optionally returns all Packages installed in the server",
 			"authority": "server",
 			"return": [
@@ -669,6 +703,7 @@
 		},
 		{
 			"name": "GetVersion",
+			"category": "Diagnostics",
 			"description": "Returns the server version",
 			"authority": "server",
 			"return": [
@@ -681,6 +716,7 @@
 		},
 		{
 			"name": "GetIP",
+			"category": "Network",
 			"description": "Returns the server Public IP",
 			"authority": "server",
 			"return": [
@@ -693,6 +729,7 @@
 		},
 		{
 			"name": "GetPort",
+			"category": "Network",
 			"description": "Returns the server Port",
 			"authority": "server",
 			"return": [
@@ -705,6 +742,7 @@
 		},
 		{
 			"name": "GetLogLevel",
+			"category": "Diagnostics",
 			"description": "Returns the current log level",
 			"authority": "server",
 			"return": [
@@ -717,6 +755,7 @@
 		},
 		{
 			"name": "GetEntityByID",
+			"category": "World",
 			"description": "Returns the entity with the specified ID",
 			"authority": "server",
 			"return": [
@@ -736,6 +775,7 @@
 		},
 		{
 			"name": "GetQueryPort",
+			"category": "Network",
 			"description": "Returns the server QueryPort",
 			"authority": "server",
 			"return": [
@@ -748,6 +788,7 @@
 		},
 		{
 			"name": "GetMaxPlayers",
+			"category": "Settings",
 			"description": "Returns the Max Players configured",
 			"authority": "server",
 			"return": [
@@ -760,6 +801,7 @@
 		},
 		{
 			"name": "GetDescription",
+			"category": "Settings",
 			"description": "Returns the Server Description",
 			"authority": "server",
 			"return": [
@@ -772,6 +814,7 @@
 		},
 		{
 			"name": "GetName",
+			"category": "Settings",
 			"description": "Returns the Server Name",
 			"authority": "server",
 			"return": [
@@ -784,6 +827,7 @@
 		},
 		{
 			"name": "GetCustomSettings",
+			"category": "Settings",
 			"description": "Returns the Server Custom Settings passed as parameter or New Game screen",
 			"authority": "server",
 			"return": [
@@ -797,6 +841,7 @@
 		},
 		{
 			"name": "GetTickRate",
+			"category": "Diagnostics",
 			"description": "Returns the Configured Tick Rate",
 			"authority": "server",
 			"return": [
@@ -809,6 +854,7 @@
 		},
 		{
 			"name": "GetTime",
+			"category": "Diagnostics",
 			"description": "Gets the Unix Epoch Time in milliseconds",
 			"authority": "server",
 			"return": [
@@ -821,6 +867,7 @@
 		},
 		{
 			"name": "IsAnnounced",
+			"category": "Network",
 			"description": "Returns if the Server is announced in the Master List",
 			"authority": "server",
 			"return": [

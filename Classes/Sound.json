@@ -93,6 +93,7 @@
 	"functions": [
 		{
 			"name": "FadeIn",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Plays the sound with a fade effect",
 			"parameters": [
@@ -118,6 +119,7 @@
 		},
 		{
 			"name": "FadeOut",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Stops the sound with a fade effect",
 			"parameters": [
@@ -143,6 +145,7 @@
 		},
 		{
 			"name": "Play",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Starts the sound",
 			"parameters": [
@@ -157,6 +160,7 @@
 		},
 		{
 			"name": "SetFalloffDistance",
+			"category": "Attenuation",
 			"authority": "client",
 			"description": "If a 3D Sound, sets the distance which the sound is inaudible",
 			"parameters": [
@@ -170,6 +174,7 @@
 		},
 		{
 			"name": "SetInnerRadius",
+			"category": "Attenuation",
 			"authority": "client",
 			"description": "If a 3D Sound, sets the radius within which the volume is 100%",
 			"parameters": [
@@ -183,6 +188,7 @@
 		},
 		{
 			"name": "SetAttenuationShape",
+			"category": "Attenuation",
 			"authority": "client",
 			"description": "If a 3D Sound, sets the shape of the volume within which the volume is 100%",
 			"description_details": "Outside the shape, the volume fades over the falloff distance. The meaning of the extents depends on the shape: Sphere uses X as the radius, Capsule uses X as the half height and Y as the radius, Box uses X, Y and Z as its extents, and Cone uses X as the radius, Y as the angle and Z as the falloff angle (both in degrees). The Capsule, Box and Cone follow the Sound's rotation. For a Sphere, this is the same as SetInnerRadius",
@@ -214,6 +220,7 @@
 		},
 		{
 			"name": "SetOcclusion",
+			"category": "Attenuation",
 			"authority": "client",
 			"description": "If a 3D Sound, configures its automatic occlusion",
 			"description_details": "When something blocks the line between the listener and the Sound, like a wall or a floor, the Sound gets a low-pass filter and a volume multiplier. It is disabled by default",
@@ -246,6 +253,7 @@
 		},
 		{
 			"name": "SetLowPassFilter",
+			"category": "Mixing",
 			"authority": "client",
 			"description": "Sets low-pass filter frequency. Sets 0 to disable it",
 			"parameters": [
@@ -259,6 +267,7 @@
 		},
 		{
 			"name": "SetPaused",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Pauses or resumes the sound",
 			"parameters": [
@@ -273,6 +282,7 @@
 		},
 		{
 			"name": "SetPitch",
+			"category": "Mixing",
 			"authority": "client",
 			"description": "Sets the Sound's pitch",
 			"parameters": [
@@ -286,6 +296,7 @@
 		},
 		{
 			"name": "SetVolume",
+			"category": "Mixing",
 			"authority": "client",
 			"description": "Sets the Sound's volume",
 			"parameters": [
@@ -299,12 +310,14 @@
 		},
 		{
 			"name": "Stop",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Stops the sound",
 			"efficiency": "fast"
 		},
 		{
 			"name": "StopDelayed",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Stops the sound after the provided delay",
 			"parameters": [
@@ -325,6 +338,7 @@
 				}
 			],
 			"name": "Is2D",
+			"category": "Attenuation",
 			"authority": "client",
 			"description": "Gets if the sound is 2D",
 			"efficiency": "fast"
@@ -338,6 +352,7 @@
 				}
 			],
 			"name": "IsPlaying",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Gets if the sound is playing",
 			"efficiency": "fast"
@@ -351,6 +366,7 @@
 				}
 			],
 			"name": "GetDuration",
+			"category": "Playback",
 			"authority": "client",
 			"description": "Gets the duration of the Sound",
 			"efficiency": "fast"
@@ -364,6 +380,7 @@
 				}
 			],
 			"name": "GetPitch",
+			"category": "Mixing",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the pitch multiplier"
@@ -377,6 +394,7 @@
 				}
 			],
 			"name": "GetVolume",
+			"category": "Mixing",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the volume multiplier"
@@ -390,6 +408,7 @@
 				}
 			],
 			"name": "GetLowPassFilter",
+			"category": "Mixing",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the low pass filter frequency"
@@ -403,6 +422,7 @@
 				}
 			],
 			"name": "GetInnerRadius",
+			"category": "Attenuation",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the radius within which the volume is 100%"
@@ -416,6 +436,7 @@
 				}
 			],
 			"name": "GetFalloffDistance",
+			"category": "Attenuation",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the distance at which the sound becomes inaudible"
@@ -429,6 +450,7 @@
 				}
 			],
 			"name": "GetSoundType",
+			"category": "Mixing",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the Sound Type, used to apply the user's volume settings"
@@ -442,6 +464,7 @@
 				}
 			],
 			"name": "GetPath",
+			"category": "Playback",
 			"authority": "client",
 			"efficiency": "fast",
 			"description": "Gets the asset path of this Sound"

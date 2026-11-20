@@ -72,6 +72,7 @@
 		{
 			"authority": "server",
 			"name": "Drop",
+			"category": "Interaction",
 			"description": "Drops any Pickable the Character is holding",
 			"relations": {
 				"functions": [
@@ -84,6 +85,7 @@
 		{
 			"authority": "server",
 			"name": "EnterVehicle",
+			"category": "Interaction",
 			"description": "Enters the Vehicle at Seat (0 - Driver)",
 			"parameters": [
 				{
@@ -113,6 +115,7 @@
 		{
 			"authority": "server",
 			"name": "GrabProp",
+			"category": "Interaction",
 			"description": "Gives a Prop to the Character",
 			"parameters": [
 				{
@@ -131,6 +134,7 @@
 		{
 			"authority": "server",
 			"name": "LeaveVehicle",
+			"category": "Interaction",
 			"description": "Leaves the current Vehicle",
 			"relations": {
 				"functions": [
@@ -147,6 +151,7 @@
 		{
 			"authority": "server",
 			"name": "LookAt",
+			"category": "Movement",
 			"description": "AI: Tries to make this Character to look at Location",
 			"parameters": [
 				{
@@ -160,6 +165,7 @@
 		{
 			"authority": "server",
 			"name": "PickUp",
+			"category": "Interaction",
 			"description": "Gives a Melee/Grenade/Weapon (Pickable) to the Character",
 			"parameters": [
 				{
@@ -179,6 +185,7 @@
 		{
 			"authority": "both",
 			"name": "PlayAnimation",
+			"category": "Animation",
 			"description": "Plays an Animation Montage on this character",
 			"parameters": [
 				{
@@ -236,6 +243,7 @@
 		{
 			"authority": "server",
 			"name": "SetAnimationIdleWalkRunStanding",
+			"category": "Animation",
 			"description": "Sets the Blend Space (2D) Animation for Standing",
 			"description_details": "Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
@@ -256,6 +264,7 @@
 		{
 			"authority": "server",
 			"name": "SetAnimationIdleWalkRunCrouching",
+			"category": "Animation",
 			"description": "Sets the Blend Space (2D) Animation for Crouching",
 			"description_details": "Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
@@ -276,6 +285,7 @@
 		{
 			"authority": "server",
 			"name": "SetAnimationsTransitionStandingCrouching",
+			"category": "Animation",
 			"description": "Sets the Transition Animation between Standing and Crouching",
 			"parameters": [
 				{
@@ -294,6 +304,7 @@
 		{
 			"authority": "server",
 			"name": "SetAccelerationSettings",
+			"category": "Movement",
 			"description": "Sets the Movement Max Acceleration of this Character",
 			"parameters": [
 				{
@@ -344,6 +355,7 @@
 		{
 			"authority": "server",
 			"name": "SetAirControl",
+			"category": "Movement",
 			"description": "Sets the amount of movement control allowed when it is in air",
 			"parameters": [
 				{
@@ -370,6 +382,7 @@
 		{
 			"authority": "server",
 			"name": "SetCameraMode",
+			"category": "Camera",
 			"description": "Sets the Camera Mode",
 			"description_details": "It can allow only TPS, only FPS or both.<br/><br/>Using FPSOnly CameraMode on AI will lock his body rotation (when using LookAt)",
 			"parameters": [
@@ -384,6 +397,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanAim",
+			"category": "Combat",
 			"description": "Sets if this Character is allowed to Aim",
 			"parameters": [
 				{
@@ -397,6 +411,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanDrop",
+			"category": "Interaction",
 			"description": "Sets if this Character is allowed to Drop the Picked up item",
 			"parameters": [
 				{
@@ -410,6 +425,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanDive",
+			"category": "Movement",
 			"description": "Sets if this Character is allowed to Dive",
 			"parameters": [
 				{
@@ -423,6 +439,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanSprint",
+			"category": "Movement",
 			"description": "Sets if this Character is allowed to Sprint",
 			"parameters": [
 				{
@@ -436,6 +453,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanGrabProps",
+			"category": "Interaction",
 			"description": "Sets if this Character is allowed to Grab any Prop",
 			"parameters": [
 				{
@@ -449,6 +467,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanPickupPickables",
+			"category": "Interaction",
 			"description": "Sets if this Character is allowed to Pick up any Pickable (Weapon, Grenade, Melee...)",
 			"parameters": [
 				{
@@ -462,6 +481,7 @@
 		{
 			"authority": "server",
 			"name": "SetWeaponShooterMode",
+			"category": "Combat",
 			"description": "Sets if this Character is in Shooter Mode, in which a held Weapon is always aimed while idle or walking, is lowered while sprinting, and the aim input aims down sights instead of raising the Weapon",
 			"parameters": [
 				{
@@ -475,6 +495,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanUsePickables",
+			"category": "Interaction",
 			"description": "Sets if this Character is allowed to use Pickables (Weapon, Grenade, Melee...)",
 			"parameters": [
 				{
@@ -488,6 +509,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanPunch",
+			"category": "Combat",
 			"description": "Sets if this Character is allowed to Punch",
 			"parameters": [
 				{
@@ -501,6 +523,7 @@
 		{
 			"authority": "server",
 			"name": "SetCanDeployParachute",
+			"category": "Movement",
 			"description": "Sets if this Character is allowed to deploy the Parachute",
 			"parameters": [
 				{
@@ -514,6 +537,7 @@
 		{
 			"authority": "server",
 			"name": "SetDeathSound",
+			"category": "Audio",
 			"description": "Changes the Death sound when Character dies",
 			"parameters": [
 				{
@@ -528,6 +552,7 @@
 		{
 			"authority": "server",
 			"name": "SetFallDamageTaken",
+			"category": "Combat",
 			"description": "Set the Fall Damage multiplier taken when falling from High places",
 			"description_details": "Setting to 0 will make the Character not take any damage",
 			"parameters": [
@@ -542,6 +567,7 @@
 		{
 			"authority": "server",
 			"name": "SetFOVMultiplier",
+			"category": "Camera",
 			"description": "Sets the Field of View multiplier",
 			"parameters": [
 				{
@@ -555,6 +581,7 @@
 		{
 			"authority": "server",
 			"name": "SetHighFallingTime",
+			"category": "Movement",
 			"description": "Sets time to transition to HighFalling state",
 			"description_details": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
 			"parameters": [
@@ -574,6 +601,7 @@
 		{
 			"authority": "server",
 			"name": "SetRagdollOnHitEnabled",
+			"category": "Physics",
 			"description": "Sets if the character will enter ragdoll mode when being hit by an object or falling from a high place",
 			"parameters": [
 				{
@@ -592,6 +620,7 @@
 		{
 			"authority": "server",
 			"name": "SetRagdollStandUpCooldown",
+			"category": "Physics",
 			"description": "Sets the cooldown time (in seconds) before this Character can stand up from ragdoll",
 			"parameters": [
 				{
@@ -605,6 +634,7 @@
 		{
 			"authority": "server",
 			"name": "SetGaitMode",
+			"category": "Movement",
 			"description": "Sets the Gait Mode (walking or sprinting)",
 			"parameters": [
 				{
@@ -618,6 +648,7 @@
 		{
 			"authority": "server",
 			"name": "SetImpactDamageTaken",
+			"category": "Combat",
 			"description": "Set the Impact Damage taken when being run over by things",
 			"description_details": "Setting to 0 will make the Character not take damage or enter ragdoll mode",
 			"parameters": [
@@ -637,6 +668,7 @@
 		{
 			"authority": "server",
 			"name": "SetRadialDamageToRagdoll",
+			"category": "Physics",
 			"description": "Set the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
 			"description_details": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character never enter ragdoll mode when getting radial damage",
 			"parameters": [
@@ -651,6 +683,7 @@
 		{
 			"authority": "server",
 			"name": "SetFootstepVolumeMultiplier",
+			"category": "Audio",
 			"description": "Set the Footstep Volume multiplier",
 			"parameters": [
 				{
@@ -664,6 +697,7 @@
 		{
 			"authority": "server",
 			"name": "SetInvulnerable",
+			"category": "Combat",
 			"description": "Sets if the Character can receive any damage",
 			"parameters": [
 				{
@@ -677,6 +711,7 @@
 		{
 			"authority": "server",
 			"name": "SetMesh",
+			"category": "Appearance",
 			"description": "Changes the Character Mesh at runtime",
 			"parameters": [
 				{
@@ -690,6 +725,7 @@
 		{
 			"authority": "both",
 			"name": "SetPhysicalAnimationSettings",
+			"category": "Physics",
 			"description": "Applies the physical animation settings to the body given",
 			"parameters": [
 				{
@@ -749,12 +785,14 @@
 		{
 			"authority": "both",
 			"name": "ResetPhysicalAnimationSettings",
+			"category": "Physics",
 			"description": "Resets all Physical Animation settings",
 			"efficiency": "moderate"
 		},
 		{
 			"authority": "server",
 			"name": "SetInputEnabled",
+			"category": "Interaction",
 			"description": "Enables/Disables Character's Input",
 			"parameters": [
 				{
@@ -768,6 +806,7 @@
 		{
 			"authority": "server",
 			"name": "SetParachuteTexture",
+			"category": "Appearance",
 			"description": "Changes the texture of the Character's parachute",
 			"parameters": [
 				{
@@ -782,6 +821,7 @@
 		{
 			"authority": "server",
 			"name": "SetPainSound",
+			"category": "Audio",
 			"description": "Changes the Pain sound when Character takes damage",
 			"parameters": [
 				{
@@ -796,6 +836,7 @@
 		{
 			"authority": "server",
 			"name": "SetPunchDamage",
+			"category": "Combat",
 			"description": "Set the Punch Damage this Character will apply on others",
 			"parameters": [
 				{
@@ -809,6 +850,7 @@
 		{
 			"authority": "server",
 			"name": "SetRagdollMode",
+			"category": "Physics",
 			"description": "Enables or disables the Ragdoll Mode, making the Character fall as a physics body",
 			"parameters": [
 				{
@@ -822,6 +864,7 @@
 		{
 			"authority": "server",
 			"name": "SetSimulatePhysics",
+			"category": "Physics",
 			"description": "Sets the Character Capsule to simulate physics",
 			"parameters": [
 				{
@@ -835,6 +878,7 @@
 		{
 			"authority": "server",
 			"name": "SetSpeedMultiplier",
+			"category": "Movement",
 			"description": "Sets the multiplier applied to all movement speeds",
 			"parameters": [
 				{
@@ -848,6 +892,7 @@
 		{
 			"authority": "server",
 			"name": "SetStanceMode",
+			"category": "Movement",
 			"description": "Sets the Stance Mode (standing or crouching)",
 			"parameters": [
 				{
@@ -861,6 +906,7 @@
 		{
 			"authority": "network-authority",
 			"name": "SetViewMode",
+			"category": "Camera",
 			"description": "Sets the View Mode (first person, third person or top down)",
 			"parameters": [
 				{
@@ -874,6 +920,7 @@
 		{
 			"authority": "network-authority",
 			"name": "SetWeaponAimMode",
+			"category": "Combat",
 			"description": "Sets the Weapon's Aim Mode",
 			"parameters": [
 				{
@@ -887,12 +934,14 @@
 		{
 			"authority": "server",
 			"name": "UnGrabProp",
+			"category": "Interaction",
 			"description": "UnGrabs/Drops the Prop the Character is holding",
 			"efficiency": "moderate"
 		},
 		{
 			"authority": "both",
 			"name": "IsInRagdollMode",
+			"category": "Physics",
 			"description": "Gets if Character is in ragdoll mode",
 			"return": [
 				{
@@ -906,6 +955,7 @@
 		{
 			"authority": "both",
 			"name": "IsInvulnerable",
+			"category": "Combat",
 			"description": "Gets if this Character is invulnerable",
 			"return": [
 				{
@@ -919,6 +969,7 @@
 		{
 			"authority": "both",
 			"name": "IsInputEnabled",
+			"category": "Interaction",
 			"description": "Gets if this Character has input enabled",
 			"return": [
 				{
@@ -932,6 +983,7 @@
 		{
 			"authority": "both",
 			"name": "GetCameraMode",
+			"category": "Camera",
 			"description": "Gets the camera mode",
 			"return": [
 				{
@@ -945,6 +997,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanDrop",
+			"category": "Interaction",
 			"description": "Gets if this Character is allowed to drop the picked up item",
 			"return": [
 				{
@@ -958,6 +1011,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanPunch",
+			"category": "Combat",
 			"description": "Gets if this Character is allowed to punch",
 			"return": [
 				{
@@ -971,6 +1025,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanDeployParachute",
+			"category": "Movement",
 			"description": "Gets if this Character is allowed to deploy the Parachute",
 			"return": [
 				{
@@ -984,6 +1039,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanDive",
+			"category": "Movement",
 			"description": "Gets if this Character is allowed to Dive",
 			"return": [
 				{
@@ -997,6 +1053,7 @@
 		{
 			"authority": "both",
 			"name": "GetFootstepVolumeMultiplier",
+			"category": "Audio",
 			"description": "Gets the Footstep Volume multiplier",
 			"return": [
 				{
@@ -1010,6 +1067,7 @@
 		{
 			"authority": "both",
 			"name": "GetRadialDamageToRagdoll",
+			"category": "Physics",
 			"description": "Gets the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
 			"return": [
 				{
@@ -1023,6 +1081,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanAim",
+			"category": "Combat",
 			"description": "Gets if this Character is allowed to aim",
 			"return": [
 				{
@@ -1036,6 +1095,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanSprint",
+			"category": "Movement",
 			"description": "Gets if this Character is allowed to sprint",
 			"return": [
 				{
@@ -1049,6 +1109,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanGrabProps",
+			"category": "Interaction",
 			"description": "Gets if this Character is allowed to grab Props",
 			"return": [
 				{
@@ -1062,6 +1123,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanPickupPickables",
+			"category": "Interaction",
 			"description": "Gets if this Character is allowed to pick up Pickables (Weapon, Grenade, Melee...)",
 			"return": [
 				{
@@ -1075,6 +1137,7 @@
 		{
 			"authority": "both",
 			"name": "GetWeaponShooterMode",
+			"category": "Combat",
 			"description": "Gets if this Character is in Shooter Mode",
 			"return": [
 				{
@@ -1088,6 +1151,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanUsePickables",
+			"category": "Interaction",
 			"description": "Gets if this Character is allowed to use Pickables (Weapon, Grenade, Melee...)",
 			"return": [
 				{
@@ -1101,6 +1165,7 @@
 		{
 			"authority": "both",
 			"name": "GetFallDamageTaken",
+			"category": "Combat",
 			"description": "Gets the Fall Damage multiplier",
 			"return": [
 				{
@@ -1114,6 +1179,7 @@
 		{
 			"authority": "both",
 			"name": "GetFallingMode",
+			"category": "Movement",
 			"description": "Gets the current Falling Mode",
 			"return": [
 				{
@@ -1126,6 +1192,7 @@
 		{
 			"authority": "both",
 			"name": "GetGaitMode",
+			"category": "Movement",
 			"description": "Gets the current Gait Mode",
 			"return": [
 				{
@@ -1139,6 +1206,7 @@
 		{
 			"authority": "both",
 			"name": "GetGrabbedProp",
+			"category": "Interaction",
 			"description": "Gets the Grabbed Prop",
 			"return": [
 				{
@@ -1158,6 +1226,7 @@
 		{
 			"authority": "both",
 			"name": "GetImpactDamageTaken",
+			"category": "Combat",
 			"description": "Gets the Impact Damage taken when being run over",
 			"return": [
 				{
@@ -1171,6 +1240,7 @@
 		{
 			"authority": "both",
 			"name": "GetPicked",
+			"category": "Interaction",
 			"description": "Gets the Pickable if picking up",
 			"return": [
 				{
@@ -1190,6 +1260,7 @@
 		{
 			"authority": "both",
 			"name": "GetPunchDamage",
+			"category": "Combat",
 			"description": "Gets the damage dealt by this Character's punches",
 			"return": [
 				{
@@ -1203,6 +1274,7 @@
 		{
 			"authority": "both",
 			"name": "GetSpeedMultiplier",
+			"category": "Movement",
 			"description": "Gets the movement speed multiplier",
 			"return": [
 				{
@@ -1216,6 +1288,7 @@
 		{
 			"authority": "both",
 			"name": "GetStanceMode",
+			"category": "Movement",
 			"description": "Gets the Stance Mode",
 			"return": [
 				{
@@ -1229,6 +1302,7 @@
 		{
 			"authority": "both",
 			"name": "GetSwimmingMode",
+			"category": "Movement",
 			"description": "Gets the Swimming Mode",
 			"return": [
 				{
@@ -1242,6 +1316,7 @@
 		{
 			"authority": "both",
 			"name": "GetVehicle",
+			"category": "Interaction",
 			"description": "Gets the entered Vehicle",
 			"return": [
 				{
@@ -1261,6 +1336,7 @@
 		{
 			"authority": "both",
 			"name": "GetVehicleSeat",
+			"category": "Interaction",
 			"description": "Gets the entered Vehicle seat",
 			"return": [
 				{
@@ -1274,6 +1350,7 @@
 		{
 			"authority": "both",
 			"name": "GetViewMode",
+			"category": "Camera",
 			"description": "Gets the View Mode",
 			"return": [
 				{
@@ -1287,6 +1364,7 @@
 		{
 			"authority": "both",
 			"name": "GetWeaponAimMode",
+			"category": "Combat",
 			"description": "Gets the Weapon Aim Mode",
 			"return": [
 				{
@@ -1300,6 +1378,7 @@
 		{
 			"authority": "server",
 			"name": "SetPhysicsAsset",
+			"category": "Physics",
 			"description": "Sets the Physics Asset for the Character",
 			"parameters": [
 				{

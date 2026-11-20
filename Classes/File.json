@@ -23,12 +23,14 @@
 	"functions": [
 		{
 			"name": "Close",
+			"category": "Streams",
 			"authority": "both",
 			"description": "Closes the file and destroys the entity",
 			"efficiency": "blocking"
 		},
 		{
 			"name": "Flush",
+			"category": "Streams",
 			"authority": "both",
 			"description": "Flushes content to the file",
 			"efficiency": "blocking"
@@ -42,6 +44,7 @@
 			],
 			"authority": "both",
 			"name": "IsEOF",
+			"category": "Streams",
 			"description": "Checks if the file status is End of File",
 			"efficiency": "fast"
 		},
@@ -54,6 +57,7 @@
 			],
 			"authority": "both",
 			"name": "IsBad",
+			"category": "Streams",
 			"description": "Checks if the file status is Bad",
 			"efficiency": "fast"
 		},
@@ -66,6 +70,7 @@
 			],
 			"authority": "both",
 			"name": "IsGood",
+			"category": "Streams",
 			"description": "Checks if the file status is Good",
 			"efficiency": "fast"
 		},
@@ -78,6 +83,7 @@
 			],
 			"authority": "both",
 			"name": "HasFailed",
+			"category": "Streams",
 			"description": "Checks if the last operation has Failed",
 			"efficiency": "fast"
 		},
@@ -90,6 +96,7 @@
 			],
 			"authority": "both",
 			"name": "Read",
+			"category": "Contents",
 			"description": "Reads characters from the File and returns it. Also moves the file pointer to the latest read position. Pass 0 to read the whole file",
 			"parameters": [
 				{
@@ -104,6 +111,7 @@
 		{
 			"authority": "both",
 			"name": "ReadAsync",
+			"category": "Contents",
 			"description": "Reads characters from the File asynchronously",
 			"parameters": [
 				{
@@ -136,6 +144,7 @@
 			],
 			"authority": "both",
 			"name": "ReadLine",
+			"category": "Contents",
 			"description": "Reads and returns the next file line",
 			"efficiency": "blocking"
 		},
@@ -148,12 +157,14 @@
 			],
 			"authority": "both",
 			"name": "ReadJSON",
+			"category": "Contents",
 			"description": "Reads the whole file as a JSON and returns it",
 			"efficiency": "blocking"
 		},
 		{
 			"authority": "both",
 			"name": "ReadJSONAsync",
+			"category": "Contents",
 			"description": "Reads the whole file as a JSON and returns it asynchronously",
 			"parameters": [
 				{
@@ -173,6 +184,7 @@
 		},
 		{
 			"name": "Seek",
+			"category": "Position",
 			"authority": "both",
 			"description": "Sets the file pointer to a specific position",
 			"parameters": [
@@ -193,11 +205,13 @@
 			],
 			"authority": "both",
 			"name": "Size",
+			"category": "Position",
 			"description": "Returns the size of the file",
 			"efficiency": "fast"
 		},
 		{
 			"name": "Skip",
+			"category": "Position",
 			"authority": "both",
 			"description": "Skips n (amount) positions from the current file pointer position",
 			"parameters": [
@@ -218,11 +232,13 @@
 			],
 			"authority": "both",
 			"name": "Tell",
+			"category": "Position",
 			"description": "Returns the current file pointer position",
 			"efficiency": "fast"
 		},
 		{
 			"name": "Write",
+			"category": "Contents",
 			"authority": "both",
 			"description": "Writes the Data at the current position of the file",
 			"parameters": [
@@ -238,6 +254,7 @@
 	"static_functions": [
 		{
 			"name": "Time",
+			"category": "Paths",
 			"return": [
 				{
 					"type": "integer",
@@ -257,6 +274,7 @@
 		},
 		{
 			"name": "CreateDirectory",
+			"category": "Directories",
 			"return": [
 				{
 					"type": "boolean",
@@ -276,6 +294,7 @@
 		},
 		{
 			"name": "Remove",
+			"category": "Paths",
 			"return": [
 				{
 					"type": "integer",
@@ -295,6 +314,7 @@
 		},
 		{
 			"name": "Rename",
+			"category": "Paths",
 			"return": [
 				{
 					"type": "boolean",
@@ -319,6 +339,7 @@
 		},
 		{
 			"name": "Exists",
+			"category": "Paths",
 			"return": [
 				{
 					"type": "boolean",
@@ -338,6 +359,7 @@
 		},
 		{
 			"name": "IsDirectory",
+			"category": "Directories",
 			"return": [
 				{
 					"type": "boolean",
@@ -357,6 +379,7 @@
 		},
 		{
 			"name": "IsRegularFile",
+			"category": "Paths",
 			"return": [
 				{
 					"type": "boolean",
@@ -376,6 +399,7 @@
 		},
 		{
 			"name": "GetDirectories",
+			"category": "Directories",
 			"description": "Gets a list of all directories given a path",
 			"description_details": "Filters are optional. Note that the results may differ between Linux and Windows due to the way the file system works",
 			"authority": "both",
@@ -403,6 +427,7 @@
 		},
 		{
 			"name": "GetFiles",
+			"category": "Paths",
 			"description": "Gets a list of all files in a directory",
 			"description_details": "Filters are optional. Note that the results may differ between Linux and Windows due to the way the file system works",
 			"authority": "both",
@@ -436,6 +461,7 @@
 		},
 		{
 			"name": "GetFullPath",
+			"category": "Paths",
 			"return": [
 				{
 					"type": "string",

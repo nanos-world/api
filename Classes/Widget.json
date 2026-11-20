@@ -32,6 +32,7 @@
 	"functions": [
 		{
 			"name": "SpawnWidget3D",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Spawns a 3D Widget actor rendering this Widget in the world",
 			"return": [
@@ -89,6 +90,7 @@
 		},
 		{
 			"name": "SetVisibility",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Sets the visibility in screen",
 			"parameters": [
@@ -102,6 +104,7 @@
 		},
 		{
 			"name": "GetVisibility",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Returns the current WebUI visibility",
 			"return": [
@@ -115,6 +118,7 @@
 		},
 		{
 			"name": "SetFocus",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Enables the focus on this Widget",
 			"description_details": "Enables the focus on this Widget (i.e. can receive Keyboard input and will trigger input events)<br/>Note: Only one Widget can have focus per time",
@@ -122,6 +126,7 @@
 		},
 		{
 			"name": "BringToFront",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Puts this Widget in the front of all WebUIs and Widgets",
 			"description_details": "Note: You can only call it if the Widget is parented to the Viewport!",
@@ -129,12 +134,14 @@
 		},
 		{
 			"name": "AddToViewport",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Adds it to the game's viewport and fills the entire screen",
 			"efficiency": "moderate"
 		},
 		{
 			"name": "AddChild",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Adds a new child widget to this Widget container, if this is a <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/UMG/UPanelWidget'>Panel</a>",
 			"parameters": [
@@ -148,6 +155,7 @@
 		},
 		{
 			"name": "SetContentForSlot",
+			"category": "Slots",
 			"authority": "client",
 			"description": "Sets the widget for a given <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/UMG/UNamedSlot'>slot</a> by name, if this is a <a href='https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/UMG/UUserWidget'>UserWidget</a>",
 			"parameters": [
@@ -167,6 +175,7 @@
 		},
 		{
 			"name": "SetSlotCanvasLayout",
+			"category": "Slots",
 			"authority": "client",
 			"description": "Sets the Layout as Canvas on Screen",
 			"description_details": "Note: This method only works if this Widget is child of a Canvas Panel.<br/><br/><strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
@@ -206,6 +215,7 @@
 		},
 		{
 			"name": "CallBlueprintEvent",
+			"category": "Blueprints",
 			"return": [
 				{
 					"type": "any...",
@@ -232,6 +242,7 @@
 		},
 		{
 			"name": "BindBlueprintEventDispatcher",
+			"category": "Blueprints",
 			"description": "Assigns and Binds a Blueprint Event Dispatcher",
 			"authority": "client",
 			"parameters": [
@@ -266,6 +277,7 @@
 		},
 		{
 			"name": "UnbindBlueprintEventDispatcher",
+			"category": "Blueprints",
 			"description": "Unbinds a Blueprint Event Dispatcher",
 			"authority": "client",
 			"parameters": [
@@ -285,6 +297,7 @@
 		},
 		{
 			"name": "SetBlueprintPropertyValue",
+			"category": "Blueprints",
 			"description": "Sets a Blueprint Property/Variable value directly",
 			"authority": "client",
 			"parameters": [
@@ -303,6 +316,7 @@
 		},
 		{
 			"name": "GetBlueprintPropertyValue",
+			"category": "Blueprints",
 			"description": "Gets a Blueprint Property/Variable value",
 			"authority": "client",
 			"return": [
@@ -322,6 +336,7 @@
 		},
 		{
 			"name": "SetSlotAlignment",
+			"category": "Slots",
 			"authority": "client",
 			"description": "Sets the slot alignment for horizontal and vertical positioning",
 			"description_details": "Note: This method only works if this Widget is child of one of: HorizontalBoxSlot, VerticalBoxSlot, OverlaySlot, SizeBoxSlot, ScrollBoxSlot, BackgroundBlurSlot, BorderSlot, ButtonSlot, ScaleBoxSlot, UniformGridSlot, GridSlot",
@@ -343,6 +358,7 @@
 		},
 		{
 			"name": "SetSlotPadding",
+			"category": "Slots",
 			"authority": "client",
 			"description": "Sets the slot padding for horizontal and vertical spacing",
 			"description_details": "Note: This method only works if this Widget is child of one of: HorizontalBoxSlot, VerticalBoxSlot, OverlaySlot, SizeBoxSlot, ScrollBoxSlot, BackgroundBlurSlot, BorderSlot, ButtonSlot, GridSlot",
@@ -364,6 +380,7 @@
 		},
 		{
 			"name": "SetSlotSize",
+			"category": "Slots",
 			"authority": "client",
 			"description": "Sets the slot size and size rule",
 			"description_details": "Note: This method only works if this Widget is child of one of: HorizontalBoxSlot, VerticalBoxSlot, ScrollBoxSlot",

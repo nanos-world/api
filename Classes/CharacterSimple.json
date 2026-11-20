@@ -60,6 +60,7 @@
 		{
 			"authority": "authority",
 			"name": "SetMesh",
+			"category": "Mesh",
 			"description": "Changes the Character Mesh at runtime",
 			"last_compatibility_version": "1.144",
 			"parameters": [
@@ -74,6 +75,7 @@
 		{
 			"authority": "authority",
 			"name": "SetPhysicsAsset",
+			"category": "Mesh",
 			"description": "Sets the Physics Asset for the Character",
 			"parameters": [
 				{
@@ -88,6 +90,7 @@
 		{
 			"authority": "authority",
 			"name": "PlayAnimation",
+			"category": "Animation",
 			"description": "Plays an Animation Montage on this character",
 			"parameters": [
 				{
@@ -137,6 +140,7 @@
 		{
 			"authority": "authority",
 			"name": "SetMaxAcceleration",
+			"category": "Movement",
 			"description": "Sets the max acceleration of the movement",
 			"parameters": [
 				{
@@ -150,6 +154,7 @@
 		{
 			"authority": "both",
 			"name": "SetSpringArmSettings",
+			"category": "Movement",
 			"description": "Sets the Spring Arm Settings of this Character",
 			"parameters": [
 				{
@@ -194,6 +199,7 @@
 		{
 			"authority": "authority",
 			"name": "SetRotationSettings",
+			"category": "Movement",
 			"description": "Sets the Rotation Settings of this Character",
 			"parameters": [
 				{
@@ -217,6 +223,7 @@
 		{
 			"authority": "authority",
 			"name": "SetSpeedSettings",
+			"category": "Movement",
 			"description": "Sets the Speed Settings of this Character",
 			"parameters": [
 				{
@@ -249,6 +256,7 @@
 		{
 			"authority": "authority",
 			"name": "SetPawnSettings",
+			"category": "Movement",
 			"description": "Sets the Pawn Settings of this Character",
 			"parameters": [
 				{
@@ -272,6 +280,7 @@
 		{
 			"authority": "authority",
 			"name": "SetAirControl",
+			"category": "Movement",
 			"description": "Sets the amount of movement control allowed when it is in air",
 			"parameters": [
 				{
@@ -298,6 +307,7 @@
 		{
 			"authority": "authority",
 			"name": "SetAnimationBlueprint",
+			"category": "Animation",
 			"description": "Sets the Animation Blueprint of this Character",
 			"parameters": [
 				{
@@ -310,6 +320,7 @@
 		},
 		{
 			"name": "SetAnimationBlueprintPropertyValue",
+			"category": "Animation",
 			"description": "Sets an Animation Blueprint Property/Variable value directly",
 			"authority": "client",
 			"parameters": [
@@ -328,6 +339,7 @@
 		},
 		{
 			"name": "GetAnimationBlueprintPropertyValue",
+			"category": "Animation",
 			"description": "Gets an Animation Blueprint Property/Variable value directly",
 			"authority": "client",
 			"parameters": [
@@ -347,6 +359,7 @@
 		},
 		{
 			"name": "CallAnimationBlueprintEvent",
+			"category": "Animation",
 			"authority": "both",
 			"return": [
 				{
@@ -373,6 +386,7 @@
 		},
 		{
 			"name": "BindAnimationBlueprintEventDispatcher",
+			"category": "Animation",
 			"description": "Assigns and Binds an Animation Blueprint Event Dispatcher",
 			"authority": "client",
 			"parameters": [
@@ -407,6 +421,7 @@
 		},
 		{
 			"name": "UnbindAnimationBlueprintEventDispatcher",
+			"category": "Animation",
 			"description": "Unbinds an Animation Blueprint Event Dispatcher",
 			"authority": "client",
 			"parameters": [
@@ -427,6 +442,7 @@
 		{
 			"authority": "authority",
 			"name": "SetCrouching",
+			"category": "Movement",
 			"description": "Sets if this Character is crouching",
 			"parameters": [
 				{
@@ -446,6 +462,7 @@
 		{
 			"authority": "both",
 			"name": "IsCrouching",
+			"category": "Movement",
 			"description": "Gets if this Character is crouching",
 			"return": [
 				{
