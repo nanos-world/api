@@ -256,7 +256,8 @@
 		{
 			"authority": "server",
 			"name": "SetAnimationIdleWalkRunCrouching",
-			"description": "Sets the Blend Space (2D) Animation for Crouching<br/><br/>Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"description": "Sets the Blend Space (2D) Animation for Crouching",
+			"description_details": "Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
 				{
 					"type": "AnimationPath",
