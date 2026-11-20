@@ -63,6 +63,7 @@
 	"functions": [
 		{
 			"name": "SetGrabMode",
+			"category": "Handling",
 			"description": "Sets ability to Characters to Grab this Prop",
 			"parameters": [
 				{
@@ -76,6 +77,7 @@
 		},
 		{
 			"name": "SetInteractionToolTipText",
+			"category": "Appearance",
 			"description": "Sets the interaction tooltip text shown when a Character interacts with this Prop",
 			"parameters": [
 				{
@@ -89,6 +91,7 @@
 		},
 		{
 			"name": "SetPhysicsDamping",
+			"category": "Physics",
 			"description": "Sets the Physics damping of this Prop",
 			"parameters": [
 				{
@@ -107,6 +110,7 @@
 		},
 		{
 			"name": "SetMesh",
+			"category": "Appearance",
 			"description": "Changes the mesh in runtime",
 			"parameters": [
 				{
@@ -120,6 +124,7 @@
 		},
 		{
 			"name": "GetMesh",
+			"category": "Appearance",
 			"description": "Gets the Asset name",
 			"return": [
 				{
@@ -133,6 +138,7 @@
 		},
 		{
 			"name": "GetHandler",
+			"category": "Handling",
 			"description": "Gets the Character (if existing) which is holding this",
 			"return": [
 				{
@@ -146,6 +152,7 @@
 		},
 		{
 			"name": "GetGrabMode",
+			"category": "Handling",
 			"description": "Gets ability to Grab this Prop",
 			"return": [
 				{
@@ -159,6 +166,7 @@
 		},
 		{
 			"name": "SetMassOverride",
+			"category": "Physics",
 			"description": "Override the mass (in Kg) of this Prop",
 			"parameters": [
 				{
@@ -172,6 +180,7 @@
 		},
 		{
 			"name": "GetMassOverride",
+			"category": "Physics",
 			"description": "Gets the overridden mass",
 			"return": [
 				{
@@ -184,6 +193,7 @@
 		},
 		{
 			"name": "SetMassScale",
+			"category": "Physics",
 			"description": "Change the mass scale used to calculate the mass of this Prop",
 			"parameters": [
 				{
@@ -197,6 +207,7 @@
 		},
 		{
 			"name": "GetMassScale",
+			"category": "Physics",
 			"description": "Gets the mass scale",
 			"return": [
 				{
@@ -209,6 +220,7 @@
 		},
 		{
 			"name": "SetOneWayInteraction",
+			"category": "Physics",
 			"description": "Sets whether this Prop treats every physics body without it as infinitely heavy, so they push it around but never get pushed back",
 			"parameters": [
 				{
@@ -221,6 +233,7 @@
 		},
 		{
 			"name": "IsOneWayInteraction",
+			"category": "Physics",
 			"description": "Gets whether one-way interaction is enabled on this Prop",
 			"return": [
 				{
@@ -233,6 +246,7 @@
 		{
 			"authority": "authority",
 			"name": "SetBuoyancyPontoons",
+			"category": "Physics",
 			"description": "Sets the Buoyancy Pontoons used by the Water simulation",
 			"description_details": "Sets the spherical Pontoons used to float this entity on Water, overriding the ones automatically calculated from the Mesh bounds and mass.<br/><br/>Pass no value (or an empty table) to go back to the automatically calculated ones.<br/><br/>Pontoons only have an effect on Maps with Water Buoyancy enabled",
 			"parameters": [
@@ -260,8 +274,9 @@
 		{
 			"authority": "authority",
 			"name": "SetBuoyancySettings",
+			"category": "Physics",
 			"description": "Sets how this entity behaves on Water",
-			"description_details": "Any value passed as nil restores that setting's default.<br/><br/>While the Pontoons are being automatically calculated, changing buoyancy_coefficient also recalculates them, as their radius derives from it",
+			"description_details": "Any value passed as nil restores that setting's default.<br/><br/>The automatically calculated Pontoons are sized for the default buoyancy_coefficient, so a higher one makes the entity float higher",
 			"parameters": [
 				{
 					"type": "boolean",
@@ -278,13 +293,13 @@
 				{
 					"type": "float",
 					"name": "buoyancy_damp",
-					"default": "1000",
-					"description": "First order damping on the vertical velocity, reduces bobbing"
+					"default": "nil",
+					"description": "First order damping on the vertical velocity, reduces bobbing. When nil (or negative) it is calculated from the mass and Pontoons"
 				},
 				{
 					"type": "float",
 					"name": "max_buoyant_force",
-					"default": "5000000",
+					"default": "1000000000",
 					"description": "Clamp on the upwards force, stops light objects being launched out of the water"
 				}
 			],

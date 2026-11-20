@@ -5,6 +5,7 @@
 	"static_functions": [
 		{
 			"name": "GetAll",
+			"category": "Queries",
 			"description": "Returns a table containing all Entities of the class this is called on",
 			"authority": "both",
 			"return": [
@@ -17,6 +18,7 @@
 		},
 		{
 			"name": "GetByIndex",
+			"category": "Queries",
 			"description": "Returns a specific Entity of this class at an index",
 			"authority": "both",
 			"parameters": [
@@ -36,6 +38,7 @@
 		},
 		{
 			"name": "GetCount",
+			"category": "Queries",
 			"description": "Returns how many Entities of this class exist",
 			"authority": "both",
 			"return": [
@@ -48,6 +51,7 @@
 		},
 		{
 			"name": "GetPairs",
+			"category": "Queries",
 			"description": "Returns an iterator with all Entities of this class to be used with <code>pairs()</code>",
 			"description_details": "This is a more performant method than <code>GetAll()</code>, as it will return the iterator to access the Entities directly instead of creating and returning a copy of the Entities table.<br><br><b>Note:</b> Destroying Entities from inside a <code>GetPairs()</code> loop will cause the iterable to change size during the process. If you want to loop-and-destroy, please use <code>GetAll()</code>",
 			"authority": "both",
@@ -61,6 +65,7 @@
 		},
 		{
 			"name": "Inherit",
+			"category": "Class",
 			"description": "Inherits this class with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"parameters": [
@@ -87,6 +92,7 @@
 		},
 		{
 			"name": "GetInheritedClasses",
+			"category": "Class",
 			"description": "Gets a list of all directly inherited classes from this Class created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"parameters": [
@@ -107,6 +113,7 @@
 		},
 		{
 			"name": "GetParentClass",
+			"category": "Class",
 			"description": "Gets the parent class if this Class was created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"return": [
@@ -119,6 +126,7 @@
 		},
 		{
 			"name": "IsChildOf",
+			"category": "Class",
 			"description": "Gets if this Class is child of another class if this Class was created with the <a href='/docs/core-concepts/scripting/inheriting-classes'>Inheriting System</a>",
 			"authority": "both",
 			"parameters": [
@@ -138,6 +146,7 @@
 		},
 		{
 			"name": "Subscribe",
+			"category": "Events",
 			"description": "Subscribes to an <a href='/docs/core-concepts/scripting/events-guide'>Event</a> for all entities of this Class",
 			"authority": "both",
 			"parameters": [
@@ -162,6 +171,7 @@
 		},
 		{
 			"name": "SubscribeRemote",
+			"category": "Network",
 			"description": "Subscribes to a custom event called from server",
 			"authority": "both",
 			"parameters": [
@@ -186,6 +196,7 @@
 		},
 		{
 			"name": "Unsubscribe",
+			"category": "Events",
 			"description": "Unsubscribes all callbacks from this <a href='/docs/core-concepts/scripting/events-guide'>Event</a> in this Class within this Package, or only the callback passed",
 			"authority": "both",
 			"parameters": [
@@ -207,6 +218,7 @@
 	"functions": [
 		{
 			"name": "FinishSpawn",
+			"category": "Lifecycle",
 			"description": "Finish the spawning process and send the entity to clients if it was spawned with a deferred <code>spawn_mode</code>",
 			"description_details": "Finish the spawning process and send the entity to clients if it was spawned with <code>SpawnMode.AfterConstructor</code> or <code>SpawnMode.Manual</code>. Call this after configuring the entity for efficient spawning.<br><br>Note: an Entity of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a> constructed with <code>SpawnMode.AfterConstructor</code> finishes spawning automatically when its Constructor returns",
 			"authority": "both",
@@ -214,6 +226,7 @@
 		},
 		{
 			"name": "SetSpawnMode",
+			"category": "Lifecycle",
 			"description": "Overrides when this Entity finishes spawning, from the Constructor of an Inherited Class",
 			"description_details": "Overrides when this Entity finishes spawning, from the Constructor of an <a href='/docs/core-concepts/scripting/inheriting-classes'>Inherited Class</a>.<br><br>Only <code>SpawnMode.AfterConstructor</code> and <code>SpawnMode.Manual</code> are accepted, and only while the Entity has not finished spawning yet",
 			"authority": "both",
@@ -228,6 +241,7 @@
 		},
 		{
 			"name": "IsSpawned",
+			"category": "Lifecycle",
 			"description": "Gets if this Entity finished spawning",
 			"description_details": "An Entity spawned with a deferred <code>SpawnMode</code> is only spawned after <code>FinishSpawn()</code> is called on it or when the Inherited Class constructor returns, everything else is spawned right away",
 			"authority": "both",
@@ -241,6 +255,7 @@
 		},
 		{
 			"name": "GetID",
+			"category": "Queries",
 			"description": "Gets the universal network ID of this Entity (same on both client and server)",
 			"authority": "both",
 			"return": [
@@ -254,6 +269,7 @@
 		},
 		{
 			"name": "IsBeingDestroyed",
+			"category": "Lifecycle",
 			"description": "Returns true if this Entity is being destroyed",
 			"description_details": "You can check this inside events like <code>Drop</code> to see if a Pickable is being dropped because it's going to be destroyed",
 			"authority": "both",
@@ -267,6 +283,7 @@
 		},
 		{
 			"name": "HasAuthority",
+			"category": "Network",
 			"description": "Gets if the local context has authority over this Entity (true if spawned by the client, false if spawned by the server)",
 			"authority": "client",
 			"efficiency": "fast",
@@ -279,6 +296,7 @@
 		},
 		{
 			"name": "GetClass",
+			"category": "Class",
 			"description": "Gets the class of this entity",
 			"authority": "both",
 			"return": [
@@ -292,6 +310,7 @@
 		},
 		{
 			"name": "IsA",
+			"category": "Class",
 			"description": "Recursively checks if this entity is <a href='/docs/core-concepts/scripting/inheriting-classes'>inherited</a> from a Class",
 			"authority": "both",
 			"parameters": [
@@ -311,6 +330,7 @@
 		},
 		{
 			"name": "Subscribe",
+			"category": "Events",
 			"description": "Subscribes to an <a href='/docs/core-concepts/scripting/events-guide'>Event</a> on this specific entity",
 			"authority": "both",
 			"parameters": [
@@ -335,6 +355,7 @@
 		},
 		{
 			"name": "SubscribeRemote",
+			"category": "Network",
 			"description": "Subscribes to a custom event called from server on this specific entity",
 			"authority": "both",
 			"parameters": [
@@ -359,6 +380,7 @@
 		},
 		{
 			"name": "Unsubscribe",
+			"category": "Events",
 			"description": "Unsubscribes all callbacks from this <a href='/docs/core-concepts/scripting/events-guide'>Event</a> in this Entity within this Package, or only the callback passed",
 			"authority": "both",
 			"parameters": [
@@ -378,6 +400,7 @@
 		},
 		{
 			"name": "SetValue",
+			"category": "Data",
 			"description": "Sets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> in this Entity",
 			"description_details": "Sets a value in this Entity, which can be accessed by any package (optionally sync on clients if called from server)<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
@@ -408,6 +431,7 @@
 		},
 		{
 			"name": "GetValue",
+			"category": "Data",
 			"description": "Gets a <a href='/docs/core-concepts/scripting/entity-values'>Value</a> stored on this Entity at the given key",
 			"description_details": "Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "both",
@@ -439,6 +463,7 @@
 		},
 		{
 			"name": "GetAllValuesKeys",
+			"category": "Data",
 			"description": "Gets a list of all values keys",
 			"authority": "both",
 			"return": [
@@ -457,12 +482,14 @@
 		},
 		{
 			"name": "Destroy",
+			"category": "Lifecycle",
 			"description": "Destroys this Entity",
 			"authority": "authority",
 			"efficiency": "moderate"
 		},
 		{
 			"name": "IsValid",
+			"category": "Lifecycle",
 			"description": "Returns true if this Entity is valid (i.e. wasn't destroyed and points to a valid Entity)",
 			"authority": "both",
 			"return": [
@@ -476,6 +503,7 @@
 		},
 		{
 			"name": "CallRemoteEvent",
+			"category": "Network",
 			"description": "Calls a custom remote event directly on this entity to a specific Player",
 			"authority": "server",
 			"last_compatibility_version": "1.139",
@@ -507,6 +535,7 @@
 		},
 		{
 			"name": "CallRemotePlayersEvent",
+			"category": "Network",
 			"description": "Calls a custom remote event directly on this entity to a list of Players",
 			"authority": "server",
 			"parameters": [
@@ -537,6 +566,7 @@
 		},
 		{
 			"name": "CallRemoteEvent",
+			"category": "Network",
 			"description": "Calls a custom remote event directly on this entity",
 			"authority": "client",
 			"last_compatibility_version": "1.139",
@@ -563,6 +593,7 @@
 		},
 		{
 			"name": "BroadcastRemoteEvent",
+			"category": "Network",
 			"description": "Calls a custom remote event directly on this entity to all Players",
 			"authority": "server",
 			"last_compatibility_version": "1.139",
@@ -589,6 +620,7 @@
 		},
 		{
 			"name": "BroadcastRemoteInRadiusEvent",
+			"category": "Network",
 			"description": "Calls a custom remote event directly on this entity to all Players in a radius",
 			"authority": "server",
 			"parameters": [

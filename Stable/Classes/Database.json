@@ -89,10 +89,12 @@
 			"return": [
 				{
 					"type": "integer",
+					"name": "affected_rows",
 					"description": "affected rows"
 				},
 				{
 					"type": "string",
+					"name": "error",
 					"description": "error (if any)"
 				}
 			],
@@ -167,10 +169,12 @@
 			"return": [
 				{
 					"type": "table[]",
+					"name": "rows",
 					"description": "rows fetched"
 				},
 				{
 					"type": "string",
+					"name": "error",
 					"description": "error (if any)"
 				}
 			],

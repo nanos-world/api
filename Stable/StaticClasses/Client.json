@@ -5,12 +5,14 @@
 	"static_functions": [
 		{
 			"name": "Disconnect",
+			"category": "Session",
 			"description": "Disconnects from the server",
 			"authority": "client",
 			"efficiency": "slow"
 		},
 		{
 			"name": "CopyToClipboard",
+			"category": "Interface",
 			"description": "Copies a text to Clipboard",
 			"authority": "client",
 			"parameters": [
@@ -24,6 +26,7 @@
 		},
 		{
 			"name": "SetNearClipPlane",
+			"category": "Appearance",
 			"description": "Sets the Near Clip Plane",
 			"authority": "client",
 			"parameters": [
@@ -37,18 +40,20 @@
 		},
 		{
 			"name": "SetEscapeMenuText",
-			"description": "Sets the Escape Menu text",
+			"category": "Interface",
+			"description": "Sets the Escape Menu text as Markdown",
 			"authority": "client",
 			"examples": [
 				{
 					"title": "Adding customized texts",
 					"content": [
 						"Client.SetEscapeMenuText([[",
-						"    <h1>Header 1</>",
-						"    <h2>Header 2</>",
-						"    <h3>Header 3</>",
-						"    <strong>Strong</>",
-						"    Normal Text",
+						"# Welcome to the server",
+						"",
+						"Read the **rules** before playing!",
+						"",
+						"- Be respectful",
+						"- Have fun",
 						"]])"
 					]
 				}
@@ -57,13 +62,14 @@
 				{
 					"type": "string",
 					"name": "text",
-					"description": "Supports using <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> and <code>&lt;strong&gt;</code> tags in the text"
+					"description": "The text to display, supports Markdown formatting"
 				}
 			],
 			"efficiency": "moderate"
 		},
 		{
 			"name": "ShowNotification",
+			"category": "Interface",
 			"description": "Shows a notification using the built-in notification system",
 			"authority": "client",
 			"parameters": [
@@ -95,6 +101,7 @@
 		},
 		{
 			"name": "GetNearClipPlane",
+			"category": "Appearance",
 			"description": "Gets the Near Clip Plane value",
 			"authority": "client",
 			"return": [
@@ -107,6 +114,7 @@
 		},
 		{
 			"name": "GetConnectedServerIP",
+			"category": "Session",
 			"description": "Gets the current connected server IP:Port",
 			"authority": "client",
 			"return": [
@@ -119,6 +127,7 @@
 		},
 		{
 			"name": "SetDebugEnabled",
+			"category": "Diagnostics",
 			"description": "Enables/Disables Debug settings and Client Console to be used",
 			"authority": "client",
 			"parameters": [
@@ -132,6 +141,7 @@
 		},
 		{
 			"name": "SetSettingGammaOverride",
+			"category": "Appearance",
 			"description": "Overrides the gamma setting and prevents the client from changing it",
 			"authority": "client",
 			"parameters": [
@@ -151,6 +161,7 @@
 		},
 		{
 			"name": "SetHighlightColor",
+			"category": "Appearance",
 			"description": "Changes the Highlight Color for highlighted actors at a specific Index",
 			"description_details": "Multiply it by 5 (or more) for having a glowing effect.<br/><br/><code>HighlightMode.Always</code> will always be visible, even behind walls<br/><code>HighlightMode.OnlyHidden</code> will only be visible if behind a wall<br/><code>HighlightMode.OnlyVisible</code> will only be visible if not behind a wall<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2)",
 			"authority": "client",
@@ -176,6 +187,7 @@
 		},
 		{
 			"name": "SetOutlineColor",
+			"category": "Appearance",
 			"description": "Changes the Outline Color for outlined actors at a specific Index",
 			"description_details": "Multiply it by 5 (or more) for having a glowing effect.<br/><br/>Note: You can only have 3 different indexes (0, 1 or 2), and the default Outline color index used by the game is  <code>0</code> (when interacting with stuff)",
 			"authority": "client",
@@ -202,6 +214,7 @@
 		},
 		{
 			"name": "SetValue",
+			"category": "Data",
 			"description": "Sets a global value in the Client, which can be accessed from anywhere (client side)",
 			"description_details": "Please refer to <a href=\"/docs/core-concepts/scripting/entity-values\">Entity Values</a> for more information",
 			"authority": "client",
@@ -214,7 +227,7 @@
 				{
 					"type": "any",
 					"name": "value",
-					"description": "Value"
+					"description": "The value, can be any serializable type (not functions)"
 				}
 			],
 			"relations": {
@@ -229,6 +242,7 @@
 		},
 		{
 			"name": "Subscribe",
+			"category": "Session",
 			"description": "Subscribes for an Event",
 			"authority": "client",
 			"return": [
@@ -253,6 +267,7 @@
 		},
 		{
 			"name": "Unsubscribe",
+			"category": "Session",
 			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
 			"authority": "client",
 			"parameters": [
@@ -272,6 +287,7 @@
 		},
 		{
 			"name": "GetLocalPlayer",
+			"category": "Session",
 			"description": "Gets the local Player",
 			"authority": "client",
 			"return": [
@@ -284,6 +300,7 @@
 		},
 		{
 			"name": "GetFrameTime",
+			"category": "Diagnostics",
 			"description": "Gets the current Frame Time",
 			"authority": "client",
 			"return": [
@@ -296,6 +313,7 @@
 		},
 		{
 			"name": "GetTime",
+			"category": "Diagnostics",
 			"description": "Gets the Unix Epoch Time in milliseconds",
 			"authority": "client",
 			"return": [
@@ -308,6 +326,7 @@
 		},
 		{
 			"name": "GetLogLevel",
+			"category": "Diagnostics",
 			"description": "Returns the current log level",
 			"authority": "client",
 			"return": [
@@ -320,6 +339,7 @@
 		},
 		{
 			"name": "GetEntityByID",
+			"category": "Queries",
 			"description": "Returns the entity with the specified ID",
 			"authority": "client",
 			"return": [
@@ -339,6 +359,7 @@
 		},
 		{
 			"name": "GetActorsInRadius",
+			"category": "Queries",
 			"description": "Returns the actors within the specified radius",
 			"authority": "client",
 			"return": [
@@ -369,6 +390,7 @@
 		},
 		{
 			"name": "GetMap",
+			"category": "Session",
 			"description": "Returns the current map package name",
 			"authority": "client",
 			"return": [
@@ -381,6 +403,7 @@
 		},
 		{
 			"name": "IsPackageLoaded",
+			"category": "Packages",
 			"description": "Returns if a Package is currently loaded",
 			"authority": "client",
 			"return": [
@@ -400,6 +423,7 @@
 		},
 		{
 			"name": "GetPackages",
+			"category": "Packages",
 			"description": "Returns a list of Packages running",
 			"authority": "client",
 			"return": [
@@ -442,6 +466,7 @@
 		},
 		{
 			"name": "GetValue",
+			"category": "Data",
 			"description": "Gets a value given a key",
 			"authority": "client",
 			"return": [
@@ -471,6 +496,7 @@
 		},
 		{
 			"name": "GetAllValuesKeys",
+			"category": "Data",
 			"description": "Gets a list of all values keys",
 			"authority": "client",
 			"return": [
@@ -489,6 +515,7 @@
 		},
 		{
 			"name": "OpenEscapeMenu",
+			"category": "Interface",
 			"description": "Opens the escape menu",
 			"authority": "client",
 			"parameters": [
@@ -503,6 +530,7 @@
 		},
 		{
 			"name": "IsVOIPSelfMuted",
+			"category": "Settings",
 			"description": "Gets whether the local player has muted their own microphone",
 			"description_details": "Only the player can change it, with the VOIP key when the Open Mic setting is on, or from the escape menu",
 			"authority": "client",
@@ -516,6 +544,7 @@
 		},
 		{
 			"name": "GetLanguage",
+			"category": "Settings",
 			"description": "Gets the current language of the Client",
 			"authority": "client",
 			"return": [
@@ -528,6 +557,7 @@
 		},
 		{
 			"name": "GetSettings",
+			"category": "Settings",
 			"description": "Gets the local player's game Settings",
 			"authority": "client",
 			"return": [
@@ -559,6 +589,11 @@
 							"name": "MouseSensitivity",
 							"type": "float",
 							"description": "Mouse sensitivity multiplier"
+						},
+						{
+							"name": "MouseSmoothing",
+							"type": "boolean",
+							"description": "Whether mouse input is smoothed between frames that receive no mouse samples"
 						},
 						{
 							"name": "AutoReAlignCamera",

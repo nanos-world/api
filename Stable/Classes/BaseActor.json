@@ -8,6 +8,7 @@
 	"functions": [
 		{
 			"name": "GetMass",
+			"category": "Physics",
 			"description": "Returns the mass of this Actor",
 			"authority": "client",
 			"efficiency": "fast",
@@ -21,6 +22,7 @@
 		},
 		{
 			"name": "GetAngularVelocity",
+			"category": "Physics",
 			"description": "Returns the angular velocity of this Actor",
 			"authority": "client",
 			"efficiency": "fast",
@@ -34,6 +36,7 @@
 		},
 		{
 			"name": "AddImpulse",
+			"category": "Physics",
 			"description": "Add an impulse to this Actor. Good for one time instant burst",
 			"authority": "network-authority",
 			"efficiency": "fast",
@@ -53,6 +56,7 @@
 		},
 		{
 			"name": "AddAngularImpulse",
+			"category": "Physics",
 			"description": "Add an angular impulse to this Actor. Good for one time instant burst",
 			"authority": "network-authority",
 			"efficiency": "fast",
@@ -72,6 +76,7 @@
 		},
 		{
 			"name": "AttachTo",
+			"category": "Attachments",
 			"description": "Attaches this Actor to any other Actor, optionally at a specific bone",
 			"authority": "authority",
 			"efficiency": "moderate",
@@ -116,12 +121,14 @@
 		},
 		{
 			"name": "Detach",
+			"category": "Attachments",
 			"description": "Detaches this Actor from AttachedTo Actor",
 			"authority": "authority",
 			"efficiency": "fast"
 		},
 		{
 			"name": "SetCollision",
+			"category": "Physics",
 			"description": "Sets this Actor's collision type",
 			"authority": "authority",
 			"efficiency": "fast",
@@ -135,6 +142,7 @@
 		},
 		{
 			"name": "SetDimension",
+			"category": "Network",
 			"description": "Sets this Actor's Dimension. Actors only see and interact with entities in the same Dimension",
 			"authority": "server",
 			"efficiency": "moderate",
@@ -153,6 +161,7 @@
 		},
 		{
 			"name": "SetDistanceOptimizationMultiplier",
+			"category": "Network",
 			"description": "Sets this Actor's distance optimization multiplier",
 			"description_details": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
@@ -167,6 +176,7 @@
 		},
 		{
 			"name": "SetForce",
+			"category": "Physics",
 			"description": "Adds a permanent force to this Actor, set to Vector(0, 0, 0) to cancel",
 			"authority": "network-authority",
 			"efficiency": "fast",
@@ -186,6 +196,7 @@
 		},
 		{
 			"name": "SetAngularForce",
+			"category": "Physics",
 			"description": "Adds a permanent angular force to this Actor, set to Vector(0, 0, 0) to cancel",
 			"authority": "network-authority",
 			"efficiency": "fast",
@@ -199,6 +210,7 @@
 		},
 		{
 			"name": "SetGravityEnabled",
+			"category": "Physics",
 			"description": "Sets whether gravity is enabled on this Actor",
 			"authority": "authority",
 			"efficiency": "fast",
@@ -212,6 +224,7 @@
 		},
 		{
 			"name": "SetVisibility",
+			"category": "Appearance",
 			"description": "Sets whether the actor is visible or not",
 			"authority": "both",
 			"efficiency": "fast",
@@ -225,6 +238,7 @@
 		},
 		{
 			"name": "GetSocketTransform",
+			"category": "Attachments",
 			"authority": "client",
 			"efficiency": "moderate",
 			"description": "Gets a Socket Transform in world space given a bone or socket name",
@@ -264,6 +278,7 @@
 		},
 		{
 			"name": "SetHighlightEnabled",
+			"category": "Appearance",
 			"description": "Sets whether the highlight is enabled on this Actor, and which highlight index to use",
 			"description_details": "This will apply the highlight on every attached entity too",
 			"authority": "client",
@@ -292,6 +307,7 @@
 		},
 		{
 			"name": "SetOutlineEnabled",
+			"category": "Appearance",
 			"description": "Sets whether the outline is enabled on this Actor, and which outline index to use",
 			"description_details": "This will apply the outline on every attached entity too",
 			"authority": "client",
@@ -320,6 +336,7 @@
 		},
 		{
 			"name": "SetLifeSpan",
+			"category": "Lifecycle",
 			"description": "Sets the time (in seconds) before this Actor is destroyed. After this time has passed, the actor will be automatically destroyed",
 			"authority": "authority",
 			"efficiency": "fast",
@@ -333,6 +350,7 @@
 		},
 		{
 			"name": "GetLifeSpan",
+			"category": "Lifecycle",
 			"description": "Gets the time (in seconds) left before this Actor is destroyed",
 			"authority": "authority",
 			"efficiency": "fast",
@@ -345,6 +363,7 @@
 		},
 		{
 			"name": "SetLocation",
+			"category": "Transform",
 			"description": "Sets this Actor's location in the game world",
 			"authority": "authority",
 			"efficiency": "moderate",
@@ -358,6 +377,7 @@
 		},
 		{
 			"name": "SetRotation",
+			"category": "Transform",
 			"description": "Sets this Actor's rotation in the game world",
 			"authority": "authority",
 			"efficiency": "moderate",
@@ -371,6 +391,7 @@
 		},
 		{
 			"name": "SetRelativeLocation",
+			"category": "Transform",
 			"description": "Sets this Actor's relative location in local space (only if this actor is attached)",
 			"authority": "authority",
 			"efficiency": "moderate",
@@ -384,6 +405,7 @@
 		},
 		{
 			"name": "SetRelativeRotation",
+			"category": "Transform",
 			"description": "Sets this Actor's relative rotation in local space (only if this actor is attached)",
 			"authority": "authority",
 			"efficiency": "moderate",
@@ -397,6 +419,7 @@
 		},
 		{
 			"name": "SetScale",
+			"category": "Transform",
 			"description": "Sets this Actor's scale",
 			"authority": "authority",
 			"efficiency": "slow",
@@ -410,6 +433,7 @@
 		},
 		{
 			"name": "SetRenderCullDistance",
+			"category": "Appearance",
 			"description": "Sets this Actor's render cull distance",
 			"description_details": "Note: this will only affect the rendering distance, the entity will still be spawned and synced normally regardless of this distance",
 			"authority": "both",
@@ -424,6 +448,7 @@
 		},
 		{
 			"name": "SetCastShadow",
+			"category": "Appearance",
 			"description": "Sets this Actor's to cast shadows or not",
 			"authority": "both",
 			"efficiency": "moderate",
@@ -437,6 +462,7 @@
 		},
 		{
 			"name": "SetImpulseOnDamage",
+			"category": "Physics",
 			"description": "Sets whether taking damage (shots, melee, explosions) pushes this Actor's physics body",
 			"description_details": "Useful for things that should react to shots without being knocked around, like a shooting target that still falls with gravity and can be moved by other means. Enabled by default",
 			"authority": "both",
@@ -451,6 +477,7 @@
 		},
 		{
 			"name": "SetNetworkAuthority",
+			"category": "Network",
 			"description": "Sets the Player to have network authority over this Actor",
 			"description_details": "This Player will be manually assigned to handle this Actor's physics and share its location with other clients. The authority assignment will still be overridden by the game automatically<br><br>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
 			"authority": "server",
@@ -475,6 +502,7 @@
 		},
 		{
 			"name": "SetNetworkAuthorityAutoDistributed",
+			"category": "Network",
 			"description": "Sets if this Actor will auto distribute the network authority between players",
 			"description_details": "It only happens while the Actor is idle.<br/><br/>Please refer to <a href=\"/docs/core-concepts/scripting/authority-concepts#network-authority\">Network Authority</a> for more information",
 			"authority": "server",
@@ -495,6 +523,7 @@
 		},
 		{
 			"name": "TranslateTo",
+			"category": "Transform",
 			"description": "Smoothly moves this actor to a location over a certain time",
 			"description_details": "It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>TranslateRelativeTo</code> for attached actors",
 			"authority": "network-authority",
@@ -520,6 +549,7 @@
 		},
 		{
 			"name": "RotateTo",
+			"category": "Transform",
 			"description": "Smoothly rotates this actor to an angle over a certain time",
 			"description_details": "It can't be used while the actor is attached, grabbed, picked or in a vehicle. Use <code>RotateRelativeTo</code> for attached actors",
 			"authority": "network-authority",
@@ -545,6 +575,7 @@
 		},
 		{
 			"name": "TranslateRelativeTo",
+			"category": "Transform",
 			"description": "Smoothly moves this attached actor to a location relative to its parent over a certain time",
 			"description_details": "Like <code>SetRelativeLocation</code>, it keeps following the parent while it moves. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
 			"authority": "network-authority",
@@ -570,6 +601,7 @@
 		},
 		{
 			"name": "RotateRelativeTo",
+			"category": "Transform",
 			"description": "Smoothly rotates this attached actor to an angle relative to its parent over a certain time",
 			"description_details": "Like <code>SetRelativeRotation</code>, it keeps following the parent while it rotates. It can only be used while the actor is attached, and it is cancelled if the actor gets attached to something else or detached",
 			"authority": "network-authority",
@@ -595,6 +627,7 @@
 		},
 		{
 			"name": "IsVisible",
+			"category": "Appearance",
 			"description": "Returns true if this Actor is visible",
 			"authority": "both",
 			"efficiency": "fast",
@@ -608,6 +641,7 @@
 		},
 		{
 			"name": "IsGravityEnabled",
+			"category": "Physics",
 			"description": "Returns true if gravity is enabled on this Actor",
 			"authority": "both",
 			"efficiency": "fast",
@@ -621,6 +655,7 @@
 		},
 		{
 			"name": "IsImpulseOnDamage",
+			"category": "Physics",
 			"description": "Returns true if taking damage pushes this Actor's physics body",
 			"authority": "both",
 			"efficiency": "fast",
@@ -634,6 +669,7 @@
 		},
 		{
 			"name": "IsInWater",
+			"category": "Physics",
 			"description": "Returns true if this Actor is in water",
 			"description_details": "Only Actors that simulate physics work for this function, such as <code>Prop</code>, <code>Vehicle</code>, <code>Pickables</code> and <code>Character</code> only",
 			"authority": "both",
@@ -648,6 +684,7 @@
 		},
 		{
 			"name": "IsNetworkDistributed",
+			"category": "Network",
 			"description": "Returns true if this Actor is currently network distributed",
 			"description_details": "Only actors being network distributed can have their network authority set<br>Entities have NetworkDistributed automatically disabled when: Attached, Possessed, Grabbed, Picked Up or Driving",
 			"authority": "both",
@@ -667,6 +704,7 @@
 		},
 		{
 			"name": "GetAttachedEntities",
+			"category": "Attachments",
 			"description": "Gets all Actors attached to this Actor",
 			"authority": "both",
 			"efficiency": "moderate",
@@ -687,6 +725,7 @@
 		},
 		{
 			"name": "GetAttachedTo",
+			"category": "Attachments",
 			"description": "Gets the Actor this Actor is attached to",
 			"authority": "both",
 			"efficiency": "fast",
@@ -699,6 +738,7 @@
 		},
 		{
 			"name": "GetAttachedToSocket",
+			"category": "Attachments",
 			"description": "Gets the bone or socket name this Actor is attached to",
 			"authority": "both",
 			"efficiency": "fast",
@@ -711,6 +751,7 @@
 		},
 		{
 			"name": "GetBounds",
+			"category": "Transform",
 			"description": "Gets this Actor's bounds, useful to know its size in the world",
 			"authority": "client",
 			"efficiency": "moderate",
@@ -737,6 +778,7 @@
 		},
 		{
 			"name": "GetCollision",
+			"category": "Physics",
 			"description": "Gets this Actor's collision type",
 			"authority": "both",
 			"efficiency": "fast",
@@ -750,6 +792,7 @@
 		},
 		{
 			"name": "GetLocation",
+			"category": "Transform",
 			"description": "Gets this Actor's location in the game world",
 			"authority": "both",
 			"efficiency": "fast",
@@ -763,6 +806,7 @@
 		},
 		{
 			"name": "GetRelativeLocation",
+			"category": "Transform",
 			"description": "Gets this Actor's Relative Location if it's attached",
 			"authority": "both",
 			"efficiency": "fast",
@@ -776,6 +820,7 @@
 		},
 		{
 			"name": "GetNetworkAuthority",
+			"category": "Network",
 			"description": "Gets this Actor's Network Authority Player",
 			"authority": "server",
 			"efficiency": "fast",
@@ -788,6 +833,7 @@
 		},
 		{
 			"name": "GetRotation",
+			"category": "Transform",
 			"description": "Gets this Actor's angle in the game world",
 			"authority": "both",
 			"efficiency": "fast",
@@ -801,6 +847,7 @@
 		},
 		{
 			"name": "GetRelativeRotation",
+			"category": "Transform",
 			"description": "Gets this Actor's Relative Rotation if it's attached",
 			"authority": "both",
 			"efficiency": "fast",
@@ -814,6 +861,7 @@
 		},
 		{
 			"name": "GetForce",
+			"category": "Physics",
 			"description": "Gets this Actor's force (set by <code>SetForce()</code>)",
 			"authority": "both",
 			"efficiency": "fast",
@@ -827,6 +875,7 @@
 		},
 		{
 			"name": "GetAngularForce",
+			"category": "Physics",
 			"description": "Gets this Actor's angular force (set by <code>SetAngularForce()</code>)",
 			"authority": "both",
 			"efficiency": "fast",
@@ -840,6 +889,7 @@
 		},
 		{
 			"name": "GetDimension",
+			"category": "Network",
 			"description": "Gets this Actor's dimension",
 			"authority": "both",
 			"efficiency": "fast",
@@ -858,6 +908,7 @@
 		},
 		{
 			"name": "HasNetworkAuthority",
+			"category": "Network",
 			"description": "Returns true if the local Player is currently the Network Authority of this Actor",
 			"authority": "client",
 			"efficiency": "fast",
@@ -871,6 +922,7 @@
 		},
 		{
 			"name": "GetScale",
+			"category": "Transform",
 			"description": "Gets this Actor's scale",
 			"authority": "both",
 			"efficiency": "fast",
@@ -884,6 +936,7 @@
 		},
 		{
 			"name": "ResetVelocity",
+			"category": "Physics",
 			"description": "Resets this Actor's linear and angular velocities to zero",
 			"description_details": "For Pawns, also resets the character movement velocity",
 			"authority": "authority",
@@ -891,6 +944,7 @@
 		},
 		{
 			"name": "GetVelocity",
+			"category": "Physics",
 			"description": "Gets this Actor's current velocity",
 			"authority": "both",
 			"efficiency": "fast",
@@ -904,6 +958,7 @@
 		},
 		{
 			"name": "AddActorTag",
+			"category": "Tags",
 			"description": "Adds an Unreal Actor Tag to this Actor",
 			"authority": "client",
 			"efficiency": "fast",
@@ -923,6 +978,7 @@
 		},
 		{
 			"name": "RemoveActorTag",
+			"category": "Tags",
 			"description": "Removes an Unreal Actor Tag from this Actor",
 			"authority": "client",
 			"efficiency": "fast",
@@ -942,6 +998,7 @@
 		},
 		{
 			"name": "GetActorTags",
+			"category": "Tags",
 			"description": "Gets all Unreal Actor Tags on this Actor",
 			"authority": "client",
 			"efficiency": "moderate",
@@ -960,6 +1017,7 @@
 		},
 		{
 			"name": "WasRecentlyRendered",
+			"category": "Appearance",
 			"description": "Gets if this Actor was recently rendered on screen",
 			"authority": "client",
 			"efficiency": "moderate",
@@ -972,6 +1030,7 @@
 		},
 		{
 			"name": "GetDistanceFromCamera",
+			"category": "Appearance",
 			"description": "Gets the distance of this Actor from the Camera",
 			"authority": "client",
 			"efficiency": "fast",
@@ -984,6 +1043,7 @@
 		},
 		{
 			"name": "GetScreenPercentage",
+			"category": "Appearance",
 			"description": "Gets the percentage of this Actor size in the screen",
 			"authority": "client",
 			"efficiency": "fast",

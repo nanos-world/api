@@ -36,6 +36,7 @@
 		{
 			"authority": "server",
 			"name": "AttachStartTo",
+			"category": "Attachments",
 			"description": "Attaches the beginning of this cable to another Actor at a specific bone or relative location",
 			"description_details": "For optimization, it is recommended attaching start first if you wish to attach both start and end, to avoid double calculations",
 			"parameters": [
@@ -69,6 +70,7 @@
 		{
 			"authority": "server",
 			"name": "AttachEndTo",
+			"category": "Attachments",
 			"description": "Attaches the end of this cable to another Actor at a specific bone or relative location",
 			"description_details": "For optimization, it is recommended to be the last method to call when setting up the cable.<br/><br/>Note¹: You can attach the end only, and the start will fixed at the Cable's location.<br/><br/>Note²: If no linear limit is set, the entity will be snapped to the other actor. Alternatively you can keep a physics constraint offset by passing it as parameter",
 			"parameters": [
@@ -108,18 +110,21 @@
 		{
 			"authority": "server",
 			"name": "DetachEnd",
+			"category": "Attachments",
 			"description": "Detaches the End of this Cable",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "server",
 			"name": "DetachStart",
+			"category": "Attachments",
 			"description": "Detaches the Start of this Cable",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "SetCableSettings",
+			"category": "Appearance",
 			"description": "Set the overall settings for this cable (visuals only)",
 			"parameters": [
 				{
@@ -151,6 +156,7 @@
 		{
 			"authority": "both",
 			"name": "SetForces",
+			"category": "Physics",
 			"description": "Set the forces the cable has applied (visuals only)",
 			"parameters": [
 				{
@@ -170,6 +176,7 @@
 		{
 			"authority": "server",
 			"name": "SetPhysicsConstraintSettings",
+			"category": "Physics",
 			"description": "Set the Physics Constraint related settings for this cable",
 			"parameters": [
 				{
@@ -183,6 +190,7 @@
 		{
 			"authority": "server",
 			"name": "SetAngularLimits",
+			"category": "Physics",
 			"description": "Sets the Physics Angular Limits of this cable",
 			"parameters": [
 				{
@@ -224,6 +232,7 @@
 		{
 			"authority": "server",
 			"name": "SetLinearLimits",
+			"category": "Physics",
 			"description": "Sets the Physics Linear Limits of this cable",
 			"description_details": "If use_soft_constraint is enabled, then stiffness and damping will be used, otherwise restitution will be used.<br/><br/>Note: this method must be called before attaching any cable end",
 			"parameters": [
@@ -278,6 +287,7 @@
 		{
 			"authority": "server",
 			"name": "SetLinearMotorPositionSettings",
+			"category": "Motors",
 			"description": "Sets which linear position drives are enabled and the target position",
 			"parameters": [
 				{
@@ -316,6 +326,7 @@
 		{
 			"authority": "server",
 			"name": "SetLinearMotorVelocitySettings",
+			"category": "Motors",
 			"description": "Sets which linear velocity drives are enabled and the target velocity",
 			"parameters": [
 				{
@@ -354,6 +365,7 @@
 		{
 			"authority": "server",
 			"name": "SetAngularMotorSLERPOrientationSettings",
+			"category": "Motors",
 			"description": "Sets whether the SLERP angular orientation drive is enabled and the target orientation",
 			"parameters": [
 				{
@@ -380,6 +392,7 @@
 		{
 			"authority": "server",
 			"name": "SetAngularMotorSLERPVelocitySettings",
+			"category": "Motors",
 			"description": "Sets whether the SLERP angular velocity drive is enabled and the target angular velocity",
 			"parameters": [
 				{
@@ -406,6 +419,7 @@
 		{
 			"authority": "server",
 			"name": "SetAngularMotorTwistAndSwingOrientationSettings",
+			"category": "Motors",
 			"description": "Sets which twist and swing angular orientation drives are enabled and the target orientation",
 			"parameters": [
 				{
@@ -438,6 +452,7 @@
 		{
 			"authority": "server",
 			"name": "SetAngularMotorTwistAndSwingVelocitySettings",
+			"category": "Motors",
 			"description": "Sets which twist and swing angular velocity drives are enabled and the target angular velocity",
 			"parameters": [
 				{
@@ -470,6 +485,7 @@
 		{
 			"authority": "both",
 			"name": "SetRenderingSettings",
+			"category": "Appearance",
 			"description": "Set the rendering settings of this cable (visuals only)",
 			"parameters": [
 				{
@@ -493,6 +509,7 @@
 		{
 			"authority": "both",
 			"name": "SetVisibility",
+			"category": "Appearance",
 			"description": "Sets whether the cable is visible or not (visuals only, the constraint keeps working)",
 			"parameters": [
 				{
@@ -506,6 +523,7 @@
 		{
 			"authority": "both",
 			"name": "IsVisible",
+			"category": "Appearance",
 			"description": "Returns true if this cable is visible",
 			"return": [
 				{
@@ -519,6 +537,7 @@
 		{
 			"authority": "both",
 			"name": "GetAttachedStartTo",
+			"category": "Attachments",
 			"description": "Gets the Actor attached to Start",
 			"return": [
 				{
@@ -532,6 +551,7 @@
 		{
 			"authority": "both",
 			"name": "GetAttachedEndTo",
+			"category": "Attachments",
 			"description": "Gets the Actor attached to End",
 			"return": [
 				{

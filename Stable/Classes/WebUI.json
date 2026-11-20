@@ -55,12 +55,14 @@
 	"functions": [
 		{
 			"name": "BringToFront",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Puts this WebUI in the front of all WebUIs and Widgets",
 			"efficiency": "fast"
 		},
 		{
 			"name": "CallEvent",
+			"category": "Scripting",
 			"authority": "client",
 			"description": "Calls an Event on the Browser's JavaScript",
 			"parameters": [
@@ -79,6 +81,7 @@
 		},
 		{
 			"name": "LoadURL",
+			"category": "Content",
 			"authority": "client",
 			"description": "Loads a new File/URL in this Browser",
 			"parameters": [
@@ -92,6 +95,7 @@
 		},
 		{
 			"name": "LoadHTML",
+			"category": "Content",
 			"authority": "client",
 			"description": "Loads a pure HTML in this Browser",
 			"parameters": [
@@ -105,6 +109,7 @@
 		},
 		{
 			"name": "GetName",
+			"category": "Content",
 			"authority": "client",
 			"description": "Gets this WebUI name",
 			"return": [
@@ -118,6 +123,7 @@
 		},
 		{
 			"name": "ExecuteJavaScript",
+			"category": "Scripting",
 			"authority": "client",
 			"description": "Executes a JavaScript code in the Browser",
 			"description_details": "Note: This method is experimental and should be used cautiously. Events are still the preferred way of communicating between Packages and WebUI",
@@ -132,6 +138,7 @@
 		},
 		{
 			"name": "SetFocus",
+			"category": "Input",
 			"authority": "client",
 			"description": "Enables the focus on this browser (i.e. can receive Keyboard input and will trigger input events)",
 			"description_details": "Note: Only one browser can have focus per time",
@@ -139,6 +146,7 @@
 		},
 		{
 			"name": "HasNodeFocus",
+			"category": "Input",
 			"authority": "client",
 			"description": "Returns if this WebUI has any DOM Node focused",
 			"efficiency": "fast",
@@ -151,6 +159,7 @@
 		},
 		{
 			"name": "RemoveFocus",
+			"category": "Input",
 			"authority": "client",
 			"description": "Removes the focus from this WebUI (and sets it back to game viewport)",
 			"description_details": "You MUST call this after you don't need keyboard input anymore",
@@ -158,6 +167,7 @@
 		},
 		{
 			"name": "SetLayout",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Sets the Layout as Canvas on Screen",
 			"description_details": "<strong>Anchors</strong>:<br/><br/><img src='/img/docs/anchors.webp' />",
@@ -197,6 +207,7 @@
 		},
 		{
 			"name": "SetFreeze",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Freezes the WebUI rendering to the surface (JavaScript keeps running)",
 			"parameters": [
@@ -210,6 +221,7 @@
 		},
 		{
 			"name": "SetVisibility",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Sets the visibility in screen",
 			"parameters": [
@@ -223,6 +235,7 @@
 		},
 		{
 			"name": "SpawnSound",
+			"category": "Content",
 			"authority": "client",
 			"description": "Spawns a Sound entity that plays this WebUI audio",
 			"parameters": [
@@ -273,6 +286,7 @@
 		},
 		{
 			"name": "SendMouseWheelEvent",
+			"category": "Input",
 			"authority": "client",
 			"description": "Sends a Mouse Event into the WebUI programmatically",
 			"parameters": [
@@ -301,6 +315,7 @@
 		},
 		{
 			"name": "SendKeyEvent",
+			"category": "Input",
 			"authority": "client",
 			"description": "Sends a Key Event into the WebUI programmatically",
 			"parameters": [
@@ -325,6 +340,7 @@
 		},
 		{
 			"name": "SendMouseMoveEvent",
+			"category": "Input",
 			"authority": "client",
 			"description": "Sends a Mouse Move Event into the WebUI programmatically",
 			"parameters": [
@@ -355,6 +371,7 @@
 		},
 		{
 			"name": "SendMouseClickEvent",
+			"category": "Input",
 			"authority": "client",
 			"description": "Sends a Mouse Click into the WebUI programmatically",
 			"description_details": "You must send both Down and Up to make it work properly",
@@ -396,6 +413,7 @@
 		},
 		{
 			"name": "GetSize",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Gets the current size of this WebUI",
 			"return": [
@@ -408,6 +426,7 @@
 		},
 		{
 			"name": "GetVisibility",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Returns the current WebUI visibility",
 			"return": [
@@ -421,6 +440,7 @@
 		},
 		{
 			"name": "IsFrozen",
+			"category": "Layout",
 			"authority": "client",
 			"description": "Returns if this WebUI is currently frozen",
 			"return": [
@@ -434,6 +454,7 @@
 		},
 		{
 			"name": "IsReady",
+			"category": "Content",
 			"authority": "client",
 			"description": "Returns if this WebUI is ready",
 			"return": [
@@ -447,12 +468,14 @@
 		},
 		{
 			"name": "OpenDevTools",
+			"category": "Scripting",
 			"authority": "client",
 			"description": "Opens the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() was not disabled",
 			"efficiency": "moderate"
 		},
 		{
 			"name": "CloseDevTools",
+			"category": "Scripting",
 			"authority": "client",
 			"description": "Closes the Developer Tools for this WebUI, it only works if the Client.SetDebugEnabled() not disabled",
 			"efficiency": "fast"

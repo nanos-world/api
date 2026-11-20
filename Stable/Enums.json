@@ -141,6 +141,31 @@
 			}
 		]
 	},
+	"AttenuationShape": {
+		"description": "The shape of the volume in which a 3D Sound plays at full volume",
+		"enums": [
+			{
+				"key": "Sphere",
+				"value": "0",
+				"description": "A sphere around the Sound"
+			},
+			{
+				"key": "Capsule",
+				"value": "1",
+				"description": "A capsule along the Sound's up (Z) axis"
+			},
+			{
+				"key": "Box",
+				"value": "2",
+				"description": "A box aligned with the Sound's rotation"
+			},
+			{
+				"key": "Cone",
+				"value": "3",
+				"description": "A cone pointing to the Sound's forward (X) axis"
+			}
+		]
+	},
 	"BlendMode": {
 		"description": "How a drawing blends with what is already drawn",
 		"enums": [

@@ -5,6 +5,7 @@
 		{
 			"name": "stringify",
 			"description": "Returns a string representing value encoded in JSON",
+			"description_details": "Functions and a table that references itself or one of its parent tables (cyclic table) cannot be encoded, they become <code>null</code>. Metatables are not encoded, only the table's own fields",
 			"return": [
 				{
 					"type": "string",

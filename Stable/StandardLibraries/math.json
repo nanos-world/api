@@ -338,10 +338,12 @@
 			"return": [
 				{
 					"type": "number",
+					"name": "integral",
 					"description": "The integral part"
 				},
 				{
 					"type": "number",
+					"name": "fractional",
 					"description": "The fractional part"
 				}
 			],

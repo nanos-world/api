@@ -12,6 +12,7 @@
 		{
 			"authority": "both",
 			"name": "AddSkeletalMeshAttached",
+			"category": "Attachments",
 			"description": "Attaches a Skeletal Mesh as master pose to this entity",
 			"description_details": "Spawns and attaches a SkeletalMesh to this entity, the SkeletalMesh must have the same skeleton used by this Actor's mesh, and will follow all animations from it. Uses a custom ID to be used for removing/customizing it afterwards",
 			"last_compatibility_version": "1.144",
@@ -79,6 +80,7 @@
 		{
 			"authority": "both",
 			"name": "AddStaticMeshAttached",
+			"category": "Attachments",
 			"description": "Attaches a Static Mesh to this entity",
 			"description_details": "Spawns and attaches a StaticMesh to this entity in a Socket with a relative location and rotation. Uses a custom ID to be used for removing/customizing it afterwards",
 			"parameters": [
@@ -134,6 +136,7 @@
 		{
 			"authority": "both",
 			"name": "GetAllStaticMeshAttached",
+			"category": "Attachments",
 			"description": "Gets all Static Meshes attached to this entity",
 			"return": [
 				{
@@ -146,6 +149,7 @@
 		{
 			"authority": "both",
 			"name": "GetAllSkeletalMeshAttached",
+			"category": "Attachments",
 			"description": "Gets all Skeletal Meshes attached to this entity",
 			"return": [
 				{
@@ -158,6 +162,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveSkeletalMeshAttached",
+			"category": "Attachments",
 			"description": "Removes, if it exists, a SkeletalMesh from this entity given its custom ID",
 			"parameters": [
 				{
@@ -176,6 +181,7 @@
 		{
 			"authority": "both",
 			"name": "SetStaticMeshAttachedTransform",
+			"category": "Attachments",
 			"description": "Sets a Static Mesh Attached location and rotation",
 			"parameters": [
 				{
@@ -204,6 +210,7 @@
 		{
 			"authority": "both",
 			"name": "RemoveStaticMeshAttached",
+			"category": "Attachments",
 			"description": "Removes, if it exists, a StaticMesh from this entity given its custom ID",
 			"parameters": [
 				{
@@ -222,18 +229,21 @@
 		{
 			"authority": "both",
 			"name": "RemoveAllStaticMeshesAttached",
+			"category": "Attachments",
 			"description": "Removes all StaticMeshes attached",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "RemoveAllSkeletalMeshesAttached",
+			"category": "Attachments",
 			"description": "Removes all SkeletalMeshes attached",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "StopAnimation",
+			"category": "Animation",
 			"description": "Stops an Animation Montage on this character",
 			"parameters": [
 				{
@@ -247,6 +257,7 @@
 		{
 			"authority": "both",
 			"name": "GetMesh",
+			"category": "Appearance",
 			"description": "Gets the base Mesh Asset",
 			"return": [
 				{
@@ -260,6 +271,7 @@
 		{
 			"authority": "server",
 			"name": "SetFlyingMode",
+			"category": "Movement",
 			"description": "Enables or disables the Flying Mode, which removes gravity and allows moving in all directions",
 			"parameters": [
 				{
@@ -273,6 +285,7 @@
 		{
 			"authority": "both",
 			"name": "GetFlyingMode",
+			"category": "Movement",
 			"description": "Gets if it's in Flying mode",
 			"return": [
 				{
@@ -286,6 +299,7 @@
 		{
 			"authority": "both",
 			"name": "GetMovingTo",
+			"category": "Movement",
 			"description": "Gets the Moving To location",
 			"return": [
 				{
@@ -299,6 +313,7 @@
 		{
 			"authority": "authority",
 			"name": "SetAIAvoidanceSettings",
+			"category": "Movement",
 			"description": "AI: Configures the RVO (Reciprocal Velocity Obstacles) Avoidance system used by the AIs when moving",
 			"parameters": [
 				{
@@ -318,6 +333,7 @@
 		{
 			"authority": "authority",
 			"name": "SetAIStopWithBraking",
+			"category": "Movement",
 			"description": "AI: Sets whether the AI brakes to a stop when finishing a movement, instead of stopping instantly",
 			"description_details": "When enabled, the Pawn keeps its velocity when it reaches the destination and slows down using its own braking settings (see Character:SetBrakingSettings and CharacterSimple:SetBrakingSettings), so it may stop slightly past the acceptance radius. Disabled by default",
 			"parameters": [
@@ -332,6 +348,7 @@
 		{
 			"authority": "authority",
 			"name": "MoveTo",
+			"category": "Movement",
 			"description": "AI: Makes this Pawn walk to the Location",
 			"description_details": "While in flying mode (see SetFlyingMode) it flies there in a straight line instead of following the navmesh, so the Location can be in the air<br/><br/>Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
@@ -362,6 +379,7 @@
 		{
 			"authority": "authority",
 			"name": "Follow",
+			"category": "Movement",
 			"description": "AI: Makes this Pawn follow another actor",
 			"description_details": "Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"parameters": [
@@ -410,6 +428,7 @@
 		{
 			"authority": "authority",
 			"name": "StopMovement",
+			"category": "Movement",
 			"description": "AI: Stops MoveTo and Follow navigation",
 			"description_details": "Triggers event <a href='/docs/scripting-reference/classes/base-classes/pawn#event-movecomplete'>MoveComplete</a>",
 			"relations": {
@@ -427,6 +446,7 @@
 		{
 			"authority": "both",
 			"name": "GetPlayer",
+			"category": "Control",
 			"description": "Gets the possessing Player",
 			"return": [
 				{
@@ -446,6 +466,7 @@
 		{
 			"authority": "both",
 			"name": "GetControlRotation",
+			"category": "Movement",
 			"description": "Gets the Control Rotation, which is where this Pawn is looking or aiming",
 			"return": [
 				{
@@ -459,6 +480,7 @@
 		{
 			"authority": "network-authority",
 			"name": "SetControlRotation",
+			"category": "Movement",
 			"description": "Sets the Control Rotation, which is where this Pawn is looking or aiming",
 			"parameters": [
 				{
@@ -472,6 +494,7 @@
 		{
 			"authority": "server",
 			"name": "SetHitReactionEnabled",
+			"category": "Animation",
 			"description": "Sets if the character will react to damage by applying small dynamic ragdoll effect to local bones damaged",
 			"parameters": [
 				{
@@ -485,6 +508,7 @@
 		{
 			"authority": "server",
 			"name": "SetRagdollOnDeathEnabled",
+			"category": "Animation",
 			"description": "Sets if the character will enter ragdoll mode when it dies. You can set it to false to apply custom Death animations",
 			"parameters": [
 				{
@@ -498,6 +522,7 @@
 		{
 			"authority": "both",
 			"name": "HideBone",
+			"category": "Appearance",
 			"description": "Hides a bone of this Pawn",
 			"description_details": "Check <a href='/docs/scripting-reference/classes/character#characters-skeleton-bone-names'>Bone Names List</a>",
 			"parameters": [
@@ -519,6 +544,7 @@
 		{
 			"authority": "both",
 			"name": "UnHideBone",
+			"category": "Appearance",
 			"description": "Unhides a bone of this Pawn",
 			"description_details": "Check <a href='/docs/scripting-reference/classes/character#characters-skeleton-bone-names'>Bone Names List</a>",
 			"parameters": [
@@ -539,6 +565,7 @@
 		{
 			"authority": "both",
 			"name": "IsBoneHidden",
+			"category": "Appearance",
 			"return": [
 				{
 					"type": "boolean",
@@ -565,12 +592,14 @@
 		{
 			"authority": "authority",
 			"name": "Jump",
+			"category": "Movement",
 			"description": "Triggers this Pawn to jump",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "authority",
 			"name": "SetJumpZVelocity",
+			"category": "Movement",
 			"description": "Sets the velocity of the jump",
 			"parameters": [
 				{
@@ -584,6 +613,7 @@
 		{
 			"authority": "both",
 			"name": "GetJumpZVelocity",
+			"category": "Movement",
 			"description": "Gets the initial vertical velocity when jumping, which defines the jump height",
 			"return": [
 				{
@@ -597,6 +627,7 @@
 		{
 			"authority": "authority",
 			"name": "SetCapsuleSize",
+			"category": "Physics",
 			"description": "Sets this Pawn's Capsule size",
 			"description_details": "It affects the Camera location and the Pawn's collision",
 			"last_compatibility_version": "1.144",
@@ -625,6 +656,7 @@
 		{
 			"authority": "both",
 			"name": "GetCapsuleSize",
+			"category": "Physics",
 			"description": "Gets the Capsule Size",
 			"return": [
 				{
@@ -652,6 +684,7 @@
 		{
 			"authority": "authority",
 			"name": "SetMeshSettings",
+			"category": "Appearance",
 			"description": "Configures the mesh attachment settings and visibility",
 			"parameters": [
 				{
@@ -678,6 +711,7 @@
 		{
 			"authority": "both",
 			"name": "GetTeam",
+			"category": "Control",
 			"description": "Gets the Team of this Pawn",
 			"return": [
 				{
@@ -691,6 +725,7 @@
 		{
 			"authority": "authority",
 			"name": "SetTeam",
+			"category": "Control",
 			"description": "Sets a Team which will disable damaging same Team Members",
 			"parameters": [
 				{
@@ -704,6 +739,7 @@
 		{
 			"authority": "both",
 			"name": "SetMorphTarget",
+			"category": "Appearance",
 			"description": "Sets the value of a Morph Target",
 			"parameters": [
 				{
@@ -729,6 +765,7 @@
 		{
 			"authority": "both",
 			"name": "GetMorphTarget",
+			"category": "Appearance",
 			"description": "Returns the value of a Morph Target",
 			"return": [
 				{
@@ -756,6 +793,7 @@
 		{
 			"authority": "both",
 			"name": "ClearMorphTargets",
+			"category": "Appearance",
 			"description": "Clears all Morph Targets set on this Pawn's Mesh",
 			"relations": {
 				"functions": [
@@ -769,6 +807,7 @@
 		{
 			"authority": "client",
 			"name": "GetAllMorphTargetNames",
+			"category": "Appearance",
 			"description": "Returns a table with all morph targets available",
 			"description_details": "Returns an empty table if the mesh is not a Skeletal Mesh (CharacterSimple may use a Static Mesh)",
 			"return": [
@@ -789,6 +828,7 @@
 		{
 			"authority": "authority",
 			"name": "SetGravityScale",
+			"category": "Physics",
 			"description": "Changes the Gravity Scale",
 			"description_details": "It can be negative",
 			"parameters": [
@@ -803,6 +843,7 @@
 		{
 			"authority": "both",
 			"name": "GetGravityScale",
+			"category": "Physics",
 			"description": "Gets the gravity scale",
 			"return": [
 				{
@@ -816,6 +857,7 @@
 		{
 			"authority": "authority",
 			"name": "SetCanJump",
+			"category": "Movement",
 			"description": "Sets if this Pawn is allowed to Jump",
 			"parameters": [
 				{
@@ -829,6 +871,7 @@
 		{
 			"authority": "authority",
 			"name": "SetCanCrouch",
+			"category": "Movement",
 			"description": "Sets if this Pawn is allowed to Crouch",
 			"parameters": [
 				{
@@ -842,6 +885,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanCrouch",
+			"category": "Movement",
 			"description": "Gets if this Pawn is allowed to Crouch",
 			"return": [
 				{
@@ -855,6 +899,7 @@
 		{
 			"authority": "both",
 			"name": "GetCanJump",
+			"category": "Movement",
 			"description": "Gets if this Pawn is allowed to Jump",
 			"return": [
 				{
@@ -868,6 +913,7 @@
 		{
 			"authority": "authority",
 			"name": "SetBrakingSettings",
+			"category": "Movement",
 			"description": "Sets the Movement Braking Settings of this Pawn",
 			"parameters": [
 				{

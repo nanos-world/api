@@ -7,6 +7,7 @@
 	"static_functions": [
 		{
 			"name": "GetBySteamID",
+			"category": "Account",
 			"description": "Retrieves a player by their Steam ID",
 			"authority": "server",
 			"parameters": [
@@ -30,6 +31,7 @@
 		{
 			"authority": "server",
 			"name": "Ban",
+			"category": "Network",
 			"description": "Bans the player from the server",
 			"parameters": [
 				{
@@ -43,6 +45,7 @@
 		{
 			"authority": "server",
 			"name": "Connect",
+			"category": "Network",
 			"description": "Redirects the player to another server",
 			"parameters": [
 				{
@@ -62,6 +65,7 @@
 		{
 			"authority": "server",
 			"name": "Kick",
+			"category": "Network",
 			"description": "Kicks the player from the server",
 			"parameters": [
 				{
@@ -75,6 +79,7 @@
 		{
 			"authority": "server",
 			"name": "Possess",
+			"category": "Control",
 			"description": "Makes this Player possess and control a Pawn (Character)",
 			"parameters": [
 				{
@@ -100,6 +105,7 @@
 		{
 			"authority": "both",
 			"name": "StartCameraFade",
+			"category": "Camera",
 			"description": "Does a camera fade to/from a solid color",
 			"description_details": "Animates automatically",
 			"parameters": [
@@ -141,6 +147,7 @@
 		{
 			"authority": "both",
 			"name": "SetManualCameraFade",
+			"category": "Camera",
 			"description": "Turns on camera fading at the given opacity",
 			"description_details": "Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off",
 			"parameters": [
@@ -165,12 +172,14 @@
 		{
 			"authority": "both",
 			"name": "StopCameraFade",
+			"category": "Camera",
 			"description": "Stops camera fading",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "SetCameraLocation",
+			"category": "Camera",
 			"description": "Sets the Player's Camera Location (only works if not possessing any Character)",
 			"parameters": [
 				{
@@ -184,6 +193,7 @@
 		{
 			"authority": "both",
 			"name": "SetCameraRotation",
+			"category": "Camera",
 			"description": "Sets the Player's Camera Rotation",
 			"parameters": [
 				{
@@ -197,6 +207,7 @@
 		{
 			"authority": "both",
 			"name": "TranslateCameraTo",
+			"category": "Camera",
 			"description": "Smoothly moves the Player's Camera Location (only works if not possessing any Character)",
 			"parameters": [
 				{
@@ -221,6 +232,7 @@
 		{
 			"authority": "both",
 			"name": "RotateCameraTo",
+			"category": "Camera",
 			"description": "Smoothly moves the Player's Camera Rotation",
 			"parameters": [
 				{
@@ -245,6 +257,7 @@
 		{
 			"authority": "both",
 			"name": "SetCameraSocketOffset",
+			"category": "Camera",
 			"description": "Sets the Player's Camera Socket Offset (Spring Arm Offset)",
 			"parameters": [
 				{
@@ -258,6 +271,7 @@
 		{
 			"authority": "both",
 			"name": "SetCameraArmLength",
+			"category": "Camera",
 			"description": "Sets the Player's Camera Arm Length (Spring Arm length)",
 			"parameters": [
 				{
@@ -277,6 +291,7 @@
 		{
 			"authority": "both",
 			"name": "SetCameraFOV",
+			"category": "Camera",
 			"description": "Sets the Player's Camera FOV (if not possessing a Character)",
 			"parameters": [
 				{
@@ -291,6 +306,7 @@
 		{
 			"authority": "both",
 			"name": "SetCameraSpeedSettings",
+			"category": "Camera",
 			"description": "Sets the Player's Camera Speed Settings (if not possessing a Character)",
 			"parameters": [
 				{
@@ -323,6 +339,7 @@
 		{
 			"authority": "both",
 			"name": "AttachCameraTo",
+			"category": "Camera",
 			"description": "Attaches the Player's Camera to an Actor",
 			"parameters": [
 				{
@@ -348,12 +365,14 @@
 		{
 			"authority": "both",
 			"name": "ResetCamera",
+			"category": "Camera",
 			"description": "Resets the Camera to default state (Unspectate and Detaches)",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "Spectate",
+			"category": "Control",
 			"description": "Makes this Player spectate another Player",
 			"parameters": [
 				{
@@ -373,6 +392,7 @@
 		{
 			"authority": "server",
 			"name": "SetName",
+			"category": "Account",
 			"description": "Sets the player's name",
 			"parameters": [
 				{
@@ -386,6 +406,7 @@
 		{
 			"authority": "server",
 			"name": "SetVOIPGlobalChannelSetting",
+			"category": "Audio",
 			"description": "Sets the VOIP setting for a specific global channel",
 			"parameters": [
 				{
@@ -414,6 +435,7 @@
 		{
 			"authority": "server",
 			"name": "SetVOIPGlobalAllChannelsSetting",
+			"category": "Audio",
 			"description": "Sets the VOIP setting for all global channels",
 			"parameters": [
 				{
@@ -437,6 +459,7 @@
 		{
 			"authority": "server",
 			"name": "SetVOIPLocalSetting",
+			"category": "Audio",
 			"description": "Sets the VOIP setting for the local/proximity",
 			"parameters": [
 				{
@@ -459,6 +482,7 @@
 		{
 			"authority": "both",
 			"name": "SetVOIPLocalMaxDistance",
+			"category": "Audio",
 			"description": "Sets the local/proximity VOIP max distance. This also affects networking usage",
 			"parameters": [
 				{
@@ -470,7 +494,8 @@
 			"relations": {
 				"functions": [
 					"SetVOIPLocalSetting",
-					"SetVOIPLocalVolume"
+					"SetVOIPLocalVolume",
+					"SetVOIPLocalAttenuation"
 				]
 			},
 			"efficiency": "fast"
@@ -478,6 +503,7 @@
 		{
 			"authority": "both",
 			"name": "SetVOIPLocalVolume",
+			"category": "Audio",
 			"description": "Sets the local/proximity VOIP input/output volume. It only affects the local/proximity channel",
 			"parameters": [
 				{
@@ -499,7 +525,109 @@
 		},
 		{
 			"authority": "both",
+			"name": "SetVOIPLocalHighPassFilter",
+			"category": "Audio",
+			"description": "Sets the local/proximity VOIP high-pass filter threshold frequency",
+			"description_details": "Set it to 0 to disable it. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener",
+			"parameters": [
+				{
+					"name": "threshold",
+					"type": "integer",
+					"description": "The new local/proximity VOIP high-pass filter threshold frequency, in Hz"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalLowPassFilter",
+					"SetVOIPLocalOcclusion"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalLowPassFilter",
+			"category": "Audio",
+			"description": "Sets the local/proximity VOIP low-pass filter threshold frequency",
+			"description_details": "Set it to 0 to disable it. Useful to muffle a voice, like a player behind a wall, inside a vehicle or wearing a mask. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener",
+			"parameters": [
+				{
+					"name": "threshold",
+					"type": "integer",
+					"description": "The new local/proximity VOIP low-pass filter threshold frequency, in Hz"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalHighPassFilter",
+					"SetVOIPLocalOcclusion"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalOcclusion",
+			"category": "Audio",
+			"description": "Configures the automatic occlusion of the local/proximity VOIP",
+			"description_details": "When something blocks the line between the listener and this player, the voice gets a low-pass filter and a volume multiplier. It is enabled by default. Disable it to control the muffling from a script, with SetVOIPLocalLowPassFilter and SetVOIPLocalVolume",
+			"parameters": [
+				{
+					"name": "enabled",
+					"type": "boolean",
+					"description": "If the voice is automatically occluded"
+				},
+				{
+					"name": "low_pass_frequency",
+					"type": "integer",
+					"default": "3500",
+					"description": "The low-pass filter threshold frequency applied when occluded, in Hz"
+				},
+				{
+					"name": "volume_multiplier",
+					"type": "float",
+					"default": "0.85",
+					"description": "The volume multiplier applied when occluded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalLowPassFilter",
+					"SetVOIPLocalVolume"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
+			"name": "SetVOIPLocalAttenuation",
+			"category": "Audio",
+			"description": "Sets how the local/proximity VOIP fades with distance",
+			"description_details": "The voice plays at full volume inside the inner radius, then fades to silence at the max distance set with SetVOIPLocalMaxDistance",
+			"parameters": [
+				{
+					"name": "inner_radius",
+					"type": "integer",
+					"description": "Distance where the voice plays at full volume. Default is 800. It is clamped to the max distance"
+				},
+				{
+					"name": "falloff_function",
+					"type": "AttenuationFunction",
+					"default": "AttenuationFunction.Logarithmic",
+					"description": "How the volume fades between the inner radius and the max distance"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalMaxDistance"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"authority": "both",
 			"name": "SetVOIPGlobalVolume",
+			"category": "Audio",
 			"description": "Sets the global VOIP volume. It only affects the global channels",
 			"parameters": [
 				{
@@ -513,6 +641,7 @@
 		{
 			"authority": "both",
 			"name": "SetVOIPGlobalHighPassFilter",
+			"category": "Audio",
 			"description": "Sets the global VOIP high-pass filter threshold frequency",
 			"description_details": "Set it to 0 to disable it",
 			"parameters": [
@@ -532,6 +661,7 @@
 		{
 			"authority": "both",
 			"name": "SetVOIPGlobalLowPassFilter",
+			"category": "Audio",
 			"description": "Sets the global VOIP low-pass filter threshold frequency",
 			"description_details": "Set it to 0 to disable it",
 			"parameters": [
@@ -551,6 +681,7 @@
 		{
 			"authority": "both",
 			"name": "SetVOIPMuted",
+			"category": "Audio",
 			"description": "Mutes or unmutes VOIP for this player",
 			"description_details": "On server side, the player is muted for everyone. On client side, it is a local mute only",
 			"parameters": [
@@ -565,6 +696,7 @@
 		{
 			"authority": "both",
 			"name": "IsVOIPMuted",
+			"category": "Audio",
 			"description": "Returns whether VOIP is muted for this player",
 			"return": [
 				{
@@ -575,14 +707,214 @@
 			"efficiency": "fast"
 		},
 		{
+			"authority": "both",
+			"name": "GetVOIPLocalVolume",
+			"category": "Audio",
+			"description": "Returns the local/proximity VOIP volume",
+			"return": [
+				{
+					"type": "float",
+					"description": "The local/proximity VOIP volume"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalVolume"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalMaxDistance",
+			"category": "Audio",
+			"description": "Returns the local/proximity VOIP max distance",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The local/proximity VOIP max distance"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalMaxDistance"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalHighPassFilter",
+			"category": "Audio",
+			"description": "Returns the local/proximity VOIP high-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalHighPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalLowPassFilter",
+			"category": "Audio",
+			"description": "Returns the local/proximity VOIP low-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalLowPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalOcclusion",
+			"category": "Audio",
+			"description": "Returns the automatic occlusion settings of the local/proximity VOIP",
+			"return": [
+				{
+					"type": "boolean",
+					"name": "enabled",
+					"description": "If the voice is automatically occluded"
+				},
+				{
+					"type": "integer",
+					"name": "low_pass_frequency",
+					"description": "The low-pass filter threshold frequency applied when occluded, in Hz"
+				},
+				{
+					"type": "float",
+					"name": "volume_multiplier",
+					"description": "The volume multiplier applied when occluded"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalOcclusion"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPLocalAttenuation",
+			"category": "Audio",
+			"description": "Returns how the local/proximity VOIP fades with distance",
+			"return": [
+				{
+					"type": "integer",
+					"name": "inner_radius",
+					"description": "The inner radius, where the voice plays at full volume"
+				},
+				{
+					"type": "AttenuationFunction",
+					"name": "falloff_function",
+					"description": "How the volume fades between the inner radius and the max distance"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPLocalAttenuation"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPGlobalVolume",
+			"category": "Audio",
+			"description": "Returns the global VOIP volume",
+			"return": [
+				{
+					"type": "float",
+					"description": "The global VOIP volume"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalVolume"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPGlobalHighPassFilter",
+			"category": "Audio",
+			"description": "Returns the global VOIP high-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalHighPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "both",
+			"name": "GetVOIPGlobalLowPassFilter",
+			"category": "Audio",
+			"description": "Returns the global VOIP low-pass filter threshold frequency",
+			"return": [
+				{
+					"type": "integer",
+					"description": "The threshold frequency in Hz, 0 if disabled"
+				}
+			],
+			"relations": {
+				"functions": [
+					"SetVOIPGlobalLowPassFilter"
+				]
+			},
+			"efficiency": "fast"
+		},
+		{
+			"authority": "client",
+			"name": "GetVOIPAmplitude",
+			"category": "Audio",
+			"description": "Returns how loud this player is talking right now",
+			"description_details": "It is the RMS of the last voice data received from this player, before distance attenuation, occlusion and filters. Normal speech stays low in the scale, usually between 0.05 and 0.3. It only works for players the local player is receiving voice from, and for the local player while the voice is being transmitted. The local player's voice is only measured while this method keeps being called, so the first call returns 0",
+			"return": [
+				{
+					"type": "float",
+					"description": "The voice amplitude from 0 to 1, or 0 if the player is not talking"
+				}
+			],
+			"relations": {
+				"events": [
+					"VOIP"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
 			"authority": "server",
 			"name": "UnPossess",
+			"category": "Control",
 			"description": "Release the Player from the Character",
 			"efficiency": "fast"
 		},
 		{
 			"authority": "both",
 			"name": "GetSteamID",
+			"category": "Account",
 			"return": [
 				{
 					"type": "string",
@@ -596,6 +928,7 @@
 		{
 			"authority": "both",
 			"name": "GetAccountID",
+			"category": "Account",
 			"return": [
 				{
 					"type": "string",
@@ -609,6 +942,7 @@
 		{
 			"authority": "both",
 			"name": "GetAccountName",
+			"category": "Account",
 			"return": [
 				{
 					"type": "string",
@@ -622,6 +956,7 @@
 		{
 			"authority": "both",
 			"name": "GetAccountIconURL",
+			"category": "Account",
 			"description": "Return a URL which can be used through WebUI and Widgets to display the Player's Steam Avatar (64x64)",
 			"return": [
 				{
@@ -635,6 +970,7 @@
 		{
 			"authority": "client",
 			"name": "GetCameraLocation",
+			"category": "Camera",
 			"return": [
 				{
 					"type": "Vector",
@@ -648,6 +984,7 @@
 		{
 			"authority": "client",
 			"name": "GetCameraArmLength",
+			"category": "Camera",
 			"parameters": [
 				{
 					"name": "return_base",
@@ -669,6 +1006,7 @@
 		{
 			"authority": "client",
 			"name": "GetCameraRotation",
+			"category": "Camera",
 			"return": [
 				{
 					"type": "Rotator",
@@ -682,6 +1020,7 @@
 		{
 			"authority": "both",
 			"name": "GetControlledCharacter",
+			"category": "Control",
 			"return": [
 				{
 					"type": "Pawn?",
@@ -695,6 +1034,7 @@
 		{
 			"authority": "server",
 			"name": "GetIP",
+			"category": "Network",
 			"return": [
 				{
 					"type": "string",
@@ -707,6 +1047,7 @@
 		},
 		{
 			"name": "GetDimension",
+			"category": "Network",
 			"description": "Gets this Player's dimension",
 			"authority": "both",
 			"return": [
@@ -725,6 +1066,7 @@
 		},
 		{
 			"name": "SetDistanceOptimizationMultiplier",
+			"category": "Network",
 			"description": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors",
 			"description_details": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
@@ -739,6 +1081,7 @@
 		},
 		{
 			"name": "SetDimension",
+			"category": "Network",
 			"description": "Sets this Player's dimension",
 			"authority": "server",
 			"parameters": [
@@ -758,6 +1101,7 @@
 		{
 			"authority": "both",
 			"name": "GetName",
+			"category": "Account",
 			"return": [
 				{
 					"type": "string",
@@ -771,6 +1115,7 @@
 		{
 			"authority": "both",
 			"name": "GetPing",
+			"category": "Network",
 			"return": [
 				{
 					"type": "integer",
@@ -784,6 +1129,7 @@
 		{
 			"authority": "both",
 			"name": "GetVOIPListeningChannels",
+			"category": "Audio",
 			"description": "Returns a list of VOIP channels this player is listening to",
 			"return": [
 				{
@@ -796,6 +1142,7 @@
 		{
 			"authority": "both",
 			"name": "GetVOIPSpeakingChannels",
+			"category": "Audio",
 			"description": "Returns a list of VOIP channels this player is currently speaking to",
 			"return": [
 				{
@@ -808,6 +1155,7 @@
 		{
 			"authority": "client",
 			"name": "IsHost",
+			"category": "Network",
 			"return": [
 				{
 					"type": "boolean",
@@ -821,6 +1169,7 @@
 		{
 			"authority": "client",
 			"name": "IsLocalPlayer",
+			"category": "Network",
 			"return": [
 				{
 					"type": "boolean",

@@ -102,6 +102,7 @@
 		{
 			"authority": "server",
 			"name": "Horn",
+			"category": "Audio",
 			"description": "Starts or stops the vehicle horn",
 			"parameters": [
 				{
@@ -115,6 +116,7 @@
 		{
 			"authority": "server",
 			"name": "SetHornSound",
+			"category": "Audio",
 			"description": "Sets the sound asset used by the vehicle horn",
 			"parameters": [
 				{
@@ -129,6 +131,7 @@
 		{
 			"authority": "server",
 			"name": "SetAutoStartEngine",
+			"category": "Handling",
 			"description": "Sets if the Engine auto starts when the driver enters the Vehicle",
 			"parameters": [
 				{
@@ -142,6 +145,7 @@
 		{
 			"authority": "server",
 			"name": "SetEngineStarted",
+			"category": "Handling",
 			"description": "Sets if the Engine is turned off/on",
 			"description_details": "This affects the Lights, the Sounds and the ability to Throttle",
 			"parameters": [
@@ -156,6 +160,7 @@
 		{
 			"authority": "server",
 			"name": "SetSteeringSetup",
+			"category": "Handling",
 			"description": "Configures the Vehicle Steering",
 			"parameters": [
 				{
@@ -193,6 +198,7 @@
 		{
 			"authority": "server",
 			"name": "SetEngineSetup",
+			"category": "Engine",
 			"description": "Configures the Vehicle Engine (Torque, RPM, Braking)",
 			"parameters": [
 				{
@@ -253,6 +259,7 @@
 		{
 			"authority": "server",
 			"name": "SetAerodynamicsSetup",
+			"category": "Handling",
 			"description": "Configures the Vehicle Aerodynamics Settings",
 			"parameters": [
 				{
@@ -297,6 +304,7 @@
 		{
 			"authority": "server",
 			"name": "SetTransmissionSetup",
+			"category": "Engine",
 			"description": "Configures the Vehicle Transmission",
 			"parameters": [
 				{
@@ -347,6 +355,7 @@
 		{
 			"authority": "server",
 			"name": "SetWheel",
+			"category": "Wheels",
 			"description": "Configures a Vehicle Wheel",
 			"description_details": "Wheels can be updated in runtime by calling SetWheel again, you can for example change the suspension high or disable a wheel totally by toggling affected_by_engine off or setting radius to 0",
 			"parameters": [
@@ -522,6 +531,7 @@
 		{
 			"authority": "server",
 			"name": "SetDifferentialSetup",
+			"category": "Engine",
 			"description": "Configures the type of Differential",
 			"parameters": [
 				{
@@ -541,6 +551,7 @@
 		{
 			"authority": "server",
 			"name": "SetSteeringWheelSetup",
+			"category": "Handling",
 			"description": "Configures where the Steering Wheel is located",
 			"description_details": "Characters use it to grab the Steering Wheel procedurally",
 			"parameters": [
@@ -566,6 +577,7 @@
 		{
 			"authority": "server",
 			"name": "SetHeadlightsSetup",
+			"category": "Lighting",
 			"description": "Configures the Headlights offset and color",
 			"parameters": [
 				{
@@ -585,6 +597,7 @@
 		{
 			"authority": "server",
 			"name": "SetTaillightsSetup",
+			"category": "Lighting",
 			"description": "Configures the Taillights offset",
 			"parameters": [
 				{
@@ -598,6 +611,7 @@
 		{
 			"authority": "server",
 			"name": "SetHeadlightsEnabled",
+			"category": "Lighting",
 			"description": "Enables or disables the headlights",
 			"parameters": [
 				{
@@ -611,6 +625,7 @@
 		{
 			"authority": "server",
 			"name": "SetTaillightsEnabled",
+			"category": "Lighting",
 			"description": "Enables or disables the taillights",
 			"parameters": [
 				{
@@ -624,6 +639,7 @@
 		{
 			"authority": "server",
 			"name": "SetTireFlat",
+			"category": "Wheels",
 			"description": "Sets a Tire as Flat or not",
 			"parameters": [
 				{
@@ -642,6 +658,7 @@
 		{
 			"authority": "client",
 			"name": "GetRPM",
+			"category": "Engine",
 			"description": "Gets the current RPM",
 			"return": [
 				{
@@ -655,6 +672,7 @@
 		{
 			"authority": "client",
 			"name": "GetGear",
+			"category": "Engine",
 			"description": "Gets the current Gear",
 			"return": [
 				{
@@ -668,6 +686,7 @@
 		{
 			"authority": "client",
 			"name": "IsInAir",
+			"category": "Wheels",
 			"description": "Checks if the vehicle is in the air (no wheels touching the ground)",
 			"return": [
 				{

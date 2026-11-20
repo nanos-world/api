@@ -6,6 +6,7 @@
 		{
 			"authority": "client",
 			"name": "Spawn",
+			"category": "Lifecycle",
 			"return": [
 				{
 					"type": "boolean",
@@ -33,18 +34,21 @@
 		{
 			"authority": "client",
 			"name": "DestroyAllSky",
+			"category": "Lifecycle",
 			"description": "Destroys all Directional Lights, Sky Lights, Exponential Height Fogs, Volumetric Clouds, Sky Atmosphere, Ultra Dynamic Sky Actors and all Actors with the <code>Sun</code> Actor Tag from the Level",
 			"efficiency": "moderate"
 		},
 		{
 			"authority": "client",
 			"name": "Reconstruct",
+			"category": "Lifecycle",
 			"description": "Reconstruct the Ultra Dynamic Sky Actor, forces most of the changes to be applied",
 			"efficiency": "slow"
 		},
 		{
 			"authority": "client",
 			"name": "SetMoonTexture",
+			"category": "Moon",
 			"description": "Sets the Moon Texture",
 			"description_details": "Set it to empty to restore the default. After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
 			"parameters": [
@@ -59,6 +63,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonTextureRotation",
+			"category": "Moon",
 			"description": "Sets the Moon Texture Rotation",
 			"parameters": [
 				{
@@ -72,6 +77,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonVerticalOffset",
+			"category": "Moon",
 			"description": "Sets the Moon Vertical Offset",
 			"parameters": [
 				{
@@ -85,6 +91,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonMaterialColor",
+			"category": "Moon",
 			"description": "Sets the Moon Material Color, which tints the moon texture",
 			"description_details": "Call <code>Reconstruct()</code> afterwards to apply it",
 			"parameters": [
@@ -99,6 +106,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonLightColor",
+			"category": "Moon",
 			"description": "Sets the Moon Light Color, the color of the light the moon casts at night",
 			"parameters": [
 				{
@@ -112,6 +120,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonScale",
+			"category": "Moon",
 			"description": "Sets the Moon Scale",
 			"parameters": [
 				{
@@ -125,6 +134,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonAngle",
+			"category": "Moon",
 			"description": "Sets the Moon Angle",
 			"parameters": [
 				{
@@ -143,6 +153,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonPhase",
+			"category": "Moon",
 			"description": "Sets the Moon Phase, from new moon to full moon and back",
 			"parameters": [
 				{
@@ -156,6 +167,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonGlowIntensity",
+			"category": "Moon",
 			"description": "Sets the Moon Glow Intensity",
 			"parameters": [
 				{
@@ -169,6 +181,7 @@
 		{
 			"authority": "client",
 			"name": "SetMoonLightIntensity",
+			"category": "Moon",
 			"description": "Sets the Moon Light Intensity",
 			"parameters": [
 				{
@@ -182,6 +195,7 @@
 		{
 			"authority": "client",
 			"name": "SetSunAngle",
+			"category": "Lighting",
 			"description": "Sets the Sun Angle",
 			"parameters": [
 				{
@@ -200,6 +214,7 @@
 		{
 			"authority": "client",
 			"name": "SetSunScale",
+			"category": "Lighting",
 			"description": "Sets the Sun Scale",
 			"parameters": [
 				{
@@ -213,6 +228,7 @@
 		{
 			"authority": "client",
 			"name": "SetSunLightIntensity",
+			"category": "Lighting",
 			"description": "Sets the Sun Light Intensity",
 			"parameters": [
 				{
@@ -226,6 +242,7 @@
 		{
 			"authority": "client",
 			"name": "SetSkyMode",
+			"category": "Atmosphere",
 			"description": "Sets the Sky Mode",
 			"description_details": "After setting it, you must call <code>Sky.Reconstruct()</code> to have it applied properly",
 			"parameters": [
@@ -240,6 +257,7 @@
 		{
 			"authority": "client",
 			"name": "SetVolumetricCloudColor",
+			"category": "Atmosphere",
 			"description": "Sets the Volumetric Cloud Color",
 			"description_details": "This is only applied if <code>SetSkyMode(SkyMode.VolumetricClouds)</code> is set",
 			"parameters": [
@@ -254,6 +272,7 @@
 		{
 			"authority": "client",
 			"name": "SetCloudCoverage",
+			"category": "Atmosphere",
 			"description": "The amount of coverage for the cloud layer, from a clear sky to overcast",
 			"parameters": [
 				{
@@ -267,6 +286,7 @@
 		{
 			"authority": "client",
 			"name": "SetFog",
+			"category": "Atmosphere",
 			"description": "The fogginess of the scene. The impact this has on fog density is scaled from the Fog Density category. With weather spawned it also pins the weather's fog to this value, so later weather changes keep it, until called with nil",
 			"parameters": [
 				{
@@ -281,6 +301,7 @@
 		{
 			"authority": "client",
 			"name": "SetContrast",
+			"category": "Lighting",
 			"description": "A simple contrast boost for the sky material. Cannot affect volumetric clouds",
 			"parameters": [
 				{
@@ -294,6 +315,7 @@
 		{
 			"authority": "client",
 			"name": "SetOverallIntensity",
+			"category": "Lighting",
 			"description": "The overall brightness of the shader",
 			"parameters": [
 				{
@@ -307,6 +329,7 @@
 		{
 			"authority": "client",
 			"name": "SetNightBrightness",
+			"category": "Lighting",
 			"description": "Can be used to scale the brightness of the sky and lighting, at night",
 			"parameters": [
 				{
@@ -320,6 +343,7 @@
 		{
 			"authority": "client",
 			"name": "SetAnimateTimeOfDay",
+			"category": "Time",
 			"description": "Sets whether or not to animate the time of day",
 			"parameters": [
 				{
@@ -345,6 +369,7 @@
 		{
 			"authority": "client",
 			"name": "SetTimeOfDay",
+			"category": "Time",
 			"description": "Sets the current time",
 			"parameters": [
 				{
@@ -369,6 +394,7 @@
 		{
 			"authority": "client",
 			"name": "GetTimeOfDay",
+			"category": "Time",
 			"description": "Gets the current time",
 			"return": [
 				{
@@ -392,6 +418,7 @@
 		{
 			"authority": "client",
 			"name": "IsSpawned",
+			"category": "Lifecycle",
 			"description": "Returns if the Ultra Dynamic Sky was spawned",
 			"parameters": [
 				{
@@ -411,6 +438,7 @@
 		{
 			"authority": "client",
 			"name": "GetWeather",
+			"category": "Atmosphere",
 			"description": "Gets the current weather",
 			"return": [
 				{
@@ -423,6 +451,7 @@
 		{
 			"authority": "client",
 			"name": "ChangeWeather",
+			"category": "Atmosphere",
 			"description": "Changes the Weather",
 			"parameters": [
 				{

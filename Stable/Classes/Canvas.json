@@ -64,6 +64,7 @@
 		{
 			"authority": "client",
 			"name": "DrawBox",
+			"category": "Drawing",
 			"description": "Draws an unfilled box on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event",
 			"parameters": [
@@ -100,6 +101,7 @@
 		{
 			"authority": "client",
 			"name": "DrawLine",
+			"category": "Drawing",
 			"description": "Draws a line on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event",
 			"parameters": [
@@ -135,6 +137,7 @@
 		{
 			"authority": "client",
 			"name": "DrawMaterial",
+			"category": "Drawing",
 			"description": "Draws a Material on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event<br/><br/><strong>Note:</strong> Due how Unreal handles Render Targets, drawing material on Canvas result on a weird translucent effect. Hope in the future to be improved",
 			"parameters": [
@@ -188,6 +191,7 @@
 		{
 			"authority": "client",
 			"name": "DrawMaterialFromWebUI",
+			"category": "Drawing",
 			"description": "Draws a WebUI on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event<br/><br/><strong>Note:</strong> Due how Unreal handles Render Targets, drawing material on Canvas result on a weird translucent effect. Hope in the future to be improved",
 			"parameters": [
@@ -241,6 +245,7 @@
 		{
 			"authority": "client",
 			"name": "DrawMaterialFromSceneCapture",
+			"category": "Drawing",
 			"description": "Draws a SceneCapture on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event<br/><br/><strong>Note:</strong> Due how Unreal handles Render Targets, drawing material on Canvas result on a weird translucent effect. Hope in the future to be improved",
 			"parameters": [
@@ -294,6 +299,7 @@
 		{
 			"authority": "client",
 			"name": "DrawText",
+			"category": "Drawing",
 			"description": "Draws a Text on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event<br/><br/>Shadow and Outline won't work properly with Transparent <code>clear_color</code>",
 			"parameters": [
@@ -373,6 +379,7 @@
 		{
 			"authority": "client",
 			"name": "DrawTexture",
+			"category": "Drawing",
 			"description": "Draws a Texture on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event",
 			"parameters": [
@@ -432,6 +439,7 @@
 		{
 			"authority": "client",
 			"name": "DrawPolygon",
+			"category": "Drawing",
 			"description": "Draws a N-Polygon on the Canvas",
 			"description_details": "This method can only be called from inside <code>Update</code> event",
 			"parameters": [
@@ -475,6 +483,7 @@
 		{
 			"authority": "client",
 			"name": "DrawRect",
+			"category": "Drawing",
 			"description": "Draws a filled Rect on the Canvas",
 			"description_details": "Draws a fille Rect on the Canvas<br/><br/>This method can only be called from inside <code>Update</code> event",
 			"parameters": [
@@ -511,6 +520,7 @@
 		{
 			"authority": "client",
 			"name": "SetAutoRepaintRate",
+			"category": "Rendering",
 			"description": "Sets the repaint rate",
 			"description_details": "Sets it to -1 to stop auto repainting or 0 to repaint every frame",
 			"parameters": [
@@ -525,6 +535,7 @@
 		{
 			"authority": "client",
 			"name": "GetSize",
+			"category": "Layout",
 			"description": "Gets the Canvas Size",
 			"return": [
 				{
@@ -538,6 +549,7 @@
 		{
 			"authority": "client",
 			"name": "Resize",
+			"category": "Layout",
 			"description": "Resizes the Canvas if not using auto_resize",
 			"parameters": [
 				{
@@ -556,6 +568,7 @@
 		{
 			"authority": "client",
 			"name": "SetScreenPosition",
+			"category": "Layout",
 			"description": "Sets the Canvas Screen Position offset",
 			"parameters": [
 				{
@@ -569,6 +582,7 @@
 		{
 			"authority": "client",
 			"name": "SetAutoResize",
+			"category": "Layout",
 			"description": "Sets if the canvas should auto resize to screen size",
 			"parameters": [
 				{
@@ -582,6 +596,7 @@
 		{
 			"authority": "client",
 			"name": "SetVisibility",
+			"category": "Layout",
 			"description": "Sets if it's visible on screen",
 			"parameters": [
 				{
@@ -595,6 +610,7 @@
 		{
 			"authority": "client",
 			"name": "Repaint",
+			"category": "Rendering",
 			"description": "Forces the repaint",
 			"description_details": "This triggers the Update event",
 			"efficiency": "moderate"
@@ -602,6 +618,7 @@
 		{
 			"authority": "client",
 			"name": "Clear",
+			"category": "Rendering",
 			"description": "Clear the Canvas with a specific Color",
 			"parameters": [
 				{
