@@ -6,7 +6,7 @@
 		{
 			"name": "RequestAsync",
 			"description": "Makes an asynchronous HTTP Request",
-			"description_long": "The request will be made asynchronously and returned safely in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload",
+			"description_details": "The request will be made asynchronously and returned safely in the same thread in the callback provided when it's done.<br/><br/><b>Note:</b> If a request is still running when unloading packages, the server will freeze until it's finished, then the package will unload",
 			"authority": "both",
 			"parameters": [
 				{
@@ -114,7 +114,7 @@
 				}
 			],
 			"description": "Makes a synchronous HTTP Request",
-			"description_long": "The request will be made synchronously and will freeze the server until it's done",
+			"description_details": "The request will be made synchronously and will freeze the server until it's done",
 			"authority": "server",
 			"parameters": [
 				{

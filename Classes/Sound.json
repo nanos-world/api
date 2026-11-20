@@ -185,7 +185,7 @@
 			"name": "SetAttenuationShape",
 			"authority": "client",
 			"description": "If a 3D Sound, sets the shape of the volume within which the volume is 100%",
-			"description_long": "Outside the shape, the volume fades over the falloff distance. The meaning of the extents depends on the shape: Sphere uses X as the radius, Capsule uses X as the half height and Y as the radius, Box uses X, Y and Z as its extents, and Cone uses X as the radius, Y as the angle and Z as the falloff angle (both in degrees). The Capsule, Box and Cone follow the Sound's rotation. For a Sphere, this is the same as SetInnerRadius",
+			"description_details": "Outside the shape, the volume fades over the falloff distance. The meaning of the extents depends on the shape: Sphere uses X as the radius, Capsule uses X as the half height and Y as the radius, Box uses X, Y and Z as its extents, and Cone uses X as the radius, Y as the angle and Z as the falloff angle (both in degrees). The Capsule, Box and Cone follow the Sound's rotation. For a Sphere, this is the same as SetInnerRadius",
 			"parameters": [
 				{
 					"type": "AttenuationShape",
@@ -216,7 +216,7 @@
 			"name": "SetOcclusion",
 			"authority": "client",
 			"description": "If a 3D Sound, configures its automatic occlusion",
-			"description_long": "When something blocks the line between the listener and the Sound, like a wall or a floor, the Sound gets a low-pass filter and a volume multiplier. It is disabled by default",
+			"description_details": "When something blocks the line between the listener and the Sound, like a wall or a floor, the Sound gets a low-pass filter and a volume multiplier. It is disabled by default",
 			"parameters": [
 				{
 					"type": "boolean",

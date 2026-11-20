@@ -101,7 +101,7 @@
 			"authority": "both",
 			"name": "StartCameraFade",
 			"description": "Does a camera fade to/from a solid color",
-			"description_long": "Animates automatically",
+			"description_details": "Animates automatically",
 			"parameters": [
 				{
 					"name": "from_alpha",
@@ -142,7 +142,7 @@
 			"authority": "both",
 			"name": "SetManualCameraFade",
 			"description": "Turns on camera fading at the given opacity",
-			"description_long": "Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off",
+			"description_details": "Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off",
 			"parameters": [
 				{
 					"name": "in_fade_amount",
@@ -514,7 +514,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalHighPassFilter",
 			"description": "Sets the global VOIP high-pass filter threshold frequency",
-			"description_long": "Set it to 0 to disable it",
+			"description_details": "Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -533,7 +533,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalLowPassFilter",
 			"description": "Sets the global VOIP low-pass filter threshold frequency",
-			"description_long": "Set it to 0 to disable it",
+			"description_details": "Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -552,7 +552,7 @@
 			"authority": "both",
 			"name": "SetVOIPMuted",
 			"description": "Mutes or unmutes VOIP for this player",
-			"description_long": "On server side, the player is muted for everyone. On client side, it is a local mute only",
+			"description_details": "On server side, the player is muted for everyone. On client side, it is a local mute only",
 			"parameters": [
 				{
 					"name": "is_muted",
@@ -726,7 +726,7 @@
 		{
 			"name": "SetDistanceOptimizationMultiplier",
 			"description": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors",
-			"description_long": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"description_details": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
 			"efficiency": "fast",
 			"parameters": [

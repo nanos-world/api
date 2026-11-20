@@ -115,7 +115,7 @@
 			"name": "SetFont",
 			"authority": "both",
 			"description": "Sets the Font. The font must be pre-cooked as an offline cached, distance field font",
-			"description_long": "Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
+			"description_details": "Example working fonts:<br/>- <code>nanos-world::Font_LondrinaSolid_DistanceField</code><br/>- <code>nanos-world::Font_BoldPixels_DistanceField</code><br/>- <code>nanos-world::Font_Roboto_DistanceField</code>",
 			"parameters": [
 				{
 					"name": "font_asset",

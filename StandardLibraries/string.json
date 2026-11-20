@@ -358,7 +358,7 @@
 			"name": "ToTable",
 			"is_native": false,
 			"description": "Split string into table of single characters",
-			"description_long": "Converts this string into a table where each element is a single-character substring of the original string",
+			"description_details": "Converts this string into a table where each element is a single-character substring of the original string",
 			"return": [
 				{
 					"type": "string[]",

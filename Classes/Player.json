@@ -101,7 +101,7 @@
 			"authority": "both",
 			"name": "StartCameraFade",
 			"description": "Does a camera fade to/from a solid color",
-			"description_long": "Animates automatically",
+			"description_details": "Animates automatically",
 			"parameters": [
 				{
 					"name": "from_alpha",
@@ -142,7 +142,7 @@
 			"authority": "both",
 			"name": "SetManualCameraFade",
 			"description": "Turns on camera fading at the given opacity",
-			"description_long": "Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off",
+			"description_details": "Does not auto-animate, allowing user to animate themselves. Call StopCameraFade to turn fading back off",
 			"parameters": [
 				{
 					"name": "in_fade_amount",
@@ -502,7 +502,7 @@
 			"authority": "both",
 			"name": "SetVOIPLocalHighPassFilter",
 			"description": "Sets the local/proximity VOIP high-pass filter threshold frequency",
-			"description_long": "Set it to 0 to disable it. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener",
+			"description_details": "Set it to 0 to disable it. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -522,7 +522,7 @@
 			"authority": "both",
 			"name": "SetVOIPLocalLowPassFilter",
 			"description": "Sets the local/proximity VOIP low-pass filter threshold frequency",
-			"description_long": "Set it to 0 to disable it. Useful to muffle a voice, like a player behind a wall, inside a vehicle or wearing a mask. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener",
+			"description_details": "Set it to 0 to disable it. Useful to muffle a voice, like a player behind a wall, inside a vehicle or wearing a mask. On server side, it applies to everyone hearing this player. On client side, it only applies to the local listener",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -542,7 +542,7 @@
 			"authority": "both",
 			"name": "SetVOIPLocalOcclusion",
 			"description": "Configures the automatic occlusion of the local/proximity VOIP",
-			"description_long": "When something blocks the line between the listener and this player, the voice gets a low-pass filter and a volume multiplier. It is enabled by default. Disable it to control the muffling from a script, with SetVOIPLocalLowPassFilter and SetVOIPLocalVolume",
+			"description_details": "When something blocks the line between the listener and this player, the voice gets a low-pass filter and a volume multiplier. It is enabled by default. Disable it to control the muffling from a script, with SetVOIPLocalLowPassFilter and SetVOIPLocalVolume",
 			"parameters": [
 				{
 					"name": "enabled",
@@ -574,7 +574,7 @@
 			"authority": "both",
 			"name": "SetVOIPLocalAttenuation",
 			"description": "Sets how the local/proximity VOIP fades with distance",
-			"description_long": "The voice plays at full volume inside the inner radius, then fades to silence at the max distance set with SetVOIPLocalMaxDistance",
+			"description_details": "The voice plays at full volume inside the inner radius, then fades to silence at the max distance set with SetVOIPLocalMaxDistance",
 			"parameters": [
 				{
 					"name": "inner_radius",
@@ -612,7 +612,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalHighPassFilter",
 			"description": "Sets the global VOIP high-pass filter threshold frequency",
-			"description_long": "Set it to 0 to disable it",
+			"description_details": "Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -631,7 +631,7 @@
 			"authority": "both",
 			"name": "SetVOIPGlobalLowPassFilter",
 			"description": "Sets the global VOIP low-pass filter threshold frequency",
-			"description_long": "Set it to 0 to disable it",
+			"description_details": "Set it to 0 to disable it",
 			"parameters": [
 				{
 					"name": "threshold",
@@ -650,7 +650,7 @@
 			"authority": "both",
 			"name": "SetVOIPMuted",
 			"description": "Mutes or unmutes VOIP for this player",
-			"description_long": "On server side, the player is muted for everyone. On client side, it is a local mute only",
+			"description_details": "On server side, the player is muted for everyone. On client side, it is a local mute only",
 			"parameters": [
 				{
 					"name": "is_muted",
@@ -846,7 +846,7 @@
 			"authority": "client",
 			"name": "GetVOIPAmplitude",
 			"description": "Returns how loud this player is talking right now",
-			"description_long": "It is the RMS of the last voice data received from this player, before distance attenuation, occlusion and filters. Normal speech stays low in the scale, usually between 0.05 and 0.3. It only works for players the local player is receiving voice from, and for the local player while the voice is being transmitted. The local player's voice is only measured while this method keeps being called, so the first call returns 0",
+			"description_details": "It is the RMS of the last voice data received from this player, before distance attenuation, occlusion and filters. Normal speech stays low in the scale, usually between 0.05 and 0.3. It only works for players the local player is receiving voice from, and for the local player while the voice is being transmitted. The local player's voice is only measured while this method keeps being called, so the first call returns 0",
 			"return": [
 				{
 					"type": "float",
@@ -1012,7 +1012,7 @@
 		{
 			"name": "SetDistanceOptimizationMultiplier",
 			"description": "Sets the multiplier for how much this Player's is affected by distance optimization from other actors",
-			"description_long": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
+			"description_details": "A value of 0 disables optimization. Values under 1 decrease the effect, while values over 1 increase it",
 			"authority": "server",
 			"efficiency": "fast",
 			"parameters": [

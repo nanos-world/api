@@ -23,7 +23,7 @@
 		{
 			"name": "Benchmark",
 			"description": "Benchmarks a function performance",
-			"description_long": "It outputs the elapsed time in the console",
+			"description_details": "It outputs the elapsed time in the console",
 			"return": [
 				{
 					"type": "number",

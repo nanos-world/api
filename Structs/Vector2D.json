@@ -88,7 +88,7 @@
 		{
 			"name": "Distance",
 			"description": "Distance between two points",
-			"description_long": "Returns the distance of 2 vectors",
+			"description_details": "Returns the distance of 2 vectors",
 			"return": [
 				{
 					"type": "float",
@@ -107,7 +107,7 @@
 		{
 			"name": "DistanceSquared",
 			"description": "Squared distance between two points",
-			"description_long": "Return the squared distance of 2 vectors",
+			"description_details": "Return the squared distance of 2 vectors",
 			"return": [
 				{
 					"type": "float",
@@ -171,7 +171,7 @@
 		{
 			"name": "Dot",
 			"description": "Dot product of two vectors",
-			"description_long": "Returns the dot product between this vector and another vector",
+			"description_details": "Returns the dot product between this vector and another vector",
 			"return": [
 				{
 					"type": "float",
@@ -190,7 +190,7 @@
 		{
 			"name": "Cross",
 			"description": "Cross product of two vectors",
-			"description_long": "Returns the cross product between this vector and another vector, which for 2D vectors is a scalar value",
+			"description_details": "Returns the cross product between this vector and another vector, which for 2D vectors is a scalar value",
 			"return": [
 				{
 					"type": "float",
@@ -209,7 +209,7 @@
 		{
 			"name": "Lerp",
 			"description": "Linearly interpolates between this vector and another vector",
-			"description_long": "Returns the linear interpolation between this vector and another vector by the given alpha",
+			"description_details": "Returns the linear interpolation between this vector and another vector by the given alpha",
 			"return": [
 				{
 					"type": "Vector2D",

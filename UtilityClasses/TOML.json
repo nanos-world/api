@@ -5,7 +5,7 @@
 		{
 			"name": "Dump",
 			"description": "Returns a string representing value encoded in TOML",
-			"description_long": "TOML has no <code>null</code>, so <code>nil</code> values, functions and a table that references itself or one of its parent tables (cyclic table) are left out. Metatables are not encoded, only the table's own fields",
+			"description_details": "TOML has no <code>null</code>, so <code>nil</code> values, functions and a table that references itself or one of its parent tables (cyclic table) are left out. Metatables are not encoded, only the table's own fields",
 			"return": [
 				{
 					"type": "string",

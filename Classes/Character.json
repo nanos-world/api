@@ -237,7 +237,7 @@
 			"authority": "server",
 			"name": "SetAnimationIdleWalkRunStanding",
 			"description": "Sets the Blend Space (2D) Animation for Standing",
-			"description_long": "Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
+			"description_details": "Horizontal Axis stands for Speed X and Vertical Axis for Speed Y",
 			"parameters": [
 				{
 					"type": "AnimationPath",
@@ -370,7 +370,7 @@
 			"authority": "server",
 			"name": "SetCameraMode",
 			"description": "Sets the Camera Mode",
-			"description_long": "It can allow only TPS, only FPS or both.<br/><br/>Using FPSOnly CameraMode on AI will lock his body rotation (when using LookAt)",
+			"description_details": "It can allow only TPS, only FPS or both.<br/><br/>Using FPSOnly CameraMode on AI will lock his body rotation (when using LookAt)",
 			"parameters": [
 				{
 					"type": "CameraMode",
@@ -528,7 +528,7 @@
 			"authority": "server",
 			"name": "SetFallDamageTaken",
 			"description": "Set the Fall Damage multiplier taken when falling from High places",
-			"description_long": "Setting to 0 will make the Character not take any damage",
+			"description_details": "Setting to 0 will make the Character not take any damage",
 			"parameters": [
 				{
 					"type": "integer",
@@ -555,7 +555,7 @@
 			"authority": "server",
 			"name": "SetHighFallingTime",
 			"description": "Sets time to transition to HighFalling state",
-			"description_long": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
+			"description_details": "Sets time elapsed until automatically transition to HighFalling state (from SmallFalling) in seconds<br/><br/>Set it to -1 to never enter HighFalling time and consequently do not ragdoll when falling",
 			"parameters": [
 				{
 					"type": "float",
@@ -618,7 +618,7 @@
 			"authority": "server",
 			"name": "SetImpactDamageTaken",
 			"description": "Set the Impact Damage taken when being run over by things",
-			"description_long": "Setting to 0 will make the Character not take damage or enter ragdoll mode",
+			"description_details": "Setting to 0 will make the Character not take damage or enter ragdoll mode",
 			"parameters": [
 				{
 					"type": "integer",
@@ -637,7 +637,7 @@
 			"authority": "server",
 			"name": "SetRadialDamageToRagdoll",
 			"description": "Set the minimum radial damage (e.g. explosions) taken to enter in ragdoll mode",
-			"description_long": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character never enter ragdoll mode when getting radial damage",
+			"description_details": "Set the minimum radial damage taken (e.g. explosions) to enter in ragdoll mode.<br/><br/>Setting to -1 will make the Character never enter ragdoll mode when getting radial damage",
 			"parameters": [
 				{
 					"type": "integer",

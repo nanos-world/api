@@ -7,7 +7,7 @@
 			"name": "Call",
 			"authority": "both",
 			"description": "Triggers a local custom Event across all Packages on the same side (Client ➔ Client OR Server ➔ Server)",
-			"description_long": "Must be caught using <code>Events.Subscribe()</code>",
+			"description_details": "Must be caught using <code>Events.Subscribe()</code>",
 			"parameters": [
 				{
 					"type": "string",
@@ -38,7 +38,7 @@
 			"authority": "client",
 			"name": "CallRemote",
 			"description": "Triggers a remote custom Event from the Client to the Server (Client ➔ Server)",
-			"description_long": "The receiving Server will implicitly receive the sender 'Player' as the very first argument before your custom args<br/>Must be caught using <code>Events.SubscribeRemote()</code>",
+			"description_details": "The receiving Server will implicitly receive the sender 'Player' as the very first argument before your custom args<br/>Must be caught using <code>Events.SubscribeRemote()</code>",
 			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
@@ -70,7 +70,7 @@
 			"name": "CallRemote",
 			"authority": "server",
 			"description": "Triggers a remote custom Event from the Server to the Client (Server ➔ Client)",
-			"description_long": "Must be caught using <code>Events.SubscribeRemote()</code>",
+			"description_details": "Must be caught using <code>Events.SubscribeRemote()</code>",
 			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
@@ -107,7 +107,7 @@
 			"name": "CallRemotePlayers",
 			"authority": "server",
 			"description": "Triggers a remote custom Event from the Server to an array of specific Players (Server ➔ Clients)",
-			"description_long": "More network-efficient than looping CallRemote<br/>Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"description_details": "More network-efficient than looping CallRemote<br/>Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
 			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
@@ -144,7 +144,7 @@
 			"name": "BroadcastRemote",
 			"authority": "server",
 			"description": "Broadcasts a remote custom Event from the Server to ALL currently connected Players (Server ➔ Clients)",
-			"description_long": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"description_details": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
 			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
@@ -176,7 +176,7 @@
 			"name": "BroadcastRemoteDimension",
 			"authority": "server",
 			"description": "Broadcasts a remote custom Event from the Server to all Players currently residing in the specified Dimension (Server ➔ Clients)",
-			"description_long": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"description_details": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
 			"last_compatibility_version": "1.139",
 			"parameters": [
 				{
@@ -213,7 +213,7 @@
 			"name": "BroadcastRemoteInRadius",
 			"authority": "server",
 			"description": "Broadcasts a remote custom Event from the Server to all Players within a specific location radius (Server ➔ Clients)",
-			"description_long": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"description_details": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
 			"parameters": [
 				{
 					"type": "string",
@@ -254,7 +254,7 @@
 			"name": "BroadcastRemoteInRadiusDimension",
 			"authority": "server",
 			"description": "Broadcasts a remote custom Event from the Server to all Players within a specific location radius AND residing in a specific Dimension (Server ➔ Clients)",
-			"description_long": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
+			"description_details": "Must be caught using <code>Events.SubscribeRemote()</code> on the Clients",
 			"parameters": [
 				{
 					"type": "string",
@@ -324,7 +324,7 @@
 			"name": "SubscribeRemote",
 			"authority": "both",
 			"description": "Listens for a network custom Event",
-			"description_long": "If on the Server, it catches <code>Events.CallRemote()</code> from Clients (receiving the sender 'Player' as the first argument)<br/>If on the Client, it catches Server broadcasts and remote calls",
+			"description_details": "If on the Server, it catches <code>Events.CallRemote()</code> from Clients (receiving the sender 'Player' as the first argument)<br/>If on the Client, it catches Server broadcasts and remote calls",
 			"return": [
 				{
 					"type": "function",
@@ -349,7 +349,7 @@
 			"name": "Unsubscribe",
 			"authority": "both",
 			"description": "Removes a local event listener previously registered with <code>Events.Subscribe()</code>",
-			"description_long": "If no specific callback function is passed, it removes ALL local listeners for that event name in the current Package",
+			"description_details": "If no specific callback function is passed, it removes ALL local listeners for that event name in the current Package",
 			"parameters": [
 				{
 					"type": "string",
@@ -369,7 +369,7 @@
 			"name": "UnsubscribeRemote",
 			"authority": "both",
 			"description": "Removes a network event listener previously registered with <code>Events.SubscribeRemote()</code>",
-			"description_long": "If no specific callback function is passed, it removes ALL remote listeners for that event name in the current Package",
+			"description_details": "If no specific callback function is passed, it removes ALL remote listeners for that event name in the current Package",
 			"parameters": [
 				{
 					"type": "string",

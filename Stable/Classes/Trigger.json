@@ -63,7 +63,7 @@
 		{
 			"name": "IsOverlapping",
 			"description": "Returns if an Actor is inside this Trigger right now",
-			"description_long": "Tests the Actor's location against the Trigger's shape at the moment of the call",
+			"description_details": "Tests the Actor's location against the Trigger's shape at the moment of the call",
 			"authority": "authority",
 			"parameters": [
 				{

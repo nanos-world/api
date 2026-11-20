@@ -68,18 +68,9 @@ function KeyCollectionsByName(object) {
 	return object;
 }
 
-// Uses a separate Crowdin key so translations of the old full text cannot be reused as details
-function UseDescriptionDetailsKey(key, value) {
-	if (!value || !Object.hasOwn(value, "description_long"))
-		return value;
-
-	const { description_long, ...entry } = value;
-	return { ...entry, description_details: description_long };
-}
-
 // Saves JSON to disk stringified
 function SaveJSON(path, object) {
-	return fs.writeFileSync(__dirname + "/" + path, JSON.stringify(KeyCollectionsByName(object), UseDescriptionDetailsKey));
+	return fs.writeFileSync(__dirname + "/" + path, JSON.stringify(KeyCollectionsByName(object)));
 }
 
 // Copies a folder into the generated output, keying the collections of every JSON file on the way

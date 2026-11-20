@@ -355,7 +355,7 @@
 				}
 			],
 			"description": "Calls an Animation Blueprint Event or Function",
-			"description_long": "Returns all Function return values on <strong>Client Side</strong>",
+			"description_details": "Returns all Function return values on <strong>Client Side</strong>",
 			"parameters": [
 				{
 					"type": "string",

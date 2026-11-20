@@ -6,7 +6,7 @@
 		{
 			"name": "OpenCheckoutOverlay",
 			"description": "Opens the Tebex checkout of a package for a player, over the in-game menu",
-			"description_long": "The server creates a basket with the package for the player's Steam ID, so the purchase is linked to that player without any login. Once Tebex answers, the player's in-game menu opens with the checkout popup, the same one the in-game store shows, and the player decides whether to pay",
+			"description_details": "The server creates a basket with the package for the player's Steam ID, so the purchase is linked to that player without any login. Once Tebex answers, the player's in-game menu opens with the checkout popup, the same one the in-game store shows, and the player decides whether to pay",
 			"authority": "server",
 			"parameters": [
 				{
@@ -70,7 +70,7 @@
 		{
 			"name": "OnlineCommand",
 			"description": "Called when an online command of a purchase is about to run for a connected player",
-			"description_long": "Online commands only run while their player is on the server. The <code>{id}</code>, <code>{steamid}</code>, <code>{username}</code> and <code>{name}</code> placeholders are already replaced in <code>command</code>.<br/><br/>Return <code>false</code> to handle the purchase in your script instead of running <code>command</code> in the server console. A handled command is removed from the Tebex queue. If you don't return <code>false</code> and no Package handles <code>command</code> in the console, it stays in the queue and this event is called again on the next fetch",
+			"description_details": "Online commands only run while their player is on the server. The <code>{id}</code>, <code>{steamid}</code>, <code>{username}</code> and <code>{name}</code> placeholders are already replaced in <code>command</code>.<br/><br/>Return <code>false</code> to handle the purchase in your script instead of running <code>command</code> in the server console. A handled command is removed from the Tebex queue. If you don't return <code>false</code> and no Package handles <code>command</code> in the console, it stays in the queue and this event is called again on the next fetch",
 			"authority": "server",
 			"return": [
 				{
@@ -109,7 +109,7 @@
 		{
 			"name": "OfflineCommand",
 			"description": "Called when an offline command of a purchase is about to run",
-			"description_long": "Offline commands run whether or not their player is on the server, so the player is given by their Steam ID and name. The <code>{id}</code>, <code>{steamid}</code>, <code>{username}</code> and <code>{name}</code> placeholders are already replaced in <code>command</code>.<br/><br/>Return <code>false</code> to handle the purchase in your script instead of running <code>command</code> in the server console. A handled command is removed from the Tebex queue. If you don't return <code>false</code> and no Package handles <code>command</code> in the console, it stays in the queue and this event is called again on the next fetch",
+			"description_details": "Offline commands run whether or not their player is on the server, so the player is given by their Steam ID and name. The <code>{id}</code>, <code>{steamid}</code>, <code>{username}</code> and <code>{name}</code> placeholders are already replaced in <code>command</code>.<br/><br/>Return <code>false</code> to handle the purchase in your script instead of running <code>command</code> in the server console. A handled command is removed from the Tebex queue. If you don't return <code>false</code> and no Package handles <code>command</code> in the console, it stays in the queue and this event is called again on the next fetch",
 			"authority": "server",
 			"return": [
 				{

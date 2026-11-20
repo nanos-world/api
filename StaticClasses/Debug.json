@@ -6,7 +6,7 @@
 		{
 			"name": "ProfileZone",
 			"description": "Runs a function and measures it as a zone in Tracy and in the native profiling",
-			"description_long": "The zone is named '[package] name' and always closes when the function returns.<br/><br/>Use fixed names: each different name stays stored until the game or server closes, up to 256 names in total",
+			"description_details": "The zone is named '[package] name' and always closes when the function returns.<br/><br/>Use fixed names: each different name stays stored until the game or server closes, up to 256 names in total",
 			"authority": "both",
 			"parameters": [
 				{
@@ -25,7 +25,7 @@
 		{
 			"name": "ProfilePlot",
 			"description": "Records a value in a graph in Tracy",
-			"description_long": "The graph is named '[package] name'. Use fixed names: each different name stays stored until the game or server closes, up to 256 names in total. Does nothing while Tracy is not connected",
+			"description_details": "The graph is named '[package] name'. Use fixed names: each different name stays stored until the game or server closes, up to 256 names in total. Does nothing while Tracy is not connected",
 			"authority": "both",
 			"parameters": [
 				{
@@ -44,7 +44,7 @@
 		{
 			"name": "ProfileMessage",
 			"description": "Marks an event with a text in the Tracy timeline",
-			"description_long": "The text is prefixed with '[package]'. Does nothing while Tracy is not connected",
+			"description_details": "The text is prefixed with '[package]'. Does nothing while Tracy is not connected",
 			"authority": "both",
 			"parameters": [
 				{
