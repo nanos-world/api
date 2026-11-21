@@ -591,11 +591,6 @@
 							"description": "Mouse sensitivity multiplier"
 						},
 						{
-							"name": "MouseSmoothing",
-							"type": "boolean",
-							"description": "Whether mouse input is smoothed between frames that receive no mouse samples"
-						},
-						{
 							"name": "AutoReAlignCamera",
 							"type": "boolean",
 							"description": "Whether the camera automatically re-aligns behind the Character"
