@@ -483,6 +483,46 @@
 			"efficiency": "moderate"
 		},
 		{
+			"name": "IsBanned",
+			"category": "Moderation",
+			"description": "Returns if a Player is banned, by its Steam ID",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the Steam ID is banned"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "player_steam_id",
+					"description": "The Player's Steam ID (SteamID64)"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetBans",
+			"category": "Moderation",
+			"description": "Returns all banned Players",
+			"description_details": "The same list kept in the server's Bans.toml",
+			"authority": "server",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "The banned players",
+					"table_properties": [
+						{ "name": "steam_id", "type": "string", "description": "Steam ID (SteamID64)" },
+						{ "name": "name", "type": "string", "description": "Player name when banned, informative only" },
+						{ "name": "reason", "type": "string", "description": "Ban reason" },
+						{ "name": "banned_at", "type": "string", "description": "UTC date of the ban (e.g. 2026-11-20T15:04:05Z), empty if unknown" }
+					]
+				}
+			],
+			"efficiency": "moderate"
+		},
+		{
 			"name": "HoldConnection",
 			"category": "Network",
 			"description": "Holds a connecting player in the loading screen with a message, before he starts downloading the server files",
