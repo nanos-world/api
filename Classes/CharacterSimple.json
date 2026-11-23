@@ -88,7 +88,7 @@
 			"efficiency": "slow"
 		},
 		{
-			"authority": "authority",
+			"authority": "both",
 			"name": "PlayAnimation",
 			"category": "Animation",
 			"description": "Plays an Animation Montage on this character",
