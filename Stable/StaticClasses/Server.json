@@ -431,14 +431,14 @@
 		},
 		{
 			"authority": "server",
-			"name": "KickByAccountID",
+			"name": "KickBySteamID",
 			"category": "Moderation",
-			"description": "Kicks the player from the server by its Account ID, ideal for kicking from inside PlayerConnect event",
+			"description": "Kicks the player from the server by its Steam ID, ideal for kicking from inside PlayerConnect event or while holding the connection",
 			"parameters": [
 				{
-					"name": "player_account_id",
+					"name": "player_steam_id",
 					"type": "string",
-					"description": "The Player's nanos world account ID"
+					"description": "The Player's Steam ID (SteamID64)"
 				},
 				{
 					"name": "reason",
@@ -450,14 +450,15 @@
 		},
 		{
 			"authority": "server",
-			"name": "BanByAccountID",
+			"name": "BanBySteamID",
 			"category": "Moderation",
-			"description": "Ban the player from the server by its Account ID, ideal for banning from inside PlayerConnect event",
+			"description": "Bans the player from the server by its Steam ID, ideal for banning from inside PlayerConnect event",
+			"description_details": "The Steam ID is added to <code>banned_ids</code> in the Config.toml, and the player is kicked if connected. It also works for players who are not connected",
 			"parameters": [
 				{
-					"name": "player_account_id",
+					"name": "player_steam_id",
 					"type": "string",
-					"description": "The Player's nanos world account ID"
+					"description": "The Player's Steam ID (SteamID64)"
 				},
 				{
 					"name": "reason",
@@ -470,15 +471,103 @@
 		{
 			"name": "Unban",
 			"category": "Moderation",
-			"description": "Unbans a Player by its account ID",
+			"description": "Unbans a Player by its Steam ID",
 			"authority": "server",
 			"parameters": [
 				{
 					"type": "string",
-					"name": "account_id",
-					"description": "nanos account ID"
+					"name": "player_steam_id",
+					"description": "The Player's Steam ID (SteamID64)"
 				}
 			],
+			"efficiency": "moderate"
+		},
+		{
+			"name": "HoldConnection",
+			"category": "Network",
+			"description": "Holds a connecting player in the loading screen with a message, before he starts downloading the server files",
+			"description_details": "Only works from inside the <code>PlayerConnect</code> event, or on a connection already held, which only updates its message (e.g. his position in your queue). The player waits until you call <code>Server.ReleaseConnection()</code> or kick him, which lets you verify him asynchronously (database, web API) or build your own queue.<br/><br/>Held players are not counted in <code>max_players</code> nor shown in the server list. If the server is full, new connections only get in up to <code>max_held_connections</code> from the Config.toml, which is 0 by default (full servers refuse new players)",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the connection is now held"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "player_steam_id",
+					"description": "The Player's Steam ID (SteamID64)"
+				},
+				{
+					"type": "string",
+					"name": "message",
+					"description": "Plain text shown in the loading screen, up to 256 bytes"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"ReleaseConnection",
+					"GetHeldConnections"
+				],
+				"events": [
+					"PlayerConnect"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"name": "ReleaseConnection",
+			"category": "Network",
+			"description": "Lets a held player in, he starts downloading the server files and joins as usual",
+			"description_details": "Returns <code>false</code> if the server is full (<code>max_players</code> is always respected) or the player is not held, in which case he stays held",
+			"authority": "server",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the player was let in"
+				}
+			],
+			"parameters": [
+				{
+					"type": "string",
+					"name": "player_steam_id",
+					"description": "The Player's Steam ID (SteamID64)"
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"HoldConnection",
+					"GetHeldConnections"
+				]
+			},
+			"efficiency": "moderate"
+		},
+		{
+			"name": "GetHeldConnections",
+			"category": "Network",
+			"description": "Returns all players currently held in the loading screen",
+			"description_details": "Useful to rebuild your queue after reloading the package",
+			"authority": "server",
+			"return": [
+				{
+					"type": "table[]",
+					"description": "The held players",
+					"table_properties": [
+						{ "name": "steam_id", "type": "string", "description": "Steam ID (SteamID64)" },
+						{ "name": "account_id", "type": "string", "description": "nanos world account ID" },
+						{ "name": "name", "type": "string", "description": "Player name" },
+						{ "name": "ip", "type": "string", "description": "IP of the player" }
+					]
+				}
+			],
+			"relations": {
+				"static_functions": [
+					"HoldConnection",
+					"ReleaseConnection"
+				]
+			},
 			"efficiency": "moderate"
 		},
 		{
@@ -910,8 +999,8 @@
 		},
 		{
 			"name": "PlayerConnect",
-			"description": "Called when a player is attempting to connect to the server",
-			"description_details": "It is called before the Player entity is created.<br/><br/>To refuse the connection, call <code>Server.KickByAccountID()</code> or <code>Server.BanByAccountID()</code> with the <code>player_account_id</code> (returning <code>false</code> is deprecated)",
+			"description": "Called when a player is attempting to connect to the server, after Steam authenticated him",
+			"description_details": "It is called before the Player entity is created and before he starts downloading the server files.<br/><br/>To refuse the connection, call <code>Server.KickBySteamID()</code> or <code>Server.BanBySteamID()</code> with the <code>player_steam_id</code> (returning <code>false</code> is deprecated). To decide later (e.g. after an asynchronous check, or to make him wait in a queue), call <code>Server.HoldConnection()</code>",
 			"authority": "server",
 			"arguments": [
 				{
@@ -937,8 +1026,9 @@
 			],
 			"relations": {
 				"static_functions": [
-					"KickByAccountID",
-					"BanByAccountID"
+					"KickBySteamID",
+					"BanBySteamID",
+					"HoldConnection"
 				],
 				"events": [
 					"PlayerDisconnect"
@@ -948,6 +1038,7 @@
 		{
 			"name": "PlayerDisconnect",
 			"description": "Called when a player is disconnecting from the server",
+			"description_details": "It is also called for players who never fully connected, including the ones held with <code>Server.HoldConnection()</code>",
 			"authority": "server",
 			"arguments": [
 				{
