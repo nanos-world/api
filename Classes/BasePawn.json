@@ -647,7 +647,7 @@
 				{
 					"type": "integer",
 					"name": "crouched_half_height",
-					"description": "Pass 0 to auto calculate the crouched half height based on the mesh bounds",
+					"description": "Pass 0 to use 70% of the standing half height on the client",
 					"default": "0"
 				}
 			],
@@ -657,7 +657,8 @@
 			"authority": "both",
 			"name": "GetCapsuleSize",
 			"category": "Physics",
-			"description": "Gets the Capsule Size",
+			"description": "Gets the configured capsule size",
+			"description_details": "On both the server and the client, each field returns 0 when set to automatic sizing. The client calculates and applies the automatic dimensions locally. For example, after `SetCapsuleSize(50, 100)`, this returns `Radius = 50`, `HalfHeight = 100` and `CrouchedHalfHeight = 0`",
 			"return": [
 				{
 					"type": "table",
