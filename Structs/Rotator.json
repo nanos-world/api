@@ -92,7 +92,7 @@
 				{
 					"type": "float",
 					"name": "tolerance",
-					"default": "0.000001",
+					"default": "0.0001",
 					"description": "Max difference allowed per axis, in degrees"
 				}
 			],
@@ -202,7 +202,7 @@
 					"type": "float",
 					"name": "tolerance",
 					"description": "Tolerance to check",
-					"default": "0.000001"
+					"default": "0.0001"
 				}
 			],
 			"return": [

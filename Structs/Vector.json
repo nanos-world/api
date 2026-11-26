@@ -122,7 +122,7 @@
 				{
 					"type": "float",
 					"name": "tolerance",
-					"default": "0.000001",
+					"default": "0.0001",
 					"description": "The error limits"
 				}
 			],
@@ -235,7 +235,7 @@
 				{
 					"type": "float",
 					"name": "tolerance",
-					"default": "0.000001",
+					"default": "0.0001",
 					"description": "The error limits"
 				}
 			],

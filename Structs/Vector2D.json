@@ -86,6 +86,30 @@
 	],
 	"functions": [
 		{
+			"name": "Equals",
+			"description": "Checks against another vector for equality, within a tolerance",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "Are the vectors equal or not"
+				}
+			],
+			"parameters": [
+				{
+					"type": "Vector2D",
+					"name": "other",
+					"description": "The vector to compare to"
+				},
+				{
+					"type": "float",
+					"name": "tolerance",
+					"default": "0.0001",
+					"description": "The error limits"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "Distance",
 			"description": "Distance between two points",
 			"description_details": "Returns the distance of 2 vectors",
@@ -142,6 +166,36 @@
 					"type": "float",
 					"name": "radius",
 					"description": "The radius to check"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "IsNearlyZero",
+			"description": "Checks whether vector is near to zero within a specified tolerance",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If the vector is near to zero"
+				}
+			],
+			"parameters": [
+				{
+					"type": "float",
+					"name": "tolerance",
+					"default": "0.0001",
+					"description": "The error limits"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "IsZero",
+			"description": "Checks whether all components of the vector are exactly zero",
+			"return": [
+				{
+					"type": "boolean",
+					"description": "If all components of the vector are exactly zero"
 				}
 			],
 			"efficiency": "fast"
