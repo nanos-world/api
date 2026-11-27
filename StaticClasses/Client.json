@@ -68,6 +68,20 @@
 			"efficiency": "moderate"
 		},
 		{
+			"name": "SetEscapeMenuStoreVisibility",
+			"category": "Interface",
+			"description": "Shows or hides the Store tab in the Escape Menu",
+			"description_details": "The tab is visible by default on servers with Tebex enabled. Scripts can still open a Tebex checkout while the Store is hidden",
+			"authority": "client",
+			"parameters": [
+				{
+					"type": "boolean",
+					"name": "visible"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "ShowNotification",
 			"category": "Interface",
 			"description": "Shows a notification using the built-in notification system",
