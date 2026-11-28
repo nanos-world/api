@@ -1,7 +1,7 @@
 {
 	"name": "Tebex",
 	"description": "Sell packages from your Tebex store in game and deliver them to your players",
-	"authority": "server",
+	"authority": "both",
 	"static_functions": [
 		{
 			"name": "OpenCheckoutOverlay",
@@ -23,9 +23,48 @@
 			"efficiency": "fast"
 		},
 		{
+			"name": "GetCategoriesAsync",
+			"description": "Requests the categories of your Tebex store, with their packages",
+			"description_details": "The list comes from the Tebex Headless API, as the array of categories Tebex returns, each with its <code>packages</code>, using the field names from the Tebex Headless API documentation. The package <code>id</code> is the one <code>Tebex.OpenCheckoutOverlay</code> takes",
+			"authority": "both",
+			"parameters": [
+				{
+					"type": "function",
+					"name": "callback",
+					"description": "Called with the result",
+					"function_parameters": [
+						{
+							"name": "success",
+							"type": "boolean",
+							"description": "False if the store is not set up or Tebex could not be reached"
+						},
+						{
+							"name": "categories",
+							"type": "table?",
+							"description": "The categories with their packages, nil on failure"
+						}
+					]
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
+			"name": "GetPublicToken",
+			"description": "Gets the public token of your Tebex store",
+			"description_details": "Use it to call the Tebex Headless API yourself, for example from a HTTP request. It is the same token your store page uses, so it is safe to share with players",
+			"authority": "both",
+			"return": [
+				{
+					"type": "string",
+					"description": "The public token, or an empty string"
+				}
+			],
+			"efficiency": "fast"
+		},
+		{
 			"name": "Subscribe",
 			"description": "Subscribes to an Event",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
@@ -49,7 +88,7 @@
 		{
 			"name": "Unsubscribe",
 			"description": "Unsubscribes from all subscribed Events in this Class and in this Package, optionally passing the function to unsubscribe only that callback",
-			"authority": "server",
+			"authority": "both",
 			"parameters": [
 				{
 					"type": "string",
